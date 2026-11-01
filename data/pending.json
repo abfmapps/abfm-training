@@ -1,91 +1,138 @@
 {
-  "lastRun": "2026-10-31T02:11:12.471Z",
+  "lastRun": "2026-11-01T02:15:06.524Z",
   "channelStatus": {
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-10-31T02:10:56.522Z",
+      "checked": "2026-11-01T02:14:49.015Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-10-31T02:10:58.527Z",
+      "checked": "2026-11-01T02:14:51.007Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-10-31T02:10:59.528Z",
+      "checked": "2026-11-01T02:14:51.991Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-10-31T02:11:01.372Z",
+      "checked": "2026-11-01T02:14:54.142Z",
       "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-10-31T02:11:02.489Z",
+      "checked": "2026-11-01T02:14:55.158Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-10-31T02:11:03.512Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-01T02:14:55.876Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-10-31T02:10:57.565Z",
+      "checked": "2026-11-01T02:14:50.013Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-10-31T02:11:04.658Z",
+      "checked": "2026-11-01T02:14:56.866Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-10-31T02:11:05.656Z",
+      "checked": "2026-11-01T02:14:57.858Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-10-31T02:11:06.483Z",
-      "lastFound": 0
+      "checked": "2026-11-01T02:14:58.852Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-10-31T02:11:07.624Z",
+      "checked": "2026-11-01T02:15:01.225Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-10-31T02:11:09.659Z",
+      "checked": "2026-11-01T02:15:03.723Z",
       "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-10-31T02:11:10.681Z",
+      "checked": "2026-11-01T02:15:04.749Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-10-31T02:11:11.758Z",
+      "checked": "2026-11-01T02:15:05.812Z",
       "lastFound": 0,
       "via": "page"
     }
   },
   "queue": [
+    {
+      "yt": "j8RTTNx27P4",
+      "title": "What Makes Rust-Oleum Wide Fan Cans So Good? Let’s Test It!",
+      "channel": "Paint Life TV",
+      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "published": "2026-10-31T22:15:02.290Z",
+      "duration": "",
+      "channelCategory": "Painting & Waterproofing",
+      "suggestedCategory": "Painting & Waterproofing",
+      "description": "",
+      "found": "2026-11-01T02:15:03.723Z",
+      "draft": {
+        "source": "ai",
+        "title": "Priming Wooden Shelves Using Aerosol Primer",
+        "summary": "This video demonstrates how to prime closet shelves and walls using an oil-based aerosol spray can. It covers spray application, drying time, and sanding for a smooth finish.",
+        "safety": "Ensure adequate ventilation and wear a respirator mask when spraying oil-based aerosol paint indoors.",
+        "ppe": [
+          "Respirator Mask",
+          "Work Gloves",
+          "Safety Glasses"
+        ],
+        "steps": [
+          "Prepare the target surface by filling gaps with caulk.",
+          "Shake the aerosol primer spray can before application.",
+          "Spray an even coat of oil-based primer over wooden shelves.",
+          "Allow the primer to dry completely before sanding.",
+          "Sand the primed surfaces smooth using an orbital sander.",
+          "Spray remaining closet walls for uniform primer coverage."
+        ],
+        "stepsFrom": "ai",
+        "level": "Beginner",
+        "subject": "Painting & Waterproofing",
+        "category": "Painting & Waterproofing",
+        "review": {
+          "relevance": 7,
+          "quality": 8,
+          "recommend": "approve",
+          "reason": "Useful demonstration of efficient small-job priming using high-output aerosol cans and sanding technique.",
+          "unsafe": [
+            "Spraying oil-based aerosol paint indoors without wearing a respirator mask during part of the work"
+          ],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.6-flash"
+      }
+    },
     {
       "yt": "oWyQjMBQIik",
       "title": "Cómo Pintar Paredes con Rodillo SIN Dejar Marcas | Trucos de Pintor Profesional",
@@ -171,6 +218,50 @@
           "unsafe": [
             "Working in soil and handling tools without work gloves"
           ],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.8-flash"
+      }
+    },
+    {
+      "yt": "-JRAv-7Xg68",
+      "title": "Explained - BW & CW SWA Cable Glands",
+      "channel": "GSH Electrical",
+      "channelUrl": "https://www.youtube.com/@GSHElectrical",
+      "published": "2026-09-02T02:14:53.050Z",
+      "duration": "",
+      "channelCategory": "Electrical",
+      "suggestedCategory": "Electrical",
+      "description": "",
+      "found": "2026-11-01T02:14:54.142Z",
+      "draft": {
+        "source": "ai",
+        "title": "Understanding BW and CW SWA Cable Glands",
+        "summary": "This video explains the differences between BW indoor and CW outdoor steel wire armoured cable glands. It details every component included in a gland pack and how to select proper sizes using selection charts.",
+        "safety": "Ensure cables are completely isolated and wear gloves to protect hands from sharp steel wire armour edges.",
+        "ppe": [
+          "Safety Glasses",
+          "Cut-Resistant Gloves"
+        ],
+        "steps": [
+          "Identify BW glands for dry indoor use and CW glands for damp outdoor environments.",
+          "Inspect the pack to confirm it contains shrouds, earth rings, and gland assemblies.",
+          "Check the manufacturer chart to match cable core count and conductor size.",
+          "Disassemble the gland into the locknut, gland body, and gland or sealing nut.",
+          "Trap the steel wire armour securely against the gland body cone.",
+          "Tighten the locknut and slide the protective shroud over the finished joint."
+        ],
+        "stepsFrom": "ai",
+        "level": "Beginner",
+        "subject": "Wiring Accessories",
+        "category": "Electrical",
+        "review": {
+          "relevance": 9,
+          "quality": 8,
+          "recommend": "approve",
+          "reason": "Provides a very clear and practical breakdown of armoured cable gland types and parts for technicians.",
+          "unsafe": [],
           "language": "English",
           "talking": true
         },

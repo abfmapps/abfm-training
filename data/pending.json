@@ -1,91 +1,228 @@
 {
-  "lastRun": "2026-11-01T02:15:06.524Z",
+  "lastRun": "2026-11-02T02:18:49.727Z",
   "channelStatus": {
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-01T02:14:49.015Z",
+      "checked": "2026-11-02T02:18:32.014Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-01T02:14:51.007Z",
+      "checked": "2026-11-02T02:18:35.215Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-01T02:14:51.991Z",
+      "checked": "2026-11-02T02:18:36.233Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-01T02:14:54.142Z",
+      "checked": "2026-11-02T02:18:38.739Z",
       "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-01T02:14:55.158Z",
+      "checked": "2026-11-02T02:18:39.753Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-01T02:14:55.876Z",
-      "lastFound": 0
+      "checked": "2026-11-02T02:18:40.679Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-01T02:14:50.013Z",
-      "lastFound": 0,
+      "checked": "2026-11-02T02:18:34.237Z",
+      "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-01T02:14:56.866Z",
+      "checked": "2026-11-02T02:18:41.697Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-01T02:14:57.858Z",
+      "checked": "2026-11-02T02:18:42.659Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-01T02:14:58.852Z",
+      "checked": "2026-11-02T02:18:43.678Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-01T02:15:01.225Z",
-      "lastFound": 0,
+      "checked": "2026-11-02T02:18:45.989Z",
+      "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-01T02:15:03.723Z",
-      "lastFound": 1,
+      "checked": "2026-11-02T02:18:47.029Z",
+      "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-01T02:15:04.749Z",
+      "checked": "2026-11-02T02:18:48.030Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-01T02:15:05.812Z",
+      "checked": "2026-11-02T02:18:49.012Z",
       "lastFound": 0,
       "via": "page"
     }
   },
   "queue": [
+    {
+      "yt": "P4ZgX9QDNng",
+      "title": "What Needs to Happen BEFORE You Can Tile a Bathroom #tiles #bathroom #rebuild #howtotile",
+      "channel": "Sal DiBlasi (tiling & waterproofing)",
+      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
+      "published": "2026-11-01T21:18:44.622Z",
+      "duration": "",
+      "channelCategory": "",
+      "suggestedCategory": "Civil Jobs",
+      "description": "",
+      "found": "2026-11-02T02:18:45.989Z",
+      "draft": {
+        "source": "ai",
+        "title": "Preparing Bathroom Framing and Subfloor for Tiling",
+        "summary": "Demonstrates the essential framing, wall blocking, insulation, drywall hanging, and subfloor modifications required before tiling a bathroom.",
+        "safety": "Always wear eye protection and a dust mask when operating power saws and handling fiberglass insulation.",
+        "ppe": [
+          "Safety Glasses",
+          "Dust Mask",
+          "Work Gloves",
+          "Ear Protection"
+        ],
+        "steps": [
+          "Frame wall studs and construct recessed niches or shelf framing.",
+          "Install wood blocking behind drywall to support towel bars and cabinets.",
+          "Cut and fit fiberglass insulation into exterior wall cavities.",
+          "Hang drywall sheets and secure them with drywall screws.",
+          "Lower floor joists to install a recessed plywood subfloor for a curbless shower."
+        ],
+        "stepsFrom": "ai",
+        "level": "Intermediate",
+        "subject": "Bathroom Framing and Subfloor Prep",
+        "category": "Civil Jobs",
+        "review": {
+          "relevance": 6,
+          "quality": 7,
+          "recommend": "maybe",
+          "reason": "Provides practical instructions on bathroom framing and subfloor preparation, though the worker lacks basic safety gear.",
+          "unsafe": [
+            "Operating power saws and nail guns without safety glasses",
+            "Handling insulation without gloves or a respiratory mask"
+          ],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.6-flash"
+      }
+    },
+    {
+      "yt": "RgGCqK9m-Sg",
+      "title": "Why VRV/F Systems Fail: Bad Sensors, Poor Maintenance & Transformers",
+      "channel": "HVAC School",
+      "channelUrl": "https://www.youtube.com/c/HVACSchool",
+      "published": "2026-11-01T12:18:33.111Z",
+      "duration": "",
+      "channelCategory": "HVAC",
+      "suggestedCategory": "HVAC",
+      "description": "",
+      "found": "2026-11-02T02:18:34.236Z",
+      "draft": {
+        "source": "ai",
+        "title": "Common Causes of VRV and VRF Failures",
+        "summary": "Technicians discuss practical troubleshooting approaches and common failure points for VRV and VRF systems. Key topics include reviewing error histories, checking sensor faults, and diagnosing failed control transformers.",
+        "safety": "Always disconnect and verify electrical power is off before inspecting internal controls and transformers.",
+        "ppe": [
+          "Safety Glasses",
+          "Safety Boots",
+          "Insulated Hand Tools"
+        ],
+        "steps": [
+          "Ask on-site facility personnel about previous error history and part replacements.",
+          "Check error codes on central controllers, outdoor units, or manufacturer apps.",
+          "Perform a visual inspection for oil stains indicating refrigerant leaks.",
+          "Connect gauges and record baseline operating parameters before seeking technical support.",
+          "Test supply and output voltages across control transformers if controllers lose power."
+        ],
+        "stepsFrom": "ai",
+        "level": "Intermediate",
+        "subject": "VRF Systems",
+        "category": "HVAC",
+        "review": {
+          "relevance": 4,
+          "quality": 5,
+          "recommend": "reject",
+          "reason": "The video is an informal meeting room discussion lacking hands-on visual demonstrations of equipment inspection.",
+          "unsafe": [],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.8-flash"
+      }
+    },
+    {
+      "yt": "X9gHO8AOllk",
+      "title": "Why Is This Actually Allowed?",
+      "channel": "GSH Electrical",
+      "channelUrl": "https://www.youtube.com/@GSHElectrical",
+      "published": "2026-11-01T10:18:37.257Z",
+      "duration": "",
+      "channelCategory": "Electrical",
+      "suggestedCategory": "Electrical",
+      "description": "",
+      "found": "2026-11-02T02:18:38.739Z",
+      "draft": {
+        "source": "ai",
+        "title": "Understanding Class 2 Equipment and 2-Core Cables",
+        "summary": "This video explains why some appliances use two-core flexible cables without an earth conductor. It demonstrates how to check appliance rating labels for the double-insulated symbol.",
+        "safety": "Ensure appliances are completely unplugged and isolated from electrical power before opening plugs or fittings.",
+        "ppe": [
+          "Safety Glasses",
+          "Safety Shoes"
+        ],
+        "steps": [
+          "Open the ceiling rose to inspect two-core flex wiring.",
+          "Examine a standard plug showing line, neutral, and protective earth conductors.",
+          "Open a two-core plug to verify absence of an earth conductor.",
+          "Check the appliance rating label for safety certification symbols.",
+          "Identify the square-in-a-square symbol indicating Class 2 double-insulated construction.",
+          "Confirm that Class 2 appliances do not require a protective earth connection."
+        ],
+        "stepsFrom": "ai",
+        "level": "Beginner",
+        "subject": "Fundamentals",
+        "category": "Electrical",
+        "review": {
+          "relevance": 8,
+          "quality": 8,
+          "recommend": "approve",
+          "reason": "Clear explanation of Class 2 double insulation and when earth conductors are not required on plugs.",
+          "unsafe": [],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.8-flash"
+      }
+    },
     {
       "yt": "j8RTTNx27P4",
       "title": "What Makes Rust-Oleum Wide Fan Cans So Good? Let’s Test It!",

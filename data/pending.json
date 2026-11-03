@@ -209,50 +209,6 @@
       }
     },
     {
-      "yt": "-JRAv-7Xg68",
-      "title": "Explained - BW & CW SWA Cable Glands",
-      "channel": "GSH Electrical",
-      "channelUrl": "https://www.youtube.com/@GSHElectrical",
-      "published": "2026-09-02T02:14:53.050Z",
-      "duration": "",
-      "channelCategory": "Electrical",
-      "suggestedCategory": "Electrical",
-      "description": "",
-      "found": "2026-11-01T02:14:54.142Z",
-      "draft": {
-        "source": "ai",
-        "title": "Understanding BW and CW SWA Cable Glands",
-        "summary": "This video explains the differences between BW indoor and CW outdoor steel wire armoured cable glands. It details every component included in a gland pack and how to select proper sizes using selection charts.",
-        "safety": "Ensure cables are completely isolated and wear gloves to protect hands from sharp steel wire armour edges.",
-        "ppe": [
-          "Safety Glasses",
-          "Cut-Resistant Gloves"
-        ],
-        "steps": [
-          "Identify BW glands for dry indoor use and CW glands for damp outdoor environments.",
-          "Inspect the pack to confirm it contains shrouds, earth rings, and gland assemblies.",
-          "Check the manufacturer chart to match cable core count and conductor size.",
-          "Disassemble the gland into the locknut, gland body, and gland or sealing nut.",
-          "Trap the steel wire armour securely against the gland body cone.",
-          "Tighten the locknut and slide the protective shroud over the finished joint."
-        ],
-        "stepsFrom": "ai",
-        "level": "Beginner",
-        "subject": "Wiring Accessories",
-        "category": "Electrical",
-        "review": {
-          "relevance": 9,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "Provides a very clear and practical breakdown of armoured cable gland types and parts for technicians.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.8-flash"
-      }
-    },
-    {
       "yt": "GeLWlyNRWuk",
       "title": "This Is How I Was Taught to Use Side Cutters",
       "channel": "GSH Electrical",

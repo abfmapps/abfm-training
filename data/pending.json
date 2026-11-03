@@ -74,50 +74,6 @@
   },
   "queue": [
     {
-      "yt": "RgGCqK9m-Sg",
-      "title": "Why VRV/F Systems Fail: Bad Sensors, Poor Maintenance & Transformers",
-      "channel": "HVAC School",
-      "channelUrl": "https://www.youtube.com/c/HVACSchool",
-      "published": "2026-11-01T12:18:33.111Z",
-      "duration": "",
-      "channelCategory": "HVAC",
-      "suggestedCategory": "HVAC",
-      "description": "",
-      "found": "2026-11-02T02:18:34.236Z",
-      "draft": {
-        "source": "ai",
-        "title": "Common Causes of VRV and VRF Failures",
-        "summary": "Technicians discuss practical troubleshooting approaches and common failure points for VRV and VRF systems. Key topics include reviewing error histories, checking sensor faults, and diagnosing failed control transformers.",
-        "safety": "Always disconnect and verify electrical power is off before inspecting internal controls and transformers.",
-        "ppe": [
-          "Safety Glasses",
-          "Safety Boots",
-          "Insulated Hand Tools"
-        ],
-        "steps": [
-          "Ask on-site facility personnel about previous error history and part replacements.",
-          "Check error codes on central controllers, outdoor units, or manufacturer apps.",
-          "Perform a visual inspection for oil stains indicating refrigerant leaks.",
-          "Connect gauges and record baseline operating parameters before seeking technical support.",
-          "Test supply and output voltages across control transformers if controllers lose power."
-        ],
-        "stepsFrom": "ai",
-        "level": "Intermediate",
-        "subject": "VRF Systems",
-        "category": "HVAC",
-        "review": {
-          "relevance": 4,
-          "quality": 5,
-          "recommend": "reject",
-          "reason": "The video is an informal meeting room discussion lacking hands-on visual demonstrations of equipment inspection.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.8-flash"
-      }
-    },
-    {
       "yt": "X9gHO8AOllk",
       "title": "Why Is This Actually Allowed?",
       "channel": "GSH Electrical",
@@ -425,6 +381,7 @@
     "Gz7tLlWzkN4",
     "U_sB9hiDTkU",
     "EqcVihHPx7A",
-    "P4ZgX9QDNng"
+    "P4ZgX9QDNng",
+    "RgGCqK9m-Sg"
   ]
 }

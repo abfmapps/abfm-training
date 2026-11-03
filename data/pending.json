@@ -74,53 +74,6 @@
   },
   "queue": [
     {
-      "yt": "j8RTTNx27P4",
-      "title": "What Makes Rust-Oleum Wide Fan Cans So Good? Let’s Test It!",
-      "channel": "Paint Life TV",
-      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "published": "2026-10-31T22:15:02.290Z",
-      "duration": "",
-      "channelCategory": "Painting & Waterproofing",
-      "suggestedCategory": "Painting & Waterproofing",
-      "description": "",
-      "found": "2026-11-01T02:15:03.723Z",
-      "draft": {
-        "source": "ai",
-        "title": "Priming Wooden Shelves Using Aerosol Primer",
-        "summary": "This video demonstrates how to prime closet shelves and walls using an oil-based aerosol spray can. It covers spray application, drying time, and sanding for a smooth finish.",
-        "safety": "Ensure adequate ventilation and wear a respirator mask when spraying oil-based aerosol paint indoors.",
-        "ppe": [
-          "Respirator Mask",
-          "Work Gloves",
-          "Safety Glasses"
-        ],
-        "steps": [
-          "Prepare the target surface by filling gaps with caulk.",
-          "Shake the aerosol primer spray can before application.",
-          "Spray an even coat of oil-based primer over wooden shelves.",
-          "Allow the primer to dry completely before sanding.",
-          "Sand the primed surfaces smooth using an orbital sander.",
-          "Spray remaining closet walls for uniform primer coverage."
-        ],
-        "stepsFrom": "ai",
-        "level": "Beginner",
-        "subject": "Painting & Waterproofing",
-        "category": "Painting & Waterproofing",
-        "review": {
-          "relevance": 7,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "Useful demonstration of efficient small-job priming using high-output aerosol cans and sanding technique.",
-          "unsafe": [
-            "Spraying oil-based aerosol paint indoors without wearing a respirator mask during part of the work"
-          ],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.6-flash"
-      }
-    },
-    {
       "yt": "oWyQjMBQIik",
       "title": "Cómo Pintar Paredes con Rodillo SIN Dejar Marcas | Trucos de Pintor Profesional",
       "channel": "Paint Life TV",
@@ -248,6 +201,7 @@
     "EqcVihHPx7A",
     "P4ZgX9QDNng",
     "RgGCqK9m-Sg",
-    "IlxIEBFE20w"
+    "IlxIEBFE20w",
+    "j8RTTNx27P4"
   ]
 }

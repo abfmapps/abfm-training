@@ -1,92 +1,121 @@
 {
-  "lastRun": "2026-11-02T02:18:49.727Z",
+  "lastRun": "2026-11-03T02:15:48.877Z",
   "channelStatus": {
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-02T02:18:32.014Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:35.996Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-02T02:18:35.215Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:37.615Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-02T02:18:36.233Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:38.461Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-02T02:18:38.739Z",
-      "lastFound": 1,
-      "via": "page"
+      "checked": "2026-11-03T02:15:39.263Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-02T02:18:39.753Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:40.067Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-02T02:18:40.679Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:40.896Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-02T02:18:34.237Z",
-      "lastFound": 1,
-      "via": "page"
+      "checked": "2026-11-03T02:15:36.797Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-02T02:18:41.697Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:43.119Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-02T02:18:42.659Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:44.094Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-02T02:18:43.678Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:44.924Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-02T02:18:45.989Z",
-      "lastFound": 1,
-      "via": "page"
+      "checked": "2026-11-03T02:15:45.722Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-02T02:18:47.029Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:46.524Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-02T02:18:48.030Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:47.322Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-02T02:18:49.012Z",
-      "lastFound": 0,
-      "via": "page"
+      "checked": "2026-11-03T02:15:48.161Z",
+      "lastFound": 0
     }
   },
   "queue": [
+    {
+      "yt": "EqcVihHPx7A",
+      "title": "HVAC news for November 2 2026",
+      "channel": "Love2HVAC with Ty Branaman",
+      "channelUrl": "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ",
+      "published": "2026-11-02T21:11:18+00:00",
+      "duration": "",
+      "channelCategory": "HVAC",
+      "suggestedCategory": "HVAC",
+      "description": "More price increases are on the way. Gastite CSST goes up 6% on Nov. 23, and Ductmate, Metal-Fab, Owens Corning and Johns Manville have January increases, including 10% on Johns Manville duct liner. In enforcement news, Italian police seized 42.8 tonnes of illegal HFC refrigerant smuggled from China. Purdue research shows humidity can change how filters load, and Trane and American Standard launched a monitoring kit that works with most 24V systems. Forecasters expect a strong El Niño winter, milder up north and stormier down south. On earnings, Carrier reported a record $8.5 billion backlog, while Lennox cut its full-year profit guidance.\nAC service tech has been under attack from scammers making fake websites copying his and steeling people CC inflation while others selling bootlegged LQ books. They have been advertising on multiple social media platforms while pretending to be him. Make sure you look for the dot com and nothing else. \nThe HVAC training Calendar  up and running to find more training and events in your area. \nWhat would you like to know about?",
+      "found": "2026-11-03T02:15:43.119Z",
+      "draft": {
+        "source": "ai",
+        "title": "HVAC Industry Updates and News Overview",
+        "summary": "This video covers recent HVAC industry news including material price increases, refrigerant smuggling, filter research, and equipment updates. It also discusses online resources for industry training and scam warnings.",
+        "safety": "Always verify refrigerant sources and certifications to avoid counterfeit or illegal gases.",
+        "ppe": [
+          "Safety Glasses"
+        ],
+        "steps": [
+          "Review upcoming material and duct product price adjustments.",
+          "Track enforcement actions on illegal refrigerant imports.",
+          "Consider humidity effects on filter loading and MERV ratings.",
+          "Evaluate universal remote HVAC monitoring kits.",
+          "Monitor winter climate forecasts impacting heating demand.",
+          "Verify online technical resources and purchase links against official sites."
+        ],
+        "stepsFrom": "ai",
+        "level": "Beginner",
+        "subject": "Fundamentals",
+        "category": "HVAC",
+        "review": {
+          "relevance": 1,
+          "quality": 5,
+          "recommend": "reject",
+          "reason": "This is an industry news commentary vlog rather than practical hands-on technical training for maintenance technicians.",
+          "unsafe": [],
+          "language": "en",
+          "talking": true
+        },
+        "model": "gemini-3.8-flash"
+      }
+    },
     {
       "yt": "P4ZgX9QDNng",
       "title": "What Needs to Happen BEFORE You Can Tile a Bathroom #tiles #bathroom #rebuild #howtotile",

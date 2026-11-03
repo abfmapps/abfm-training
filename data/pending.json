@@ -74,50 +74,6 @@
   },
   "queue": [
     {
-      "yt": "oWyQjMBQIik",
-      "title": "Cómo Pintar Paredes con Rodillo SIN Dejar Marcas | Trucos de Pintor Profesional",
-      "channel": "Paint Life TV",
-      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "published": "2026-10-30T22:11:08.779Z",
-      "duration": "",
-      "channelCategory": "Painting & Waterproofing",
-      "suggestedCategory": "Painting & Waterproofing",
-      "description": "",
-      "found": "2026-10-31T02:11:09.659Z",
-      "draft": {
-        "source": "ai",
-        "title": "Rolling Walls Without Leaving Lap Marks",
-        "summary": "This video demonstrates how to roll interior walls smoothly without leaving lap lines, flashing, or hatbanding. It explains the importance of maintaining a wet edge, loading the roller properly, and laying off the paint.",
-        "safety": "Ensure adequate ventilation in indoor work areas to prevent buildup of paint fumes.",
-        "ppe": [
-          "Safety Glasses",
-          "Protective Gloves",
-          "Safety Shoes"
-        ],
-        "steps": [
-          "Cut in edges and roll before the perimeter paint dries.",
-          "Fully load the roller sleeve with paint to prevent dry rolling.",
-          "Overlap each roller stroke by fifty percent over the wet paint.",
-          "Maintain a consistent wet edge across the entire wall section.",
-          "Lay off the finish evenly with light top-to-bottom roller passes."
-        ],
-        "stepsFrom": "ai",
-        "level": "Beginner",
-        "subject": "Painting & Waterproofing",
-        "category": "Painting & Waterproofing",
-        "review": {
-          "relevance": 8,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "Clear demonstration of fundamental roller painting techniques to avoid lap marks.",
-          "unsafe": [],
-          "language": "Spanish",
-          "talking": true
-        },
-        "model": "gemini-3.8-flash"
-      }
-    },
-    {
       "yt": "GeLWlyNRWuk",
       "title": "This Is How I Was Taught to Use Side Cutters",
       "channel": "GSH Electrical",

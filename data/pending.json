@@ -74,49 +74,6 @@
   },
   "queue": [
     {
-      "yt": "EqcVihHPx7A",
-      "title": "HVAC news for November 2 2026",
-      "channel": "Love2HVAC with Ty Branaman",
-      "channelUrl": "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ",
-      "published": "2026-11-02T21:11:18+00:00",
-      "duration": "",
-      "channelCategory": "HVAC",
-      "suggestedCategory": "HVAC",
-      "description": "More price increases are on the way. Gastite CSST goes up 6% on Nov. 23, and Ductmate, Metal-Fab, Owens Corning and Johns Manville have January increases, including 10% on Johns Manville duct liner. In enforcement news, Italian police seized 42.8 tonnes of illegal HFC refrigerant smuggled from China. Purdue research shows humidity can change how filters load, and Trane and American Standard launched a monitoring kit that works with most 24V systems. Forecasters expect a strong El Niño winter, milder up north and stormier down south. On earnings, Carrier reported a record $8.5 billion backlog, while Lennox cut its full-year profit guidance.\nAC service tech has been under attack from scammers making fake websites copying his and steeling people CC inflation while others selling bootlegged LQ books. They have been advertising on multiple social media platforms while pretending to be him. Make sure you look for the dot com and nothing else. \nThe HVAC training Calendar  up and running to find more training and events in your area. \nWhat would you like to know about?",
-      "found": "2026-11-03T02:15:43.119Z",
-      "draft": {
-        "source": "ai",
-        "title": "HVAC Industry Updates and News Overview",
-        "summary": "This video covers recent HVAC industry news including material price increases, refrigerant smuggling, filter research, and equipment updates. It also discusses online resources for industry training and scam warnings.",
-        "safety": "Always verify refrigerant sources and certifications to avoid counterfeit or illegal gases.",
-        "ppe": [
-          "Safety Glasses"
-        ],
-        "steps": [
-          "Review upcoming material and duct product price adjustments.",
-          "Track enforcement actions on illegal refrigerant imports.",
-          "Consider humidity effects on filter loading and MERV ratings.",
-          "Evaluate universal remote HVAC monitoring kits.",
-          "Monitor winter climate forecasts impacting heating demand.",
-          "Verify online technical resources and purchase links against official sites."
-        ],
-        "stepsFrom": "ai",
-        "level": "Beginner",
-        "subject": "Fundamentals",
-        "category": "HVAC",
-        "review": {
-          "relevance": 1,
-          "quality": 5,
-          "recommend": "reject",
-          "reason": "This is an industry news commentary vlog rather than practical hands-on technical training for maintenance technicians.",
-          "unsafe": [],
-          "language": "en",
-          "talking": true
-        },
-        "model": "gemini-3.8-flash"
-      }
-    },
-    {
       "yt": "P4ZgX9QDNng",
       "title": "What Needs to Happen BEFORE You Can Tile a Bathroom #tiles #bathroom #rebuild #howtotile",
       "channel": "Sal DiBlasi (tiling & waterproofing)",
@@ -514,6 +471,7 @@
     "2-b2vlq67Do",
     "jAT6WWdV8N4",
     "Gz7tLlWzkN4",
-    "U_sB9hiDTkU"
+    "U_sB9hiDTkU",
+    "EqcVihHPx7A"
   ]
 }

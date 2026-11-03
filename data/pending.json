@@ -74,54 +74,6 @@
   },
   "queue": [
     {
-      "yt": "P4ZgX9QDNng",
-      "title": "What Needs to Happen BEFORE You Can Tile a Bathroom #tiles #bathroom #rebuild #howtotile",
-      "channel": "Sal DiBlasi (tiling & waterproofing)",
-      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "published": "2026-11-01T21:18:44.622Z",
-      "duration": "",
-      "channelCategory": "",
-      "suggestedCategory": "Civil Jobs",
-      "description": "",
-      "found": "2026-11-02T02:18:45.989Z",
-      "draft": {
-        "source": "ai",
-        "title": "Preparing Bathroom Framing and Subfloor for Tiling",
-        "summary": "Demonstrates the essential framing, wall blocking, insulation, drywall hanging, and subfloor modifications required before tiling a bathroom.",
-        "safety": "Always wear eye protection and a dust mask when operating power saws and handling fiberglass insulation.",
-        "ppe": [
-          "Safety Glasses",
-          "Dust Mask",
-          "Work Gloves",
-          "Ear Protection"
-        ],
-        "steps": [
-          "Frame wall studs and construct recessed niches or shelf framing.",
-          "Install wood blocking behind drywall to support towel bars and cabinets.",
-          "Cut and fit fiberglass insulation into exterior wall cavities.",
-          "Hang drywall sheets and secure them with drywall screws.",
-          "Lower floor joists to install a recessed plywood subfloor for a curbless shower."
-        ],
-        "stepsFrom": "ai",
-        "level": "Intermediate",
-        "subject": "Bathroom Framing and Subfloor Prep",
-        "category": "Civil Jobs",
-        "review": {
-          "relevance": 6,
-          "quality": 7,
-          "recommend": "maybe",
-          "reason": "Provides practical instructions on bathroom framing and subfloor preparation, though the worker lacks basic safety gear.",
-          "unsafe": [
-            "Operating power saws and nail guns without safety glasses",
-            "Handling insulation without gloves or a respiratory mask"
-          ],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.6-flash"
-      }
-    },
-    {
       "yt": "RgGCqK9m-Sg",
       "title": "Why VRV/F Systems Fail: Bad Sensors, Poor Maintenance & Transformers",
       "channel": "HVAC School",
@@ -472,6 +424,7 @@
     "jAT6WWdV8N4",
     "Gz7tLlWzkN4",
     "U_sB9hiDTkU",
-    "EqcVihHPx7A"
+    "EqcVihHPx7A",
+    "P4ZgX9QDNng"
   ]
 }

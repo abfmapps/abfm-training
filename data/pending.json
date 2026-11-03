@@ -72,51 +72,7 @@
       "lastFound": 0
     }
   },
-  "queue": [
-    {
-      "yt": "GeLWlyNRWuk",
-      "title": "This Is How I Was Taught to Use Side Cutters",
-      "channel": "GSH Electrical",
-      "channelUrl": "https://www.youtube.com/@GSHElectrical",
-      "published": "2026-09-01T02:11:00.628Z",
-      "duration": "",
-      "channelCategory": "Electrical",
-      "suggestedCategory": "Electrical",
-      "description": "",
-      "found": "2026-10-31T02:11:01.372Z",
-      "draft": {
-        "source": "ai",
-        "title": "Stripping Cables Using Side Cutters",
-        "summary": "This video shows how to score and remove the outer PVC sheath of a flexible cable using diagonal side cutters. It also demonstrates how to apply correct pressure to strip conductor insulation without damaging fine copper strands.",
-        "safety": "Ensure cables are completely de-energized and verified safe before cutting or stripping.",
-        "ppe": [
-          "Safety Glasses",
-          "Cut-Resistant Gloves"
-        ],
-        "steps": [
-          "Position the side cutters around the outer PVC cable sheath.",
-          "Nibble gently around the outer sheath without cutting the inner conductor insulation.",
-          "Bend the cable to snap the scored sheath and slide it off.",
-          "Apply controlled cutting pressure onto the individual core insulation.",
-          "Pull the cutters outward to remove insulation without severing copper strands."
-        ],
-        "stepsFrom": "ai",
-        "level": "Beginner",
-        "subject": "Fundamentals",
-        "category": "Electrical",
-        "review": {
-          "relevance": 8,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "Clear demonstration of fundamental hand-tool technique for stripping flexible cables without damaging conductors.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.8-flash"
-      }
-    }
-  ],
+  "queue": [],
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",

@@ -209,53 +209,6 @@
       }
     },
     {
-      "yt": "IlxIEBFE20w",
-      "title": "How to Replace a Broken Sprinkler Head | Mower Damage Repair | Sprinkler Warehouse",
-      "channel": "Sprinkler Warehouse (irrigation)",
-      "channelUrl": "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA",
-      "published": "2026-10-22T16:40:17+00:00",
-      "duration": "",
-      "channelCategory": "Landscaping",
-      "suggestedCategory": "Landscaping",
-      "description": "In this video:\n• Dig out the damaged sprinkler and expose its connection.\n• Choose the correct head, nozzle, and fitting.\n• Use a swing joint to make height adjustments easier.\n• Flush out dirt and debris before putting the sprinkler into service.\n• Set the head at soil level and firmly pack the dirt around it.\n• Check the spray direction, arc, and watering distance.\n\nWhether you’re replacing a rotor, spray head, or spray body with a rotary nozzle, matching the sprinklers on your zone helps maintain consistent watering.\n\nShop sprinkler heads, nozzles, and swing joints:\nhttps://www.sprinklerwarehouse.com/product/lawn-irrigation/sprinkler-heads\n\nFind sprinkler adjustment guides and more at Sprinkler School:\nhttps://school.sprinklerwarehouse.com/\n\nShop irrigation supplies:\nhttps://www.sprinklerwarehouse.com/\n\nSubscribe for more sprinkler repair tips, installation guides, and straightforward answers to your irrigation questions.\n\n#SprinklerRepair #SprinklerHeadReplacement #sprinklerwarehouse \n\n\nHow to adjust a PGP ADJ: https://www.youtube.com/watch?v=ozJPDHVmiUw&t=41s\n\nRainBird 5004 Rotor: https://www.youtube.com/watch?v=hO7kxBIwnms&list=PL6oFx1DjVPHoxZ7b90CUGzijqyPSREPIF&index=48\n\nToro T5PCK-RS Rotor: https://www.youtube.com/watch?v=jkaXHdmHDJs\n\nHunter Pro Spray: https://www.youtube.com/watch?v=G1QE1G6ilCQ\n\n\n\n\nYouTube comments are not monitored. Please direct your questions to the customer service representatives on www.sprinklerwarehouse.com.",
-      "found": "2026-10-30T07:02:11.687Z",
-      "draft": {
-        "source": "ai",
-        "title": "Replacing a Damaged Lawn Sprinkler Head",
-        "summary": "This video demonstrates how to excavate, select, and replace a damaged pop-up sprinkler head. It also covers using swing joints to set the head flush with the soil grade and flushing lines before final installation.",
-        "safety": "Ensure the irrigation system is depressurized before digging and be mindful of buried cables or pipes.",
-        "ppe": [
-          "Work Gloves",
-          "Safety Boots",
-          "Safety Glasses"
-        ],
-        "steps": [
-          "Dig out the soil around the damaged sprinkler to expose the fitting.",
-          "Select a matching replacement head, nozzle, and adjustable swing joint.",
-          "Flush the water line briefly to clear dirt and debris.",
-          "Thread the new sprinkler head onto the fitting at soil grade level.",
-          "Backfill the excavation and pack soil firmly around the body.",
-          "Adjust the nozzle arc and spray direction to match the zone coverage."
-        ],
-        "stepsFrom": "ai",
-        "level": "Beginner",
-        "subject": "Sprinkler Head Replacement",
-        "category": "Landscaping",
-        "review": {
-          "relevance": 9,
-          "quality": 9,
-          "recommend": "approve",
-          "reason": "Provides clear, practical instructions on replacing broken sprinkler heads and adjusting height to prevent future damage.",
-          "unsafe": [
-            "Working in soil and handling tools without work gloves"
-          ],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.8-flash"
-      }
-    },
-    {
       "yt": "-JRAv-7Xg68",
       "title": "Explained - BW & CW SWA Cable Glands",
       "channel": "GSH Electrical",
@@ -382,6 +335,7 @@
     "U_sB9hiDTkU",
     "EqcVihHPx7A",
     "P4ZgX9QDNng",
-    "RgGCqK9m-Sg"
+    "RgGCqK9m-Sg",
+    "IlxIEBFE20w"
   ]
 }

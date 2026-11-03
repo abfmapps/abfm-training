@@ -2,6 +2,42 @@
   "updated": "2026-11-03",
   "videos": [
     {
+      "id": "paint-oWyQjMBQIik",
+      "yt": "oWyQjMBQIik",
+      "title": "Rolling Walls Without Leaving Lap Marks",
+      "category": "Painting & Waterproofing",
+      "subject": "Painting & Waterproofing",
+      "level": "Beginner",
+      "channel": "Paint Life TV",
+      "duration": "",
+      "added": "2026-11-03",
+      "summary": "This video demonstrates how to roll interior walls smoothly without leaving lap lines, flashing, or hatbanding. It explains the importance of maintaining a wet edge, loading the roller properly, and laying off the paint.",
+      "safety": "Ensure adequate ventilation in indoor work areas to prevent buildup of paint fumes.",
+      "ppe": [
+        "Safety Glasses",
+        "Protective Gloves",
+        "Safety Shoes"
+      ],
+      "steps": [
+        "Cut in edges and roll before the perimeter paint dries.",
+        "Fully load the roller sleeve with paint to prevent dry rolling.",
+        "Overlap each roller stroke by fifty percent over the wet paint.",
+        "Maintain a consistent wet edge across the entire wall section.",
+        "Lay off the finish evenly with light top-to-bottom roller passes."
+      ],
+      "gemini": {
+        "date": "2026-11-03",
+        "relevance": 8,
+        "quality": 8,
+        "recommend": "approve",
+        "reason": "Clear demonstration of fundamental roller painting techniques to avoid lap marks.",
+        "unsafe": [],
+        "language": "Spanish",
+        "talking": true
+      },
+      "ytTitle": "Cómo Pintar Paredes con Rodillo SIN Dejar Marcas | Trucos de Pintor Profesional"
+    },
+    {
       "id": "elect-X9gHO8AOllk",
       "yt": "X9gHO8AOllk",
       "title": "Understanding Class 2 Equipment and 2-Core Cables",

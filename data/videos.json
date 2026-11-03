@@ -2,6 +2,42 @@
   "updated": "2026-11-03",
   "videos": [
     {
+      "id": "elect-X9gHO8AOllk",
+      "yt": "X9gHO8AOllk",
+      "title": "Understanding Class 2 Equipment and 2-Core Cables",
+      "category": "Electrical",
+      "subject": "Fundamentals",
+      "level": "Beginner",
+      "channel": "GSH Electrical",
+      "duration": "",
+      "added": "2026-11-03",
+      "summary": "This video explains why some appliances use two-core flexible cables without an earth conductor. It demonstrates how to check appliance rating labels for the double-insulated symbol.",
+      "safety": "Ensure appliances are completely unplugged and isolated from electrical power before opening plugs or fittings.",
+      "ppe": [
+        "Safety Glasses",
+        "Safety Shoes"
+      ],
+      "steps": [
+        "Open the ceiling rose to inspect two-core flex wiring.",
+        "Examine a standard plug showing line, neutral, and protective earth conductors.",
+        "Open a two-core plug to verify absence of an earth conductor.",
+        "Check the appliance rating label for safety certification symbols.",
+        "Identify the square-in-a-square symbol indicating Class 2 double-insulated construction.",
+        "Confirm that Class 2 appliances do not require a protective earth connection."
+      ],
+      "gemini": {
+        "date": "2026-11-03",
+        "relevance": 8,
+        "quality": 8,
+        "recommend": "approve",
+        "reason": "Clear explanation of Class 2 double insulation and when earth conductors are not required on plugs.",
+        "unsafe": [],
+        "language": "English",
+        "talking": true
+      },
+      "ytTitle": "Why Is This Actually Allowed?"
+    },
+    {
       "id": "elect--JRAv-7Xg68",
       "yt": "-JRAv-7Xg68",
       "title": "Understanding BW and CW SWA Cable Glands",

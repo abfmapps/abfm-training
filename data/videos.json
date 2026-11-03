@@ -1,6 +1,42 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-11-03",
   "videos": [
+    {
+      "id": "elect--JRAv-7Xg68",
+      "yt": "-JRAv-7Xg68",
+      "title": "Understanding BW and CW SWA Cable Glands",
+      "category": "Electrical",
+      "subject": "Wiring Accessories",
+      "level": "Beginner",
+      "channel": "GSH Electrical",
+      "duration": "",
+      "added": "2026-11-03",
+      "summary": "This video explains the differences between BW indoor and CW outdoor steel wire armoured cable glands. It details every component included in a gland pack and how to select proper sizes using selection charts.",
+      "safety": "Ensure cables are completely isolated and wear gloves to protect hands from sharp steel wire armour edges.",
+      "ppe": [
+        "Safety Glasses",
+        "Cut-Resistant Gloves"
+      ],
+      "steps": [
+        "Identify BW glands for dry indoor use and CW glands for damp outdoor environments.",
+        "Inspect the pack to confirm it contains shrouds, earth rings, and gland assemblies.",
+        "Check the manufacturer chart to match cable core count and conductor size.",
+        "Disassemble the gland into the locknut, gland body, and gland or sealing nut.",
+        "Trap the steel wire armour securely against the gland body cone.",
+        "Tighten the locknut and slide the protective shroud over the finished joint."
+      ],
+      "gemini": {
+        "date": "2026-11-03",
+        "relevance": 9,
+        "quality": 8,
+        "recommend": "approve",
+        "reason": "Provides a very clear and practical breakdown of armoured cable gland types and parts for technicians.",
+        "unsafe": [],
+        "language": "English",
+        "talking": true
+      },
+      "ytTitle": "Explained - BW & CW SWA Cable Glands"
+    },
     {
       "id": "uaere-A_zktV7o-Zg",
       "yt": "A_zktV7o-Zg",

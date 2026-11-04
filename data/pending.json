@@ -1,78 +1,218 @@
 {
-  "lastRun": "2026-11-03T02:15:48.877Z",
+  "lastRun": "2026-11-04T02:14:10.215Z",
   "channelStatus": {
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-03T02:15:35.996Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:13:51.371Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-03T02:15:37.615Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:13:54.540Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-03T02:15:38.461Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:13:55.655Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-03T02:15:39.263Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:13:57.927Z",
+      "lastFound": 1,
+      "via": "page"
     },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-03T02:15:40.067Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:13:59.092Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-03T02:15:40.896Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:00.251Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-03T02:15:36.797Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:13:53.527Z",
+      "lastFound": 1,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-03T02:15:43.119Z",
-      "lastFound": 1
+      "checked": "2026-11-04T02:14:01.425Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-03T02:15:44.094Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:02.549Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-03T02:15:44.924Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:03.580Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-03T02:15:45.722Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:06.053Z",
+      "lastFound": 1,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-03T02:15:46.524Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:07.148Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-03T02:15:47.322Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:08.353Z",
+      "lastFound": 0,
+      "via": "page"
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-03T02:15:48.161Z",
-      "lastFound": 0
+      "checked": "2026-11-04T02:14:09.499Z",
+      "lastFound": 0,
+      "via": "page"
     }
   },
-  "queue": [],
+  "queue": [
+    {
+      "yt": "lmxTOsW_qq0",
+      "title": "Why and How to Test Heat Pump Defrost - Short #310",
+      "channel": "HVAC School",
+      "channelUrl": "https://www.youtube.com/c/HVACSchool",
+      "published": "2026-11-03T11:13:52.482Z",
+      "duration": "",
+      "channelCategory": "HVAC",
+      "suggestedCategory": "HVAC",
+      "description": "",
+      "found": "2026-11-04T02:13:53.527Z",
+      "draft": {
+        "source": "rules",
+        "title": "Why and How to Test Heat Pump Defrost",
+        "summary": "",
+        "safety": "Isolate power at the unit before opening panels, and watch for hot, cold and moving parts.",
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "steps": [
+          "Isolate power to the unit",
+          "Inspect the equipment and note any faults",
+          "Carry out the work as shown in the video",
+          "Check connections, fixings and drains",
+          "Restore power and check the unit runs correctly",
+          "Record readings and the work done"
+        ],
+        "stepsFrom": "general",
+        "level": "Intermediate",
+        "subject": "Preventive Maintenance"
+      },
+      "aiTries": 1,
+      "aiError": "Gemini took too long"
+    },
+    {
+      "yt": "Q3MssBQinnE",
+      "title": "FLOATING shower  bench seat, How it is done. #tile #howtotile #floatingseat",
+      "channel": "Sal DiBlasi (tiling & waterproofing)",
+      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
+      "published": "2026-09-05T02:14:04.774Z",
+      "duration": "",
+      "channelCategory": "",
+      "suggestedCategory": "Civil Jobs",
+      "description": "",
+      "found": "2026-11-04T02:14:06.053Z",
+      "draft": {
+        "source": "ai",
+        "title": "Installing a Floating Shower Bench Seat",
+        "summary": "This video demonstrates how to build and install a floating bench seat inside a shower using foam board and sealant.",
+        "safety": "Ensure proper ventilation and wear safety glasses when operating power tools and handling sealants.",
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "steps": [
+          "Measure and mark the shower wall for bench height.",
+          "Cut foam board to the correct dimensions using a saw.",
+          "Apply sealant along the marked wall lines.",
+          "Press and secure the foam board bench into place.",
+          "Flood test the shower floor to check for leaks."
+        ],
+        "stepsFrom": "ai",
+        "level": "Intermediate",
+        "subject": "Tile Installation",
+        "category": "Civil Jobs",
+        "review": {
+          "relevance": 8,
+          "quality": 8,
+          "recommend": "approve",
+          "reason": "This video provides a clear and practical demonstration of installing a floating shower bench seat.",
+          "unsafe": [],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.5-flash-lite"
+      }
+    },
+    {
+      "yt": "r3Qknj22llg",
+      "title": "Panel Wiring is NOT for Everyone",
+      "channel": "GSH Electrical",
+      "channelUrl": "https://www.youtube.com/@GSHElectrical",
+      "published": "2026-09-05T02:13:56.778Z",
+      "duration": "",
+      "channelCategory": "Electrical",
+      "suggestedCategory": "Electrical",
+      "description": "",
+      "found": "2026-11-04T02:13:57.927Z",
+      "draft": {
+        "source": "ai",
+        "title": "Kitchen Fan Control Panel Troubleshooting and Repair",
+        "summary": "Demonstrates how to troubleshoot a commercial kitchen ventilation panel, replace a damaged contactor, repair faulty switch contacts, and wire thermal overload relays.",
+        "safety": "Ensure the power supply is completely isolated before touching internal panel components or changing contact blocks.",
+        "ppe": [
+          "Safety Glasses",
+          "Insulated Gloves",
+          "Safety Shoes"
+        ],
+        "steps": [
+          "Inspect control panel components for thermal damage or burnt contacts.",
+          "Replace damaged contactors with correctly rated replacement parts.",
+          "Check auxiliary switch contact blocks for physical fractures or loose mechanisms.",
+          "Transfer wiring to an available working contact pair on the switch assembly.",
+          "Verify thermal overload relay NC 95-96 and NO 97-98 terminal functions."
+        ],
+        "stepsFrom": "ai",
+        "level": "Intermediate",
+        "subject": "Motor Control",
+        "category": "Electrical",
+        "review": {
+          "relevance": 9,
+          "quality": 8,
+          "recommend": "approve",
+          "reason": "Clear real-world explanation of troubleshooting motor control circuits and thermal overload terminals.",
+          "unsafe": [
+            "Operating inside an open live panel without electrical safety gloves"
+          ],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.6-flash"
+      }
+    }
+  ],
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",

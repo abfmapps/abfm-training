@@ -2,24 +2,23 @@
 // With a GEMINI_API_KEY secret, Gemini watches each video and drafts from what it actually shows.
 // Without one, drafts come from the YouTube description and chapters plus built-in safety rules.
 // Drafts only pre-fill the approve form in the admin — nothing goes live without you.
-import { readFile, writeFile } from "node:fs/promises";
+import { load, save, mergeFields } from "./store.mjs";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 require("../assets/drafter.js");
 const { ruleDraft, aiDraft, aiQuiz } = globalThis.ABDraft;
 
-const DATA = new URL("../data/", import.meta.url);
 const KEY = process.env.GEMINI_API_KEY || "";
 const MODEL = process.env.GEMINI_MODEL || "";
 const MAX_MINUTES = Number(process.env.MAX_AI_MINUTES || 360);   // free tier allows 8 hours of YouTube video a day
 const MAX_AI = Number(process.env.MAX_AI_DRAFTS || 25);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-const pText = await readFile(new URL("pending.json", DATA), "utf8");
-const pending = JSON.parse(pText);
-const videos = JSON.parse(await readFile(new URL("videos.json", DATA), "utf8")).videos || [];
-const settings = JSON.parse(await readFile(new URL("settings.json", DATA), "utf8"));
+const pending = await load("pending", { queue: [], rejected: [], channelStatus: {} });
+const vDoc = await load("videos", { videos: [] });
+const videos = vDoc.videos || [];
+const settings = await load("settings", { categories: [] });
 const categories = (settings.categories || []).map(c => c.name);
 const minutes = d => { const p = String(d || "").split(":").map(Number); return p.length > 1 && p.every(n => !isNaN(n)) ? p.reduce((a, n) => a * 60 + n, 0) / 60 : 15; };
 let usedMin = 0;
@@ -52,8 +51,6 @@ for (const item of pending.queue || []) {
   }
 }
 // Then check videos already in the library that Gemini hasn't reviewed yet (review only — your text is never changed).
-const vText = await readFile(new URL("videos.json", DATA), "utf8");
-const vDoc = JSON.parse(vText);
 const MAX_LIB = Number(process.env.MAX_AI_LIBRARY || 15);
 let lib = 0;
 if (KEY) {
@@ -95,10 +92,9 @@ if (KEY) {
   }
 }
 console.log(`Quizzes written: ${quizzes}.`);
-const vOut = JSON.stringify(vDoc, null, 2) + "\n";
-if (vOut !== vText) await writeFile(new URL("videos.json", DATA), vOut);
+// If an admin saved meanwhile, only copy over what this job writes.
+await save("videos", vDoc, latest => { mergeFields(latest.videos, vDoc.videos, "id", ["gemini", "geminiTries", "quiz", "quizTries"]); return latest; });
 
-const out = JSON.stringify(pending, null, 2) + "\n";
-if (out !== pText) await writeFile(new URL("pending.json", DATA), out);
+await save("pending", pending, latest => { mergeFields(latest.queue, pending.queue, "yt", ["draft", "aiTries", "aiError", "suggestedCategory"]); return latest; });
 console.log(`Library videos checked by Gemini: ${lib}.`);
 console.log(`Drafts: ${rules} from description/rules, ${ai} by Gemini${KEY ? "" : " (no GEMINI_API_KEY set)"}, ${aiFail} Gemini failures.`);

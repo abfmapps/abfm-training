@@ -118,15 +118,20 @@
   function openSheet(id) { const s = $(id); s.hidden = false; const f = s.querySelector("button"); f && f.focus(); }
   function closeSheets() { $$(".sheet").forEach(s => s.hidden = true); }
 
-  /* ---------- training records & usage counts (both optional, sent to the private Google script) ---------- */
-  const backend = () => state.settings.requestUrl || "";
+  /* ---------- Supabase (content, sign-in, training records, usage counts) ---------- */
+  const SB = window.AB_CONFIG || {};
+  const backend = () => !!SB.url;
   const deviceId = (() => { let d = store.get("ab_dev", ""); if (!d) { d = Math.random().toString(36).slice(2, 12); store.set("ab_dev", d); } return d; })();
-  async function post(body, opts = {}) {
-    const r = await fetch(backend(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body), ...opts });
+  async function rpc(fn, args, opts = {}) {
+    const r = await fetch(SB.url + "/rest/v1/rpc/" + fn, {
+      method: "POST", headers: { apikey: SB.anonKey, Authorization: "Bearer " + SB.anonKey, "Content-Type": "application/json" },
+      body: JSON.stringify(args || {}), cache: "no-store", ...opts
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
     return r.json();
   }
-  /* Staff sign-in with an HR number (turned on in admin → Settings → Staff sign-in). */
-  const loginOn = () => !!(state.settings.staffLogin && backend());
+  /* Staff sign-in with an HR number (turned on in admin → Settings → Staff & training). */
+  const loginOn = () => !!state.settings.staffLogin;
   const loggedIn = () => !!state.profile.token;
   const loginNeeded = () => loginOn() && !loggedIn();
   // With sign-in on, every staff member's progress is recorded. Without it, only if the admin turned records on and the person typed a name.
@@ -146,7 +151,7 @@
     store.set("ab_done", [...state.done]); store.set("ab_done_at", state.doneAt); store.set("ab_quiz", state.quiz); store.set("ab_certs", state.certs);
   }
   async function signIn(hr) {
-    const j = await post({ action: "login", hr, device: deviceId });
+    const j = await rpc("staff_login", { p_hr: hr, p_device: deviceId });
     if (!j.ok) { const e = new Error(j.error || "error"); throw e; }
     setProfile({ token: j.token, hr: j.staff.hr, name: j.staff.name, site: j.staff.site || "", trade: j.staff.trade || "" });
     mergeProgress(j.progress);
@@ -155,20 +160,22 @@
   async function refreshMe() {
     if (!loginOn() || !loggedIn() || !navigator.onLine) return;
     try {
-      const j = await post({ action: "me", token: state.profile.token, device: deviceId });
+      const j = await rpc("staff_me", { p_token: state.profile.token });
       if (j.ok) { setProfile(Object.assign({}, state.profile, { name: j.staff.name, site: j.staff.site || "", trade: j.staff.trade || "" })); mergeProgress(j.progress); if (!/^#\/v\//.test(location.hash)) route(); }
       else if (j.error === "token" || j.error === "inactive") { signOut(true); }
     } catch {}
   }
-  function signOut(silent) {
+  function signOut(silent, noReload) {
     if (!silent && !confirm(t("signOutQ"))) return;
+    if (state.profile.token) rpc("staff_logout", { p_token: state.profile.token }).catch(() => {});
     setProfile({});
     try {
       ["ab_done", "ab_done_at", "ab_watch", "ab_quiz", "ab_certs", "ab_outbox", "ab_paths_done"].forEach(k => localStorage.removeItem(k));
-      Object.keys(localStorage).filter(k => k.startsWith("ab_steps_")).forEach(k => localStorage.removeItem(k));
+      Object.keys(localStorage).filter(k => k.startsWith("ab_steps_") || k.startsWith("ab_content_")).forEach(k => localStorage.removeItem(k));
     } catch {}
     state.done = new Set(); state.doneAt = {}; state.watch = {}; state.quiz = {}; state.certs = []; outbox = [];
-    location.hash = "#/"; route();
+    if (location.hash && location.hash !== "#/") location.hash = "#/";
+    if (!noReload) load();
   }
   function renderLogin() {
     $("#login-view").hidden = false;
@@ -184,7 +191,7 @@
         await signIn(hr);
         $("#login-view").hidden = true; document.body.classList.remove("locked");
         toast(t("welcome", { name: state.profile.name.split(" ")[0] }));
-        route(); flush();
+        await load(); flush();
       } catch (err) {
         msg.textContent = err.message === "notfound" ? t("loginBad") : err.message === "busy" ? t("loginBusy") : err.message === "inactive" ? t("loginInactive") : t("reqFail");
         msg.className = "req-msg bad";
@@ -207,7 +214,7 @@
     flushing = true;
     const batch = outbox.slice(0, 25);
     try {
-      const j = await post({ action: "record", device: deviceId, profile: profileOut(), events: batch });
+      const j = await rpc("staff_record", { p_token: state.profile.token || null, p_profile: profileOut(), p_events: batch, p_device: deviceId });
       if (j.ok) { outbox = outbox.slice(batch.length); store.set("ab_outbox", outbox); if (outbox.length) setTimeout(flush, 800); }
     } catch {}
     flushing = false;
@@ -225,7 +232,7 @@
     if (!ks.length || !statsOn() || !navigator.onLine) return;
     const events = ks.map(k => { const i = k.indexOf("|"); return { kind: k.slice(0, i), key: k.slice(i + 1), n: statBox[k] }; });
     statBox = {};
-    try { post({ action: "stats", events }, { keepalive: true }).catch(() => {}); } catch {}
+    try { rpc("track_stats", { p_events: events }, { keepalive: true }).catch(() => {}); } catch {}
   }
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") sendStats(); });
   const noResSeen = new Set(); let noResT;
@@ -237,41 +244,48 @@
   }
 
   /* ---------- data ---------- */
-  async function getJSON(path) {
-    const r = await fetch(path + "?v=" + Date.now(), { cache: "no-store" });
-    if (!r.ok) throw new Error(path + " " + r.status);
-    return r.json();
-  }
+  // Text only (titles, steps, quizzes, translations). Videos themselves always play from YouTube.
   async function load() {
     renderSkeleton();
+    const cacheKey = "ab_content_" + state.lang;
+    let c = null, offlineCopy = false;
     try {
-      const [vd, st, health, pd, tb] = await Promise.all([
-        getJSON("data/videos.json"),
-        getJSON("data/settings.json").catch(() => ({})),
-        getJSON("data/health.json").catch(() => ({ problems: [] })),
-        getJSON("data/paths.json").catch(() => ({ paths: [] })),
-        getJSON("data/toolbox.json").catch(() => ({ talks: [] }))
-      ]);
-      Object.assign(state.settings, st);
-      const dead = new Set((health.problems || []).filter(p => p.status === "notfound").map(p => p.yt));
-      state.videos = (vd.videos || []).filter(v => v && v.yt && !v.hidden && !dead.has(v.yt))
-        .map(v => Object.assign({ level: "Intermediate", ppe: [], steps: [], summary: "", safety: "" }, v));
-      state.updated = vd.updated || "";
-      state.talks = (tb.talks || []).filter(k => k && k.id && k.title && !k.hidden);
-      state.paths = (pd.paths || []).filter(p => p && p.id && !p.hidden && (p.videos || []).some(id => byId(id)));
-      state.assignments = (pd.assignments || []).filter(a => a && a.path && state.paths.some(p => p.id === a.path));
-      applySettings();
-      route();
-      checkPaths(); flush(); refreshMe();
+      c = await rpc("app_content", { p_token: state.profile.token || null, p_lang: state.lang });
+      if (c && c.ok) store.set(cacheKey, c);
     } catch (e) {
-      console.error(e);
+      c = store.get(cacheKey, null); offlineCopy = !!c;
+    }
+    if (c && !c.ok && (c.error === "login" || c.error === "inactive")) {
+      if (state.profile.token) signOut(true, true);
+      try { const st = await rpc("app_start", { p_lang: state.lang }); Object.assign(state.settings, st.settings || {}); } catch {}
+      state.settings.staffLogin = true;
+      state.ready = true;
+      applySettings(); route();
+      return;
+    }
+    if (!c || !c.ok) {
       $("#grid").innerHTML = "";
       $("#count").textContent = "";
       const em = $("#empty");
       em.hidden = false;
       em.innerHTML = `<div class="big">📶</div><h3>${esc(t("loadError"))}</h3><p><button class="btn btn-primary" id="retry">${esc(t("retry"))}</button></p>`;
       $("#retry").onclick = load;
+      return;
     }
+    const vd = c.videos || {}, health = c.health || { problems: [] }, pd = c.paths || {}, tb = c.toolbox || {};
+    state.settings = Object.assign({ categories: [], newDays: 7 }, c.settings || {});
+    const dead = new Set((health.problems || []).filter(p => p.status === "notfound").map(p => p.yt));
+    state.videos = (vd.videos || []).filter(v => v && v.yt && !v.hidden && !dead.has(v.yt))
+      .map(v => Object.assign({ level: "Intermediate", ppe: [], steps: [], summary: "", safety: "" }, v));
+    state.updated = vd.updated || "";
+    state.talks = (tb.talks || []).filter(k => k && k.id && k.title && !k.hidden);
+    state.paths = (pd.paths || []).filter(p => p && p.id && !p.hidden && (p.videos || []).some(id => byId(id)));
+    state.assignments = (pd.assignments || []).filter(a => a && a.path && state.paths.some(p => p.id === a.path));
+    state.ready = true;
+    applySettings();
+    route();
+    if (offlineCopy) toast(t("offline"));
+    checkPaths(); flush(); refreshMe();
   }
   function applySettings() {
     const s = state.settings;
@@ -376,7 +390,7 @@
         <span class="tk-body"><span class="tk-label">${esc(t("toolboxToday"))}</span><strong>${esc(x.title || talk.title)}</strong><span class="tk-hint">${esc(t("toolboxHint"))}</span></span>
         <span class="tk-go flip-r">${ICON.back}</span>`;
     }
-    $("#req-btn").hidden = !state.settings.requestUrl;
+    $("#req-btn").hidden = state.settings.requestsEnabled === false;
     $("#req-btn").title = t("requestVideo");
     // Assigned training (only the open ones on the home screen)
     const aw = $("#assign-wrap");
@@ -411,7 +425,7 @@
       } else {
         if (state.q && state.cat === "ALL" && state.level === "ALL" && state.tab === "library") noteNoResults(state.q);
         em.innerHTML = `<div class="big">🔍</div><h3>${esc(t("noResults"))}</h3><p>${esc(t("noResultsHint"))}</p><p><button class="btn" id="clear-all">${esc(t("clearFilters"))}</button></p>
-          ${state.settings.requestUrl ? `<p class="hint">${esc(t("requestHint"))}</p><p><button class="btn btn-primary" data-request>🙋 ${esc(t("requestVideo"))}</button></p>` : ""}`;
+          ${state.settings.requestsEnabled !== false ? `<p class="hint">${esc(t("requestHint"))}</p><p><button class="btn btn-primary" data-request>🙋 ${esc(t("requestVideo"))}</button></p>` : ""}`;
       }
     }
     const s = state.settings;
@@ -483,7 +497,7 @@
   }
 
   /* ---------- Ask AI ---------- */
-  const aiOn = () => !!(state.settings.aiEnabled && state.settings.requestUrl);
+  const aiOn = () => !!(state.settings.aiEnabled && backend());
   const ai = { msgs: (() => { try { return JSON.parse(sessionStorage.getItem("ab_ai") || "[]"); } catch { return []; } })(), photos: [], busy: false };
   const saveAi = () => { try { sessionStorage.setItem("ab_ai", JSON.stringify(ai.msgs.slice(-20).map(m => ({ ...m, photos: undefined, nPhotos: (m.photos || []).length || m.nPhotos || 0 })))); } catch {} };
   function mdLite(text) {
@@ -599,8 +613,8 @@
     const lang = { en: "English", hi: "Hindi", ur: "Urdu", ml: "Malayalam", bn: "Bengali", ta: "Tamil", ne: "Nepali", tl: "Filipino (Tagalog)", ar: "Arabic" }[state.lang] || "English";
     const history = ai.msgs.slice(-9, -1).filter(m => !m.error).map(m => ({ role: m.role === "user" ? "user" : "model", text: (m.text || "").slice(0, 1500) }));
     try {
-      const r = await fetch(state.settings.requestUrl, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({
-        action: "ask", device: deviceId, lang: state.lang, langName: lang, history, text,
+      const r = await fetch(SB.url + "/functions/v1/ask", { method: "POST", headers: { apikey: SB.anonKey, Authorization: "Bearer " + SB.anonKey, "Content-Type": "application/json" }, body: JSON.stringify({
+        token: state.profile.token || "", device: deviceId, lang: state.lang, langName: lang, history, text,
         images: photos.map(p => ({ mime: p.mime, data: p.data })), catalog: catalogFor(text + " " + history.map(h => h.text).join(" "))
       }) });
       const raw = await r.text();
@@ -610,11 +624,10 @@
       ai.msgs.push({ role: "bot", text: j.answer || "", videos: (j.videos || []).slice(0, 4), lang: state.lang });
     } catch (e) {
       const why = {
-        key: "The Google script is the old version — paste the new code and deploy a New version.",
-        off: "No Gemini key in the Google script — check the GEMINI_KEY line, then deploy a New version.",
-        login: "The Google script isn't public — in Deploy → Manage deployments, set 'Who has access' to Anyone.",
+        off: "Ask AI is off, or the GEMINI_API_KEY secret isn't set in Supabase (Edge Functions → Secrets).",
+        login: "Sign in again.",
         empty: "Empty question."
-      }[e.message === "notjson" ? e.detail : e.message] || (e.message === "Failed to fetch" ? "Couldn't reach the Google script (no internet, or wrong link in Settings)." : (e.detail || e.message || ""));
+      }[e.message === "notjson" ? e.detail : e.message] || (e.message === "Failed to fetch" ? "Couldn't reach the server (no internet?)." : (e.detail || e.message || ""));
       ai.msgs.push({ role: "bot", error: true, text: e.message === "busy" ? t("aiBusy") : t("aiError"), why: e.message === "busy" ? "" : String(why).slice(0, 220) });
     }
     ai.busy = false; saveAi();
@@ -656,8 +669,7 @@
     };
     store.set("ab_req_name", body.name); store.set("ab_req_site", body.site);
     try {
-      const r = await fetch(state.settings.requestUrl, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body) });
-      const j = await r.json();
+      const j = await rpc("submit_request", { p_token: state.profile.token || null, p_body: body, p_device: deviceId });
       if (!j.ok) throw new Error(j.error || "failed");
       msg.textContent = "✓ " + t("reqThanks"); msg.className = "req-msg ok";
       btn.textContent = "✓";
@@ -778,7 +790,8 @@
       if (!pin) return;
       btn.disabled = true; msg.textContent = t("sending"); msg.className = "req-msg";
       try {
-        const j = await post({ action: "signoff", pin, code: c.code, path: c.path, title: c.title, device: deviceId, profile: profileOut(), name: c.name, score: c.score, at: c.at });
+        const j = await rpc("staff_signoff", { p_token: state.profile.token || null, p_profile: profileOut(), p_pin: pin,
+          p_cert: { code: c.code, path: c.path, title: c.title, name: c.name, score: c.score }, p_device: deviceId });
         if (!j.ok) throw new Error(j.error || "error");
         c.signedBy = j.supervisor; c.signedAt = localDay();
         store.set("ab_certs", state.certs);
@@ -795,8 +808,7 @@
     const out = $("#vf-out");
     if (!backend()) { out.innerHTML = `<p>${esc(t("verifyBad"))}</p>`; return; }
     try {
-      const u = backend() + (backend().includes("?") ? "&" : "?") + "verify=" + encodeURIComponent(code);
-      const j = await (await fetch(u, { cache: "no-store" })).json();
+      const j = await rpc("verify_cert", { p_code: code });
       if (!j.ok || !j.cert) throw new Error("bad");
       const c = j.cert;
       out.innerHTML = `<p class="vf-ok">✅ ${esc(t("verifyOk"))}</p>
@@ -1219,7 +1231,7 @@
     };
     // Anyone can check a certificate link; everything else needs sign-in when it is turned on.
     if (kind === "verify" && arg) { $("#login-view").hidden = true; document.body.classList.remove("locked"); showPage(t("verify")); renderVerify(decodeURIComponent(arg)); return; }
-    if (state.videos.length && loginNeeded()) { lv.hidden = true; vv.hidden = true; $("#search-wrap").hidden = true; renderLogin(); return; }
+    if (state.ready && loginNeeded()) { lv.hidden = true; vv.hidden = true; $("#search-wrap").hidden = true; renderLogin(); return; }
     $("#login-view").hidden = true; document.body.classList.remove("locked");
     const meB = $("#me-badge"), nDue = dueRefreshers().length + myAssignments().filter(x => !pathStats(x.p).complete && isOverdue(x.a)).length;
     meB.hidden = !nDue; meB.textContent = nDue;
@@ -1308,7 +1320,7 @@
       if (tb) { location.hash = tb.dataset.tab === "library" ? "#/" : "#/" + tb.dataset.tab; scrollTo(0, 0); return; }
       if (e.target.closest("#clear-all")) { state.cat = "ALL"; state.level = "ALL"; state.q = ""; $("#q").value = ""; $("#q-clear").hidden = true; renderList(); return; }
       const lg = e.target.closest("[data-lang]");
-      if (lg) { state.showEn = false; state.lang = lg.dataset.lang; store.set("ab_lang", state.lang); closeSheets(); applyLang(); route(); return; }
+      if (lg) { state.showEn = false; state.lang = lg.dataset.lang; store.set("ab_lang", state.lang); closeSheets(); applyLang(); if (state.ready && !loginNeeded()) load(); else route(); return; }
       if (e.target.closest("[data-request]")) { openRequest(state.q); return; }
       if (e.target.closest("[data-profile]")) { openProfile(); return; }
       if (e.target.closest("[data-close]") || e.target.classList.contains("sheet")) closeSheets();

@@ -17,6 +17,12 @@ concurrency:
   group: data-writer
   cancel-in-progress: false
 
+# Content lives in Supabase. Needs the repository secret SUPABASE_SERVICE_KEY
+# (Supabase → Project Settings → API Keys → service_role).
+env:
+  SUPABASE_URL: https://xzyzovlmlppvctbpxnrw.supabase.co
+  SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
 jobs:
   find:
     runs-on: ubuntu-latest
@@ -33,7 +39,7 @@ jobs:
         env:
           FORCE_HEALTH: ${{ inputs.health && '1' || '0' }}
 
-      - name: Draft summaries and steps for the review queue
+      - name: Draft summaries, steps and quizzes for the review queue
         run: node scripts/draft.mjs || true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -45,16 +51,17 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
 
-      - name: Save results
+      - name: Keep a backup copy of the content in the repo
         run: |
+          node -e 'import("./scripts/store.mjs").then(s => s.backup(["videos","settings","channels","pending","health","paths","toolbox"]))'
           if git diff --quiet -- data; then
-            echo "Nothing new."
+            echo "Backup unchanged."
             exit 0
           fi
           git config user.name "training-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
-          git commit -m "Daily video check: update review queue"
+          git commit -m "Daily backup of training content from Supabase"
           for i in 1 2 3; do
             git pull --rebase origin "${GITHUB_REF_NAME}" && git push && exit 0
             sleep 5

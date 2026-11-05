@@ -3,7 +3,7 @@
 // Runs on GitHub Actions whenever the video list changes, and every morning.
 // Translations you type yourself in the admin are never overwritten.
 // If English text changes, auto-translations for that video are refreshed.
-import { readFile, writeFile } from "node:fs/promises";
+import { load, save, mergeFields } from "./store.mjs";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
@@ -14,7 +14,6 @@ const GEMINI_MODEL = process.env.GEMINI_MODEL || "";
 const LANG_NAMES = { hi: "Hindi", ur: "Urdu", ml: "Malayalam", bn: "Bengali", ta: "Tamil", ne: "Nepali", tl: "Filipino (Tagalog)", ar: "Arabic" };
 let googleDown = 0, usedGemini = 0, lastError = "";
 
-const DATA = new URL("../data/", import.meta.url);
 const LANGS = ["hi", "ur", "ml", "bn", "ta", "ne", "tl", "ar"];
 const MAX_REQUESTS = Number(process.env.MAX_TRANSLATIONS || 900);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -209,23 +208,22 @@ async function translateTalks(doc) {
   return changed;
 }
 
-const vText = await readFile(new URL("videos.json", DATA), "utf8");
-const sText = await readFile(new URL("settings.json", DATA), "utf8");
-const videos = JSON.parse(vText), settings = JSON.parse(sText);
+const videos = await load("videos", { videos: [] }), settings = await load("settings", {});
 
 let paths = null;
-try { paths = JSON.parse(await readFile(new URL("paths.json", DATA), "utf8")); } catch {}
+paths = await load("paths", null);
 
 const nv = (await translateVideos(videos)) + (await translateQuizzes(videos));
 const ns = await translateSettings(settings);
 const np = paths ? await translatePaths(paths) : 0;
 let talks = null;
-try { talks = JSON.parse(await readFile(new URL("toolbox.json", DATA), "utf8")); } catch {}
+talks = await load("toolbox", null);
 const nt = talks ? await translateTalks(talks) : 0;
-if (nt) await writeFile(new URL("toolbox.json", DATA), JSON.stringify(talks, null, 2) + "\n");
-if (np) await writeFile(new URL("paths.json", DATA), JSON.stringify(paths, null, 2) + "\n");
-if (nv) await writeFile(new URL("videos.json", DATA), JSON.stringify(videos, null, 2) + "\n");
-if (ns) await writeFile(new URL("settings.json", DATA), JSON.stringify(settings, null, 2) + "\n");
+// If an admin saved meanwhile, only copy over the translations.
+if (nt) await save("toolbox", talks, latest => { mergeFields(latest.talks, talks.talks, "id", ["tr"]); return latest; });
+if (np) await save("paths", paths, latest => { mergeFields(latest.paths, paths.paths, "id", ["tr"]); return latest; });
+if (nv) await save("videos", videos, latest => { mergeFields(latest.videos, videos.videos, "id", ["tr", "trq"]); return latest; });
+if (ns) await save("settings", settings, latest => { latest.tr = settings.tr; return latest; });
 if (lastError) console.log("Last error: " + lastError);
 console.log(`Gemini handled ${usedGemini} translations.`);
 console.log(`Translated ${nv} video/language pairs ${ns} settings languages and ${np} path and ${nt} toolbox-talk translations using ${requests} requests (${failures} failed).`);

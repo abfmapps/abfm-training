@@ -3,23 +3,13 @@
 // 2. Once a week, checks every published video still exists and can be played inside the app (data/health.json).
 // Nothing is published automatically: the admin approves each video.
 // No API key needed. Node 20+.
-import { readFile, writeFile } from "node:fs/promises";
+import { load, save } from "./store.mjs";
 
-const DATA = new URL("../data/", import.meta.url);
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36";
 const HEADERS = { "User-Agent": UA, "Accept-Language": "en-US,en;q=0.9", Cookie: "CONSENT=YES+1; SOCS=CAI" };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const log = (...a) => console.log(...a);
 
-async function load(name, fallback) {
-  try { return JSON.parse(await readFile(new URL(name, DATA), "utf8")); } catch { return fallback; }
-}
-async function save(name, obj, before) {
-  const text = JSON.stringify(obj, null, 2) + "\n";
-  if (text === before) return false;
-  await writeFile(new URL(name, DATA), text);
-  return true;
-}
 async function get(url, tries = 2) {
   for (let i = 0; i < tries; i++) {
     try {
@@ -228,17 +218,14 @@ async function checkHealth({ videosDoc, health }) {
   return filled;
 }
 
-const raw = {};
-for (const f of ["videos.json", "settings.json", "channels.json", "pending.json", "health.json"]) {
-  try { raw[f] = await readFile(new URL(f, DATA), "utf8"); } catch { raw[f] = ""; }
-}
 const ctx = {
-  videosDoc: await load("videos.json", { videos: [] }),
-  settings: await load("settings.json", { categories: [] }),
-  channelsDoc: await load("channels.json", { channels: [] }),
-  pending: await load("pending.json", { queue: [], rejected: [], channelStatus: {} }),
-  health: await load("health.json", { problems: [] })
+  videosDoc: await load("videos", { videos: [] }),
+  settings: await load("settings", { categories: [] }),
+  channelsDoc: await load("channels", { channels: [] }),
+  pending: await load("pending", { queue: [], rejected: [], channelStatus: {} }),
+  health: await load("health", { problems: [] })
 };
+const queueBefore = new Set((ctx.pending.queue || []).map(q => q.yt));
 await findNew(ctx);
 let filled = await checkHealth(ctx);
 // Every day: fill in a few missing lengths (the weekly health check does all of them).
@@ -253,9 +240,20 @@ let filled = await checkHealth(ctx);
   }
   if (n) log(`Lengths: tried ${n} videos without a length, filled ${filled}.`);
 }
+const found = (ctx.pending.queue || []).filter(q => !queueBefore.has(q.yt));
 const changed = [
-  await save("pending.json", ctx.pending, raw["pending.json"]),
-  await save("health.json", ctx.health, raw["health.json"]),
-  filled ? await save("videos.json", ctx.videosDoc, raw["videos.json"]) : false
+  // If the admin approved or rejected videos while this ran: keep their changes, add only what we found.
+  await save("pending", ctx.pending, latest => {
+    const have = new Set((latest.queue || []).map(q => q.yt)), rej = new Set(latest.rejected || []);
+    latest.queue = [...found.filter(q => !have.has(q.yt) && !rej.has(q.yt)), ...(latest.queue || [])].slice(0, ctx.channelsDoc.maxQueue || 150);
+    latest.channelStatus = ctx.pending.channelStatus; latest.lastRun = ctx.pending.lastRun;
+    return latest;
+  }),
+  await save("health", ctx.health, () => ctx.health),
+  filled ? await save("videos", ctx.videosDoc, latest => {
+    const len = new Map(ctx.videosDoc.videos.filter(v => v.duration).map(v => [v.id, v.duration]));
+    (latest.videos || []).forEach(v => { if (!v.duration && len.has(v.id)) v.duration = len.get(v.id); });
+    return latest;
+  }) : false
 ];
-log(changed.some(Boolean) ? "Files updated." : "No changes.");
+log(changed.some(Boolean) ? "Saved to Supabase." : "No changes.");

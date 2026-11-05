@@ -16,6 +16,24 @@ const GROQ_TEXT = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "llama-3.1-
 const GROQ_VISION = ["meta-llama/llama-4-scout-17b-16e-instruct", "meta-llama/llama-4-maverick-17b-128e-instruct"];
 // OpenRouter: the model chosen in Settings → AI (if any), then OpenRouter's automatic pick.
 const OR_DEFAULT = ["openrouter/auto"];
+// OpenRouter free models, from its public model list (cached for an hour). Used when the chosen model
+// or the automatic pick is not allowed (e.g. the account only allows free models, or has no credit).
+let orFreeCache: { at: number; text: string[]; vision: string[] } | null = null;
+async function orFreeModels(vision: boolean): Promise<string[]> {
+  if (!orFreeCache || Date.now() - orFreeCache.at > 3600_000) {
+    try {
+      const r = await fetch("https://openrouter.ai/api/v1/models", { signal: AbortSignal.timeout(8000) });
+      const list: any[] = ((await r.json()) || {}).data || [];
+      const free = list.filter((m) => m && typeof m.id === "string" && !m.id.startsWith("openrouter/") &&
+        (m.id.endsWith(":free") || (String(m.pricing?.prompt) === "0" && String(m.pricing?.completion) === "0")) &&
+        (m.architecture?.output_modalities || ["text"]).includes("text"));
+      const rank = (m: any) => (/gpt-oss|llama-3\.3-70b|deepseek|qwen|gemma|mistral|llama-4/i.test(m.id) ? 1e9 : 0) + (m.context_length || 0);
+      free.sort((a, b) => rank(b) - rank(a));
+      orFreeCache = { at: Date.now(), text: free.map((m) => m.id), vision: free.filter((m) => (m.architecture?.input_modalities || []).includes("image")).map((m) => m.id) };
+    } catch { orFreeCache = { at: Date.now() - 3000_000, text: [], vision: [] }; }
+  }
+  return (vision ? orFreeCache.vision : orFreeCache.text).slice(0, 4);
+}
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
@@ -82,8 +100,13 @@ Deno.serve(async (req) => {
     if (!key) return reply({ error: { message: "No shared OpenRouter key." } }, 412);
     const content = (Array.isArray(b.content) ? b.content : []).slice(0, 8);
     const chosen = typeof b.model === "string" && /^[\w.\-:\/]+$/.test(b.model) ? [b.model] : [];
-    let last = "";
-    for (const model of [...new Set([...chosen, ...OR_DEFAULT])]) {
+    const vision = content.some((c: any) => c && c.type === "image_url");
+    let last = "", addedFree = false;
+    const models = [...new Set([...chosen, ...OR_DEFAULT])];
+    for (let mi = 0; mi < models.length && mi < 6; mi++) {
+      const model = models[mi];
+      // When the last listed model fails, add the free models (once), so an account limited to free models still works.
+      const addFree = async () => { if (mi === models.length - 1 && !addedFree) { addedFree = true; for (const f of await orFreeModels(vision)) if (!models.includes(f)) models.push(f); } };
       for (const strict of b.json ? [true, false] : [false]) {   // some models refuse response_format: retry without it
         const r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
           method: "POST", headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" },
@@ -94,11 +117,12 @@ Deno.serve(async (req) => {
         if (r.ok && text) return reply({ text, model: "openrouter:" + (j.model || model) });
         last = j.error?.message || (r.ok ? "empty answer" : "HTTP " + r.status);
         console.log(JSON.stringify({ kind: "openrouter", model, status: r.status, error: String(last).slice(0, 300), raw: r.ok ? JSON.stringify(j).slice(0, 300) : undefined }));
-        if (r.status === 401 || r.status === 402 || r.status === 403) return reply({ error: { message: "OpenRouter: " + last } }, r.status);
+        if (r.status === 401) return reply({ error: { message: "OpenRouter: " + last } }, r.status);
         if (!(strict && r.status === 400)) break;
       }
+      await addFree();
     }
-    return reply({ error: { message: "OpenRouter: " + last } }, 503);
+    return reply({ error: { message: "OpenRouter: " + last } }, /credit|payment|402/i.test(last) ? 402 : 503);
   }
 
   if (b.kind === "github") {

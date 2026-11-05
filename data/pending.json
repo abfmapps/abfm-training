@@ -1,92 +1,137 @@
 {
-  "lastRun": "2026-11-04T02:14:10.215Z",
+  "lastRun": "2026-11-05T02:24:13.048Z",
   "channelStatus": {
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-04T02:13:51.371Z",
+      "checked": "2026-11-05T02:23:54.436Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-04T02:13:54.540Z",
+      "checked": "2026-11-05T02:23:57.603Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-04T02:13:55.655Z",
+      "checked": "2026-11-05T02:23:58.797Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-04T02:13:57.927Z",
-      "lastFound": 1,
+      "checked": "2026-11-05T02:23:59.985Z",
+      "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-04T02:13:59.092Z",
+      "checked": "2026-11-05T02:24:01.087Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-04T02:14:00.251Z",
+      "checked": "2026-11-05T02:24:03.204Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-04T02:13:53.527Z",
+      "checked": "2026-11-05T02:23:56.614Z",
       "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-04T02:14:01.425Z",
+      "checked": "2026-11-05T02:24:04.261Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-04T02:14:02.549Z",
+      "checked": "2026-11-05T02:24:05.363Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-04T02:14:03.580Z",
+      "checked": "2026-11-05T02:24:06.453Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-04T02:14:06.053Z",
+      "checked": "2026-11-05T02:24:08.986Z",
       "lastFound": 1,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-04T02:14:07.148Z",
+      "checked": "2026-11-05T02:24:10.038Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-04T02:14:08.353Z",
+      "checked": "2026-11-05T02:24:11.160Z",
       "lastFound": 0,
       "via": "page"
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-04T02:14:09.499Z",
+      "checked": "2026-11-05T02:24:12.334Z",
       "lastFound": 0,
       "via": "page"
     }
   },
   "queue": [
+    {
+      "yt": "15MXhGjXXhw",
+      "title": "What to Check During an AC Maintenance Tune-Up: Capacitor to Drain Line",
+      "channel": "HVAC School",
+      "channelUrl": "https://www.youtube.com/c/HVACSchool",
+      "published": "2026-11-04T12:23:55.548Z",
+      "duration": "",
+      "channelCategory": "HVAC",
+      "suggestedCategory": "HVAC",
+      "description": "",
+      "found": "2026-11-05T02:23:56.613Z",
+      "draft": {
+        "source": "ai",
+        "title": "Residential Split AC Maintenance Tune-Up Procedure",
+        "summary": "An HVAC technician demonstrates a complete preventive maintenance check on a split air conditioning system. The video covers electrical testing, non-invasive system diagnostics, drain line cleaning, and indoor unit inspection.",
+        "safety": "Always disconnect main electrical power and properly discharge capacitors before handling electrical components.",
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Shoe Covers"
+        ],
+        "steps": [
+          "Check compressor and fan motor amperage using a clamp meter",
+          "Disconnect power and test the run capacitor's capacitance and power factor",
+          "Clear the outdoor condensate drain line using a wet-dry vacuum",
+          "Check system operating parameters non-invasively using digital gauges and app",
+          "Inspect and clean the indoor evaporator coil and drain pan",
+          "Flush and prime the condensate drain line with clean water"
+        ],
+        "stepsFrom": "ai",
+        "level": "Intermediate",
+        "subject": "Preventive Maintenance",
+        "category": "HVAC",
+        "review": {
+          "relevance": 9,
+          "quality": 8,
+          "recommend": "approve",
+          "reason": "Practical step-by-step demonstration of AC maintenance covering both electrical and airflow diagnostics.",
+          "unsafe": [],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.6-flash"
+      }
+    },
     {
       "yt": "lmxTOsW_qq0",
       "title": "Why and How to Test Heat Pump Defrost - Short #310",
@@ -99,29 +144,82 @@
       "description": "",
       "found": "2026-11-04T02:13:53.527Z",
       "draft": {
-        "source": "rules",
-        "title": "Why and How to Test Heat Pump Defrost",
-        "summary": "",
-        "safety": "Isolate power at the unit before opening panels, and watch for hot, cold and moving parts.",
+        "source": "ai",
+        "title": "Heat Pump Defrost System Overview and Testing",
+        "summary": "Explains why heat pumps require defrost cycles and outlines key principles for testing defrost controls and sensors. Discusses differences between time-temperature and demand defrost logic.",
+        "safety": "Always disconnect electrical power before servicing or inspecting internal wiring on the outdoor unit.",
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
+          "Protective Gloves",
           "Safety Shoes"
         ],
         "steps": [
-          "Isolate power to the unit",
-          "Inspect the equipment and note any faults",
-          "Carry out the work as shown in the video",
-          "Check connections, fixings and drains",
-          "Restore power and check the unit runs correctly",
-          "Record readings and the work done"
+          "Identify whether the defrost system uses time-temperature or demand logic.",
+          "Determine if sensors are snap-action switches or variable-resistance thermistors.",
+          "Consult manufacturer guidelines before initiating a forced defrost test.",
+          "Observe reversing valve operation, outdoor fan shutoff, and supplemental heat activation.",
+          "Verify that temperature sensors are physically attached to the coil properly.",
+          "Inspect outdoor unit for ice accumulation, blocked airflow, or drainage issues."
         ],
-        "stepsFrom": "general",
+        "stepsFrom": "ai",
         "level": "Intermediate",
-        "subject": "Preventive Maintenance"
-      },
-      "aiTries": 1,
-      "aiError": "Gemini took too long"
+        "subject": "Refrigerant & Diagnostics",
+        "category": "HVAC",
+        "review": {
+          "relevance": 7,
+          "quality": 5,
+          "recommend": "maybe",
+          "reason": "The content contains valuable theoretical information, but the video is an audio podcast with a static logo image.",
+          "unsafe": [],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.6-flash"
+      }
+    },
+    {
+      "yt": "PpRb6lWX44o",
+      "title": "Prepping and tiling a shower. Start to finish. #tile #howtotile",
+      "channel": "Sal DiBlasi (tiling & waterproofing)",
+      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
+      "published": "2026-09-06T02:24:07.575Z",
+      "duration": "",
+      "channelCategory": "",
+      "suggestedCategory": "Civil Jobs",
+      "description": "",
+      "found": "2026-11-05T02:24:08.986Z",
+      "draft": {
+        "source": "ai",
+        "title": "Installing Backer Board and Waterproofing a Shower",
+        "summary": "This video demonstrates the step-by-step process of preparing a shower for tiling, including installing backer board, waterproofing, building a shower pan, and laying tile.",
+        "safety": "Wear appropriate personal protective equipment, including safety glasses and gloves, when handling power tools and building materials.",
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Knee Pads"
+        ],
+        "steps": [
+          "Measure and install shower backer board to the wall studs.",
+          "Cut and fit PVC pipes for the shower drain system.",
+          "Mix and apply mud bed mix for the shower floor.",
+          "Install waterproofing sheet membrane and sealant.",
+          "Apply thin-set mortar and lay wall and floor tiles."
+        ],
+        "stepsFrom": "ai",
+        "level": "Advanced",
+        "subject": "Tile Installation",
+        "category": "Civil Jobs",
+        "review": {
+          "relevance": 9,
+          "quality": 9,
+          "recommend": "approve",
+          "reason": "This video provides a comprehensive, detailed guide on shower preparation and tiling suitable for advanced civil maintenance technicians.",
+          "unsafe": [],
+          "language": "English",
+          "talking": true
+        },
+        "model": "gemini-3.5-flash-lite"
+      }
     },
     {
       "yt": "Q3MssBQinnE",

@@ -97,7 +97,7 @@
       body: opts.body ? JSON.stringify(opts.body) : undefined, cache: "no-store"
     });
   }
-  const noToken = () => keys.owner ? `⚠ To start jobs from here, add a GitHub token in <b>Settings → Admins & GitHub</b>. Without one, the jobs still run on their schedule.` : `⚠ Starting jobs from here isn't set up yet — ask the owner to add the GitHub token. The jobs still run on their schedule.`;
+  const noToken = () => keys.owner ? `${ABIcon("alert")} To start jobs from here, add a GitHub token in <b>Settings → Admins & GitHub</b>. Without one, the jobs still run on their schedule.` : `${ABIcon("alert")} Starting jobs from here isn't set up yet — ask the owner to add the GitHub token. The jobs still run on their schedule.`;
 
   /* ---------- content documents in Supabase ---------- */
   async function readFile(key) {
@@ -188,11 +188,11 @@
         } else if (mode === "up") {
           const { error } = await sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: AUTH_RETURN } });
           if (error) throw new Error(error.message);
-          renderConnect("✅ Account created. Check your email and click the link to confirm it, then sign in.", "in");
+          renderConnect("" + ABIcon("checkCircle") + " Account created. Check your email and click the link to confirm it, then sign in.", "in");
         } else if (mode === "reset") {
           const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: AUTH_RETURN });
           if (error) throw new Error(error.message);
-          renderConnect("✅ If that email has an account, a reset link is on its way.", "in");
+          renderConnect("" + ABIcon("checkCircle") + " If that email has an account, a reset link is on its way.", "in");
         } else {
           const { error } = await sb.auth.updateUser({ password: pw });
           if (error) throw new Error(error.message);
@@ -383,7 +383,7 @@
     list = [...list].sort((a, b) => (b.added || "").localeCompare(a.added || ""));
     const nProb = V().filter(v => probs.has(v.yt)).length;
     $("#app").innerHTML = `
-      ${nProb ? `<div class="err">⚠ ${nProb} video${nProb > 1 ? "s" : ""} may no longer play (removed from YouTube or embedding turned off). <button class="btn btn-sm" id="see-probs">Show them</button></div>` : ""}
+      ${nProb ? `<div class="err">${ABIcon("alert")} ${nProb} video${nProb > 1 ? "s" : ""} may no longer play (removed from YouTube or embedding turned off). <button class="btn btn-sm" id="see-probs">Show them</button></div>` : ""}
       <div class="bar">
         <input class="input grow" id="v-q" type="search" placeholder="Search title, channel, subject…" value="${esc(ui.q)}">
         <select id="v-cat"><option value="ALL">All categories</option>${cats().map(c => `<option ${c === ui.cat ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>
@@ -394,7 +394,7 @@
       </div>
       <p class="count">${list.length} of ${V().length} videos · <b>${V().filter(v => v.gemini).length} of ${V().length}</b> checked by Gemini · <b>${V().filter(v => v.quiz && v.quiz.length).length}</b> with a quiz</p>
       ${(() => { const noLen = V().filter(v => !v.duration).length, noQuiz = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden).length;
-        return noLen || (noQuiz && textAI()) ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">⏱ Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && textAI() ? `<button class="btn btn-sm" id="fill-quiz">🧠 Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg"></span></div>` : ""; })()}
+        return noLen || (noQuiz && textAI()) ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">${ABIcon("clock")} Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && textAI() ? `<button class="btn btn-sm" id="fill-quiz">${ABIcon("quiz")} Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg"></span></div>` : ""; })()}
       <div class="rows">${list.map(v => {
         const p = probs.get(v.yt);
         return `<div class="row ${v.hidden ? "is-hidden" : ""}">
@@ -403,15 +403,15 @@
             <h3>${esc(v.title)}</h3>
             <div class="meta">
               <span>${esc(v.category)}</span><span class="lvl lvl-${esc(v.level)}">${esc(v.level)}</span><span>${esc(v.added || "")}</span>
-              ${dupOf.get(v.id).length ? `<span class="badge-s b-dup" title="${esc(dupOf.get(v.id).map(d => d.item.title).join("\n"))}">⚠ ${dupOf.get(v.id)[0].same ? "Same video twice" : "Similar to: " + esc(dupOf.get(v.id)[0].item.title)}</span>` : ""}
-              ${v.gemini ? `<span class="badge-s b-gem" title="${esc((REC[v.gemini.recommend] || REC.maybe)[1] + " · " + v.gemini.relevance + "/10" + (v.gemini.reason ? " — " + v.gemini.reason : ""))}">✓ Checked by Gemini · ${v.gemini.relevance}/10</span>` : `<span class="badge-s b-wait">⏳ Not checked by Gemini</span>`}
-              ${v.gemini && (v.gemini.unsafe || []).length ? `<span class="badge-s b-prob" title="${esc(v.gemini.unsafe.join("; "))}">⚠ Unsafe practice shown</span>` : ""}
-              ${v.essential ? `<span class="badge-s b-ess">🦺 Essential</span>` : ""}
-              ${v.quiz && v.quiz.length ? `<span class="badge-s b-ok">🧠 Quiz</span>` : ""}
+              ${dupOf.get(v.id).length ? `<span class="badge-s b-dup" title="${esc(dupOf.get(v.id).map(d => d.item.title).join("\n"))}">${ABIcon("alert")} ${dupOf.get(v.id)[0].same ? "Same video twice" : "Similar to: " + esc(dupOf.get(v.id)[0].item.title)}</span>` : ""}
+              ${v.gemini ? `<span class="badge-s b-gem" title="${esc((REC[v.gemini.recommend] || REC.maybe)[1] + " · " + v.gemini.relevance + "/10" + (v.gemini.reason ? " — " + v.gemini.reason : ""))}">${ABIcon("check")} Checked by Gemini · ${v.gemini.relevance}/10</span>` : `<span class="badge-s b-wait">${ABIcon("hourglass")} Not checked by Gemini</span>`}
+              ${v.gemini && (v.gemini.unsafe || []).length ? `<span class="badge-s b-prob" title="${esc(v.gemini.unsafe.join("; "))}">${ABIcon("alert")} Unsafe practice shown</span>` : ""}
+              ${v.essential ? `<span class="badge-s b-ess">${ABIcon("hardhat")} Essential</span>` : ""}
+              ${v.quiz && v.quiz.length ? `<span class="badge-s b-ok">${ABIcon("quiz")} Quiz</span>` : ""}
               ${v.featured ? `<span class="badge-s b-feat">Pinned</span>` : ""}
               ${v.hidden ? `<span class="badge-s b-hidden">Hidden</span>` : ""}
               ${p ? `<span class="badge-s b-prob">${p.status === "notfound" ? "Not on YouTube" : "Can't play in app"}</span>` : ""}
-              ${v.tr && Object.keys(v.tr).length ? `<span class="badge-s b-ok">🌐 ${Object.keys(v.tr).length}/8</span>` : `<span class="badge-s b-hidden">Translating…</span>`}
+              ${v.tr && Object.keys(v.tr).length ? `<span class="badge-s b-ok">${ABIcon("globe")} ${Object.keys(v.tr).length}/8</span>` : `<span class="badge-s b-hidden">Translating…</span>`}
             </div>
           </div>
           <div class="row-actions">
@@ -543,17 +543,17 @@
         <div class="field"><label for="f-added">Date added</label><input class="input" id="f-added" type="date" value="${esc(v.added || today())}"></div>
         <div class="field"><label for="f-chan">Channel</label><input class="input" id="f-chan" value="${esc(v.channel || "")}"></div>
       </div>
-      ${v.draftSource ? `<div class="draft-note">✨ ${v.draftSource === "ai" ? "Gemini watched this video and wrote a first draft of the summary, safety note and steps." : "First draft filled in from the YouTube description and safety rules."} ${v.draftSource === "ai" ? "" : STEPS_NOTE[v.stepsFrom] || ""} Check it before publishing.${reviewHtml(v.review)}</div>` : ""}
-      <div class="draft-row"><button type="button" class="btn btn-sm" id="f-draft">✨ Auto-draft</button>${videoAI() ? `<button type="button" class="btn btn-sm" id="f-check">🔍 Check with Gemini</button>` : ""}<span class="help" id="f-draft-help">${videoAI() ? "Gemini will watch the video and fill in the summary, safety, PPE and steps." : "Fills in safety, PPE and steps for this kind of job. Add a Gemini key in Settings to draft from the video itself."}</span></div>
+      ${v.draftSource ? `<div class="draft-note">${ABIcon("sparkles")} ${v.draftSource === "ai" ? "Gemini watched this video and wrote a first draft of the summary, safety note and steps." : "First draft filled in from the YouTube description and safety rules."} ${v.draftSource === "ai" ? "" : STEPS_NOTE[v.stepsFrom] || ""} Check it before publishing.${reviewHtml(v.review)}</div>` : ""}
+      <div class="draft-row"><button type="button" class="btn btn-sm" id="f-draft">${ABIcon("sparkles")} Auto-draft</button>${videoAI() ? `<button type="button" class="btn btn-sm" id="f-check">${ABIcon("search")} Check with Gemini</button>` : ""}<span class="help" id="f-draft-help">${videoAI() ? "Gemini will watch the video and fill in the summary, safety, PPE and steps." : "Fills in safety, PPE and steps for this kind of job. Add a Gemini key in Settings to draft from the video itself."}</span></div>
       <div class="field"><label for="f-summary">What the video shows</label><textarea class="textarea" id="f-summary" placeholder="One or two plain sentences.">${esc(v.summary || "")}</textarea></div>
       <div class="field"><label for="f-safety">Safety warning</label><textarea class="textarea" id="f-safety" placeholder="e.g. Isolate power and prove dead before starting.">${esc(v.safety || "")}</textarea></div>
       <div class="field"><label for="f-ppe">Required PPE</label><input class="input" id="f-ppe" placeholder="Safety Glasses, Work Gloves" value="${esc((v.ppe || []).join(", "))}"><div class="help">Separate with commas.</div></div>
       <div class="field"><label for="f-steps">Key steps</label><textarea class="textarea" id="f-steps" rows="6" placeholder="One step per line">${esc((v.steps || []).join("\n"))}</textarea><div class="help">One step per line. 3–6 short steps work best.</div></div>
-      <div class="field"><label for="f-quiz">🧠 Quick check (quiz)</label>
+      <div class="field"><label for="f-quiz">${ABIcon("quiz")} Quick check (quiz)</label>
         <textarea class="textarea" id="f-quiz" rows="7" placeholder="Question on one line&#10;* the right answer&#10;- a wrong answer&#10;- another wrong answer&#10;&#10;Next question…">${esc(ABDraft.quizToText(v.quiz || []))}</textarea>
         <div class="help">Staff answer this after the video. Put <b>*</b> before the right answer and <b>-</b> before wrong ones; leave a blank line between questions. 3 questions for ordinary videos, 5 for safety essentials (change in Settings). Leave empty for no quiz.</div>
-        ${textAI() ? `<div class="draft-row" style="margin-top:6px"><button type="button" class="btn btn-sm" id="f-quiz-ai">✨ Write quiz with AI</button><span class="help" id="f-quiz-help">Uses the summary, safety note and steps above.</span></div>` : ""}</div>
-      <label class="check"><input type="checkbox" id="f-ess" ${v.essential ? "checked" : ""}> 🦺 Safety essential (shown in the pinned Safety section)</label>
+        ${textAI() ? `<div class="draft-row" style="margin-top:6px"><button type="button" class="btn btn-sm" id="f-quiz-ai">${ABIcon("sparkles")} Write quiz with AI</button><span class="help" id="f-quiz-help">Uses the summary, safety note and steps above.</span></div>` : ""}</div>
+      <label class="check"><input type="checkbox" id="f-ess" ${v.essential ? "checked" : ""}> ${ABIcon("hardhat")} Safety essential (shown in the pinned Safety section)</label>
       <label class="check"><input type="checkbox" id="f-feat" ${v.featured ? "checked" : ""}> Pin to top of the library</label>
       <label class="check"><input type="checkbox" id="f-hidden" ${v.hidden ? "checked" : ""}> Hide from staff</label>
       <details class="box" style="margin-top:10px">
@@ -619,7 +619,7 @@
     const checkDup = () => {
       const others = V().filter(x => !ed.original || x.id !== ed.original.id);
       const d = ABDraft.findDuplicates({ title: $("#f-title").value, yt: parseYT($("#f-url").value) || ed.v.yt }, others).filter(x => !x.same).slice(0, 3);
-      $("#f-dup").innerHTML = d.length ? `<div class="dup-note">⚠ Similar video${d.length > 1 ? "s" : ""} already in the library: ${d.map(x => `<b>${esc(x.item.title)}</b>`).join(", ")}. Check it isn't the same lesson.</div>` : "";
+      $("#f-dup").innerHTML = d.length ? `<div class="dup-note">${ABIcon("alert")} Similar video${d.length > 1 ? "s" : ""} already in the library: ${d.map(x => `<b>${esc(x.item.title)}</b>`).join(", ")}. Check it isn't the same lesson.</div>` : "";
     };
     $("#f-title").addEventListener("input", checkDup);
     setTimeout(checkDup, 0);
@@ -662,14 +662,18 @@
     general: "Steps are general safe-work steps — replace them with the steps shown in the video."
   };
   const geminiModel = () => { try { return localStorage.getItem("ab_gemini_model") || ""; } catch { return ""; } };
-  const REC = { approve: ["b-ok", "👍 Gemini: approve"], maybe: ["b-ess", "🤔 Gemini: maybe"], reject: ["b-prob", "👎 Gemini: reject"] };
+  /* Icon picker for paths and talks: a row of line icons; the chosen name goes in a hidden input. */
+  const iconPick = (id, cur) => `<input type="hidden" id="${id}" value="${esc(cur)}"><div class="icon-pick" role="radiogroup" data-pick="${id}">${ABIcon.ITEM_ICONS.map(n => `<button type="button" role="radio" aria-checked="${n === cur}" aria-label="${n}" title="${n}" data-icon="${n}">${ABIcon(n)}</button>`).join("")}</div>`;
+  function setIconPick(id, name) { const i = $("#" + id); if (!i) return; i.value = name; $$(`[data-pick="${id}"] [data-icon]`).forEach(b => b.setAttribute("aria-checked", b.dataset.icon === name)); }
+  document.addEventListener("click", e => { const b = e.target.closest(".icon-pick [data-icon]"); if (b) setIconPick(b.parentNode.dataset.pick, b.dataset.icon); });
+  const REC = { approve: ["b-ok", "Gemini: approve", "thumbUp"], maybe: ["b-ess", "Gemini: maybe", "help"], reject: ["b-prob", "Gemini: reject", "thumbDown"] };
   function reviewHtml(rv, compact) {
     if (!rv) return "";
-    const [cls, label] = REC[rv.recommend] || REC.maybe;
+    const [cls, label, ic] = REC[rv.recommend] || REC.maybe;
     return `<div class="ai-rv">
-      <span class="badge-s ${cls}">${label} · ${rv.relevance}/10</span>
+      <span class="badge-s ${cls}">${ABIcon(ic)} ${label} · ${rv.relevance}/10</span>
       ${rv.reason ? `<span class="ai-reason">${esc(rv.reason)}</span>` : ""}
-      ${(rv.unsafe || []).length ? `<div class="ai-unsafe">⚠ Unsafe practice shown: ${rv.unsafe.map(esc).join("; ")}</div>` : ""}
+      ${(rv.unsafe || []).length ? `<div class="ai-unsafe">${ABIcon("alert")} Unsafe practice shown: ${rv.unsafe.map(esc).join("; ")}</div>` : ""}
       ${!compact && rv.language && !/^english$/i.test(rv.language) ? `<div class="ai-reason">Spoken language: ${esc(rv.language)}</div>` : ""}
       ${!compact && rv.talking === false ? `<div class="ai-reason">No narration — mostly visual.</div>` : ""}
     </div>`;
@@ -778,7 +782,7 @@
       return d;
     }, `${isEdit ? "Edit" : "Add"} video: ${title}`);
     if (newCat && !(data.settings.json.categories || []).some(c => c.name === newCat)) {
-      await update("settings", s => { s.categories = s.categories || []; s.categories.push({ name: newCat, icon: "▶️", keywords: [] }); return s; }, `Add category: ${newCat}`);
+      await update("settings", s => { s.categories = s.categories || []; s.categories.push({ name: newCat, icon: "", keywords: [] }); return s; }, `Add category: ${newCat}`);
     }
     closeDrawer();
     if (onSaved) await onSaved(v);
@@ -798,9 +802,9 @@
     const sorted = qSort === "ai" ? [...q].sort((a, b) => score(b) - score(a)) : q;
     const dupNote = item => {
       const lib = ABDraft.findDuplicates(item, V())[0];
-      if (lib) return `<div class="dup-note">⚠ ${lib.same ? "Already in the library" : "Looks like a video already in the library"}: <b>${esc(lib.item.title)}</b></div>`;
+      if (lib) return `<div class="dup-note">${ABIcon("alert")} ${lib.same ? "Already in the library" : "Looks like a video already in the library"}: <b>${esc(lib.item.title)}</b></div>`;
       const qd = ABDraft.findDuplicates(item, q)[0];
-      if (qd) return `<div class="dup-note soft">⚠ Similar video also waiting in the queue: <b>${esc(qd.item.title)}</b> — you may only need one.</div>`;
+      if (qd) return `<div class="dup-note soft">${ABIcon("alert")} Similar video also waiting in the queue: <b>${esc(qd.item.title)}</b> — you may only need one.</div>`;
       return "";
     };
     $("#app").innerHTML = `
@@ -813,31 +817,31 @@
           </div>
         </div>
       </div>
-      ${errs.length ? `<div class="err err-row"><span>⚠ ${errs.length} channel${errs.length > 1 ? "s" : ""} couldn't be checked. <a href="#" data-go="channels">See which</a></span><button type="button" class="btn btn-sm" data-find>↻ Retry</button></div><div class="find-msg help" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>` : ""}
+      ${errs.length ? `<div class="err err-row"><span>${ABIcon("alert")} ${errs.length} channel${errs.length > 1 ? "s" : ""} couldn't be checked. <a href="#" data-go="channels">See which</a></span><button type="button" class="btn btn-sm" data-find>${ABIcon("refresh")} Retry</button></div><div class="find-msg help" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>` : ""}
       ${q.length ? `<div class="bar"><p class="count grow" style="margin:0">${q.length} waiting · <b>${nAi} of ${q.length}</b> checked by Gemini</p>
         <select id="q-sort"><option value="new" ${qSort === "new" ? "selected" : ""}>Newest first</option><option value="ai" ${qSort === "ai" ? "selected" : ""}>Gemini's best first</option></select>
         ${nRej ? `<button class="btn btn-sm" id="q-rej-ai">Reject ${nRej} Gemini says no</button>` : ""}
         <button class="btn btn-sm" id="q-clear">Reject all</button></div>` : ""}
-      ${!videoAI() && !nAi ? `<div class="hint-box">✨ Turn on Gemini in <b>Settings</b> and it will watch every new video, draft the steps, score how useful it is, and warn you about unsafe practice.</div>` : ""}
+      ${!videoAI() && !nAi ? `<div class="hint-box">${ABIcon("sparkles")} Turn on Gemini in <b>Settings</b> and it will watch every new video, draft the steps, score how useful it is, and warn you about unsafe practice.</div>` : ""}
       <div class="grid">${sorted.map(item => `
         <article class="qcard" data-yt="${esc(item.yt)}">
           <div class="thumb" data-preview="${esc(item.yt)}" style="cursor:pointer"><img loading="lazy" src="${thumb(item.yt)}" alt="" width="320" height="180">${item.duration ? `<span class="dur">${esc(item.duration)}</span>` : ""}</div>
           <div class="body">
-            <div class="meta"><span>${esc(item.suggestedCategory || "Unsorted")}</span>${item.published ? `<span class="dot">${esc(item.published.slice(0, 10))}</span>` : ""}${item.draft && item.draft.source === "ai" ? `<span class="badge-s b-gem">✓ Checked by Gemini</span>` : `<span class="badge-s b-wait">⏳ Not checked by Gemini yet</span>`}</div>
+            <div class="meta"><span>${esc(item.suggestedCategory || "Unsorted")}</span>${item.published ? `<span class="dot">${esc(item.published.slice(0, 10))}</span>` : ""}${item.draft && item.draft.source === "ai" ? `<span class="badge-s b-gem">${ABIcon("check")} Checked by Gemini</span>` : `<span class="badge-s b-wait">${ABIcon("hourglass")} Not checked by Gemini yet</span>`}</div>
             <div class="q-title"><h3>${esc((item.draft && item.draft.title) || item.title)}</h3><button class="btn btn-sm btn-icon q-edit" data-review="${esc(item.yt)}" aria-label="Review and edit before approving" title="Review & edit"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg></button></div>
             ${item.draft && item.draft.title && item.draft.title !== item.title ? `<div class="yt-t">YouTube: ${esc(item.title)}</div>` : ""}
             <div class="count" style="margin:0">${esc(item.channel || "")}</div>
             ${item.aiError && !(item.draft && item.draft.review) ? `<div class="ai-unsafe" style="background:var(--surface-2);color:var(--muted)">Gemini couldn't check it yet (${item.aiTries || 0}/3 tries): ${esc(item.aiError)}</div>` : ""}
-            ${item.draft && item.draft.review ? reviewHtml(item.draft.review, true) : item.draft ? `<div class="ai-reason">✨ Basic draft ready · ${{ chapters: "steps from the YouTube chapters", description: "steps from the YouTube description", topic: "standard steps for this job", general: "general safe-work steps" }[item.draft.stepsFrom] || "no steps yet"}</div>` : ""}
+            ${item.draft && item.draft.review ? reviewHtml(item.draft.review, true) : item.draft ? `<div class="ai-reason">${ABIcon("sparkles")} Basic draft ready · ${{ chapters: "steps from the YouTube chapters", description: "steps from the YouTube description", topic: "standard steps for this job", general: "general safe-work steps" }[item.draft.stepsFrom] || "no steps yet"}</div>` : ""}
             ${dupNote(item)}
             ${item.description ? `<div class="desc">${esc(item.description)}</div>` : ""}
             <div class="acts">
-              <button class="btn btn-sm" data-reject="${esc(item.yt)}">✕ Reject</button>
-              <button class="btn btn-sm btn-primary" data-approve="${esc(item.yt)}">✓ Approve</button>
+              <button class="btn btn-sm" data-reject="${esc(item.yt)}">${ABIcon("x")} Reject</button>
+              <button class="btn btn-sm btn-primary" data-approve="${esc(item.yt)}">${ABIcon("check")} Approve</button>
             </div>
           </div>
         </article>`).join("")}</div>
-      ${q.length ? "" : `<div class="empty"><div class="big">✅</div><h3>Nothing waiting</h3><p>New videos from your channels will appear here.</p></div>`}`;
+      ${q.length ? "" : `<div class="empty"><div class="big">${ABIcon("checkCircle")}</div><h3>Nothing waiting</h3><p>New videos from your channels will appear here.</p></div>`}`;
     const qs = $("#q-sort"); if (qs) qs.onchange = e => { qSort = e.target.value; renderQueue(); };
     const qr = $("#q-rej-ai");
     if (qr) qr.onclick = async () => {
@@ -912,17 +916,17 @@
       <div class="rows">${P().map((p, i) => {
         const vids = (p.videos || []).map(id => byId.get(id)).filter(Boolean);
         return `<div class="row">
-          <div class="thumb path-ico">${esc(p.icon || "🎓")}</div>
+          <div class="thumb path-ico">${ABIcon.item(p.icon, p.title, "grad")}</div>
           <div><h3>${esc(p.title)}</h3>
             <div class="meta"><span>${vids.length} video${vids.length === 1 ? "" : "s"}</span>${p.hidden ? `<span class="badge-s b-hidden">Hidden</span>` : ""}
-            ${p.tr && Object.keys(p.tr).length ? `<span class="badge-s b-ok">🌐 ${Object.keys(p.tr).length}/8</span>` : `<span class="badge-s b-hidden">Translating…</span>`}</div></div>
+            ${p.tr && Object.keys(p.tr).length ? `<span class="badge-s b-ok">${ABIcon("globe")} ${Object.keys(p.tr).length}/8</span>` : `<span class="badge-s b-hidden">Translating…</span>`}</div></div>
           <div class="row-actions">
-            <button class="btn btn-sm" data-p-up="${i}" ${i === 0 ? "disabled" : ""} aria-label="Move up">↑</button>
+            <button class="btn btn-sm" data-p-up="${i}" ${i === 0 ? "disabled" : ""} aria-label="Move up">${ABIcon("arrowUp")}</button>
             <button class="btn btn-sm" data-p-edit="${i}">Edit</button>
             <button class="btn btn-sm btn-danger" data-p-del="${i}">Delete</button>
           </div></div>`;
       }).join("") || `<div class="empty"><h3>No learning paths yet</h3></div>`}</div>`;
-    $("#p-add").onclick = () => { pe = { index: -1, p: { id: "", icon: "🎓", title: "", description: "", videos: [] } }; renderPaths(); };
+    $("#p-add").onclick = () => { pe = { index: -1, p: { id: "", icon: "grad", title: "", description: "", videos: [] } }; renderPaths(); };
     $$("[data-p-edit]").forEach(b => b.onclick = () => { const i = +b.dataset.pEdit; pe = { index: i, p: JSON.parse(JSON.stringify(P()[i])) }; renderPaths(); });
     $$("[data-p-del]").forEach(b => b.onclick = async () => {
       const p = P()[+b.dataset.pDel]; if (!confirm(`Delete the path “${p.title}”? The videos stay in the library.`)) return;
@@ -942,11 +946,11 @@
     return `<form class="card-plain" id="as-form" style="margin-top:18px">
       <h2>Assign a learning path</h2>
       <p class="help">Staff see it at the top of their home screen until they finish, with the due date. Tick no trade to assign it to everyone. Trades come from the staff list.</p>
-      <div class="rows">${AS().map((a, i) => { const p = byId.get(a.path); return `<div class="ch-row"><div><b>${esc(p ? (p.icon || "🎓") + " " + p.title : a.path + " (deleted path)")}</b>
+      <div class="rows">${AS().map((a, i) => { const p = byId.get(a.path); return `<div class="ch-row"><div><b>${p ? ABIcon.item(p.icon, p.title, "grad") + " " + esc(p.title) : esc(a.path + " (deleted path)")}</b>
         <div class="small">For: ${(a.trades || []).length ? a.trades.map(esc).join(", ") : "everyone"}${a.due ? " · due " + esc(a.due) : " · no due date"}${a.note ? " · " + esc(a.note) : ""}</div></div>
         <div class="row-actions"><button type="button" class="btn btn-sm btn-danger" data-as-del="${i}">Remove</button></div></div>`; }).join("") || `<p class="help">Nothing assigned yet.</p>`}</div>
       <div class="two" style="margin-top:12px">
-        <div class="field"><label for="as-path">Learning path</label><select class="input" id="as-path">${P().filter(p => !p.hidden).map(p => `<option value="${esc(p.id)}">${esc(p.icon || "🎓")} ${esc(p.title)}</option>`).join("")}</select></div>
+        <div class="field"><label for="as-path">Learning path</label><select class="input" id="as-path">${P().filter(p => !p.hidden).map(p => `<option value="${esc(p.id)}">${esc(p.title)}</option>`).join("")}</select></div>
         <div class="field"><label for="as-due">Due date (optional)</label><input class="input" id="as-due" type="date"></div>
       </div>
       <div class="field"><label>For which trades? (none ticked = everyone)</label><div class="as-trades">${cats().map(c => `<label class="check"><input type="checkbox" class="as-tr" value="${esc(c)}"> ${esc(c)}</label>`).join("")}</div></div>
@@ -978,10 +982,8 @@
     $("#app").innerHTML = `
       <button class="btn btn-sm btn-ghost" id="pe-back">‹ All paths</button>
       <h2 style="margin:10px 0 14px">${pe.index < 0 ? "New learning path" : "Edit learning path"}</h2>
-      <div class="two" style="grid-template-columns:90px 1fr">
-        <div class="field"><label for="pe-icon">Icon</label><input class="input" id="pe-icon" maxlength="4" value="${esc(p.icon || "")}" style="text-align:center;font-size:22px"></div>
-        <div class="field"><label for="pe-title">Title</label><input class="input" id="pe-title" placeholder="e.g. New HVAC Technician" value="${esc(p.title)}"></div>
-      </div>
+      <div class="field"><label for="pe-title">Title</label><input class="input" id="pe-title" placeholder="e.g. New HVAC Technician" value="${esc(p.title)}"></div>
+      <div class="field"><label>Icon</label>${iconPick("pe-icon", ABIcon.nameFor(p.icon, p.title, "grad"))}</div>
       <div class="field"><label for="pe-desc">Description</label><textarea class="textarea" id="pe-desc" placeholder="Who is this for and what will they learn?">${esc(p.description || "")}</textarea></div>
       <label class="check"><input type="checkbox" id="pe-hidden" ${p.hidden ? "checked" : ""}> Hide from staff</label>
       <h3 style="margin:18px 0 8px">Videos in order (${p.videos.length})</h3>
@@ -991,9 +993,9 @@
           <div class="thumb">${v ? `<img src="${thumb(v.yt)}" alt="" width="320" height="180">` : ""}</div>
           <div><h3>${i + 1}. ${esc(v ? v.title : id + " (deleted)")}</h3><div class="meta">${v ? `<span>${esc(v.category)}</span><span class="lvl lvl-${esc(v.level)}">${esc(v.level)}</span>` : ""}</div></div>
           <div class="row-actions">
-            <button class="btn btn-sm" data-pv-up="${i}" ${i === 0 ? "disabled" : ""} aria-label="Move up">↑</button>
-            <button class="btn btn-sm" data-pv-down="${i}" ${i === p.videos.length - 1 ? "disabled" : ""} aria-label="Move down">↓</button>
-            <button class="btn btn-sm btn-danger" data-pv-rm="${i}" aria-label="Remove">✕</button>
+            <button class="btn btn-sm" data-pv-up="${i}" ${i === 0 ? "disabled" : ""} aria-label="Move up">${ABIcon("arrowUp")}</button>
+            <button class="btn btn-sm" data-pv-down="${i}" ${i === p.videos.length - 1 ? "disabled" : ""} aria-label="Move down">${ABIcon("arrowDown")}</button>
+            <button class="btn btn-sm btn-danger" data-pv-rm="${i}" aria-label="Remove">${ABIcon("x")}</button>
           </div></div>`;
       }).join("") || `<p class="help">No videos yet. Add some below.</p>`}</div>
       <div class="bar" style="margin-top:12px">
@@ -1078,33 +1080,33 @@
     const list = (reqs || []).filter(r => reqFilter === "all" || (reqFilter === "new" ? r.status === "new" : r.status !== "new"));
     const ago = iso => { const d = (Date.now() - Date.parse(iso)) / 864e5; return d < 1 ? "today" : d < 2 ? "yesterday" : Math.floor(d) + " days ago"; };
     $("#app").innerHTML = `
-      ${reqErr ? `<div class="err">⚠ ${esc(reqErr)}</div>` : ""}
+      ${reqErr ? `<div class="err">${ABIcon("alert")} ${esc(reqErr)}</div>` : ""}
       <div class="bar">
         <select id="rq-filter">${[["new", "New"], ["done", "Done"], ["all", "All"]].map(([k, l]) => `<option value="${k}" ${k === reqFilter ? "selected" : ""}>${l}</option>`).join("")}</select>
         <p class="count grow" style="margin:0">${reqs ? `${(reqs || []).filter(r => r.status === "new").length} new · ${(reqs || []).length} total` : "Loading…"}</p>
-        <button class="btn btn-sm" id="rq-refresh">↻ Refresh</button>
+        <button class="btn btn-sm" id="rq-refresh">${ABIcon("refresh")} Refresh</button>
       </div>
       <div class="rows">${list.map(r => `
         <div class="row req ${r.status !== "new" ? "is-hidden" : ""}">
-          <div class="req-ico">🙋</div>
+          <div class="req-ico">${ABIcon("hand")}</div>
           <div>
             <h3>${esc(r.topic)}</h3>
             ${r.details ? `<p class="req-d">${esc(r.details)}</p>` : ""}
             <div class="meta">
               ${r.category ? `<span>${esc(r.category)}</span>` : ""}
-              ${r.name ? `<span>👤 ${esc(r.name)}</span>` : ""}${r.site ? `<span>📍 ${esc(r.site)}</span>` : ""}
+              ${r.name ? `<span>${ABIcon("user")} ${esc(r.name)}</span>` : ""}${r.site ? `<span>${ABIcon("pin")} ${esc(r.site)}</span>` : ""}
               <span>${esc(ago(r.time))}</span>${r.lang && r.lang !== "en" ? `<span>${esc(String(r.lang).toUpperCase())}</span>` : ""}
-              ${r.status !== "new" ? `<span class="badge-s b-ok">✓ Done</span>` : ""}
+              ${r.status !== "new" ? `<span class="badge-s b-ok">${ABIcon("check")} Done</span>` : ""}
             </div>
           </div>
           <div class="row-actions">
-            ${videoAI() && r.status === "new" ? `<button class="btn btn-sm" data-rq-find="${esc(r.id)}">✨ Find videos</button>` : ""}
+            ${videoAI() && r.status === "new" ? `<button class="btn btn-sm" data-rq-find="${esc(r.id)}">${ABIcon("sparkles")} Find videos</button>` : ""}
             <a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(r.topic)}" target="_blank" rel="noopener">Search YouTube</a>
             ${r.status === "new" ? `<button class="btn btn-sm btn-primary" data-rq-add="${esc(r.id)}">Add video</button><button class="btn btn-sm" data-rq-done="${esc(r.id)}">Mark done</button>` : `<button class="btn btn-sm" data-rq-open="${esc(r.id)}">Reopen</button>`}
             <button class="btn btn-sm btn-danger" data-rq-del="${esc(r.id)}">Delete</button>
           </div>
           <div class="rq-found" id="found-${esc(r.id)}">${foundHtml(r)}</div>
-        </div>`).join("") || (reqs ? `<div class="empty"><div class="big">📭</div><h3>No ${reqFilter === "all" ? "" : reqFilter + " "}requests</h3></div>` : "")}</div>`;
+        </div>`).join("") || (reqs ? `<div class="empty"><div class="big">${ABIcon("inbox")}</div><h3>No ${reqFilter === "all" ? "" : reqFilter + " "}requests</h3></div>` : "")}</div>`;
     $("#rq-filter").onchange = e => { reqFilter = e.target.value; renderRequests(); };
     $("#rq-refresh").onclick = async () => { reqs = null; renderRequests(); await loadRequests(); render(); };
     $$("[data-rq-find]").forEach(b => b.onclick = async () => {
@@ -1128,7 +1130,7 @@
         const [rid, yt] = b.dataset.fvQ.split("|");
         const r = reqs.find(x => String(x.id) === rid), v = (found[rid] || []).find(x => x.yt === yt);
         await update("pending", d => { d.queue = d.queue || []; if (!d.queue.some(i => i.yt === yt)) d.queue.unshift({ yt, title: v.title, channel: v.channel, suggestedCategory: r.category || "", description: "Found by Gemini for a staff request: " + r.topic, found: new Date().toISOString(), published: "", duration: "" }); return d; }, `Queue video for request: ${r.topic}`);
-        b.textContent = "✓ In queue"; b.disabled = true; render();
+        b.innerHTML = ABIcon("check") + " In queue"; b.disabled = true; render();
       });
     };
     wireFound();
@@ -1202,7 +1204,7 @@
   function renderPeople() {
     if (!ppl && !pplErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading staff and records…</p>`; loadPeople().then(() => peopleView() && renderPeople()); return; }
     const sub = view === "people" ? `<div class="seg" style="margin-bottom:16px">${[["people", "Staff progress"], ["staff", "Staff list"]].map(([k, l]) => `<button data-psub="${k}" aria-pressed="${pplSub === k}">${l}</button>`).join("")}</div>` : "";
-    const head = `${pplErr ? `<div class="err">⚠ ${esc(pplErr)}</div>` : ""}
+    const head = `${pplErr ? `<div class="err">${ABIcon("alert")} ${esc(pplErr)}</div>` : ""}
       ${!data.settings.json.staffLogin ? `<div class="hint-box">Staff sign-in is <b>off</b>. Add your staff below, then turn it on in <b>Settings → Staff & training</b>. From then on, staff must enter their HR number to use the app, and all progress is recorded here.</div>` : ""}
       ${sub}`;
     if (!ppl) { $("#app").innerHTML = head; wirePeopleSub(); return; }
@@ -1214,20 +1216,20 @@
       if (pplSel) {
         const p = people.find(x => (x.hr || "~" + String(x.name).toLowerCase()) === pplSel);
         const recs = (ppl.records || []).filter(r => p && (p.hr ? r[1] === p.hr : !r[1] && r[2] === p.name)).slice().reverse();
-        const label = { video: "▶ Watched", quiz: "🧠 Quiz", path: "🎓 Finished path", cert: "📜 Certificate", signoff: "✍️ Signed off" };
+        const label = { video: ["play", "Watched"], quiz: ["quiz", "Quiz"], path: ["grad", "Finished path"], cert: ["award", "Certificate"], signoff: ["pen", "Signed off"] };
         body = p ? `<button class="btn btn-sm btn-ghost" id="pp-back">‹ All staff</button>
           <div class="card-plain"><h2>${esc(p.name || "(no name)")} ${p.hr ? `<span class="badge-s b-hidden">HR ${esc(p.hr)}</span>` : `<span class="badge-s b-prob">Not signed in</span>`}</h2>
           <p class="count">${[p.trade, p.site].filter(Boolean).map(esc).join(" · ")}</p>
           <p><b>${p.videos.size}</b> videos watched · <b>${Object.values(p.quiz).filter(Boolean).length}</b> quizzes passed · <b>${p.paths.size}</b> paths finished · <b>${p.certs.length}</b> certificates</p>
-          ${p.certs.length ? `<p>${p.certs.map(c => `📜 <b>${esc(c.title)}</b> (${esc(String(c.time).slice(0, 10))}, code ${esc(c.code)}${c.signedBy ? ", signed off by " + esc(c.signedBy) : ""})`).join("<br>")}</p>` : ""}</div>
-          <div class="rows">${recs.map(r => `<div class="row rec"><div class="req-ico">${(label[r[5]] || "•").split(" ")[0]}</div><div><h3>${esc(r[7] || r[6])}</h3><div class="meta"><span>${esc((label[r[5]] || r[5]).replace(/^\S+\s/, ""))}</span>${r[5] === "quiz" ? `<span class="badge-s ${String(r[10]) === "true" ? "b-ok" : "b-prob"}">${esc(r[8])}/${esc(r[9])} ${String(r[10]) === "true" ? "passed" : "not passed"}</span>` : ""}<span>${esc(new Date(r[0]).toLocaleString())}</span></div></div></div>`).join("") || `<p class="help">No activity yet.</p>`}</div>` : `<p>Not found.</p>`;
+          ${p.certs.length ? `<p>${p.certs.map(c => `${ABIcon("award")} <b>${esc(c.title)}</b> (${esc(String(c.time).slice(0, 10))}, code ${esc(c.code)}${c.signedBy ? ", signed off by " + esc(c.signedBy) : ""})`).join("<br>")}</p>` : ""}</div>
+          <div class="rows">${recs.map(r => `<div class="row rec"><div class="req-ico">${label[r[5]] ? ABIcon(label[r[5]][0]) : "•"}</div><div><h3>${esc(r[7] || r[6])}</h3><div class="meta"><span>${esc(label[r[5]] ? label[r[5]][1] : r[5])}</span>${r[5] === "quiz" ? `<span class="badge-s ${String(r[10]) === "true" ? "b-ok" : "b-prob"}">${esc(r[8])}/${esc(r[9])} ${String(r[10]) === "true" ? "passed" : "not passed"}</span>` : ""}<span>${esc(new Date(r[0]).toLocaleString())}</span></div></div></div>`).join("") || `<p class="help">No activity yet.</p>`}</div>` : `<p>Not found.</p>`;
       } else {
         const words = pplQ.toLowerCase().split(/\s+/).filter(Boolean);
         const list = people.filter(p => !words.length || words.every(w => [p.hr, p.name, p.site, p.trade].join(" ").toLowerCase().includes(w)))
           .sort((a, b) => (b.last || "").localeCompare(a.last || "") || String(a.name).localeCompare(String(b.name)));
         const active30 = people.filter(p => p.last && Date.now() - Date.parse(p.last) < 30 * 864e5).length;
         body = `<div class="bar"><input class="input grow" id="pp-q" type="search" placeholder="Search name, HR number, site, trade…" value="${esc(pplQ)}">
-            <button class="btn btn-sm" id="pp-csv">⬇ Export summary</button><button class="btn btn-sm" id="pp-csv2">⬇ Export all records</button><button class="btn btn-sm" id="pp-refresh">↻ Refresh</button></div>
+            <button class="btn btn-sm" id="pp-csv">${ABIcon("download")} Export summary</button><button class="btn btn-sm" id="pp-csv2">${ABIcon("download")} Export all records</button><button class="btn btn-sm" id="pp-refresh">${ABIcon("refresh")} Refresh</button></div>
           <p class="count">${(ppl.staff || []).length} staff on the list · ${active30} active in the last 30 days · ${(ppl.certs || []).length} certificates</p>
           <div class="table-wrap"><table class="tbl"><thead><tr><th>Name</th><th>HR</th><th>Trade</th><th>Site</th><th>Videos</th><th>Quizzes</th><th>Paths</th><th>Certs</th><th>Last active</th></tr></thead><tbody>
           ${list.map(p => `<tr data-pp="${esc(p.hr || "~" + String(p.name).toLowerCase())}" class="${p.active === false && !p.unknown ? "is-hidden" : ""}"><td><b>${esc(p.name || "—")}</b>${p.unknown ? ` <span class="badge-s b-prob" title="${p.hr ? "Not on the staff list" : "Recorded before sign-in was turned on"}">${p.hr ? "Not on list" : "No HR no."}</span>` : p.active === false ? ` <span class="badge-s b-hidden">Inactive</span>` : ""}</td>
@@ -1248,7 +1250,7 @@
           <div class="pc-bar big${pct === 100 ? " ok" : over ? " over" : ""}"><i style="width:${pct}%"></i></div>
           <p><b>${done.length} of ${target.length}</b> finished (${pct}%)</p>
           ${notDone.length ? `<details class="box"><summary>${notDone.length} not finished yet${over ? " — overdue" : ""}</summary><p style="margin:8px 0 0">${notDone.map(x => `${esc(x.name)} <span class="help">(${esc(x.hr)}${x.videos.size ? ", " + pathProgress(x, p) : ""})</span>`).join("<br>")}</p>
-            <button class="btn btn-sm" data-as-csv="${esc(a.id)}" style="margin-top:8px">⬇ Export list</button></details>` : ""}
+            <button class="btn btn-sm" data-as-csv="${esc(a.id)}" style="margin-top:8px">${ABIcon("download")} Export list</button></details>` : ""}
         </div>`;
       }).join("") : `<div class="empty"><h3>No assigned training yet</h3><p>Use the form below to assign a learning path.</p></div>`;
       body += P().length ? assignHtml() : "";
@@ -1346,7 +1348,7 @@
       e.preventDefault();
       const code = $("#cl-code").value.trim().toUpperCase(), out = $("#cl-out");
       const c = (ppl.certs || []).find(x => String(x.code).toUpperCase() === code);
-      out.innerHTML = c ? `<p class="st-ok">✅ <b>${esc(c.name)}</b> (HR ${esc(c.hr || "—")}) finished <b>${esc(c.title)}</b> on ${esc(String(c.time).slice(0, 10))}${c.score !== "" ? ` with ${esc(c.score)}% in the quizzes` : ""}${c.signedBy ? `. Signed off by ${esc(c.signedBy)}.` : ". Not signed off yet."}</p>` : `<p class="st-warn">❌ No certificate with that code.</p>`;
+      out.innerHTML = c ? `<p class="st-ok">${ABIcon("checkCircle")} <b>${esc(c.name)}</b> (HR ${esc(c.hr || "—")}) finished <b>${esc(c.title)}</b> on ${esc(String(c.time).slice(0, 10))}${c.score !== "" ? ` with ${esc(c.score)}% in the quizzes` : ""}${c.signedBy ? `. Signed off by ${esc(c.signedBy)}.` : ". Not signed off yet."}</p>` : `<p class="st-warn">${ABIcon("xCircle")} No certificate with that code.</p>`;
     };
   }
   function pathProgress(person, p) {
@@ -1369,16 +1371,16 @@
     const watched = new Set(views.map(c => c.key));
     const unwatched = V().filter(v => !v.hidden && !watched.has(String(v.id).toLowerCase()));
     $("#app").innerHTML = `
-      ${insErr ? `<div class="err">⚠ ${esc(insErr)}</div>` : ""}
-      ${!data.settings.json.statsEnabled ? `<div class="hint-box">📊 Counting is <b>off</b>. Turn on <b>Count video views and searches</b> in Settings → Staff & training. Only counts are kept — no names or phone details.</div>` : ""}
+      ${insErr ? `<div class="err">${ABIcon("alert")} ${esc(insErr)}</div>` : ""}
+      ${!data.settings.json.statsEnabled ? `<div class="hint-box">${ABIcon("chart")} Counting is <b>off</b>. Turn on <b>Count video views and searches</b> in Settings → Staff & training. Only counts are kept — no names or phone details.</div>` : ""}
       <div class="bar"><select id="in-days">${[7, 30, 90, 365].map(d => `<option value="${d}" ${d === insDays ? "selected" : ""}>Last ${d} days</option>`).join("")}</select>
         <p class="count grow" style="margin:0"><b>${totalViews}</b> video plays · <b>${nores.reduce((a, c) => a + c.n, 0)}</b> searches with no results</p>
-        <button class="btn btn-sm" id="in-refresh">↻ Refresh</button></div>
+        <button class="btn btn-sm" id="in-refresh">${ABIcon("refresh")} Refresh</button></div>
       <div class="two" style="align-items:start">
-        <div class="card-plain"><h2>▶ Most watched</h2>
+        <div class="card-plain"><h2>${ABIcon("play")} Most watched</h2>
           ${views.slice(0, 25).map(c => { const v = vById.get(c.key) || V().find(x => String(x.id).toLowerCase() === c.key); return `<div class="in-row"><span class="in-t">${esc(v ? v.title : c.key)}</span><span class="in-bar"><i style="width:${Math.round(c.n / max * 100)}%"></i></span><b>${c.n}</b></div>`; }).join("") || `<p class="help">No plays counted yet.</p>`}
         </div>
-        <div class="card-plain"><h2>🔍 Searched, nothing found</h2>
+        <div class="card-plain"><h2>${ABIcon("search")} Searched, nothing found</h2>
           <p class="help">What staff looked for and didn't find — ideas for new videos.</p>
           ${nores.slice(0, 40).map(c => `<div class="in-row"><span class="in-t">“${esc(c.key)}”</span><b>${c.n}</b><a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.key)}" target="_blank" rel="noopener">Find on YouTube</a></div>`).join("") || `<p class="help">Nothing yet.</p>`}
         </div>
@@ -1402,23 +1404,23 @@
     if (te) return renderTalkEditor();
     const tid = todayTalkId();
     $("#app").innerHTML = `
-      <div class="bar"><p class="help grow" style="margin:0">A different talk shows on the app's home screen each day, in rotation. Supervisors can read it out (or press 🔊) at the morning briefing. To choose the talk for a specific day, set its date.</p>
+      <div class="bar"><p class="help grow" style="margin:0">A different talk shows on the app's home screen each day, in rotation. Supervisors can read it out (or press ${ABIcon("volume")}) at the morning briefing. To choose the talk for a specific day, set its date.</p>
         <button class="btn btn-primary" id="tk-add">＋ New talk</button></div>
       <div class="rows">${TK().map((k, i) => `
         <div class="row ${k.hidden ? "is-hidden" : ""}">
-          <div class="thumb path-ico">${esc(k.icon || "🦺")}</div>
+          <div class="thumb path-ico">${ABIcon.item(k.icon, k.title, "hardhat")}</div>
           <div><h3>${esc(k.title)}</h3>
             <div class="meta"><span>${(k.points || []).length} points</span>
               ${k.id === tid ? `<span class="badge-s b-feat">Today</span>` : ""}
-              ${k.date ? `<span class="badge-s b-ess">📅 ${esc(k.date)}</span>` : ""}
+              ${k.date ? `<span class="badge-s b-ess">${ABIcon("calendar")} ${esc(k.date)}</span>` : ""}
               ${k.hidden ? `<span class="badge-s b-hidden">Hidden</span>` : ""}
-              ${k.tr && Object.keys(k.tr).length ? `<span class="badge-s b-ok">🌐 ${Object.keys(k.tr).length}/8</span>` : `<span class="badge-s b-hidden">Translating…</span>`}</div></div>
+              ${k.tr && Object.keys(k.tr).length ? `<span class="badge-s b-ok">${ABIcon("globe")} ${Object.keys(k.tr).length}/8</span>` : `<span class="badge-s b-hidden">Translating…</span>`}</div></div>
           <div class="row-actions">
-            <button class="btn btn-sm" data-tk-up="${i}" ${i === 0 ? "disabled" : ""} aria-label="Move up">↑</button>
+            <button class="btn btn-sm" data-tk-up="${i}" ${i === 0 ? "disabled" : ""} aria-label="Move up">${ABIcon("arrowUp")}</button>
             <button class="btn btn-sm" data-tk-edit="${i}">Edit</button>
             <button class="btn btn-sm btn-danger" data-tk-del="${i}">Delete</button>
           </div></div>`).join("") || `<div class="empty"><h3>No toolbox talks yet</h3></div>`}</div>`;
-    $("#tk-add").onclick = () => { te = { index: -1, k: { id: "", icon: "🦺", title: "", points: [], ask: "" } }; renderToolbox(); };
+    $("#tk-add").onclick = () => { te = { index: -1, k: { id: "", icon: "hardhat", title: "", points: [], ask: "" } }; renderToolbox(); };
     $$("[data-tk-edit]").forEach(b => b.onclick = () => { const i = +b.dataset.tkEdit; te = { index: i, k: JSON.parse(JSON.stringify(TK()[i])) }; renderToolbox(); });
     $$("[data-tk-del]").forEach(b => b.onclick = async () => {
       const k = TK()[+b.dataset.tkDel]; if (!confirm(`Delete the talk “${k.title}”?`)) return;
@@ -1436,11 +1438,9 @@
     $("#app").innerHTML = `
       <button class="btn btn-sm btn-ghost" id="te-back">‹ All talks</button>
       <h2 style="margin:10px 0 14px">${te.index < 0 ? "New toolbox talk" : "Edit toolbox talk"}</h2>
-      <div class="two" style="grid-template-columns:90px 1fr">
-        <div class="field"><label for="te-icon">Icon</label><input class="input" id="te-icon" maxlength="4" value="${esc(k.icon || "")}" style="text-align:center;font-size:22px"></div>
-        <div class="field"><label for="te-title">Title</label><input class="input" id="te-title" placeholder="e.g. Heat stress" value="${esc(k.title)}"></div>
-      </div>
-      ${textAI() ? `<div class="draft-row"><button type="button" class="btn btn-sm" id="te-ai">✨ Write with AI</button><span class="help" id="te-ai-help">Type a title, then let ${textName()} write the points and question.</span></div>` : ""}
+      <div class="field"><label for="te-title">Title</label><input class="input" id="te-title" placeholder="e.g. Heat stress" value="${esc(k.title)}"></div>
+      <div class="field"><label>Icon</label>${iconPick("te-icon", ABIcon.nameFor(k.icon, k.title, "hardhat"))}</div>
+      ${textAI() ? `<div class="draft-row"><button type="button" class="btn btn-sm" id="te-ai">${ABIcon("sparkles")} Write with AI</button><span class="help" id="te-ai-help">Type a title, then let ${textName()} write the points and question.</span></div>` : ""}
       <div class="field"><label for="te-points">Key points</label><textarea class="textarea" id="te-points" rows="6" placeholder="One point per line">${esc((k.points || []).join("\n"))}</textarea><div class="help">One point per line. 3–5 short points work best.</div></div>
       <div class="field"><label for="te-ask">Question to ask the team</label><input class="input" id="te-ask" placeholder="e.g. Where is the nearest drinking water on today's site?" value="${esc(k.ask || "")}"></div>
       <div class="two">
@@ -1461,13 +1461,13 @@
       ta.disabled = true; $("#te-ai-help").textContent = textName() + " is writing…";
       try {
         const d = await ABDraft.aiTalk({ title, key: geminiKey(), model: geminiModel() || undefined });
-        $("#te-points").value = d.points.join("\n"); if (d.ask) $("#te-ask").value = d.ask; if (d.icon && !$("#te-icon").value.trim()) $("#te-icon").value = d.icon;
+        $("#te-points").value = d.points.join("\n"); if (d.ask) $("#te-ask").value = d.ask; if (d.icon && te.index < 0) setIconPick("te-icon", ABIcon.nameFor(d.icon, $("#te-title").value, "hardhat"));
         $("#te-ai-help").textContent = "Done — read it through and adjust before publishing.";
       } catch (e) { $("#te-ai-help").textContent = textName() + " couldn't write it: " + e.message; }
       ta.disabled = false;
     };
     $("#te-save").onclick = async () => {
-      k.icon = $("#te-icon").value.trim() || "🦺";
+      k.icon = $("#te-icon").value.trim() || "hardhat";
       k.title = $("#te-title").value.trim();
       k.points = $("#te-points").value.split("\n").map(x => x.trim().replace(/^[-•*\d.)\s]+/, "")).filter(Boolean);
       k.ask = $("#te-ask").value.trim();
@@ -1501,11 +1501,11 @@
       <div class="card-plain">
         <h2>Trusted channels</h2>
         <p>The daily finder only looks at these YouTube channels. Add channels whose videos you'd be happy for staff to watch.</p>
-        <button class="btn" data-find ${finder.running ? "disabled" : ""}>${finder.running ? "⏳ Searching…" : "🔎 Search for new videos now"}</button>
+        <button class="btn" data-find ${finder.running ? "disabled" : ""}>${finder.running ? "" + ABIcon("hourglass") + " Searching…" : "" + ABIcon("search") + " Search for new videos now"}</button>
         <div class="find-msg" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>
       </div>
       ${thinHtml()}
-      ${(() => { const act = (c.channels || []).filter(x => x.active !== false), bad = act.filter(x => (st[x.url] || {}).error); return act.length > 2 && bad.length >= act.length * 0.8 ? `<div class="err">⚠ Almost every channel failed at the last check — that usually means YouTube itself had a problem, not your channels. It happens a few times a year and clears within a day or two. The search now also tries each channel's page as a backup; press “Search for new videos now” to try again.</div>` : ""; })()}
+      ${(() => { const act = (c.channels || []).filter(x => x.active !== false), bad = act.filter(x => (st[x.url] || {}).error); return act.length > 2 && bad.length >= act.length * 0.8 ? `<div class="err">${ABIcon("alert")} Almost every channel failed at the last check — that usually means YouTube itself had a problem, not your channels. It happens a few times a year and clears within a day or two. The search now also tries each channel's page as a backup; press “Search for new videos now” to try again.</div>` : ""; })()}
       <div class="rows" style="margin-bottom:16px">${(c.channels || []).map((ch, i) => {
         const s = st[ch.url] || {};
         if (chEdit === ch.url) return `<form class="ch-row ch-edit" id="ch-edit-form">
@@ -1603,10 +1603,10 @@
     const thin = thinCats(); if (!thin.length) return "";
     const known = new Set((data.channels.json.channels || []).map(x => x.url.toLowerCase()));
     return `<div class="card-plain thin">
-      <h2>📉 Categories that need more videos</h2>
+      <h2>${ABIcon("trendDown")} Categories that need more videos</h2>
       <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${textAI() ? " AI can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
       ${thin.map(c => `<div class="thin-row"><div><b>${esc(c.name)}</b> <span class="small">${c.n} video${c.n === 1 ? "" : "s"} · ${c.chans} channel${c.chans === 1 ? "" : "s"}</span></div>
-        <div class="row-actions">${textAI() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
+        <div class="row-actions">${textAI() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">${ABIcon("sparkles")} Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
         ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Searching…</p>` : (sugg[c.name].searched === false && sugg[c.name].length ? `<p class="help">The web-search limit is reached for today, so these come from the AI's own knowledge. Some may be out of date — open each one before adding.</p>` : "") + sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
           ${known.has(x.url.toLowerCase()) ? `<span class="badge-s b-ok">Already added</span>` : `<button class="btn btn-sm btn-primary" data-sugg-add="${esc(c.name)}|${esc(x.url)}">＋ Add for ${esc(c.name)}</button>`}</div></div>`).join("") || `<p class="help">No channels found.</p>`}</div>` : ""}</div>`).join("")}
     </div>`;
@@ -1632,7 +1632,7 @@
   function finderMsg(html, running) {
     finder.msg = html; if (running !== undefined) finder.running = running;
     $$(".find-msg").forEach(m => { m.hidden = !html; m.innerHTML = html; });
-    $$("[data-find]").forEach(b => { b.disabled = finder.running; b.textContent = finder.running ? "⏳ Searching…" : "🔎 Search for new videos now"; });
+    $$("[data-find]").forEach(b => { b.disabled = finder.running; b.innerHTML = finder.running ? ABIcon("hourglass") + " Searching…" : ABIcon("search") + " Search for new videos now"; });
   }
   /* Start a GitHub job and follow it. Used by Retry on the Status page. */
   async function runJob(file, show) {
@@ -1641,7 +1641,7 @@
     if (!hasGh()) { show(noToken(), false); return false; }
     show("Starting…", true);
     let r; try { r = await gh(wf + "/dispatches", { method: "POST", body: { ref: cfg.branch } }); } catch { r = { status: 0 }; }
-    if (r.status !== 204) { show(r.status === 403 || r.status === 404 ? "⚠ Couldn't start it — your GitHub token needs <b>Actions: Read and write</b>." : `⚠ Couldn't start it (${r.status || "no connection"}).`, false); return false; }
+    if (r.status !== 204) { show(r.status === 403 || r.status === 404 ? "" + ABIcon("alert") + " Couldn't start it — your GitHub token needs <b>Actions: Read and write</b>." : `${ABIcon("alert")} Couldn't start it (${r.status || "no connection"}).`, false); return false; }
     const t0 = Date.now(); let runId = null;
     while (Date.now() - t0 < 40 * 60000) {
       await new Promise(res => setTimeout(res, runId ? 10000 : 4000));
@@ -1649,13 +1649,13 @@
         if (!runId) { const j = await (await gh(wf + "/runs?event=workflow_dispatch&per_page=5")).json(); const run = (j.workflow_runs || []).find(x => x.created_at >= before); if (run) runId = run.id; else continue; }
         const run = await (await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/runs/${runId}`)).json();
         const mins = Math.max(1, Math.round((Date.now() - t0) / 60000));
-        if (run.status !== "completed") { show(`⏳ Running… (${mins} min) <a href="${esc(run.html_url)}" target="_blank" rel="noopener">details</a>`); continue; }
-        if (run.conclusion !== "success") { show(`❌ It stopped with a problem. <a href="${esc(run.html_url)}" target="_blank" rel="noopener">See why</a>`, false); return false; }
+        if (run.status !== "completed") { show(`${ABIcon("hourglass")} Running… (${mins} min) <a href="${esc(run.html_url)}" target="_blank" rel="noopener">details</a>`); continue; }
+        if (run.conclusion !== "success") { show(`${ABIcon("xCircle")} It stopped with a problem. <a href="${esc(run.html_url)}" target="_blank" rel="noopener">See why</a>`, false); return false; }
         await new Promise(res => setTimeout(res, 3000));
         const keys = ["videos", "pending", "settings", "paths", "toolbox"];
         const res = await Promise.all(keys.map(k => readFile(k)));
         keys.forEach((k, i) => data[k] = res[i]);
-        show("✅ Done.", false);
+        show("" + ABIcon("checkCircle") + " Done.", false);
         return true;
       } catch { /* keep waiting */ }
     }
@@ -1672,8 +1672,8 @@
     try { r = await gh(wf + "/dispatches", { method: "POST", body: { ref: cfg.branch } }); } catch (e) { r = { status: 0 }; }
     if (r.status !== 204) {
       finderMsg(r.status === 403 || r.status === 404
-        ? "⚠ Couldn't start it. Your GitHub token needs <b>Actions: Read and write</b> permission (GitHub → Settings → Developer settings → your token → Repository permissions), and Actions must be enabled on the repo."
-        : `⚠ Couldn't start it (${r.status || "no connection"}). Try again in a minute.`, false);
+        ? "" + ABIcon("alert") + " Couldn't start it. Your GitHub token needs <b>Actions: Read and write</b> permission (GitHub → Settings → Developer settings → your token → Repository permissions), and Actions must be enabled on the repo."
+        : `${ABIcon("alert")} Couldn't start it (${r.status || "no connection"}). Try again in a minute.`, false);
       return;
     }
     finderMsg(`Searching your ${(data.channels.json.channels || []).filter(c => c.active !== false).length} channels${videoAI() ? " — Gemini will then watch and review the new videos" : ""}… This usually takes 1–5 minutes. You can keep working.`);
@@ -1690,12 +1690,12 @@
         const run = await (await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/runs/${runId}`)).json();
         const mins = Math.max(1, Math.round((Date.now() - t0) / 60000));
         if (run.status !== "completed") { finderMsg(`${run.status === "queued" ? "Waiting for GitHub to start" : "Searching"}… (${mins} min) <a href="${esc(run.html_url)}" target="_blank" rel="noopener">details</a>`); continue; }
-        if (run.conclusion !== "success") { finderMsg(`⚠ The search stopped with a problem (${esc(run.conclusion)}). <a href="${esc(run.html_url)}" target="_blank" rel="noopener">See what happened</a>`, false); return; }
+        if (run.conclusion !== "success") { finderMsg(`${ABIcon("alert")} The search stopped with a problem (${esc(run.conclusion)}). <a href="${esc(run.html_url)}" target="_blank" rel="noopener">See what happened</a>`, false); return; }
         await new Promise(res => setTimeout(res, 3000));          // give GitHub a moment to save the results
         const [pq, ch] = await Promise.all([readFile("pending"), readFile("channels")]);
         data.pending = pq; data.channels = ch;
         const n = (pq.json.queue || []).length - qBefore;
-        finderMsg(n > 0 ? `✅ Done — <b>${n} new video${n > 1 ? "s" : ""}</b> added to the Review queue.` : "✅ Done — no new videos since the last check.", false);
+        finderMsg(n > 0 ? `${ABIcon("checkCircle")} Done — <b>${n} new video${n > 1 ? "s" : ""}</b> added to the Review queue.` : "" + ABIcon("checkCircle") + " Done — no new videos since the last check.", false);
         render();
         return;
       } catch (e) { /* network blip: keep waiting */ }
@@ -1725,7 +1725,7 @@
     const when = d => d ? new Date(d).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
     const secretField = (id, name, label, setAt, ph, help) => `<div class="field"><label for="${id}">${label}</label>
       <div class="bar" style="margin:0"><input class="input grow" id="${id}" type="password" autocomplete="new-password" placeholder="${keys[name] ? (setAt ? "Saved " + esc(when(setAt)) : "Saved in Supabase secrets") + " — paste a new one to replace it" : ph}">${keys[name] && setAt ? `<button type="button" class="btn btn-sm btn-danger" data-secret-del="${name}">Remove</button>` : ""}</div>
-      <div class="help">${keys[name] ? "✅ Saved on the server. Every admin can use it; nobody can see it, not even you." : ""} ${help}</div></div>`;
+      <div class="help">${keys[name] ? "" + ABIcon("checkCircle") + " Saved on the server. Every admin can use it; nobody can see it, not even you." : ""} ${help}</div></div>`;
     const ico = k => `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
     const head = (k, title, sub) => `<div class="sec-h"><span class="sec-ico">${ico(k)}</span><div><h2>${title}</h2><p>${sub}</p></div></div>`;
     const sw = (id, on, title, sub, extra = "") => `<label class="switch-row"><span><b>${title}</b><small>${sub}</small></span><input type="checkbox" class="switch" id="${id}" ${on ? "checked" : ""} ${extra}></label>`;
@@ -1860,11 +1860,11 @@
           window.ABAI = { gemini: false, groq: which === "groq", openrouter: which === "openrouter", first: which, orModel: $("#s-ormodel").value.trim() };
           model = await ABDraft.aiTest({ key: "", model: undefined });
         }
-        m.innerHTML = `<span style="color:var(--ok,#1f9d55);font-weight:700">✓ Works (${esc(model)}).</span>${pasted ? " Click Save settings." : ""}`;
-      } catch (e) { m.innerHTML = `<span style="color:var(--danger)">✗ ${esc(e.message)}</span>`; }
+        m.innerHTML = `<span style="color:var(--ok,#1f9d55);font-weight:700">${ABIcon("check")} Works (${esc(model)}).</span>${pasted ? " Click Save settings." : ""}`;
+      } catch (e) { m.innerHTML = `<span style="color:var(--danger)">${ABIcon("x")} ${esc(e.message)}</span>`; }
       finally { window.ABAI = saved; window.ABProxy = savedProxy; }
     });
-    $("#cat-add").onclick = () => { $("#cat-rows").insertAdjacentHTML("beforeend", catRow({ name: "", icon: "▶️", keywords: [] }, Date.now(), 0)); };
+    $("#cat-add").onclick = () => { $("#cat-rows").insertAdjacentHTML("beforeend", catRow({ name: "", icon: "", keywords: [] }, Date.now(), 0)); };
     $("#cat-rows").addEventListener("input", e => {
       const n = e.target.closest(".c-name"); if (!n) return;
       const ic = n.closest(".cat-row").querySelector(".cat-ico"); ic.setAttribute("style", ABTrades.tone(n.value)); ic.innerHTML = ABTrades.svg(n.value, 22);
@@ -1881,7 +1881,7 @@
     $("#set-form").onsubmit = async e => {
       e.preventDefault();
       const categories = $$(".cat-row").map(r => ({
-        name: $(".c-name", r).value.trim(), icon: $(".c-icon", r).value.trim() || "▶️",
+        name: $(".c-name", r).value.trim(), icon: $(".c-icon", r).value.trim(),
         keywords: $(".c-kw", r).value.split(",").map(x => x.trim().toLowerCase()).filter(Boolean)
       })).filter(c => c.name);
       const vals = {
@@ -1941,13 +1941,13 @@
     const full = vids.filter(v => v.tr && Object.keys(v.tr).length >= 8).length;
     const gem = q.filter(i => i.draft && i.draft.source === "ai").length;
     const gemErr = q.find(i => i.aiError && !(i.draft && i.draft.source === "ai"));
-    const ok = (good, text) => `<li class="${good ? "st-ok" : "st-warn"}">${good ? "✅" : "⚠️"} ${text}</li>`;
+    const ok = (good, text) => `<li class="${good ? "st-ok" : "st-warn"}">${ABIcon(good ? "checkCircle" : "alert")} ${text}</li>`;
     let html = `<ul class="st-list">
-      ${ok(full === vids.length, `<span>Translations: <b>${full} of ${vids.length}</b> videos in all 8 languages${full === vids.length ? "" : " — new or edited videos are translated within a few minutes after saving"}</span>${full === vids.length ? "" : `<button type="button" class="btn btn-sm st-retry" data-retry="translate.yml">↻ Retry</button>`}<span class="st-job" id="job-translate.yml"></span>`)}
+      ${ok(full === vids.length, `<span>Translations: <b>${full} of ${vids.length}</b> videos in all 8 languages${full === vids.length ? "" : " — new or edited videos are translated within a few minutes after saving"}</span>${full === vids.length ? "" : `<button type="button" class="btn btn-sm st-retry" data-retry="translate.yml">${ABIcon("refresh")} Retry</button>`}<span class="st-job" id="job-translate.yml"></span>`)}
       ${ok(vids.every(v => v.gemini), `<span>Library: <b>${vids.filter(v => v.gemini).length} of ${vids.length}</b> videos checked by Gemini${vids.every(v => v.gemini) ? "" : " — up to 15 more are checked each morning"}</span>`)}
-      ${ok(!q.length || gem === q.length, `<span>Gemini review: <b>${gem} of ${q.length}</b> queued videos checked${gemErr ? ` — last problem: <i>${esc(gemErr.aiError)}</i>` : ""}</span>${q.length && gem < q.length ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml">↻ Retry</button>` : ""}<span class="st-job" id="job-find-videos.yml"></span>`)}
+      ${ok(!q.length || gem === q.length, `<span>Gemini review: <b>${gem} of ${q.length}</b> queued videos checked${gemErr ? ` — last problem: <i>${esc(gemErr.aiError)}</i>` : ""}</span>${q.length && gem < q.length ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml">${ABIcon("refresh")} Retry</button>` : ""}<span class="st-job" id="job-find-videos.yml"></span>`)}
       ${(() => { const bad = Object.values(data.pending.json.channelStatus || {}).filter(c => c && c.error).length;
-        return ok(!bad, `<span>Channels: ${bad ? `<b>${bad}</b> couldn't be checked last time — <a href="#" data-go="channels">see which</a>` : "all checked OK"}</span>${bad ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml" data-out="job-ch">↻ Retry</button>` : ""}<span class="st-job" id="job-ch"></span>`); })()}
+        return ok(!bad, `<span>Channels: ${bad ? `<b>${bad}</b> couldn't be checked last time — <a href="#" data-go="channels">see which</a>` : "all checked OK"}</span>${bad ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml" data-out="job-ch">${ABIcon("refresh")} Retry</button>` : ""}<span class="st-job" id="job-ch"></span>`); })()}
       ${ok(geminiOn(), `AI: ${textAI() ? aiLabel() : "off"}${geminiOn() ? "" : " — video drafts and reviews need Gemini"}${keys.owner ? ` · <a href="#" data-go="settings" data-sec="gemini">change</a>` : ""}`)}
       ${ok(true, `Database: connected (Supabase project “ABFM Training”) · you're signed in to this admin as <b>${esc(me || "")}</b>`)}
       ${ok(!V().some(v => !v.duration), `Video lengths: <b>${V().filter(v => v.duration).length} of ${V().length}</b> known${V().some(v => !v.duration) ? " — use “Fill in missing lengths” on the Videos tab" : ""}`)}
@@ -1959,13 +1959,13 @@
       const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/runs?per_page=12`);
       if (!r.ok) throw new Error(r.status === 403 || r.status === 404 ? "Your GitHub token needs “Actions: Read” permission to show this." : "GitHub said " + r.status);
       const runs = (await r.json()).workflow_runs || [];
-      const icon = x => x.status !== "completed" ? "⏳" : x.conclusion === "success" ? "✅" : x.conclusion === "cancelled" || x.conclusion === "skipped" ? "⏭️" : "❌";
+      const icon = x => x.status !== "completed" ? ABIcon("hourglass") : x.conclusion === "success" ? ABIcon("checkCircle", "ok") : x.conclusion === "cancelled" || x.conclusion === "skipped" ? ABIcon("skip", "muted") : ABIcon("xCircle", "bad");
       const when = d => { const m = Math.round((Date.now() - Date.parse(d)) / 60000); return m < 60 ? m + " min ago" : m < 1440 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " d ago"; };
       html += `<div class="st-runs">${runs.map(x => `<a class="st-run" href="${esc(x.html_url)}" target="_blank" rel="noopener">
         <span>${icon(x)}</span><span><b>${esc(x.name)}</b><br><small>${esc(x.display_title || "")}</small></span>
         <span class="st-when">${x.status !== "completed" ? esc(x.status.replace("_", " ")) : esc(x.conclusion)}<br><small>${when(x.created_at)}</small></span></a>`).join("") || `<p class="help">No jobs yet.</p>`}</div>
-        <p class="help">❌ means a job failed — tap it to see why (or send me a screenshot). ⏭️ cancelled jobs are normal when several saves happen close together.</p>
-        <button type="button" class="btn btn-sm" id="st-translate">🌐 Translate now</button> <span class="help" id="st-msg"></span>`;
+        <p class="help">${ABIcon("xCircle")} means a job failed — tap it to see why (or send me a screenshot). ${ABIcon("skip")} Cancelled jobs are normal when several saves happen close together.</p>
+        <button type="button" class="btn btn-sm" id="st-translate">${ABIcon("globe")} Translate now</button> <span class="help" id="st-msg"></span>`;
     } catch (e) { html += `<p class="help">${esc(e.message)}</p>`; }
     box.innerHTML = html;
     $$("[data-retry]", box).forEach(b => b.onclick = async () => {
@@ -1988,7 +1988,7 @@
       <div class="cat-main"><div class="cat-top"><input class="input c-name" aria-label="Category name" placeholder="Category name" value="${esc(c.name)}"><span class="cat-n">${count} video${count === 1 ? "" : "s"}</span></div>
         <input type="hidden" class="c-icon" value="${esc(c.icon || "")}">
         <textarea class="textarea c-kw" aria-label="Keywords" placeholder="keywords, comma, separated">${esc((c.keywords || []).join(", "))}</textarea></div>
-      <div class="cat-act"><button type="button" class="btn btn-sm btn-icon" data-cat-up aria-label="Move up">↑</button><button type="button" class="btn btn-sm btn-icon btn-danger" data-cat-del aria-label="Remove category">✕</button></div>
+      <div class="cat-act"><button type="button" class="btn btn-sm btn-icon" data-cat-up aria-label="Move up">${ABIcon("arrowUp")}</button><button type="button" class="btn btn-sm btn-icon btn-danger" data-cat-del aria-label="Remove category">${ABIcon("x")}</button></div>
     </div>`;
   }
 

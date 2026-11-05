@@ -212,7 +212,7 @@ details.box summary { font-weight: 700; cursor: pointer; }
 .st-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .st-list li { padding: 10px 12px; border-radius: 10px; background: var(--surface-2); font-size: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
 .st-list li.st-warn { background: #FFF4E5; color: #7A4100; }
-.st-list li > span:first-child { flex: 1 1 300px; }
+.st-list li > span:first-child, .st-list li > .i:first-child + span { flex: 1 1 260px; }
 .st-retry { flex: none; }
 .st-job { flex-basis: 100%; font-size: 13px; }
 .st-job:empty { display: none; }
@@ -418,3 +418,15 @@ details.box summary { font-weight: 700; cursor: pointer; }
   .drawer { z-index: 70; }
   .drawer-in { max-width: none; }
 }
+
+/* Line icons (assets/icons.js) — size with the text, take its colour. */
+.i { width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; display: inline-block; }
+.i.ok { color: var(--ok, #1f9d55); } .i.bad { color: var(--danger, #b91c1c); } .i.muted { opacity: .55; }
+.big .i { width: 44px; height: 44px; }
+.path-ico .i { width: 26px; height: 26px; }
+.req-ico .i { width: 20px; height: 20px; }
+.st-ok > .i { color: var(--ok, #1f9d55); } .st-warn > .i { color: #C98A00; }
+.icon-pick { display: flex; flex-wrap: wrap; gap: 6px; }
+.icon-pick button { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--line, #e3e1dc); border-radius: 10px; background: var(--surface, #fff); color: var(--ink, #1b2130); cursor: pointer; padding: 0; }
+.icon-pick button .i { width: 22px; height: 22px; vertical-align: 0; }
+.icon-pick button[aria-checked="true"] { border-color: var(--brand, #E8580C); background: var(--brand-soft, #fff1e8); color: var(--brand-ink, #b5440a); box-shadow: 0 0 0 2px var(--brand-soft, #fff1e8); }

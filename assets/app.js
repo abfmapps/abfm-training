@@ -89,7 +89,7 @@
   const thumb = (yt, size = "mqdefault") => `https://i.ytimg.com/vi/${encodeURIComponent(yt)}/${size}.jpg`;
 
   let toastTimer;
-  function toast(msg) { const el = $("#toast"); el.textContent = msg; el.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2200); }
+  function toast(msg, icon) { const el = $("#toast"); el.textContent = msg; if (icon) el.insertAdjacentHTML("afterbegin", ABIcon(icon) + " "); el.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove("show"), 2200); }
 
   const ICON = {
     bookmark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>',
@@ -289,7 +289,7 @@
       $("#count").textContent = "";
       const em = $("#empty");
       em.hidden = false;
-      em.innerHTML = `<div class="big">📶</div><h3>${esc(t("loadError"))}</h3><p><button class="btn btn-primary" id="retry">${esc(t("retry"))}</button></p>`;
+      em.innerHTML = `<div class="big">${ABIcon("wifiOff")}</div><h3>${esc(t("loadError"))}</h3><p><button class="btn btn-primary" id="retry">${esc(t("retry"))}</button></p>`;
       $("#retry").onclick = load;
       return;
     }
@@ -365,11 +365,11 @@
           <img loading="lazy" decoding="async" src="${thumb(v.yt)}" alt="" width="320" height="180">
           ${v.duration ? `<span class="dur">${esc(v.duration)}</span>` : ""}
           ${refresherDue(v) ? `<span class="tag-new tag-ref">${esc(t("refresherDue"))}</span>` : v.essential ? `<span class="tag-new tag-ess">${esc(t("essentialTag"))}</span>` : isNew(v) ? `<span class="tag-new">${esc(t("new"))}</span>` : ""}
-          ${state.done.has(v.id) && !refresherDue(v) ? `<span class="tag-done" title="${esc(t("doneLabel"))}">✓</span>` : ""}
+          ${state.done.has(v.id) && !refresherDue(v) ? `<span class="tag-done" title="${esc(t("doneLabel"))}">${ABIcon("check")}</span>` : ""}
           ${!state.done.has(v.id) && watchPct(v) > 0.02 ? `<span class="tag-prog"><i style="width:${Math.round(watchPct(v) * 100)}%"></i></span>` : ""}
         </div>
         <div class="card-body">
-          <div class="meta"><span class="cat-tag" style="${catTone(v.category)}">${esc(catLabel(v.category))}</span><span class="lvl lvl-${esc(v.level)}">${esc(t(v.level))}</span>${hasQuiz(v) ? `<span class="q-tag${quizPassed(v) && state.quiz[v.id] ? " ok" : ""}">${esc(t("quizTitle"))}${quizPassed(v) && state.quiz[v.id] ? " ✓" : ""}</span>` : ""}</div>
+          <div class="meta"><span class="cat-tag" style="${catTone(v.category)}">${esc(catLabel(v.category))}</span><span class="lvl lvl-${esc(v.level)}">${esc(t(v.level))}</span>${hasQuiz(v) ? `<span class="q-tag${quizPassed(v) && state.quiz[v.id] ? " ok" : ""}">${esc(t("quizTitle"))}${quizPassed(v) && state.quiz[v.id] ? " " + ABIcon("check") : ""}</span>` : ""}</div>
           <h3>${esc(titleOf(v))}</h3>
           ${v.channel ? `<div class="chan">${esc(v.channel)}</div>` : ""}
         </div>
@@ -379,7 +379,7 @@
   }
   function mini(v, href) {
     return `<a class="mini" href="${href || "#/v/" + encodeURIComponent(v.id)}">
-      <div class="thumb"><img loading="lazy" src="${thumb(v.yt)}" alt="" width="320" height="180">${v.duration ? `<span class="dur">${esc(v.duration)}</span>` : ""}${state.done.has(v.id) ? `<span class="tag-done">✓</span>` : ""}</div>
+      <div class="thumb"><img loading="lazy" src="${thumb(v.yt)}" alt="" width="320" height="180">${v.duration ? `<span class="dur">${esc(v.duration)}</span>` : ""}${state.done.has(v.id) ? `<span class="tag-done">${ABIcon("check")}</span>` : ""}</div>
       <div><h3>${esc(titleOf(v))}</h3><div class="meta"><span class="lvl lvl-${esc(v.level)}">${esc(t(v.level))}</span>${v.channel ? `<span>${esc(v.channel)}</span>` : ""}</div></div>
     </a>`;
   }
@@ -439,7 +439,7 @@
       <form class="home-search" id="home-search" role="search">${ICON.search}<input id="hq" type="search" enterkeyhint="search" autocomplete="off" placeholder="${esc(t("searchN", { n: state.videos.length }))}" aria-label="${esc(t("search"))}"></form>
       ${openAs.length ? `<div class="sec">${openAs.map(asCard).join("")}</div>` : ""}
       ${due.length ? `<a class="notice refresh-note" href="#/me">${ICON.shield}<span style="flex:1">${esc(t("refreshersDue", { n: due.length }))}</span><span class="flip-r">${ICON.back}</span></a>` : ""}
-      ${talk ? `<a class="talk-card" href="#/talk"><span class="tk-ico">${talk.icon ? esc(talk.icon) : ICON.bolt}</span>
+      ${talk ? `<a class="talk-card" href="#/talk"><span class="tk-ico">${ABIcon.item(talk.icon, talk.title, "hardhat")}</span>
         <span class="tk-body"><span class="tk-label">${esc(t("toolboxToday"))}</span><strong>${esc(kx.title || talk.title)}</strong><span class="tk-hint">${esc(t("toolboxHint"))}</span></span>
         <span class="tk-go flip-r">${ICON.back}</span></a>` : ""}
       ${cont.length ? `<div class="sec"><div class="section-h"><h2>${esc(t("continueWatching"))}</h2><a href="#/me">${esc(t("seeAll"))}</a></div>
@@ -493,24 +493,24 @@
     el.innerHTML = `
       <button class="btn btn-ghost btn-sm vp-back" id="back">${ICON.back}<span>${esc(t("back"))}</span></button>
       <article class="talk">
-        <div class="talk-top"><span class="tk-label">${esc(k === today ? t("toolboxToday") : "🦺")}</span><span class="count">${esc(fmtDate(localDay()))}</span></div>
-        <div class="path-head"><div class="ph-ico">${esc(k.icon || "🦺")}</div><div><h1>${esc(x.title || k.title)}</h1>${has ? `<p class="en-title" lang="en" dir="ltr">${esc(k.title)}</p>` : ""}</div></div>
+        <div class="talk-top"><span class="tk-label">${k === today ? esc(t("toolboxToday")) : ABIcon("hardhat")}</span><span class="count">${esc(fmtDate(localDay()))}</span></div>
+        <div class="path-head"><div class="ph-ico">${ABIcon.item(k.icon, k.title, "hardhat")}</div><div><h1>${esc(x.title || k.title)}</h1>${has ? `<p class="en-title" lang="en" dir="ltr">${esc(k.title)}</p>` : ""}</div></div>
         <ol class="talk-points" ${has || state.lang === "en" ? "" : 'lang="en" dir="ltr"'}>${pts.map(p => `<li>${esc(p)}</li>`).join("")}</ol>
-        ${k.ask ? `<div class="talk-ask"><strong>💬 ${esc(t("askTeam"))}</strong><p ${x.ask || state.lang === "en" ? "" : 'lang="en" dir="ltr"'}>${esc(x.ask || k.ask)}</p></div>` : ""}
+        ${k.ask ? `<div class="talk-ask"><strong>${ABIcon("message")} ${esc(t("askTeam"))}</strong><p ${x.ask || state.lang === "en" ? "" : 'lang="en" dir="ltr"'}>${esc(x.ask || k.ask)}</p></div>` : ""}
         <div class="actions">
-          ${canSpeak ? `<button class="btn btn-primary" id="tk-listen">🔊 <span>${esc(t("listen"))}</span></button>` : ""}
+          ${canSpeak ? `<button class="btn btn-primary" id="tk-listen">${ABIcon("volume")} <span>${esc(t("listen"))}</span></button>` : ""}
           ${state.lang !== "en" && has ? `<button class="btn" id="tr-toggle">${state.showEn ? esc((LANGS.find(l => l.code === state.lang) || {}).name || "") : "English"}</button>` : ""}
         </div>
         ${vid ? `<div class="mini-list">${mini(vid)}</div>` : ""}
       </article>
       <div class="section-h" style="margin-top:22px"><h2>${esc(t("otherTalks"))}</h2></div>
-      <div class="talk-list">${others.map(o => `<a href="#/talk/${encodeURIComponent(o.id)}"><span>${esc(o.icon || "🦺")}</span>${esc(kTr(o).title || o.title)}</a>`).join("")}</div>`;
+      <div class="talk-list">${others.map(o => `<a href="#/talk/${encodeURIComponent(o.id)}"><span>${ABIcon.item(o.icon, o.title, "hardhat")}</span>${esc(kTr(o).title || o.title)}</a>`).join("")}</div>`;
     $("#back").onclick = () => { if (history.length > 1 && sessionStorage.getItem("ab_in_app")) history.back(); else location.hash = "#/"; };
     const tt = $("#tr-toggle"); if (tt) tt.onclick = () => { state.showEn = !state.showEn; renderTalk(k); };
     const lb = $("#tk-listen");
     if (lb) {
       let on = false;
-      const draw = () => { lb.innerHTML = `${on ? "⏹" : "🔊"} <span>${esc(on ? t("stop") : t("listen"))}</span>`; };
+      const draw = () => { lb.innerHTML = `${ABIcon(on ? "stop" : "volume")} <span>${esc(on ? t("stop") : t("listen"))}</span>`; };
       lb.onclick = () => {
         speechSynthesis.cancel();
         on = !on; draw();
@@ -556,13 +556,13 @@
     return scored.slice(0, 300).map(([, v]) => `${v.id} | ${v.title} | ${v.category}${v.subject ? " / " + v.subject : ""}`);
   }
   function aiMsgHtml(m, i) {
-    if (m.role === "user") return `<div class="ai-msg me">${(m.photos || []).map(p => `<img src="${p}" alt="">`).join("")}${m.nPhotos && !(m.photos || []).length ? `<span class="ai-ph">📷 × ${m.nPhotos}</span>` : ""}${m.text ? `<p>${esc(m.text)}</p>` : ""}</div>`;
+    if (m.role === "user") return `<div class="ai-msg me">${(m.photos || []).map(p => `<img src="${p}" alt="">`).join("")}${m.nPhotos && !(m.photos || []).length ? `<span class="ai-ph">${ABIcon("camera")} × ${m.nPhotos}</span>` : ""}${m.text ? `<p>${esc(m.text)}</p>` : ""}</div>`;
     if (m.error) return `<div class="ai-msg bot err">${esc(m.text)}${m.why ? `<div class="ai-why">For the admin: ${esc(m.why)}</div>` : ""}</div>`;
     const vids = (m.videos || []).map(id => state.videos.find(v => v.id === id)).filter(Boolean);
     return `<div class="ai-msg bot">
       <div class="ai-text">${mdLite(m.text)}</div>
-      ${"speechSynthesis" in window ? `<button class="ai-say" data-say="${i}" aria-label="${esc(t("listen"))}">🔊</button>` : ""}
-      ${vids.length ? `<div class="ai-vids"><div class="ai-vh">🎬 ${esc(t("aiSuggested"))}</div><div class="mini-list">${vids.map(v => mini(v)).join("")}</div></div>` : ""}
+      ${"speechSynthesis" in window ? `<button class="ai-say" data-say="${i}" aria-label="${esc(t("listen"))}">${ABIcon("volume")}</button>` : ""}
+      ${vids.length ? `<div class="ai-vids"><div class="ai-vh">${ABIcon("film")} ${esc(t("aiSuggested"))}</div><div class="mini-list">${vids.map(v => mini(v)).join("")}</div></div>` : ""}
     </div>`;
   }
   function renderAI() {
@@ -574,22 +574,22 @@
     el.innerHTML = `
       <div class="ai-wrap">
         <div class="ai-head">
-          <div><h1>✨ ${esc(t("aiTitle"))}</h1>${empty ? `<p class="sub">${esc(t("aiIntro"))}</p>` : ""}</div>
+          <div><h1>${ABIcon("sparkles")} ${esc(t("aiTitle"))}</h1>${empty ? `<p class="sub">${esc(t("aiIntro"))}</p>` : ""}</div>
           ${empty ? "" : `<button class="btn btn-sm" id="ai-new">${esc(t("aiNew"))}</button>`}
         </div>
         <div class="ai-log" id="ai-log">
           ${empty ? `<div class="ai-ex">${["aiEx1", "aiEx2", "aiEx3"].map(k => `<button class="chip" data-ex="${esc(t(k))}">${esc(t(k))}</button>`).join("")}</div>` : ai.msgs.map(aiMsgHtml).join("")}
           ${ai.busy ? `<div class="ai-msg bot"><span class="ai-dots"><i></i><i></i><i></i></span> ${esc(t("aiThinking"))}</div>` : ""}
         </div>
-        <p class="ai-note">⚠ ${esc(t("aiDisclaimer"))}</p>
+        <p class="ai-note">${ABIcon("alert")} ${esc(t("aiDisclaimer"))}</p>
         <form class="ai-bar" id="ai-form">
-          <div class="ai-photos" id="ai-photos">${ai.photos.map((p, i) => `<span><img src="${p.url}" alt=""><button type="button" data-rm="${i}" aria-label="Remove">✕</button></span>`).join("")}</div>
+          <div class="ai-photos" id="ai-photos">${ai.photos.map((p, i) => `<span><img src="${p.url}" alt=""><button type="button" data-rm="${i}" aria-label="Remove">${ABIcon("x")}</button></span>`).join("")}</div>
           <div class="ai-menu" id="ai-menu" hidden>
-            <label class="ai-mi">📸 <span>${esc(t("aiTake"))}</span><input type="file" accept="image/*" capture="environment" class="ai-file" hidden></label>
-            <label class="ai-mi">🖼️ <span>${esc(t("aiGallery"))}</span><input type="file" accept="image/*" multiple class="ai-file" hidden></label>
+            <label class="ai-mi">${ABIcon("camera")} <span>${esc(t("aiTake"))}</span><input type="file" accept="image/*" capture="environment" class="ai-file" hidden></label>
+            <label class="ai-mi">${ABIcon("image")} <span>${esc(t("aiGallery"))}</span><input type="file" accept="image/*" multiple class="ai-file" hidden></label>
           </div>
           <div class="ai-row">
-            <button type="button" class="btn btn-icon ai-cam" id="ai-cam" aria-label="${esc(t("aiPhoto"))}" title="${esc(t("aiPhoto"))}" aria-expanded="false" ${ai.photos.length >= 3 ? "disabled" : ""}>📷</button>
+            <button type="button" class="btn btn-icon ai-cam" id="ai-cam" aria-label="${esc(t("aiPhoto"))}" title="${esc(t("aiPhoto"))}" aria-expanded="false" ${ai.photos.length >= 3 ? "disabled" : ""}>${ABIcon("camera")}</button>
             <textarea id="ai-q" rows="1" maxlength="1000" placeholder="${esc(t("aiPlaceholder"))}"></textarea>
             <button class="btn btn-primary btn-icon" id="ai-send" aria-label="${esc(t("send"))}" ${ai.busy ? "disabled" : ""}><span class="flip-r">${ICON.back}</span></button>
           </div>
@@ -701,8 +701,8 @@
     try {
       const j = await rpc("submit_request", { p_token: state.profile.token || null, p_body: body, p_device: deviceId });
       if (!j.ok) throw new Error(j.error || "failed");
-      msg.textContent = "✓ " + t("reqThanks"); msg.className = "req-msg ok";
-      btn.textContent = "✓";
+      msg.innerHTML = ABIcon("check") + " " + esc(t("reqThanks")); msg.className = "req-msg ok";
+      btn.innerHTML = ABIcon("check");
       setTimeout(() => { closeSheets(); toast(t("reqThanks")); }, 1600);
     } catch (err) {
       msg.textContent = t("reqFail"); msg.className = "req-msg bad";
@@ -725,7 +725,7 @@
       if (seen[p.id] || !pathStats(p).complete) return;
       seen[p.id] = new Date().toISOString().slice(0, 10); ch = true;
       record("path", { item: p.id, title: p.title });
-      setTimeout(() => toast("🎓 " + t("pathComplete")), 400);
+      setTimeout(() => toast(t("pathComplete"), "grad"), 400);
     });
     if (ch) store.set("ab_paths_done", seen);
   }
@@ -748,7 +748,7 @@
     return `<div class="as-card${over ? " over" : ""}${s.complete ? " ok" : ""}">
       <div class="as-top"><span class="as-label">${esc(t("assigned"))}</span>${pill}</div>
       <a class="as-main" href="#/p/${encodeURIComponent(p.id)}" style="text-decoration:none;color:inherit">
-        <span class="as-ico" style="background:var(--brand-soft);color:var(--brand-ink);font-size:24px">${p.icon ? esc(p.icon) : ICON.pin}</span>
+        <span class="as-ico" style="background:var(--brand-soft);color:var(--brand-ink);font-size:24px">${ABIcon.item(p.icon, p.title, "grad")}</span>
         <span style="min-width:0"><span class="as-title" style="display:block">${esc(x.title || p.title)}</span>
           <span class="as-meta">${esc(t("progress", { done: s.done, n: s.n }))}${quizLeft ? " · " + esc(t("quizLeft", { n: quizLeft })) : ""}</span></span></a>
       <div class="bar${over ? " over" : s.complete ? " ok" : ""}"><i style="width:${s.n ? Math.round(s.done / s.n * 100) : 0}%"></i></div>
@@ -832,7 +832,7 @@
         if (!j.ok) throw new Error(j.error || "error");
         c.signedBy = j.supervisor; c.signedAt = localDay();
         store.set("ab_certs", state.certs);
-        closeSheets(); toast("✓ " + t("signedBy", { name: j.supervisor })); renderCert(c);
+        closeSheets(); toast(t("signedBy", { name: j.supervisor }), "check"); renderCert(c);
       } catch (err) { msg.textContent = err.message === "pin" ? t("wrongPin") : err.message === "busy" ? t("loginBusy") : t("reqFail"); msg.className = "req-msg bad"; }
       btn.disabled = false;
     };
@@ -892,11 +892,11 @@
   }
   function pathCardHtml(p, vids, n, done, x, pct, complete) {
     return `<a class="path-card" href="#/p/${encodeURIComponent(p.id)}">
-      <div class="pc-top"><span class="pc-ico">${esc(p.icon || "🎓")}</span><div class="pc-thumbs">${vids.slice(0, 3).map(v => `<img loading="lazy" src="${thumb(v.yt)}" alt="">`).join("")}</div></div>
+      <div class="pc-top"><span class="pc-ico">${ABIcon.item(p.icon, p.title, "grad")}</span><div class="pc-thumbs">${vids.slice(0, 3).map(v => `<img loading="lazy" src="${thumb(v.yt)}" alt="">`).join("")}</div></div>
       <h3>${esc(x.title || p.title)}</h3>
       ${p.description ? `<p>${esc(x.description || p.description)}</p>` : ""}
       <div class="pc-bar"><i style="width:${pct}%"></i></div>
-      <div class="pc-foot"><span>${esc(t("progress", { done, n }))}</span><span class="pc-go">${esc(complete ? t("doneLabel") + " ✓" : done ? t("continuePath") : t("startPath"))}</span></div>
+      <div class="pc-foot"><span>${esc(t("progress", { done, n }))}</span><span class="pc-go">${complete ? esc(t("doneLabel")) + " " + ABIcon("check") : esc(done ? t("continuePath") : t("startPath"))}</span></div>
     </a>`;
   }
   function renderPath(p) {
@@ -911,7 +911,7 @@
     el.innerHTML = `
       <button class="btn btn-ghost btn-sm vp-back" id="back">${ICON.back}<span>${esc(t("back"))}</span></button>
       <div class="path-head">
-        <div class="ph-ico">${esc(p.icon || "🎓")}</div>
+        <div class="ph-ico">${ABIcon.item(p.icon, p.title, "grad")}</div>
         <div><h1>${esc(x.title || p.title)}</h1>${x.title ? `<p class="en-title" lang="en" dir="ltr">${esc(p.title)}</p>` : ""}</div>
       </div>
       ${p.description ? `<p class="ph-desc">${esc(x.description || p.description)}</p>` : ""}
@@ -920,7 +920,7 @@
       ${finish}
       ${next && !complete ? `<a class="btn btn-primary" style="width:100%;margin:6px 0 18px" href="${href(next)}">${ICON.play}<span>${esc(done ? t("continuePath") : t("startPath"))}</span></a>` : ""}
       <ol class="path-list">${vids.map((v, i) => { const ok = state.done.has(v.id) && quizPassed(v); return `<li class="${ok ? "is-done" : ""}">
-        <span class="pl-n">${ok ? "✓" : i + 1}</span>${mini(v, href(v))}${hasQuiz(v) ? `<span class="pl-q${quizPassed(v) ? " ok" : ""}">${esc(t("quizTitle"))}${quizPassed(v) ? " ✓" : ""}</span>` : ""}</li>`; }).join("")}</ol>`;
+        <span class="pl-n">${ok ? ABIcon("check") : i + 1}</span>${mini(v, href(v))}${hasQuiz(v) ? `<span class="pl-q${quizPassed(v) ? " ok" : ""}">${esc(t("quizTitle"))}${quizPassed(v) ? " " + ABIcon("check") : ""}</span>` : ""}</li>`; }).join("")}</ol>`;
     $("#back").onclick = goBack;
     const pc = $("#p-cert"); if (pc) pc.onclick = () => getCert(p);
   }
@@ -954,7 +954,7 @@
     const items = quizOf(v);
     const order = items.map(it => it.options.map((_, i) => i).sort(() => Math.random() - 0.5));
     return { order, html: `<section class="panel quiz" id="quiz" ${items.some(i => i.tr) || state.lang === "en" ? "" : 'lang="en" dir="ltr"'}>
-      <h2>${ICON.brain}${esc(t("quizTitle"))}${prev && prev.pass ? ` <span class="q-pass">✓ ${esc(t("quizPassed"))}</span>` : ""}</h2>
+      <h2>${ICON.brain}${esc(t("quizTitle"))}${prev && prev.pass ? ` <span class="q-pass">${ABIcon("check")} ${esc(t("quizPassed"))}</span>` : ""}</h2>
       <p class="hint">${esc(prev && prev.pass ? t("quizScore", { score: prev.score, n: prev.n }) + " · " + fmtDate(prev.at) : t("quizHint"))}</p>
       <form id="quiz-form">${items.map((it, qi) => `<fieldset class="q-item" data-q="${qi}"><legend><span class="num">${qi + 1}</span>${esc(it.q)}</legend>
         ${order[qi].map(oi => `<label class="q-opt"><input type="radio" name="q${qi}" value="${oi}"><span>${esc(it.options[oi])}</span></label>`).join("")}</fieldset>`).join("")}
@@ -980,7 +980,7 @@
       const prev = state.quiz[v.id];
       if (pass || !prev || !prev.pass) { state.quiz[v.id] = { score, n, pass, at: localDay() }; store.set("ab_quiz", state.quiz); }
       record("quiz", { item: v.id, title: v.title, score, n, pass });
-      res.innerHTML = `<b>${esc(t("quizScore", { score, n }))}</b> — ${esc(pass ? "✓ " + t("quizPassed") : t("quizFailed"))}`;
+      res.innerHTML = `<b>${esc(t("quizScore", { score, n }))}</b> — ${pass ? ABIcon("check") + " " + esc(t("quizPassed")) : esc(t("quizFailed"))}`;
       res.className = "q-result " + (pass ? "ok" : "bad");
       if (pass && !state.done.has(v.id)) setDone(v.id, true);
       else if (pass) checkPaths();
@@ -1070,8 +1070,8 @@
     }
     let viewed = false;
     function markWatched() {
-      if (!state.done.has(v.id)) { setDone(v.id, true); drawDone(); toast(t("doneLabel") + " ✓"); }
-      else if (refresherDue(v)) { state.doneAt[v.id] = localDay(); store.set("ab_done_at", state.doneAt); record("video", { item: v.id, title: v.title, refresher: true }); drawDone(); toast("🦺 " + t("doneLabel") + " ✓"); }
+      if (!state.done.has(v.id)) { setDone(v.id, true); drawDone(); toast(t("doneLabel"), "check"); }
+      else if (refresherDue(v)) { state.doneAt[v.id] = localDay(); store.set("ab_done_at", state.doneAt); record("video", { item: v.id, title: v.title, refresher: true }); drawDone(); toast(t("doneLabel"), "hardhat"); }
       delete state.watch[v.id]; store.set("ab_watch", state.watch);
     }
     async function play(start) {
@@ -1155,7 +1155,7 @@
         <div class="g-bar"><i style="width:${((idx + 1) / slides.length) * 100}%"></i></div>
         <div class="g-ctl">
           <button class="g-btn" data-g="prev" aria-label="Previous" ${idx === 0 ? "disabled" : ""}>${ICON.back}</button>
-          ${canSpeak ? `<button class="g-btn g-listen" data-g="listen" aria-pressed="${speaking}">${speaking ? "⏹" : "🔊"} <span>${esc(speaking ? t("stop") : t("listen"))}</span></button>` : "<span></span>"}
+          ${canSpeak ? `<button class="g-btn g-listen" data-g="listen" aria-pressed="${speaking}">${ABIcon(speaking ? "stop" : "volume")} <span>${esc(speaking ? t("stop") : t("listen"))}</span></button>` : "<span></span>"}
           <button class="g-btn" data-g="next" aria-label="Next" ${idx === last ? "disabled" : ""}><span class="flip-r">${ICON.back}</span></button>
         </div>
       </div>`;
@@ -1195,7 +1195,7 @@
     if (tt) tt.onclick = () => { stopPlayer(); state.showEn = !state.showEn; renderVideo(v, path); };
     $("#v-done").onclick = () => {
       if (refresherDue(v)) { markWatched(); return; }
-      setDone(v.id, !state.done.has(v.id)); drawDone(); if (state.done.has(v.id)) toast(t("doneLabel") + " ✓");
+      setDone(v.id, !state.done.has(v.id)); drawDone(); if (state.done.has(v.id)) toast(t("doneLabel"), "check");
     };
     if (quizBlock) wireQuiz(v, path, () => { stopPlayer(); const y = scrollY; renderVideo(v, path); scrollTo(0, y); });
     const pn = $("#path-next");
@@ -1213,7 +1213,7 @@
       const ids = $$("[data-step]", el).filter(x => x.checked).map(x => +x.dataset.step);
       store.set("ab_steps_" + v.id, ids);
       updateProg();
-      if (ids.length === steps.length && !state.done.has(v.id)) { setDone(v.id, true); drawDone(); toast(t("doneLabel") + " ✓"); }
+      if (ids.length === steps.length && !state.done.has(v.id)) { setDone(v.id, true); drawDone(); toast(t("doneLabel"), "check"); }
     });
   }
 
@@ -1226,7 +1226,7 @@
   function toggleSave(id) {
     state.saved.has(id) ? state.saved.delete(id) : state.saved.add(id);
     store.set("ab_saved", [...state.saved]);
-    if (state.saved.has(id)) toast(t("savedLabel") + " ✓");
+    if (state.saved.has(id)) toast(t("savedLabel"), "check");
   }
 
   /* ---------- routing ---------- */

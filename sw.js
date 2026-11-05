@@ -1,5 +1,5 @@
 /* Offline support. Bump VERSION when you change files in assets/ so phones pick up the new version. */
-const VERSION = "abfm-training-v20";
+const VERSION = "abfm-training-v21";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "manifest-admin.webmanifest",
   "assets/app.css", "assets/app.js", "assets/i18n.js", "assets/config.js", "assets/trades.js",

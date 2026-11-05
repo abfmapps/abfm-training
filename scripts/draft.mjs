@@ -80,7 +80,7 @@ if (KEY) {
     if (quizzes >= MAX_QUIZ) break;
     if ((v.quiz && v.quiz.length) || v.hidden || (v.quizTries || 0) >= 3 || !(v.steps || []).length) continue;
     try {
-      v.quiz = await aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, key: KEY, model: MODEL });
+      v.quiz = await aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, count: v.essential ? (+settings.quizSizeEss || 5) : (+settings.quizSize || 3), key: KEY, model: MODEL });
       delete v.quizTries; quizzes++;
       console.log(`  ✓ Quiz written: ${v.title}`);
     } catch (e) {

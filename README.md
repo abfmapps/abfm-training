@@ -14,7 +14,7 @@ ABFM Training is a training-video app for Al Bonian FM ground staff. It opens in
 
 ## 1. One-time setup
 
-1. **Daily jobs → Supabase:** on GitHub open the repo → **Settings → Secrets and variables → Actions → New repository secret**. Name `SUPABASE_SERVICE_KEY`. Value: in Supabase, **Project Settings → API Keys → service_role** (Reveal → copy). Keep `GEMINI_API_KEY` there too, as before.
+1. **Daily jobs → Supabase:** on GitHub open the repo → **Settings → Secrets and variables → Actions → New repository secret**. Name `SUPABASE_SERVICE_KEY`. Value: in Supabase, **Project Settings → API Keys → Secret keys** (the `sb_secret_…` key: click the eye, then copy). Keep `GEMINI_API_KEY` there too, as before.
 2. **Ask AI (optional):** in Supabase open **Edge Functions → Secrets** and add `GEMINI_API_KEY` with your Gemini key.
 3. **Admin account:** open `admin.html` → **Create an admin account** with your admin email, confirm the email, then sign in. Only emails on the admin list (Settings → Admins & GitHub) can use the admin.
 4. **Hosting:** the app is plain files (`index.html`, `admin.html`, `assets/`, `sw.js`, `manifest.webmanifest`). It works on GitHub Pages, Cloudflare Pages, Netlify or any static host. GitHub Pages needs a public repo on the free plan; for a private repo use Cloudflare Pages (free) and point `training.albonian.fm` at it.

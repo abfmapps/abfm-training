@@ -18,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 
 # Content lives in Supabase. Needs the repository secret SUPABASE_SERVICE_KEY
-# (Supabase → Project Settings → API Keys → service_role).
+# (Supabase → Project Settings → API Keys → Secret keys, the sb_secret_… key).
 env:
   SUPABASE_URL: https://xzyzovlmlppvctbpxnrw.supabase.co
   SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

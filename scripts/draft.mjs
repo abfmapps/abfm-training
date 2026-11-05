@@ -7,7 +7,7 @@ import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 require("../assets/drafter.js");
-const { ruleDraft, aiDraft } = globalThis.ABDraft;
+const { ruleDraft, aiDraft, aiQuiz } = globalThis.ABDraft;
 
 const DATA = new URL("../data/", import.meta.url);
 const KEY = process.env.GEMINI_API_KEY || "";
@@ -75,6 +75,26 @@ if (KEY) {
     await sleep(7000);
   }
 }
+// Write a 3-question quiz for library videos that don't have one yet (from the summary and steps — quick, no video watching).
+const MAX_QUIZ = Number(process.env.MAX_AI_QUIZZES || 20);
+let quizzes = 0;
+if (KEY) {
+  for (const v of vDoc.videos || []) {
+    if (quizzes >= MAX_QUIZ) break;
+    if ((v.quiz && v.quiz.length) || v.hidden || (v.quizTries || 0) >= 3 || !(v.steps || []).length) continue;
+    try {
+      v.quiz = await aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, key: KEY, model: MODEL });
+      delete v.quizTries; quizzes++;
+      console.log(`  ✓ Quiz written: ${v.title}`);
+    } catch (e) {
+      v.quizTries = (v.quizTries || 0) + 1;
+      console.log(`  ! Quiz failed for ${v.id}: ${e.message}`);
+      if (/API key|permission|quota|RESOURCE_EXHAUSTED/i.test(e.message)) break;
+    }
+    await sleep(4000);
+  }
+}
+console.log(`Quizzes written: ${quizzes}.`);
 const vOut = JSON.stringify(vDoc, null, 2) + "\n";
 if (vOut !== vText) await writeFile(new URL("videos.json", DATA), vOut);
 

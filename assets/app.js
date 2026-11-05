@@ -18,8 +18,17 @@
     saved: new Set(store.get("ab_saved", [])),
     tab: "library", cat: "ALL", level: "ALL", sort: "new", q: "", limit: PAGE,
     listScroll: 0, showEn: false,
-    paths: [], done: new Set(store.get("ab_done", [])), talks: []
+    paths: [], done: new Set(store.get("ab_done", [])), talks: [],
+    doneAt: store.get("ab_done_at", {}),        // video id → date it was last finished (for safety refreshers)
+    watch: store.get("ab_watch", {}),           // video id → {t: seconds watched up to, d: length, at: when}
+    quiz: store.get("ab_quiz", {}),             // video id → {score, n, pass, at}
+    profile: store.get("ab_profile", {}),       // {name, staffId, site, trade} — only on this phone
+    certs: store.get("ab_certs", []),           // certificates earned on this phone
+    speed: store.get("ab_speed", 1),
+    assignments: []
   };
+  // Videos finished before dates were kept: count them as finished today.
+  (() => { let ch = false; state.done.forEach(id => { if (!state.doneAt[id]) { state.doneAt[id] = new Date().toISOString().slice(0, 10); ch = true; } }); if (ch) store.set("ab_done_at", state.doneAt); })();
 
   /* ---------- helpers ---------- */
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -39,8 +48,36 @@
   const byId = id => state.videos.find(x => x.id === id);
   const pathVideos = p => p.videos.map(byId).filter(Boolean);
   function setDone(id, on) {
+    const was = state.done.has(id);
     on ? state.done.add(id) : state.done.delete(id);
-    store.set("ab_done", [...state.done]);
+    if (on) state.doneAt[id] = new Date().toISOString().slice(0, 10); else delete state.doneAt[id];
+    if (on) delete state.watch[id];
+    store.set("ab_done", [...state.done]); store.set("ab_done_at", state.doneAt); store.set("ab_watch", state.watch);
+    if (on && !was) { const v = byId(id); if (v) record("video", { item: id, title: v.title }); checkPaths(); }
+  }
+  /* ---------- safety refreshers ---------- */
+  const refMonths = () => { const m = state.settings.refresherMonths; return m === undefined || m === null || m === "" ? 12 : +m || 0; };
+  const monthsSince = d => d ? (Date.now() - Date.parse(d + "T00:00:00")) / (864e5 * 30.44) : 0;
+  const refresherDue = v => !!(v && v.essential && refMonths() && state.done.has(v.id) && monthsSince(state.doneAt[v.id]) >= refMonths());
+  const dueRefreshers = () => state.videos.filter(refresherDue);
+  /* ---------- watching progress ---------- */
+  const watchPct = v => { const w = state.watch[v.id]; return w && w.d ? Math.min(1, w.t / w.d) : 0; };
+  const inProgress = () => state.videos.filter(v => !state.done.has(v.id) && state.watch[v.id] && state.watch[v.id].t >= 15 && watchPct(v) < 0.9)
+    .sort((a, b) => (state.watch[b.id].at || "").localeCompare(state.watch[a.id].at || ""));
+  function saveWatch(id, t, d) {
+    state.watch[id] = { t: Math.round(t), d: Math.round(d || 0), at: new Date().toISOString() };
+    const ids = Object.keys(state.watch).sort((a, b) => (state.watch[b].at || "").localeCompare(state.watch[a].at || ""));
+    ids.slice(30).forEach(k => delete state.watch[k]);
+    store.set("ab_watch", state.watch);
+  }
+  /* ---------- quizzes ---------- */
+  const hasQuiz = v => !!(v && v.quiz && v.quiz.length);
+  const quizPassed = v => !hasQuiz(v) || !!(state.quiz[v.id] && state.quiz[v.id].pass);
+  const passMark = () => Math.min(100, Math.max(1, +state.settings.quizPass || 67));
+  function quizOf(v) {
+    const x = !state.showEn && v.trq && v.trq[state.lang];
+    const items = x && x.items && x.items.length === v.quiz.length && x.items.every((it, i) => it.options && it.options.length === v.quiz[i].options.length) ? x.items : null;
+    return v.quiz.map((it, i) => ({ q: items ? items[i].q : it.q, options: items ? items[i].options : it.options, answer: it.answer, tr: !!items }));
   }
   const fmtDate = d => { try { return new Date(d + "T00:00:00").toLocaleDateString(state.lang === "en" ? "en-GB" : state.lang, { day: "numeric", month: "short", year: "numeric" }); } catch { return d; } };
   const link = v => location.href.split("#")[0] + "#/v/" + encodeURIComponent(v.id);
@@ -81,6 +118,124 @@
   function openSheet(id) { const s = $(id); s.hidden = false; const f = s.querySelector("button"); f && f.focus(); }
   function closeSheets() { $$(".sheet").forEach(s => s.hidden = true); }
 
+  /* ---------- training records & usage counts (both optional, sent to the private Google script) ---------- */
+  const backend = () => state.settings.requestUrl || "";
+  const deviceId = (() => { let d = store.get("ab_dev", ""); if (!d) { d = Math.random().toString(36).slice(2, 12); store.set("ab_dev", d); } return d; })();
+  async function post(body, opts = {}) {
+    const r = await fetch(backend(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body), ...opts });
+    return r.json();
+  }
+  /* Staff sign-in with an HR number (turned on in admin → Settings → Staff sign-in). */
+  const loginOn = () => !!(state.settings.staffLogin && backend());
+  const loggedIn = () => !!state.profile.token;
+  const loginNeeded = () => loginOn() && !loggedIn();
+  // With sign-in on, every staff member's progress is recorded. Without it, only if the admin turned records on and the person typed a name.
+  const recordsOn = () => !!backend() && (loginOn() ? loggedIn() : !!(state.settings.recordsEnabled && state.profile.name));
+  const profileOut = () => ({ token: state.profile.token || "", hr: state.profile.hr || "", name: state.profile.name || "", site: state.profile.site || "", trade: state.profile.trade || "" });
+  function setProfile(p) { state.profile = p || {}; store.set("ab_profile", state.profile); }
+  /* Bring progress saved on the server back to this phone (new phone, cleared browser). */
+  function mergeProgress(pg) {
+    if (!pg) return;
+    (pg.done || []).forEach(([id, date]) => {
+      if (!byId(id) && state.videos.length) return;
+      state.done.add(id);
+      if (!state.doneAt[id] || (date && date > state.doneAt[id])) state.doneAt[id] = date || state.doneAt[id] || new Date().toISOString().slice(0, 10);
+    });
+    Object.entries(pg.quiz || {}).forEach(([id, q]) => { const cur = state.quiz[id]; if (!cur || (q.pass && !cur.pass) || (q.at > (cur.at || "") && q.pass === cur.pass)) state.quiz[id] = q; });
+    (pg.certs || []).forEach(c => { const i = state.certs.findIndex(x => x.code === c.code); if (i < 0) state.certs.push(c); else state.certs[i] = Object.assign({}, state.certs[i], c); });
+    store.set("ab_done", [...state.done]); store.set("ab_done_at", state.doneAt); store.set("ab_quiz", state.quiz); store.set("ab_certs", state.certs);
+  }
+  async function signIn(hr) {
+    const j = await post({ action: "login", hr, device: deviceId });
+    if (!j.ok) { const e = new Error(j.error || "error"); throw e; }
+    setProfile({ token: j.token, hr: j.staff.hr, name: j.staff.name, site: j.staff.site || "", trade: j.staff.trade || "" });
+    mergeProgress(j.progress);
+  }
+  /* Check the sign-in is still valid (e.g. the person left the company), refresh name/trade, sync progress. */
+  async function refreshMe() {
+    if (!loginOn() || !loggedIn() || !navigator.onLine) return;
+    try {
+      const j = await post({ action: "me", token: state.profile.token, device: deviceId });
+      if (j.ok) { setProfile(Object.assign({}, state.profile, { name: j.staff.name, site: j.staff.site || "", trade: j.staff.trade || "" })); mergeProgress(j.progress); if (!/^#\/v\//.test(location.hash)) route(); }
+      else if (j.error === "token" || j.error === "inactive") { signOut(true); }
+    } catch {}
+  }
+  function signOut(silent) {
+    if (!silent && !confirm(t("signOutQ"))) return;
+    setProfile({});
+    try {
+      ["ab_done", "ab_done_at", "ab_watch", "ab_quiz", "ab_certs", "ab_outbox", "ab_paths_done"].forEach(k => localStorage.removeItem(k));
+      Object.keys(localStorage).filter(k => k.startsWith("ab_steps_")).forEach(k => localStorage.removeItem(k));
+    } catch {}
+    state.done = new Set(); state.doneAt = {}; state.watch = {}; state.quiz = {}; state.certs = []; outbox = [];
+    location.hash = "#/"; route();
+  }
+  function renderLogin() {
+    $("#login-view").hidden = false;
+    document.body.classList.add("locked");
+    const f = $("#login-form");
+    f.onsubmit = async e => {
+      e.preventDefault();
+      const hr = $("#l-hr").value.trim(), msg = $("#l-msg"), btn = $("#l-go");
+      if (!hr) { $("#l-hr").focus(); return; }
+      if (!navigator.onLine) { msg.textContent = t("loginOffline"); msg.className = "req-msg bad"; return; }
+      btn.disabled = true; btn.textContent = t("sending"); msg.textContent = "";
+      try {
+        await signIn(hr);
+        $("#login-view").hidden = true; document.body.classList.remove("locked");
+        toast(t("welcome", { name: state.profile.name.split(" ")[0] }));
+        route(); flush();
+      } catch (err) {
+        msg.textContent = err.message === "notfound" ? t("loginBad") : err.message === "busy" ? t("loginBusy") : err.message === "inactive" ? t("loginInactive") : t("reqFail");
+        msg.className = "req-msg bad";
+      }
+      btn.disabled = false; btn.textContent = t("signIn");
+    };
+    $("#l-lang").onclick = () => openSheet("#lang-sheet");
+    setTimeout(() => $("#l-hr").focus(), 50);
+  }
+  let outbox = store.get("ab_outbox", []), flushT, flushing = false;
+  function record(type, d) {
+    if (!recordsOn()) return;
+    outbox.push({ type, ...d, lang: state.lang, time: new Date().toISOString() });
+    outbox = outbox.slice(-200);
+    store.set("ab_outbox", outbox);
+    clearTimeout(flushT); flushT = setTimeout(flush, 1500);
+  }
+  async function flush() {
+    if (flushing || !outbox.length || !recordsOn() || !navigator.onLine) return;
+    flushing = true;
+    const batch = outbox.slice(0, 25);
+    try {
+      const j = await post({ action: "record", device: deviceId, profile: profileOut(), events: batch });
+      if (j.ok) { outbox = outbox.slice(batch.length); store.set("ab_outbox", outbox); if (outbox.length) setTimeout(flush, 800); }
+    } catch {}
+    flushing = false;
+  }
+  const statsOn = () => !!(state.settings.statsEnabled && backend());
+  let statBox = {}, statT;
+  function stat(kind, key) {
+    if (!statsOn() || !key) return;
+    const k = kind + "|" + String(key).toLowerCase().trim().slice(0, 80);
+    statBox[k] = (statBox[k] || 0) + 1;
+    clearTimeout(statT); statT = setTimeout(sendStats, 30000);
+  }
+  function sendStats() {
+    const ks = Object.keys(statBox);
+    if (!ks.length || !statsOn() || !navigator.onLine) return;
+    const events = ks.map(k => { const i = k.indexOf("|"); return { kind: k.slice(0, i), key: k.slice(i + 1), n: statBox[k] }; });
+    statBox = {};
+    try { post({ action: "stats", events }, { keepalive: true }).catch(() => {}); } catch {}
+  }
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") sendStats(); });
+  const noResSeen = new Set(); let noResT;
+  function noteNoResults(q) {
+    clearTimeout(noResT);
+    q = q.trim().toLowerCase();
+    if (q.length < 3 || noResSeen.has(q)) return;
+    noResT = setTimeout(() => { noResSeen.add(q); stat("nores", q); }, 2500);
+  }
+
   /* ---------- data ---------- */
   async function getJSON(path) {
     const r = await fetch(path + "?v=" + Date.now(), { cache: "no-store" });
@@ -104,8 +259,10 @@
       state.updated = vd.updated || "";
       state.talks = (tb.talks || []).filter(k => k && k.id && k.title && !k.hidden);
       state.paths = (pd.paths || []).filter(p => p && p.id && !p.hidden && (p.videos || []).some(id => byId(id)));
+      state.assignments = (pd.assignments || []).filter(a => a && a.path && state.paths.some(p => p.id === a.path));
       applySettings();
       route();
+      checkPaths(); flush(); refreshMe();
     } catch (e) {
       console.error(e);
       $("#grid").innerHTML = "";
@@ -170,11 +327,12 @@
         <div class="thumb">
           <img loading="lazy" decoding="async" src="${thumb(v.yt)}" alt="" width="320" height="180">
           ${v.duration ? `<span class="dur">${esc(v.duration)}</span>` : ""}
-          ${v.essential ? `<span class="tag-new tag-ess">🦺 ${esc(t("essentialTag"))}</span>` : isNew(v) ? `<span class="tag-new">${esc(t("new"))}</span>` : ""}
-          ${state.done.has(v.id) ? `<span class="tag-done" title="${esc(t("doneLabel"))}">✓</span>` : ""}
+          ${refresherDue(v) ? `<span class="tag-new tag-ref">↻ ${esc(t("refresherDue"))}</span>` : v.essential ? `<span class="tag-new tag-ess">🦺 ${esc(t("essentialTag"))}</span>` : isNew(v) ? `<span class="tag-new">${esc(t("new"))}</span>` : ""}
+          ${state.done.has(v.id) && !refresherDue(v) ? `<span class="tag-done" title="${esc(t("doneLabel"))}">✓</span>` : ""}
+          ${!state.done.has(v.id) && watchPct(v) > 0.02 ? `<span class="tag-prog"><i style="width:${Math.round(watchPct(v) * 100)}%"></i></span>` : ""}
         </div>
         <div class="card-body">
-          <div class="meta"><span>${catIcon(v.category)} ${esc(catLabel(v.category))}</span><span class="lvl lvl-${esc(v.level)}">${esc(t(v.level))}</span></div>
+          <div class="meta"><span>${catIcon(v.category)} ${esc(catLabel(v.category))}</span><span class="lvl lvl-${esc(v.level)}">${esc(t(v.level))}</span>${hasQuiz(v) ? `<span class="q-tag${quizPassed(v) && state.quiz[v.id] ? " ok" : ""}" title="${esc(t("quizTitle"))}">🧠${quizPassed(v) && state.quiz[v.id] ? " ✓" : ""}</span>` : ""}</div>
           <h3>${esc(titleOf(v))}</h3>
           ${v.channel ? `<div class="chan">${esc(v.channel)}</div>` : ""}
         </div>
@@ -220,9 +378,22 @@
     }
     $("#req-btn").hidden = !state.settings.requestUrl;
     $("#req-btn").title = t("requestVideo");
+    // Assigned training (only the open ones on the home screen)
+    const aw = $("#assign-wrap");
+    const openAs = showRail ? myAssignments().filter(x => !pathStats(x.p).complete) : [];
+    aw.hidden = !(openAs.length || (showRail && needsTrade()));
+    aw.innerHTML = openAs.map(assignHtml).join("") + (showRail && needsTrade() ? `<button class="notice assign-trade" data-profile>📌 ${esc(t("setTrade"))}</button>` : "");
+    const due = showRail ? dueRefreshers() : [];
+    const rn = $("#refresh-note");
+    rn.hidden = !due.length;
+    rn.innerHTML = due.length ? `🦺 <span>${esc(t("refreshersDue", { n: due.length }))}</span>` : "";
+    const cont = showRail ? inProgress().slice(0, 10) : [];
+    $("#cont-wrap").hidden = !cont.length;
+    $("#cont-rail").innerHTML = cont.map(card).join("");
     const ess = showRail ? state.videos.filter(v => v.essential) : [];
     $("#ess-wrap").hidden = !ess.length;
-    $("#ess-rail").innerHTML = ess.sort((a, b) => state.done.has(a.id) - state.done.has(b.id)).map(card).join("");
+    const essRank = v => refresherDue(v) ? 0 : state.done.has(v.id) ? 2 : 1;
+    $("#ess-rail").innerHTML = ess.sort((a, b) => essRank(a) - essRank(b)).map(card).join("");
     $("#paths-wrap").hidden = !(showRail && state.paths.length);
     $("#paths-rail").innerHTML = showRail ? state.paths.map(pathCard).join("") : "";
     $("#rail-wrap").hidden = !fresh.length;
@@ -238,6 +409,7 @@
       if (state.tab === "saved" && !state.q) {
         em.innerHTML = `<div class="big">🔖</div><h3>${esc(t("savedEmpty"))}</h3><p>${esc(t("savedEmptyHint"))}</p>`;
       } else {
+        if (state.q && state.cat === "ALL" && state.level === "ALL" && state.tab === "library") noteNoResults(state.q);
         em.innerHTML = `<div class="big">🔍</div><h3>${esc(t("noResults"))}</h3><p>${esc(t("noResultsHint"))}</p><p><button class="btn" id="clear-all">${esc(t("clearFilters"))}</button></p>
           ${state.settings.requestUrl ? `<p class="hint">${esc(t("requestHint"))}</p><p><button class="btn btn-primary" data-request>🙋 ${esc(t("requestVideo"))}</button></p>` : ""}`;
       }
@@ -314,7 +486,6 @@
   const aiOn = () => !!(state.settings.aiEnabled && state.settings.requestUrl);
   const ai = { msgs: (() => { try { return JSON.parse(sessionStorage.getItem("ab_ai") || "[]"); } catch { return []; } })(), photos: [], busy: false };
   const saveAi = () => { try { sessionStorage.setItem("ab_ai", JSON.stringify(ai.msgs.slice(-20).map(m => ({ ...m, photos: undefined, nPhotos: (m.photos || []).length || m.nPhotos || 0 })))); } catch {} };
-  const deviceId = (() => { let d = store.get("ab_dev", ""); if (!d) { d = Math.random().toString(36).slice(2, 12); store.set("ab_dev", d); } return d; })();
   function mdLite(text) {
     const lines = esc(text).split(/\n/);
     let html = "", list = null;
@@ -500,24 +671,215 @@
   /* ---------- learning paths ---------- */
   function pathStats(p) {
     const vids = pathVideos(p), n = vids.length, done = vids.filter(v => state.done.has(v.id)).length;
-    const next = vids.find(v => !state.done.has(v.id)) || vids[0];
-    return { vids, n, done, next };
+    const next = vids.find(v => !state.done.has(v.id) || !quizPassed(v)) || vids[0];
+    const quizOk = vids.every(quizPassed);
+    return { vids, n, done, next, quizOk, complete: !!n && done === n && quizOk };
   }
+  /* Let the person know when a path is finished, and record it once. */
+  function checkPaths() {
+    const seen = store.get("ab_paths_done", {});
+    let ch = false;
+    state.paths.forEach(p => {
+      if (seen[p.id] || !pathStats(p).complete) return;
+      seen[p.id] = new Date().toISOString().slice(0, 10); ch = true;
+      record("path", { item: p.id, title: p.title });
+      setTimeout(() => toast("🎓 " + t("pathComplete")), 400);
+    });
+    if (ch) store.set("ab_paths_done", seen);
+  }
+
+  /* ---------- assigned training ---------- */
+  const myTrade = () => state.profile.trade || "";
+  function myAssignments() {
+    return state.assignments.map(a => ({ a, p: state.paths.find(p => p.id === a.path) }))
+      .filter(x => x.p && (!(x.a.trades || []).length || (myTrade() && x.a.trades.includes(myTrade()))))
+      .sort((x, y) => (x.a.due || "9999").localeCompare(y.a.due || "9999"));
+  }
+  const needsTrade = () => !myTrade() && !loginOn() && state.assignments.some(a => (a.trades || []).length);
+  const isOverdue = a => a.due && a.due < localDay();
+  function assignHtml({ a, p }) {
+    const s = pathStats(p), x = pTr(p), over = !s.complete && isOverdue(a);
+    return `<a class="assign${over ? " over" : ""}${s.complete ? " ok" : ""}" href="#/p/${encodeURIComponent(p.id)}">
+      <span class="as-ico">${esc(p.icon || "🎓")}</span>
+      <span class="as-body"><span class="as-label">📌 ${esc(t("assigned"))}</span><strong>${esc(x.title || p.title)}</strong>
+        <span class="as-meta">${s.complete ? "✓ " + esc(t("doneLabel")) : esc(t("progress", { done: s.done, n: s.n }))}${a.due ? ` · <b>${esc(over ? t("overdue") : t("dueBy", { date: fmtDate(a.due) }))}</b>` : ""}</span>
+        ${a.note ? `<span class="as-note">${esc(a.note)}</span>` : ""}</span>
+      <span class="tk-go flip-r">${ICON.back}</span></a>`;
+  }
+
+  /* ---------- certificates ---------- */
+  function makeCode() {
+    const A = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789", r = new Uint8Array(8);
+    (window.crypto || {}).getRandomValues ? crypto.getRandomValues(r) : r.forEach((_, i) => r[i] = Math.random() * 256);
+    const s = [...r].map(x => A[x % A.length]).join("");
+    return s.slice(0, 4) + "-" + s.slice(4);
+  }
+  let afterProfile = null;
+  function getCert(p) {
+    const existing = state.certs.find(c => c.path === p.id);
+    if (existing) { location.hash = "#/cert/" + existing.code; return; }
+    if (!state.profile.name) { afterProfile = () => getCert(p); openProfile(); return; }
+    const { vids } = pathStats(p);
+    const qs = vids.filter(hasQuiz).map(v => state.quiz[v.id]).filter(Boolean);
+    const score = qs.length ? Math.round(qs.reduce((a, q) => a + q.score / q.n, 0) / qs.length * 100) : null;
+    const c = { code: makeCode(), path: p.id, title: p.title, at: localDay(), name: state.profile.name, hr: state.profile.hr || "", site: state.profile.site || "", trade: state.profile.trade || "", videos: vids.length, score };
+    state.certs.push(c); store.set("ab_certs", state.certs);
+    record("cert", { item: p.id, title: p.title, code: c.code, score });
+    location.hash = "#/cert/" + c.code;
+  }
+  const verifyLink = c => location.href.split("#")[0] + "#/verify/" + encodeURIComponent(c.code);
+  function renderCert(c) {
+    const p = state.paths.find(x => x.id === c.path), x = p ? pTr(p) : {};
+    const el = $("#video-view");
+    const canSign = !!(state.settings.signoffEnabled && backend());
+    el.innerHTML = `
+      <button class="btn btn-ghost btn-sm vp-back no-print" id="back">${ICON.back}<span>${esc(t("back"))}</span></button>
+      <article class="cert" lang="en" dir="ltr">
+        <div class="cert-in">
+          <img class="cert-logo" src="assets/logo.png" alt="" width="64" height="64">
+          <p class="cert-org">${esc(state.settings.tagline || "Al Bonian Facilities Management")}</p>
+          <h1>${esc(t("certTitle"))}</h1>
+          <p class="cert-small">${esc(t("certThis"))}</p>
+          <p class="cert-name">${esc(c.name || state.profile.name || "")}</p>
+          ${c.hr ? `<p class="cert-small">${esc(t("hrNumber"))}: <b>${esc(c.hr)}</b></p>` : ""}
+          <p class="cert-small">${esc(t("certBody"))}</p>
+          <p class="cert-path">${esc((p && p.icon) || "🎓")} ${esc(c.title)}</p>
+          ${x.title && x.title !== c.title ? `<p class="cert-small" lang="${esc(state.lang)}" dir="auto">${esc(x.title)}</p>` : ""}
+          <div class="cert-facts">
+            <span><small>${esc(t("certDate"))}</small><b>${esc(fmtDate(c.at))}</b></span>
+            <span><small>${esc(t("certVideos"))}</small><b>${esc(c.videos || "")}</b></span>
+            ${c.score !== null && c.score !== undefined ? `<span><small>${esc(t("quizTitle"))}</small><b>${esc(c.score)}%</b></span>` : ""}
+          </div>
+          <div class="cert-sign">${c.signedBy ? `✍️ ${esc(t("signedBy", { name: c.signedBy }))}${c.signedAt ? " · " + esc(fmtDate(c.signedAt)) : ""}` : canSign ? `<span class="cert-line"></span><small>${esc(t("signoff"))}</small>` : ""}</div>
+          <p class="cert-code">${esc(t("certCode"))}: <b>${esc(c.code)}</b></p>
+        </div>
+      </article>
+      <div class="actions no-print" style="margin-top:14px">
+        <button class="btn btn-primary" id="c-print">🖨️ <span>${esc(t("printCert"))}</span></button>
+        <button class="btn" id="c-share">${ICON.share}<span>${esc(t("share"))}</span></button>
+        ${canSign && !c.signedBy ? `<button class="btn" id="c-sign">✍️ <span>${esc(t("signoff"))}</span></button>` : ""}
+      </div>`;
+    $("#back").onclick = goBack;
+    $("#c-print").onclick = () => window.print();
+    $("#c-share").onclick = async () => {
+      const text = `🎓 ${c.name || state.profile.name} — ${c.title} (${fmtDate(c.at)}) · ${t("certCode")}: ${c.code}`;
+      const url = backend() ? verifyLink(c) : undefined;
+      if (navigator.share) { try { await navigator.share({ title: t("certTitle"), text, url }); return; } catch (e) { if (e.name === "AbortError") return; } }
+      window.open("https://wa.me/?text=" + encodeURIComponent(text + (url ? "\n" + url : "")), "_blank", "noopener");
+    };
+    const sb = $("#c-sign"); if (sb) sb.onclick = () => openSignoff(c);
+  }
+  function openSignoff(c) {
+    $("#sg-form").reset(); $("#sg-msg").textContent = ""; $("#sg-msg").className = "req-msg";
+    $("#sign-sheet").hidden = false; setTimeout(() => $("#sg-pin").focus(), 50);
+    $("#sg-form").onsubmit = async e => {
+      e.preventDefault();
+      const pin = $("#sg-pin").value.trim(), msg = $("#sg-msg"), btn = $("#sg-go");
+      if (!pin) return;
+      btn.disabled = true; msg.textContent = t("sending"); msg.className = "req-msg";
+      try {
+        const j = await post({ action: "signoff", pin, code: c.code, path: c.path, title: c.title, device: deviceId, profile: profileOut(), name: c.name, score: c.score, at: c.at });
+        if (!j.ok) throw new Error(j.error || "error");
+        c.signedBy = j.supervisor; c.signedAt = localDay();
+        store.set("ab_certs", state.certs);
+        closeSheets(); toast("✓ " + t("signedBy", { name: j.supervisor })); renderCert(c);
+      } catch (err) { msg.textContent = err.message === "pin" ? t("wrongPin") : err.message === "busy" ? t("loginBusy") : t("reqFail"); msg.className = "req-msg bad"; }
+      btn.disabled = false;
+    };
+  }
+  async function renderVerify(code) {
+    const el = $("#video-view");
+    el.innerHTML = `<button class="btn btn-ghost btn-sm vp-back" id="back">${ICON.back}<span>${esc(t("back"))}</span></button>
+      <div class="panel verify"><h2>🔎 ${esc(t("verify"))}</h2><p class="count">${esc(t("certCode"))}: <b>${esc(code)}</b></p><div id="vf-out"><p class="hint">${esc(t("loading"))}</p></div></div>`;
+    $("#back").onclick = goBack;
+    const out = $("#vf-out");
+    if (!backend()) { out.innerHTML = `<p>${esc(t("verifyBad"))}</p>`; return; }
+    try {
+      const u = backend() + (backend().includes("?") ? "&" : "?") + "verify=" + encodeURIComponent(code);
+      const j = await (await fetch(u, { cache: "no-store" })).json();
+      if (!j.ok || !j.cert) throw new Error("bad");
+      const c = j.cert;
+      out.innerHTML = `<p class="vf-ok">✅ ${esc(t("verifyOk"))}</p>
+        <p><b>${esc(c.name)}</b>${c.hr ? ` · ${esc(t("hrNumber"))} ${esc(c.hr)}` : ""}</p>
+        <p>${esc(c.title)} · ${esc(fmtDate(String(c.at).slice(0, 10)))}${c.score !== "" && c.score !== null && c.score !== undefined ? ` · ${esc(t("quizTitle"))} ${esc(c.score)}%` : ""}</p>
+        ${c.signedBy ? `<p>✍️ ${esc(t("signedBy", { name: c.signedBy }))}</p>` : ""}`;
+    } catch { out.innerHTML = `<p class="vf-bad">❌ ${esc(t("verifyBad"))}</p>`; }
+  }
+
+  /* ---------- my details (only used when staff sign-in is off) ---------- */
+  function openProfile() {
+    if (loginOn()) return;
+    const p = state.profile;
+    $("#pf-name").value = p.name || ""; $("#pf-site").value = p.site || "";
+    $("#pf-trade").innerHTML = `<option value="">${esc(t("allTrades"))}</option>` + state.settings.categories.map(c => `<option value="${esc(c.name)}">${c.icon || ""} ${esc(catLabel(c.name))}</option>`).join("");
+    $("#pf-trade").value = p.trade || "";
+    $("#pf-msg").textContent = "";
+    $(".sheet-in .sub", $("#profile-sheet")).textContent = t("profileHint") + (state.settings.recordsEnabled && backend() ? " " + t("profileShare") : "");
+    $("#profile-sheet").hidden = false; setTimeout(() => $("#pf-name").focus(), 50);
+  }
+  function saveProfile(e) {
+    e.preventDefault();
+    const name = $("#pf-name").value.trim();
+    if (!name) { $("#pf-msg").textContent = t("needName"); $("#pf-msg").className = "req-msg bad"; $("#pf-name").focus(); return; }
+    setProfile(Object.assign({}, state.profile, { name, site: $("#pf-site").value.trim(), trade: $("#pf-trade").value }));
+    closeSheets(); toast("✓ " + t("saveDetails"));
+    const next = afterProfile; afterProfile = null;
+    if (next) next(); else route();
+  }
+
+  /* ---------- my training page ---------- */
+  function renderMe() {
+    const el = $("#video-view"), p = state.profile;
+    const done = state.videos.filter(v => state.done.has(v.id)).length;
+    const passed = state.videos.filter(v => hasQuiz(v) && state.quiz[v.id] && state.quiz[v.id].pass).length;
+    const as = myAssignments(), due = dueRefreshers(), cont = inProgress();
+    el.innerHTML = `
+      <div class="me-head">
+        <div class="me-avatar">${esc((p.name || "👤").trim().charAt(0).toUpperCase())}</div>
+        <div class="me-id">
+          <h1>${esc(p.name || t("me"))}</h1>
+          <p class="count">${[p.hr ? t("hrNumber") + " " + p.hr : "", p.trade ? catIcon(p.trade) + " " + catLabel(p.trade) : "", p.site].filter(Boolean).map(esc).join(" · ") || esc(t("profileHint"))}</p>
+        </div>
+        ${loginOn() ? (loggedIn() ? `<button class="btn btn-sm" id="me-out">${esc(t("signOut"))}</button>` : "") : `<button class="btn btn-sm" data-profile>${esc(p.name ? t("edit") : t("profile"))}</button>`}
+      </div>
+      <div class="me-stats">
+        <span><b>${done}</b>${esc(t("statVideos"))}</span>
+        <span><b>${passed}</b>${esc(t("statQuizzes"))}</span>
+        <span><b>${state.certs.length}</b>${esc(t("statCerts"))}</span>
+      </div>
+      ${as.length ? `<div class="section-h"><h2>📌 ${esc(t("assigned"))}</h2></div><div class="assign-wrap">${as.map(assignHtml).join("")}</div>` : ""}
+      ${due.length ? `<div class="section-h"><h2>🦺 ${esc(t("refresherDue"))}</h2></div><p class="section-sub">${esc(t("refresherHint", { n: refMonths() }))}</p><div class="mini-list">${due.map(v => mini(v)).join("")}</div>` : ""}
+      ${cont.length ? `<div class="section-h" style="margin-top:18px"><h2>▶ ${esc(t("continueWatching"))}</h2></div><div class="mini-list">${cont.slice(0, 6).map(v => mini(v)).join("")}</div>` : ""}
+      <div class="section-h" style="margin-top:18px"><h2>🎓 ${esc(t("certs"))}</h2></div>
+      ${state.certs.length ? `<div class="cert-list">${state.certs.slice().reverse().map(c => `<a href="#/cert/${encodeURIComponent(c.code)}"><span>🎓</span><span><b>${esc(c.title)}</b><small>${esc(fmtDate(c.at))}${c.signedBy ? " · ✍️ " + esc(c.signedBy) : ""}</small></span></a>`).join("")}</div>` : `<p class="hint">${esc(t("noCerts"))}</p>`}
+      ${state.paths.length ? `<div class="section-h" style="margin-top:18px"><h2>${esc(t("paths"))}</h2></div><div class="mini-list">${state.paths.map(pathCard).join("")}</div>` : ""}`;
+    const mo = $("#me-out"); if (mo) mo.onclick = () => signOut();
+  }
+  const goBack = () => { if (history.length > 1 && sessionStorage.getItem("ab_in_app")) history.back(); else location.hash = "#/"; };
   function pathCard(p) {
-    const { vids, n, done } = pathStats(p), x = pTr(p);
+    const { vids, n, done, complete } = pathStats(p), x = pTr(p);
     const pct = n ? Math.round(done / n * 100) : 0;
+    if (complete) return pathCardHtml(p, vids, n, done, x, 100, true);
+    return pathCardHtml(p, vids, n, done, x, pct, false);
+  }
+  function pathCardHtml(p, vids, n, done, x, pct, complete) {
     return `<a class="path-card" href="#/p/${encodeURIComponent(p.id)}">
       <div class="pc-top"><span class="pc-ico">${esc(p.icon || "🎓")}</span><div class="pc-thumbs">${vids.slice(0, 3).map(v => `<img loading="lazy" src="${thumb(v.yt)}" alt="">`).join("")}</div></div>
       <h3>${esc(x.title || p.title)}</h3>
       ${p.description ? `<p>${esc(x.description || p.description)}</p>` : ""}
       <div class="pc-bar"><i style="width:${pct}%"></i></div>
-      <div class="pc-foot"><span>${esc(t("progress", { done, n }))}</span><span class="pc-go">${esc(done === n && n ? "✓ " + t("doneLabel") : done ? t("continuePath") : t("startPath"))}</span></div>
+      <div class="pc-foot"><span>${esc(t("progress", { done, n }))}</span><span class="pc-go">${esc(complete ? "🎓 " + t("doneLabel") : done ? t("continuePath") : t("startPath"))}</span></div>
     </a>`;
   }
   function renderPath(p) {
-    const { vids, n, done, next } = pathStats(p), x = pTr(p);
+    const { vids, n, done, next, complete, quizOk } = pathStats(p), x = pTr(p);
     const el = $("#video-view");
     const href = v => `#/v/${encodeURIComponent(v.id)}/p/${encodeURIComponent(p.id)}`;
+    const as = myAssignments().find(y => y.p.id === p.id);
+    const cert = state.certs.find(c => c.path === p.id);
+    const finish = complete
+      ? `<button class="btn btn-primary cert-btn" id="p-cert">🎓 <span>${esc(cert ? t("certificate") : t("getCert"))}</span></button>`
+      : done === n && !quizOk ? `<p class="notice">🧠 ${esc(t("pathNeedsQuiz"))}</p>` : "";
     el.innerHTML = `
       <button class="btn btn-ghost btn-sm vp-back" id="back">${ICON.back}<span>${esc(t("back"))}</span></button>
       <div class="path-head">
@@ -526,11 +888,78 @@
       </div>
       ${p.description ? `<p class="ph-desc">${esc(x.description || p.description)}</p>` : ""}
       <div class="pc-bar big"><i style="width:${n ? done / n * 100 : 0}%"></i></div>
-      <p class="count">${esc(t("progress", { done, n }))}</p>
-      ${next ? `<a class="btn btn-primary" style="width:100%;margin:6px 0 18px" href="${href(next)}">${ICON.play}<span>${esc(done === n ? t("startPath") : done ? t("continuePath") : t("startPath"))}</span></a>` : ""}
-      <ol class="path-list">${vids.map((v, i) => `<li class="${state.done.has(v.id) ? "is-done" : ""}">
-        <span class="pl-n">${state.done.has(v.id) ? "✓" : i + 1}</span>${mini(v, href(v))}</li>`).join("")}</ol>`;
-    $("#back").onclick = () => { if (history.length > 1 && sessionStorage.getItem("ab_in_app")) history.back(); else location.hash = "#/"; };
+      <p class="count">${esc(t("progress", { done, n }))}${as && as.a.due ? ` · <b class="${!complete && isOverdue(as.a) ? "over-t" : ""}">📌 ${esc(!complete && isOverdue(as.a) ? t("overdue") : t("dueBy", { date: fmtDate(as.a.due) }))}</b>` : ""}</p>
+      ${finish}
+      ${next && !complete ? `<a class="btn btn-primary" style="width:100%;margin:6px 0 18px" href="${href(next)}">${ICON.play}<span>${esc(done ? t("continuePath") : t("startPath"))}</span></a>` : ""}
+      <ol class="path-list">${vids.map((v, i) => { const ok = state.done.has(v.id) && quizPassed(v); return `<li class="${ok ? "is-done" : ""}">
+        <span class="pl-n">${ok ? "✓" : i + 1}</span>${mini(v, href(v))}${hasQuiz(v) ? `<span class="pl-q${quizPassed(v) ? " ok" : ""}" title="${esc(t("quizTitle"))}">🧠${quizPassed(v) ? "✓" : ""}</span>` : ""}</li>`; }).join("")}</ol>`;
+    $("#back").onclick = goBack;
+    const pc = $("#p-cert"); if (pc) pc.onclick = () => getCert(p);
+  }
+
+  /* ---------- YouTube player (speed, resume, automatic "done") ---------- */
+  let ytLoading = null, yt = null, ytTimer = null;
+  function loadYT() {
+    if (window.YT && window.YT.Player) return Promise.resolve(window.YT);
+    if (ytLoading) return ytLoading;
+    ytLoading = new Promise((res, rej) => {
+      const prev = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => { if (prev) try { prev(); } catch {} res(window.YT); };
+      const s = document.createElement("script");
+      s.src = "https://www.youtube.com/iframe_api"; s.async = true;
+      s.onerror = () => rej(new Error("yt"));
+      document.head.appendChild(s);
+      setTimeout(() => rej(new Error("timeout")), 9000);
+    }).catch(e => { ytLoading = null; throw e; });
+    return ytLoading;
+  }
+  function stopPlayer() {
+    clearInterval(ytTimer); ytTimer = null;
+    if (yt) { try { yt.destroy(); } catch {} yt = null; }
+  }
+  const SPEEDS = [0.75, 1, 1.25, 1.5, 2];
+  const fmtT = s => { s = Math.round(s); const m = Math.floor(s / 60); return m + ":" + String(s % 60).padStart(2, "0"); };
+
+  /* ---------- quick check (quiz) ---------- */
+  function quizHtml(v) {
+    const prev = state.quiz[v.id];
+    const items = quizOf(v);
+    const order = items.map(it => it.options.map((_, i) => i).sort(() => Math.random() - 0.5));
+    return { order, html: `<section class="panel quiz" id="quiz" ${items.some(i => i.tr) || state.lang === "en" ? "" : 'lang="en" dir="ltr"'}>
+      <h2>🧠 ${esc(t("quizTitle"))}${prev && prev.pass ? ` <span class="q-pass">✓ ${esc(t("quizPassed"))}</span>` : ""}</h2>
+      <p class="hint">${esc(prev && prev.pass ? t("quizScore", { score: prev.score, n: prev.n }) + " · " + fmtDate(prev.at) : t("quizHint"))}</p>
+      <form id="quiz-form">${items.map((it, qi) => `<fieldset class="q-item" data-q="${qi}"><legend><span class="num">${qi + 1}</span>${esc(it.q)}</legend>
+        ${order[qi].map(oi => `<label class="q-opt"><input type="radio" name="q${qi}" value="${oi}"><span>${esc(it.options[oi])}</span></label>`).join("")}</fieldset>`).join("")}
+        <p class="q-result" id="q-result" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" id="q-check" style="width:100%">${esc(prev && prev.pass ? t("quizAgain") : t("quizCheck"))}</button>
+      </form></section>` };
+  }
+  function wireQuiz(v, path, rerender) {
+    const f = $("#quiz-form"); if (!f) return;
+    let checked = false;
+    f.onsubmit = e => {
+      e.preventDefault();
+      if (checked) { rerender(); setTimeout(() => { const q = $("#quiz"); if (q) q.scrollIntoView({ block: "start" }); }, 30); return; }
+      const items = v.quiz, picks = items.map((_, qi) => { const x = f.querySelector(`input[name="q${qi}"]:checked`); return x ? +x.value : null; });
+      const res = $("#q-result");
+      if (picks.some(p => p === null)) { res.textContent = t("quizPick"); res.className = "q-result bad"; return; }
+      const score = picks.filter((p, i) => p === items[i].answer).length, n = items.length;
+      const pass = score * 100 / n >= passMark() - 0.01;
+      $$(".q-item", f).forEach((fs, qi) => {
+        fs.classList.add(picks[qi] === items[qi].answer ? "right" : "wrong");
+        $$("label", fs).forEach(l => { const iv = +l.querySelector("input").value; if (iv === items[qi].answer) l.classList.add("is-answer"); l.querySelector("input").disabled = true; });
+      });
+      const prev = state.quiz[v.id];
+      if (pass || !prev || !prev.pass) { state.quiz[v.id] = { score, n, pass, at: localDay() }; store.set("ab_quiz", state.quiz); }
+      record("quiz", { item: v.id, title: v.title, score, n, pass });
+      res.innerHTML = `<b>${esc(t("quizScore", { score, n }))}</b> — ${esc(pass ? "✓ " + t("quizPassed") : t("quizFailed"))}`;
+      res.className = "q-result " + (pass ? "ok" : "bad");
+      if (pass && !state.done.has(v.id)) setDone(v.id, true);
+      else if (pass) checkPaths();
+      checked = true;
+      $("#q-check").textContent = t("quizRetry");
+      const pn = $("#path-next"); if (pn && pass) pn.classList.add("pulse");
+    };
   }
 
   /* ---------- rendering: video page ---------- */
@@ -555,6 +984,8 @@
         ${nx ? `<a class="btn btn-primary btn-sm" href="#/v/${encodeURIComponent(nx.id)}/p/${encodeURIComponent(path.id)}" id="path-next"><span>${esc(t("nextInPath"))}</span><span class="flip-r">${ICON.back}</span></a>` : ""}</div>`;
     }
     const el = $("#video-view");
+    const quizBlock = hasQuiz(v) ? quizHtml(v) : null;
+    if (navigator.onLine) loadYT().catch(() => {});
     el.innerHTML = `
       <button class="btn btn-ghost btn-sm vp-back" id="back">${ICON.back}<span>${esc(t("back"))}</span></button>
       ${steps.length ? `<div class="mode-tabs" role="tablist">
@@ -562,6 +993,7 @@
         <button role="tab" data-mode="guide" aria-selected="false">${ICON.list}<span>${esc(t("tabGuide"))}</span></button>
       </div>` : ""}
       <div class="player" id="player"></div>
+      <div class="speed" id="speed" role="group" aria-label="${esc(t("speed"))}"><span>⏩ ${esc(t("speed"))}</span>${SPEEDS.map(s => `<button data-speed="${s}" aria-pressed="${s === state.speed}">${s}×</button>`).join("")}</div>
       <h1>${esc(x.title || v.title)}</h1>
       ${x.title ? `<p class="en-title" lang="en" dir="ltr">${esc(v.title)}</p>` : ""}
       <div class="meta">
@@ -572,7 +1004,7 @@
       </div>
       ${pathBar}
       <div class="actions">
-        <button class="btn${state.done.has(v.id) ? " is-done" : ""}" id="v-done" aria-pressed="${state.done.has(v.id)}">${state.done.has(v.id) ? "✓" : "○"}<span>${esc(state.done.has(v.id) ? t("doneLabel") : t("markDone"))}</span></button>
+        <button class="btn${state.done.has(v.id) && !refresherDue(v) ? " is-done" : ""}" id="v-done" aria-pressed="${state.done.has(v.id)}"></button>
         <button class="btn" id="v-save" aria-pressed="${on}">${on ? ICON.bookmarkOn : ICON.bookmark}<span>${esc(on ? t("savedLabel") : t("save"))}</span></button>
         <button class="btn" id="v-share">${ICON.share}<span>${esc(t("share"))}</span></button>
         <a class="btn" href="https://www.youtube.com/watch?v=${encodeURIComponent(v.yt)}" target="_blank" rel="noopener">${ICON.yt}<span>${esc(t("watchOnYouTube"))}</span></a>
@@ -590,6 +1022,8 @@
         <div class="progress"><i id="prog"></i></div>
         <ol class="steps">${steps.map((s, i) => `<li><label><input type="checkbox" data-step="${i}" ${done.includes(i) ? "checked" : ""}><span class="num">${i + 1}</span><span>${esc(s)}</span></label></li>`).join("")}</ol>
       </section>` : ""}
+      ${refresherDue(v) ? `<p class="notice refresh-note">🦺 ${esc(t("refresherHint", { n: refMonths() }))}</p>` : ""}
+      ${hasQuiz(v) ? quizBlock.html : ""}
       ${v.summary ? `<section class="panel"><h2>${ICON.info}${esc(t("about"))}</h2><p>${esc(x.summary || v.summary)}</p>
         ${state.lang !== "en" ? `<p class="subnote">${esc(t("subtitles"))}</p>` : ""}</section>` : ""}
       ${related.length ? `<div class="section-h" style="margin-top:22px"><h2>${esc(t("related"))}</h2></div><div class="mini-list">${related.map(mini).join("")}</div>` : ""}
@@ -602,16 +1036,66 @@
     const player = $("#player");
     /* --- Video (default) --- */
     function showPoster() {
-      stopSpeech();
+      stopSpeech(); stopPlayer();
       player.classList.remove("is-guide");
-      player.innerHTML = `<button class="poster" id="poster" aria-label="${esc(t("play"))}"><img src="${thumb(v.yt, "hqdefault")}" alt=""><span class="play">${ICON.play}</span></button>`;
-      $("#poster").onclick = () => {
-        const hl = state.lang === "tl" ? "fil" : state.lang;
-        const cc = state.lang !== "en" ? `&cc_load_policy=1&cc_lang_pref=${state.lang}` : "";
-        const src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.yt)}?autoplay=1&rel=0&playsinline=1&modestbranding=1&hl=${hl}${cc}`;
-        player.innerHTML = `<iframe src="${src}" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-      };
+      const w = state.watch[v.id], resume = w && w.t >= 15 && (!w.d || w.t < w.d * 0.9) ? w.t : 0;
+      player.innerHTML = `<button class="poster" id="poster" aria-label="${esc(t("play"))}"><img src="${thumb(v.yt, "hqdefault")}" alt=""><span class="play">${ICON.play}</span>${resume ? `<span class="resume">▶ ${esc(t("resumeAt", { time: fmtT(resume) }))}</span>` : ""}</button>`;
+      $("#poster").onclick = () => play(resume);
     }
+    let viewed = false;
+    function markWatched() {
+      if (!state.done.has(v.id)) { setDone(v.id, true); drawDone(); toast(t("doneLabel") + " ✓"); }
+      else if (refresherDue(v)) { state.doneAt[v.id] = localDay(); store.set("ab_done_at", state.doneAt); record("video", { item: v.id, title: v.title, refresher: true }); drawDone(); toast("🦺 " + t("doneLabel") + " ✓"); }
+      delete state.watch[v.id]; store.set("ab_watch", state.watch);
+    }
+    async function play(start) {
+      const hl = state.lang === "tl" ? "fil" : state.lang;
+      const fallback = () => {
+        const cc = state.lang !== "en" ? `&cc_load_policy=1&cc_lang_pref=${state.lang}` : "";
+        const src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.yt)}?autoplay=1&rel=0&playsinline=1&modestbranding=1&hl=${hl}${cc}${start ? "&start=" + Math.floor(start) : ""}`;
+        player.innerHTML = `<iframe src="${src}" title="${esc(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+        $("#speed").hidden = true;
+      };
+      if (!viewed) { viewed = true; stat("view", v.id); }
+      let YTx;
+      try { YTx = await loadYT(); } catch { return fallback(); }
+      if (!document.body.contains(player)) return;
+      player.innerHTML = `<div id="yt-slot"></div>`;
+      const vars = { autoplay: 1, rel: 0, playsinline: 1, modestbranding: 1, hl };
+      if (state.lang !== "en") { vars.cc_load_policy = 1; vars.cc_lang_pref = state.lang; }
+      if (start) vars.start = Math.floor(start);
+      try {
+        yt = new YTx.Player("yt-slot", {
+          host: "https://www.youtube-nocookie.com", videoId: v.yt, playerVars: vars,
+          events: {
+            onReady: e => { try { e.target.setPlaybackRate(state.speed); e.target.playVideo(); } catch {} },
+            onStateChange: e => {
+              const p = e.target;
+              if (e.data === 1) {                                   // playing
+                clearInterval(ytTimer);
+                ytTimer = setInterval(() => {
+                  try {
+                    const tNow = p.getCurrentTime(), d = p.getDuration();
+                    if (d > 0 && tNow / d >= 0.9) { markWatched(); clearInterval(ytTimer); }
+                    else if (tNow > 5) saveWatch(v.id, tNow, d);
+                  } catch {}
+                }, 5000);
+              } else if (e.data === 0) { clearInterval(ytTimer); markWatched(); }   // ended
+              else if (e.data === 2) {                              // paused: remember the place
+                clearInterval(ytTimer);
+                try { const tNow = p.getCurrentTime(), d = p.getDuration(); if (tNow > 5 && !(d && tNow / d >= 0.9)) saveWatch(v.id, tNow, d); } catch {}
+              }
+            }
+          }
+        });
+      } catch { fallback(); }
+    }
+    $("#speed").addEventListener("click", e => {
+      const b = e.target.closest("[data-speed]"); if (!b) return;
+      state.speed = +b.dataset.speed; store.set("ab_speed", state.speed);
+      $$("[data-speed]", $("#speed")).forEach(x => x.setAttribute("aria-pressed", +x.dataset.speed === state.speed));
+      if (yt && yt.setPlaybackRate) try { yt.setPlaybackRate(state.speed); } catch {}
+    });
     /* --- Step guide (secondary): one step per screen, optional voice read-out --- */
     const hasTr = !!(x.steps && x.steps.length === v.steps.length);
     const slides = [];
@@ -670,20 +1154,27 @@
     });
     $$(".mode-tabs [data-mode]", el).forEach(b => b.onclick = () => {
       $$(".mode-tabs [data-mode]", el).forEach(o => o.setAttribute("aria-selected", o === b));
-      if (b.dataset.mode === "guide") { idx = 0; drawSlide(); } else showPoster();
+      if (b.dataset.mode === "guide") { stopPlayer(); idx = 0; drawSlide(); } else showPoster();
+      $("#speed").hidden = b.dataset.mode === "guide";
     });
+    function drawDone() {
+      const d = state.done.has(v.id), due = refresherDue(v), b = $("#v-done");
+      if (!b) return;
+      b.setAttribute("aria-pressed", d && !due); b.classList.toggle("is-done", d && !due);
+      b.innerHTML = due ? `↻<span>${esc(t("markRefreshed"))}</span>` : `${d ? "✓" : "○"}<span>${esc(d ? t("doneLabel") : t("markDone"))}</span>`;
+    }
+    drawDone();
     showPoster();
     const tt = $("#tr-toggle");
-    if (tt) tt.onclick = () => { state.showEn = !state.showEn; renderVideo(v, path); };
-    const drawDone = () => {
-      const d = state.done.has(v.id), b = $("#v-done");
-      b.setAttribute("aria-pressed", d); b.classList.toggle("is-done", d);
-      b.innerHTML = `${d ? "✓" : "○"}<span>${esc(d ? t("doneLabel") : t("markDone"))}</span>`;
+    if (tt) tt.onclick = () => { stopPlayer(); state.showEn = !state.showEn; renderVideo(v, path); };
+    $("#v-done").onclick = () => {
+      if (refresherDue(v)) { markWatched(); return; }
+      setDone(v.id, !state.done.has(v.id)); drawDone(); if (state.done.has(v.id)) toast(t("doneLabel") + " ✓");
     };
-    $("#v-done").onclick = () => { setDone(v.id, !state.done.has(v.id)); drawDone(); if (state.done.has(v.id)) toast(t("doneLabel") + " ✓"); };
+    if (quizBlock) wireQuiz(v, path, () => { stopPlayer(); const y = scrollY; renderVideo(v, path); scrollTo(0, y); });
     const pn = $("#path-next");
     if (pn) pn.addEventListener("click", () => { if (!state.done.has(v.id)) setDone(v.id, true); });
-    $("#back").onclick = () => { if (history.length > 1 && sessionStorage.getItem("ab_in_app")) history.back(); else location.hash = "#/"; };
+    $("#back").onclick = goBack;
     $("#v-save").onclick = () => {
       toggleSave(v.id);
       const now = state.saved.has(v.id), b = $("#v-save");
@@ -715,10 +1206,32 @@
   /* ---------- routing ---------- */
   function route() {
     if ("speechSynthesis" in window) speechSynthesis.cancel();
+    stopPlayer();
     document.body.classList.remove("ai-mode", "ai-typing");
     const h = location.hash.replace(/^#\/?/, "");
     const [kind, arg, k2, a2] = h.split("/");
     const lv = $("#list-view"), vv = $("#video-view");
+    const showPage = title => {
+      if (!lv.hidden) state.listScroll = scrollY;
+      lv.hidden = true; vv.hidden = false; $("#search-wrap").hidden = true;
+      scrollTo(0, 0);
+      document.title = title + " · ABFM Training";
+    };
+    // Anyone can check a certificate link; everything else needs sign-in when it is turned on.
+    if (kind === "verify" && arg) { $("#login-view").hidden = true; document.body.classList.remove("locked"); showPage(t("verify")); renderVerify(decodeURIComponent(arg)); return; }
+    if (state.videos.length && loginNeeded()) { lv.hidden = true; vv.hidden = true; $("#search-wrap").hidden = true; renderLogin(); return; }
+    $("#login-view").hidden = true; document.body.classList.remove("locked");
+    const meB = $("#me-badge"), nDue = dueRefreshers().length + myAssignments().filter(x => !pathStats(x.p).complete && isOverdue(x.a)).length;
+    meB.hidden = !nDue; meB.textContent = nDue;
+    if (kind === "me") {
+      showPage(t("me")); renderMe();
+      $$("[data-tab]").forEach(b => b.toggleAttribute("aria-current", b.dataset.tab === "me"));
+      return;
+    }
+    if (kind === "cert" && arg) {
+      const c = state.certs.find(x => x.code === decodeURIComponent(arg));
+      if (c) { showPage(t("certificate")); renderCert(c); $$("[data-tab]").forEach(b => b.toggleAttribute("aria-current", b.dataset.tab === "me")); return; }
+    }
     if (kind === "ai" && aiOn()) {
       if (!lv.hidden) state.listScroll = scrollY;
       lv.hidden = true; vv.hidden = false; $("#search-wrap").hidden = true;
@@ -797,14 +1310,16 @@
       const lg = e.target.closest("[data-lang]");
       if (lg) { state.showEn = false; state.lang = lg.dataset.lang; store.set("ab_lang", state.lang); closeSheets(); applyLang(); route(); return; }
       if (e.target.closest("[data-request]")) { openRequest(state.q); return; }
+      if (e.target.closest("[data-profile]")) { openProfile(); return; }
       if (e.target.closest("[data-close]") || e.target.classList.contains("sheet")) closeSheets();
     });
     document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheets(); });
     $("#lang-btn").onclick = () => openSheet("#lang-sheet");
     $("#req-form").addEventListener("submit", sendRequest);
+    $("#pf-form").addEventListener("submit", saveProfile);
     document.addEventListener("click", () => { const m = $("#ai-menu"); if (m && !m.hidden) { m.hidden = true; const c = $("#ai-cam"); if (c) c.setAttribute("aria-expanded", "false"); } });
 
-    const off = () => { const o = $("#offline"); o.hidden = navigator.onLine; o.textContent = "📶  " + t("offline"); };
+    const off = () => { const o = $("#offline"); o.hidden = navigator.onLine; o.textContent = "📶  " + t("offline"); if (navigator.onLine) { flush(); sendStats(); } };
     addEventListener("online", off); addEventListener("offline", off); off();
   }
 

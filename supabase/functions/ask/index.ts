@@ -44,26 +44,21 @@ Deno.serve(async (req) => {
       return r.ok ? ((await r.json()) || "") : "";
     } catch { return ""; }
   };
-  // Settings → AI in the admin: which AI is on and which goes first.
-  let ai: any = {};
-  try {
-    const r = await fetch(url + "/rest/v1/docs?name=eq.settings&select=content", { headers: { apikey: service, Authorization: "Bearer " + service } });
-    ai = ((await r.json())[0]?.content?.ai) || {};
-  } catch { /* defaults */ }
-  const key = ai.gemini === false ? "" : (await shared("gemini")) || Deno.env.get("GEMINI_API_KEY") || "";
-  const groqKey = ai.groq === false ? "" : (await shared("groq")) || Deno.env.get("GROQ_API_KEY") || Deno.env.get("Groq_API_KEY") || "";
-  const orKey = ai.openrouter === false ? "" : (await shared("openrouter")) || Deno.env.get("OPENROUTER_API_KEY") || "";
+  // Settings → AI (which AI is on and which goes first), the keys, and the access check — all at once.
+  const started = Date.now();
+  const settingsP = fetch(url + "/rest/v1/docs?name=eq.settings&select=content", { headers: { apikey: service, Authorization: "Bearer " + service } })
+    .then((r) => r.json()).then((j) => (j[0]?.content?.ai) || {}).catch(() => ({}));
+  const allowedP = fetch(url + "/rest/v1/rpc/ai_allowed", {
+    method: "POST", headers: { apikey: anon, Authorization: "Bearer " + anon, "Content-Type": "application/json" },
+    body: JSON.stringify({ p_token: String(b.token || ""), p_device: String(b.device || "") }),
+  }).then((r) => r.json()).catch((e) => ({ ok: false, error: "error", detail: String(e).slice(0, 200) }));
+  const [ai, gem, grq, orr, ok]: any[] = await Promise.all([settingsP, shared("gemini"), shared("groq"), shared("openrouter"), allowedP]);
+  const key = ai.gemini === false ? "" : gem || Deno.env.get("GEMINI_API_KEY") || "";
+  const groqKey = ai.groq === false ? "" : grq || Deno.env.get("GROQ_API_KEY") || Deno.env.get("Groq_API_KEY") || "";
+  const orKey = ai.openrouter === false ? "" : orr || Deno.env.get("OPENROUTER_API_KEY") || "";
   if (!key && !groqKey && !orKey) return reply({ ok: false, error: "off" });
-
   // Signed in (when sign-in is on), Ask AI turned on, and within the limits?
-  try {
-    const r = await fetch(url + "/rest/v1/rpc/ai_allowed", {
-      method: "POST", headers: { apikey: anon, Authorization: "Bearer " + anon, "Content-Type": "application/json" },
-      body: JSON.stringify({ p_token: String(b.token || ""), p_device: String(b.device || "") }),
-    });
-    const ok = await r.json();
-    if (!ok || !ok.ok) return reply({ ok: false, error: (ok && ok.error) || "error" });
-  } catch (e) { return reply({ ok: false, error: "error", detail: String(e).slice(0, 200) }); }
+  if (!ok || !ok.ok) return reply({ ok: false, error: (ok && ok.error) || "error", ...(ok && ok.detail ? { detail: ok.detail } : {}) });
 
   const text = String(b.text || "").slice(0, 1500);
   const images = (Array.isArray(b.images) ? b.images : []).slice(0, 3)
@@ -168,7 +163,7 @@ Reply with JSON only: {"answer": string, "videos": [up to 3 ids from the library
       let r: Response;
       try {
         r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-          method: "POST", headers: { Authorization: "Bearer " + orKey, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" }, signal: AbortSignal.timeout(30000),
+          method: "POST", headers: { Authorization: "Bearer " + orKey, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" }, signal: AbortSignal.timeout(20000),
           body: JSON.stringify({ model: m, temperature: 0.3, messages: msgs }),
         });
       } catch { sawBusy = true; last = "openrouter slow"; continue; }
@@ -184,7 +179,25 @@ Reply with JSON only: {"answer": string, "videos": [up to 3 ids from the library
   // Settings → AI "first": groq (default), openrouter or gemini. The others are backups, in that order.
   const all: Record<string, (() => Promise<Response | null>) | ""> = { groq: groqKey && viaGroq, openrouter: orKey && viaOpenRouter, gemini: key && viaGemini };
   const first = ["groq", "openrouter", "gemini"].includes(ai.first) ? ai.first : "groq";
-  const order = [first, "groq", "openrouter", "gemini"].filter((n, i, a) => a.indexOf(n) === i).map((n) => all[n]).filter(Boolean) as (() => Promise<Response | null>)[];
-  for (const run of order) { const res = await run(); if (res) return res; }
+  const names = [first, "groq", "openrouter", "gemini"].filter((n, i, a) => a.indexOf(n) === i && all[n]);
+  const res = await new Promise<Response | null>((resolve) => {
+    let next = 0, running = 0, done = false;
+    const start = () => {
+      if (done || next >= names.length) return;
+      const name = names[next++], run = all[name] as () => Promise<Response | null>, t0 = Date.now(); running++;
+      const timer = setTimeout(start, 7000);   // still thinking after 7 s: ask the next one too
+      run().catch(() => null).then((r) => {
+        running--; clearTimeout(timer);
+        console.log(JSON.stringify({ ask: name, ok: !!r, ms: Date.now() - t0 }));
+        if (done) return;
+        if (r) { done = true; resolve(r); return; }
+        start();
+        if (!running && next >= names.length) { done = true; resolve(null); }
+      });
+    };
+    start();
+  });
+  console.log(JSON.stringify({ askTotalMs: Date.now() - started, answered: !!res }));
+  if (res) return res;
   return reply(sawBusy ? { ok: false, error: "busy" } : { ok: false, error: "error", detail: last });
 });

@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "ABFM Training Admin",
-  "short_name": "ABFM Admin",
+  "name": "Training Admin",
+  "short_name": "Training Admin",
   "description": "Manage the ABFM Training videos, staff and records.",
   "start_url": "./",
   "scope": "./",

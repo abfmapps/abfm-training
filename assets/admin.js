@@ -156,7 +156,7 @@
 
   /* ---------- sign-in screen (Supabase email + password) ---------- */
   function renderConnect(error, mode = "in") {
-    $("#tabs").hidden = true; $("#page-h").hidden = true; $("#disconnect").hidden = !me; $("#repo-label").textContent = me ? me : "Not signed in";
+    $("#tabs").hidden = true; $("#bnav").hidden = true; closeMore(); $("#page-h").hidden = true; $("#disconnect").hidden = !me; $("#repo-label").textContent = me ? me : "Not signed in";
     const title = { in: "Sign in", up: "Create your admin account", reset: "Reset your password", newpw: "Choose a new password" }[mode];
     $("#app").innerHTML = `
       <div class="connect">
@@ -224,7 +224,8 @@
       keys.forEach((k, i) => data[k] = res[i]);
     } catch (e) { return renderConnect(esc(e.message)); }
     await loadKeys().catch(() => {});
-    $("#tabs").hidden = false; $("#disconnect").hidden = false;
+    $("#tabs").hidden = false; $("#bnav").hidden = false; $("#disconnect").hidden = false;
+    buildMore();
     $("#repo-label").textContent = me;
     render();
     loadRequests().then(() => { if (view === "requests" || view === "dashboard") render(); badgeRequests(); });
@@ -256,11 +257,34 @@
     insights: ["Insights", "What staff watch, and what they searched for and didn't find."],
     settings: ["Settings", ""]
   };
+  /* ---------- phone: bottom tab bar + "More" sheet ---------- */
+  const BNAV = ["dashboard", "videos", "queue", "people"];
+  function buildMore() {
+    const grid = $("#msheet-grid"); if (!grid || grid.childElementCount) return;
+    $$("#tabs [data-view]").forEach(b => {
+      if (BNAV.includes(b.dataset.view)) return;
+      const c = b.cloneNode(true);
+      c.querySelectorAll("[id]").forEach(x => { x.dataset.mirror = x.id; x.removeAttribute("id"); });
+      grid.appendChild(c);
+    });
+  }
+  function syncPhoneNav(q) {
+    const bq = $("#b-queue"); if (bq) { bq.hidden = !q; bq.textContent = q; }
+    $$("#msheet [data-mirror]").forEach(x => { const src = $("#" + x.dataset.mirror); if (src) { x.hidden = src.hidden; x.textContent = src.textContent; } });
+    const nReq = +(($("#n-req") || {}).textContent || 0) * !(($("#n-req") || {}).hidden);
+    const bm = $("#b-more-n"); if (bm) { bm.hidden = !nReq; bm.textContent = nReq; }
+    const more = $("#b-more"); if (more) { if (BNAV.includes(view)) more.removeAttribute("aria-current"); else more.setAttribute("aria-current", "page"); }
+    const who = $("#msheet-me"); if (who) who.textContent = me || "";
+  }
+  function openMore() { buildMore(); syncPhoneNav((data.pending && data.pending.json.queue || []).length); $("#msheet").hidden = false; $("#b-more").setAttribute("aria-expanded", "true"); }
+  function closeMore() { const m = $("#msheet"); if (m) m.hidden = true; const b = $("#b-more"); if (b) b.setAttribute("aria-expanded", "false"); }
+
   function render() {
     $("#n-videos").textContent = V().length;
     const q = (data.pending.json.queue || []).length;
     const nq = $("#n-queue"); nq.hidden = !q; nq.textContent = q;
-    $$("#tabs [data-view]").forEach(b => { if (b.dataset.view === view) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+    $$("#tabs [data-view], #bnav [data-view], #msheet [data-view]").forEach(b => { if (b.dataset.view === view) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
+    syncPhoneNav(q);
     const [title, sub] = TITLES[view] || ["", ""];
     $("#page-h").hidden = !title; $("#page-title").textContent = title; $("#page-sub").textContent = sub; $("#page-act").innerHTML = "";
     if (view === "assign") pplSub = "assign"; else if (view === "sups") pplSub = "sups"; else if (view === "people" && !["people", "staff"].includes(pplSub)) pplSub = "people";
@@ -1026,6 +1050,7 @@
   function badgeRequests() {
     const n = (reqs || []).filter(r => r.status === "new").length;
     const b = $("#n-req"); if (b) { b.hidden = !n; b.textContent = n; }
+    if (data.pending) syncPhoneNav((data.pending.json.queue || []).length);
   }
   async function reqAction(body) {
     busy(true);
@@ -1961,8 +1986,11 @@
       if (go.dataset.sec && (superAdmin || !SUPER_ONLY.includes(go.dataset.sec))) setSec = go.dataset.sec;
       render(); scrollTo(0, 0); return;
     }
-    const tab = e.target.closest("#tabs [data-view]");
-    if (tab) { view = tab.dataset.view; render(); scrollTo(0, 0); return; }
+    if (e.target.closest("#b-more")) { if ($("#msheet").hidden) openMore(); else closeMore(); return; }
+    if (e.target.id === "msheet") { closeMore(); return; }
+    if (e.target.closest("#msheet-out")) { closeMore(); $("#disconnect").click(); return; }
+    const tab = e.target.closest("#tabs [data-view], #bnav [data-view], #msheet [data-view]");
+    if (tab) { closeMore(); view = tab.dataset.view; render(); scrollTo(0, 0); return; }
     if (e.target.closest("[data-find]")) { runFinder(); return; }
     if (e.target.closest("[data-close-drawer]") || e.target.id === "drawer") { closeDrawer(); return; }
     const t = e.target.closest("[data-edit],[data-hide],[data-del],[data-approve],[data-review],[data-reject],[data-preview],[data-ch-toggle],[data-ch-del]");
@@ -1978,7 +2006,7 @@
     else if (d.chToggle) { const i = +d.chToggle; update("channels", x => { x.channels[i].active = x.channels[i].active === false; return x; }, "Pause/resume channel").then(render); }
     else if (d.chDel) { const i = +d.chDel; const ch = data.channels.json.channels[i]; if (confirm(`Remove ${ch.name}?`)) update("channels", x => { x.channels = x.channels.filter(c => c.url !== ch.url); return x; }, `Remove channel: ${ch.name}`).then(render); }
   });
-  document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#drawer").hidden) closeDrawer(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") { closeMore(); if (!$("#drawer").hidden) closeDrawer(); } });
   $("#disconnect").onclick = async () => { if (!confirm("Sign out of the admin on this device?")) return; await sb.auth.signOut(); me = null; renderConnect(); };
 
   // Coming back from "reset password" email → choose a new password.

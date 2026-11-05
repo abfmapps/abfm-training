@@ -25,6 +25,8 @@
   const SB = window.AB_CONFIG || {};
   const sb = window.supabase.createClient(SB.url, SB.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
   let me = null;                        // signed-in admin's email
+  let superAdmin = false;               // only the super admin sees the restricted Settings sections
+  const SUPER_ONLY = ["inbox", "gemini", "admins", "status"];
   let cfg = loadCfg();                  // optional GitHub link, only to start the daily jobs from here
   const data = {};
   let view = "dashboard";
@@ -160,9 +162,11 @@
     me = u && u.user ? u.user.email : null;
     if (!me) return renderConnect();
     const { data: ok } = await sb.rpc("is_admin");
+    const { data: sup } = await sb.rpc("is_super_admin");
+    superAdmin = !!sup;
     if (!ok) {
       $("#disconnect").hidden = false;
-      return renderConnect(`You're signed in as <b>${esc(me)}</b>, but this email isn't on the admin list. Ask an existing admin to add it in <b>Settings → Admins &amp; GitHub</b>.`);
+      return renderConnect(`You're signed in as <b>${esc(me)}</b>, but this email isn't on the admin list. Ask the super admin to add it in <b>Settings → Admins &amp; GitHub</b>.`);
     }
     await start();
   }
@@ -277,13 +281,13 @@
           ${data.settings.json.statsEnabled ? (nores.map(c => `<div class="list-line"><span>“${esc(c.key)}”</span><b>${c.n}</b></div>`).join("") || `<p class="help">Nothing yet.</p>`) : `<p class="help">Counting is off. Turn it on in <a href="#" data-go="settings">Settings → Staff &amp; training</a>.</p>`}
         </section>
         <section class="card-plain" style="flex:1 1 360px">
-          <div class="dash-h"><h2>System health</h2><a href="#" data-go="settings" data-sec="status">Details</a></div>
+          <div class="dash-h"><h2>System health</h2>${superAdmin ? `<a href="#" data-go="settings" data-sec="status">Details</a>` : ""}</div>
           <div class="health">
             <div><i style="background:${lastRun && Date.now() - Date.parse(lastRun) < 36 * 36e5 ? "var(--ok)" : "var(--danger)"}"></i>${lastRun ? "Daily video check ran " + esc(new Date(lastRun).toLocaleString(undefined, { weekday: "short", hour: "2-digit", minute: "2-digit" })) : "Daily video check hasn't run yet"}</div>
             <div><i style="background:${full === V().length ? "var(--ok)" : "#C98A00"}"></i>${full} of ${V().length} videos translated into 8 languages</div>
             <div><i style="background:${probs ? "var(--danger)" : "var(--ok)"}"></i>${probs ? `${probs} video${probs === 1 ? "" : "s"} no longer play <button data-go="videos" data-show="problems">Show</button>` : "All videos still play on YouTube"}</div>
             <div><i style="background:${noLen ? "#C98A00" : "var(--ok)"}"></i>${noLen ? `${noLen} videos missing a length <button data-go="videos" data-show="no-len">Fill in</button>` : "Every video has a length"}</div>
-            <div><i style="background:${geminiKey() ? "var(--ok)" : "#C98A00"}"></i>${geminiKey() ? "Gemini key saved in this browser" : `No Gemini key in this browser <button data-go="settings" data-sec="gemini">Add</button>`}</div>
+            <div><i style="background:${geminiKey() ? "var(--ok)" : "#C98A00"}"></i>${geminiKey() ? "Gemini key saved in this browser" : `No Gemini key in this browser${superAdmin ? ` <button data-go="settings" data-sec="gemini">Add</button>` : ""}`}</div>
           </div>
         </section>
       </div>`;
@@ -1604,7 +1608,9 @@
       admins: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M18 8v6M15 11h6"/>',
       status: '<path d="M3 12h4l3-8 4 16 3-8h4"/>'
     };
-    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "Gemini"], ["finder", "Video finder"], ["admins", "Admins & GitHub"], ["status", "System status"]];
+    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "Gemini"], ["finder", "Video finder"], ["admins", "Admins & GitHub"], ["status", "System status"]]
+      .filter(([k]) => superAdmin || !SUPER_ONLY.includes(k));
+    if (!superAdmin && SUPER_ONLY.includes(setSec)) setSec = "site";
     const ico = k => `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
     const head = (k, title, sub) => `<div class="sec-h"><span class="sec-ico">${ico(k)}</span><div><h2>${title}</h2><p>${sub}</p></div></div>`;
     const sw = (id, on, title, sub, extra = "") => `<label class="switch-row"><span><b>${title}</b><small>${sub}</small></span><input type="checkbox" class="switch" id="${id}" ${on ? "checked" : ""} ${extra}></label>`;
@@ -1642,7 +1648,7 @@
             <div class="field"><label for="s-ref">Safety refresher every</label><div class="unit"><input class="input" id="s-ref" type="number" min="0" max="60" value="${esc(s.refresherMonths === undefined ? 12 : s.refresherMonths)}"><span>months</span></div><div class="help">Safety essentials must be watched again after this. 0 = never.</div></div>
           </div>
         </div>
-        <div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
+        ${superAdmin ? `<div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
           ${head("inbox", "Requests & Ask AI", "What staff can ask for from the app.")}
           ${sw("s-reqon", s.requestsEnabled !== false, "“Request a video” button", "Staff tell you which videos are missing. Requests appear under Requests.")}
           ${sw("s-ai", s.aiEnabled, "Ask AI", "Staff ask work questions in their language and add photos; Gemini answers and suggests videos. Questions and photos are not saved.")}
@@ -1656,14 +1662,14 @@
           </div>
           <div class="bar"><button type="button" class="btn btn-sm" id="s-gtest">Test key</button><span class="help" id="s-gtest-msg"></span></div>
           <div class="note">The daily jobs use their own copy of the key: on GitHub, repo <b>Settings → Secrets and variables → Actions</b>, secret <code>GEMINI_API_KEY</code>. Ask AI uses the copy in Supabase.</div>
-        </div>
+        </div>` : ""}
         <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
           ${head("finder", "Video finder", "The daily search of your trusted channels. Manage the channels under Channels.")}
           <div class="field"><label for="s-excl">Never queue videos whose title contains</label>
             <textarea class="textarea" id="s-excl" placeholder="unboxing, review, vlog">${esc((s.excludeKeywords || []).join(", "))}</textarea>
             <div class="help">Comma separated, not case-sensitive.</div></div>
         </div>
-        <div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
+        ${superAdmin ? `<div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
           ${head("admins", "Admins & GitHub", "Who can use this admin, and the optional link to start the daily jobs from here.")}
           <div id="adm-list" class="rows"><p class="help">Loading…</p></div>
           <div class="bar" style="margin-top:10px"><input class="input grow" id="adm-email" type="email" placeholder="name@albonian.fm"><button type="button" class="btn" id="adm-add">＋ Add admin</button></div>
@@ -1674,7 +1680,7 @@
         <div class="card-plain set-sec" data-sec="status" ${setSec === "status" ? "" : "hidden"}>
           ${head("status", "System status", "Translations, daily jobs and connections.")}
           <div id="status-box"><p class="help">Loading…</p></div>
-        </div>
+        </div>` : ""}
         <div class="set-save" id="set-save"><span class="dirty" id="set-dirty">All changes saved</span><button class="btn btn-primary">Save settings</button></div>
         </div>
       </form>`;
@@ -1682,7 +1688,7 @@
     $("#set-form").addEventListener("input", e => { if (!e.target.closest("#adm-email")) markDirty(); });
     $("#set-form").addEventListener("change", e => { if (!e.target.closest("#adm-email")) markDirty(); });
     if (setSec === "status") loadStatus();
-    loadAdmins();
+    if (superAdmin) loadAdmins();
     $$("[data-set-sec]").forEach(b => b.onclick = () => {
       setSec = b.dataset.setSec;
       if (setSec === "status") loadStatus();
@@ -1690,7 +1696,7 @@
       $$(".set-sec").forEach(c => c.hidden = c.dataset.sec !== setSec);
       if (innerWidth < 760) b.scrollIntoView({ inline: "center", block: "nearest" });
     });
-    $("#s-gtest").onclick = async () => {
+    if (superAdmin) $("#s-gtest").onclick = async () => {
       const key = $("#s-gem").value.trim(), m = $("#s-gtest-msg");
       if (!key) { m.textContent = "Paste a key first."; return; }
       m.textContent = "Testing…";
@@ -1721,8 +1727,6 @@
         siteName: $("#s-name").value.trim(), tagline: $("#s-tag").value.trim(), announcement: $("#s-ann").value.trim(),
         helpdesk: $("#s-help").value.trim(), newDays: Math.max(1, +$("#s-new").value || 7), categories,
         excludeKeywords: $("#s-excl").value.split(",").map(x => x.trim().toLowerCase()).filter(Boolean),
-        requestsEnabled: $("#s-reqon").checked,
-        aiEnabled: $("#s-ai").checked,
         staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked,
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), quizSize: Math.min(8, Math.max(2, +$("#s-qn").value || 3)), quizSizeEss: Math.min(8, Math.max(2, +$("#s-qne").value || 5)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
@@ -1734,11 +1738,15 @@
           if (!confirm(`Turn on staff sign-in? About a minute after saving, staff must enter their HR number. ${n} active staff are on the list.`)) return;
         } catch (err) { alert("Couldn't read the staff list: " + err.message); return; }
       }
-      cfg.token = $("#s-ghtoken").value.trim(); saveCfg(cfg);
-      try {
-        localStorage.setItem("ab_gemini_key", $("#s-gem").value.trim());
-        localStorage.setItem("ab_gemini_model", $("#s-gmodel").value);
-      } catch {}
+      if (superAdmin) {
+        vals.requestsEnabled = $("#s-reqon").checked;
+        vals.aiEnabled = $("#s-ai").checked;
+        cfg.token = $("#s-ghtoken").value.trim(); saveCfg(cfg);
+        try {
+          localStorage.setItem("ab_gemini_key", $("#s-gem").value.trim());
+          localStorage.setItem("ab_gemini_model", $("#s-gmodel").value);
+        } catch {}
+      }
       await update("settings", d => { Object.assign(d, vals); delete d.requestUrl; delete d.recordsEnabled; return d; }, "Update site settings");
       reqs = null; loadRequests().then(badgeRequests);
       toast("Settings saved. Staff see it the next time they open the app."); render();
@@ -1825,7 +1833,7 @@
       e.preventDefault();
       view = go.dataset.go;
       if (go.dataset.show) ui.show = go.dataset.show;
-      if (go.dataset.sec) setSec = go.dataset.sec;
+      if (go.dataset.sec && (superAdmin || !SUPER_ONLY.includes(go.dataset.sec))) setSec = go.dataset.sec;
       render(); scrollTo(0, 0); return;
     }
     const tab = e.target.closest("#tabs [data-view]");

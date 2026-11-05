@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin · ABFM Training</title>
+  <meta name="theme-color" content="#1B2130">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ABFM Admin">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/admin.css">
+</head>
+<body class="adm">
+  <div class="shell">
+    <aside class="side" id="side">
+      <a class="side-brand" href="./">
+        <img src="../assets/logo.png" alt="ABFM logo" width="36" height="36">
+        <span>Training <b>Admin</b></span>
+      </a>
+      <nav class="side-nav" id="tabs" aria-label="Admin sections" hidden>
+        <button data-view="dashboard" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</button>
+        <div class="grp">Content</div>
+        <button data-view="videos"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="m10 8.5 4 2-4 2z"/></svg>Videos<span class="pill grey" id="n-videos">0</span></button>
+        <button data-view="queue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"/></svg>Review queue<span class="pill" id="n-queue" hidden>0</span></button>
+        <button data-view="paths"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5l8 4 8-4v14l-8 4z"/></svg>Learning paths</button>
+        <button data-view="toolbox"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Toolbox talks</button>
+        <button data-view="channels"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 9 5 3-5 3z"/></svg>Channels</button>
+        <div class="grp">People</div>
+        <button data-view="people"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M16 4.5a3.5 3.5 0 0 1 0 7M18 15c2 .6 3.2 2.3 3.6 5"/></svg>Staff &amp; records</button>
+        <button data-view="assign"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M8 2v4M16 2v4M4 10h16"/></svg>Assigned training</button>
+        <button data-view="sups"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h6l11-11-6-6L3 15z"/></svg>Supervisors</button>
+        <button data-view="requests"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Requests<span class="pill" id="n-req" hidden>0</span></button>
+        <div class="grp">More</div>
+        <button data-view="insights"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Insights</button>
+        <button data-view="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>Settings</button>
+      </nav>
+      <div class="side-foot">
+        <span id="repo-label">Not signed in</span>
+        <div class="side-links"><a href="../" target="_blank" rel="noopener">Open staff app</a><button id="disconnect" hidden>Sign out</button></div>
+      </div>
+    </aside>
+    <main class="main"><div class="page-h" id="page-h" hidden><div><h1 id="page-title"></h1><p id="page-sub"></p></div><div id="page-act" style="display:flex;gap:8px;flex-wrap:wrap"></div></div><div id="app"></div></main>
+  </div>
+
+  <div class="drawer" id="drawer" hidden>
+    <div class="drawer-in" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer-h">
+        <button class="btn btn-sm btn-icon btn-ghost" data-close-drawer aria-label="Close">✕</button>
+        <h2 id="drawer-title">Video</h2>
+      </div>
+      <div class="drawer-b" id="drawer-body"></div>
+      <div class="drawer-f" id="drawer-foot"></div>
+    </div>
+  </div>
+
+  <div class="saving" id="saving" hidden><div>Saving…</div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../assets/config.js"></script>
+  <script src="../assets/trades.js"></script>
+  <script src="../assets/drafter.js"></script>
+  <script src="../assets/admin.js"></script>
+</body>
+</html>

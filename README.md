@@ -8,7 +8,7 @@ ABFM Training is a training-video app for Al Bonian FM ground staff. It opens in
 - **This repo** holds the app code and the daily jobs. `data/` is a daily backup copy of the content, not what the app reads.
 
 - **Staff app:** `https://abfmapps.github.io/abfm-training/`
-- **Your admin app:** `https://abfmapps.github.io/abfm-training/admin.html`
+- **Your admin app:** `https://abfmapps.github.io/abfm-training/admin/`
 
 ---
 
@@ -17,7 +17,7 @@ ABFM Training is a training-video app for Al Bonian FM ground staff. It opens in
 1. **Daily jobs → Supabase:** on GitHub open the repo → **Settings → Secrets and variables → Actions → New repository secret**. Name `SUPABASE_SERVICE_KEY`. Value: in Supabase, **Project Settings → API Keys → Secret keys** (the `sb_secret_…` key: click the eye, then copy). Keep `GEMINI_API_KEY` there too, as before.
 2. **Ask AI (optional):** in Supabase open **Edge Functions → Secrets** and add `GEMINI_API_KEY` with your Gemini key.
 3. **AI for every admin (Gemini + Groq):** the owner opens admin → **Settings → AI** and pastes the Gemini and/or Groq keys (or adds `GEMINI_API_KEY` / `GROQ_API_KEY` under Supabase **Edge Functions → Secrets**). The keys stay on the server: other admins can use them through the `admin-proxy` edge function but never see them or that settings section. Each AI has an on/off switch, plus which one to try first; when one is slow, busy or out of quota the other takes over. Groq can't watch videos or search the web, so video drafts, reviews and video/channel search always use Gemini. The daily jobs read `GEMINI_API_KEY` and `GROQ_API_KEY` from the GitHub repository secrets and follow the same switches.
-3. **Admin account:** open `admin.html` → **Create an admin account** with your admin email, confirm the email, then sign in. Only emails on the admin list (Settings → Admins & GitHub) can use the admin.
+3. **Admin account:** open `admin/` → **Create an admin account** with your admin email, confirm the email, then sign in. Only emails on the admin list (Settings → Admins & GitHub) can use the admin.
 4. **Hosting:** the app is plain files (`index.html`, `admin.html`, `assets/`, `sw.js`, `manifest.webmanifest`). It works on GitHub Pages, Cloudflare Pages, Netlify or any static host. GitHub Pages needs a public repo on the free plan; for a private repo use Cloudflare Pages (free) and point `training.albonian.fm` at it.
 
 ## 2. Share with staff
@@ -28,7 +28,7 @@ Send the staff link on WhatsApp. On first open, each person picks their language
 
 ## 3. Your admin app
 
-Open `…/admin.html` and sign in with your admin email and password. From your phone or laptop you can:
+Open `…/admin/` and sign in with your admin email and password. From your phone or laptop you can:
 
 | Tab | What you can do |
 |---|---|
@@ -65,7 +65,7 @@ The ABFM logo is used in the header and as the home-screen icon (`assets/logo.pn
 ## Files
 
 ```
-index.html, admin.html            staff app and admin app
+index.html, admin/index.html     staff app and admin app (separate installable apps; admin.html forwards to admin/)
 assets/config.js                  Supabase address and public key
 assets/                           styles, scripts, translations, icons
 supabase/migrations/              database tables, security rules and functions

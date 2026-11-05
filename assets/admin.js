@@ -24,6 +24,8 @@
 
   const SB = window.AB_CONFIG || {};
   const sb = window.supabase.createClient(SB.url, SB.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+  // Email links (confirm, reset password) return to admin.html, which forwards to admin/ with the token.
+  const AUTH_RETURN = new URL("../admin.html", location.href).href;
   let me = null;                        // signed-in admin's email
   let superAdmin = false;               // only the super admin (the owner) sees the restricted Settings sections
   const SUPER_ONLY = ["inbox", "gemini", "admins", "status"];
@@ -183,11 +185,11 @@
           if (error) throw new Error(/confirm/i.test(error.message) ? "Please confirm your email first — check your inbox." : /invalid/i.test(error.message) ? "Wrong email or password." : error.message);
           await afterSignIn();
         } else if (mode === "up") {
-          const { error } = await sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: location.href.split("#")[0] } });
+          const { error } = await sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: AUTH_RETURN } });
           if (error) throw new Error(error.message);
           renderConnect("✅ Account created. Check your email and click the link to confirm it, then sign in.", "in");
         } else if (mode === "reset") {
-          const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.href.split("#")[0] });
+          const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: AUTH_RETURN });
           if (error) throw new Error(error.message);
           renderConnect("✅ If that email has an account, a reset link is on its way.", "in");
         } else {

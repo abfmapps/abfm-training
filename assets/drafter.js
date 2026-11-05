@@ -206,12 +206,13 @@
   // Default split: Gemini watches videos and searches the web; Groq does everything else (Gemini as its backup).
   const aiPrefs = () => Object.assign({ gemini: true, groq: true, openrouter: true, first: "groq" }, root.ABAI || {});
   const TEXT_AIS = { groq: "Groq", openrouter: "OpenRouter" };
+  const textDown = {};   // a text AI that answered "no credit" or "bad key" is skipped until the page is reloaded
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
     const pref = aiPrefs();
     const needsGemini = !!tools || parts.some(p => p.file_data);
     // Text AIs that can do this job, in the chosen order (the one picked in Settings first).
     const texts = needsGemini || !root.ABProxy ? [] : (pref.first === "openrouter" ? ["openrouter", "groq"] : ["groq", "openrouter"])
-      .filter(k => pref[k] !== false && root.ABProxy[k]);
+      .filter(k => pref[k] !== false && root.ABProxy[k] && !textDown[k]);
     const groqReady = texts.length > 0;
     const geminiReady = pref.gemini !== false && !!key;
     if (needsGemini && pref.gemini === false) throw new Error("This needs Gemini (it watches the video or searches the web). Turn Gemini on in Settings → AI.");
@@ -222,7 +223,10 @@
       for (const kind of texts) {
         const r = await root.ABProxy.call({ kind, json, content, ...(kind === "openrouter" && pref.orModel ? { model: pref.orModel } : {}) });
         if (r.status === 200 && r.json.text) return { text: r.json.text, model: r.json.model, grounding: null };
-        errs.push((r.json.error && r.json.error.message) || TEXT_AIS[kind] + " HTTP " + r.status);
+        let m = (r.json.error && r.json.error.message) || TEXT_AIS[kind] + " HTTP " + r.status;
+        if (r.status === 402) m = TEXT_AIS[kind] + ": no credit left on the account (add credit, or pick a free model ending in :free in Settings → AI)";
+        if ([401, 402, 403].includes(r.status)) textDown[kind] = m;
+        errs.push(m);
         var lastStatus = r.status;
       }
       const e = new Error(errs.join(" · ")); e.status = lastStatus; throw e;

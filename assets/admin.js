@@ -24,8 +24,8 @@
 
   const SB = window.AB_CONFIG || {};
   const sb = window.supabase.createClient(SB.url, SB.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
-  // Email links (confirm, reset password) return to admin.html, which forwards to admin/ with the token.
-  const AUTH_RETURN = new URL("../admin.html", location.href).href;
+  // Email links (confirm, reset password) return to admin.html.
+  const AUTH_RETURN = new URL("admin.html", location.href).href;
   let me = null;                        // signed-in admin's email
   let superAdmin = false;               // only the super admin (the owner) sees the restricted Settings sections
   const SUPER_ONLY = ["inbox", "gemini", "admins", "status"];

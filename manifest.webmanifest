@@ -1,10 +1,9 @@
 {
-  "id": "./",
   "name": "ABFM Training",
   "short_name": "ABFM Training",
   "description": "Short training videos for Al Bonian FM ground technicians.",
   "start_url": "./index.html",
-  "scope": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#ffffff",
@@ -26,5 +25,6 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ]
+  ],
+  "id": "./index.html"
 }

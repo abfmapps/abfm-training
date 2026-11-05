@@ -134,7 +134,7 @@ Reply with JSON only: {"answer": string, "videos": [up to 3 ids from the library
   };
 
   const order = [key && viaGemini, groqKey && viaGroq].filter(Boolean) as (() => Promise<Response | null>)[];
-  if (ai.first === "groq") order.reverse();
+  if (ai.first !== "gemini") order.reverse();   // default: Groq answers, Gemini is the backup
   for (const run of order) { const res = await run(); if (res) return res; }
   return reply(sawBusy ? { ok: false, error: "busy" } : { ok: false, error: "error", detail: last });
 });

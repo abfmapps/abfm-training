@@ -203,7 +203,8 @@
      Set root.ABAI = settings.ai before calling. With both on, the second one takes over when the first is
      slow, busy or out of quota. Groq can't watch videos or search Google, so those jobs always use Gemini.
      key === "server": use the owner's shared key through the admin proxy (root.ABProxy); the browser never sees it. */
-  const aiPrefs = () => Object.assign({ gemini: true, groq: true, first: "gemini" }, root.ABAI || {});
+  // Default split: Gemini watches videos and searches the web; Groq does everything else (Gemini as its backup).
+  const aiPrefs = () => Object.assign({ gemini: true, groq: true, first: "groq" }, root.ABAI || {});
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
     const pref = aiPrefs();
     const needsGemini = !!tools || parts.some(p => p.file_data);

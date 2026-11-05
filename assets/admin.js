@@ -649,13 +649,13 @@
   }
   const localGemini = () => { try { return localStorage.getItem("ab_gemini_key") || ""; } catch { return ""; } };
   /* Settings → AI: which AI is on and which goes first. Shared by every admin and the daily jobs. */
-  const aiSet = () => Object.assign({ gemini: true, groq: true, first: "gemini" }, data.settings.json.ai || {});
+  const aiSet = () => Object.assign({ gemini: true, groq: true, first: "groq" }, data.settings.json.ai || {});
   const geminiOn = () => aiSet().gemini !== false && (keys.gemini || !!localGemini());
   const groqOn = () => aiSet().groq !== false && keys.groq;
   window.ABAI = { get gemini() { return geminiOn(); }, get groq() { return groqOn(); }, get first() { return aiSet().first; } };
   const videoAI = () => geminiOn();                 // watching videos and searching the web: Gemini only
   const textAI = () => geminiOn() || groqOn();      // quizzes, talks, checks: either one
-  const aiLabel = () => geminiOn() && groqOn() ? (aiSet().first === "groq" ? "Groq first, Gemini as backup" : "Gemini first, Groq as backup") : geminiOn() ? "Gemini only" : groqOn() ? "Groq only (no video drafts)" : "off";
+  const aiLabel = () => geminiOn() && groqOn() ? (aiSet().first === "groq" ? "Gemini for videos & web search · Groq for everything else" : "Gemini for everything · Groq as backup") : geminiOn() ? "Gemini only" : groqOn() ? "Groq only (no video drafts)" : "off";
   const geminiKey = () => keys.gemini ? "server" : localGemini() || (keys.groq ? "server" : "");
   async function runDraft() {
     const yt = parseYT($("#f-url").value) || ed.v.yt;
@@ -1752,12 +1752,16 @@
               <div class="bar" style="margin:0"><button type="button" class="btn btn-sm" data-ai-test="groq">Test Groq</button><span class="help" id="t-groq"></span></div>
             </div>
           </div>
-          <div class="field" style="margin-top:16px"><label>When both are on, try first</label>
-            <div class="seg-pick" role="radiogroup">
-              <label><input type="radio" name="s-ai-first" value="gemini" ${ai.first !== "groq" ? "checked" : ""}><span>Gemini first</span></label>
-              <label><input type="radio" name="s-ai-first" value="groq" ${ai.first === "groq" ? "checked" : ""}><span>Groq first</span></label>
-            </div>
-            <div class="help">If the first one is slow, busy or at its limit, the other takes over automatically. Video jobs always use Gemini.</div></div>
+          <div class="ai-split">
+            <h3>Who does what</h3>
+            <div class="ai-split-row"><span><b>Watching videos &amp; searching the web</b><small>Video drafts, video reviews, the daily video finder, finding videos and channels</small></span><span class="badge-s b-gem">Gemini</span></div>
+            <div class="ai-split-row"><span><b>Everything else</b><small>Quizzes, toolbox talks, translations, Ask AI, checks</small></span>
+              <div class="seg-pick" role="radiogroup" aria-label="AI for everything else">
+                <label><input type="radio" name="s-ai-first" value="groq" ${ai.first !== "gemini" ? "checked" : ""}><span>Groq</span></label>
+                <label><input type="radio" name="s-ai-first" value="gemini" ${ai.first === "gemini" ? "checked" : ""}><span>Gemini</span></label>
+              </div></div>
+            <div class="help">If that one is slow, busy or at its limit, the other takes over automatically (when both are switched on).</div>
+          </div>
           <div class="note">The daily jobs on GitHub read their own copies: repo <b>Settings → Secrets and variables → Actions</b>, secrets <code>GEMINI_API_KEY</code> and <code>GROQ_API_KEY</code>. The on/off switches above apply there too.</div>`; })()}
         </div>` : ""}
         <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
@@ -1845,7 +1849,7 @@
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), quizSize: Math.min(8, Math.max(2, +$("#s-qn").value || 3)), quizSizeEss: Math.min(8, Math.max(2, +$("#s-qne").value || 5)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
       if (superAdmin) { vals.requestsEnabled = $("#s-reqon").checked; vals.aiEnabled = $("#s-ai").checked; }
-      if ($("#s-ai-gem")) vals.ai = { gemini: $("#s-ai-gem").checked, groq: $("#s-ai-groq").checked, first: (document.querySelector('[name="s-ai-first"]:checked') || {}).value || "gemini" };
+      if ($("#s-ai-gem")) vals.ai = { gemini: $("#s-ai-gem").checked, groq: $("#s-ai-groq").checked, first: (document.querySelector('[name="s-ai-first"]:checked') || {}).value || "groq" };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
         try {
           const j = await sGet({ what: "staff" });

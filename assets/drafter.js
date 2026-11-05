@@ -446,10 +446,10 @@ Reply with JSON only: [{"url": "https://www.youtube.com/watch?v=...", "title": s
   async function aiTalk({ title, key, model }) {
     const r = await gemini({ key, model, parts: [{ text:
       `Write a 5-minute toolbox talk for facility-maintenance technicians in Dubai on: "${title}".
-Reply with JSON only: {"icon": one emoji, "points": [4–5 short points, each one plain sentence under 20 words], "ask": one question for the supervisor to ask the team}.
+Reply with JSON only: {"icon": the best matching name from this list: ${(root.ABIcon ? root.ABIcon.ITEM_ICONS : ["hardhat"]).join(", ")}, "points": [4–5 short points, each one plain sentence under 20 words], "ask": one question for the supervisor to ask the team}.
 Use simple English, practical advice, and local context where useful (UAE emergency numbers 999 police, 998 ambulance, 997 fire; summer heat).` }] });
     const j = jsonOf(r.text);
-    return { icon: clean(j.icon).slice(0, 4), points: (j.points || []).map(clean).filter(Boolean).slice(0, 6), ask: clean(j.ask).slice(0, 200) };
+    return { icon: clean(j.icon).slice(0, 20), points: (j.points || []).map(clean).filter(Boolean).slice(0, 6), ask: clean(j.ask).slice(0, 200) };
   }
   /* Translate a list of short lines into one language; returns the same number of lines. */
   async function aiTranslate({ lines, langName, key, model }) {

@@ -516,3 +516,10 @@ body.ai-mode .ai-head { flex: none; }
 body.ai-mode .ai-log { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 2px 2px 8px; -webkit-overflow-scrolling: touch; }
 body.ai-mode .ai-note { flex: none; margin: 6px 0 8px; }
 body.ai-mode .ai-bar { flex: none; }
+
+/* Line icons (assets/icons.js) — size with the text, take its colour. */
+.i { width: 1.15em; height: 1.15em; vertical-align: -0.2em; flex: none; display: inline-block; }
+.i.ok { color: var(--ok, #1f9d55); } .i.bad { color: var(--danger, #b91c1c); } .i.muted { opacity: .55; }
+.big .i { width: 44px; height: 44px; }
+.ph-ico .i, .pc-ico .i, .tk-ico .i, .as-ico .i { width: 26px; height: 26px; vertical-align: 0; }
+.talk-list a > span .i { width: 20px; height: 20px; }

@@ -12,8 +12,9 @@ const { ruleDraft, aiDraft, aiQuiz } = globalThis.ABDraft;
 const KEY = process.env.GEMINI_API_KEY || "";
 // Groq backup: quizzes (text) switch to Groq when Gemini is busy or out of quota. Videos still need Gemini.
 const GROQ = process.env.GROQ_API_KEY || "";
-if (GROQ) globalThis.ABProxy = globalThis.ABDraft.groqDirect(GROQ);
-console.log(`AI keys: Gemini ${KEY ? "found" : "MISSING"}, Groq ${GROQ ? "found" : "MISSING (add GROQ_API_KEY under repo Settings → Secrets and variables → Actions → Repository secrets)"}`);
+const OPENROUTER = process.env.OPENROUTER_API_KEY || "";
+if (GROQ || OPENROUTER) globalThis.ABProxy = globalThis.ABDraft.aiDirect({ groq: GROQ, openrouter: OPENROUTER });
+console.log(`AI keys: Gemini ${KEY ? "found" : "MISSING"}, Groq ${GROQ ? "found" : "MISSING (add GROQ_API_KEY under repo Settings → Secrets and variables → Actions → Repository secrets)"}, OpenRouter ${OPENROUTER ? "found" : "MISSING (add OPENROUTER_API_KEY the same way)"}`);
 const MODEL = process.env.GEMINI_MODEL || "";
 const MAX_MINUTES = Number(process.env.MAX_AI_MINUTES || 360);   // free tier allows 8 hours of YouTube video a day
 const MAX_AI = Number(process.env.MAX_AI_DRAFTS || 25);
@@ -82,7 +83,7 @@ if (GEM) {
 // Write a 3-question quiz for library videos that don't have one yet (from the summary and steps — quick, no video watching).
 const MAX_QUIZ = Number(process.env.MAX_AI_QUIZZES || 20);
 let quizzes = 0;
-if (KEY || GROQ) {
+if (KEY || GROQ || OPENROUTER) {
   for (const v of vDoc.videos || []) {
     if (quizzes >= MAX_QUIZ) break;
     if ((v.quiz && v.quiz.length) || v.hidden || (v.quizTries || 0) >= 3 || !(v.steps || []).length) continue;

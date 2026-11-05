@@ -1,4 +1,4 @@
-// Ask AI for staff: answers work questions (with up to 3 photos) using Gemini and/or Groq,
+// Ask AI for staff: answers work questions (with up to 3 photos) using Gemini, Groq and/or OpenRouter,
 // as chosen in admin Settings → AI. The keys stay on the server — they are never in the app.
 // Who may ask, and how often, is checked by the database function public.ai_allowed.
 // Questions and photos are not saved anywhere.
@@ -34,7 +34,8 @@ Deno.serve(async (req) => {
   } catch { /* defaults */ }
   const key = ai.gemini === false ? "" : (await shared("gemini")) || Deno.env.get("GEMINI_API_KEY") || "";
   const groqKey = ai.groq === false ? "" : (await shared("groq")) || Deno.env.get("GROQ_API_KEY") || Deno.env.get("Groq_API_KEY") || "";
-  if (!key && !groqKey) return reply({ ok: false, error: "off" });
+  const orKey = ai.openrouter === false ? "" : (await shared("openrouter")) || Deno.env.get("OPENROUTER_API_KEY") || "";
+  if (!key && !groqKey && !orKey) return reply({ ok: false, error: "off" });
 
   // Signed in (when sign-in is on), Ask AI turned on, and within the limits?
   try {
@@ -133,8 +134,38 @@ Reply with JSON only: {"answer": string, "videos": [up to 3 ids from the library
     return null;
   };
 
-  const order = [key && viaGemini, groqKey && viaGroq].filter(Boolean) as (() => Promise<Response | null>)[];
-  if (ai.first !== "gemini") order.reverse();   // default: Groq answers, Gemini is the backup
+  // OpenRouter: same OpenAI format; the model chosen in Settings, then OpenRouter's automatic pick.
+  const viaOpenRouter = async (): Promise<Response | null> => {
+    const msgs: any[] = [{ role: "system", content: system }];
+    (Array.isArray(b.history) ? b.history : []).slice(-8).forEach((h: any) => {
+      const t = String((h && h.text) || "").slice(0, 1500);
+      if (t) msgs.push({ role: h.role === "model" ? "assistant" : "user", content: t });
+    });
+    const content: any[] = images.map((i: any) => ({ type: "image_url", image_url: { url: `data:${i.mime};base64,${i.data}` } }));
+    content.push({ type: "text", text: text || "What do you see in this photo, and what should I check or do?" });
+    msgs.push({ role: "user", content });
+    const models = [...new Set([typeof ai.orModel === "string" && ai.orModel.trim(), "openrouter/auto"].filter(Boolean) as string[])];
+    for (const m of models) {
+      let r: Response;
+      try {
+        r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST", headers: { Authorization: "Bearer " + orKey, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" }, signal: AbortSignal.timeout(30000),
+          body: JSON.stringify({ model: m, temperature: 0.3, messages: msgs }),
+        });
+      } catch { sawBusy = true; last = "openrouter slow"; continue; }
+      const j = await r.json().catch(() => ({}));
+      const t = j.choices?.[0]?.message?.content || "";
+      if (r.ok && t) return answer(t, "openrouter:" + (j.model || m));
+      last = "openrouter: " + (j.error?.message || r.status);
+      if (r.status === 429 || r.status >= 500) sawBusy = true;
+    }
+    return null;
+  };
+
+  // Settings → AI "first": groq (default), openrouter or gemini. The others are backups, in that order.
+  const all: Record<string, (() => Promise<Response | null>) | ""> = { groq: groqKey && viaGroq, openrouter: orKey && viaOpenRouter, gemini: key && viaGemini };
+  const first = ["groq", "openrouter", "gemini"].includes(ai.first) ? ai.first : "groq";
+  const order = [first, "groq", "openrouter", "gemini"].filter((n, i, a) => a.indexOf(n) === i).map((n) => all[n]).filter(Boolean) as (() => Promise<Response | null>)[];
   for (const run of order) { const res = await run(); if (res) return res; }
   return reply(sawBusy ? { ok: false, error: "busy" } : { ok: false, error: "error", detail: last });
 });

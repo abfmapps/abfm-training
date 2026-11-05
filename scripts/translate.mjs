@@ -12,8 +12,9 @@ const { aiTranslate } = globalThis.ABDraft;
 const GEMINI_KEY = process.env.GEMINI_API_KEY || "";
 // Groq backup: used when Gemini is busy, slow or out of quota.
 const GROQ_KEY = process.env.GROQ_API_KEY || "";
-if (GROQ_KEY) globalThis.ABProxy = globalThis.ABDraft.groqDirect(GROQ_KEY);
-console.log(`AI keys: Gemini ${GEMINI_KEY ? "found" : "MISSING"}, Groq ${GROQ_KEY ? "found" : "MISSING (add GROQ_API_KEY under repo Settings → Secrets and variables → Actions → Repository secrets)"}`);
+const OR_KEY = process.env.OPENROUTER_API_KEY || "";
+if (GROQ_KEY || OR_KEY) globalThis.ABProxy = globalThis.ABDraft.aiDirect({ groq: GROQ_KEY, openrouter: OR_KEY });
+console.log(`AI keys: Gemini ${GEMINI_KEY ? "found" : "MISSING"}, Groq ${GROQ_KEY ? "found" : "MISSING (add GROQ_API_KEY under repo Settings → Secrets and variables → Actions → Repository secrets)"}, OpenRouter ${OR_KEY ? "found" : "MISSING (add OPENROUTER_API_KEY the same way)"}`);
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "";
 const LANG_NAMES = { hi: "Hindi", ur: "Urdu", ml: "Malayalam", bn: "Bengali", ta: "Tamil", ne: "Nepali", tl: "Filipino (Tagalog)", ar: "Arabic" };
 let googleDown = 0, usedGemini = 0, lastError = "";
@@ -65,10 +66,10 @@ async function translateLines(lines, tl) {
       if (e.message === "limit") throw e;
       googleDown++; lastError = "Google Translate: " + e.message;
       if (googleDown === 3) console.log("Google Translate isn't responding (" + e.message + ")" + (GEMINI_KEY ? " — switching to Gemini." : " and no GEMINI_API_KEY is set."));
-      if (!GEMINI_KEY && !GROQ_KEY) throw e;
+      if (!GEMINI_KEY && !GROQ_KEY && !OR_KEY) throw e;
     }
   }
-  if (!GEMINI_KEY && !GROQ_KEY) throw new Error(lastError || "No translation service available");
+  if (!GEMINI_KEY && !GROQ_KEY && !OR_KEY) throw new Error(lastError || "No translation service available");
   if (Date.now() - START > TIME_BUDGET) throw new Error("limit");
   const clean = lines.map(s => String(s || "").replace(/\s*\n\s*/g, " ").trim());
   try {

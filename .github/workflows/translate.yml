@@ -35,6 +35,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
       - name: Continue in a new run if there is more to translate
         if: steps.tr.outputs.more == 'true'

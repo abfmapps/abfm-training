@@ -27,7 +27,7 @@
   let me = null;                        // signed-in admin's email
   let cfg = loadCfg();                  // optional GitHub link, only to start the daily jobs from here
   const data = {};
-  let view = "videos";
+  let view = "dashboard";
   const ui = { q: "", cat: "ALL", show: "all" };
 
   /* ---------- small UI helpers ---------- */
@@ -110,7 +110,7 @@
 
   /* ---------- sign-in screen (Supabase email + password) ---------- */
   function renderConnect(error, mode = "in") {
-    $("#tabs").hidden = true; $("#disconnect").hidden = !me; $("#repo-label").textContent = me ? me : "Not signed in";
+    $("#tabs").hidden = true; $("#page-h").hidden = true; $("#disconnect").hidden = !me; $("#repo-label").textContent = me ? me : "Not signed in";
     const title = { in: "Sign in", up: "Create your admin account", reset: "Reset your password", newpw: "Choose a new password" }[mode];
     $("#app").innerHTML = `
       <div class="connect">
@@ -178,7 +178,7 @@
     $("#tabs").hidden = false; $("#disconnect").hidden = false;
     $("#repo-label").textContent = me;
     render();
-    loadRequests().then(() => { if (view === "requests") render(); else badgeRequests(); });
+    loadRequests().then(() => { if (view === "requests" || view === "dashboard") render(); badgeRequests(); });
   }
 
   const V = () => data.videos.json.videos;
@@ -193,12 +193,101 @@
     return m;
   };
 
+  const TITLES = {
+    dashboard: ["", ""],
+    videos: ["Videos", "Everything in the staff library. Videos play from YouTube; only the text is stored here."],
+    queue: ["Review queue", "New videos the daily finder found. Nothing goes live until you approve it."],
+    paths: ["Learning paths", "Short courses shown on the staff home screen."],
+    toolbox: ["Toolbox talks", "One talk shows on the home screen each day, in rotation."],
+    channels: ["Channels", "The trusted YouTube channels the daily finder watches."],
+    people: ["Staff & records", "Progress is recorded by HR number."],
+    assign: ["Assigned training", "Learning paths that a trade (or everyone) must finish, with a due date."],
+    sups: ["Supervisors", "Supervisors sign off certificates on the technician's phone with their PIN."],
+    requests: ["Requests", "Videos staff asked for."],
+    insights: ["Insights", "What staff watch, and what they searched for and didn't find."],
+    settings: ["Settings", ""]
+  };
   function render() {
     $("#n-videos").textContent = V().length;
     const q = (data.pending.json.queue || []).length;
     const nq = $("#n-queue"); nq.hidden = !q; nq.textContent = q;
     $$("#tabs [data-view]").forEach(b => { if (b.dataset.view === view) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
-    ({ videos: renderVideos, queue: renderQueue, requests: renderRequests, people: renderPeople, insights: renderInsights, paths: renderPaths, toolbox: renderToolbox, channels: renderChannels, settings: renderSettings })[view]();
+    const [title, sub] = TITLES[view] || ["", ""];
+    $("#page-h").hidden = !title; $("#page-title").textContent = title; $("#page-sub").textContent = sub; $("#page-act").innerHTML = "";
+    if (view === "assign") pplSub = "assign"; else if (view === "sups") pplSub = "sups"; else if (view === "people" && !["people", "staff"].includes(pplSub)) pplSub = "people";
+    ({ dashboard: renderDashboard, videos: renderVideos, queue: renderQueue, requests: renderRequests, people: renderPeople, assign: renderPeople, sups: renderPeople, insights: renderInsights, paths: renderPaths, toolbox: renderToolbox, channels: renderChannels, settings: renderSettings })[view]();
+  }
+  const peopleView = () => ["people", "assign", "sups"].includes(view);
+
+  /* ---------- Dashboard ---------- */
+  let dashStats = null;
+  function renderDashboard() {
+    if (!ppl && !pplErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading…</p>`; loadPeople().then(() => view === "dashboard" && renderDashboard()); return; }
+    if (dashStats === null && data.settings.json.statsEnabled) { dashStats = []; sGet({ what: "stats", days: 30 }).then(j => { dashStats = j.counts || []; if (view === "dashboard") renderDashboard(); }).catch(() => {}); }
+    const people = ppl ? summarise() : [], staffN = ((ppl && ppl.staff) || []).filter(x => x.active).length;
+    const wk = Date.now() - 7 * 864e5;
+    const active7 = people.filter(p => !p.unknown && p.last && Date.parse(p.last) > wk).length;
+    const watched7 = ((ppl && ppl.records) || []).filter(r => r[5] === "video" && Date.parse(r[0]) > wk).length;
+    const watchedPrev = ((ppl && ppl.records) || []).filter(r => r[5] === "video" && Date.parse(r[0]) <= wk && Date.parse(r[0]) > wk - 7 * 864e5).length;
+    const byPath = new Map((data.paths.json.paths || []).map(p => [p.id, p]));
+    const as = (data.paths.json.assignments || []).map(a => {
+      const p = byPath.get(a.path); if (!p) return null;
+      const target = people.filter(x => !x.unknown && x.active !== false && (!(a.trades || []).length || (a.trades || []).includes(x.trade)));
+      const done = target.filter(x => x.paths.has(a.path)).length, over = a.due && a.due < today();
+      return { a, p, n: target.length, done, over, overdue: over ? target.length - done : 0 };
+    }).filter(Boolean);
+    const overdue = as.reduce((n, x) => n + x.overdue, 0), overPaths = as.filter(x => x.overdue).length;
+    const q = data.pending.json.queue || [], nreq = (reqs || []).filter(r => r.status === "new").length;
+    const hour = new Date().getHours(), hello = hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
+    const noLen = V().filter(v => !v.duration).length, full = V().filter(v => v.tr && Object.keys(v.tr).length >= 8).length;
+    const probs = (data.health.json.problems || []).length, lastRun = data.pending.json.lastRun;
+    const nores = (dashStats || []).filter(c => c.kind === "nores").sort((a, b) => b.n - a.n).slice(0, 5);
+    const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+    const asTag = x => x.done >= x.n && x.n ? `<span class="tag ok">Done</span>` : x.over ? `<span class="tag over">Overdue</span>` : x.a.due ? `<span class="tag due">Due ${esc(new Date(x.a.due + "T00:00:00").toLocaleDateString(undefined, { day: "numeric", month: "short" }))}</span>` : `<span class="tag grey">No due date</span>`;
+    $("#app").innerHTML = `
+      <div class="page-h"><div><h1>${hello}</h1>
+        <p>${esc(new Date().toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" }))} · Sign-in is ${data.settings.json.staffLogin ? "on for all staff" : "<b>off</b>"}</p></div>
+        <button class="btn" data-find>Search for new videos</button><button class="btn btn-primary" id="d-add">＋ Add video</button></div>
+      <div class="find-msg" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>
+      ${pplErr ? `<div class="err">${esc(pplErr)}</div>` : ""}
+      <div class="kpis">
+        <a class="kpi" href="#" data-go="people"><small>Active this week</small><b>${active7} <span>of ${staffN}</span></b><div class="pc-bar"><i style="width:${pct(active7, staffN)}%"></i></div></a>
+        <a class="kpi" href="#" data-go="insights"><small>Videos watched this week</small><b>${watched7.toLocaleString()}</b><span class="sub">${watchedPrev ? (watched7 >= watchedPrev ? "↑ " : "↓ ") + Math.abs(pct(watched7 - watchedPrev, watchedPrev)) + "% on last week" : "by signed-in staff"}</span></a>
+        <a class="kpi${overdue ? " danger" : ""}" href="#" data-go="assign"><small>Overdue assigned training</small><b>${overdue}</b><span class="sub">${overdue ? `people across ${overPaths} path${overPaths === 1 ? "" : "s"}` : "nobody is overdue"}</span></a>
+        <a class="kpi" href="#" data-go="${q.length ? "queue" : "requests"}"><small>Waiting for you</small><b>${q.length + nreq}</b><span class="sub">${q.length} video${q.length === 1 ? "" : "s"} to review · ${nreq} request${nreq === 1 ? "" : "s"}</span></a>
+      </div>
+      <div class="dash">
+        <section class="card-plain" style="flex:2 1 480px">
+          <div class="dash-h"><h2>Assigned training</h2><a href="#" data-go="assign">Manage</a></div>
+          ${as.length ? `<div class="as-grid"><span class="th">Path</span><span class="th">For</span><span class="th">Finished</span><span></span>
+            ${as.map(x => `<b>${esc(x.p.title)}</b><span class="for">${(x.a.trades || []).length ? x.a.trades.map(esc).join(", ") : "Everyone"}</span>
+              <span class="prog"><span class="pc-bar${x.over ? " over" : x.done >= x.n && x.n ? " ok" : ""}"><i style="width:${pct(x.done, x.n)}%"></i></span>${x.done}/${x.n}</span>${asTag(x)}`).join("")}</div>`
+            : `<p class="help">Nothing assigned yet. <a href="#" data-go="assign">Assign a learning path</a> to a trade or to everyone.</p>`}
+        </section>
+        <section class="card-plain" style="flex:1 1 300px">
+          <div class="dash-h"><h2>Review queue</h2><a href="#" data-go="queue">Open</a></div>
+          ${q.slice(0, 3).map(i => { const rv = i.draft && i.draft.review; const col = !rv ? "var(--muted)" : rv.recommend === "approve" ? "var(--ok)" : rv.recommend === "reject" ? "var(--danger)" : "#8A5300";
+            return `<a class="mini-q" href="#" data-go="queue"><span class="thumb"><img loading="lazy" src="${thumb(i.yt)}" alt=""></span><span><b>${esc((i.draft && i.draft.title) || i.title)}</b><small style="color:${col}">${rv ? "Gemini: " + esc(rv.recommend) + " · " + rv.relevance + "/10" : "Not checked yet"}</small></span></a>`; }).join("") || `<p class="help">Nothing waiting.</p>`}
+        </section>
+      </div>
+      <div class="dash">
+        <section class="card-plain" style="flex:1 1 360px">
+          <div class="dash-h"><h2>Searched, nothing found</h2><a href="#" data-go="insights">Insights</a></div>
+          <p class="help" style="margin-top:-6px">Ideas for new videos, last 30 days.</p>
+          ${data.settings.json.statsEnabled ? (nores.map(c => `<div class="list-line"><span>“${esc(c.key)}”</span><b>${c.n}</b></div>`).join("") || `<p class="help">Nothing yet.</p>`) : `<p class="help">Counting is off. Turn it on in <a href="#" data-go="settings">Settings → Staff &amp; training</a>.</p>`}
+        </section>
+        <section class="card-plain" style="flex:1 1 360px">
+          <div class="dash-h"><h2>System health</h2><a href="#" data-go="settings" data-sec="status">Details</a></div>
+          <div class="health">
+            <div><i style="background:${lastRun && Date.now() - Date.parse(lastRun) < 36 * 36e5 ? "var(--ok)" : "var(--danger)"}"></i>${lastRun ? "Daily video check ran " + esc(new Date(lastRun).toLocaleString(undefined, { weekday: "short", hour: "2-digit", minute: "2-digit" })) : "Daily video check hasn't run yet"}</div>
+            <div><i style="background:${full === V().length ? "var(--ok)" : "#C98A00"}"></i>${full} of ${V().length} videos translated into 8 languages</div>
+            <div><i style="background:${probs ? "var(--danger)" : "var(--ok)"}"></i>${probs ? `${probs} video${probs === 1 ? "" : "s"} no longer play <button data-go="videos" data-show="problems">Show</button>` : "All videos still play on YouTube"}</div>
+            <div><i style="background:${noLen ? "#C98A00" : "var(--ok)"}"></i>${noLen ? `${noLen} videos missing a length <button data-go="videos" data-show="no-len">Fill in</button>` : "Every video has a length"}</div>
+            <div><i style="background:${geminiKey() ? "var(--ok)" : "#C98A00"}"></i>${geminiKey() ? "Gemini key saved in this browser" : `No Gemini key in this browser <button data-go="settings" data-sec="gemini">Add</button>`}</div>
+          </div>
+        </section>
+      </div>`;
+    const da = $("#d-add"); if (da) da.onclick = () => openEditor(null);
   }
 
   /* ---------- Videos ---------- */
@@ -717,9 +806,7 @@
             <button class="btn btn-sm" data-p-edit="${i}">Edit</button>
             <button class="btn btn-sm btn-danger" data-p-del="${i}">Delete</button>
           </div></div>`;
-      }).join("") || `<div class="empty"><h3>No learning paths yet</h3></div>`}</div>
-      ${P().length ? assignHtml() : ""}`;
-    wireAssign();
+      }).join("") || `<div class="empty"><h3>No learning paths yet</h3></div>`}</div>`;
     $("#p-add").onclick = () => { pe = { index: -1, p: { id: "", icon: "🎓", title: "", description: "", videos: [] } }; renderPaths(); };
     $$("[data-p-edit]").forEach(b => b.onclick = () => { const i = +b.dataset.pEdit; pe = { index: i, p: JSON.parse(JSON.stringify(P()[i])) }; renderPaths(); });
     $$("[data-p-del]").forEach(b => b.onclick = async () => {
@@ -738,8 +825,8 @@
   function assignHtml() {
     const byId = new Map(P().map(p => [p.id, p]));
     return `<form class="card-plain" id="as-form" style="margin-top:18px">
-      <h2>📌 Assigned training</h2>
-      <p class="help">Staff see these at the top of their home screen until they finish, with the due date. Choose no trade to assign it to everyone. ${data.settings.json.staffLogin ? "Staff trades come from the staff list." : "Staff choose their trade on their phone (in My training)."} Track who has finished in <b>Staff & records → Assigned training</b>.</p>
+      <h2>Assign a learning path</h2>
+      <p class="help">Staff see it at the top of their home screen until they finish, with the due date. Tick no trade to assign it to everyone. Trades come from the staff list.</p>
       <div class="rows">${AS().map((a, i) => { const p = byId.get(a.path); return `<div class="ch-row"><div><b>${esc(p ? (p.icon || "🎓") + " " + p.title : a.path + " (deleted path)")}</b>
         <div class="small">For: ${(a.trades || []).length ? a.trades.map(esc).join(", ") : "everyone"}${a.due ? " · due " + esc(a.due) : " · no due date"}${a.note ? " · " + esc(a.note) : ""}</div></div>
         <div class="row-actions"><button type="button" class="btn btn-sm btn-danger" data-as-del="${i}">Remove</button></div></div>`; }).join("") || `<p class="help">Nothing assigned yet.</p>`}</div>
@@ -997,10 +1084,10 @@
     return [...staff.values(), ...anon.values()];
   }
   function renderPeople() {
-    if (!ppl && !pplErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading staff and records…</p>`; loadPeople().then(() => view === "people" && renderPeople()); return; }
-    const sub = `<div class="seg" style="margin-bottom:14px">${[["people", "👷 Staff progress"], ["assign", "📌 Assigned training"], ["staff", "🪪 Staff list"], ["sups", "✍️ Supervisors"]].map(([k, l]) => `<button data-psub="${k}" aria-pressed="${pplSub === k}">${l}</button>`).join("")}</div>`;
+    if (!ppl && !pplErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading staff and records…</p>`; loadPeople().then(() => peopleView() && renderPeople()); return; }
+    const sub = view === "people" ? `<div class="seg" style="margin-bottom:16px">${[["people", "Staff progress"], ["staff", "Staff list"]].map(([k, l]) => `<button data-psub="${k}" aria-pressed="${pplSub === k}">${l}</button>`).join("")}</div>` : "";
     const head = `${pplErr ? `<div class="err">⚠ ${esc(pplErr)}</div>` : ""}
-      ${!data.settings.json.staffLogin ? `<div class="hint-box">🔐 Staff sign-in is <b>off</b>. Add your staff below, then turn it on in <b>Settings → Staff & training</b>. From then on, staff must enter their HR number to use the app, and all progress is recorded here.</div>` : ""}
+      ${!data.settings.json.staffLogin ? `<div class="hint-box">Staff sign-in is <b>off</b>. Add your staff below, then turn it on in <b>Settings → Staff & training</b>. From then on, staff must enter their HR number to use the app, and all progress is recorded here.</div>` : ""}
       ${sub}`;
     if (!ppl) { $("#app").innerHTML = head; wirePeopleSub(); return; }
     const people = summarise();
@@ -1040,14 +1127,15 @@
         const done = target.filter(x => x.paths.has(a.path)), notDone = target.filter(x => !x.paths.has(a.path));
         const pct = target.length ? Math.round(done.length / target.length * 100) : 0;
         const over = a.due && a.due < today();
-        return `<div class="card-plain"><h2>${esc(p.icon || "🎓")} ${esc(p.title)}</h2>
+        return `<div class="card-plain"><h2>${esc(p.title)} ${over && notDone.length ? `<span class="tag over">Overdue</span>` : ""}</h2>
           <p class="count">For: ${(a.trades || []).length ? a.trades.map(esc).join(", ") : "everyone"}${a.due ? ` · due <b style="${over ? "color:var(--danger)" : ""}">${esc(a.due)}</b>` : ""}</p>
-          <div class="pc-bar big"><i style="width:${pct}%"></i></div>
+          <div class="pc-bar big${pct === 100 ? " ok" : over ? " over" : ""}"><i style="width:${pct}%"></i></div>
           <p><b>${done.length} of ${target.length}</b> finished (${pct}%)</p>
           ${notDone.length ? `<details class="box"><summary>${notDone.length} not finished yet${over ? " — overdue" : ""}</summary><p style="margin:8px 0 0">${notDone.map(x => `${esc(x.name)} <span class="help">(${esc(x.hr)}${x.videos.size ? ", " + pathProgress(x, p) : ""})</span>`).join("<br>")}</p>
             <button class="btn btn-sm" data-as-csv="${esc(a.id)}" style="margin-top:8px">⬇ Export list</button></details>` : ""}
         </div>`;
-      }).join("") : `<div class="empty"><h3>No assigned training yet</h3><p>Assign a learning path to a trade (or everyone) in the <b>Learning paths</b> tab.</p></div>`;
+      }).join("") : `<div class="empty"><h3>No assigned training yet</h3><p>Use the form below to assign a learning path.</p></div>`;
+      body += P().length ? assignHtml() : "";
     } else if (pplSub === "staff") {
       const st = (ppl.staff || []).slice().sort((a, b) => String(a.name).localeCompare(String(b.name)));
       body = `<form class="card-plain" id="st-add">
@@ -1065,7 +1153,7 @@
         </tbody></table></div>
         <p class="help">Deactivate people who have left: they can no longer sign in, and their phone is signed out the next time it goes online. Their records are kept.</p>`;
     } else if (pplSub === "sups") {
-      if (sups === null) { sGet({ what: "supervisors" }).then(j => { sups = j.supervisors || []; renderPeople(); }).catch(e => { sups = []; pplErr = e.message; renderPeople(); }); }
+      if (sups === null) { sGet({ what: "supervisors" }).then(j => { sups = j.supervisors || []; if (view === "sups") renderPeople(); }).catch(e => { sups = []; pplErr = e.message; if (view === "sups") renderPeople(); }); }
       body = `<div class="card-plain"><h2>Supervisors</h2>
           <p class="help">Supervisors sign off certificates on the technician's phone by typing their PIN. Turn on sign-off in <b>Settings → Staff & training</b>. Only a scrambled (hashed) copy of each PIN is kept.</p>
           <div class="rows">${(sups || []).map(x => `<div class="ch-row"><div><b>${esc(x.name)}</b> <span class="small">PIN ${esc(x.pin)}</span></div><div class="row-actions"><button class="btn btn-sm btn-danger" data-sup-del="${esc(x.name)}">Remove</button></div></div>`).join("") || `<p class="help">${sups === null ? "Loading…" : "No supervisors yet."}</p>`}</div>
@@ -1078,6 +1166,7 @@
     }
     $("#app").innerHTML = head + body;
     wirePeopleSub();
+    if (pplSub === "assign") wireAssign();
     const q = $("#pp-q"); if (q) q.oninput = e => { pplQ = e.target.value; const pos = e.target.selectionStart; renderPeople(); const i = $("#pp-q"); i.focus(); i.setSelectionRange(pos, pos); };
     const sq = $("#st-q"); if (sq) sq.oninput = e => { pplQ = e.target.value; const pos = e.target.selectionStart; renderPeople(); const i = $("#st-q"); i.focus(); i.setSelectionRange(pos, pos); };
     $$("[data-pp]").forEach(r => r.onclick = () => { pplSel = r.dataset.pp; renderPeople(); scrollTo(0, 0); });
@@ -1542,8 +1631,7 @@
           </div>
           <label class="check"><input type="checkbox" id="s-sign" ${s.signoffEnabled ? "checked" : ""}> ✍️ Supervisor sign-off on certificates (supervisors and their PINs: Staff & records → Supervisors)</label>
           <label class="check"><input type="checkbox" id="s-stats" ${s.statsEnabled ? "checked" : ""}> 📊 Count video views and searches that find nothing (shown in Insights; counts only, no names)</label>
-          <label class="check"><input type="checkbox" id="s-rec" ${s.recordsEnabled ? "checked" : ""} ${s.staffLogin ? "disabled" : ""}> Without sign-in: send results of staff who type their name for a certificate</label>
-          <div class="help">With sign-in on, everyone's progress is always recorded.</div>
+          <div class="help">With sign-in on, everyone's progress is recorded against their HR number.</div>
         </div>
         <div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
           <h2>🙋 Requests &amp; Ask AI</h2>
@@ -1585,7 +1673,6 @@
       </form>`;
     if (setSec === "status") loadStatus();
     loadAdmins();
-    const lg = $("#s-login"); if (lg) lg.onchange = () => { $("#s-rec").disabled = lg.checked; };
     $$("[data-set-sec]").forEach(b => b.onclick = () => {
       setSec = b.dataset.setSec;
       if (setSec === "status") loadStatus();
@@ -1620,7 +1707,7 @@
         excludeKeywords: $("#s-excl").value.split(",").map(x => x.trim().toLowerCase()).filter(Boolean),
         requestsEnabled: $("#s-reqon").checked,
         aiEnabled: $("#s-ai").checked,
-        staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked, recordsEnabled: $("#s-rec").checked,
+        staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked,
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
@@ -1636,7 +1723,7 @@
         localStorage.setItem("ab_gemini_key", $("#s-gem").value.trim());
         localStorage.setItem("ab_gemini_model", $("#s-gmodel").value);
       } catch {}
-      await update("settings", d => { Object.assign(d, vals); delete d.requestUrl; return d; }, "Update site settings");
+      await update("settings", d => { Object.assign(d, vals); delete d.requestUrl; delete d.recordsEnabled; return d; }, "Update site settings");
       reqs = null; loadRequests().then(badgeRequests);
       toast("Settings saved. Staff see it the next time they open the app."); render();
     };
@@ -1717,6 +1804,14 @@
 
   /* ---------- global events ---------- */
   document.addEventListener("click", e => {
+    const go = e.target.closest("[data-go]");
+    if (go) {
+      e.preventDefault();
+      view = go.dataset.go;
+      if (go.dataset.show) ui.show = go.dataset.show;
+      if (go.dataset.sec) setSec = go.dataset.sec;
+      render(); scrollTo(0, 0); return;
+    }
     const tab = e.target.closest("#tabs [data-view]");
     if (tab) { view = tab.dataset.view; render(); scrollTo(0, 0); return; }
     if (e.target.closest("[data-find]")) { runFinder(); return; }

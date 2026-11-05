@@ -46,9 +46,9 @@
     return Object.assign({ owner: "abfmapps", repo: "abfm-training", branch: "main", token: "" }, c || {});
   }
   function saveCfg(c) { try { localStorage.setItem(CFG_KEY, JSON.stringify(c)); } catch {} }
-  /* Shared keys: the owner saves the Gemini, Groq and GitHub keys once on the server (private.app_secrets).
+  /* Shared keys: the owner saves the Gemini, Groq, OpenRouter and GitHub keys once on the server (private.app_secrets).
      Every admin can then use them through the admin-proxy edge function; no browser ever sees them. */
-  let keys = { owner: false, gemini: false, groq: false, github: false };
+  let keys = { owner: false, gemini: false, groq: false, openrouter: false, github: false };
   async function proxyFetch(payload, signal) {
     const { data: d } = await sb.auth.getSession();
     return fetch(SB.url + "/functions/v1/admin-proxy", {
@@ -59,6 +59,7 @@
   }
   window.ABProxy = {
     get groq() { return keys.groq; },
+    get openrouter() { return keys.openrouter; },
     fetchGemini: (model, body, signal) => proxyFetch({ kind: "gemini", model, body }, signal),
     call: async payload => { const r = await proxyFetch(payload); return { status: r.status, json: await r.json().catch(() => ({})) }; }
   };
@@ -81,7 +82,7 @@
   async function loadEnvKeys() {
     try {
       const st = await window.ABProxy.call({ kind: "status" });
-      if (st.status === 200) ["gemini", "groq", "github"].forEach(n => { if (st.json[n]) keys[n] = true; });
+      if (st.status === 200) ["gemini", "groq", "openrouter", "github"].forEach(n => { if (st.json[n]) keys[n] = true; });
     } catch {}
   }
   const hasGh = () => !!cfg.token || keys.github;
@@ -675,16 +676,21 @@
   }
   const localGemini = () => { try { return localStorage.getItem("ab_gemini_key") || ""; } catch { return ""; } };
   /* Settings → AI: which AI is on and which goes first. Shared by every admin and the daily jobs. */
-  const aiSet = () => Object.assign({ gemini: true, groq: true, first: "groq" }, data.settings.json.ai || {});
+  const aiSet = () => Object.assign({ gemini: true, groq: true, openrouter: true, first: "groq" }, data.settings.json.ai || {});
   const geminiOn = () => aiSet().gemini !== false && (keys.gemini || !!localGemini());
   const groqOn = () => aiSet().groq !== false && keys.groq;
-  window.ABAI = { get gemini() { return geminiOn(); }, get groq() { return groqOn(); }, get first() { return aiSet().first; } };
+  const orOn = () => aiSet().openrouter !== false && keys.openrouter;
+  window.ABAI = { get gemini() { return geminiOn(); }, get groq() { return groqOn(); }, get openrouter() { return orOn(); }, get first() { return aiSet().first; }, get orModel() { return aiSet().orModel || ""; } };
   const videoAI = () => geminiOn();                 // watching videos and searching the web: Gemini only
-  const textAI = () => geminiOn() || groqOn();      // quizzes, talks, checks: either one
-  const aiLabel = () => geminiOn() && groqOn() ? (aiSet().first === "groq" ? "Gemini for videos & web search · Groq for everything else" : "Gemini for everything · Groq as backup") : geminiOn() ? "Gemini only" : groqOn() ? "Groq only (no video drafts)" : "off";
+  const textAI = () => geminiOn() || groqOn() || orOn();   // quizzes, talks, checks: any of them
+  const aiLabel = () => { const t = textName(); return geminiOn() ? (t === "Gemini" ? "Gemini for everything" + (groqOn() || orOn() ? " · " + [groqOn() && "Groq", orOn() && "OpenRouter"].filter(Boolean).join(" and ") + " as backup" : "") : "Gemini for videos & web search · " + t + " for everything else") : textAI() ? t + " only (no video drafts)" : "off"; };
   // Name of the AI that does text jobs (quizzes, talks, checks) right now.
-  const textName = () => groqOn() && (!geminiOn() || aiSet().first === "groq") ? "Groq" : "Gemini";
-  const geminiKey = () => keys.gemini ? "server" : localGemini() || (keys.groq ? "server" : "");
+  const textName = () => {
+    const f = aiSet().first, order = (f === "openrouter" ? ["openrouter", "groq"] : ["groq", "openrouter"]).filter(k => k === "groq" ? groqOn() : orOn());
+    if (!order.length || (f === "gemini" && geminiOn())) return geminiOn() ? "Gemini" : "AI";
+    return order[0] === "groq" ? "Groq" : "OpenRouter";
+  };
+  const geminiKey = () => keys.gemini ? "server" : localGemini() || (keys.groq || keys.openrouter ? "server" : "");
   async function runDraft() {
     const yt = parseYT($("#f-url").value) || ed.v.yt;
     const title = $("#f-title").value.trim();
@@ -1780,18 +1786,26 @@
               ${secretField("s-groq", "groq", "API key", keys.groqSetAt, "gsk_…", `Free key at <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.`)}
               <div class="bar" style="margin:0"><button type="button" class="btn btn-sm" data-ai-test="groq">Test Groq</button><span class="help" id="t-groq"></span></div>
             </div>
+            <div class="ai-card ${ai.openrouter !== false ? "on" : ""}">
+              <div class="ai-top"><b>OpenRouter</b><span class="badge-s ${keys.openrouter ? "b-ok" : "b-wait"}">${keys.openrouter ? "Key ready" : "No key"}</span><input type="checkbox" class="switch" id="s-ai-or" aria-label="Use OpenRouter" ${ai.openrouter !== false ? "checked" : ""}></div>
+              <p class="help">One key for many AI models (OpenAI, Claude, Llama, Mistral…). Does <b>text and photos</b>, like Groq. It can't watch videos or search the web.</p>
+              ${secretField("s-or", "openrouter", "API key", keys.openrouterSetAt, "sk-or-…", `Get one at <a href="https://openrouter.ai/keys" target="_blank" rel="noopener">openrouter.ai/keys</a>.`)}
+              <div class="field"><label for="s-ormodel">Model</label><input class="input" id="s-ormodel" value="${esc(ai.orModel || "")}" placeholder="Automatic (openrouter/auto)"><div class="help">Optional. A model name from <a href="https://openrouter.ai/models" target="_blank" rel="noopener">openrouter.ai/models</a>, e.g. <code>openai/gpt-oss-120b</code>. Names ending in <code>:free</code> cost nothing.</div></div>
+              <div class="bar" style="margin:0"><button type="button" class="btn btn-sm" data-ai-test="openrouter">Test OpenRouter</button><span class="help" id="t-openrouter"></span></div>
+            </div>
           </div>
           <div class="ai-split">
             <h3>Who does what</h3>
             <div class="ai-split-row"><span><b>Watching videos &amp; searching the web</b><small>Video drafts, video reviews, the daily video finder, finding videos and channels</small></span><span class="badge-s b-gem">Gemini</span></div>
             <div class="ai-split-row"><span><b>Everything else</b><small>Quizzes, toolbox talks, translations, Ask AI, checks</small></span>
               <div class="seg-pick" role="radiogroup" aria-label="AI for everything else">
-                <label><input type="radio" name="s-ai-first" value="groq" ${ai.first !== "gemini" ? "checked" : ""}><span>Groq</span></label>
+                <label><input type="radio" name="s-ai-first" value="groq" ${ai.first !== "gemini" && ai.first !== "openrouter" ? "checked" : ""}><span>Groq</span></label>
+                <label><input type="radio" name="s-ai-first" value="openrouter" ${ai.first === "openrouter" ? "checked" : ""}><span>OpenRouter</span></label>
                 <label><input type="radio" name="s-ai-first" value="gemini" ${ai.first === "gemini" ? "checked" : ""}><span>Gemini</span></label>
               </div></div>
-            <div class="help">If that one is slow, busy or at its limit, the other takes over automatically (when both are switched on).</div>
+            <div class="help">If that one is slow, busy or at its limit, the others take over automatically (those switched on).</div>
           </div>
-          <div class="note">The daily jobs on GitHub read their own copies: repo <b>Settings → Secrets and variables → Actions</b>, secrets <code>GEMINI_API_KEY</code> and <code>GROQ_API_KEY</code>. The on/off switches above apply there too.</div>`; })()}
+          <div class="note">The daily jobs on GitHub read their own copies: repo <b>Settings → Secrets and variables → Actions</b>, secrets <code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code> and <code>OPENROUTER_API_KEY</code>. The on/off switches above apply there too.</div>`; })()}
         </div>` : ""}
         <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
           ${head("finder", "Video finder", "The daily search of your trusted channels. Manage the channels under Channels.")}
@@ -1826,7 +1840,7 @@
       if (innerWidth < 760) b.scrollIntoView({ inline: "center", block: "nearest" });
     });
     $$("[data-secret-del]").forEach(b => b.onclick = async () => {
-      const n = b.dataset.secretDel, label = { gemini: "Gemini key", groq: "Groq key", github: "GitHub token" }[n];
+      const n = b.dataset.secretDel, label = { gemini: "Gemini key", groq: "Groq key", openrouter: "OpenRouter key", github: "GitHub token" }[n];
       if (!confirm(`Take away the shared ${label}? Admins won't be able to use it until you add it again.`)) return;
       const { error: de } = await sb.rpc("admin_set_secret", { p_name: n, p_value: "" });
       if (de) return alert(de.message);
@@ -1834,7 +1848,7 @@
     });
     $$("[data-ai-test]").forEach(btn => btn.onclick = async () => {
       const which = btn.dataset.aiTest, m = $("#t-" + which);
-      const pasted = $(which === "gemini" ? "#s-gem" : "#s-groq").value.trim();
+      const pasted = $({ gemini: "#s-gem", groq: "#s-groq", openrouter: "#s-or" }[which]).value.trim();
       if (!pasted && !keys[which]) { m.textContent = "Paste a key first."; return; }
       m.textContent = "Testing…";
       const saved = window.ABAI, savedProxy = window.ABProxy;
@@ -1842,8 +1856,8 @@
         let model;
         if (which === "gemini") { window.ABAI = { gemini: true, groq: false, first: "gemini" }; model = await ABDraft.aiTest({ key: pasted || "server", model: $("#s-gmodel").value || undefined }); }
         else {
-          if (pasted) window.ABProxy = Object.assign({}, savedProxy, ABDraft.groqDirect(pasted));
-          window.ABAI = { gemini: false, groq: true, first: "groq" };
+          if (pasted) window.ABProxy = ABDraft.aiDirect({ [which]: pasted });
+          window.ABAI = { gemini: false, groq: which === "groq", openrouter: which === "openrouter", first: which, orModel: $("#s-ormodel").value.trim() };
           model = await ABDraft.aiTest({ key: "", model: undefined });
         }
         m.innerHTML = `<span style="color:var(--ok,#1f9d55);font-weight:700">✓ Works (${esc(model)}).</span>${pasted ? " Click Save settings." : ""}`;
@@ -1878,7 +1892,7 @@
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), quizSize: Math.min(8, Math.max(2, +$("#s-qn").value || 3)), quizSizeEss: Math.min(8, Math.max(2, +$("#s-qne").value || 5)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
       if (superAdmin) { vals.requestsEnabled = $("#s-reqon").checked; vals.aiEnabled = $("#s-ai").checked; }
-      if ($("#s-ai-gem")) vals.ai = { gemini: $("#s-ai-gem").checked, groq: $("#s-ai-groq").checked, first: (document.querySelector('[name="s-ai-first"]:checked') || {}).value || "groq" };
+      if ($("#s-ai-gem")) vals.ai = { gemini: $("#s-ai-gem").checked, groq: $("#s-ai-groq").checked, openrouter: $("#s-ai-or").checked, first: (document.querySelector('[name="s-ai-first"]:checked') || {}).value || "groq", orModel: $("#s-ormodel").value.trim().replace(/[^\w.\-:\/]/g, "") };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
         try {
           const j = await sGet({ what: "staff" });
@@ -1888,7 +1902,7 @@
         } catch (err) { alert("Couldn't read the staff list: " + err.message); return; }
       }
       if (keys.owner) {
-        for (const [id, name] of [["#s-gem", "gemini"], ["#s-groq", "groq"], ["#s-ghtoken", "github"]]) {
+        for (const [id, name] of [["#s-gem", "gemini"], ["#s-groq", "groq"], ["#s-or", "openrouter"], ["#s-ghtoken", "github"]]) {
           const val = $(id) ? $(id).value.trim() : "";
           if (!val) continue;
           const { error: se } = await sb.rpc("admin_set_secret", { p_name: name, p_value: val });

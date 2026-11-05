@@ -199,26 +199,35 @@
   const API = "https://generativelanguage.googleapis.com/v1beta/models/";
 
   /* One call to Gemini. Tries the chosen model first, then older ones if the model name is no longer available. */
-  /* AI choice, from Settings → AI (settings.ai): { gemini: on/off, groq: on/off, first: "gemini" | "groq" }.
+  /* AI choice, from Settings → AI (settings.ai): { gemini, groq, openrouter: on/off, first: "groq" | "openrouter" | "gemini", orModel }.
      Set root.ABAI = settings.ai before calling. With both on, the second one takes over when the first is
      slow, busy or out of quota. Groq can't watch videos or search Google, so those jobs always use Gemini.
      key === "server": use the owner's shared key through the admin proxy (root.ABProxy); the browser never sees it. */
   // Default split: Gemini watches videos and searches the web; Groq does everything else (Gemini as its backup).
-  const aiPrefs = () => Object.assign({ gemini: true, groq: true, first: "groq" }, root.ABAI || {});
+  const aiPrefs = () => Object.assign({ gemini: true, groq: true, openrouter: true, first: "groq" }, root.ABAI || {});
+  const TEXT_AIS = { groq: "Groq", openrouter: "OpenRouter" };
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
     const pref = aiPrefs();
     const needsGemini = !!tools || parts.some(p => p.file_data);
-    const groqReady = !needsGemini && pref.groq !== false && root.ABProxy && root.ABProxy.groq;
+    // Text AIs that can do this job, in the chosen order (the one picked in Settings first).
+    const texts = needsGemini || !root.ABProxy ? [] : (pref.first === "openrouter" ? ["openrouter", "groq"] : ["groq", "openrouter"])
+      .filter(k => pref[k] !== false && root.ABProxy[k]);
+    const groqReady = texts.length > 0;
     const geminiReady = pref.gemini !== false && !!key;
     if (needsGemini && pref.gemini === false) throw new Error("This needs Gemini (it watches the video or searches the web). Turn Gemini on in Settings → AI.");
-    if (!geminiReady && !groqReady) throw new Error(pref.gemini === false && pref.groq === false ? "AI is turned off in Settings → AI." : "No AI key is set up yet (Settings → AI).");
-    const viaGroq = async () => {
+    if (!geminiReady && !groqReady) throw new Error(pref.gemini === false && pref.groq === false && pref.openrouter === false ? "AI is turned off in Settings → AI." : "No AI key is set up yet (Settings → AI).");
+    const viaGroq = async () => {   // tries each text AI in order (Groq / OpenRouter)
       const content = parts.map(p => p.inline_data ? { type: "image_url", image_url: { url: `data:${p.inline_data.mime_type};base64,${p.inline_data.data}` } } : { type: "text", text: p.text || "" });
-      const r = await root.ABProxy.call({ kind: "groq", json, content });
-      if (r.status !== 200 || !r.json.text) { const e = new Error((r.json.error && r.json.error.message) || "Groq HTTP " + r.status); e.status = r.status; throw e; }
-      return { text: r.json.text, model: r.json.model, grounding: null };
+      const errs = [];
+      for (const kind of texts) {
+        const r = await root.ABProxy.call({ kind, json, content, ...(kind === "openrouter" && pref.orModel ? { model: pref.orModel } : {}) });
+        if (r.status === 200 && r.json.text) return { text: r.json.text, model: r.json.model, grounding: null };
+        errs.push((r.json.error && r.json.error.message) || TEXT_AIS[kind] + " HTTP " + r.status);
+        var lastStatus = r.status;
+      }
+      const e = new Error(errs.join(" · ")); e.status = lastStatus; throw e;
     };
-    const groqFirst = groqReady && (!geminiReady || pref.first === "groq");
+    const groqFirst = groqReady && (!geminiReady || pref.first !== "gemini");
     let groqErr = null;
     if (groqFirst) {
       try { return await viaGroq(); } catch (e) { groqErr = e; if (!geminiReady) throw e; }
@@ -486,6 +495,30 @@ ${JSON.stringify(lines)}` }] });
      In the admin the key stays on the server and the proxy plays this role. */
   const GROQ_TEXT = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "llama-3.1-8b-instant"];
   const GROQ_VISION = ["meta-llama/llama-4-scout-17b-16e-instruct", "meta-llama/llama-4-maverick-17b-128e-instruct"];
+  /* OpenRouter (OpenAI format): the model chosen in Settings, then OpenRouter's automatic pick. */
+  async function openrouterCall(key, { json, content, model }) {
+    let last = "", status = 503;
+    for (const m of [...new Set([model, "openrouter/auto"].filter(Boolean))]) {
+      for (const strict of json ? [true, false] : [false]) {
+        const r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST", headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" },
+          body: JSON.stringify({ model: m, temperature: 0.2, messages: [{ role: "user", content }], ...(strict ? { response_format: { type: "json_object" } } : {}) })
+        });
+        const j = await r.json().catch(() => ({}));
+        const text = (((j.choices || [])[0] || {}).message || {}).content || "";
+        if (r.ok && text) return { status: 200, json: { text, model: "openrouter:" + (j.model || m) } };
+        last = (j.error && j.error.message) || (r.ok ? "empty answer" : "HTTP " + r.status); status = r.ok ? 503 : r.status;
+        if ([401, 402, 403].includes(r.status)) return { status, json: { error: { message: "OpenRouter: " + last } } };
+        if (!(strict && r.status === 400)) break;
+      }
+    }
+    return { status, json: { error: { message: "OpenRouter: " + last } } };
+  }
+  /* For the daily jobs: { groq: key, openrouter: key } → the same interface as the admin proxy. */
+  function aiDirect(k) {
+    const g = k.groq ? groqDirect(k.groq) : null;
+    return { groq: !!k.groq, openrouter: !!k.openrouter, call: p => p.kind === "openrouter" ? openrouterCall(k.openrouter, p) : g.call(p) };
+  }
   function groqDirect(key) {
     return { groq: true, call: async ({ json, content }) => {
       const vision = content.some(c => c.type === "image_url");
@@ -504,5 +537,5 @@ ${JSON.stringify(lines)}` }] });
       return { status, json: { error: { message: "Groq: " + last } } };
     } };
   }
-  root.ABDraft = { groqDirect, trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
+  root.ABDraft = { groqDirect, aiDirect, trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -1,4 +1,4 @@
-// Admin proxy: lets every admin use the shared Gemini and Groq keys and the GitHub token
+// Admin proxy: lets every admin use the shared Gemini, Groq and OpenRouter keys and the GitHub token
 // without the keys ever reaching a browser. The keys live in private.app_secrets
 // (set by the owner in Settings) and are read here with the service role.
 // Only signed-in admins (public.is_admin) may call it.
@@ -14,6 +14,8 @@ const REPO = "/repos/abfmapps/abfm-training/actions/";
 // Groq models, best first. Older names are skipped automatically if Groq retires them.
 const GROQ_TEXT = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "llama-3.1-8b-instant"];
 const GROQ_VISION = ["meta-llama/llama-4-scout-17b-16e-instruct", "meta-llama/llama-4-maverick-17b-128e-instruct"];
+// OpenRouter: the model chosen in Settings → AI (if any), then OpenRouter's automatic pick.
+const OR_DEFAULT = ["openrouter/auto"];
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: CORS });
@@ -28,7 +30,7 @@ Deno.serve(async (req) => {
   let b: any;
   try { b = await req.json(); } catch { return reply({ error: { message: "bad request" } }, 400); }
   // The owner's key from Settings first, then the Supabase Edge Function secret of the same name.
-  const ENV: Record<string, string[]> = { gemini: ["GEMINI_API_KEY"], groq: ["GROQ_API_KEY", "Groq_API_KEY", "groq_api_key"], github: ["GITHUB_TOKEN"] };
+  const ENV: Record<string, string[]> = { gemini: ["GEMINI_API_KEY"], groq: ["GROQ_API_KEY", "Groq_API_KEY", "groq_api_key"], openrouter: ["OPENROUTER_API_KEY", "OpenRouter_API_KEY", "openrouter_api_key"], github: ["GITHUB_TOKEN"] };
   const secret = async (name: string) => {
     const r = await fetch(url + "/rest/v1/rpc/service_get_secret", { method: "POST", headers: { apikey: service, Authorization: "Bearer " + service, "Content-Type": "application/json" }, body: JSON.stringify({ p_name: name }) });
     const v = r.ok ? ((await r.json()) || "") : "";
@@ -37,8 +39,8 @@ Deno.serve(async (req) => {
 
   // Which keys can be used (never the keys themselves).
   if (b.kind === "status") {
-    const [gemini, groq, github] = await Promise.all(["gemini", "groq", "github"].map(async (n) => !!(await secret(n))));
-    return reply({ gemini, groq, github });
+    const [gemini, groq, openrouter, github] = await Promise.all(["gemini", "groq", "openrouter", "github"].map(async (n) => !!(await secret(n))));
+    return reply({ gemini, groq, openrouter, github });
   }
 
   if (b.kind === "gemini") {
@@ -70,6 +72,29 @@ Deno.serve(async (req) => {
       return reply({ error: { message: "Groq: " + last } }, r.status);
     }
     return reply({ error: { message: "Groq: " + last } }, 503);
+  }
+
+  if (b.kind === "openrouter") {
+    const key = await secret("openrouter");
+    if (!key) return reply({ error: { message: "No shared OpenRouter key." } }, 412);
+    const content = (Array.isArray(b.content) ? b.content : []).slice(0, 8);
+    const chosen = typeof b.model === "string" && /^[\w.\-:\/]+$/.test(b.model) ? [b.model] : [];
+    let last = "";
+    for (const model of [...new Set([...chosen, ...OR_DEFAULT])]) {
+      for (const strict of b.json ? [true, false] : [false]) {   // some models refuse response_format: retry without it
+        const r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+          method: "POST", headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" },
+          body: JSON.stringify({ model, temperature: 0.2, messages: [{ role: "user", content }], ...(strict ? { response_format: { type: "json_object" } } : {}) }),
+        });
+        const j = await r.json().catch(() => ({}));
+        const text = j.choices?.[0]?.message?.content || "";
+        if (r.ok && text) return reply({ text, model: "openrouter:" + (j.model || model) });
+        last = j.error?.message || (r.ok ? "empty answer" : "HTTP " + r.status);
+        if (r.status === 401 || r.status === 402 || r.status === 403) return reply({ error: { message: "OpenRouter: " + last } }, r.status);
+        if (!(strict && r.status === 400)) break;
+      }
+    }
+    return reply({ error: { message: "OpenRouter: " + last } }, 503);
   }
 
   if (b.kind === "github") {

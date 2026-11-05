@@ -1,4 +1,9 @@
 {
+  "ai": {
+    "groq": true,
+    "first": "groq",
+    "gemini": true
+  },
   "tr": {
     "ar": {
       "src": "d5100fa7b70a",

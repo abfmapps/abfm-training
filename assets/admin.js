@@ -2011,5 +2011,7 @@
 
   // Coming back from "reset password" email → choose a new password.
   sb.auth.onAuthStateChange(ev => { if (ev === "PASSWORD_RECOVERY") renderConnect("", "newpw"); });
+  // Installable as its own app ("Training Admin"): needs the service worker like the staff app.
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
   sb.auth.getSession().then(({ data: d }) => { if (/type=recovery/.test(location.hash)) return; if (d && d.session) afterSignIn(); else renderConnect(); });
 })();

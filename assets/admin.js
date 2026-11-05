@@ -216,7 +216,7 @@
     const q = (data.pending.json.queue || []).length;
     const nq = $("#n-queue"); nq.hidden = !q; nq.textContent = q;
     $$("#tabs [data-view]").forEach(b => { if (b.dataset.view === view) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current"); });
-    ({ videos: renderVideos, queue: renderQueue, requests: renderRequests, paths: renderPaths, toolbox: renderToolbox, channels: renderChannels, settings: renderSettings })[view]();
+    ({ videos: renderVideos, queue: renderQueue, requests: renderRequests, people: renderPeople, insights: renderInsights, paths: renderPaths, toolbox: renderToolbox, channels: renderChannels, settings: renderSettings })[view]();
   }
 
   /* ---------- Videos ---------- */
@@ -229,6 +229,8 @@
     if (ui.show === "featured") list = list.filter(v => v.featured);
     if (ui.show === "essential") list = list.filter(v => v.essential);
     if (ui.show === "gem-no") list = list.filter(v => !v.gemini);
+    if (ui.show === "no-len") list = list.filter(v => !v.duration);
+    if (ui.show === "no-quiz") list = list.filter(v => !(v.quiz && v.quiz.length));
     if (ui.show === "gem-unsafe") list = list.filter(v => v.gemini && (v.gemini.unsafe || []).length);
     const dupOf = new Map(V().map(v => [v.id, ABDraft.findDuplicates(v, V())]));
     if (ui.show === "dups") list = list.filter(v => dupOf.get(v.id).length);
@@ -241,11 +243,13 @@
         <input class="input grow" id="v-q" type="search" placeholder="Search title, channel, subject…" value="${esc(ui.q)}">
         <select id="v-cat"><option value="ALL">All categories</option>${cats().map(c => `<option ${c === ui.cat ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>
         <select id="v-show">
-          ${[["all", "All videos"], ["gem-no", "Not checked by Gemini"], ["gem-unsafe", "Gemini: unsafe practice"], ["dups", "Possible duplicates"], ["essential", "Safety essentials"], ["featured", "Pinned to top"], ["hidden", "Hidden"], ["problems", "Problems"]].map(([k, l]) => `<option value="${k}" ${k === ui.show ? "selected" : ""}>${l}</option>`).join("")}
+          ${[["all", "All videos"], ["no-len", "Missing length"], ["no-quiz", "No quiz yet"], ["gem-no", "Not checked by Gemini"], ["gem-unsafe", "Gemini: unsafe practice"], ["dups", "Possible duplicates"], ["essential", "Safety essentials"], ["featured", "Pinned to top"], ["hidden", "Hidden"], ["problems", "Problems"]].map(([k, l]) => `<option value="${k}" ${k === ui.show ? "selected" : ""}>${l}</option>`).join("")}
         </select>
         <button class="btn btn-primary" id="add-video">＋ Add video</button>
       </div>
-      <p class="count">${list.length} of ${V().length} videos · <b>${V().filter(v => v.gemini).length} of ${V().length}</b> checked by Gemini</p>
+      <p class="count">${list.length} of ${V().length} videos · <b>${V().filter(v => v.gemini).length} of ${V().length}</b> checked by Gemini · <b>${V().filter(v => v.quiz && v.quiz.length).length}</b> with a quiz</p>
+      ${(() => { const noLen = V().filter(v => !v.duration).length, noQuiz = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden).length;
+        return noLen || (noQuiz && geminiKey()) ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">⏱ Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && geminiKey() ? `<button class="btn btn-sm" id="fill-quiz">🧠 Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg"></span></div>` : ""; })()}
       <div class="rows">${list.map(v => {
         const p = probs.get(v.yt);
         return `<div class="row ${v.hidden ? "is-hidden" : ""}">
@@ -258,6 +262,7 @@
               ${v.gemini ? `<span class="badge-s b-gem" title="${esc((REC[v.gemini.recommend] || REC.maybe)[1] + " · " + v.gemini.relevance + "/10" + (v.gemini.reason ? " — " + v.gemini.reason : ""))}">✓ Checked by Gemini · ${v.gemini.relevance}/10</span>` : `<span class="badge-s b-wait">⏳ Not checked by Gemini</span>`}
               ${v.gemini && (v.gemini.unsafe || []).length ? `<span class="badge-s b-prob" title="${esc(v.gemini.unsafe.join("; "))}">⚠ Unsafe practice shown</span>` : ""}
               ${v.essential ? `<span class="badge-s b-ess">🦺 Essential</span>` : ""}
+              ${v.quiz && v.quiz.length ? `<span class="badge-s b-ok">🧠 Quiz</span>` : ""}
               ${v.featured ? `<span class="badge-s b-feat">Pinned</span>` : ""}
               ${v.hidden ? `<span class="badge-s b-hidden">Hidden</span>` : ""}
               ${p ? `<span class="badge-s b-prob">${p.status === "notfound" ? "Not on YouTube" : "Can't play in app"}</span>` : ""}
@@ -276,6 +281,75 @@
     $("#v-show").onchange = e => { ui.show = e.target.value; renderVideos(); };
     $("#add-video").onclick = () => openEditor(null);
     const sp = $("#see-probs"); if (sp) sp.onclick = () => { ui.show = "problems"; renderVideos(); };
+    const fl = $("#fill-len"); if (fl) fl.onclick = fillLengths;
+    const fq = $("#fill-quiz"); if (fq) fq.onclick = fillQuizzes;
+  }
+
+  /* ---------- Video lengths (read from the YouTube player in this browser) ---------- */
+  let ytLoad = null;
+  function ytApi() {
+    if (window.YT && window.YT.Player) return Promise.resolve(window.YT);
+    if (ytLoad) return ytLoad;
+    ytLoad = new Promise((res, rej) => {
+      window.onYouTubeIframeAPIReady = () => res(window.YT);
+      const sc = document.createElement("script"); sc.src = "https://www.youtube.com/iframe_api"; sc.onerror = () => rej(new Error("Couldn't load the YouTube player"));
+      document.head.appendChild(sc);
+      setTimeout(() => rej(new Error("The YouTube player didn't load")), 12000);
+    }).catch(e => { ytLoad = null; throw e; });
+    return ytLoad;
+  }
+  const fmtDur = s => { s = Math.round(+s || 0); const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60; return h ? `${h}:${String(m).padStart(2, "0")}:${String(x).padStart(2, "0")}` : `${m}:${String(x).padStart(2, "0")}`; };
+  async function ytDuration(yt) {
+    const YTx = await ytApi();
+    return new Promise(res => {
+      const box = document.createElement("div");
+      box.style.cssText = "position:fixed;left:-10000px;top:0;width:320px;height:180px;pointer-events:none";
+      const slot = document.createElement("div"); box.appendChild(slot); document.body.appendChild(box);
+      let p, over = false;
+      const finish = d => { if (over) return; over = true; try { p && p.destroy(); } catch {} box.remove(); res(d > 0 ? d : 0); };
+      try {
+        p = new YTx.Player(slot, { host: "https://www.youtube-nocookie.com", videoId: yt, playerVars: { autoplay: 0, mute: 1, controls: 0 },
+          events: {
+            onReady: e => { let n = 0; const tick = () => { if (over) return; let d = 0; try { d = e.target.getDuration(); } catch {} if (d > 0) return finish(d); if (++n === 3) { try { e.target.mute(); e.target.playVideo(); } catch {} } if (n > 25) return finish(0); setTimeout(tick, 400); }; tick(); },
+            onError: () => finish(0)
+          } });
+      } catch { finish(0); }
+      setTimeout(() => finish(0), 16000);
+    });
+  }
+  async function fillLengths() {
+    const todo = V().filter(v => !v.duration), msg = $("#fill-msg"), btn = $("#fill-len");
+    btn.disabled = true;
+    const found = {};
+    for (let i = 0; i < todo.length; i++) {
+      msg.textContent = `Reading length ${i + 1} of ${todo.length}…`;
+      try { const d = await ytDuration(todo[i].yt); if (d) found[todo[i].id] = fmtDur(d); } catch (e) { msg.textContent = e.message; break; }
+    }
+    const n = Object.keys(found).length;
+    if (!n) { msg.textContent = "Couldn't read any lengths. Check your internet and try again."; btn.disabled = false; return; }
+    await update("videos", d => { d.videos.forEach(v => { if (!v.duration && found[v.id]) v.duration = found[v.id]; }); return d; }, `Fill in ${n} video lengths`);
+    toast(`${n} lengths filled in. Live in about a minute.`); render();
+  }
+  async function fillQuizzes() {
+    const todo = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden), msg = $("#fill-msg"), btn = $("#fill-quiz");
+    if (!confirm(`Gemini will write a 3-question quiz for ${todo.length} videos, from each video's summary, safety note and steps. It saves every 10 videos — you can check and edit any quiz afterwards. Start?`)) return;
+    btn.disabled = true;
+    let made = {}, total = 0, fails = 0;
+    const save = async () => {
+      const ids = Object.keys(made); if (!ids.length) return;
+      const batch = made; made = {};
+      await update("videos", d => { d.videos.forEach(v => { if (batch[v.id] && !(v.quiz && v.quiz.length)) v.quiz = batch[v.id]; }); d.updated = today(); return d; }, `Add quizzes to ${ids.length} videos`);
+    };
+    for (let i = 0; i < todo.length; i++) {
+      const v = todo[i];
+      msg.textContent = `Writing quiz ${i + 1} of ${todo.length}: ${v.title}`;
+      try { made[v.id] = await ABDraft.aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, key: geminiKey(), model: geminiModel() || undefined }); total++; }
+      catch (e) { fails++; if (/API key|permission|quota|RESOURCE_EXHAUSTED/i.test(e.message)) { msg.textContent = "Gemini stopped: " + e.message; break; } }
+      if (Object.keys(made).length >= 10) await save();
+      await new Promise(r => setTimeout(r, 1500));
+    }
+    await save();
+    toast(`${total} quizzes added${fails ? `, ${fails} failed` : ""}. Live in about a minute.`); render();
   }
 
   async function hideToggle(id) {
@@ -329,6 +403,10 @@
       <div class="field"><label for="f-safety">Safety warning</label><textarea class="textarea" id="f-safety" placeholder="e.g. Isolate power and prove dead before starting.">${esc(v.safety || "")}</textarea></div>
       <div class="field"><label for="f-ppe">Required PPE</label><input class="input" id="f-ppe" placeholder="Safety Glasses, Work Gloves" value="${esc((v.ppe || []).join(", "))}"><div class="help">Separate with commas.</div></div>
       <div class="field"><label for="f-steps">Key steps</label><textarea class="textarea" id="f-steps" rows="6" placeholder="One step per line">${esc((v.steps || []).join("\n"))}</textarea><div class="help">One step per line. 3–6 short steps work best.</div></div>
+      <div class="field"><label for="f-quiz">🧠 Quick check (quiz)</label>
+        <textarea class="textarea" id="f-quiz" rows="7" placeholder="Question on one line&#10;* the right answer&#10;- a wrong answer&#10;- another wrong answer&#10;&#10;Next question…">${esc(ABDraft.quizToText(v.quiz || []))}</textarea>
+        <div class="help">Staff answer this after the video. Put <b>*</b> before the right answer and <b>-</b> before wrong ones; leave a blank line between questions. 3 questions work best. Leave empty for no quiz.</div>
+        ${geminiKey() ? `<div class="draft-row" style="margin-top:6px"><button type="button" class="btn btn-sm" id="f-quiz-ai">✨ Write quiz with Gemini</button><span class="help" id="f-quiz-help">Uses the summary, safety note and steps above.</span></div>` : ""}</div>
       <label class="check"><input type="checkbox" id="f-ess" ${v.essential ? "checked" : ""}> 🦺 Safety essential (shown in the pinned Safety section)</label>
       <label class="check"><input type="checkbox" id="f-feat" ${v.featured ? "checked" : ""}> Pin to top of the library</label>
       <label class="check"><input type="checkbox" id="f-hidden" ${v.hidden ? "checked" : ""}> Hide from staff</label>
@@ -367,6 +445,19 @@
       } else if (!dup) help.textContent = "Couldn't fetch the title automatically. Type it in.";
     };
     $("#f-draft").onclick = () => runDraft();
+    const qa = $("#f-quiz-ai");
+    if (qa) qa.onclick = async () => {
+      if ($("#f-quiz").value.trim() && !confirm("Replace the current quiz?")) return;
+      const help = $("#f-quiz-help"); qa.disabled = true; help.textContent = "Gemini is writing the quiz…";
+      try {
+        const quiz = await ABDraft.aiQuiz({ title: $("#f-title").value.trim(), summary: $("#f-summary").value.trim(), safety: $("#f-safety").value.trim(),
+          steps: $("#f-steps").value.split("\n").map(x => x.trim()).filter(Boolean), ppe: $("#f-ppe").value.split(",").map(x => x.trim()).filter(Boolean), key: geminiKey(), model: geminiModel() || undefined });
+        $("#f-quiz").value = ABDraft.quizToText(quiz); help.textContent = "Done — check the right answers (*) before saving.";
+      } catch (e) { help.textContent = "Gemini couldn't write it: " + e.message; }
+      qa.disabled = false;
+    };
+    // Fill in the length automatically when a link is pasted.
+    url.addEventListener("change", () => setTimeout(async () => { const yt = parseYT(url.value); if (yt && !$("#f-dur").value) { try { const d = await ytDuration(yt); if (d && !$("#f-dur").value) $("#f-dur").value = fmtDur(d); } catch {} } }, 300));
     const fc = $("#f-check");
     if (fc) fc.onclick = async () => {
       const yt = parseYT($("#f-url").value) || ed.v.yt, help = $("#f-draft-help");
@@ -469,6 +560,7 @@
     if (d.steps && d.steps.length) $("#f-steps").value = d.steps.join("\n");
     if (d.source !== "ai" && STEPS_NOTE[d.stepsFrom]) help.textContent = (geminiKey() ? help.textContent + " " : "") + STEPS_NOTE[d.stepsFrom];
     if (d.level) $("#f-level").value = d.level;
+    if (d.quiz && d.quiz.length && !$("#f-quiz").value.trim()) $("#f-quiz").value = ABDraft.quizToText(d.quiz);
     if (d.subject && !$("#f-subject").value) $("#f-subject").value = d.subject;
   }
   function guessCategory(text) {
@@ -490,6 +582,8 @@
     if (!yt) return alert("Paste a YouTube link first.");
     if (!title) return alert("Add a title.");
     if (!category || category === "__new") return alert("Choose a category.");
+    const qz = ABDraft.parseQuizText($("#f-quiz").value);
+    if (qz.errors.length) return alert("Please fix the quiz:\n\n" + qz.errors.join("\n"));
     const dup = V().find(x => x.yt === yt && (!ed.original || x.id !== ed.original.id));
     if (dup && !confirm(`This video is already in the library as “${dup.title}”. Save anyway?`)) return;
     const slug = category.toLowerCase().replace(/[^a-z]+/g, "").slice(0, 5) || "vid";
@@ -510,6 +604,8 @@
     if ($("#f-feat").checked) v.featured = true;
     if ($("#f-hidden").checked) v.hidden = true;
     if (Object.keys(ed.tr).length) v.tr = ed.tr;
+    if (qz.quiz.length) v.quiz = qz.quiz;
+    if (qz.quiz.length && ed.original && ed.original.trq) v.trq = ed.original.trq;   // the translator refreshes these if the quiz changed
     if (ed.gemini) v.gemini = ed.gemini;
     if (ed.ytTitle && ed.ytTitle !== v.title) v.ytTitle = ed.ytTitle;
     const isEdit = !!ed.original, onSaved = ed.onSaved, newCat = ed.newCategory;
@@ -608,7 +704,7 @@
     const d = item.draft || {};
     const fromDraft = {};
     ["summary", "safety", "subject", "level"].forEach(k => { if (d[k]) fromDraft[k] = d[k]; });
-    ["ppe", "steps"].forEach(k => { if (d[k] && d[k].length) fromDraft[k] = d[k]; });
+    ["ppe", "steps", "quiz"].forEach(k => { if (d[k] && d[k].length) fromDraft[k] = d[k]; });
     if (item.draft) { fromDraft.draftSource = d.source; fromDraft.stepsFrom = d.stepsFrom; fromDraft.review = d.review; }
     openEditor(null, {
       ...fromDraft,
@@ -639,7 +735,9 @@
             <button class="btn btn-sm" data-p-edit="${i}">Edit</button>
             <button class="btn btn-sm btn-danger" data-p-del="${i}">Delete</button>
           </div></div>`;
-      }).join("") || `<div class="empty"><h3>No learning paths yet</h3></div>`}</div>`;
+      }).join("") || `<div class="empty"><h3>No learning paths yet</h3></div>`}</div>
+      ${P().length ? assignHtml() : ""}`;
+    wireAssign();
     $("#p-add").onclick = () => { pe = { index: -1, p: { id: "", icon: "🎓", title: "", description: "", videos: [] } }; renderPaths(); };
     $$("[data-p-edit]").forEach(b => b.onclick = () => { const i = +b.dataset.pEdit; pe = { index: i, p: JSON.parse(JSON.stringify(P()[i])) }; renderPaths(); });
     $$("[data-p-del]").forEach(b => b.onclick = async () => {
@@ -650,6 +748,42 @@
     $$("[data-p-up]").forEach(b => b.onclick = async () => {
       const id = P()[+b.dataset.pUp].id;
       await update("paths", d => { const i = d.paths.findIndex(x => x.id === id); if (i > 0) d.paths.splice(i - 1, 0, d.paths.splice(i, 1)[0]); return d; }, "Reorder learning paths");
+      render();
+    });
+  }
+  /* Assigned training: a learning path that a trade (or everyone) must finish, with an optional due date. */
+  const AS = () => data.paths.json.assignments || (data.paths.json.assignments = []);
+  function assignHtml() {
+    const byId = new Map(P().map(p => [p.id, p]));
+    return `<form class="card-plain" id="as-form" style="margin-top:18px">
+      <h2>📌 Assigned training</h2>
+      <p class="help">Staff see these at the top of their home screen until they finish, with the due date. Choose no trade to assign it to everyone. ${data.settings.json.staffLogin ? "Staff trades come from the staff list." : "Staff choose their trade on their phone (in My training)."} Track who has finished in <b>Staff & records → Assigned training</b>.</p>
+      <div class="rows">${AS().map((a, i) => { const p = byId.get(a.path); return `<div class="ch-row"><div><b>${esc(p ? (p.icon || "🎓") + " " + p.title : a.path + " (deleted path)")}</b>
+        <div class="small">For: ${(a.trades || []).length ? a.trades.map(esc).join(", ") : "everyone"}${a.due ? " · due " + esc(a.due) : " · no due date"}${a.note ? " · " + esc(a.note) : ""}</div></div>
+        <div class="row-actions"><button type="button" class="btn btn-sm btn-danger" data-as-del="${i}">Remove</button></div></div>`; }).join("") || `<p class="help">Nothing assigned yet.</p>`}</div>
+      <div class="two" style="margin-top:12px">
+        <div class="field"><label for="as-path">Learning path</label><select class="input" id="as-path">${P().filter(p => !p.hidden).map(p => `<option value="${esc(p.id)}">${esc(p.icon || "🎓")} ${esc(p.title)}</option>`).join("")}</select></div>
+        <div class="field"><label for="as-due">Due date (optional)</label><input class="input" id="as-due" type="date"></div>
+      </div>
+      <div class="field"><label>For which trades? (none ticked = everyone)</label><div class="as-trades">${cats().map(c => `<label class="check"><input type="checkbox" class="as-tr" value="${esc(c)}"> ${esc(c)}</label>`).join("")}</div></div>
+      <div class="field"><label for="as-note">Note for staff (optional)</label><input class="input" id="as-note" maxlength="140" placeholder="e.g. Required before working on site"></div>
+      <button class="btn btn-primary">Assign</button>
+    </form>`;
+  }
+  function wireAssign() {
+    const f = $("#as-form"); if (!f) return;
+    f.onsubmit = async e => {
+      e.preventDefault();
+      const a = { id: "as-" + Date.now().toString(36), path: $("#as-path").value, trades: $$(".as-tr").filter(x => x.checked).map(x => x.value), due: $("#as-due").value, note: $("#as-note").value.trim() };
+      if (!a.path) return alert("Choose a learning path.");
+      if (!a.due) delete a.due;
+      if (!a.note) delete a.note;
+      await update("paths", d => { d.assignments = d.assignments || []; d.assignments.push(a); return d; }, "Assign learning path");
+      toast("Assigned. Live in about a minute."); render();
+    };
+    $$("[data-as-del]").forEach(b => b.onclick = async () => {
+      const a = AS()[+b.dataset.asDel]; if (!confirm("Remove this assignment? Staff progress is kept.")) return;
+      await update("paths", d => { d.assignments = (d.assignments || []).filter(x => x.id !== a.id); return d; }, "Remove assigned training");
       render();
     });
   }
@@ -841,6 +975,257 @@
     if (reqs === null && !reqErr) loadRequests().then(render);
   }
 
+  /* ---------- Google script (private): staff, records, usage counts ---------- */
+  const scriptUrl = () => data.settings.json.requestUrl || "";
+  async function sGet(params) {
+    const u = scriptUrl(); if (!u) throw new Error("The Google script isn't connected yet (Settings → Requests & Ask AI).");
+    const q = Object.entries(params).map(([k, v]) => k + "=" + encodeURIComponent(v)).join("&");
+    const r = await fetch(u + (u.includes("?") ? "&" : "?") + q + "&key=" + encodeURIComponent(reqKey()), { cache: "no-store" });
+    const j = await r.json().catch(() => ({ ok: false, error: "notjson" }));
+    if (!j.ok) throw new Error(scriptErr(j.error));
+    return j;
+  }
+  async function sPost(body) {
+    const r = await fetch(scriptUrl(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ key: reqKey(), ...body }) });
+    const j = await r.json().catch(() => ({ ok: false, error: "notjson" }));
+    if (!j.ok) throw new Error(scriptErr(j.error, j.detail));
+    return j;
+  }
+  const scriptErr = (e, detail) => ({ key: "The inbox password doesn't match ADMIN_KEY in the Google script.", notjson: "The Google script didn't answer properly — check it is deployed for 'Anyone'.", pin: "The PIN must be at least 4 digits.", pinused: "Another supervisor already has that PIN.", notfound: "Not found." }[e] || (detail ? e + ": " + detail : e || "error"));
+  let scriptVer = null;
+  async function checkScript() {
+    if (scriptVer !== null || !scriptUrl()) return scriptVer;
+    try { const r = await fetch(scriptUrl() + (scriptUrl().includes("?") ? "&" : "?") + "ping=1", { cache: "no-store" }); const j = await r.json(); scriptVer = j.version || 1; }
+    catch { scriptVer = 0; }
+    return scriptVer;
+  }
+  const oldScriptHtml = () => `<div class="err">⚠ Your Google script is an older version. To use staff sign-in, training records and usage counts:
+    open your Google Sheet → <b>Extensions → Apps Script</b>, replace the code with the new <a href="https://github.com/${esc(cfg.owner)}/${esc(cfg.repo)}/blob/${esc(cfg.branch)}/setup/request-inbox.gs" target="_blank" rel="noopener">setup/request-inbox.gs</a> (keep your ADMIN_KEY and GEMINI_KEY lines),
+    then <b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>.</div>`;
+  const csvCell = x => { const t = String(x ?? ""); return /[",\n]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t; };
+  function download(name, rows) {
+    const blob = new Blob(["\ufeff" + rows.map(r => r.map(csvCell).join(",")).join("\n")], { type: "text/csv;charset=utf-8" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+
+  /* ---------- Staff & training records ---------- */
+  let ppl = null, pplErr = "", pplQ = "", pplSel = null, pplSub = "people", sups = null;
+  async function loadPeople() {
+    try { const j = await sGet({ what: "records" }); ppl = j; pplErr = ""; }
+    catch (e) { pplErr = e.message; }
+  }
+  function summarise() {
+    const staff = new Map();
+    (ppl.staff || []).forEach(st => staff.set(st.hr, { ...st, videos: new Set(), quiz: {}, paths: new Set(), certs: [], last: "", n: 0 }));
+    const anon = new Map();
+    (ppl.records || []).forEach(([time, hr, name, site, trade, type, item, title, score, n, pass]) => {
+      let p = hr ? staff.get(hr) : null;
+      if (!p) { const k = hr || ("~" + String(name).toLowerCase()); p = anon.get(k); if (!p) { p = { hr, name, site, trade, active: !hr ? null : false, unknown: true, videos: new Set(), quiz: {}, paths: new Set(), certs: [], last: "", n: 0 }; anon.set(k, p); } }
+      p.n++; if (time > p.last) p.last = time;
+      if (type === "video") p.videos.add(item);
+      if (type === "quiz") { const ok = pass === true || String(pass) === "true"; if (!p.quiz[item] || ok) p.quiz[item] = ok; }
+      if (type === "path") p.paths.add(item);
+    });
+    (ppl.certs || []).forEach(c => { const p = staff.get(c.hr) || [...anon.values()].find(a => a.hr === c.hr || (!c.hr && a.name === c.name)); if (p) p.certs.push(c); });
+    return [...staff.values(), ...anon.values()];
+  }
+  function renderPeople() {
+    if (!scriptUrl() || !reqKey()) {
+      $("#app").innerHTML = `<div class="card-plain"><h2>Staff & training records</h2><p>Staff sign-in and training records are kept in your private Google Sheet, not in the public repo. Set up the Google script first — see the <b>Requests</b> tab for the 5-minute setup — then put its link and password in <b>Settings → Requests & Ask AI</b>.</p><button class="btn btn-primary" id="go-settings">Open Settings</button></div>`;
+      $("#go-settings").onclick = () => { view = "settings"; setSec = "inbox"; render(); };
+      return;
+    }
+    if (scriptVer === null) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Checking the Google script…</p>`; checkScript().then(() => view === "people" && renderPeople()); return; }
+    if (scriptVer < 2) { $("#app").innerHTML = oldScriptHtml(); return; }
+    if (!ppl && !pplErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading staff and records…</p>`; loadPeople().then(() => view === "people" && renderPeople()); return; }
+    const sub = `<div class="seg" style="margin-bottom:14px">${[["people", "👷 Staff progress"], ["assign", "📌 Assigned training"], ["staff", "🪪 Staff list"], ["sups", "✍️ Supervisors"]].map(([k, l]) => `<button data-psub="${k}" aria-pressed="${pplSub === k}">${l}</button>`).join("")}</div>`;
+    const head = `${pplErr ? `<div class="err">⚠ ${esc(pplErr)}</div>` : ""}
+      ${!data.settings.json.staffLogin ? `<div class="hint-box">🔐 Staff sign-in is <b>off</b>. Add your staff below, then turn it on in <b>Settings → Staff & training</b>. From then on, staff must enter their HR number to use the app, and all progress is recorded here.</div>` : ""}
+      ${sub}`;
+    if (!ppl) { $("#app").innerHTML = head; wirePeopleSub(); return; }
+    const people = summarise();
+    const byPath = new Map((data.paths.json.paths || []).map(p => [p.id, p]));
+    const vById = new Map(V().map(v => [v.id, v]));
+    let body = "";
+    if (pplSub === "people") {
+      if (pplSel) {
+        const p = people.find(x => (x.hr || "~" + String(x.name).toLowerCase()) === pplSel);
+        const recs = (ppl.records || []).filter(r => p && (p.hr ? r[1] === p.hr : !r[1] && r[2] === p.name)).slice().reverse();
+        const label = { video: "▶ Watched", quiz: "🧠 Quiz", path: "🎓 Finished path", cert: "📜 Certificate", signoff: "✍️ Signed off" };
+        body = p ? `<button class="btn btn-sm btn-ghost" id="pp-back">‹ All staff</button>
+          <div class="card-plain"><h2>${esc(p.name || "(no name)")} ${p.hr ? `<span class="badge-s b-hidden">HR ${esc(p.hr)}</span>` : `<span class="badge-s b-prob">Not signed in</span>`}</h2>
+          <p class="count">${[p.trade, p.site].filter(Boolean).map(esc).join(" · ")}</p>
+          <p><b>${p.videos.size}</b> videos watched · <b>${Object.values(p.quiz).filter(Boolean).length}</b> quizzes passed · <b>${p.paths.size}</b> paths finished · <b>${p.certs.length}</b> certificates</p>
+          ${p.certs.length ? `<p>${p.certs.map(c => `📜 <b>${esc(c.title)}</b> (${esc(String(c.time).slice(0, 10))}, code ${esc(c.code)}${c.signedBy ? ", signed off by " + esc(c.signedBy) : ""})`).join("<br>")}</p>` : ""}</div>
+          <div class="rows">${recs.map(r => `<div class="row rec"><div class="req-ico">${(label[r[5]] || "•").split(" ")[0]}</div><div><h3>${esc(r[7] || r[6])}</h3><div class="meta"><span>${esc((label[r[5]] || r[5]).replace(/^\S+\s/, ""))}</span>${r[5] === "quiz" ? `<span class="badge-s ${String(r[10]) === "true" ? "b-ok" : "b-prob"}">${esc(r[8])}/${esc(r[9])} ${String(r[10]) === "true" ? "passed" : "not passed"}</span>` : ""}<span>${esc(new Date(r[0]).toLocaleString())}</span></div></div></div>`).join("") || `<p class="help">No activity yet.</p>`}</div>` : `<p>Not found.</p>`;
+      } else {
+        const words = pplQ.toLowerCase().split(/\s+/).filter(Boolean);
+        const list = people.filter(p => !words.length || words.every(w => [p.hr, p.name, p.site, p.trade].join(" ").toLowerCase().includes(w)))
+          .sort((a, b) => (b.last || "").localeCompare(a.last || "") || String(a.name).localeCompare(String(b.name)));
+        const active30 = people.filter(p => p.last && Date.now() - Date.parse(p.last) < 30 * 864e5).length;
+        body = `<div class="bar"><input class="input grow" id="pp-q" type="search" placeholder="Search name, HR number, site, trade…" value="${esc(pplQ)}">
+            <button class="btn btn-sm" id="pp-csv">⬇ Export summary</button><button class="btn btn-sm" id="pp-csv2">⬇ Export all records</button><button class="btn btn-sm" id="pp-refresh">↻ Refresh</button></div>
+          <p class="count">${(ppl.staff || []).length} staff on the list · ${active30} active in the last 30 days · ${(ppl.certs || []).length} certificates</p>
+          <div class="table-wrap"><table class="tbl"><thead><tr><th>Name</th><th>HR</th><th>Trade</th><th>Site</th><th>Videos</th><th>Quizzes</th><th>Paths</th><th>Certs</th><th>Last active</th></tr></thead><tbody>
+          ${list.map(p => `<tr data-pp="${esc(p.hr || "~" + String(p.name).toLowerCase())}" class="${p.active === false && !p.unknown ? "is-hidden" : ""}"><td><b>${esc(p.name || "—")}</b>${p.unknown ? ` <span class="badge-s b-prob" title="${p.hr ? "Not on the staff list" : "Recorded before sign-in was turned on"}">${p.hr ? "Not on list" : "No HR no."}</span>` : p.active === false ? ` <span class="badge-s b-hidden">Inactive</span>` : ""}</td>
+            <td>${esc(p.hr || "")}</td><td>${esc(p.trade || "")}</td><td>${esc(p.site || "")}</td><td>${p.videos.size}</td><td>${Object.values(p.quiz).filter(Boolean).length}</td><td>${p.paths.size}</td><td>${p.certs.length}</td>
+            <td>${p.last ? esc(new Date(p.last).toLocaleDateString()) : `<span class="help">never</span>`}</td></tr>`).join("") || `<tr><td colspan="9" class="help">No staff yet. Add them in the Staff list tab.</td></tr>`}
+          </tbody></table></div>`;
+      }
+    } else if (pplSub === "assign") {
+      const as = (data.paths.json.assignments || []);
+      body = as.length ? as.map(a => {
+        const p = byPath.get(a.path); if (!p) return "";
+        const target = people.filter(x => !x.unknown && x.active !== false && (!(a.trades || []).length || (a.trades || []).includes(x.trade)));
+        const done = target.filter(x => x.paths.has(a.path)), notDone = target.filter(x => !x.paths.has(a.path));
+        const pct = target.length ? Math.round(done.length / target.length * 100) : 0;
+        const over = a.due && a.due < today();
+        return `<div class="card-plain"><h2>${esc(p.icon || "🎓")} ${esc(p.title)}</h2>
+          <p class="count">For: ${(a.trades || []).length ? a.trades.map(esc).join(", ") : "everyone"}${a.due ? ` · due <b style="${over ? "color:var(--danger)" : ""}">${esc(a.due)}</b>` : ""}</p>
+          <div class="pc-bar big"><i style="width:${pct}%"></i></div>
+          <p><b>${done.length} of ${target.length}</b> finished (${pct}%)</p>
+          ${notDone.length ? `<details class="box"><summary>${notDone.length} not finished yet${over ? " — overdue" : ""}</summary><p style="margin:8px 0 0">${notDone.map(x => `${esc(x.name)} <span class="help">(${esc(x.hr)}${x.videos.size ? ", " + pathProgress(x, p) : ""})</span>`).join("<br>")}</p>
+            <button class="btn btn-sm" data-as-csv="${esc(a.id)}" style="margin-top:8px">⬇ Export list</button></details>` : ""}
+        </div>`;
+      }).join("") : `<div class="empty"><h3>No assigned training yet</h3><p>Assign a learning path to a trade (or everyone) in the <b>Learning paths</b> tab.</p></div>`;
+    } else if (pplSub === "staff") {
+      const st = (ppl.staff || []).slice().sort((a, b) => String(a.name).localeCompare(String(b.name)));
+      body = `<form class="card-plain" id="st-add">
+          <h2>Add or update staff</h2>
+          <p class="help">One person per line: <b>HR number, Full name, Site, Trade</b>. Site and trade are optional. You can copy the columns straight from Excel. Existing HR numbers are updated.</p>
+          <textarea class="textarea" id="st-rows" rows="6" placeholder="10234, Mohammed Rafiq, Dubai Mall, HVAC&#10;10235, Arjun Nair, Marina Tower, Electrical"></textarea>
+          <div class="help">Trades must match your category names to get the right assigned training: ${cats().map(esc).join(", ")}.</div>
+          <button class="btn btn-primary" style="margin-top:8px">Save staff</button> <span class="help" id="st-msg"></span>
+        </form>
+        <div class="bar"><input class="input grow" id="st-q" type="search" placeholder="Search…" value="${esc(pplQ)}"><span class="count">${st.length} staff</span></div>
+        <div class="table-wrap"><table class="tbl"><thead><tr><th>HR</th><th>Name</th><th>Site</th><th>Trade</th><th>Status</th><th></th></tr></thead><tbody>
+        ${st.filter(x => !pplQ || [x.hr, x.name, x.site, x.trade].join(" ").toLowerCase().includes(pplQ.toLowerCase())).map(x => `<tr class="${x.active ? "" : "is-hidden"}"><td>${esc(x.hr)}</td><td>${esc(x.name)}</td><td>${esc(x.site)}</td><td>${esc(x.trade)}${x.trade && !cats().includes(x.trade) ? ` <span class="badge-s b-prob" title="Not one of your categories">?</span>` : ""}</td>
+          <td>${x.active ? `<span class="badge-s b-ok">Active</span>` : `<span class="badge-s b-hidden">Inactive</span>`}</td>
+          <td class="row-actions"><button class="btn btn-sm" data-st-toggle="${esc(x.hr)}">${x.active ? "Deactivate" : "Activate"}</button><button class="btn btn-sm btn-danger" data-st-del="${esc(x.hr)}">Remove</button></td></tr>`).join("")}
+        </tbody></table></div>
+        <p class="help">Deactivate people who have left: they can no longer sign in, and their phone is signed out the next time it goes online. Their records are kept.</p>`;
+    } else if (pplSub === "sups") {
+      if (sups === null) { sGet({ what: "supervisors" }).then(j => { sups = j.supervisors || []; renderPeople(); }).catch(e => { sups = []; pplErr = e.message; renderPeople(); }); }
+      body = `<div class="card-plain"><h2>Supervisors</h2>
+          <p class="help">Supervisors sign off certificates on the technician's phone by typing their PIN. Turn on sign-off in <b>Settings → Staff & training</b>. PINs are kept only in your Google Sheet.</p>
+          <div class="rows">${(sups || []).map(x => `<div class="ch-row"><div><b>${esc(x.name)}</b> <span class="small">PIN ${esc(x.pin)}</span></div><div class="row-actions"><button class="btn btn-sm btn-danger" data-sup-del="${esc(x.name)}">Remove</button></div></div>`).join("") || `<p class="help">${sups === null ? "Loading…" : "No supervisors yet."}</p>`}</div>
+          <form id="sup-add" class="two" style="margin-top:12px;align-items:end">
+            <div class="field"><label for="sup-name">Name</label><input class="input" id="sup-name" required></div>
+            <div class="field"><label for="sup-pin">PIN (4–12 digits)</label><input class="input" id="sup-pin" inputmode="numeric" required pattern="\\d{4,12}"></div>
+            <button class="btn btn-primary">Add / change PIN</button>
+          </form></div>
+        <form class="card-plain" id="cert-look"><h2>Check a certificate</h2><div class="bar"><input class="input grow" id="cl-code" placeholder="Certificate code, e.g. ABCD-2345" autocapitalize="characters"><button class="btn">Check</button></div><div id="cl-out"></div></form>`;
+    }
+    $("#app").innerHTML = head + body;
+    wirePeopleSub();
+    const q = $("#pp-q"); if (q) q.oninput = e => { pplQ = e.target.value; const pos = e.target.selectionStart; renderPeople(); const i = $("#pp-q"); i.focus(); i.setSelectionRange(pos, pos); };
+    const sq = $("#st-q"); if (sq) sq.oninput = e => { pplQ = e.target.value; const pos = e.target.selectionStart; renderPeople(); const i = $("#st-q"); i.focus(); i.setSelectionRange(pos, pos); };
+    $$("[data-pp]").forEach(r => r.onclick = () => { pplSel = r.dataset.pp; renderPeople(); scrollTo(0, 0); });
+    const bk = $("#pp-back"); if (bk) bk.onclick = () => { pplSel = null; renderPeople(); };
+    const rf = $("#pp-refresh"); if (rf) rf.onclick = async () => { ppl = null; renderPeople(); };
+    const c1 = $("#pp-csv"); if (c1) c1.onclick = () => download(`training-summary-${today()}.csv`, [["HR number", "Name", "Trade", "Site", "Status", "Videos watched", "Quizzes passed", "Paths finished", "Certificates", "Last active"],
+      ...people.map(p => [p.hr, p.name, p.trade, p.site, p.unknown ? "not on list" : p.active ? "active" : "inactive", p.videos.size, Object.values(p.quiz).filter(Boolean).length, [...p.paths].map(id => (byPath.get(id) || {}).title || id).join("; "), p.certs.length, p.last ? p.last.slice(0, 10) : ""])]);
+    const c2 = $("#pp-csv2"); if (c2) c2.onclick = () => download(`training-records-${today()}.csv`, [["Time", "HR number", "Name", "Site", "Trade", "Type", "Item", "Title", "Score", "Out of", "Passed", "Certificate", "Signed in"], ...(ppl.records || [])]);
+    $$("[data-as-csv]").forEach(b => b.onclick = () => {
+      const a = (data.paths.json.assignments || []).find(x => x.id === b.dataset.asCsv), p = byPath.get(a.path);
+      const target = people.filter(x => !x.unknown && x.active !== false && (!(a.trades || []).length || (a.trades || []).includes(x.trade)));
+      download(`not-finished-${a.path}-${today()}.csv`, [["HR number", "Name", "Trade", "Site", "Progress"], ...target.filter(x => !x.paths.has(a.path)).map(x => [x.hr, x.name, x.trade, x.site, pathProgress(x, p)])]);
+    });
+    const sa = $("#st-add");
+    if (sa) sa.onsubmit = async e => {
+      e.preventDefault();
+      const lines = $("#st-rows").value.split(/\n/).map(l => l.trim()).filter(Boolean);
+      const rows = lines.map(l => l.split(/\t|,|;/).map(x => x.trim())).filter(r => r[0] && !/^hr/i.test(r[0])).map(([hr, name, site, trade]) => {
+        const tr = cats().find(c => c.toLowerCase() === String(trade || "").toLowerCase()) || trade || "";
+        return { hr, name: name || "", site: site || "", trade: tr, active: true };
+      });
+      if (!rows.length) return alert("Add at least one line: HR number, Full name");
+      if (rows.some(r => !r.name)) return alert("Every line needs a name after the HR number.");
+      busy(true);
+      try { const j = await sPost({ action: "staff-save", staff: rows }); toast(`${j.added} added, ${j.updated} updated.`); ppl = null; }
+      catch (err) { alert(err.message); }
+      finally { busy(false); }
+      renderPeople();
+    };
+    $$("[data-st-toggle]").forEach(b => b.onclick = async () => {
+      const x = (ppl.staff || []).find(y => y.hr === b.dataset.stToggle);
+      busy(true);
+      try { await sPost({ action: "staff-save", staff: [{ ...x, active: !x.active }] }); x.active = !x.active; } catch (err) { alert(err.message); }
+      finally { busy(false); }
+      renderPeople();
+    });
+    $$("[data-st-del]").forEach(b => b.onclick = async () => {
+      if (!confirm(`Remove ${b.dataset.stDel} from the staff list? Their training records are kept. (Tip: Deactivate keeps them on the list.)`)) return;
+      busy(true);
+      try { await sPost({ action: "staff-remove", hr: b.dataset.stDel }); ppl.staff = ppl.staff.filter(y => y.hr !== b.dataset.stDel); } catch (err) { alert(err.message); }
+      finally { busy(false); }
+      renderPeople();
+    });
+    const su = $("#sup-add");
+    if (su) su.onsubmit = async e => {
+      e.preventDefault(); busy(true);
+      try { await sPost({ action: "sup-save", name: $("#sup-name").value.trim(), pin: $("#sup-pin").value.trim() }); toast("Supervisor saved."); sups = null; }
+      catch (err) { alert(err.message); }
+      finally { busy(false); }
+      renderPeople();
+    };
+    $$("[data-sup-del]").forEach(b => b.onclick = async () => {
+      if (!confirm(`Remove supervisor ${b.dataset.supDel}?`)) return;
+      busy(true);
+      try { await sPost({ action: "sup-remove", name: b.dataset.supDel }); sups = null; } catch (err) { alert(err.message); }
+      finally { busy(false); }
+      renderPeople();
+    });
+    const cl = $("#cert-look");
+    if (cl) cl.onsubmit = async e => {
+      e.preventDefault();
+      const code = $("#cl-code").value.trim().toUpperCase(), out = $("#cl-out");
+      const c = (ppl.certs || []).find(x => String(x.code).toUpperCase() === code);
+      out.innerHTML = c ? `<p class="st-ok">✅ <b>${esc(c.name)}</b> (HR ${esc(c.hr || "—")}) finished <b>${esc(c.title)}</b> on ${esc(String(c.time).slice(0, 10))}${c.score !== "" ? ` with ${esc(c.score)}% in the quizzes` : ""}${c.signedBy ? `. Signed off by ${esc(c.signedBy)}.` : ". Not signed off yet."}</p>` : `<p class="st-warn">❌ No certificate with that code.</p>`;
+    };
+  }
+  function pathProgress(person, p) {
+    const ids = (p && p.videos) || [];
+    return `${ids.filter(id => person.videos.has(id)).length}/${ids.length} videos`;
+  }
+  function wirePeopleSub() {
+    $$("[data-psub]").forEach(b => b.onclick = () => { pplSub = b.dataset.psub; pplSel = null; pplQ = ""; renderPeople(); });
+  }
+
+  /* ---------- Insights (usage counts) ---------- */
+  let ins = null, insErr = "", insDays = 30;
+  function renderInsights() {
+    if (!scriptUrl() || !reqKey()) { $("#app").innerHTML = `<div class="card-plain"><h2>Insights</h2><p>Usage counts are kept in your private Google Sheet. Set up the Google script first (see the <b>Requests</b> tab), then turn on <b>Count video views and searches</b> in Settings → Staff & training.</p></div>`; return; }
+    if (scriptVer === null) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Checking the Google script…</p>`; checkScript().then(() => view === "insights" && renderInsights()); return; }
+    if (scriptVer < 2) { $("#app").innerHTML = oldScriptHtml(); return; }
+    if (!ins && !insErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading…</p>`; sGet({ what: "stats", days: insDays }).then(j => { ins = j.counts || []; }).catch(e => { insErr = e.message; }).then(() => view === "insights" && renderInsights()); return; }
+    const vById = new Map(V().map(v => [v.id, v]));
+    const views = (ins || []).filter(c => c.kind === "view").sort((a, b) => b.n - a.n);
+    const nores = (ins || []).filter(c => c.kind === "nores").sort((a, b) => b.n - a.n);
+    const totalViews = views.reduce((a, c) => a + c.n, 0);
+    const max = views.length ? views[0].n : 1;
+    const watched = new Set(views.map(c => c.key));
+    const unwatched = V().filter(v => !v.hidden && !watched.has(String(v.id).toLowerCase()));
+    $("#app").innerHTML = `
+      ${insErr ? `<div class="err">⚠ ${esc(insErr)}</div>` : ""}
+      ${!data.settings.json.statsEnabled ? `<div class="hint-box">📊 Counting is <b>off</b>. Turn on <b>Count video views and searches</b> in Settings → Staff & training. Only counts are kept — no names or phone details.</div>` : ""}
+      <div class="bar"><select id="in-days">${[7, 30, 90, 365].map(d => `<option value="${d}" ${d === insDays ? "selected" : ""}>Last ${d} days</option>`).join("")}</select>
+        <p class="count grow" style="margin:0"><b>${totalViews}</b> video plays · <b>${nores.reduce((a, c) => a + c.n, 0)}</b> searches with no results</p>
+        <button class="btn btn-sm" id="in-refresh">↻ Refresh</button></div>
+      <div class="two" style="align-items:start">
+        <div class="card-plain"><h2>▶ Most watched</h2>
+          ${views.slice(0, 25).map(c => { const v = vById.get(c.key) || V().find(x => String(x.id).toLowerCase() === c.key); return `<div class="in-row"><span class="in-t">${esc(v ? v.title : c.key)}</span><span class="in-bar"><i style="width:${Math.round(c.n / max * 100)}%"></i></span><b>${c.n}</b></div>`; }).join("") || `<p class="help">No plays counted yet.</p>`}
+        </div>
+        <div class="card-plain"><h2>🔍 Searched, nothing found</h2>
+          <p class="help">What staff looked for and didn't find — ideas for new videos.</p>
+          ${nores.slice(0, 40).map(c => `<div class="in-row"><span class="in-t">“${esc(c.key)}”</span><b>${c.n}</b><a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.key)}" target="_blank" rel="noopener">Find on YouTube</a></div>`).join("") || `<p class="help">Nothing yet.</p>`}
+        </div>
+      </div>
+      ${views.length ? `<details class="box"><summary>${unwatched.length} videos nobody played in this period</summary><p style="margin:8px 0 0">${unwatched.map(v => esc(v.title)).join("<br>")}</p></details>` : ""}`;
+    $("#in-days").onchange = e => { insDays = +e.target.value; ins = null; insErr = ""; renderInsights(); };
+    $("#in-refresh").onclick = () => { ins = null; insErr = ""; renderInsights(); };
+  }
+
   /* ---------- Toolbox talks ---------- */
   let te = null;
   const TK = () => data.toolbox.json.talks || (data.toolbox.json.talks = []);
@@ -957,6 +1342,7 @@
         <button class="btn" data-find ${finder.running ? "disabled" : ""}>${finder.running ? "⏳ Searching…" : "🔎 Search for new videos now"}</button>
         <div class="find-msg" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>
       </div>
+      ${thinHtml()}
       ${(() => { const act = (c.channels || []).filter(x => x.active !== false), bad = act.filter(x => (st[x.url] || {}).error); return act.length > 2 && bad.length >= act.length * 0.8 ? `<div class="err">⚠ Almost every channel failed at the last check — that usually means YouTube itself had a problem, not your channels. It happens a few times a year and clears within a day or two. The search now also tries each channel's page as a backup; press “Search for new videos now” to try again.</div>` : ""; })()}
       <div class="rows" style="margin-bottom:16px">${(c.channels || []).map((ch, i) => {
         const s = st[ch.url] || {};
@@ -1006,6 +1392,7 @@
         <label class="check"><input type="checkbox" id="o-shorts" ${c.skipShorts !== false ? "checked" : ""}> Skip YouTube Shorts (under 1 minute)</label>
         <button class="btn">Save options</button>
       </form>`;
+    wireThin();
     $("#ch-add").onsubmit = async e => {
       e.preventDefault();
       const url = $("#ch-url").value.trim().replace(/\/(videos|featured|shorts|streams)\/?$/, "");
@@ -1043,6 +1430,40 @@
         render();
       };
     }
+  }
+  /* Categories with few videos: suggest more trusted channels with Gemini. */
+  const sugg = {};
+  function thinCats() {
+    const counts = {}; V().filter(v => !v.hidden).forEach(v => counts[v.category] = (counts[v.category] || 0) + 1);
+    return (data.settings.json.categories || []).map(c => ({ name: c.name, n: counts[c.name] || 0, chans: (data.channels.json.channels || []).filter(x => x.category === c.name && x.active !== false).length })).filter(c => c.n < 8).sort((a, b) => a.n - b.n);
+  }
+  function thinHtml() {
+    const thin = thinCats(); if (!thin.length) return "";
+    const known = new Set((data.channels.json.channels || []).map(x => x.url.toLowerCase()));
+    return `<div class="card-plain thin">
+      <h2>📉 Categories that need more videos</h2>
+      <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${geminiKey() ? " Gemini can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
+      ${thin.map(c => `<div class="thin-row"><div><b>${esc(c.name)}</b> <span class="small">${c.n} video${c.n === 1 ? "" : "s"} · ${c.chans} channel${c.chans === 1 ? "" : "s"}</span></div>
+        <div class="row-actions">${geminiKey() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
+        ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Gemini is searching…</p>` : sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
+          ${known.has(x.url.toLowerCase()) ? `<span class="badge-s b-ok">Already added</span>` : `<button class="btn btn-sm btn-primary" data-sugg-add="${esc(c.name)}|${esc(x.url)}">＋ Add for ${esc(c.name)}</button>`}</div></div>`).join("") || `<p class="help">No channels found.</p>`}</div>` : ""}</div>`).join("")}
+    </div>`;
+  }
+  function wireThin() {
+    $$("[data-sugg]").forEach(b => b.onclick = async () => {
+      const name = b.dataset.sugg, cat = (data.settings.json.categories || []).find(c => c.name === name) || {};
+      sugg[name] = { loading: true }; renderChannels();
+      try {
+        const list = await ABDraft.aiFindChannels({ category: name, keywords: cat.keywords || [], existing: (data.channels.json.channels || []).map(x => x.name), key: geminiKey(), model: geminiModel() || undefined });
+        sugg[name] = list;
+      } catch (e) { sugg[name] = { error: "Gemini couldn't search: " + e.message }; }
+      if (view === "channels") renderChannels();
+    });
+    $$("[data-sugg-add]").forEach(b => b.onclick = async () => {
+      const [cat, url] = b.dataset.suggAdd.split("|"), x = (sugg[cat] || []).find(y => y.url === url);
+      await update("channels", d => { d.channels = d.channels || []; if (!d.channels.some(y => y.url === url)) d.channels.push({ name: (x && x.name) || url, url, category: cat, active: true }); return d; }, `Add channel: ${(x && x.name) || url}`);
+      toast("Channel added. It will be checked on the next run."); renderChannels();
+    });
   }
   /* Search for new videos now: starts the GitHub job, follows it, and reloads the queue when it's done. */
   const finder = { running: false, msg: "" };
@@ -1126,7 +1547,7 @@
     const counts = {}; V().forEach(v => counts[v.category] = (counts[v.category] || 0) + 1);
     $("#app").innerHTML = `
       <form id="set-form" class="set-layout">
-        <nav class="set-nav" aria-label="Settings sections"><button type="button" data-set-sec="site" aria-current="${setSec === "site" ? "page" : "false"}"><span>🏷️</span>Site</button><button type="button" data-set-sec="cats" aria-current="${setSec === "cats" ? "page" : "false"}"><span>🗂️</span>Categories</button><button type="button" data-set-sec="finder" aria-current="${setSec === "finder" ? "page" : "false"}"><span>🚫</span>Finder filters</button><button type="button" data-set-sec="inbox" aria-current="${setSec === "inbox" ? "page" : "false"}"><span>🙋</span>Requests &amp; Ask AI</button><button type="button" data-set-sec="gemini" aria-current="${setSec === "gemini" ? "page" : "false"}"><span>✨</span>Gemini</button><button type="button" data-set-sec="status" aria-current="${setSec === "status" ? "page" : "false"}"><span>🩺</span>Status</button></nav>
+        <nav class="set-nav" aria-label="Settings sections"><button type="button" data-set-sec="site" aria-current="${setSec === "site" ? "page" : "false"}"><span>🏷️</span>Site</button><button type="button" data-set-sec="cats" aria-current="${setSec === "cats" ? "page" : "false"}"><span>🗂️</span>Categories</button><button type="button" data-set-sec="finder" aria-current="${setSec === "finder" ? "page" : "false"}"><span>🚫</span>Finder filters</button><button type="button" data-set-sec="staff" aria-current="${setSec === "staff" ? "page" : "false"}"><span>🔐</span>Staff &amp; training</button><button type="button" data-set-sec="inbox" aria-current="${setSec === "inbox" ? "page" : "false"}"><span>🙋</span>Requests &amp; Ask AI</button><button type="button" data-set-sec="gemini" aria-current="${setSec === "gemini" ? "page" : "false"}"><span>✨</span>Gemini</button><button type="button" data-set-sec="status" aria-current="${setSec === "status" ? "page" : "false"}"><span>🩺</span>Status</button></nav>
         <div class="set-body">
         <div class="card-plain set-sec" data-sec="site" ${setSec === "site" ? "" : "hidden"}>
           <h2>🏷️ Site</h2>
@@ -1150,6 +1571,20 @@
           <h2>🚫 Finder: skip videos containing</h2>
           <textarea class="textarea" id="s-excl">${esc((s.excludeKeywords || []).join(", "))}</textarea>
           <div class="help">Comma separated. Videos whose title contains any of these are never queued.</div>
+        </div>
+        <div class="card-plain set-sec" data-sec="staff" ${setSec === "staff" ? "" : "hidden"}>
+          <h2>🔐 Staff sign-in</h2>
+          <label class="check"><input type="checkbox" id="s-login" ${s.staffLogin ? "checked" : ""}> Staff must sign in with their <b>HR number</b> to use the app</label>
+          <div class="help" style="margin:-4px 0 12px">Only HR numbers on your staff list (Staff & records → Staff list) can sign in. Everything each person watches, every quiz, path and certificate is recorded against their HR number, and their progress follows them to a new phone. Needs the latest Google script. <b>Add your staff before turning this on</b>, or nobody can get in.</div>
+          <h2 style="margin-top:18px">🎓 Training</h2>
+          <div class="two">
+            <div class="field"><label for="s-pass">Quiz pass mark (%)</label><input class="input" id="s-pass" type="number" min="1" max="100" value="${esc(s.quizPass || 67)}"><div class="help">67% = 2 of 3 right. 100% = all right.</div></div>
+            <div class="field"><label for="s-ref">Safety refresher every (months)</label><input class="input" id="s-ref" type="number" min="0" max="60" value="${esc(s.refresherMonths === undefined ? 12 : s.refresherMonths)}"><div class="help">Safety essentials must be watched again after this. 0 = never.</div></div>
+          </div>
+          <label class="check"><input type="checkbox" id="s-sign" ${s.signoffEnabled ? "checked" : ""}> ✍️ Supervisor sign-off on certificates (supervisors and their PINs: Staff & records → Supervisors)</label>
+          <label class="check"><input type="checkbox" id="s-stats" ${s.statsEnabled ? "checked" : ""}> 📊 Count video views and searches that find nothing (shown in Insights; counts only, no names)</label>
+          <label class="check"><input type="checkbox" id="s-rec" ${s.recordsEnabled ? "checked" : ""} ${s.staffLogin ? "disabled" : ""}> Without sign-in: send results of staff who type their name for a certificate</label>
+          <div class="help">With sign-in on, everyone's progress is always recorded.</div>
         </div>
         <div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
           <h2>🙋 Request inbox &amp; Ask AI</h2>
@@ -1182,6 +1617,7 @@
         </div>
       </form>`;
     if (setSec === "status") loadStatus();
+    const lg = $("#s-login"); if (lg) lg.onchange = () => { $("#s-rec").disabled = lg.checked; };
     $$("[data-set-sec]").forEach(b => b.onclick = () => {
       setSec = b.dataset.setSec;
       if (setSec === "status") loadStatus();
@@ -1215,8 +1651,22 @@
         helpdesk: $("#s-help").value.trim(), newDays: Math.max(1, +$("#s-new").value || 7), categories,
         excludeKeywords: $("#s-excl").value.split(",").map(x => x.trim().toLowerCase()).filter(Boolean),
         requestUrl: $("#s-req").value.trim(),
-        aiEnabled: $("#s-ai").checked
+        aiEnabled: $("#s-ai").checked,
+        staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked, recordsEnabled: $("#s-rec").checked,
+        quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
+      if (vals.staffLogin && !data.settings.json.staffLogin) {
+        if (!vals.requestUrl) { alert("Staff sign-in needs the Google script link first (Requests & Ask AI section)."); return; }
+        scriptVer = null;
+        const ver = await checkScript();
+        if (ver < 2) { alert("Your Google script is an older version. Update it first (see the Staff & records tab), then turn on sign-in."); return; }
+        try {
+          const j = await sGet({ what: "staff" });
+          const n = (j.staff || []).filter(x => x.active).length;
+          if (!n) { alert("Your staff list is empty, so nobody could sign in. Add staff in Staff & records → Staff list first."); return; }
+          if (!confirm(`Turn on staff sign-in? About a minute after saving, staff must enter their HR number. ${n} active staff are on the list.`)) return;
+        } catch (err) { alert("Couldn't read the staff list: " + err.message); return; }
+      }
       if (vals.aiEnabled && !vals.requestUrl) { alert("Ask AI needs the Google script link (Web app URL) first."); return; }
       try {
         localStorage.setItem("ab_req_key", $("#s-reqkey").value.trim());
@@ -1241,9 +1691,19 @@
       ${ok(!q.length || gem === q.length, `<span>Gemini review: <b>${gem} of ${q.length}</b> queued videos checked${gemErr ? ` — last problem: <i>${esc(gemErr.aiError)}</i>` : ""}</span>${q.length && gem < q.length ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml">↻ Retry</button>` : ""}<span class="st-job" id="job-find-videos.yml"></span>`)}
       ${ok(!Object.values(data.pending.json.channelStatus || {}).some(c => c && c.error), "Channels: " + (Object.values(data.pending.json.channelStatus || {}).filter(c => c && c.error).length ? "some couldn't be checked — see Channels tab" : "all checked OK"))}
       ${ok(!!data.settings.json.requestUrl, data.settings.json.requestUrl ? "Request inbox & Ask AI: connected" : "Request inbox: not set up yet")}
+      ${data.settings.json.requestUrl ? `<li id="st-script">⏳ Checking the Google script version…</li>` : ""}
+      ${ok(!V().some(v => !v.duration), `Video lengths: <b>${V().filter(v => v.duration).length} of ${V().length}</b> known${V().some(v => !v.duration) ? " — use “Fill in missing lengths” on the Videos tab" : ""}`)}
     </ul>
     <h3 style="margin:16px 0 8px">Recent automatic jobs on GitHub</h3>`;
     box.innerHTML = html + `<p class="help">Loading…</p>`;
+    if (data.settings.json.requestUrl) {
+      scriptVer = null;
+      checkScript().then(vr => {
+        const li = $("#st-script"); if (!li) return;
+        li.className = vr >= 2 ? "st-ok" : "st-warn";
+        li.innerHTML = vr >= 2 ? "✅ Google script: up to date (sign-in, records, sign-off, usage counts)" : vr === 1 ? "⚠️ Google script: older version — update it to use staff sign-in and records (see Staff & records)" : "⚠️ Google script: couldn't reach it";
+      });
+    }
     try {
       const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/runs?per_page=12`);
       if (!r.ok) throw new Error(r.status === 403 || r.status === 404 ? "Your GitHub token needs “Actions: Read” permission to show this." : "GitHub said " + r.status);

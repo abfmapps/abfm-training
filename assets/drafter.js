@@ -244,6 +244,7 @@
     return `You review training videos for facility-maintenance technicians in Dubai (HVAC, electrical, plumbing, fire systems, cleaning, civil, painting, landscaping). Many speak basic English.
 Watch this YouTube video ("${title}"${category ? `, suggested trade: ${category}` : ""}) and reply with JSON only, in exactly this shape:
 {"title": string, "summary": string, "safety": string, "ppe": string[], "steps": string[], "level": "Beginner"|"Intermediate"|"Advanced", "subject": string, "category": string,
+ "quiz": [{"q": string, "options": string[], "answer": number}],
  "review": {"relevance": number, "quality": number, "recommend": "approve"|"maybe"|"reject", "reason": string, "unsafe": string[], "language": string, "talking": boolean}}
 Rules:
 - title: a clear training-library title for what the video teaches, 3–9 words, Title Case, under 60 characters (e.g. "Clearing a Blocked AC Condensate Drain", "Testing RCDs", "How VRF Systems Work"). No clickbait, no channel or presenter names, no episode numbers, no emojis or hashtags. Keep useful equipment names (e.g. "Sloan Flushometer").
@@ -254,6 +255,7 @@ Rules:
 - level: who the video suits.
 - subject: a short topic label${subjects && subjects.length ? `; prefer one of: ${subjects.slice(0, 25).join("; ")}` : ""}.
 - category: the best trade for it${categories && categories.length ? `, one of: ${categories.join("; ")}` : ""}.
+${QUIZ_RULES}
 - review.relevance: 0–10, how useful this is for training our technicians (0 = unrelated, e.g. computers, vlogs, sales pitches).
 - review.quality: 0–10, how clear and well filmed the teaching is.
 - review.recommend: approve / maybe / reject for our training library.
@@ -262,6 +264,72 @@ Rules:
 - review.language: main spoken language. review.talking: false if the video has no narration.
 Use simple words. Do not invent steps that are not in the video.`;
   }
+  /* ---------- Quizzes ----------
+     A quiz is a list of {q, options: [3–4 strings], answer: index of the right option}. */
+  function normQuiz(list) {
+    const out = [];
+    for (const x of Array.isArray(list) ? list : []) {
+      if (!x) continue;
+      const q = clean(x.q || x.question).slice(0, 200);
+      const options = (Array.isArray(x.options) ? x.options : []).map(o => clean(o).slice(0, 120)).filter(Boolean).slice(0, 4);
+      const answer = Math.round(Number(x.answer));
+      if (q && options.length >= 2 && answer >= 0 && answer < options.length && new Set(options).size === options.length) out.push({ q, options, answer });
+    }
+    return out.slice(0, 5);
+  }
+  /* Admin text format: question on one line, then options; the right one starts with "*", the others with "-". Blank line between questions. */
+  function quizToText(quiz) {
+    return (quiz || []).map(x => [x.q, ...x.options.map((o, i) => (i === x.answer ? "* " : "- ") + o)].join("\n")).join("\n\n");
+  }
+  function parseQuizText(text) {
+    const blocks = String(text || "").replace(/\r/g, "").split(/\n\s*\n/).map(b => b.split("\n").map(s => s.trim()).filter(Boolean)).filter(b => b.length);
+    const out = [], errors = [];
+    blocks.forEach((b, i) => {
+      const q = b[0].replace(/^(q\s*\d*[:.)]|\d+[.)])\s*/i, "");
+      const opts = b.slice(1).filter(l => /^[-*•✓✔]/.test(l));
+      const options = opts.map(l => l.replace(/^[-*•✓✔]\s*/, ""));
+      const answer = opts.findIndex(l => /^[*✓✔]/.test(l));
+      if (options.length < 2) errors.push(`Question ${i + 1}: add at least 2 options, each on its own line starting with - or *.`);
+      else if (answer < 0) errors.push(`Question ${i + 1}: mark the right answer with * at the start of the line.`);
+      else if (opts.filter(l => /^[*✓✔]/.test(l)).length > 1) errors.push(`Question ${i + 1}: only one answer can be marked with *.`);
+      else out.push({ q, options, answer });
+    });
+    return { quiz: normQuiz(out), errors };
+  }
+  const QUIZ_RULES = `- quiz: 3 multiple-choice questions that check the technician understood the key safety point and steps. Each: {"q": short question, "options": 3 short answers, "answer": index (0–2) of the one correct answer}. Wrong answers must be clearly wrong but believable. Simple English, under 15 words each. Vary the position of the right answer.`;
+  /* Write a quiz from the video's training card (text only, quick and cheap). */
+  async function aiQuiz({ title, summary, safety, steps, ppe, key, model }) {
+    const r = await gemini({ key, model, timeoutMs: 60000, parts: [{ text:
+      `Write a short quiz for facility-maintenance technicians in Dubai who watched a training video. Many speak basic English.
+Video: "${title}"
+What it shows: ${summary || "(not given)"}
+Safety: ${safety || "(not given)"}
+PPE: ${(ppe || []).join(", ") || "(not given)"}
+Steps: ${(steps || []).map((s, i) => `${i + 1}. ${s}`).join(" ") || "(not given)"}
+Reply with JSON only: {"quiz": [...]}
+${QUIZ_RULES}
+Only ask about what is in the text above.` }] });
+    const quiz = normQuiz(jsonOf(r.text).quiz);
+    if (quiz.length < 2) throw new Error("Gemini's quiz was incomplete");
+    return quiz;
+  }
+  /* Find trusted YouTube channels for a trade using Google Search. */
+  async function aiFindChannels({ category, keywords, existing, key, model }) {
+    const r = await gemini({ key, model, json: false, tools: [{ google_search: {} }], parts: [{ text:
+      `Find 5 YouTube channels that publish good, practical training videos for facility-maintenance technicians in the trade: "${category}"${keywords && keywords.length ? ` (topics: ${keywords.slice(0, 12).join(", ")})` : ""}.
+Prefer professional trainers, manufacturers, trade associations and experienced technicians who show safe work, in English. Avoid channels that are mostly vlogs, sales, Shorts or unsafe practice.
+${existing && existing.length ? `We already follow: ${existing.join("; ")}. Suggest different ones.` : ""}
+Reply with JSON only: [{"url": "https://www.youtube.com/@handle", "name": string, "why": string}] — only real channels you found.` }] });
+    const list = jsonOf(r.text);
+    const out = [];
+    for (const c of Array.isArray(list) ? list : []) {
+      const url = String(c.url || "").trim().replace(/\/(videos|featured|shorts|streams|about)\/?$/, "").replace(/\?.*$/, "");
+      if (/^https:\/\/(www\.|m\.)?youtube\.com\/(@[\w.-]+|channel\/UC[\w-]{22}|c\/[\w.-]+|user\/[\w.-]+)$/.test(url) && !out.some(o => o.url === url))
+        out.push({ url: url.replace("://m.", "://www."), name: clean(c.name).slice(0, 80), why: clean(c.why).slice(0, 200) });
+    }
+    return out.slice(0, 6);
+  }
+
   function parseAI(text) {
     const j = jsonOf(text);
     const arr = a => (Array.isArray(a) ? a : []).map(clean).filter(Boolean);
@@ -288,6 +356,8 @@ Use simple words. Do not invent steps that are not in the video.`;
       }
     };
     if (!d.summary || d.steps.length < 2) throw new Error("Gemini's answer was incomplete");
+    const quiz = normQuiz(j.quiz);
+    if (quiz.length >= 2) d.quiz = quiz;
     return d;
   }
   /* Watch a video: draft the training card and review it. */
@@ -363,5 +433,5 @@ ${JSON.stringify(lines)}` }] });
     return out.sort((x, y) => y.score - x.score);
   }
 
-  root.ABDraft = { trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
+  root.ABDraft = { trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
 })(typeof globalThis !== "undefined" ? globalThis : this);

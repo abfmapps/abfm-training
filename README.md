@@ -112,3 +112,39 @@ Turn it on in admin → Settings → "Auto-draft with Gemini" (paste a free key 
 The **✨ Ask AI** tab lets staff ask work questions in their own language and attach up to 3 photos of the equipment or problem. Gemini answers in simple steps, puts safety first, and suggests matching videos from the library. Questions and photos are not saved anywhere.
 
 The Gemini key is never in the public app: questions go through your private Google script (setup/request-inbox.gs), which holds the key on its `GEMINI_KEY` line and limits use (300 questions an hour, 2,000 a day, 30 an hour per phone) so your free quota can't be used up. Turn it on in admin → Settings → "Show Ask AI to staff". After editing the script, redeploy with Deploy → Manage deployments → ✏️ → New version, so the link stays the same.
+
+## Staff sign-in with HR number
+
+When **Settings → Staff & training → Staff must sign in with their HR number** is on, the app opens on a sign-in screen. Only HR numbers on your staff list can get in. Everything each person does is recorded against their HR number.
+
+1. **Update the Google script** (one time): replace the code in your Google Sheet's Apps Script with the new `setup/request-inbox.gs`. Keep your `ADMIN_KEY` and `GEMINI_KEY` lines. Then **Deploy → Manage deployments → ✏️ → Version: New version → Deploy**. Settings → Status shows "Google script: up to date" when it worked.
+2. **Add your staff**: admin → **Staff & records → Staff list**. Paste one person per line, `HR number, Full name, Site, Trade` (straight from Excel is fine). The trade must match a category name, so staff see the training assigned to their trade.
+3. **Turn on sign-in** in Settings → Staff & training.
+
+- Staff stay signed in on their phone. If they get a new phone, their progress comes back when they sign in.
+- **Deactivate** someone who leaves. They can't sign in again, and their phone is signed out the next time it goes online. Their records are kept.
+- The staff list, records, certificates and supervisor PINs are kept only in your private Google Sheet (tabs *Staff*, *Records*, *Certificates*, *Supervisors*, *Stats*), never in the public repo.
+- Note: sign-in controls who can use the app. The video list itself is still a public file in this repo until the app moves to a private host.
+
+## Quizzes, certificates and sign-off
+
+- **Quick check:** each video can have a short multiple-choice quiz (admin → edit video → Quick check). With a Gemini key, **✨ Write quiz with Gemini** drafts one, **🧠 Write quizzes for N videos** on the Videos tab does the whole library, and the daily job writes up to 20 a day. Quizzes are translated automatically. Set the pass mark in Settings → Staff & training (default 67% = 2 of 3).
+- **Learning paths** are finished when every video is watched and every quiz is passed. The person then gets a **certificate** (print or save as PDF, or share). The certificate has a code, and anyone can check it with the link `…/#/verify/CODE`.
+- **Supervisor sign-off:** turn it on in Settings, then add supervisors and their PINs in Staff & records → Supervisors. The supervisor types their PIN on the technician's phone to sign off the certificate.
+
+## Assigned training and safety refreshers
+
+- **Assigned training:** admin → Learning paths → *Assigned training*. Pick a path, the trades it's for (none = everyone) and a due date. Staff see it at the top of their home screen until they finish, in red when overdue. **Staff & records → Assigned training** shows who has and hasn't finished, with a CSV export.
+- **Safety refreshers:** safety essentials must be watched again every 12 months (change this in Settings, 0 = never). Due ones are flagged on the home screen and in *My training*.
+
+## Watching progress, speed, lengths
+
+- Videos remember where each person stopped (**Continue watching** on the home screen) and are marked done automatically when 90% is watched.
+- Playback speed buttons (0.75×–2×) sit under the player.
+- Missing video lengths: the daily job now fills in up to 40 a day, and the admin has **⏱ Fill in missing lengths** on the Videos tab, which reads them in your browser straight away.
+
+## Insights and records
+
+- **Staff & records → Staff progress:** every staff member with videos watched, quizzes passed, paths, certificates and last activity. Click a name for the full history. Export summary or all records as CSV.
+- **Insights:** most-watched videos and searches that found nothing (ideas for new videos). Turn on *Count video views and searches* in Settings. Only counts are kept.
+- **Thin categories:** the Channels tab lists categories with fewer than 8 videos and, with a Gemini key, suggests trusted channels to add.

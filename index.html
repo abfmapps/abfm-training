@@ -29,6 +29,7 @@
         <button data-tab="new" data-t="new">New</button>
         <button data-tab="saved" data-t="saved">Saved</button>
         <button data-tab="ai" class="ai-tab" hidden>✨ <span data-t="askAi">Ask AI</span></button>
+        <button data-tab="me">👤 <span data-t="me">My training</span></button>
       </nav>
       <div class="top-actions">
         <button class="btn btn-sm btn-ghost" id="install-btn" hidden>
@@ -56,13 +57,32 @@
     <div id="offline" class="notice offline" hidden></div>
     <div id="announce" class="notice" hidden></div>
 
+    <section id="login-view" class="login" hidden>
+      <form id="login-form" class="login-card" novalidate>
+        <img class="login-logo" src="assets/logo.png" alt="ABFM logo" width="72" height="72">
+        <h1 data-t="loginTitle">Sign in</h1>
+        <p class="sub" data-t="loginHint">Enter your HR number to start.</p>
+        <label class="login-field"><span data-t="hrNumber">HR number</span>
+          <input id="l-hr" inputmode="text" autocomplete="username" autocapitalize="characters" spellcheck="false" maxlength="30" required></label>
+        <p class="req-msg" id="l-msg" role="status" aria-live="polite"></p>
+        <button class="btn btn-primary" id="l-go" style="width:100%" data-t="signIn">Sign in</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="l-lang" style="margin-top:10px">🌐 <span data-t="language">Language</span></button>
+      </form>
+    </section>
+
     <section id="list-view">
       <div class="chips" id="cats" role="group" aria-label="Categories"></div>
       <div class="toolbar">
         <div class="seg" id="levels" role="group" aria-label="Level"></div>
         <button class="btn btn-sm req-btn" id="req-btn" data-request hidden>🙋 <span data-t="reqShort">Request</span></button>
       </div>
+      <div id="assign-wrap" class="assign-wrap" hidden></div>
+      <a id="refresh-note" class="notice refresh-note" href="#/me" hidden></a>
       <a id="talk-card" class="talk-card" href="#/talk" hidden></a>
+      <div id="cont-wrap" hidden>
+        <div class="section-h"><h2>▶ <span data-t="continueWatching">Continue watching</span></h2></div>
+        <div class="rail" id="cont-rail"></div>
+      </div>
       <div id="ess-wrap" class="ess-wrap" hidden>
         <div class="section-h"><h2>🦺 <span data-t="safetyEssentials">Safety essentials</span></h2></div>
         <p class="section-sub" data-t="essentialsHint">Must-know safety for every technician</p>
@@ -111,6 +131,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/><path d="M5 16l.6 1.4L7 18l-1.4.6L5 20l-.6-1.4L3 18l1.4-.6z"/></svg>
       <span data-t="aiNav">Ask AI</span>
     </button>
+    <button data-tab="me">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      <span data-t="meNav">Me</span><span class="badge" id="me-badge" hidden></span>
+    </button>
   </nav>
 
   <div class="sheet" id="lang-sheet" role="dialog" aria-modal="true" aria-labelledby="lang-title" hidden>
@@ -147,6 +171,38 @@
         <div class="req-actions">
           <button type="button" class="btn" data-close data-t="cancel">Cancel</button>
           <button class="btn btn-primary" id="r-send" data-t="send">Send request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="sheet" id="profile-sheet" role="dialog" aria-modal="true" aria-labelledby="pf-title" hidden>
+    <div class="sheet-in">
+      <h2 id="pf-title">👤 <span data-t="profile">My details</span></h2>
+      <p class="sub" data-t="profileHint">Saved on this phone and printed on your certificates.</p>
+      <form id="pf-form" class="req-form" novalidate>
+        <label><span data-t="pName">Full name</span><input id="pf-name" maxlength="80" autocomplete="name" required></label>
+        <label><span data-t="pTrade">My trade</span><select id="pf-trade"></select></label>
+        <label><span data-t="pSite">Site / building (optional)</span><input id="pf-site" maxlength="80"></label>
+        <p class="req-msg" id="pf-msg" role="status" aria-live="polite"></p>
+        <div class="req-actions">
+          <button type="button" class="btn" data-close data-t="cancel">Cancel</button>
+          <button class="btn btn-primary" data-t="saveDetails">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="sheet" id="sign-sheet" role="dialog" aria-modal="true" aria-labelledby="sg-title" hidden>
+    <div class="sheet-in">
+      <h2 id="sg-title">✍️ <span data-t="signoff">Supervisor sign-off</span></h2>
+      <p class="sub" data-t="supHint">Your supervisor enters their PIN to confirm you can do this work safely.</p>
+      <form id="sg-form" class="req-form" novalidate>
+        <label><span data-t="supPin">Supervisor PIN</span><input id="sg-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="12" required></label>
+        <p class="req-msg" id="sg-msg" role="status" aria-live="polite"></p>
+        <div class="req-actions">
+          <button type="button" class="btn" data-close data-t="cancel">Cancel</button>
+          <button class="btn btn-primary" id="sg-go" data-t="confirm">Confirm</button>
         </div>
       </form>
     </div>

@@ -106,9 +106,26 @@ async function readChannelPage(channelId) {
   }));
 }
 
+/* Ask YouTube's own player API for a video's length (works when the watch page is blocked for servers). */
+async function playerLength(yt) {
+  for (const client of [{ clientName: "WEB_EMBEDDED_PLAYER", clientVersion: "1.20241009.01.00" }, { clientName: "ANDROID", clientVersion: "19.09.37", androidSdkVersion: 30 }]) {
+    try {
+      const r = await fetch("https://www.youtube.com/youtubei/v1/player?prettyPrint=false", {
+        method: "POST", headers: { ...HEADERS, "Content-Type": "application/json" },
+        body: JSON.stringify({ videoId: yt, context: { client: { hl: "en", gl: "US", ...client } } })
+      });
+      if (!r.ok) continue;
+      const j = await r.json();
+      const s = +((j.videoDetails || {}).lengthSeconds || 0);
+      if (s > 0) return s;
+    } catch {}
+  }
+  return null;
+}
 async function videoInfo(yt) {
   const { text } = await get(`https://www.youtube.com/watch?v=${yt}`);
-  const len = (text.match(/"lengthSeconds":"(\d+)"/) || [])[1];
+  let len = (text.match(/"lengthSeconds":"(\d+)"/) || [])[1];
+  if (!len) { const s = await playerLength(yt); if (s) len = String(s); }
   const live = /"isLiveContent":true/.test(text) && /"isLive":true/.test(text);
   let description = "";
   const d = text.match(/"shortDescription":"((?:[^"\\]|\\.)*)"/);
@@ -223,7 +240,19 @@ const ctx = {
   health: await load("health.json", { problems: [] })
 };
 await findNew(ctx);
-const filled = await checkHealth(ctx);
+let filled = await checkHealth(ctx);
+// Every day: fill in a few missing lengths (the weekly health check does all of them).
+{
+  let n = 0;
+  for (const v of ctx.videosDoc.videos) {
+    if (v.duration || n >= 40) continue;
+    n++;
+    const info = await videoInfo(v.yt);
+    if (info.seconds) { v.duration = fmtDur(info.seconds); filled++; }
+    await sleep(300);
+  }
+  if (n) log(`Lengths: tried ${n} videos without a length, filled ${filled}.`);
+}
 const changed = [
   await save("pending.json", ctx.pending, raw["pending.json"]),
   await save("health.json", ctx.health, raw["health.json"]),

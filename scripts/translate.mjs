@@ -130,6 +130,29 @@ async function translateVideos(doc) {
   return changed;
 }
 
+// Quizzes are translated separately (kept in v.trq) so changing a quiz never re-translates the rest of the video.
+const quizHash = q => createHash("sha1").update(JSON.stringify((q || []).map(x => [x.q, x.options]))).digest("hex").slice(0, 12);
+async function translateQuizzes(doc) {
+  let changed = 0;
+  for (const v of doc.videos) {
+    if (!v.quiz || !v.quiz.length) { if (v.trq) { delete v.trq; changed++; } continue; }
+    const src = quizHash(v.quiz);
+    v.trq = v.trq || {};
+    for (const tl of LANGS) {
+      if (v.trq[tl] && v.trq[tl].src === src) continue;
+      const lines = v.quiz.flatMap(x => [x.q, ...x.options]);
+      try {
+        const t = await translateLines(lines, tl);
+        let i = 0;
+        v.trq[tl] = { src, items: v.quiz.map(x => ({ q: t[i++], options: x.options.map(() => t[i++]) })) };
+        changed++;
+      } catch (e) { failures++; if (e.message === "limit") return changed; console.log(`  ! quiz ${v.id} [${tl}]: ${e.message}`); }
+      await sleep(300);
+    }
+  }
+  return changed;
+}
+
 async function translateSettings(s) {
   const fields = ["announcement", "tagline"];
   const src = createHash("sha1").update(JSON.stringify(fields.map(f => s[f] || ""))).digest("hex").slice(0, 12);
@@ -193,7 +216,7 @@ const videos = JSON.parse(vText), settings = JSON.parse(sText);
 let paths = null;
 try { paths = JSON.parse(await readFile(new URL("paths.json", DATA), "utf8")); } catch {}
 
-const nv = await translateVideos(videos);
+const nv = (await translateVideos(videos)) + (await translateQuizzes(videos));
 const ns = await translateSettings(settings);
 const np = paths ? await translatePaths(paths) : 0;
 let talks = null;

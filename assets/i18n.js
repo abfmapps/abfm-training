@@ -194,3 +194,180 @@ window.AB_TEXT = {
     cats: { "Health & Safety": "الصحة والسلامة", "HVAC": "التكييف / HVAC", "Plumbing": "السباكة", "Electrical": "الكهرباء", "Duct Cleaning": "تنظيف مجاري الهواء", "Water Tank Cleaning": "تنظيف خزانات المياه", "Civil Jobs": "الأعمال المدنية", "Painting & Waterproofing": "الدهان والعزل المائي", "Landscaping": "تنسيق الحدائق", "Fire Systems": "أنظمة الحريق" }
   }
 };
+
+/* Sign-in, quizzes, certificates, assigned training and refreshers. Keep {n}, {date}, {name}, {score} and {time} as they are. */
+(function (T) {
+  const add = (code, o) => { T[code] = Object.assign(T[code] || {}, o); };
+  add("en", {
+    loginTitle: "Sign in", loginHint: "Enter your HR number to start.", hrNumber: "HR number", signIn: "Sign in",
+    loginBad: "This HR number was not found. Check it or ask your supervisor.", loginInactive: "This HR number is not active. Ask your supervisor.",
+    loginBusy: "Too many tries. Wait a few minutes and try again.", loginOffline: "You need internet to sign in.",
+    welcome: "Welcome, {name}!", signOut: "Sign out", signOutQ: "Sign out of this phone?",
+    me: "My training", meNav: "Me", profile: "My details", edit: "Edit", profileHint: "Saved on this phone and printed on your certificates.",
+    profileShare: "When you finish training, your name and results are also sent to the training team.",
+    pName: "Full name", pTrade: "My trade", pSite: "Site / building (optional)", allTrades: "All trades / not sure", saveDetails: "Save", needName: "Add your name first.",
+    statVideos: "videos done", statQuizzes: "quizzes passed", statCerts: "certificates",
+    continueWatching: "Continue watching", speed: "Speed", resumeAt: "Resume from {time}",
+    assigned: "Assigned to you", dueBy: "Due {date}", overdue: "Overdue", setTrade: "Choose your trade to see the training assigned to you.",
+    refresherDue: "Refresher due", refreshersDue: "{n} safety videos are due for a refresher — watch them again", refresherHint: "Safety essentials must be watched again every {n} months.", markRefreshed: "Mark as watched again",
+    quizTitle: "Quick check", quizHint: "Answer these questions to check what you learned.", quizCheck: "Check answers", quizAgain: "Take it again", quizRetry: "Try again",
+    quizPassed: "Passed", quizScore: "{score} of {n} correct", quizFailed: "Not passed yet. Watch the video again and retry.", quizPick: "Choose an answer for every question.",
+    pathComplete: "Path complete! Get your certificate.", pathNeedsQuiz: "Pass the quick check on each video to finish this path.",
+    certificate: "Certificate", certs: "My certificates", getCert: "Get your certificate", noCerts: "Finish a learning path to get a certificate.",
+    certTitle: "Certificate of Completion", certThis: "This certifies that", certBody: "has completed the learning path", certDate: "Date", certVideos: "Videos", certCode: "Certificate code",
+    printCert: "Print / save as PDF", signoff: "Supervisor sign-off", supHint: "Your supervisor enters their PIN to confirm you can do this work safely.", supPin: "Supervisor PIN", confirm: "Confirm",
+    signedBy: "Signed off by {name}", wrongPin: "PIN not recognised.", verify: "Check a certificate", verifyOk: "Valid certificate", verifyBad: "No certificate found with this code."
+  });
+  add("hi", {
+    loginTitle: "साइन इन करें", loginHint: "शुरू करने के लिए अपना HR नंबर डालें।", hrNumber: "HR नंबर", signIn: "साइन इन करें",
+    loginBad: "यह HR नंबर नहीं मिला। जाँच करें या अपने सुपरवाइज़र से पूछें।", loginInactive: "यह HR नंबर सक्रिय नहीं है। अपने सुपरवाइज़र से पूछें।",
+    loginBusy: "बहुत ज़्यादा कोशिशें। कुछ मिनट रुककर फिर कोशिश करें।", loginOffline: "साइन इन के लिए इंटरनेट चाहिए।",
+    welcome: "स्वागत है, {name}!", signOut: "साइन आउट", signOutQ: "इस फ़ोन से साइन आउट करें?",
+    me: "मेरी ट्रेनिंग", meNav: "मैं", profile: "मेरी जानकारी", edit: "बदलें", profileHint: "इसी फ़ोन पर सेव होता है और आपके सर्टिफ़िकेट पर छपता है।",
+    profileShare: "ट्रेनिंग पूरी होने पर आपका नाम और नतीजे ट्रेनिंग टीम को भी भेजे जाते हैं।",
+    pName: "पूरा नाम", pTrade: "मेरा काम (ट्रेड)", pSite: "साइट / बिल्डिंग (वैकल्पिक)", allTrades: "सभी ट्रेड / पता नहीं", saveDetails: "सेव करें", needName: "पहले अपना नाम लिखें।",
+    statVideos: "वीडियो पूरे", statQuizzes: "क्विज़ पास", statCerts: "सर्टिफ़िकेट",
+    continueWatching: "देखना जारी रखें", speed: "स्पीड", resumeAt: "{time} से आगे देखें",
+    assigned: "आपको दी गई ट्रेनिंग", dueBy: "{date} तक", overdue: "समय निकल गया", setTrade: "आपको दी गई ट्रेनिंग देखने के लिए अपना ट्रेड चुनें।",
+    refresherDue: "दोबारा देखना है", refreshersDue: "{n} सुरक्षा वीडियो दोबारा देखने हैं", refresherHint: "ज़रूरी सुरक्षा वीडियो हर {n} महीने में दोबारा देखने होते हैं।", markRefreshed: "दोबारा देखा चिह्नित करें",
+    quizTitle: "छोटी जाँच", quizHint: "आपने क्या सीखा, यह जाँचने के लिए इन सवालों के जवाब दें।", quizCheck: "जवाब जाँचें", quizAgain: "फिर से करें", quizRetry: "फिर कोशिश करें",
+    quizPassed: "पास", quizScore: "{n} में से {score} सही", quizFailed: "अभी पास नहीं हुए। वीडियो फिर देखें और दोबारा कोशिश करें।", quizPick: "हर सवाल का एक जवाब चुनें।",
+    pathComplete: "रास्ता पूरा हुआ! अपना सर्टिफ़िकेट लें।", pathNeedsQuiz: "यह रास्ता पूरा करने के लिए हर वीडियो की छोटी जाँच पास करें।",
+    certificate: "सर्टिफ़िकेट", certs: "मेरे सर्टिफ़िकेट", getCert: "अपना सर्टिफ़िकेट लें", noCerts: "सर्टिफ़िकेट पाने के लिए एक सीखने का रास्ता पूरा करें।",
+    printCert: "प्रिंट / PDF सेव करें", signoff: "सुपरवाइज़र की मंज़ूरी", supHint: "आपके सुपरवाइज़र अपना PIN डालकर पुष्टि करते हैं कि आप यह काम सुरक्षित रूप से कर सकते हैं।", supPin: "सुपरवाइज़र PIN", confirm: "पुष्टि करें",
+    signedBy: "{name} ने मंज़ूरी दी", wrongPin: "PIN सही नहीं है।", verify: "सर्टिफ़िकेट जाँचें", verifyOk: "सही सर्टिफ़िकेट", verifyBad: "इस कोड का कोई सर्टिफ़िकेट नहीं मिला।"
+  });
+  add("ur", {
+    loginTitle: "سائن ان کریں", loginHint: "شروع کرنے کے لیے اپنا HR نمبر درج کریں۔", hrNumber: "HR نمبر", signIn: "سائن ان کریں",
+    loginBad: "یہ HR نمبر نہیں ملا۔ چیک کریں یا اپنے سپروائزر سے پوچھیں۔", loginInactive: "یہ HR نمبر فعال نہیں ہے۔ اپنے سپروائزر سے پوچھیں۔",
+    loginBusy: "بہت زیادہ کوششیں۔ چند منٹ انتظار کر کے دوبارہ کوشش کریں۔", loginOffline: "سائن ان کے لیے انٹرنیٹ ضروری ہے۔",
+    welcome: "خوش آمدید، {name}!", signOut: "سائن آؤٹ", signOutQ: "اس فون سے سائن آؤٹ کریں؟",
+    me: "میری ٹریننگ", meNav: "میں", profile: "میری معلومات", edit: "تبدیل کریں", profileHint: "اسی فون پر محفوظ ہوتا ہے اور آپ کے سرٹیفکیٹ پر چھپتا ہے۔",
+    profileShare: "ٹریننگ مکمل ہونے پر آپ کا نام اور نتائج ٹریننگ ٹیم کو بھی بھیجے جاتے ہیں۔",
+    pName: "پورا نام", pTrade: "میرا کام (ٹریڈ)", pSite: "سائٹ / عمارت (اختیاری)", allTrades: "تمام ٹریڈ / معلوم نہیں", saveDetails: "محفوظ کریں", needName: "پہلے اپنا نام لکھیں۔",
+    statVideos: "ویڈیوز مکمل", statQuizzes: "کوئز پاس", statCerts: "سرٹیفکیٹ",
+    continueWatching: "دیکھنا جاری رکھیں", speed: "رفتار", resumeAt: "{time} سے آگے دیکھیں",
+    assigned: "آپ کو دی گئی ٹریننگ", dueBy: "{date} تک", overdue: "وقت گزر گیا", setTrade: "آپ کو دی گئی ٹریننگ دیکھنے کے لیے اپنا ٹریڈ چنیں۔",
+    refresherDue: "دوبارہ دیکھنا ہے", refreshersDue: "{n} حفاظتی ویڈیوز دوبارہ دیکھنی ہیں", refresherHint: "ضروری حفاظتی ویڈیوز ہر {n} مہینے بعد دوبارہ دیکھنی ہوتی ہیں۔", markRefreshed: "دوبارہ دیکھا نشان لگائیں",
+    quizTitle: "مختصر جانچ", quizHint: "آپ نے کیا سیکھا، یہ جانچنے کے لیے ان سوالوں کے جواب دیں۔", quizCheck: "جواب چیک کریں", quizAgain: "دوبارہ کریں", quizRetry: "دوبارہ کوشش کریں",
+    quizPassed: "پاس", quizScore: "{n} میں سے {score} درست", quizFailed: "ابھی پاس نہیں ہوئے۔ ویڈیو دوبارہ دیکھیں اور پھر کوشش کریں۔", quizPick: "ہر سوال کا ایک جواب چنیں۔",
+    pathComplete: "راستہ مکمل! اپنا سرٹیفکیٹ لیں۔", pathNeedsQuiz: "یہ راستہ مکمل کرنے کے لیے ہر ویڈیو کی مختصر جانچ پاس کریں۔",
+    certificate: "سرٹیفکیٹ", certs: "میرے سرٹیفکیٹ", getCert: "اپنا سرٹیفکیٹ لیں", noCerts: "سرٹیفکیٹ کے لیے ایک سیکھنے کا راستہ مکمل کریں۔",
+    printCert: "پرنٹ / PDF محفوظ کریں", signoff: "سپروائزر کی منظوری", supHint: "آپ کے سپروائزر اپنا PIN درج کر کے تصدیق کرتے ہیں کہ آپ یہ کام محفوظ طریقے سے کر سکتے ہیں۔", supPin: "سپروائزر PIN", confirm: "تصدیق کریں",
+    signedBy: "{name} نے منظوری دی", wrongPin: "PIN درست نہیں۔", verify: "سرٹیفکیٹ چیک کریں", verifyOk: "درست سرٹیفکیٹ", verifyBad: "اس کوڈ کا کوئی سرٹیفکیٹ نہیں ملا۔"
+  });
+  add("ml", {
+    loginTitle: "സൈൻ ഇൻ ചെയ്യുക", loginHint: "തുടങ്ങാൻ നിങ്ങളുടെ HR നമ്പർ നൽകുക.", hrNumber: "HR നമ്പർ", signIn: "സൈൻ ഇൻ ചെയ്യുക",
+    loginBad: "ഈ HR നമ്പർ കണ്ടെത്തിയില്ല. പരിശോധിക്കുക അല്ലെങ്കിൽ സൂപ്പർവൈസറോട് ചോദിക്കുക.", loginInactive: "ഈ HR നമ്പർ സജീവമല്ല. സൂപ്പർവൈസറോട് ചോദിക്കുക.",
+    loginBusy: "വളരെയധികം ശ്രമങ്ങൾ. കുറച്ച് മിനിറ്റ് കഴിഞ്ഞ് വീണ്ടും ശ്രമിക്കുക.", loginOffline: "സൈൻ ഇൻ ചെയ്യാൻ ഇന്റർനെറ്റ് വേണം.",
+    welcome: "സ്വാഗതം, {name}!", signOut: "സൈൻ ഔട്ട്", signOutQ: "ഈ ഫോണിൽ നിന്ന് സൈൻ ഔട്ട് ചെയ്യണോ?",
+    me: "എന്റെ പരിശീലനം", meNav: "ഞാൻ", profile: "എന്റെ വിവരങ്ങൾ", edit: "മാറ്റുക", profileHint: "ഈ ഫോണിൽ സേവ് ചെയ്യും, നിങ്ങളുടെ സർട്ടിഫിക്കറ്റിൽ അച്ചടിക്കും.",
+    profileShare: "പരിശീലനം പൂർത്തിയാകുമ്പോൾ നിങ്ങളുടെ പേരും ഫലങ്ങളും പരിശീലന ടീമിനും അയയ്ക്കും.",
+    pName: "മുഴുവൻ പേര്", pTrade: "എന്റെ ട്രേഡ്", pSite: "സൈറ്റ് / കെട്ടിടം (ഐച്ഛികം)", allTrades: "എല്ലാ ട്രേഡുകളും / അറിയില്ല", saveDetails: "സേവ് ചെയ്യുക", needName: "ആദ്യം നിങ്ങളുടെ പേര് ചേർക്കുക.",
+    statVideos: "വീഡിയോകൾ പൂർത്തിയായി", statQuizzes: "ക്വിസുകൾ പാസായി", statCerts: "സർട്ടിഫിക്കറ്റുകൾ",
+    continueWatching: "കാണുന്നത് തുടരുക", speed: "വേഗത", resumeAt: "{time} മുതൽ തുടരുക",
+    assigned: "നിങ്ങൾക്ക് നൽകിയ പരിശീലനം", dueBy: "{date} നകം", overdue: "സമയം കഴിഞ്ഞു", setTrade: "നിങ്ങൾക്ക് നൽകിയ പരിശീലനം കാണാൻ നിങ്ങളുടെ ട്രേഡ് തിരഞ്ഞെടുക്കുക.",
+    refresherDue: "വീണ്ടും കാണണം", refreshersDue: "{n} സുരക്ഷാ വീഡിയോകൾ വീണ്ടും കാണണം", refresherHint: "അത്യാവശ്യ സുരക്ഷാ വീഡിയോകൾ ഓരോ {n} മാസത്തിലും വീണ്ടും കാണണം.", markRefreshed: "വീണ്ടും കണ്ടു എന്ന് അടയാളപ്പെടുത്തുക",
+    quizTitle: "ചെറിയ പരിശോധന", quizHint: "നിങ്ങൾ പഠിച്ചത് പരിശോധിക്കാൻ ഈ ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക.", quizCheck: "ഉത്തരങ്ങൾ പരിശോധിക്കുക", quizAgain: "വീണ്ടും ചെയ്യുക", quizRetry: "വീണ്ടും ശ്രമിക്കുക",
+    quizPassed: "പാസായി", quizScore: "{n} ൽ {score} ശരി", quizFailed: "ഇതുവരെ പാസായിട്ടില്ല. വീഡിയോ വീണ്ടും കണ്ട് ശ്രമിക്കുക.", quizPick: "എല്ലാ ചോദ്യങ്ങൾക്കും ഒരു ഉത്തരം തിരഞ്ഞെടുക്കുക.",
+    pathComplete: "പാത പൂർത്തിയായി! നിങ്ങളുടെ സർട്ടിഫിക്കറ്റ് എടുക്കുക.", pathNeedsQuiz: "ഈ പാത പൂർത്തിയാക്കാൻ ഓരോ വീഡിയോയുടെയും ചെറിയ പരിശോധന പാസാകുക.",
+    certificate: "സർട്ടിഫിക്കറ്റ്", certs: "എന്റെ സർട്ടിഫിക്കറ്റുകൾ", getCert: "നിങ്ങളുടെ സർട്ടിഫിക്കറ്റ് എടുക്കുക", noCerts: "സർട്ടിഫിക്കറ്റ് ലഭിക്കാൻ ഒരു പഠന പാത പൂർത്തിയാക്കുക.",
+    printCert: "പ്രിന്റ് / PDF ആയി സേവ് ചെയ്യുക", signoff: "സൂപ്പർവൈസറുടെ അംഗീകാരം", supHint: "ഈ ജോലി സുരക്ഷിതമായി ചെയ്യാൻ കഴിയുമെന്ന് സ്ഥിരീകരിക്കാൻ സൂപ്പർവൈസർ PIN നൽകുന്നു.", supPin: "സൂപ്പർവൈസർ PIN", confirm: "സ്ഥിരീകരിക്കുക",
+    signedBy: "{name} അംഗീകരിച്ചു", wrongPin: "PIN തിരിച്ചറിഞ്ഞില്ല.", verify: "സർട്ടിഫിക്കറ്റ് പരിശോധിക്കുക", verifyOk: "സാധുവായ സർട്ടിഫിക്കറ്റ്", verifyBad: "ഈ കോഡിൽ സർട്ടിഫിക്കറ്റ് ഒന്നും കണ്ടെത്തിയില്ല."
+  });
+  add("bn", {
+    loginTitle: "সাইন ইন করুন", loginHint: "শুরু করতে আপনার HR নম্বর দিন।", hrNumber: "HR নম্বর", signIn: "সাইন ইন করুন",
+    loginBad: "এই HR নম্বর পাওয়া যায়নি। যাচাই করুন বা আপনার সুপারভাইজারকে জিজ্ঞাসা করুন।", loginInactive: "এই HR নম্বর সক্রিয় নয়। আপনার সুপারভাইজারকে জিজ্ঞাসা করুন।",
+    loginBusy: "অনেকবার চেষ্টা হয়েছে। কয়েক মিনিট পরে আবার চেষ্টা করুন।", loginOffline: "সাইন ইন করতে ইন্টারনেট লাগবে।",
+    welcome: "স্বাগতম, {name}!", signOut: "সাইন আউট", signOutQ: "এই ফোন থেকে সাইন আউট করবেন?",
+    me: "আমার প্রশিক্ষণ", meNav: "আমি", profile: "আমার তথ্য", edit: "পরিবর্তন", profileHint: "এই ফোনেই সংরক্ষিত থাকে এবং আপনার সার্টিফিকেটে ছাপা হয়।",
+    profileShare: "প্রশিক্ষণ শেষ হলে আপনার নাম ও ফলাফল প্রশিক্ষণ দলকেও পাঠানো হয়।",
+    pName: "পুরো নাম", pTrade: "আমার ট্রেড", pSite: "সাইট / ভবন (ঐচ্ছিক)", allTrades: "সব ট্রেড / জানি না", saveDetails: "সংরক্ষণ করুন", needName: "আগে আপনার নাম লিখুন।",
+    statVideos: "ভিডিও শেষ", statQuizzes: "কুইজ পাস", statCerts: "সার্টিফিকেট",
+    continueWatching: "দেখা চালিয়ে যান", speed: "গতি", resumeAt: "{time} থেকে আবার দেখুন",
+    assigned: "আপনাকে দেওয়া প্রশিক্ষণ", dueBy: "{date} এর মধ্যে", overdue: "সময় পেরিয়ে গেছে", setTrade: "আপনাকে দেওয়া প্রশিক্ষণ দেখতে আপনার ট্রেড বেছে নিন।",
+    refresherDue: "আবার দেখতে হবে", refreshersDue: "{n}টি নিরাপত্তা ভিডিও আবার দেখতে হবে", refresherHint: "জরুরি নিরাপত্তা ভিডিও প্রতি {n} মাসে আবার দেখতে হয়।", markRefreshed: "আবার দেখেছি চিহ্ন দিন",
+    quizTitle: "ছোট পরীক্ষা", quizHint: "আপনি কী শিখেছেন যাচাই করতে এই প্রশ্নগুলোর উত্তর দিন।", quizCheck: "উত্তর যাচাই করুন", quizAgain: "আবার দিন", quizRetry: "আবার চেষ্টা করুন",
+    quizPassed: "পাস", quizScore: "{n}টির মধ্যে {score}টি সঠিক", quizFailed: "এখনও পাস হয়নি। ভিডিওটি আবার দেখে চেষ্টা করুন।", quizPick: "প্রতিটি প্রশ্নের একটি উত্তর বেছে নিন।",
+    pathComplete: "পথ সম্পূর্ণ! আপনার সার্টিফিকেট নিন।", pathNeedsQuiz: "এই পথ শেষ করতে প্রতিটি ভিডিওর ছোট পরীক্ষায় পাস করুন।",
+    certificate: "সার্টিফিকেট", certs: "আমার সার্টিফিকেট", getCert: "আপনার সার্টিফিকেট নিন", noCerts: "সার্টিফিকেট পেতে একটি শেখার পথ শেষ করুন।",
+    printCert: "প্রিন্ট / PDF সংরক্ষণ", signoff: "সুপারভাইজারের অনুমোদন", supHint: "আপনি এই কাজ নিরাপদে করতে পারেন তা নিশ্চিত করতে সুপারভাইজার তাদের PIN দেন।", supPin: "সুপারভাইজার PIN", confirm: "নিশ্চিত করুন",
+    signedBy: "{name} অনুমোদন করেছেন", wrongPin: "PIN চেনা যায়নি।", verify: "সার্টিফিকেট যাচাই", verifyOk: "বৈধ সার্টিফিকেট", verifyBad: "এই কোডের কোনো সার্টিফিকেট পাওয়া যায়নি।"
+  });
+  add("ta", {
+    loginTitle: "உள்நுழைக", loginHint: "தொடங்க உங்கள் HR எண்ணை உள்ளிடவும்.", hrNumber: "HR எண்", signIn: "உள்நுழைக",
+    loginBad: "இந்த HR எண் கிடைக்கவில்லை. சரிபார்க்கவும் அல்லது மேற்பார்வையாளரிடம் கேளுங்கள்.", loginInactive: "இந்த HR எண் செயலில் இல்லை. மேற்பார்வையாளரிடம் கேளுங்கள்.",
+    loginBusy: "அதிக முயற்சிகள். சில நிமிடங்கள் கழித்து மீண்டும் முயற்சிக்கவும்.", loginOffline: "உள்நுழைய இணையம் தேவை.",
+    welcome: "வரவேற்கிறோம், {name}!", signOut: "வெளியேறு", signOutQ: "இந்த ஃபோனிலிருந்து வெளியேறவா?",
+    me: "என் பயிற்சி", meNav: "நான்", profile: "என் விவரங்கள்", edit: "மாற்று", profileHint: "இந்த ஃபோனில் சேமிக்கப்பட்டு உங்கள் சான்றிதழில் அச்சிடப்படும்.",
+    profileShare: "பயிற்சி முடிந்ததும் உங்கள் பெயரும் முடிவுகளும் பயிற்சிக் குழுவுக்கும் அனுப்பப்படும்.",
+    pName: "முழுப் பெயர்", pTrade: "என் தொழில்", pSite: "தளம் / கட்டடம் (விருப்பம்)", allTrades: "எல்லா தொழில்களும் / தெரியவில்லை", saveDetails: "சேமி", needName: "முதலில் உங்கள் பெயரைச் சேர்க்கவும்.",
+    statVideos: "வீடியோக்கள் முடிந்தன", statQuizzes: "வினாடி வினா தேர்ச்சி", statCerts: "சான்றிதழ்கள்",
+    continueWatching: "தொடர்ந்து பார்க்கவும்", speed: "வேகம்", resumeAt: "{time} இலிருந்து தொடரவும்",
+    assigned: "உங்களுக்கு ஒதுக்கப்பட்ட பயிற்சி", dueBy: "{date} க்குள்", overdue: "காலம் கடந்தது", setTrade: "உங்களுக்கு ஒதுக்கப்பட்ட பயிற்சியைப் பார்க்க உங்கள் தொழிலைத் தேர்ந்தெடுக்கவும்.",
+    refresherDue: "மீண்டும் பார்க்க வேண்டும்", refreshersDue: "{n} பாதுகாப்பு வீடியோக்களை மீண்டும் பார்க்க வேண்டும்", refresherHint: "அத்தியாவசிய பாதுகாப்பு வீடியோக்களை ஒவ்வொரு {n} மாதத்திற்கும் மீண்டும் பார்க்க வேண்டும்.", markRefreshed: "மீண்டும் பார்த்ததாகக் குறி",
+    quizTitle: "சிறு சோதனை", quizHint: "நீங்கள் கற்றதைச் சரிபார்க்க இந்தக் கேள்விகளுக்குப் பதிலளிக்கவும்.", quizCheck: "பதில்களைச் சரிபார்", quizAgain: "மீண்டும் செய்", quizRetry: "மீண்டும் முயற்சி",
+    quizPassed: "தேர்ச்சி", quizScore: "{n} இல் {score} சரி", quizFailed: "இன்னும் தேர்ச்சி இல்லை. வீடியோவை மீண்டும் பார்த்து முயற்சிக்கவும்.", quizPick: "ஒவ்வொரு கேள்விக்கும் ஒரு பதிலைத் தேர்ந்தெடுக்கவும்.",
+    pathComplete: "பாதை முடிந்தது! உங்கள் சான்றிதழைப் பெறுங்கள்.", pathNeedsQuiz: "இந்தப் பாதையை முடிக்க ஒவ்வொரு வீடியோவின் சிறு சோதனையிலும் தேர்ச்சி பெறவும்.",
+    certificate: "சான்றிதழ்", certs: "என் சான்றிதழ்கள்", getCert: "உங்கள் சான்றிதழைப் பெறுங்கள்", noCerts: "சான்றிதழ் பெற ஒரு கற்றல் பாதையை முடிக்கவும்.",
+    printCert: "அச்சிடு / PDF ஆகச் சேமி", signoff: "மேற்பார்வையாளர் ஒப்புதல்", supHint: "நீங்கள் இந்த வேலையைப் பாதுகாப்பாகச் செய்ய முடியும் என்பதை உறுதிப்படுத்த மேற்பார்வையாளர் தங்கள் PIN ஐ உள்ளிடுவார்.", supPin: "மேற்பார்வையாளர் PIN", confirm: "உறுதிப்படுத்து",
+    signedBy: "{name} ஒப்புதல் அளித்தார்", wrongPin: "PIN சரியில்லை.", verify: "சான்றிதழைச் சரிபார்", verifyOk: "செல்லுபடியான சான்றிதழ்", verifyBad: "இந்தக் குறியீட்டில் சான்றிதழ் எதுவும் இல்லை."
+  });
+  add("ne", {
+    loginTitle: "साइन इन गर्नुहोस्", loginHint: "सुरु गर्न आफ्नो HR नम्बर हाल्नुहोस्।", hrNumber: "HR नम्बर", signIn: "साइन इन गर्नुहोस्",
+    loginBad: "यो HR नम्बर भेटिएन। जाँच गर्नुहोस् वा आफ्नो सुपरभाइजरलाई सोध्नुहोस्।", loginInactive: "यो HR नम्बर सक्रिय छैन। आफ्नो सुपरभाइजरलाई सोध्नुहोस्।",
+    loginBusy: "धेरै पटक प्रयास भयो। केही मिनेटपछि फेरि प्रयास गर्नुहोस्।", loginOffline: "साइन इन गर्न इन्टरनेट चाहिन्छ।",
+    welcome: "स्वागत छ, {name}!", signOut: "साइन आउट", signOutQ: "यो फोनबाट साइन आउट गर्ने?",
+    me: "मेरो तालिम", meNav: "म", profile: "मेरो विवरण", edit: "बदल्नुहोस्", profileHint: "यही फोनमा सेभ हुन्छ र तपाईंको प्रमाणपत्रमा छापिन्छ।",
+    profileShare: "तालिम पूरा भएपछि तपाईंको नाम र नतिजा तालिम टोलीलाई पनि पठाइन्छ।",
+    pName: "पूरा नाम", pTrade: "मेरो ट्रेड", pSite: "साइट / भवन (ऐच्छिक)", allTrades: "सबै ट्रेड / थाहा छैन", saveDetails: "सेभ गर्नुहोस्", needName: "पहिले आफ्नो नाम लेख्नुहोस्।",
+    statVideos: "भिडियो पूरा", statQuizzes: "क्विज पास", statCerts: "प्रमाणपत्र",
+    continueWatching: "हेर्न जारी राख्नुहोस्", speed: "गति", resumeAt: "{time} बाट हेर्नुहोस्",
+    assigned: "तपाईंलाई दिइएको तालिम", dueBy: "{date} सम्म", overdue: "समय नाघ्यो", setTrade: "तपाईंलाई दिइएको तालिम हेर्न आफ्नो ट्रेड छान्नुहोस्।",
+    refresherDue: "फेरि हेर्नुपर्छ", refreshersDue: "{n} सुरक्षा भिडियो फेरि हेर्नुपर्छ", refresherHint: "आवश्यक सुरक्षा भिडियो हरेक {n} महिनामा फेरि हेर्नुपर्छ।", markRefreshed: "फेरि हेरेँ भनी चिन्ह लगाउनुहोस्",
+    quizTitle: "छोटो जाँच", quizHint: "तपाईंले के सिक्नुभयो जाँच्न यी प्रश्नहरूको उत्तर दिनुहोस्।", quizCheck: "उत्तर जाँच्नुहोस्", quizAgain: "फेरि गर्नुहोस्", quizRetry: "फेरि प्रयास गर्नुहोस्",
+    quizPassed: "पास", quizScore: "{n} मध्ये {score} सही", quizFailed: "अझै पास भएन। भिडियो फेरि हेरेर प्रयास गर्नुहोस्।", quizPick: "हरेक प्रश्नको एउटा उत्तर छान्नुहोस्।",
+    pathComplete: "बाटो पूरा भयो! आफ्नो प्रमाणपत्र लिनुहोस्।", pathNeedsQuiz: "यो बाटो पूरा गर्न हरेक भिडियोको छोटो जाँच पास गर्नुहोस्।",
+    certificate: "प्रमाणपत्र", certs: "मेरा प्रमाणपत्र", getCert: "आफ्नो प्रमाणपत्र लिनुहोस्", noCerts: "प्रमाणपत्र पाउन एउटा सिकाइ बाटो पूरा गर्नुहोस्।",
+    printCert: "प्रिन्ट / PDF सेभ गर्नुहोस्", signoff: "सुपरभाइजरको स्वीकृति", supHint: "तपाईं यो काम सुरक्षित रूपमा गर्न सक्नुहुन्छ भनी पुष्टि गर्न सुपरभाइजरले आफ्नो PIN हाल्छन्।", supPin: "सुपरभाइजर PIN", confirm: "पुष्टि गर्नुहोस्",
+    signedBy: "{name} ले स्वीकृत गर्नुभयो", wrongPin: "PIN मिलेन।", verify: "प्रमाणपत्र जाँच्नुहोस्", verifyOk: "मान्य प्रमाणपत्र", verifyBad: "यो कोडको कुनै प्रमाणपत्र भेटिएन।"
+  });
+  add("tl", {
+    loginTitle: "Mag-sign in", loginHint: "Ilagay ang iyong HR number para magsimula.", hrNumber: "HR number", signIn: "Mag-sign in",
+    loginBad: "Hindi nakita ang HR number na ito. Suriin ito o magtanong sa iyong supervisor.", loginInactive: "Hindi aktibo ang HR number na ito. Magtanong sa iyong supervisor.",
+    loginBusy: "Masyadong maraming subok. Maghintay ng ilang minuto at subukan muli.", loginOffline: "Kailangan ng internet para mag-sign in.",
+    welcome: "Maligayang pagdating, {name}!", signOut: "Mag-sign out", signOutQ: "Mag-sign out sa phone na ito?",
+    me: "Aking training", meNav: "Ako", profile: "Aking detalye", edit: "Baguhin", profileHint: "Naka-save sa phone na ito at nakalimbag sa iyong mga sertipiko.",
+    profileShare: "Kapag natapos mo ang training, ipinapadala rin ang iyong pangalan at resulta sa training team.",
+    pName: "Buong pangalan", pTrade: "Aking trade", pSite: "Site / gusali (opsyonal)", allTrades: "Lahat ng trade / hindi sigurado", saveDetails: "I-save", needName: "Ilagay muna ang iyong pangalan.",
+    statVideos: "tapos na video", statQuizzes: "pasadong quiz", statCerts: "sertipiko",
+    continueWatching: "Ituloy ang panonood", speed: "Bilis", resumeAt: "Ituloy mula {time}",
+    assigned: "Itinalaga sa iyo", dueBy: "Hanggang {date}", overdue: "Lampas na", setTrade: "Piliin ang iyong trade para makita ang training na itinalaga sa iyo.",
+    refresherDue: "Kailangang ulitin", refreshersDue: "{n} safety video ang kailangang panoorin muli", refresherHint: "Ang mga mahalagang safety video ay dapat panoorin muli bawat {n} buwan.", markRefreshed: "Markahan bilang napanood muli",
+    quizTitle: "Maikling pagsusulit", quizHint: "Sagutin ang mga tanong para malaman kung ano ang natutunan mo.", quizCheck: "Suriin ang sagot", quizAgain: "Ulitin", quizRetry: "Subukan muli",
+    quizPassed: "Pasado", quizScore: "{score} sa {n} ang tama", quizFailed: "Hindi pa pasado. Panoorin muli ang video at subukan ulit.", quizPick: "Pumili ng sagot sa bawat tanong.",
+    pathComplete: "Tapos na ang path! Kunin ang iyong sertipiko.", pathNeedsQuiz: "Ipasa ang maikling pagsusulit sa bawat video para matapos ang path na ito.",
+    certificate: "Sertipiko", certs: "Aking mga sertipiko", getCert: "Kunin ang iyong sertipiko", noCerts: "Tapusin ang isang learning path para makakuha ng sertipiko.",
+    printCert: "I-print / i-save bilang PDF", signoff: "Pag-apruba ng supervisor", supHint: "Ilalagay ng iyong supervisor ang kanilang PIN para kumpirmahing kaya mong gawin nang ligtas ang trabahong ito.", supPin: "PIN ng supervisor", confirm: "Kumpirmahin",
+    signedBy: "Inaprubahan ni {name}", wrongPin: "Hindi kilala ang PIN.", verify: "Suriin ang sertipiko", verifyOk: "Tunay na sertipiko", verifyBad: "Walang sertipiko na may ganitong code."
+  });
+  add("ar", {
+    loginTitle: "تسجيل الدخول", loginHint: "أدخل رقمك في الموارد البشرية (HR) للبدء.", hrNumber: "رقم HR", signIn: "تسجيل الدخول",
+    loginBad: "لم يتم العثور على رقم HR هذا. تحقق منه أو اسأل مشرفك.", loginInactive: "رقم HR هذا غير مفعّل. اسأل مشرفك.",
+    loginBusy: "محاولات كثيرة. انتظر بضع دقائق ثم حاول مرة أخرى.", loginOffline: "تحتاج إلى الإنترنت لتسجيل الدخول.",
+    welcome: "أهلاً، {name}!", signOut: "تسجيل الخروج", signOutQ: "تسجيل الخروج من هذا الهاتف؟",
+    me: "تدريبي", meNav: "أنا", profile: "بياناتي", edit: "تعديل", profileHint: "تُحفظ على هذا الهاتف وتُطبع على شهاداتك.",
+    profileShare: "عند إنهاء التدريب، يُرسل اسمك ونتائجك أيضاً إلى فريق التدريب.",
+    pName: "الاسم الكامل", pTrade: "مهنتي", pSite: "الموقع / المبنى (اختياري)", allTrades: "كل المهن / غير متأكد", saveDetails: "حفظ", needName: "أضف اسمك أولاً.",
+    statVideos: "فيديوهات مكتملة", statQuizzes: "اختبارات ناجحة", statCerts: "شهادات",
+    continueWatching: "متابعة المشاهدة", speed: "السرعة", resumeAt: "المتابعة من {time}",
+    assigned: "تدريب مطلوب منك", dueBy: "قبل {date}", overdue: "متأخر", setTrade: "اختر مهنتك لترى التدريب المطلوب منك.",
+    refresherDue: "تجب إعادة المشاهدة", refreshersDue: "{n} فيديوهات سلامة تجب مشاهدتها مرة أخرى", refresherHint: "يجب مشاهدة فيديوهات السلامة الأساسية مرة أخرى كل {n} شهراً.", markRefreshed: "تمت المشاهدة مرة أخرى",
+    quizTitle: "اختبار قصير", quizHint: "أجب عن هذه الأسئلة لتتأكد مما تعلمته.", quizCheck: "تحقق من الإجابات", quizAgain: "أعد الاختبار", quizRetry: "حاول مرة أخرى",
+    quizPassed: "ناجح", quizScore: "{score} من {n} صحيحة", quizFailed: "لم تنجح بعد. شاهد الفيديو مرة أخرى وحاول ثانية.", quizPick: "اختر إجابة لكل سؤال.",
+    pathComplete: "اكتمل المسار! احصل على شهادتك.", pathNeedsQuiz: "انجح في الاختبار القصير لكل فيديو لإنهاء هذا المسار.",
+    certificate: "شهادة", certs: "شهاداتي", getCert: "احصل على شهادتك", noCerts: "أكمل مسار تعلم للحصول على شهادة.",
+    printCert: "طباعة / حفظ PDF", signoff: "اعتماد المشرف", supHint: "يُدخل مشرفك رمز PIN الخاص به ليؤكد أنك تستطيع القيام بهذا العمل بأمان.", supPin: "رمز PIN للمشرف", confirm: "تأكيد",
+    signedBy: "اعتمده {name}", wrongPin: "رمز PIN غير معروف.", verify: "التحقق من شهادة", verifyOk: "شهادة صحيحة", verifyBad: "لا توجد شهادة بهذا الرمز."
+  });
+})(window.AB_TEXT);

@@ -1,9 +1,11 @@
 /**
- * ABFM Training — private helper for the staff app.
- *  1. Video requests: technicians send "Request a video"; requests land in this Google Sheet,
- *     and you read and manage them in the admin portal (Requests tab).
- *  2. Ask AI: staff questions (and photos) are answered by Gemini. Your Gemini key stays here,
- *     private — it is never in the public app. Questions and photos are not saved anywhere.
+ * ABFM Training — private helper for the staff app. Keep this in a Google Sheet that only you can open.
+ *  1. Staff sign-in: staff sign in with their HR number (list kept in the "Staff" tab of this sheet).
+ *  2. Training records: every finished video, quiz, learning path and certificate, per HR number ("Records" tab).
+ *  3. Certificates and supervisor sign-off ("Certificates" and "Supervisors" tabs).
+ *  4. Usage counts: which videos are watched and which searches find nothing ("Stats" tab). Counts only, no names.
+ *  5. Video requests: technicians send "Request a video"; requests land in the "Requests" tab.
+ *  6. Ask AI: staff questions (and photos) are answered by Gemini. Your Gemini key stays here, private.
  *
  * Setup (about 5 minutes) — also shown in the admin portal, Requests tab:
  *  1. Create a new Google Sheet, then Extensions → Apps Script.
@@ -20,6 +22,7 @@ const AI_PER_HOUR = 300;          // safety limits so nobody can use up your fre
 const AI_PER_DAY = 2000;
 const AI_PER_DEVICE_HOUR = 30;
 const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"];
+const VERSION = 2;               // the admin portal checks this to know the script is up to date
 const SHEET = "Requests";
 const HEAD = ["id", "time", "topic", "category", "details", "name", "site", "lang", "status"];
 
@@ -37,9 +40,17 @@ function clip_(v, n) {
 }
 function keyOk_(k) { return ADMIN_KEY !== "CHANGE-THIS-TO-A-LONG-PASSWORD" && String(k || "") === ADMIN_KEY; }
 
-/* Admin: list requests.  GET ?key=... */
+/* Admin: list requests.  GET ?key=...   Also: ?ping=1 (version), ?verify=CODE (public certificate check),
+   ?key=...&what=staff|records|stats|supervisors (admin) */
 function doGet(e) {
-  if (!keyOk_(e.parameter.key)) return json_({ ok: false, error: "key" });
+  const p = e.parameter || {};
+  if (p.ping) return json_({ ok: true, version: VERSION });
+  if (p.verify) return json_(verify_(p.verify));
+  if (!keyOk_(p.key)) return json_({ ok: false, error: "key" });
+  if (p.what === "staff") return json_({ ok: true, staff: staffList_() });
+  if (p.what === "records") return json_(recordsFor_(p));
+  if (p.what === "stats") return json_(statsFor_(Number(p.days) || 30));
+  if (p.what === "supervisors") return json_({ ok: true, supervisors: rows_(SUP_SHEET, SUP_HEAD).map(r => ({ name: r.name, active: r.active !== false && String(r.active).toLowerCase() !== "no", pin: r.pin ? "••••" : "" })) });
   const rows = sheet_().getDataRange().getValues();
   rows.shift();
   const list = rows.filter(r => r[0]).map(r => {
@@ -54,6 +65,17 @@ function doPost(e) {
   try { b = JSON.parse(e.postData.contents); } catch (err) { return json_({ ok: false, error: "bad" }); }
   if (b.action === "ask") {
     try { return json_(ask_(b)); } catch (err) { return json_({ ok: false, error: "error", detail: String(err).slice(0, 200) }); }
+  }
+  const staffActions = { login: login_, me: me_, record: record_, signoff: signoff_, stats: stats_ };
+  if (staffActions[b.action]) {
+    try { return json_(staffActions[b.action](b)); } catch (err) { return json_({ ok: false, error: "error", detail: String(err).slice(0, 200) }); }
+  }
+  const adminActions = { "staff-save": staffSave_, "staff-remove": staffRemove_, "sup-save": supSave_, "sup-remove": supRemove_ };
+  if (adminActions[b.action]) {
+    if (!keyOk_(b.key)) return json_({ ok: false, error: "key" });
+    const lk = LockService.getScriptLock(); lk.waitLock(20000);
+    try { return json_(adminActions[b.action](b)); } catch (err) { return json_({ ok: false, error: "error", detail: String(err).slice(0, 200) }); }
+    finally { lk.releaseLock(); }
   }
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
@@ -80,6 +102,228 @@ function doPost(e) {
       clip_(b.name, 80), clip_(b.site, 80), clip_(b.lang, 5), "new"]);
     return json_({ ok: true });
   } finally { lock.releaseLock(); }
+}
+
+/* ---------- Staff sign-in, training records, certificates, usage counts ---------- */
+const STAFF_SHEET = "Staff", STAFF_HEAD = ["hr", "name", "site", "trade", "active"];
+const REC_SHEET = "Records", REC_HEAD = ["time", "hr", "name", "site", "trade", "type", "item", "title", "score", "n", "pass", "code", "lang", "verified", "device"];
+const CERT_SHEET = "Certificates", CERT_HEAD = ["code", "time", "hr", "name", "site", "trade", "path", "title", "score", "signedBy", "signedAt"];
+const SUP_SHEET = "Supervisors", SUP_HEAD = ["name", "pin", "active"];
+const STAT_SHEET = "Stats", STAT_HEAD = ["key", "day", "kind", "item", "count"];
+
+function tab_(name, head) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sh = ss.getSheetByName(name);
+  if (!sh) { sh = ss.insertSheet(name); sh.appendRow(head); sh.setFrozenRows(1); sh.getRange(1, 1, 1, head.length).setFontWeight("bold"); }
+  return sh;
+}
+function rows_(name, head) {
+  const sh = tab_(name, head), last = sh.getLastRow();
+  if (last < 2) return [];
+  return sh.getRange(2, 1, last - 1, head.length).getValues().map((r, i) => {
+    const o = { _row: i + 2 }; head.forEach((h, k) => o[h] = r[k] instanceof Date ? r[k].toISOString() : r[k]); return o;
+  });
+}
+const normHr_ = h => String(h == null ? "" : h).toUpperCase().replace(/\s+/g, "").replace(/^'/, "").slice(0, 30);
+const isActive_ = v => !(v === false || /^(no|n|false|0|inactive|left)$/i.test(String(v).trim()));
+function staffMap_() {
+  const c = CacheService.getScriptCache(), hit = c.get("staffmap");
+  if (hit) return JSON.parse(hit);
+  const m = {};
+  rows_(STAFF_SHEET, STAFF_HEAD).forEach(r => { const hr = normHr_(r.hr); if (hr) m[hr] = { hr: hr, name: String(r.name || "").trim(), site: String(r.site || "").trim(), trade: String(r.trade || "").trim(), active: isActive_(r.active) }; });
+  try { c.put("staffmap", JSON.stringify(m), 300); } catch (e) {}
+  return m;
+}
+function staffList_() { const m = staffMap_(); return Object.keys(m).map(k => m[k]); }
+function secret_() {
+  const p = PropertiesService.getScriptProperties();
+  let s = p.getProperty("TOKEN_SECRET");
+  if (!s) { s = Utilities.getUuid() + Utilities.getUuid(); p.setProperty("TOKEN_SECRET", s); }
+  return s;
+}
+function sign_(text) {
+  return Utilities.base64EncodeWebSafe(Utilities.computeHmacSha256Signature(text, secret_())).replace(/=+$/, "").slice(0, 22);
+}
+const tokenFor_ = hr => { const body = hr + "." + Date.now().toString(36); return body + "." + sign_(body); };
+function staffFromToken_(token) {
+  const parts = String(token || "").split(".");
+  if (parts.length !== 3) return null;
+  const body = parts[0] + "." + parts[1];
+  if (sign_(body) !== parts[2]) return null;
+  return staffMap_()[parts[0]] || { hr: parts[0], missing: true };
+}
+function progress_(hr) {
+  const done = {}, quiz = {}, certs = [];
+  rows_(REC_SHEET, REC_HEAD).forEach(r => {
+    if (normHr_(r.hr) !== hr) return;
+    const day = String(r.time).slice(0, 10);
+    if (r.type === "video" && r.item) { if (!done[r.item] || day > done[r.item]) done[r.item] = day; }
+    if (r.type === "quiz" && r.item) {
+      const q = { score: Number(r.score) || 0, n: Number(r.n) || 0, pass: r.pass === true || String(r.pass).toLowerCase() === "true", at: day };
+      const cur = quiz[r.item];
+      if (!cur || (q.pass && !cur.pass) || (q.pass === cur.pass && q.at >= cur.at)) quiz[r.item] = q;
+    }
+  });
+  rows_(CERT_SHEET, CERT_HEAD).forEach(c => {
+    if (normHr_(c.hr) !== hr) return;
+    certs.push({ code: c.code, path: c.path, title: c.title, at: String(c.time).slice(0, 10), name: c.name, hr: hr, site: c.site, trade: c.trade, score: c.score === "" ? null : Number(c.score), signedBy: c.signedBy || "", signedAt: c.signedAt ? String(c.signedAt).slice(0, 10) : "" });
+  });
+  return { done: Object.keys(done).map(k => [k, done[k]]), quiz: quiz, certs: certs };
+}
+function login_(b) {
+  const dev = String(b.device || "x").replace(/[^\w-]/g, "").slice(0, 20);
+  if (!count_("lg" + dev, 10, 600) || !count_("lgall", 400, 3600)) return { ok: false, error: "busy" };
+  const hr = normHr_(b.hr);
+  if (!hr) return { ok: false, error: "notfound" };
+  const st = staffMap_()[hr];
+  if (!st) return { ok: false, error: "notfound" };
+  if (!st.active) return { ok: false, error: "inactive" };
+  return { ok: true, token: tokenFor_(hr), staff: st, progress: progress_(hr) };
+}
+function me_(b) {
+  const st = staffFromToken_(b.token);
+  if (!st) return { ok: false, error: "token" };
+  if (st.missing || !st.active) return { ok: false, error: "inactive" };
+  return { ok: true, staff: st, progress: progress_(st.hr) };
+}
+function record_(b) {
+  const dev = String(b.device || "x").replace(/[^\w-]/g, "").slice(0, 20);
+  if (!count_("rc" + dev, 120, 3600)) return { ok: false, error: "busy" };
+  const pr = b.profile || {};
+  let who;
+  if (pr.token) {
+    const st = staffFromToken_(pr.token);
+    if (!st) return { ok: false, error: "token" };
+    if (st.missing || !st.active) return { ok: true, skipped: "inactive" };
+    who = { hr: st.hr, name: st.name, site: st.site, trade: st.trade, verified: "yes" };
+  } else {
+    who = { hr: "", name: clip_(pr.name, 80), site: clip_(pr.site, 80), trade: clip_(pr.trade, 60), verified: "no" };
+    if (!who.name) return { ok: false, error: "name" };
+  }
+  const types = { video: 1, quiz: 1, path: 1, cert: 1 };
+  const evs = (Array.isArray(b.events) ? b.events : []).slice(0, 25).filter(e => e && types[e.type]);
+  const lock = LockService.getScriptLock(); lock.waitLock(15000);
+  try {
+    const sh = tab_(REC_SHEET, REC_HEAD);
+    const rows = evs.map(e => {
+      const t = Date.parse(e.time); const when = isNaN(t) || t > Date.now() + 864e5 ? new Date() : new Date(t);
+      return [when, who.hr ? "'" + who.hr : "", who.name, who.site, who.trade, e.type, clip_(e.item, 80), clip_(e.title, 160),
+        e.score === undefined || e.score === null ? "" : Number(e.score), e.n === undefined ? "" : Number(e.n), e.pass === undefined ? "" : !!e.pass,
+        clip_(e.code, 12), clip_(e.lang, 5), who.verified, dev];
+    });
+    if (rows.length) sh.getRange(sh.getLastRow() + 1, 1, rows.length, REC_HEAD.length).setValues(rows);
+    const certs = evs.filter(e => e.type === "cert" && e.code);
+    if (certs.length) {
+      const cs = tab_(CERT_SHEET, CERT_HEAD), have = new Set(rows_(CERT_SHEET, CERT_HEAD).map(c => String(c.code)));
+      certs.forEach(e => { if (!have.has(String(e.code))) cs.appendRow([clip_(e.code, 12), new Date(), who.hr ? "'" + who.hr : "", who.name, who.site, who.trade, clip_(e.item, 80), clip_(e.title, 160), e.score === null || e.score === undefined ? "" : Number(e.score), "", ""]); });
+    }
+  } finally { lock.releaseLock(); }
+  return { ok: true, saved: evs.length };
+}
+function signoff_(b) {
+  const dev = String(b.device || "x").replace(/[^\w-]/g, "").slice(0, 20);
+  if (!count_("sg" + dev, 6, 900)) return { ok: false, error: "busy" };
+  const pin = String(b.pin || "").trim();
+  const sup = rows_(SUP_SHEET, SUP_HEAD).find(s => pin && String(s.pin).trim() === pin && isActive_(s.active));
+  if (!sup) return { ok: false, error: "pin" };
+  const code = clip_(b.code, 12);
+  if (!code) return { ok: false, error: "code" };
+  const pr = b.profile || {};
+  const st = pr.token ? staffFromToken_(pr.token) : null;
+  const who = st && !st.missing ? st : { hr: "", name: clip_(b.name || pr.name, 80), site: clip_(pr.site, 80), trade: clip_(pr.trade, 60) };
+  const lock = LockService.getScriptLock(); lock.waitLock(15000);
+  try {
+    const cs = tab_(CERT_SHEET, CERT_HEAD), row = rows_(CERT_SHEET, CERT_HEAD).find(c => String(c.code) === code);
+    if (row) cs.getRange(row._row, CERT_HEAD.indexOf("signedBy") + 1, 1, 2).setValues([[String(sup.name), new Date()]]);
+    else cs.appendRow([code, new Date(), who.hr ? "'" + who.hr : "", who.name, who.site, who.trade, clip_(b.path, 80), clip_(b.title, 160), b.score === null || b.score === undefined ? "" : Number(b.score), String(sup.name), new Date()]);
+    tab_(REC_SHEET, REC_HEAD).appendRow([new Date(), who.hr ? "'" + who.hr : "", who.name, who.site, who.trade, "signoff", clip_(b.path, 80), clip_(b.title, 160), "", "", "", code, "", st ? "yes" : "no", dev]);
+  } finally { lock.releaseLock(); }
+  return { ok: true, supervisor: String(sup.name) };
+}
+function verify_(code) {
+  if (!count_("vf", 300, 3600)) return { ok: false, error: "busy" };
+  code = String(code || "").toUpperCase().trim().slice(0, 12);
+  const c = rows_(CERT_SHEET, CERT_HEAD).find(x => String(x.code).toUpperCase() === code);
+  if (!c) return { ok: false, error: "notfound" };
+  const hr = normHr_(c.hr);
+  return { ok: true, cert: { name: c.name, hr: hr ? "•••" + hr.slice(-3) : "", title: c.title, at: String(c.time).slice(0, 10), score: c.score, signedBy: c.signedBy || "" } };
+}
+function stats_(b) {
+  if (!count_("stall", 1500, 3600)) return { ok: false, error: "busy" };
+  const kinds = { view: 1, nores: 1 };
+  const evs = (Array.isArray(b.events) ? b.events : []).slice(0, 100).filter(e => e && kinds[e.kind] && e.key);
+  if (!evs.length) return { ok: true };
+  const day = Utilities.formatDate(new Date(), "Asia/Dubai", "yyyy-MM-dd");
+  const lock = LockService.getScriptLock(); lock.waitLock(15000);
+  try {
+    const sh = tab_(STAT_SHEET, STAT_HEAD), last = sh.getLastRow(), from = Math.max(2, last - 3000);
+    const keys = last >= 2 ? sh.getRange(from, 1, last - from + 1, 1).getValues().map(r => String(r[0])) : [];
+    const add = [];
+    evs.forEach(e => {
+      const item = clip_(String(e.key).toLowerCase(), 80), k = day + "|" + e.kind + "|" + item, n = Math.max(1, Math.min(50, Number(e.n) || 1));
+      const i = keys.lastIndexOf(k);
+      if (i >= 0) { const cell = sh.getRange(from + i, 5); cell.setValue((Number(cell.getValue()) || 0) + n); }
+      else { const j = add.findIndex(r => r[0] === k); if (j >= 0) add[j][4] += n; else add.push([k, day, e.kind, item, n]); }
+    });
+    if (add.length) sh.getRange(sh.getLastRow() + 1, 1, add.length, STAT_HEAD.length).setValues(add);
+  } finally { lock.releaseLock(); }
+  return { ok: true };
+}
+/* Admin reads */
+function recordsFor_(p) {
+  const days = Number(p.days) || 0, since = days ? new Date(Date.now() - days * 864e5).toISOString() : "";
+  const recs = rows_(REC_SHEET, REC_HEAD).filter(r => !since || String(r.time) >= since).slice(-20000)
+    .map(r => [String(r.time), normHr_(r.hr), r.name, r.site, r.trade, r.type, r.item, r.title, r.score, r.n, r.pass, r.code, r.verified]);
+  const certs = rows_(CERT_SHEET, CERT_HEAD).map(c => ({ code: c.code, time: c.time, hr: normHr_(c.hr), name: c.name, site: c.site, trade: c.trade, path: c.path, title: c.title, score: c.score, signedBy: c.signedBy, signedAt: c.signedAt }));
+  return { ok: true, records: recs, certs: certs, staff: staffList_() };
+}
+function statsFor_(days) {
+  const since = Utilities.formatDate(new Date(Date.now() - days * 864e5), "Asia/Dubai", "yyyy-MM-dd");
+  const out = {};
+  rows_(STAT_SHEET, STAT_HEAD).forEach(r => {
+    const d = String(r.day).slice(0, 10); if (d < since) return;
+    const k = r.kind + "|" + r.item; out[k] = (out[k] || 0) + (Number(r.count) || 0);
+  });
+  return { ok: true, days: days, counts: Object.keys(out).map(k => { const i = k.indexOf("|"); return { kind: k.slice(0, i), key: k.slice(i + 1), n: out[k] }; }) };
+}
+/* Admin writes */
+function staffSave_(b) {
+  const list = (Array.isArray(b.staff) ? b.staff : []).slice(0, 5000);
+  const sh = tab_(STAFF_SHEET, STAFF_HEAD), cur = rows_(STAFF_SHEET, STAFF_HEAD), at = {};
+  cur.forEach(r => at[normHr_(r.hr)] = r._row);
+  let added = 0, updated = 0;
+  const newRows = [];
+  list.forEach(x => {
+    const hr = normHr_(x.hr); if (!hr) return;
+    const row = ["'" + hr, clip_(x.name, 80), clip_(x.site, 80), clip_(x.trade, 60), x.active === false ? "no" : "yes"];
+    if (at[hr]) { sh.getRange(at[hr], 1, 1, row.length).setValues([row]); updated++; }
+    else { newRows.push(row); at[hr] = -1; added++; }
+  });
+  if (newRows.length) sh.getRange(sh.getLastRow() + 1, 1, newRows.length, STAFF_HEAD.length).setValues(newRows);
+  CacheService.getScriptCache().remove("staffmap");
+  return { ok: true, added: added, updated: updated };
+}
+function staffRemove_(b) {
+  const hr = normHr_(b.hr), row = rows_(STAFF_SHEET, STAFF_HEAD).find(r => normHr_(r.hr) === hr);
+  if (!row) return { ok: false, error: "notfound" };
+  tab_(STAFF_SHEET, STAFF_HEAD).deleteRow(row._row);
+  CacheService.getScriptCache().remove("staffmap");
+  return { ok: true };
+}
+function supSave_(b) {
+  const name = clip_(b.name, 80), pin = String(b.pin || "").replace(/\D/g, "").slice(0, 12);
+  if (!name || pin.length < 4) return { ok: false, error: "pin" };
+  const all = rows_(SUP_SHEET, SUP_HEAD);
+  if (all.some(s => String(s.pin) === pin && String(s.name) !== name)) return { ok: false, error: "pinused" };
+  const sh = tab_(SUP_SHEET, SUP_HEAD), row = all.find(s => String(s.name) === name);
+  if (row) sh.getRange(row._row, 1, 1, 3).setValues([[name, "'" + pin, "yes"]]); else sh.appendRow([name, "'" + pin, "yes"]);
+  return { ok: true };
+}
+function supRemove_(b) {
+  const row = rows_(SUP_SHEET, SUP_HEAD).find(s => String(s.name) === String(b.name));
+  if (!row) return { ok: false, error: "notfound" };
+  tab_(SUP_SHEET, SUP_HEAD).deleteRow(row._row);
+  return { ok: true };
 }
 
 /* ---------- Ask AI ---------- */

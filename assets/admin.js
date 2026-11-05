@@ -477,7 +477,7 @@
   const quizCount = v => { const st = data.settings.json; return v && v.essential ? (+st.quizSizeEss || 5) : (+st.quizSize || 3); };
   async function fillQuizzes() {
     const todo = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden), msg = $("#fill-msg"), btn = $("#fill-quiz");
-    if (!confirm(`Gemini will write a quiz for ${todo.length} videos: ${+data.settings.json.quizSizeEss || 5} questions for safety essentials, ${+data.settings.json.quizSize || 3} for the others, from each video's summary, safety note and steps. It saves every 10 videos — you can check and edit any quiz afterwards. Start?`)) return;
+    if (!confirm(`${textName()} will write a quiz for ${todo.length} videos: ${+data.settings.json.quizSizeEss || 5} questions for safety essentials, ${+data.settings.json.quizSize || 3} for the others, from each video's summary, safety note and steps. It saves every 10 videos — you can check and edit any quiz afterwards. Start?`)) return;
     btn.disabled = true;
     let made = {}, total = 0, fails = 0;
     const save = async () => {
@@ -489,7 +489,7 @@
       const v = todo[i];
       msg.textContent = `Writing quiz ${i + 1} of ${todo.length}: ${v.title}`;
       try { made[v.id] = await ABDraft.aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, count: quizCount(v), key: geminiKey(), model: geminiModel() || undefined }); total++; }
-      catch (e) { fails++; if (/API key|permission|quota|RESOURCE_EXHAUSTED/i.test(e.message)) { msg.textContent = "Gemini stopped: " + e.message; break; } }
+      catch (e) { fails++; if (/API key|permission|quota|RESOURCE_EXHAUSTED/i.test(e.message)) { msg.textContent = textName() + " stopped: " + e.message; break; } }
       if (Object.keys(made).length >= 10) await save();
       await new Promise(r => setTimeout(r, 1500));
     }
@@ -593,12 +593,12 @@
     const qa = $("#f-quiz-ai");
     if (qa) qa.onclick = async () => {
       if ($("#f-quiz").value.trim() && !confirm("Replace the current quiz?")) return;
-      const help = $("#f-quiz-help"); qa.disabled = true; help.textContent = "Gemini is writing the quiz…";
+      const help = $("#f-quiz-help"); qa.disabled = true; help.textContent = textName() + " is writing the quiz…";
       try {
         const quiz = await ABDraft.aiQuiz({ count: quizCount({ essential: $("#f-ess").checked }), title: $("#f-title").value.trim(), summary: $("#f-summary").value.trim(), safety: $("#f-safety").value.trim(),
           steps: $("#f-steps").value.split("\n").map(x => x.trim()).filter(Boolean), ppe: $("#f-ppe").value.split(",").map(x => x.trim()).filter(Boolean), key: geminiKey(), model: geminiModel() || undefined });
         $("#f-quiz").value = ABDraft.quizToText(quiz); help.textContent = "Done — check the right answers (*) before saving.";
-      } catch (e) { help.textContent = "Gemini couldn't write it: " + e.message; }
+      } catch (e) { help.textContent = textName() + " couldn't write it: " + e.message; }
       qa.disabled = false;
     };
     // Fill in the length automatically when a link is pasted.
@@ -682,6 +682,8 @@
   const videoAI = () => geminiOn();                 // watching videos and searching the web: Gemini only
   const textAI = () => geminiOn() || groqOn();      // quizzes, talks, checks: either one
   const aiLabel = () => geminiOn() && groqOn() ? (aiSet().first === "groq" ? "Gemini for videos & web search · Groq for everything else" : "Gemini for everything · Groq as backup") : geminiOn() ? "Gemini only" : groqOn() ? "Groq only (no video drafts)" : "off";
+  // Name of the AI that does text jobs (quizzes, talks, checks) right now.
+  const textName = () => groqOn() && (!geminiOn() || aiSet().first === "groq") ? "Groq" : "Gemini";
   const geminiKey = () => keys.gemini ? "server" : localGemini() || (keys.groq ? "server" : "");
   async function runDraft() {
     const yt = parseYT($("#f-url").value) || ed.v.yt;
@@ -1432,7 +1434,7 @@
         <div class="field"><label for="te-icon">Icon</label><input class="input" id="te-icon" maxlength="4" value="${esc(k.icon || "")}" style="text-align:center;font-size:22px"></div>
         <div class="field"><label for="te-title">Title</label><input class="input" id="te-title" placeholder="e.g. Heat stress" value="${esc(k.title)}"></div>
       </div>
-      ${textAI() ? `<div class="draft-row"><button type="button" class="btn btn-sm" id="te-ai">✨ Write with AI</button><span class="help" id="te-ai-help">Type a title, then let Gemini write the points and question.</span></div>` : ""}
+      ${textAI() ? `<div class="draft-row"><button type="button" class="btn btn-sm" id="te-ai">✨ Write with AI</button><span class="help" id="te-ai-help">Type a title, then let ${textName()} write the points and question.</span></div>` : ""}
       <div class="field"><label for="te-points">Key points</label><textarea class="textarea" id="te-points" rows="6" placeholder="One point per line">${esc((k.points || []).join("\n"))}</textarea><div class="help">One point per line. 3–5 short points work best.</div></div>
       <div class="field"><label for="te-ask">Question to ask the team</label><input class="input" id="te-ask" placeholder="e.g. Where is the nearest drinking water on today's site?" value="${esc(k.ask || "")}"></div>
       <div class="two">
@@ -1450,12 +1452,12 @@
     if (ta) ta.onclick = async () => {
       const title = $("#te-title").value.trim(); if (!title) return alert("Type a title first.");
       if ($("#te-points").value.trim() && !confirm("Replace the current points and question?")) return;
-      ta.disabled = true; $("#te-ai-help").textContent = "Gemini is writing…";
+      ta.disabled = true; $("#te-ai-help").textContent = textName() + " is writing…";
       try {
         const d = await ABDraft.aiTalk({ title, key: geminiKey(), model: geminiModel() || undefined });
         $("#te-points").value = d.points.join("\n"); if (d.ask) $("#te-ask").value = d.ask; if (d.icon && !$("#te-icon").value.trim()) $("#te-icon").value = d.icon;
         $("#te-ai-help").textContent = "Done — read it through and adjust before publishing.";
-      } catch (e) { $("#te-ai-help").textContent = "Gemini couldn't write it: " + e.message; }
+      } catch (e) { $("#te-ai-help").textContent = textName() + " couldn't write it: " + e.message; }
       ta.disabled = false;
     };
     $("#te-save").onclick = async () => {
@@ -1751,14 +1753,14 @@
           <div class="two" style="margin-top:14px">
             <div class="field"><label for="s-pass">Quick check pass mark</label><div class="unit"><input class="input" id="s-pass" type="number" min="1" max="100" value="${esc(s.quizPass || 67)}"><span>%</span></div><div class="help">67% = 2 of 3 right. 100% = all right.</div></div>
             <div class="field"><label for="s-qn">Questions per quick check</label><div class="unit"><input class="input" id="s-qn" type="number" min="2" max="8" value="${esc(s.quizSize || 3)}"><span>questions</span></div><div class="help">For ordinary videos.</div></div>
-            <div class="field"><label for="s-qne">…for safety essentials</label><div class="unit"><input class="input" id="s-qne" type="number" min="2" max="8" value="${esc(s.quizSizeEss || 5)}"><span>questions</span></div><div class="help">Used when Gemini writes a quiz. Existing quizzes keep their questions.</div></div>
+            <div class="field"><label for="s-qne">…for safety essentials</label><div class="unit"><input class="input" id="s-qne" type="number" min="2" max="8" value="${esc(s.quizSizeEss || 5)}"><span>questions</span></div><div class="help">Used when the AI writes a quiz. Existing quizzes keep their questions.</div></div>
             <div class="field"><label for="s-ref">Safety refresher every</label><div class="unit"><input class="input" id="s-ref" type="number" min="0" max="60" value="${esc(s.refresherMonths === undefined ? 12 : s.refresherMonths)}"><span>months</span></div><div class="help">Safety essentials must be watched again after this. 0 = never.</div></div>
           </div>
         </div>
         ${superAdmin ? `<div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
           ${head("inbox", "Requests & Ask AI", "What staff can ask for from the app.")}
           ${sw("s-reqon", s.requestsEnabled !== false, "“Request a video” button", "Staff tell you which videos are missing. Requests appear under Requests.")}
-          ${sw("s-ai", s.aiEnabled, "Ask AI", "Staff ask work questions in their language and add photos; Gemini answers and suggests videos. Questions and photos are not saved.")}
+          ${sw("s-ai", s.aiEnabled, "Ask AI", "Staff ask work questions in their language and add photos; the AI answers and suggests videos. Questions and photos are not saved.")}
           <div class="note">Ask AI uses the AI chosen in ${keys.owner ? "<b>Settings → AI</b>" : "the owner's AI settings"}: ${textAI() ? aiLabel() + "." : "none is on yet."}</div>
         </div>` : ""}
         ${keys.owner ? `<div class="card-plain set-sec" data-sec="gemini" ${setSec === "gemini" ? "" : "hidden"}>

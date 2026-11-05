@@ -1,23 +1,24 @@
 name: Translate videos
 
+# Runs every hour and translates anything new or changed (videos, quizzes, paths, toolbox talks,
+# the announcement). It finishes in seconds when there is nothing to do.
 on:
-  push:
-    branches: [main]
-    paths:
-      - "data/videos.json"
-      - "data/settings.json"
-      - "data/paths.json"
-      - "data/toolbox.json"
-      - "scripts/translate.mjs"
+  schedule:
+    - cron: "41 * * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   actions: write
 
 concurrency:
   group: data-writer
   cancel-in-progress: false
+
+env:
+  SUPABASE_URL: https://xzyzovlmlppvctbpxnrw.supabase.co
+  SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+  SKIP_IF_NO_KEY: "1"   # hourly: don't fail every hour before the secret is added
 
 jobs:
   translate:
@@ -28,27 +29,12 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
-      - name: Translate new or changed videos
+      - name: Translate new or changed content
         id: tr
         run: node scripts/translate.mjs
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-      - name: Save translations
-        run: |
-          if git diff --quiet -- data; then
-            echo "Nothing to translate."
-            exit 0
-          fi
-          git config user.name "training-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          git commit -m "Auto-translate videos"
-          for i in 1 2 3; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push && exit 0
-            sleep 5
-          done
-          exit 1
       - name: Continue in a new run if there is more to translate
         if: steps.tr.outputs.more == 'true'
         env:

@@ -1,6 +1,6 @@
 /* Al Bonian FM — Training admin.
-   Saves changes by committing the JSON files in /data to your GitHub repo.
-   Your GitHub token is kept only in this browser. */
+   Content, staff and records are kept in Supabase. Sign in with your admin email and password.
+   Videos themselves always stay on YouTube — only text is saved here. */
 (() => {
   "use strict";
   const $ = (s, r = document) => r.querySelector(s);
@@ -10,7 +10,7 @@
   const thumb = yt => `https://i.ytimg.com/vi/${encodeURIComponent(yt)}/mqdefault.jpg`;
   const LEVELS = ["Beginner", "Intermediate", "Advanced"];
   const TR_LANGS = [["hi", "Hindi"], ["ur", "Urdu"], ["ml", "Malayalam"], ["bn", "Bengali"], ["ta", "Tamil"], ["ne", "Nepali"], ["tl", "Filipino"], ["ar", "Arabic"]];
-  const CFG_KEY = "ab_admin_cfg";
+  const CFG_KEY = "ab_admin_github";
   const FILES = { videos: "data/videos.json", settings: "data/settings.json", channels: "data/channels.json", pending: "data/pending.json", health: "data/health.json", paths: "data/paths.json", toolbox: "data/toolbox.json" };
   const DEFAULTS = {
     videos: () => ({ updated: today(), videos: [] }),
@@ -22,7 +22,10 @@
     toolbox: () => ({ talks: [] })
   };
 
-  let cfg = loadCfg();
+  const SB = window.AB_CONFIG || {};
+  const sb = window.supabase.createClient(SB.url, SB.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
+  let me = null;                        // signed-in admin's email
+  let cfg = loadCfg();                  // optional GitHub link, only to start the daily jobs from here
   const data = {};
   let view = "videos";
   const ui = { q: "", cat: "ALL", show: "all" };
@@ -32,66 +35,37 @@
   function toast(m) { const el = $("#toast"); el.textContent = m; el.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => el.classList.remove("show"), 2600); }
   const busy = on => { $("#saving").hidden = !on; };
 
-  /* ---------- config ---------- */
+  /* ---------- GitHub (optional): start the daily jobs now instead of waiting for the schedule ---------- */
   function loadCfg() {
-    try { return JSON.parse(localStorage.getItem(CFG_KEY) || sessionStorage.getItem(CFG_KEY) || "null"); } catch { return null; }
+    let c = null;
+    try { c = JSON.parse(localStorage.getItem(CFG_KEY) || "null"); } catch {}
+    return Object.assign({ owner: "abfmapps", repo: "abfm-training", branch: "main", token: "" }, c || {});
   }
-  function saveCfg(c, remember) {
-    const s = JSON.stringify(c);
-    localStorage.removeItem(CFG_KEY); sessionStorage.removeItem(CFG_KEY);
-    (remember ? localStorage : sessionStorage).setItem(CFG_KEY, s);
-  }
-  function guessRepo() {
-    const h = location.hostname;
-    if (h.endsWith(".github.io")) {
-      const owner = h.split(".")[0];
-      const seg = location.pathname.split("/").filter(Boolean)[0];
-      return { owner, repo: seg && !seg.endsWith(".html") ? seg : h };
-    }
-    return { owner: "", repo: "" };
-  }
-
-  /* ---------- GitHub API ---------- */
+  function saveCfg(c) { try { localStorage.setItem(CFG_KEY, JSON.stringify(c)); } catch {} }
   async function gh(path, opts = {}) {
-    const r = await fetch("https://api.github.com" + path, {
+    if (!cfg.token) return { status: 401, ok: false, json: async () => ({}) };
+    return fetch("https://api.github.com" + path, {
       method: opts.method || "GET",
-      headers: {
-        Authorization: "Bearer " + cfg.token,
-        Accept: opts.accept || "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        ...(opts.body ? { "Content-Type": "application/json" } : {})
-      },
-      body: opts.body ? JSON.stringify(opts.body) : undefined,
-      cache: "no-store"
+      headers: { Authorization: "Bearer " + cfg.token, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", ...(opts.body ? { "Content-Type": "application/json" } : {}) },
+      body: opts.body ? JSON.stringify(opts.body) : undefined, cache: "no-store"
     });
-    return r;
   }
-  const enc = s => { const b = new TextEncoder().encode(s); let bin = ""; for (let i = 0; i < b.length; i += 0x8000) bin += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(bin); };
-  const dec = b64 => new TextDecoder().decode(Uint8Array.from(atob(b64.replace(/\s/g, "")), c => c.charCodeAt(0)));
+  const noToken = () => `⚠ To start jobs from here, add a GitHub token in <b>Settings → Admins & GitHub</b>. Without one, the jobs still run on their schedule.`;
 
+  /* ---------- content documents in Supabase ---------- */
   async function readFile(key) {
-    const path = `/repos/${cfg.owner}/${cfg.repo}/contents/${FILES[key]}?ref=${encodeURIComponent(cfg.branch)}`;
-    const r = await gh(path);
-    if (r.status === 404) return { json: DEFAULTS[key](), sha: null };
-    if (!r.ok) throw new Error(`Could not read ${FILES[key]} (${r.status})`);
-    const j = await r.json();
-    let text = j.content ? dec(j.content) : "";
-    if (!text) text = await (await gh(path, { accept: "application/vnd.github.raw+json" })).text();
-    return { json: JSON.parse(text), sha: j.sha };
+    const { data: row, error } = await sb.from("docs").select("content, version").eq("name", key).maybeSingle();
+    if (error) throw new Error(`Could not read ${key}: ${error.message}`);
+    if (!row) return { json: DEFAULTS[key](), sha: 0 };
+    return { json: row.content, sha: row.version };
   }
-  async function writeFile(key, json, sha, message) {
-    const body = { message, content: enc(JSON.stringify(json, null, 2) + "\n"), branch: cfg.branch };
-    if (sha) body.sha = sha;
-    const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/contents/${FILES[key]}`, { method: "PUT", body });
-    if (r.status === 409 || r.status === 422) { const e = new Error("conflict"); e.conflict = true; throw e; }
-    if (!r.ok) {
-      let msg = r.status;
-      try { msg = (await r.json()).message; } catch {}
-      throw new Error(`GitHub refused the save: ${msg}`);
-    }
-    return (await r.json()).content.sha;
+  async function writeFile(key, json, version) {
+    const { data: r, error } = await sb.rpc("admin_save_doc", { p_name: key, p_content: json, p_version: version || 0 });
+    if (error) throw new Error("Couldn't save: " + error.message);
+    if (!r.ok) { const e = new Error("conflict"); e.conflict = true; throw e; }
+    return r.version;
   }
-  /* Read the latest copy, apply the change, save. Retries if the file changed meanwhile (e.g. the daily job ran). */
+  /* Read the latest copy, apply the change, save. Retries if it changed meanwhile (e.g. the daily job ran). */
   async function update(key, fn, message) {
     busy(true);
     try {
@@ -99,13 +73,13 @@
         const { json, sha } = await readFile(key);
         const next = fn(json) || json;
         try {
-          const newSha = await writeFile(key, next, sha, message);
-          data[key] = { json: next, sha: newSha };
+          const newVer = await writeFile(key, next, sha, message);
+          data[key] = { json: next, sha: newVer };
           return next;
         } catch (e) { if (!e.conflict || i === 2) throw e; }
       }
     } catch (e) {
-      alert(e.message || String(e));
+      alert(e.message === "conflict" ? "Someone else saved this at the same moment. Please try again." : (e.message || String(e)));
       throw e;
     } finally { busy(false); }
   }
@@ -134,67 +108,75 @@
     return null;
   }
 
-  /* ---------- connect screen ---------- */
-  function renderConnect(error) {
-    $("#tabs").hidden = true; $("#disconnect").hidden = true; $("#repo-label").textContent = "Not connected";
-    const g = cfg || guessRepo();
+  /* ---------- sign-in screen (Supabase email + password) ---------- */
+  function renderConnect(error, mode = "in") {
+    $("#tabs").hidden = true; $("#disconnect").hidden = !me; $("#repo-label").textContent = me ? me : "Not signed in";
+    const title = { in: "Sign in", up: "Create your admin account", reset: "Reset your password", newpw: "Choose a new password" }[mode];
     $("#app").innerHTML = `
       <div class="connect">
         <div class="card-plain">
-          <h2>Connect to your GitHub repo</h2>
-          <p>Changes you make here are saved straight to the repo, and the site updates for all staff in about a minute.</p>
-          ${error ? `<div class="err">${esc(error)}</div>` : ""}
+          <h2>${title}</h2>
+          ${mode === "in" ? `<p>Sign in with your admin email and password.</p>` : mode === "up" ? `<p>Use the email address the training team added as an admin. You'll get an email to confirm it.</p>` : mode === "reset" ? `<p>We'll email you a link to choose a new password.</p>` : ""}
+          ${error ? `<div class="err">${error}</div>` : ""}
           <form id="connect-form">
-            <div class="two">
-              <div class="field"><label for="c-owner">GitHub username</label><input class="input" id="c-owner" required value="${esc(g.owner || "")}" autocapitalize="off" spellcheck="false"></div>
-              <div class="field"><label for="c-repo">Repo name</label><input class="input" id="c-repo" required value="${esc(g.repo || "")}" autocapitalize="off" spellcheck="false"></div>
-            </div>
-            <div class="field"><label for="c-branch">Branch</label><input class="input" id="c-branch" value="${esc((cfg && cfg.branch) || "main")}" autocapitalize="off" spellcheck="false"></div>
-            <div class="field"><label for="c-token">Access token</label><input class="input" id="c-token" type="password" required autocomplete="off" spellcheck="false" placeholder="github_pat_…">
-              <div class="help">Kept only in this browser. Never share it.</div></div>
-            <label class="check"><input type="checkbox" id="c-remember" checked> Stay signed in on this device</label>
-            <button class="btn btn-primary" style="width:100%;margin-top:8px">Connect</button>
+            ${mode !== "newpw" ? `<div class="field"><label for="c-email">Email</label><input class="input" id="c-email" type="email" required autocomplete="username" spellcheck="false"></div>` : ""}
+            ${mode !== "reset" ? `<div class="field"><label for="c-pw">${mode === "newpw" ? "New password" : "Password"}</label><input class="input" id="c-pw" type="password" required minlength="8" autocomplete="${mode === "in" ? "current-password" : "new-password"}"><div class="help">${mode === "in" ? "" : "At least 8 characters."}</div></div>` : ""}
+            <button class="btn btn-primary" style="width:100%;margin-top:8px">${{ in: "Sign in", up: "Create account", reset: "Send reset link", newpw: "Save new password" }[mode]}</button>
           </form>
+          <p class="help" style="margin-top:12px;text-align:center">
+            ${mode === "in" ? `<a href="#" data-mode="up">Create an admin account</a> · <a href="#" data-mode="reset">Forgot password?</a>` : mode === "newpw" ? "" : `<a href="#" data-mode="in">Back to sign in</a>`}
+          </p>
         </div>
-        <details class="box">
-          <summary>How to get an access token (one time, 3 minutes)</summary>
-          <ol class="steps-help">
-            <li>On github.com open your profile picture → <b>Settings</b> → <b>Developer settings</b> → <b>Personal access tokens</b> → <b>Fine-grained tokens</b> → <b>Generate new token</b>.</li>
-            <li>Name it “Training admin”. Set expiry to 1 year.</li>
-            <li><b>Repository access</b>: Only select repositories → pick this training repo.</li>
-            <li><b>Permissions</b> → Repository permissions: <b>Contents: Read and write</b>. Also <b>Actions: Read and write</b> if you want the “Find new videos now” button.</li>
-            <li>Generate, copy the token and paste it above.</li>
-          </ol>
-        </details>
       </div>`;
+    $$("[data-mode]").forEach(a => a.onclick = e => { e.preventDefault(); renderConnect("", a.dataset.mode); });
     $("#connect-form").onsubmit = async e => {
       e.preventDefault();
-      const c = { owner: $("#c-owner").value.trim(), repo: $("#c-repo").value.trim(), branch: $("#c-branch").value.trim() || "main", token: $("#c-token").value.trim() };
-      cfg = c;
+      const email = $("#c-email") ? $("#c-email").value.trim() : "", pw = $("#c-pw") ? $("#c-pw").value : "";
       busy(true);
       try {
-        const r = await gh(`/repos/${c.owner}/${c.repo}`);
-        if (r.status === 401) throw new Error("The token was not accepted. Check you copied all of it.");
-        if (r.status === 404) throw new Error("Repo not found, or the token has no access to it. Check the username, repo name and the token's repository access.");
-        const j = await r.json();
-        if (j.permissions && !j.permissions.push) throw new Error("This token can read the repo but not save to it. Give it Contents: Read and write.");
-        saveCfg(c, $("#c-remember").checked);
-        await start();
-      } catch (err) { cfg = null; renderConnect(err.message); }
+        if (mode === "in") {
+          const { error } = await sb.auth.signInWithPassword({ email, password: pw });
+          if (error) throw new Error(/confirm/i.test(error.message) ? "Please confirm your email first — check your inbox." : /invalid/i.test(error.message) ? "Wrong email or password." : error.message);
+          await afterSignIn();
+        } else if (mode === "up") {
+          const { error } = await sb.auth.signUp({ email, password: pw, options: { emailRedirectTo: location.href.split("#")[0] } });
+          if (error) throw new Error(error.message);
+          renderConnect("✅ Account created. Check your email and click the link to confirm it, then sign in.", "in");
+        } else if (mode === "reset") {
+          const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.href.split("#")[0] });
+          if (error) throw new Error(error.message);
+          renderConnect("✅ If that email has an account, a reset link is on its way.", "in");
+        } else {
+          const { error } = await sb.auth.updateUser({ password: pw });
+          if (error) throw new Error(error.message);
+          toast("Password changed."); await afterSignIn();
+        }
+      } catch (err) { renderConnect(esc(err.message), mode); }
       finally { busy(false); }
     };
+  }
+  async function afterSignIn() {
+    const { data: u } = await sb.auth.getUser();
+    me = u && u.user ? u.user.email : null;
+    if (!me) return renderConnect();
+    const { data: ok } = await sb.rpc("is_admin");
+    if (!ok) {
+      $("#disconnect").hidden = false;
+      return renderConnect(`You're signed in as <b>${esc(me)}</b>, but this email isn't on the admin list. Ask an existing admin to add it in <b>Settings → Admins &amp; GitHub</b>.`);
+    }
+    await start();
   }
 
   /* ---------- start ---------- */
   async function start() {
-    $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading from GitHub…</p>`;
+    $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading…</p>`;
     try {
       const keys = Object.keys(FILES);
       const res = await Promise.all(keys.map(k => readFile(k)));
       keys.forEach((k, i) => data[k] = res[i]);
-    } catch (e) { return renderConnect(e.message); }
+    } catch (e) { return renderConnect(esc(e.message)); }
     $("#tabs").hidden = false; $("#disconnect").hidden = false;
-    $("#repo-label").textContent = `${cfg.owner}/${cfg.repo}`;
+    $("#repo-label").textContent = me;
     render();
     loadRequests().then(() => { if (view === "requests") render(); else badgeRequests(); });
   }
@@ -849,8 +831,8 @@
     };
   }
 
-  /* ---------- Video requests (Google Sheet inbox) ---------- */
-  const reqKey = () => { try { return localStorage.getItem("ab_req_key") || ""; } catch { return ""; } };
+  /* ---------- Video requests ---------- */
+  const reqKey = () => "supabase";
   let reqs = null, reqErr = "", reqFilter = "new";
   const found = {};
   function foundHtml(r) {
@@ -867,14 +849,9 @@
     }).join("")}<p class="help">Found with Google Search — open each link to check it before adding.</p></div>`;
   }
   async function loadRequests() {
-    const url = data.settings.json.requestUrl;
-    if (!url || !reqKey()) { reqs = null; return; }
-    try {
-      const r = await fetch(url + (url.includes("?") ? "&" : "?") + "key=" + encodeURIComponent(reqKey()), { cache: "no-store" });
-      const j = await r.json();
-      if (!j.ok) throw new Error(j.error === "key" ? "The inbox password doesn't match the one in the Google script." : (j.error || "error"));
-      reqs = j.requests || []; reqErr = "";
-    } catch (e) { reqErr = e.message === "Failed to fetch" ? "Couldn't reach the request inbox. Check the link in Settings." : e.message; }
+    const { data: rows, error } = await sb.from("requests").select("*").order("time", { ascending: false }).limit(2000);
+    if (error) { reqErr = error.message; return; }
+    reqs = rows || []; reqErr = "";
   }
   function badgeRequests() {
     const n = (reqs || []).filter(r => r.status === "new").length;
@@ -883,29 +860,16 @@
   async function reqAction(body) {
     busy(true);
     try {
-      const r = await fetch(data.settings.json.requestUrl, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ key: reqKey(), ...body }) });
-      const j = await r.json(); if (!j.ok) throw new Error(j.error || "failed");
+      const q = body.action === "delete" ? sb.from("requests").delete().eq("id", body.id) : sb.from("requests").update({ status: body.status }).eq("id", body.id);
+      const { error } = await q; if (error) throw new Error(error.message);
     } catch (e) { alert("Couldn't update the request: " + e.message); }
     finally { busy(false); }
     await loadRequests(); render();
   }
   function renderRequests() {
     badgeRequests();
-    const url = data.settings.json.requestUrl;
-    if (!url || !reqKey()) {
-      $("#app").innerHTML = `<div class="card-plain"><h2>Video requests</h2>
-        <p>Technicians can tap <b>🙋 Request a video</b> in the app. Requests come here, privately — they are kept in a Google Sheet that only you can open, not in the public GitHub repo.</p>
-        <p><b>One-time setup (about 5 minutes):</b></p>
-        <ol class="setup-steps">
-          <li>Open <a href="https://sheets.new" target="_blank" rel="noopener">sheets.new</a> to create a new Google Sheet. Name it “ABFM video requests”.</li>
-          <li>In the sheet: <b>Extensions → Apps Script</b>. Delete what's there and paste the script from <a href="https://github.com/${esc(cfg.owner)}/${esc(cfg.repo)}/blob/${esc(cfg.branch)}/setup/request-inbox.gs" target="_blank" rel="noopener">setup/request-inbox.gs</a>.</li>
-          <li>On the line <code>const ADMIN_KEY = "CHANGE-THIS-TO-A-LONG-PASSWORD";</code> put your own long password. Click 💾 Save.</li>
-          <li><b>Deploy → New deployment</b> → gear icon → <b>Web app</b>. Execute as: <b>Me</b>. Who has access: <b>Anyone</b>. Click Deploy and allow access.</li>
-          <li>Copy the <b>Web app URL</b> and paste it, with your password, in <b>Settings → Request inbox</b> here.</li>
-          <li><i>Optional, for Ask AI:</i> on the line <code>const GEMINI_KEY = "";</code> paste your Gemini key between the quotes, then <b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>. Tick “Show Ask AI to staff” in Settings.</li>
-        </ol>
-        <button class="btn btn-primary" id="go-settings">Open Settings</button></div>`;
-      $("#go-settings").onclick = () => { view = "settings"; render(); };
+    if (data.settings.json.requestsEnabled === false) {
+      $("#app").innerHTML = `<div class="card-plain"><h2>Video requests</h2><p>The <b>Request a video</b> button is turned off. Turn it on in <b>Settings → Requests &amp; Ask AI</b>.</p></div>`;
       return;
     }
     const list = (reqs || []).filter(r => reqFilter === "all" || (reqFilter === "new" ? r.status === "new" : r.status !== "new"));
@@ -975,33 +939,36 @@
     if (reqs === null && !reqErr) loadRequests().then(render);
   }
 
-  /* ---------- Google script (private): staff, records, usage counts ---------- */
-  const scriptUrl = () => data.settings.json.requestUrl || "";
+  /* ---------- Staff, records, supervisors and usage counts (Supabase) ---------- */
+  const scriptUrl = () => "supabase";
+  const dbErr = error => { if (error) throw new Error(error.message); };
   async function sGet(params) {
-    const u = scriptUrl(); if (!u) throw new Error("The Google script isn't connected yet (Settings → Requests & Ask AI).");
-    const q = Object.entries(params).map(([k, v]) => k + "=" + encodeURIComponent(v)).join("&");
-    const r = await fetch(u + (u.includes("?") ? "&" : "?") + q + "&key=" + encodeURIComponent(reqKey()), { cache: "no-store" });
-    const j = await r.json().catch(() => ({ ok: false, error: "notjson" }));
-    if (!j.ok) throw new Error(scriptErr(j.error));
-    return j;
+    if (params.what === "records") { const { data: j, error } = await sb.rpc("admin_records", { p_days: 0 }); dbErr(error); return j; }
+    if (params.what === "staff") { const { data: rows, error } = await sb.from("staff").select("hr, name, site, trade, active").order("name"); dbErr(error); return { ok: true, staff: rows }; }
+    if (params.what === "supervisors") { const { data: rows, error } = await sb.from("supervisors").select("name, active").order("name"); dbErr(error); return { ok: true, supervisors: rows.map(r => ({ ...r, pin: "••••" })) }; }
+    if (params.what === "stats") { const { data: j, error } = await sb.rpc("admin_stats", { p_days: +params.days || 30 }); dbErr(error); return j; }
+    throw new Error("unknown");
   }
   async function sPost(body) {
-    const r = await fetch(scriptUrl(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ key: reqKey(), ...body }) });
-    const j = await r.json().catch(() => ({ ok: false, error: "notjson" }));
-    if (!j.ok) throw new Error(scriptErr(j.error, j.detail));
-    return j;
+    if (body.action === "staff-save") {
+      const rows = body.staff.map(x => ({ hr: String(x.hr).toUpperCase().replace(/\s+/g, ""), name: x.name, site: x.site || "", trade: x.trade || "", active: x.active !== false }));
+      const have = new Set(((ppl && ppl.staff) || []).map(x => x.hr));
+      const { error } = await sb.from("staff").upsert(rows, { onConflict: "hr" }); dbErr(error);
+      const added = rows.filter(r => !have.has(r.hr)).length;
+      return { ok: true, added, updated: rows.length - added };
+    }
+    if (body.action === "staff-remove") { const { error } = await sb.from("staff").delete().eq("hr", body.hr); dbErr(error); return { ok: true }; }
+    if (body.action === "sup-save") {
+      const { data: j, error } = await sb.rpc("admin_set_supervisor", { p_name: body.name, p_pin: body.pin }); dbErr(error);
+      if (!j.ok) throw new Error(scriptErr(j.error)); return j;
+    }
+    if (body.action === "sup-remove") { const { error } = await sb.from("supervisors").delete().eq("name", body.name); dbErr(error); return { ok: true }; }
+    throw new Error("unknown");
   }
-  const scriptErr = (e, detail) => ({ key: "The inbox password doesn't match ADMIN_KEY in the Google script.", notjson: "The Google script didn't answer properly — check it is deployed for 'Anyone'.", pin: "The PIN must be at least 4 digits.", pinused: "Another supervisor already has that PIN.", notfound: "Not found." }[e] || (detail ? e + ": " + detail : e || "error"));
-  let scriptVer = null;
-  async function checkScript() {
-    if (scriptVer !== null || !scriptUrl()) return scriptVer;
-    try { const r = await fetch(scriptUrl() + (scriptUrl().includes("?") ? "&" : "?") + "ping=1", { cache: "no-store" }); const j = await r.json(); scriptVer = j.version || 1; }
-    catch { scriptVer = 0; }
-    return scriptVer;
-  }
-  const oldScriptHtml = () => `<div class="err">⚠ Your Google script is an older version. To use staff sign-in, training records and usage counts:
-    open your Google Sheet → <b>Extensions → Apps Script</b>, replace the code with the new <a href="https://github.com/${esc(cfg.owner)}/${esc(cfg.repo)}/blob/${esc(cfg.branch)}/setup/request-inbox.gs" target="_blank" rel="noopener">setup/request-inbox.gs</a> (keep your ADMIN_KEY and GEMINI_KEY lines),
-    then <b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>.</div>`;
+  const scriptErr = e => ({ pin: "The PIN must be 4–12 digits.", pinused: "Another supervisor already has that PIN.", notfound: "Not found." }[e] || e || "error");
+  let scriptVer = 2;
+  async function checkScript() { return 2; }
+  const oldScriptHtml = () => "";
   const csvCell = x => { const t = String(x ?? ""); return /[",\n]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t; };
   function download(name, rows) {
     const blob = new Blob(["\ufeff" + rows.map(r => r.map(csvCell).join(",")).join("\n")], { type: "text/csv;charset=utf-8" });
@@ -1030,13 +997,6 @@
     return [...staff.values(), ...anon.values()];
   }
   function renderPeople() {
-    if (!scriptUrl() || !reqKey()) {
-      $("#app").innerHTML = `<div class="card-plain"><h2>Staff & training records</h2><p>Staff sign-in and training records are kept in your private Google Sheet, not in the public repo. Set up the Google script first — see the <b>Requests</b> tab for the 5-minute setup — then put its link and password in <b>Settings → Requests & Ask AI</b>.</p><button class="btn btn-primary" id="go-settings">Open Settings</button></div>`;
-      $("#go-settings").onclick = () => { view = "settings"; setSec = "inbox"; render(); };
-      return;
-    }
-    if (scriptVer === null) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Checking the Google script…</p>`; checkScript().then(() => view === "people" && renderPeople()); return; }
-    if (scriptVer < 2) { $("#app").innerHTML = oldScriptHtml(); return; }
     if (!ppl && !pplErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading staff and records…</p>`; loadPeople().then(() => view === "people" && renderPeople()); return; }
     const sub = `<div class="seg" style="margin-bottom:14px">${[["people", "👷 Staff progress"], ["assign", "📌 Assigned training"], ["staff", "🪪 Staff list"], ["sups", "✍️ Supervisors"]].map(([k, l]) => `<button data-psub="${k}" aria-pressed="${pplSub === k}">${l}</button>`).join("")}</div>`;
     const head = `${pplErr ? `<div class="err">⚠ ${esc(pplErr)}</div>` : ""}
@@ -1107,7 +1067,7 @@
     } else if (pplSub === "sups") {
       if (sups === null) { sGet({ what: "supervisors" }).then(j => { sups = j.supervisors || []; renderPeople(); }).catch(e => { sups = []; pplErr = e.message; renderPeople(); }); }
       body = `<div class="card-plain"><h2>Supervisors</h2>
-          <p class="help">Supervisors sign off certificates on the technician's phone by typing their PIN. Turn on sign-off in <b>Settings → Staff & training</b>. PINs are kept only in your Google Sheet.</p>
+          <p class="help">Supervisors sign off certificates on the technician's phone by typing their PIN. Turn on sign-off in <b>Settings → Staff & training</b>. Only a scrambled (hashed) copy of each PIN is kept.</p>
           <div class="rows">${(sups || []).map(x => `<div class="ch-row"><div><b>${esc(x.name)}</b> <span class="small">PIN ${esc(x.pin)}</span></div><div class="row-actions"><button class="btn btn-sm btn-danger" data-sup-del="${esc(x.name)}">Remove</button></div></div>`).join("") || `<p class="help">${sups === null ? "Loading…" : "No supervisors yet."}</p>`}</div>
           <form id="sup-add" class="two" style="margin-top:12px;align-items:end">
             <div class="field"><label for="sup-name">Name</label><input class="input" id="sup-name" required></div>
@@ -1195,9 +1155,6 @@
   /* ---------- Insights (usage counts) ---------- */
   let ins = null, insErr = "", insDays = 30;
   function renderInsights() {
-    if (!scriptUrl() || !reqKey()) { $("#app").innerHTML = `<div class="card-plain"><h2>Insights</h2><p>Usage counts are kept in your private Google Sheet. Set up the Google script first (see the <b>Requests</b> tab), then turn on <b>Count video views and searches</b> in Settings → Staff & training.</p></div>`; return; }
-    if (scriptVer === null) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Checking the Google script…</p>`; checkScript().then(() => view === "insights" && renderInsights()); return; }
-    if (scriptVer < 2) { $("#app").innerHTML = oldScriptHtml(); return; }
     if (!ins && !insErr) { $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading…</p>`; sGet({ what: "stats", days: insDays }).then(j => { ins = j.counts || []; }).catch(e => { insErr = e.message; }).then(() => view === "insights" && renderInsights()); return; }
     const vById = new Map(V().map(v => [v.id, v]));
     const views = (ins || []).filter(c => c.kind === "view").sort((a, b) => b.n - a.n);
@@ -1476,6 +1433,7 @@
   async function runJob(file, show) {
     const wf = `/repos/${cfg.owner}/${cfg.repo}/actions/workflows/${file}`;
     const before = new Date(Date.now() - 5000).toISOString();
+    if (!cfg.token) { show(noToken(), false); return false; }
     show("Starting…", true);
     let r; try { r = await gh(wf + "/dispatches", { method: "POST", body: { ref: cfg.branch } }); } catch { r = { status: 0 }; }
     if (r.status !== 204) { show(r.status === 403 || r.status === 404 ? "⚠ Couldn't start it — your GitHub token needs <b>Actions: Read and write</b>." : `⚠ Couldn't start it (${r.status || "no connection"}).`, false); return false; }
@@ -1503,6 +1461,7 @@
     const wf = `/repos/${cfg.owner}/${cfg.repo}/actions/workflows/find-videos.yml`;
     const before = new Date(Date.now() - 5000).toISOString();
     const qBefore = (data.pending.json.queue || []).length;
+    if (!cfg.token) { finderMsg(noToken(), false); return; }
     finderMsg("Starting the search…", true);
     let r;
     try { r = await gh(wf + "/dispatches", { method: "POST", body: { ref: cfg.branch } }); } catch (e) { r = { status: 0 }; }
@@ -1547,7 +1506,7 @@
     const counts = {}; V().forEach(v => counts[v.category] = (counts[v.category] || 0) + 1);
     $("#app").innerHTML = `
       <form id="set-form" class="set-layout">
-        <nav class="set-nav" aria-label="Settings sections"><button type="button" data-set-sec="site" aria-current="${setSec === "site" ? "page" : "false"}"><span>🏷️</span>Site</button><button type="button" data-set-sec="cats" aria-current="${setSec === "cats" ? "page" : "false"}"><span>🗂️</span>Categories</button><button type="button" data-set-sec="finder" aria-current="${setSec === "finder" ? "page" : "false"}"><span>🚫</span>Finder filters</button><button type="button" data-set-sec="staff" aria-current="${setSec === "staff" ? "page" : "false"}"><span>🔐</span>Staff &amp; training</button><button type="button" data-set-sec="inbox" aria-current="${setSec === "inbox" ? "page" : "false"}"><span>🙋</span>Requests &amp; Ask AI</button><button type="button" data-set-sec="gemini" aria-current="${setSec === "gemini" ? "page" : "false"}"><span>✨</span>Gemini</button><button type="button" data-set-sec="status" aria-current="${setSec === "status" ? "page" : "false"}"><span>🩺</span>Status</button></nav>
+        <nav class="set-nav" aria-label="Settings sections"><button type="button" data-set-sec="site" aria-current="${setSec === "site" ? "page" : "false"}"><span>🏷️</span>Site</button><button type="button" data-set-sec="cats" aria-current="${setSec === "cats" ? "page" : "false"}"><span>🗂️</span>Categories</button><button type="button" data-set-sec="finder" aria-current="${setSec === "finder" ? "page" : "false"}"><span>🚫</span>Finder filters</button><button type="button" data-set-sec="staff" aria-current="${setSec === "staff" ? "page" : "false"}"><span>🔐</span>Staff &amp; training</button><button type="button" data-set-sec="inbox" aria-current="${setSec === "inbox" ? "page" : "false"}"><span>🙋</span>Requests &amp; Ask AI</button><button type="button" data-set-sec="admins" aria-current="${setSec === "admins" ? "page" : "false"}"><span>👤</span>Admins &amp; GitHub</button><button type="button" data-set-sec="gemini" aria-current="${setSec === "gemini" ? "page" : "false"}"><span>✨</span>Gemini</button><button type="button" data-set-sec="status" aria-current="${setSec === "status" ? "page" : "false"}"><span>🩺</span>Status</button></nav>
         <div class="set-body">
         <div class="card-plain set-sec" data-sec="site" ${setSec === "site" ? "" : "hidden"}>
           <h2>🏷️ Site</h2>
@@ -1575,7 +1534,7 @@
         <div class="card-plain set-sec" data-sec="staff" ${setSec === "staff" ? "" : "hidden"}>
           <h2>🔐 Staff sign-in</h2>
           <label class="check"><input type="checkbox" id="s-login" ${s.staffLogin ? "checked" : ""}> Staff must sign in with their <b>HR number</b> to use the app</label>
-          <div class="help" style="margin:-4px 0 12px">Only HR numbers on your staff list (Staff & records → Staff list) can sign in. Everything each person watches, every quiz, path and certificate is recorded against their HR number, and their progress follows them to a new phone. Needs the latest Google script. <b>Add your staff before turning this on</b>, or nobody can get in.</div>
+          <div class="help" style="margin:-4px 0 12px">Only HR numbers on your staff list (Staff & records → Staff list) can sign in. Everything each person watches, every quiz, path and certificate is recorded against their HR number, and their progress follows them to a new phone. <b>Add your staff before turning this on</b>, or nobody can get in.</div>
           <h2 style="margin-top:18px">🎓 Training</h2>
           <div class="two">
             <div class="field"><label for="s-pass">Quiz pass mark (%)</label><input class="input" id="s-pass" type="number" min="1" max="100" value="${esc(s.quizPass || 67)}"><div class="help">67% = 2 of 3 right. 100% = all right.</div></div>
@@ -1587,12 +1546,20 @@
           <div class="help">With sign-in on, everyone's progress is always recorded.</div>
         </div>
         <div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
-          <h2>🙋 Request inbox &amp; Ask AI</h2>
-          <p class="count">Where “Request a video” sends requests. See the Requests tab for the 5-minute setup.</p>
-          <div class="field"><label for="s-req">Web app URL (from Google Apps Script)</label><input class="input" id="s-req" inputmode="url" spellcheck="false" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(s.requestUrl || "")}"><div class="help">Saved with the site settings. Leave empty to hide the Request button.</div></div>
+          <h2>🙋 Requests &amp; Ask AI</h2>
+          <label class="check"><input type="checkbox" id="s-reqon" ${s.requestsEnabled === false ? "" : "checked"}> 🙋 Show the <b>Request a video</b> button to staff (requests appear in the Requests tab)</label>
           <label class="check"><input type="checkbox" id="s-ai" ${s.aiEnabled ? "checked" : ""}> ✨ Show <b>Ask AI</b> to staff</label>
-          <div class="help" style="margin:-4px 0 12px">Staff can ask work questions and add photos; Gemini answers in their language and suggests videos from the library. Needs your Gemini key on the <code>GEMINI_KEY</code> line of the Google script (the key stays private there). Questions and photos are not saved.</div>
-          <div class="field"><label for="s-reqkey">Inbox password (ADMIN_KEY in the script)</label><input class="input" id="s-reqkey" type="password" autocomplete="off" value="${esc(reqKey())}"><div class="help">Kept only in this browser — never saved to GitHub.</div></div>
+          <div class="help" style="margin:-4px 0 12px">Staff ask work questions and add photos; Gemini answers in their language and suggests videos from the library. Questions and photos are not saved.
+            One-time setup: in Supabase open <b>Edge Functions → Secrets</b>, add a secret named <code>GEMINI_API_KEY</code> with your Gemini key. The key stays there, never in the app.</div>
+        </div>
+        <div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
+          <h2>👤 Admins</h2>
+          <p class="help">People who can use this admin portal. Add their email here, then they create their account with <b>Create an admin account</b> on the sign-in screen.</p>
+          <div id="adm-list" class="rows"><p class="help">Loading…</p></div>
+          <div class="bar" style="margin-top:10px"><input class="input grow" id="adm-email" type="email" placeholder="name@albonian.fm"><button type="button" class="btn" id="adm-add">＋ Add admin</button></div>
+          <h2 style="margin-top:22px">🐙 GitHub (optional)</h2>
+          <p class="help">The daily jobs (find new videos, translate, write quizzes) run on GitHub on their schedule. To also start them from here (“Search for new videos now”, “Translate now”), paste a GitHub fine-grained token for the <b>${esc(cfg.owner)}/${esc(cfg.repo)}</b> repo with <b>Actions: Read and write</b>. It is kept only in this browser.</p>
+          <div class="field"><label for="s-ghtoken">GitHub token</label><input class="input" id="s-ghtoken" type="password" autocomplete="off" value="${esc(cfg.token || "")}" placeholder="github_pat_…"></div>
         </div>
         <div class="card-plain set-sec" data-sec="gemini" ${setSec === "gemini" ? "" : "hidden"}>
           <h2>✨ Auto-draft with Gemini (optional)</h2>
@@ -1617,6 +1584,7 @@
         </div>
       </form>`;
     if (setSec === "status") loadStatus();
+    loadAdmins();
     const lg = $("#s-login"); if (lg) lg.onchange = () => { $("#s-rec").disabled = lg.checked; };
     $$("[data-set-sec]").forEach(b => b.onclick = () => {
       setSec = b.dataset.setSec;
@@ -1650,16 +1618,12 @@
         siteName: $("#s-name").value.trim(), tagline: $("#s-tag").value.trim(), announcement: $("#s-ann").value.trim(),
         helpdesk: $("#s-help").value.trim(), newDays: Math.max(1, +$("#s-new").value || 7), categories,
         excludeKeywords: $("#s-excl").value.split(",").map(x => x.trim().toLowerCase()).filter(Boolean),
-        requestUrl: $("#s-req").value.trim(),
+        requestsEnabled: $("#s-reqon").checked,
         aiEnabled: $("#s-ai").checked,
         staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked, recordsEnabled: $("#s-rec").checked,
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
-        if (!vals.requestUrl) { alert("Staff sign-in needs the Google script link first (Requests & Ask AI section)."); return; }
-        scriptVer = null;
-        const ver = await checkScript();
-        if (ver < 2) { alert("Your Google script is an older version. Update it first (see the Staff & records tab), then turn on sign-in."); return; }
         try {
           const j = await sGet({ what: "staff" });
           const n = (j.staff || []).filter(x => x.active).length;
@@ -1667,15 +1631,33 @@
           if (!confirm(`Turn on staff sign-in? About a minute after saving, staff must enter their HR number. ${n} active staff are on the list.`)) return;
         } catch (err) { alert("Couldn't read the staff list: " + err.message); return; }
       }
-      if (vals.aiEnabled && !vals.requestUrl) { alert("Ask AI needs the Google script link (Web app URL) first."); return; }
+      cfg.token = $("#s-ghtoken").value.trim(); saveCfg(cfg);
       try {
-        localStorage.setItem("ab_req_key", $("#s-reqkey").value.trim());
         localStorage.setItem("ab_gemini_key", $("#s-gem").value.trim());
         localStorage.setItem("ab_gemini_model", $("#s-gmodel").value);
       } catch {}
-      await update("settings", d => Object.assign(d, vals), "Update site settings");
+      await update("settings", d => { Object.assign(d, vals); delete d.requestUrl; return d; }, "Update site settings");
       reqs = null; loadRequests().then(badgeRequests);
-      toast("Settings saved. Live in about a minute."); render();
+      toast("Settings saved. Staff see it the next time they open the app."); render();
+    };
+  }
+  async function loadAdmins() {
+    const box = $("#adm-list"); if (!box) return;
+    const { data: rows, error } = await sb.from("admins").select("email, added_at").order("email");
+    if (error) { box.innerHTML = `<p class="help">${esc(error.message)}</p>`; return; }
+    box.innerHTML = rows.map(r => `<div class="ch-row"><div><b>${esc(r.email)}</b>${r.email.toLowerCase() === (me || "").toLowerCase() ? ` <span class="badge-s b-ok">You</span>` : ""}</div>
+      <div class="row-actions">${r.email.toLowerCase() === (me || "").toLowerCase() ? "" : `<button type="button" class="btn btn-sm btn-danger" data-adm-del="${esc(r.email)}">Remove</button>`}</div></div>`).join("");
+    $$("[data-adm-del]").forEach(b => b.onclick = async () => {
+      if (!confirm(`Remove ${b.dataset.admDel} as an admin?`)) return;
+      const { error: e2 } = await sb.from("admins").delete().eq("email", b.dataset.admDel);
+      if (e2) alert(e2.message); loadAdmins();
+    });
+    $("#adm-add").onclick = async () => {
+      const email = $("#adm-email").value.trim().toLowerCase();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return alert("Type a valid email address.");
+      const { error: e3 } = await sb.from("admins").insert({ email });
+      if (e3) return alert(e3.message);
+      $("#adm-email").value = ""; toast("Admin added. They can now create their account on the sign-in screen."); loadAdmins();
     };
   }
   async function loadStatus() {
@@ -1690,21 +1672,13 @@
       ${ok(vids.every(v => v.gemini), `<span>Library: <b>${vids.filter(v => v.gemini).length} of ${vids.length}</b> videos checked by Gemini${vids.every(v => v.gemini) ? "" : " — up to 15 more are checked each morning"}</span>`)}
       ${ok(!q.length || gem === q.length, `<span>Gemini review: <b>${gem} of ${q.length}</b> queued videos checked${gemErr ? ` — last problem: <i>${esc(gemErr.aiError)}</i>` : ""}</span>${q.length && gem < q.length ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml">↻ Retry</button>` : ""}<span class="st-job" id="job-find-videos.yml"></span>`)}
       ${ok(!Object.values(data.pending.json.channelStatus || {}).some(c => c && c.error), "Channels: " + (Object.values(data.pending.json.channelStatus || {}).filter(c => c && c.error).length ? "some couldn't be checked — see Channels tab" : "all checked OK"))}
-      ${ok(!!data.settings.json.requestUrl, data.settings.json.requestUrl ? "Request inbox & Ask AI: connected" : "Request inbox: not set up yet")}
-      ${data.settings.json.requestUrl ? `<li id="st-script">⏳ Checking the Google script version…</li>` : ""}
+      ${ok(true, `Supabase: connected as ${esc(me || "")}`)}
       ${ok(!V().some(v => !v.duration), `Video lengths: <b>${V().filter(v => v.duration).length} of ${V().length}</b> known${V().some(v => !v.duration) ? " — use “Fill in missing lengths” on the Videos tab" : ""}`)}
     </ul>
     <h3 style="margin:16px 0 8px">Recent automatic jobs on GitHub</h3>`;
     box.innerHTML = html + `<p class="help">Loading…</p>`;
-    if (data.settings.json.requestUrl) {
-      scriptVer = null;
-      checkScript().then(vr => {
-        const li = $("#st-script"); if (!li) return;
-        li.className = vr >= 2 ? "st-ok" : "st-warn";
-        li.innerHTML = vr >= 2 ? "✅ Google script: up to date (sign-in, records, sign-off, usage counts)" : vr === 1 ? "⚠️ Google script: older version — update it to use staff sign-in and records (see Staff & records)" : "⚠️ Google script: couldn't reach it";
-      });
-    }
     try {
+      if (!cfg.token) throw new Error("Add a GitHub token in Settings → Admins & GitHub to see the job history here.");
       const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/runs?per_page=12`);
       if (!r.ok) throw new Error(r.status === 403 || r.status === 404 ? "Your GitHub token needs “Actions: Read” permission to show this." : "GitHub said " + r.status);
       const runs = (await r.json()).workflow_runs || [];
@@ -1726,6 +1700,7 @@
     });
     const tb = $("#st-translate");
     if (tb) tb.onclick = async () => {
+      if (!cfg.token) { $("#st-msg").innerHTML = noToken(); return; }
       const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/workflows/translate.yml/dispatches`, { method: "POST", body: { ref: cfg.branch } });
       $("#st-msg").textContent = r.status === 204 ? "Started — refresh this page in a few minutes." : "Couldn't start it (" + r.status + "). The token needs “Actions: Read and write”.";
     };
@@ -1759,7 +1734,9 @@
     else if (d.chDel) { const i = +d.chDel; const ch = data.channels.json.channels[i]; if (confirm(`Remove ${ch.name}?`)) update("channels", x => { x.channels = x.channels.filter(c => c.url !== ch.url); return x; }, `Remove channel: ${ch.name}`).then(render); }
   });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#drawer").hidden) closeDrawer(); });
-  $("#disconnect").onclick = () => { if (!confirm("Sign out of the admin on this device?")) return; localStorage.removeItem(CFG_KEY); sessionStorage.removeItem(CFG_KEY); cfg = null; renderConnect(); };
+  $("#disconnect").onclick = async () => { if (!confirm("Sign out of the admin on this device?")) return; await sb.auth.signOut(); me = null; renderConnect(); };
 
-  if (cfg && cfg.token) start(); else renderConnect();
+  // Coming back from "reset password" email → choose a new password.
+  sb.auth.onAuthStateChange(ev => { if (ev === "PASSWORD_RECOVERY") renderConnect("", "newpw"); });
+  sb.auth.getSession().then(({ data: d }) => { if (/type=recovery/.test(location.hash)) return; if (d && d.session) afterSignIn(); else renderConnect(); });
 })();

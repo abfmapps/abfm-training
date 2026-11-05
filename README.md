@@ -1,20 +1,23 @@
 # ABFM Training
 
-ABFM Training is a free, public training-video app for Al Bonian FM ground staff. It opens in any phone or laptop browser and installs like an app. No login is needed for technicians.
+ABFM Training is a training-video app for Al Bonian FM ground staff. It opens in any phone or laptop browser and installs like an app. Staff can be required to sign in with their HR number.
+
+**Where things live**
+- **Videos** always play straight from YouTube. Nothing is downloaded or stored.
+- **Text** (titles, steps, quizzes, translations), **staff, records and certificates** live in **Supabase** (project `ABFM Traininf`). Staff can't read any table directly; every request goes through database functions that check their sign-in.
+- **This repo** holds the app code and the daily jobs. `data/` is a daily backup copy of the content, not what the app reads.
 
 - **Staff app:** `https://abfmapps.github.io/abfm-training/`
 - **Your admin app:** `https://abfmapps.github.io/abfm-training/admin.html`
 
 ---
 
-## 1. Put it online (one time, about 10 minutes)
+## 1. One-time setup
 
-1. Create a GitHub account if you don't have one, then **New repository**. Name it e.g. `training`, set it to **Public**, and create it.
-2. Click **uploading an existing file**. Drag in **everything inside this folder**, including the hidden `.github` folder and `.nojekyll` file. On a Mac press `Cmd + Shift + .` to see hidden files. Then click **Commit changes**.
-   - If the `.github` folder won't upload by dragging, use **Add file → Create new file**, type `.github/workflows/find-videos.yml` as the name, and paste in that file's contents.
-3. Go to **Settings → Pages**. Under *Build and deployment*, choose **Deploy from a branch**, then **main** and **/ (root)**. Save.
-4. Wait 1–2 minutes. The page shows your link, `https://<your-username>.github.io/training/`.
-5. Go to **Settings → Actions → General**. Make sure Actions are allowed, and under *Workflow permissions* choose **Read and write permissions**. Save.
+1. **Daily jobs → Supabase:** on GitHub open the repo → **Settings → Secrets and variables → Actions → New repository secret**. Name `SUPABASE_SERVICE_KEY`. Value: in Supabase, **Project Settings → API Keys → service_role** (Reveal → copy). Keep `GEMINI_API_KEY` there too, as before.
+2. **Ask AI (optional):** in Supabase open **Edge Functions → Secrets** and add `GEMINI_API_KEY` with your Gemini key.
+3. **Admin account:** open `admin.html` → **Create an admin account** with your admin email, confirm the email, then sign in. Only emails on the admin list (Settings → Admins & GitHub) can use the admin.
+4. **Hosting:** the app is plain files (`index.html`, `admin.html`, `assets/`, `sw.js`, `manifest.webmanifest`). It works on GitHub Pages, Cloudflare Pages, Netlify or any static host. GitHub Pages needs a public repo on the free plan; for a private repo use Cloudflare Pages (free) and point `training.albonian.fm` at it.
 
 ## 2. Share with staff
 
@@ -24,7 +27,7 @@ Send the staff link on WhatsApp. On first open, each person picks their language
 
 ## 3. Your admin app
 
-Open `…/admin.html` and connect it once with a GitHub access token. The admin page shows the exact steps. After that, from your phone or laptop you can:
+Open `…/admin.html` and sign in with your admin email and password. From your phone or laptop you can:
 
 | Tab | What you can do |
 |---|---|
@@ -33,7 +36,7 @@ Open `…/admin.html` and connect it once with a GitHub access token. The admin 
 | **Channels** | The trusted YouTube channels the finder watches. Add, pause or remove channels. There's also a **Find new videos now** button. |
 | **Settings** | Site name, announcement banner, helpdesk number, how long the "New" badge shows, and categories with their sorting keywords. |
 
-Every save goes straight to the repo, and staff see it within about a minute.
+Every save goes straight to Supabase, and staff see it the next time they open the app. Also: **Requests**, **Staff & records**, **Insights**, **Learning paths**, **Toolbox talks**. To start the daily jobs from the admin ("Search for new videos now", "Translate now"), add a GitHub token in Settings → Admins & GitHub; otherwise they run on schedule.
 
 ## 4. How the daily update works
 
@@ -61,16 +64,17 @@ The ABFM logo is used in the header and as the home-screen icon (`assets/logo.pn
 ## Files
 
 ```
-index.html            staff app
-admin.html            your admin app
-assets/               styles, scripts, translations, icons
-data/videos.json      the video library (edited by the admin app)
-data/settings.json    site settings and categories
-data/channels.json    trusted channels for the finder
-data/pending.json     review queue (written by the finder)
-data/health.json      broken-video report (written by the finder)
-scripts/find-videos.mjs           the daily finder
-.github/workflows/find-videos.yml its daily schedule
+index.html, admin.html            staff app and admin app
+assets/config.js                  Supabase address and public key
+assets/                           styles, scripts, translations, icons
+supabase/migrations/              database tables, security rules and functions
+supabase/functions/ask/           Ask AI (Gemini) edge function
+scripts/find-videos.mjs           daily finder (new videos, broken videos, lengths)
+scripts/draft.mjs                 drafts, Gemini reviews and quizzes
+scripts/translate.mjs             translations (runs every hour)
+scripts/store.mjs                 how the jobs read and save content in Supabase
+.github/workflows/                the schedules
+data/                             daily backup of the content
 sw.js, manifest.webmanifest       install-as-app and offline support
 ```
 
@@ -95,7 +99,7 @@ Every morning, after finding new videos, the daily job writes a first draft for 
 
 ## Request a video
 
-Technicians tap **🙋 Request a video** (at the bottom of the library, and when a search finds nothing). Requests go to a private Google Sheet and show up in the admin's **Requests** tab, where you can mark them done or add the video straight away. The one-time setup is shown in the Requests tab; the script is in setup/request-inbox.gs. Until it is set up, the button stays hidden.
+Technicians tap **🙋 Request a video** (at the bottom of the library, and when a search finds nothing). Requests show up in the admin's **Requests** tab, where you can mark them done or add the video straight away. Turn the button off in Settings → Requests & Ask AI.
 
 ## Gemini (optional, free)
 
@@ -111,20 +115,20 @@ Turn it on in admin → Settings → "Auto-draft with Gemini" (paste a free key 
 
 The **✨ Ask AI** tab lets staff ask work questions in their own language and attach up to 3 photos of the equipment or problem. Gemini answers in simple steps, puts safety first, and suggests matching videos from the library. Questions and photos are not saved anywhere.
 
-The Gemini key is never in the public app: questions go through your private Google script (setup/request-inbox.gs), which holds the key on its `GEMINI_KEY` line and limits use (300 questions an hour, 2,000 a day, 30 an hour per phone) so your free quota can't be used up. Turn it on in admin → Settings → "Show Ask AI to staff". After editing the script, redeploy with Deploy → Manage deployments → ✏️ → New version, so the link stays the same.
+The Gemini key is never in the app: questions go through the `ask` edge function in Supabase, which holds the key as the secret `GEMINI_API_KEY` and limits use (300 questions an hour, 2,000 a day, 30 an hour per person) so your free quota can't be used up. Turn it on in admin → Settings → "Show Ask AI to staff".
 
 ## Staff sign-in with HR number
 
 When **Settings → Staff & training → Staff must sign in with their HR number** is on, the app opens on a sign-in screen. Only HR numbers on your staff list can get in. Everything each person does is recorded against their HR number.
 
-1. **Update the Google script** (one time): replace the code in your Google Sheet's Apps Script with the new `setup/request-inbox.gs`. Keep your `ADMIN_KEY` and `GEMINI_KEY` lines. Then **Deploy → Manage deployments → ✏️ → Version: New version → Deploy**. Settings → Status shows "Google script: up to date" when it worked.
-2. **Add your staff**: admin → **Staff & records → Staff list**. Paste one person per line, `HR number, Full name, Site, Trade` (straight from Excel is fine). The trade must match a category name, so staff see the training assigned to their trade.
+1. **Add your staff**: admin → **Staff & records → Staff list**. Paste one person per line, `HR number, Full name, Site, Trade` (straight from Excel is fine). The trade must match a category name, so staff see the training assigned to their trade.
+2. **Add supervisors** (if you use sign-off): Staff & records → Supervisors.
 3. **Turn on sign-in** in Settings → Staff & training.
 
 - Staff stay signed in on their phone. If they get a new phone, their progress comes back when they sign in.
 - **Deactivate** someone who leaves. They can't sign in again, and their phone is signed out the next time it goes online. Their records are kept.
-- The staff list, records, certificates and supervisor PINs are kept only in your private Google Sheet (tabs *Staff*, *Records*, *Certificates*, *Supervisors*, *Stats*), never in the public repo.
-- Note: sign-in controls who can use the app. The video list itself is still a public file in this repo until the app moves to a private host.
+- The staff list, records and certificates are in Supabase; supervisor PINs and sign-in tokens are stored only as scrambled (hashed) values.
+- With sign-in on, the video list and all text are only sent to signed-in staff.
 
 ## Quizzes, certificates and sign-off
 

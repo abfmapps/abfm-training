@@ -54,7 +54,7 @@
   "quizPass": 80,
   "quizSize": 3,
   "siteName": "ABFM Training",
-  "aiEnabled": false,
+  "aiEnabled": true,
   "categories": [
     {
       "icon": "🦺",

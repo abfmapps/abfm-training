@@ -26,7 +26,7 @@
       "found": "2026-11-05T19:22:41.790Z",
       "title": "Connected systems and the future of refrigeration",
       "aiError": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa",
-      "aiTries": 1,
+      "aiTries": 2,
       "channel": "Johnson Controls",
       "duration": "",
       "published": "2026-11-05T16:33:39+00:00",
@@ -1300,7 +1300,7 @@
       "suggestedCategory": "BMS & Controls"
     }
   ],
-  "lastRun": "2026-11-05T19:22:43.336Z",
+  "lastRun": "2026-11-05T20:38:05.005Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -1352,172 +1352,172 @@
   "channelStatus": {
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-05T19:22:17.671Z",
+      "checked": "2026-11-05T20:37:42.011Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
-      "checked": "2026-11-05T19:22:33.404Z",
+      "checked": "2026-11-05T20:37:56.371Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
-      "checked": "2026-11-05T19:22:36.664Z",
+      "checked": "2026-11-05T20:37:59.557Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
-      "checked": "2026-11-05T19:22:26.463Z",
+      "checked": "2026-11-05T20:37:50.725Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-05T19:22:20.089Z",
+      "checked": "2026-11-05T20:37:44.381Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
-      "checked": "2026-11-05T19:22:42.617Z",
+      "checked": "2026-11-05T20:38:04.287Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-05T19:22:14.362Z",
+      "checked": "2026-11-05T20:37:38.843Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
-      "checked": "2026-11-05T19:22:39.006Z",
+      "checked": "2026-11-05T20:38:01.917Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
-      "checked": "2026-11-05T19:22:24.853Z",
+      "checked": "2026-11-05T20:37:49.133Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-05T19:22:15.196Z",
+      "checked": "2026-11-05T20:37:39.633Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-05T19:22:16.776Z",
+      "checked": "2026-11-05T20:37:41.220Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
-      "checked": "2026-11-05T19:22:31.014Z",
+      "checked": "2026-11-05T20:37:53.920Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
-      "checked": "2026-11-05T19:22:35.883Z",
+      "checked": "2026-11-05T20:37:58.763Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-05T19:22:18.492Z",
+      "checked": "2026-11-05T20:37:42.805Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "checked": "2026-11-05T19:22:37.430Z",
+      "checked": "2026-11-05T20:38:00.338Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
-      "checked": "2026-11-05T19:22:41.790Z",
-      "lastFound": 1
+      "checked": "2026-11-05T20:38:03.502Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-05T19:22:16.003Z",
+      "checked": "2026-11-05T20:37:40.427Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-05T19:22:13.448Z",
+      "checked": "2026-11-05T20:37:38.040Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
-      "checked": "2026-11-05T19:22:25.677Z",
+      "checked": "2026-11-05T20:37:49.925Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@appliancepartspros": {
       "id": "UCnMCOX6qSbTUQPyJJzRwPcg",
-      "checked": "2026-11-05T19:22:39.830Z",
+      "checked": "2026-11-05T20:38:02.708Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
-      "checked": "2026-11-05T19:22:34.189Z",
+      "checked": "2026-11-05T20:37:57.179Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
-      "checked": "2026-11-05T19:22:34.965Z",
+      "checked": "2026-11-05T20:37:57.983Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
-      "checked": "2026-11-05T19:22:32.595Z",
+      "checked": "2026-11-05T20:37:55.571Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
-      "checked": "2026-11-05T19:22:38.216Z",
+      "checked": "2026-11-05T20:38:01.132Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
-      "checked": "2026-11-05T19:22:27.238Z",
+      "checked": "2026-11-05T20:37:51.525Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
-      "checked": "2026-11-05T19:22:30.206Z",
+      "checked": "2026-11-05T20:37:53.139Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
-      "checked": "2026-11-05T19:22:31.806Z",
+      "checked": "2026-11-05T20:37:54.710Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-05T19:22:19.275Z",
+      "checked": "2026-11-05T20:37:43.608Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-05T19:22:23.223Z",
+      "checked": "2026-11-05T20:37:47.549Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
-      "checked": "2026-11-05T19:22:29.391Z",
-      "lastFound": 1
+      "checked": "2026-11-05T20:37:52.329Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-05T19:22:21.661Z",
+      "checked": "2026-11-05T20:37:45.970Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-05T19:22:24.032Z",
+      "checked": "2026-11-05T20:37:48.331Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-05T19:22:20.860Z",
+      "checked": "2026-11-05T20:37:45.170Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-05T19:22:22.443Z",
+      "checked": "2026-11-05T20:37:46.690Z",
       "lastFound": 0
     }
   }

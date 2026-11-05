@@ -13,6 +13,7 @@ const KEY = process.env.GEMINI_API_KEY || "";
 // Groq backup: quizzes (text) switch to Groq when Gemini is busy or out of quota. Videos still need Gemini.
 const GROQ = process.env.GROQ_API_KEY || "";
 if (GROQ) globalThis.ABProxy = globalThis.ABDraft.groqDirect(GROQ);
+console.log(`AI keys: Gemini ${KEY ? "found" : "MISSING"}, Groq ${GROQ ? "found" : "MISSING (add GROQ_API_KEY under repo Settings → Secrets and variables → Actions → Repository secrets)"}`);
 const MODEL = process.env.GEMINI_MODEL || "";
 const MAX_MINUTES = Number(process.env.MAX_AI_MINUTES || 360);   // free tier allows 8 hours of YouTube video a day
 const MAX_AI = Number(process.env.MAX_AI_DRAFTS || 25);

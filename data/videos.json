@@ -1,6 +1,72 @@
 {
   "videos": [
     {
+      "id": "water-c07upgEQxlg",
+      "yt": "c07upgEQxlg",
+      "ppe": [
+        "Safety Glasses",
+        "Work Gloves",
+        "Safety Shoes"
+      ],
+      "trq": {},
+      "quiz": [
+        {
+          "q": "What date does the US DOE energy efficiency mandate for circulator pumps begin?",
+          "answer": 0,
+          "options": [
+            "May 22, 2028",
+            "December 10, 2026",
+            "November 30, 2024"
+          ]
+        },
+        {
+          "q": "What app is used for Bluetooth connectivity and configuration of the ALPHA pumps?",
+          "answer": 0,
+          "options": [
+            "Grundfos GO app",
+            "Grundfos Smart app",
+            "Grundfos Setup app"
+          ]
+        },
+        {
+          "q": "What is the recommended orientation for the pump motor housing?",
+          "answer": 2,
+          "options": [
+            "Facing the ceiling",
+            "Facing the floor",
+            "Facing one of the four walls"
+          ]
+        }
+      ],
+      "added": "2026-11-05",
+      "level": "Intermediate",
+      "steps": [
+        "Scan the QR code to review pump documentation and videos.",
+        "Verify pump model specifications and check contents of the box.",
+        "Install the pump correctly maintaining horizontal motor orientation.",
+        "Wire the pump using the toolless terminal power connector.",
+        "Connect via Bluetooth to the Grundfos GO app for setup and diagnostics."
+      ],
+      "title": "Grundfos ALPHA Circulator Pump: Setup and Settings",
+      "gemini": {
+        "date": "2026-11-05",
+        "reason": "Very informative and practical technical training video for circulator pump maintenance and installation.",
+        "unsafe": [],
+        "quality": 8,
+        "talking": true,
+        "language": "English",
+        "recommend": "approve",
+        "relevance": 9
+      },
+      "safety": "Ensure proper electrical isolation before working on pump wiring or connections.",
+      "channel": "Grundfos",
+      "subject": "Water Tank Cleaning",
+      "summary": "This webinar provides comprehensive training on the startup, installation, operation, and optimization of Grundfos ALPHA 26-99 and 26-150 circulator pumps using the Grundfos GO app.",
+      "ytTitle": "Mastering ALPHA 26-99 and 26-150: Startup to Optimization",
+      "category": "Water Tanks & Pumps",
+      "duration": "1:02:52"
+    },
+    {
       "id": "firel-QOxkUVcIeYc",
       "tr": {
         "ar": {
@@ -398,7 +464,7 @@
         "Validate solutions through customer references.",
         "Start small with pilot programs and scale up."
       ],
-      "title": "Smart Building Technology Buyer's Guide",
+      "title": "Smart Building Systems Overview",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Provides a comprehensive framework for evaluating smart building technologies relevant to facilities management.",
@@ -414,7 +480,7 @@
       "subject": "Fire Alarm Control Panel Basics",
       "summary": "This video webinar introduces a buyer's guide for smart building technology, covering workplace management, building management, cybersecurity, AI, integration, and evaluation criteria.",
       "ytTitle": "Unlocking Smart Building Solutions",
-      "category": "Fire & Life Safety",
+      "category": "BMS & Controls",
       "duration": "33:48"
     },
     {
@@ -851,7 +917,7 @@
         "Review smart variable-speed pumps including SCALA2 and CMBE.",
         "Use selection guides to size and choose appropriate pumps."
       ],
-      "title": "Understanding Residential Water Pressure Booster Pumps",
+      "title": "Water Pressure Booster Pumps Explained",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Good foundational overview of residential water booster pumps and sizing.",
@@ -1721,7 +1787,7 @@
         "Measure diode drops between terminals in both directions.",
         "Compare multimeter readings against inverter manufacturer specifications."
       ],
-      "title": "Testing Danfoss Inverter IGBT Modules",
+      "title": "Testing a Turbocor Compressor Inverter (IGBT)",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Provides valuable practical training on diagnosing inverter modules in HVAC chiller systems.",
@@ -2174,7 +2240,7 @@
         "Submerge the thermistor in ice water for 5 to 10 minutes.",
         "Measure sensor resistance with a multimeter set to 200k ohms."
       ],
-      "title": "Testing and Replacing an LG Refrigerator Thermistor",
+      "title": "Testing and Replacing a Refrigerator Thermistor",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Provides clear, practical instructions for testing resistance and replacing temperature sensors in commercial and domestic refrigerators.",
@@ -2618,7 +2684,7 @@
         "Measure damper motor winding resistance with a multimeter.",
         "Replace control board or air tower assembly if parts fail testing."
       ],
-      "title": "Troubleshooting LG Refrigerator Fresh Food Section",
+      "title": "Fixing a Warm Fridge Section (LG Refrigerator)",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Clear, step-by-step diagnostic guide for appliance technicians.",
@@ -3080,7 +3146,7 @@
         "Select the appropriate circulator pump model based on flow and head requirements.",
         "Commission and configure pump settings using the Grundfos GO app or user interface."
       ],
-      "title": "Optimizing Light Commercial HWR Systems",
+      "title": "Hot Water Recirculation Systems: Setup and Balancing",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Comprehensive manufacturer training on sizing and operating hot water recirculation pumps.",
@@ -3096,7 +3162,7 @@
       "subject": "Water Tank Cleaning",
       "summary": "This webinar covers sizing, operation, and advanced features of Grundfos Alpha HWR circulator pumps in light commercial hot water recirculation systems.",
       "ytTitle": "Optimizing Performance in Light Commercial HWR Systems",
-      "category": "Water Tanks & Pumps",
+      "category": "Plumbing & Drainage",
       "duration": "1:00:28"
     },
     {
@@ -3688,7 +3754,7 @@
         "Install waterproofing sheet membrane and sealant.",
         "Apply thin-set mortar and lay wall and floor tiles."
       ],
-      "title": "Installing Backer Board and Waterproofing a Shower",
+      "title": "Preparing and Waterproofing a Shower for Tiling",
       "gemini": {
         "date": "2026-11-05",
         "reason": "This video provides a comprehensive, detailed guide on shower preparation and tiling suitable for advanced civil maintenance technicians.",
@@ -3917,7 +3983,7 @@
         "Verify that temperature sensors are physically attached to the coil properly.",
         "Inspect outdoor unit for ice accumulation, blocked airflow, or drainage issues."
       ],
-      "title": "Heat Pump Defrost System Overview and Testing",
+      "title": "Testing a Heat Pump Defrost System",
       "gemini": {
         "date": "2026-11-05",
         "reason": "The content contains valuable theoretical information, but the video is an audio podcast with a static logo image.",
@@ -4176,7 +4242,7 @@
         "Inspect and clean the indoor evaporator coil and drain pan",
         "Flush and prime the condensate drain line with clean water"
       ],
-      "title": "Residential Split AC Maintenance Tune-Up Procedure",
+      "title": "Split AC Preventive Maintenance Checklist",
       "gemini": {
         "date": "2026-11-05",
         "reason": "Practical step-by-step demonstration of AC maintenance covering both electrical and airflow diagnostics.",
@@ -5054,22 +5120,22 @@
         },
         "tl": {
           "ppe": [
-            "Salaming Pangkaligtasan",
-            "Gupitin na Lumalaban sa Gupit"
+            "Safety Glasses",
+            "Cut-Resistant Gloves"
           ],
-          "src": "65d5b3b6281c",
+          "src": "882283bc1d95",
           "auto": true,
           "steps": [
-            "Tukuyin ang mga glandula ng BW para sa tuyong paggamit sa loob ng bahay at mga glandula ng CW para sa mga mamasa-masa na panlabas na kapaligiran.",
-            "Siyasatin ang pack upang kumpirmahin na naglalaman ito ng mga shroud, earth ring, at gland assemblies.",
-            "Suriin ang chart ng tagagawa upang tumugma sa bilang ng core ng cable at laki ng konduktor.",
-            "I-disassemble ang gland sa locknut, gland body, at gland o sealing nut.",
-            "I-trap ang steel wire armor nang secure laban sa gland body cone.",
+            "Tukuyin ang BW glands para sa tuyong indoor at CW glands para sa basang outdoor.",
+            "Suriin ang pack para masigurong kumpleto ito sa shroud, earth ring, at gland assembly.",
+            "Tingnan ang manufacturer chart para itugma ang bilang ng core at sukat ng conductor.",
+            "Baklasin ang gland sa locknut, gland body, at gland o sealing nut.",
+            "I-ipit nang mahigpit ang steel wire armour sa cone ng gland body.",
             "Higpitan ang locknut at i-slide ang protective shroud sa natapos na joint."
           ],
-          "title": "Pag-unawa sa BW at CW SWA Cable Glands",
-          "safety": "Tiyakin na ang mga cable ay ganap na nakahiwalay at magsuot ng guwantes upang protektahan ang mga kamay mula sa matalim na steel wire armor edge.",
-          "summary": "Ipinapaliwanag ng video na ito ang mga pagkakaiba sa pagitan ng BW indoor at CW outdoor steel wire armored cable glands. Detalye nito ang bawat bahagi na kasama sa isang gland pack at kung paano pumili ng mga wastong laki gamit ang mga chart ng pagpili."
+          "title": "BW at CW Glands para sa SWA Cable",
+          "safety": "Siguraduhing naka-isolate ang mga cable at magsuot ng guantes para maprotektahan ang kamay sa matutulis na steel wire armour.",
+          "summary": "Paliwanag sa video na ito ang pagkakaiba ng BW indoor at CW outdoor SWA cable glands. Ipinapakita rin ang bawat pyesa sa gland pack at kung paano pumili ng tamang sukat gamit ang selection chart."
         },
         "ur": {
           "ppe": [
@@ -5136,7 +5202,7 @@
         "Trap the steel wire armour securely against the gland body cone.",
         "Tighten the locknut and slide the protective shroud over the finished joint."
       ],
-      "title": "Understanding BW and CW SWA Cable Glands",
+      "title": "BW and CW Glands for SWA Cable",
       "gemini": {
         "date": "2026-11-03",
         "reason": "Provides a very clear and practical breakdown of armoured cable gland types and parts for technicians.",
@@ -5365,7 +5431,7 @@
         "Log in to DEWA smart app or website",
         "Upload a clear photo of your distribution panel"
       ],
-      "title": "Smart Response Electricity Outage Guide",
+      "title": "Power Outage Safety Steps (DEWA)",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Provides clear step-by-step instructions for handling electrical outages in Dubai using official DEWA services.",
@@ -5585,7 +5651,7 @@
         "Diagnose system restriction when subcooling is high and superheat is high.",
         "Identify refrigerant overcharge when subcooling is high and superheat is low."
       ],
-      "title": "Understanding Superheat and Subcooling Diagnostics",
+      "title": "Superheat and Subcooling Explained",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear visual diagram and bottle models explain core HVAC diagnostic concepts effectively.",
@@ -6007,7 +6073,7 @@
         "Reduce friction loss along the duct path to improve system flow.",
         "Balance airflow by adjusting dampers for proper room distribution."
       ],
-      "title": "Airflow Serenity and System Balance Fundamentals",
+      "title": "Airflow and System Balancing Basics",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear explanation of airflow theory and practical diagnostic methods for technicians.",
@@ -6218,7 +6284,7 @@
         "Adjust roller pressure and top brushes for even coverage.",
         "Stack stained lumber to dry before installation."
       ],
-      "title": "Using an Expert Stain Machine for Fence Lumber",
+      "title": "Staining Timber with a Stain Machine",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear demonstration of specialized wood staining equipment for civil and landscaping projects.",
@@ -6447,7 +6513,7 @@
         "Cover the entire resin floor to 100 percent coverage.",
         "Inspect the floor for thin spots and throw additional flakes on sparse areas."
       ],
-      "title": "Throwing Torginol Flakes on Floor Coatings",
+      "title": "Broadcasting Decorative Flakes on an Epoxy Floor",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear demonstration of proper flake throwing techniques for decorative resin floor coatings.",
@@ -6649,7 +6715,7 @@
         "Check for pressure drops across the liquid line dryer.",
         "Inspect system components and tubing for damage."
       ],
-      "title": "Diagnosing Subcooling and Restrictions in HVAC Systems",
+      "title": "Finding a Hidden Restriction When Subcooling Looks Normal",
       "gemini": {
         "date": "2026-10-29",
         "reason": "It offers valuable diagnostic insights for HVAC technicians handling refrigerant issues.",
@@ -7089,7 +7155,7 @@
         "Insert tile leveling clips and wedges into the joints.",
         "Clean excess mortar from tile joints and surface with a damp sponge."
       ],
-      "title": "Installing Floor Tile on Uncoupling Membrane",
+      "title": "Laying Floor Tiles on an Uncoupling Membrane",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Provides a clear demonstration of professional floor tile installation techniques suitable for civil and maintenance staff.",
@@ -7300,7 +7366,7 @@
         "Apply high-build binding primer to the bare wood and peeling areas.",
         "Paint the door jamb with two coats of exterior acrylic latex paint."
       ],
-      "title": "Repairing Peeling Exterior Door Jambs",
+      "title": "Repairing Peeling Paint on Door Frames",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Provides clear, step-by-step instructions on repairing peeling paint on door jambs.",
@@ -7520,7 +7586,7 @@
         "Press down tape firmly to prevent paint bleed.",
         "Spray paint the trim and stucco areas."
       ],
-      "title": "How to Mask Stucco for Spraying",
+      "title": "Masking Rendered Walls Before Spraying",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Provides clear, practical instructions on masking stucco for spray painting.",
@@ -7731,7 +7797,7 @@
         "Apply caulk evenly along gaps while maintaining a steady speed.",
         "Smooth the caulk bead using a wet finger or sponge."
       ],
-      "title": "Sponge Caulking Tips And Tricks",
+      "title": "Getting a Clean Sealant Bead with a Sponge",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear and practical demonstration of sponge caulking techniques suitable for painter training.",
@@ -7933,7 +7999,7 @@
         "Power cycle the controller by turning off the breaker for sixty seconds.",
         "Install a delay timer to prevent the issue during future power blips."
       ],
-      "title": "Fixing Power Interruption Issues on Infinity Controllers",
+      "title": "Carrier Infinity Controller: Fixing Power Interruptions",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear diagnostic explanation and solution for a common thermostat controller issue.",
@@ -7949,7 +8015,7 @@
       "subject": "Electrical Diagnostics",
       "summary": "The presenter explains how power blips cause Infinity controllers to stay off and run the fan continuously, and demonstrates using a delay timer to fix it.",
       "ytTitle": "Technical Solutions for Infinity Controllers",
-      "category": "HVAC & Chillers",
+      "category": "BMS & Controls",
       "duration": "5:22"
     },
     {
@@ -8162,7 +8228,7 @@
         "Pour and trowel metallic color layers for a marbled effect.",
         "Sand craters and apply final topcoat."
       ],
-      "title": "Installing a Metallic Garage Epoxy Floor",
+      "title": "Installing a Metallic Epoxy Floor Coating",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Provides a comprehensive and clear tutorial on professional epoxy floor installation techniques.",
@@ -8373,7 +8439,7 @@
         "Set up the blower door fan and connect the pressure gauge and reference tubing.",
         "Run the baseline test and execute the blower door test using the AutoTest app."
       ],
-      "title": "Blower Door Test Procedure",
+      "title": "Running a Blower Door Air Leakage Test",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear 3D animation and step-by-step instructions make blower door testing easy to understand.",
@@ -8575,7 +8641,7 @@
         "Evaluate subcooling to check high-side refrigerant charge",
         "Evaluate superheat to check low-side refrigerant charge"
       ],
-      "title": "Understanding Refrigeration Temperature and Pressure",
+      "title": "Refrigerant Pressure and Temperature Relationship",
       "gemini": {
         "date": "2026-10-29",
         "reason": "Clear and detailed explanation of refrigeration theory using temperature and pressure.",
@@ -9476,7 +9542,7 @@
         "Ensure the circuit breaker amperage matches the heat pump rating",
         "Select the correct RCD type recommended by the manufacturer"
       ],
-      "title": "Inspecting Heat Pump Electrical Connections",
+      "title": "Checking Heat Pump Electrical Connections",
       "gemini": {
         "date": "2026-10-27",
         "reason": "Provides a practical, detailed breakdown of electrical compliance and RCD selection for heat pump installations.",
@@ -9492,7 +9558,7 @@
       "subject": "Power Distribution",
       "summary": "This video covers the key electrical inspection points for an air source heat pump installation. It details energy ratings, refrigerant safety, cable entry, and proper RCD selection for inverter-driven units.",
       "ytTitle": "There Are a Few Issues With This Heat Pump…",
-      "category": "Electrical",
+      "category": "HVAC & Chillers",
       "duration": "1:58"
     },
     {
@@ -9880,7 +9946,7 @@
         "Check for overlapping zones that prevent socket installation.",
         "Verify shaver socket placement rules separately from mains sockets."
       ],
-      "title": "Bathroom Socket Installation Regulations",
+      "title": "Socket Outlets in Bathrooms: Zones and Rules",
       "gemini": {
         "date": "2026-10-27",
         "reason": "Clear explanation of bathroom electrical zoning rules and socket placement restrictions.",
@@ -9908,7 +9974,7 @@
             "نظارات السلامة",
             "أحذية السلامة"
           ],
-          "src": "c11906f2920c",
+          "src": "a8977c37b852",
           "auto": true,
           "steps": [
             "شرح طاقة التيار المتردد 120 فولت",
@@ -9920,7 +9986,7 @@
             "شرح التيار المتردد أحادي الطور",
             "لماذا طاقة التيار المتردد هي 50 هرتز أو 60 هرتز"
           ],
-          "title": "لماذا تعد الطاقة ثلاثية الطور أفضل بكثير؟",
+          "title": "كهرباء 3 فاز مقابل سنجل فاز",
           "safety": "عزل وإثبات الوفاة قبل أي عمل. يجوز للموظفين المؤهلين فقط العمل بالقرب من الأجزاء الحية.",
           "summary": "ما هي الكهرباء ثلاثية الطور وكيف تعمل الطاقة ثلاثية الطور، وتعلم أحمال واي دلتا والتيارات المحايدة، وكيف وأين يتم استخدام الكهرباء ثلاثية الطور، ولماذا 3 مراحل، وكيف يعمل المولد لإنتاج موجات جيبية ثلاثية الطور (استخدم الكود EM15 عند الخروج)"
         },
@@ -9930,7 +9996,7 @@
             "নিরাপত্তা চশমা",
             "নিরাপত্তা জুতা"
           ],
-          "src": "c11906f2920c",
+          "src": "a8977c37b852",
           "auto": true,
           "steps": [
             "120V এসি পাওয়ার ব্যাখ্যা করা হয়েছে",
@@ -9942,7 +10008,7 @@
             "একক-ফেজ এসি ব্যাখ্যা করা হয়েছে",
             "কেন এসি পাওয়ার 50Hz বা 60Hz হয়"
           ],
-          "title": "কেন 3 ফেজ পাওয়ার এত ভাল",
+          "title": "থ্রি-ফেজ বনাম সিঙ্গেল-ফেজ পাওয়ার",
           "safety": "বিচ্ছিন্ন করুন এবং যে কোনও কাজের আগে মৃত প্রমাণ করুন। শুধুমাত্র যোগ্য কর্মীরা লাইভ অংশের কাছাকাছি কাজ করতে পারে।",
           "summary": "3 ফেজ ইলেক্ট্রিসিটি কি এবং কিভাবে থ্রি ফেজ পাওয়ার কাজ করে, ওয়াই ডেল্টা লোড এবং নিউট্রাল স্রোত শিখুন, কিভাবে এবং কোথায় থ্রি ফেজ ইলেক্ট্রিসিটি ব্যবহার করা হয়, কেন 3 ফেজ, জেনারেটর কিভাবে 3 ফেজ সাইন ওয়েভ তৈরি করতে কাজ করে (চেকআউট করার সময় কোড EM15 ব্যবহার করুন)"
         },
@@ -10062,7 +10128,7 @@
             "حفاظتی شیشے",
             "حفاظتی جوتے"
           ],
-          "src": "c11906f2920c",
+          "src": "a8977c37b852",
           "auto": true,
           "steps": [
             "120V AC پاور کی وضاحت کی گئی۔",
@@ -10074,7 +10140,7 @@
             "سنگل فیز AC کی وضاحت کی گئی۔",
             "AC پاور 50Hz یا 60Hz کیوں ہے؟"
           ],
-          "title": "3 فیز پاور کیوں بہت بہتر ہے۔",
+          "title": "تھری فیز اور سنگل فیز پاور",
           "safety": "کسی بھی کام سے پہلے الگ تھلگ اور مردہ ثابت کریں۔ صرف اہل عملہ ہی لائیو پارٹس کے قریب کام کر سکتا ہے۔",
           "summary": "تھری فیز بجلی کیا ہے اور تھری فیز پاور کیسے کام کرتی ہے، وائی ڈیلٹا لوڈز اور نیوٹرل کرنٹ سیکھیں، تھری فیز بجلی کیسے اور کہاں استعمال ہوتی ہے، 3 فیز کیوں، جنریٹر 3 فیز سائن ویوز پیدا کرنے کے لیے کیسے کام کرتا ہے (چیک آؤٹ پر کوڈ EM15 استعمال کریں)"
         }
@@ -10085,6 +10151,7 @@
         "Safety Glasses",
         "Safety Shoes"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "What must you do before working on electrical parts?",
@@ -10126,7 +10193,7 @@
         "Single-Phase AC Explained",
         "Why AC Power Is 50Hz or 60Hz"
       ],
-      "title": "Why 3 Phase Power Is So Much Better",
+      "title": "Three-Phase vs Single-Phase Power",
       "gemini": {
         "date": "2026-10-27",
         "model": "gemini-3.6-flash",
@@ -10142,6 +10209,7 @@
       "channel": "The Engineering Mindset",
       "subject": "Fundamentals",
       "summary": "What is 3 phase electricity and how does three phase power work, learn Wye Delta loads and neutral currents, how and where three phase electricity is used, why 3 phases, how the generator works to produce 3 phase sine waves (use code EM15 at checkout)",
+      "ytTitle": "Why 3 Phase Power Is So Much Better",
       "category": "Electrical",
       "duration": "15:16"
     },
@@ -10307,6 +10375,7 @@
         "Work Gloves",
         "Safety Shoes"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "What protective equipment must you wear?",
@@ -10509,6 +10578,36 @@
         "Safety Glasses",
         "Insulated Gloves"
       ],
+      "trq": {},
+      "quiz": [
+        {
+          "q": "What must you do before working on electrical terminals?",
+          "answer": 0,
+          "options": [
+            "Check power is off",
+            "Wear a hat",
+            "Turn on lights"
+          ]
+        },
+        {
+          "q": "Which personal protective equipment is required?",
+          "answer": 2,
+          "options": [
+            "Safety glasses",
+            "Insulated gloves",
+            "Both safety glasses and insulated gloves"
+          ]
+        },
+        {
+          "q": "What tool ensures the correct torque on a terminal?",
+          "answer": 1,
+          "options": [
+            "Screwdriver",
+            "Calibrated torque tool",
+            "Pliers"
+          ]
+        }
+      ],
       "added": "2026-10-27",
       "level": "Intermediate",
       "steps": [
@@ -10517,7 +10616,7 @@
         "Use a calibrated torque tool or screwdriver.",
         "Follow manufacturer guidelines and inspection procedures."
       ],
-      "title": "Electrical Terminal Tightening and Torque",
+      "title": "Tightening Electrical Terminals to the Right Torque",
       "gemini": {
         "date": "2026-10-27",
         "reason": "Provides a useful explanation of electrical terminal torque and proper tightening practices.",
@@ -10533,7 +10632,7 @@
       "subject": "Electrical Diagnostics",
       "summary": "This video explains why over-tightening electrical terminal screws does not ensure a good connection and discusses torque.",
       "ytTitle": "Tight Enough to Fail - Short #309",
-      "category": "HVAC & Chillers",
+      "category": "Electrical",
       "duration": "11:25",
       "quizTries": 1
     },
@@ -10707,6 +10806,36 @@
         "Safety Glasses",
         "Work Gloves"
       ],
+      "trq": {},
+      "quiz": [
+        {
+          "q": "What PPE must you wear for knee protection?",
+          "answer": 1,
+          "options": [
+            "Safety glasses",
+            "Knee pads",
+            "Work gloves"
+          ]
+        },
+        {
+          "q": "What should you do to the subfloor before mortar?",
+          "answer": 1,
+          "options": [
+            "Paint it with oil",
+            "Vacuum and damp-wipe it",
+            "Leave all dust on it"
+          ]
+        },
+        {
+          "q": "How do you secure the mat into the mortar?",
+          "answer": 0,
+          "options": [
+            "Press mat and roll firmly with a floor roller",
+            "Walk on it with heavy boots",
+            "Blow hot air with a dryer"
+          ]
+        }
+      ],
       "added": "2026-10-26",
       "level": "Intermediate",
       "steps": [
@@ -10717,7 +10846,7 @@
         "Press mat sections into the mortar and roll firmly using a floor roller.",
         "Install tiles over the underlayment using modified thin-set mortar."
       ],
-      "title": "Installing an Uncoupling Mat Under Floor Tiles",
+      "title": "Uncoupling Mats Under Floor Tiles: When and Why",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Provides clear, step-by-step guidance on properly installing uncoupling underlayment for tile flooring.",
@@ -10898,6 +11027,36 @@
         "Cut-Resistant Gloves",
         "Work Boots"
       ],
+      "trq": {},
+      "quiz": [
+        {
+          "q": "What PPE must you wear when cutting metal conduit?",
+          "answer": 0,
+          "options": [
+            "Safety glasses, cut‑resistant gloves, work boots",
+            "Hard hat, ear plugs, safety shoes",
+            "Raincoat, sunglasses, sandals"
+          ]
+        },
+        {
+          "q": "What decides using seam welded or solid drawn conduit?",
+          "answer": 2,
+          "options": [
+            "Thread size",
+            "Conduit length",
+            "Installation environment"
+          ]
+        },
+        {
+          "q": "How do you calculate minimum bending radius?",
+          "answer": 1,
+          "options": [
+            "Use conduit length",
+            "Use conduit diameter",
+            "Use thread size"
+          ]
+        }
+      ],
       "added": "2026-10-26",
       "level": "Beginner",
       "steps": [
@@ -10907,7 +11066,7 @@
         "Calculate the minimum bending radius using the conduit diameter.",
         "Connect conduit lengths using compatible threaded boxes, couplers, and bushes."
       ],
-      "title": "Steel Conduit: Types, Finishes and Sizes",
+      "title": "Steel Conduit: Types and Sizes",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Provides a clear and concise overview of electrical metal conduit materials, sizing, and accessories.",
@@ -11087,6 +11246,35 @@
         "Work Gloves",
         "Safety Glasses",
         "Sturdy Footwear"
+      ],
+      "quiz": [
+        {
+          "q": "What must you do before cutting a drip line?",
+          "answer": 0,
+          "options": [
+            "Turn off water and relieve pressure",
+            "Leave water on and cut quickly",
+            "Only wear gloves"
+          ]
+        },
+        {
+          "q": "Which PPE is required for this repair?",
+          "answer": 1,
+          "options": [
+            "Helmet, earplugs, sandals",
+            "Work gloves, safety glasses, sturdy footwear",
+            "Raincoat, goggles, boots"
+          ]
+        },
+        {
+          "q": "After attaching the coupling, what is the next step?",
+          "answer": 2,
+          "options": [
+            "Test for leaks",
+            "Cut more pipe",
+            "Flush the line"
+          ]
+        }
       ],
       "added": "2026-10-26",
       "level": "Beginner",
@@ -11304,7 +11492,8 @@
       "summary": "A technician explains the process of commercial duct cleaning in an office setting, showing supply diffusers, return grates, and cleaning tools.",
       "ytTitle": "Commercial Duct Cleaning in an Office Setting",
       "category": "Duct & Kitchen Exhaust",
-      "duration": "3:25"
+      "duration": "3:25",
+      "quizTries": 1
     },
     {
       "id": "fires-nyBTkpNB0hU",
@@ -11484,7 +11673,8 @@
       "subject": "Fire Alarm Control Panel Basics",
       "summary": "This webinar provides an introduction to fire alarm control unit basics, covering displays, remote annunciators, switches, and indicators.",
       "category": "Fire & Life Safety",
-      "duration": "31:49"
+      "duration": "31:49",
+      "quizTries": 1
     },
     {
       "id": "healt-_loONTyxmks",
@@ -11838,7 +12028,7 @@
         "Wait for system conditions to settle after adjusting airflow.",
         "Retake measurements to account for changes in load and airflow."
       ],
-      "title": "How Condenser Airflow Changes Pressures and Subcooling",
+      "title": "How Condenser Airflow Changes Pressures",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Provides clear theoretical and practical knowledge on condenser airflow impact for HVAC technicians.",
@@ -12028,7 +12218,7 @@
         "Enter readings and summary for future reference.",
         "Touch everything during final walkthrough inspection."
       ],
-      "title": "Drain Line Cleaning: 5-Step Callback Prevention Checklist",
+      "title": "Condensate Drain Cleaning: 5-Step Checklist",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Provides a practical checklist to prevent HVAC callbacks and ensure thorough maintenance.",
@@ -12390,7 +12580,7 @@
         "Inspect filter slots and frame seals to prevent bypass air.",
         "Ensure full face opening of the filter media to maintain airflow."
       ],
-      "title": "Air Filters: Pressure Drop, MERV Ratings and Bypass",
+      "title": "Air Filters: MERV Ratings, Pressure Drop and Bypass",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Clear technical discussion on filter selection, static pressure, and efficiency for HVAC technicians.",
@@ -13132,7 +13322,7 @@
         "Ventilate the confined space.",
         "Monitor the space continuously during work."
       ],
-      "title": "Permit-Required Confined Spaces",
+      "title": "Permit-Required Confined Spaces: Entry Rules",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Comprehensive guide to permit-required confined space safety that is essential for maintenance training.",
@@ -14093,7 +14283,7 @@
         "Dig out the soil carefully around the sprinkler head.",
         "Install the concrete donut flat around the sprinkler head or rotor."
       ],
-      "title": "Protecting Sprinkler Heads with Concrete Guards",
+      "title": "Fitting Guards Around Sprinkler Heads",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Clear and simple guide on protecting sprinkler heads from lawn equipment damage.",
@@ -15944,7 +16134,7 @@
         "Isolate and test individual circuits to find high current draws.",
         "Check for intermittent grounding or shorted solenoid coils."
       ],
-      "title": "Finding the Cause of an Intermittent Blown Control Fuse",
+      "title": "Finding Why a Control Fuse Keeps Blowing",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Good practical guidance for troubleshooting intermittent electrical faults in HVAC control circuits.",
@@ -16632,7 +16822,7 @@
         "Demonstrate manual call point activation and panel response.",
         "Compare addressable systems with conventional control panels."
       ],
-      "title": "Addressable vs Conventional Fire Alarms",
+      "title": "Addressable vs Conventional Fire Alarm Systems",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Clear explanation of addressable versus conventional fire alarm systems suited for technicians.",
@@ -16985,7 +17175,7 @@
         "Clean the blower, motor, cooling coils, and heat exchanger components.",
         "Inspect ducts using a mirror or camera to verify cleanliness."
       ],
-      "title": "Correct Air Duct Cleaning Procedure",
+      "title": "Air Duct Cleaning Procedure (NADCA Method)",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Provides a clear, step-by-step overview of industry standards for proper air duct cleaning.",
@@ -17908,7 +18098,7 @@
         "Check for electrical shorts between separate winding phases.",
         "Use a manual driver or service mode to test valve travel and response."
       ],
-      "title": "Electronic Expansion Valves (EEV): Operation and Diagnosis",
+      "title": "Electronic Expansion Valves (EEV) Explained",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Provides valuable technical explanations and physical prop demonstrations for troubleshooting electronic expansion valves.",
@@ -18105,7 +18295,7 @@
       "subject": "Electrical Diagnostics",
       "summary": "This video explains how to properly wire a surge protector to an HVAC disconnect box using pigtails rather than double-lugging, and emphasizes phase-taping white wires for code compliance.",
       "ytTitle": "How to Wire a Surge Protector to a Disconnect: Pigtails & Phasing Tape",
-      "category": "HVAC & Chillers",
+      "category": "Electrical",
       "duration": "5:51"
     },
     {
@@ -18261,7 +18451,7 @@
         "Pour flakes back and forth between buckets to thoroughly mix them.",
         "Scatter the well-mixed flakes evenly across the prepared garage floor coating."
       ],
-      "title": "Mixing Decorative Flakes for an Epoxy Floor",
+      "title": "Mixing Decorative Flakes for Epoxy Floors",
       "gemini": {
         "date": "2026-10-26",
         "reason": "Clear demonstration of mixing techniques for decorative flooring materials to ensure uniform color distribution.",

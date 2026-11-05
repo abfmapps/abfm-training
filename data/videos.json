@@ -3253,6 +3253,35 @@
         "Work Gloves"
       ],
       "trq": {
+        "ar": {
+          "src": "fdb51157c405",
+          "items": [
+            {
+              "q": "إيش PPE المطلوب لما تشتغل بالعدة الكهربائية ومعالجات السيلانت؟",
+              "options": [
+                "نظارة حماية وكفوف شغلات",
+                "كمامة غبار وجزمات ربر",
+                "خوذة رأس ومريلة جلد"
+              ]
+            },
+            {
+              "q": "إيش أول خطوة لما تركب كرسي البنش؟",
+              "options": [
+                "قص لوح الفوم بالمنشار",
+                "قيس وعلم على جدار الشاور",
+                "حط سيلانت على الخطوط المعلمة"
+              ]
+            },
+            {
+              "q": "ليش تسوي اختبار غمر لأرضية الشاور في النهاية؟",
+              "options": [
+                "عشان تنظف لوح الفوم",
+                "عشان ينشف السيلانت أسرع",
+                "عشان تتأكد إنه مافي تسريب"
+              ]
+            }
+          ]
+        },
         "ne": {
           "src": "fdb51157c405",
           "items": [
@@ -10056,6 +10085,35 @@
         "Safety Glasses",
         "Safety Shoes"
       ],
+      "quiz": [
+        {
+          "q": "What must you do before working on electrical parts?",
+          "answer": 1,
+          "options": [
+            "Wear regular clothes",
+            "Isolate and prove dead",
+            "Check the WiFi connection"
+          ]
+        },
+        {
+          "q": "Who is allowed to work near live parts?",
+          "answer": 0,
+          "options": [
+            "Only qualified staff",
+            "Any new visitor",
+            "Cleaning workers"
+          ]
+        },
+        {
+          "q": "Which PPE is required for the electrical work?",
+          "answer": 1,
+          "options": [
+            "Sunglasses and sandals",
+            "Insulated gloves and safety glasses",
+            "Cotton gloves and a hat"
+          ]
+        }
+      ],
       "added": "2026-10-27",
       "level": "Beginner",
       "steps": [
@@ -10248,6 +10306,35 @@
         "Safety Glasses",
         "Work Gloves",
         "Safety Shoes"
+      ],
+      "quiz": [
+        {
+          "q": "What protective equipment must you wear?",
+          "answer": 0,
+          "options": [
+            "Safety glasses, work gloves, safety shoes",
+            "Helmet, earplugs, boots",
+            "No PPE needed"
+          ]
+        },
+        {
+          "q": "What tool creates the initial kink?",
+          "answer": 1,
+          "options": [
+            "A hammer",
+            "A slotted metal bar",
+            "A power drill"
+          ]
+        },
+        {
+          "q": "What final angle should the tray reach?",
+          "answer": 2,
+          "options": [
+            "45 degrees",
+            "180 degrees",
+            "90 degrees"
+          ]
+        }
       ],
       "added": "2026-10-27",
       "level": "Intermediate",
@@ -10447,7 +10534,8 @@
       "summary": "This video explains why over-tightening electrical terminal screws does not ensure a good connection and discusses torque.",
       "ytTitle": "Tight Enough to Fail - Short #309",
       "category": "HVAC & Chillers",
-      "duration": "11:25"
+      "duration": "11:25",
+      "quizTries": 1
     },
     {
       "id": "civil-lD7x70PAsAE",

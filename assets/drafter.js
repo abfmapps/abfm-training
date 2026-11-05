@@ -255,7 +255,7 @@ Rules:
 - level: who the video suits.
 - subject: a short topic label${subjects && subjects.length ? `; prefer one of: ${subjects.slice(0, 25).join("; ")}` : ""}.
 - category: the best trade for it${categories && categories.length ? `, one of: ${categories.join("; ")}` : ""}.
-${QUIZ_RULES}
+${quizRules(3)}
 - review.relevance: 0–10, how useful this is for training our technicians (0 = unrelated, e.g. computers, vlogs, sales pitches).
 - review.quality: 0–10, how clear and well filmed the teaching is.
 - review.recommend: approve / maybe / reject for our training library.
@@ -275,7 +275,7 @@ Use simple words. Do not invent steps that are not in the video.`;
       const answer = Math.round(Number(x.answer));
       if (q && options.length >= 2 && answer >= 0 && answer < options.length && new Set(options).size === options.length) out.push({ q, options, answer });
     }
-    return out.slice(0, 5);
+    return out.slice(0, 8);
   }
   /* Admin text format: question on one line, then options; the right one starts with "*", the others with "-". Blank line between questions. */
   function quizToText(quiz) {
@@ -296,9 +296,10 @@ Use simple words. Do not invent steps that are not in the video.`;
     });
     return { quiz: normQuiz(out), errors };
   }
-  const QUIZ_RULES = `- quiz: 3 multiple-choice questions that check the technician understood the key safety point and steps. Each: {"q": short question, "options": 3 short answers, "answer": index (0–2) of the one correct answer}. Wrong answers must be clearly wrong but believable. Simple English, under 15 words each. Vary the position of the right answer.`;
+  const quizRules = (n = 3) => `- quiz: ${n} multiple-choice questions that check the technician understood the key safety point and steps. Each: {"q": short question, "options": 3 short answers, "answer": index (0–2) of the one correct answer}. Wrong answers must be clearly wrong but believable. Simple English, under 15 words each. Vary the position of the right answer.`;
   /* Write a quiz from the video's training card (text only, quick and cheap). */
-  async function aiQuiz({ title, summary, safety, steps, ppe, key, model }) {
+  async function aiQuiz({ title, summary, safety, steps, ppe, key, model, count = 3 }) {
+    count = Math.max(2, Math.min(8, +count || 3));
     const r = await gemini({ key, model, timeoutMs: 60000, parts: [{ text:
       `Write a short quiz for facility-maintenance technicians in Dubai who watched a training video. Many speak basic English.
 Video: "${title}"
@@ -307,11 +308,11 @@ Safety: ${safety || "(not given)"}
 PPE: ${(ppe || []).join(", ") || "(not given)"}
 Steps: ${(steps || []).map((s, i) => `${i + 1}. ${s}`).join(" ") || "(not given)"}
 Reply with JSON only: {"quiz": [...]}
-${QUIZ_RULES}
+${quizRules(count)}
 Only ask about what is in the text above.` }] });
     const quiz = normQuiz(jsonOf(r.text).quiz);
-    if (quiz.length < 2) throw new Error("Gemini's quiz was incomplete");
-    return quiz;
+    if (quiz.length < Math.min(2, count)) throw new Error("Gemini's quiz was incomplete");
+    return quiz.slice(0, count);
   }
   /* Find trusted YouTube channels for a trade using Google Search. */
   async function aiFindChannels({ category, keywords, existing, key, model }) {

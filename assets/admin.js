@@ -401,9 +401,10 @@
     await update("videos", d => { d.videos.forEach(v => { if (!v.duration && found[v.id]) v.duration = found[v.id]; }); return d; }, `Fill in ${n} video lengths`);
     toast(`${n} lengths filled in. Live in about a minute.`); render();
   }
+  const quizCount = v => { const st = data.settings.json; return v && v.essential ? (+st.quizSizeEss || 5) : (+st.quizSize || 3); };
   async function fillQuizzes() {
     const todo = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden), msg = $("#fill-msg"), btn = $("#fill-quiz");
-    if (!confirm(`Gemini will write a 3-question quiz for ${todo.length} videos, from each video's summary, safety note and steps. It saves every 10 videos — you can check and edit any quiz afterwards. Start?`)) return;
+    if (!confirm(`Gemini will write a quiz for ${todo.length} videos: ${+data.settings.json.quizSizeEss || 5} questions for safety essentials, ${+data.settings.json.quizSize || 3} for the others, from each video's summary, safety note and steps. It saves every 10 videos — you can check and edit any quiz afterwards. Start?`)) return;
     btn.disabled = true;
     let made = {}, total = 0, fails = 0;
     const save = async () => {
@@ -414,7 +415,7 @@
     for (let i = 0; i < todo.length; i++) {
       const v = todo[i];
       msg.textContent = `Writing quiz ${i + 1} of ${todo.length}: ${v.title}`;
-      try { made[v.id] = await ABDraft.aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, key: geminiKey(), model: geminiModel() || undefined }); total++; }
+      try { made[v.id] = await ABDraft.aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, count: quizCount(v), key: geminiKey(), model: geminiModel() || undefined }); total++; }
       catch (e) { fails++; if (/API key|permission|quota|RESOURCE_EXHAUSTED/i.test(e.message)) { msg.textContent = "Gemini stopped: " + e.message; break; } }
       if (Object.keys(made).length >= 10) await save();
       await new Promise(r => setTimeout(r, 1500));
@@ -476,7 +477,7 @@
       <div class="field"><label for="f-steps">Key steps</label><textarea class="textarea" id="f-steps" rows="6" placeholder="One step per line">${esc((v.steps || []).join("\n"))}</textarea><div class="help">One step per line. 3–6 short steps work best.</div></div>
       <div class="field"><label for="f-quiz">🧠 Quick check (quiz)</label>
         <textarea class="textarea" id="f-quiz" rows="7" placeholder="Question on one line&#10;* the right answer&#10;- a wrong answer&#10;- another wrong answer&#10;&#10;Next question…">${esc(ABDraft.quizToText(v.quiz || []))}</textarea>
-        <div class="help">Staff answer this after the video. Put <b>*</b> before the right answer and <b>-</b> before wrong ones; leave a blank line between questions. 3 questions work best. Leave empty for no quiz.</div>
+        <div class="help">Staff answer this after the video. Put <b>*</b> before the right answer and <b>-</b> before wrong ones; leave a blank line between questions. 3 questions for ordinary videos, 5 for safety essentials (change in Settings). Leave empty for no quiz.</div>
         ${geminiKey() ? `<div class="draft-row" style="margin-top:6px"><button type="button" class="btn btn-sm" id="f-quiz-ai">✨ Write quiz with Gemini</button><span class="help" id="f-quiz-help">Uses the summary, safety note and steps above.</span></div>` : ""}</div>
       <label class="check"><input type="checkbox" id="f-ess" ${v.essential ? "checked" : ""}> 🦺 Safety essential (shown in the pinned Safety section)</label>
       <label class="check"><input type="checkbox" id="f-feat" ${v.featured ? "checked" : ""}> Pin to top of the library</label>
@@ -521,7 +522,7 @@
       if ($("#f-quiz").value.trim() && !confirm("Replace the current quiz?")) return;
       const help = $("#f-quiz-help"); qa.disabled = true; help.textContent = "Gemini is writing the quiz…";
       try {
-        const quiz = await ABDraft.aiQuiz({ title: $("#f-title").value.trim(), summary: $("#f-summary").value.trim(), safety: $("#f-safety").value.trim(),
+        const quiz = await ABDraft.aiQuiz({ count: quizCount({ essential: $("#f-ess").checked }), title: $("#f-title").value.trim(), summary: $("#f-summary").value.trim(), safety: $("#f-safety").value.trim(),
           steps: $("#f-steps").value.split("\n").map(x => x.trim()).filter(Boolean), ppe: $("#f-ppe").value.split(",").map(x => x.trim()).filter(Boolean), key: geminiKey(), model: geminiModel() || undefined });
         $("#f-quiz").value = ABDraft.quizToText(quiz); help.textContent = "Done — check the right answers (*) before saving.";
       } catch (e) { help.textContent = "Gemini couldn't write it: " + e.message; }
@@ -1593,84 +1594,93 @@
   function renderSettings() {
     const s = data.settings.json;
     const counts = {}; V().forEach(v => counts[v.category] = (counts[v.category] || 0) + 1);
+    const IC = {
+      site: '<path d="M3 11 12 4l9 7v9H3z"/><path d="M10 20v-6h4v6"/>',
+      cats: '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+      staff: '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
+      inbox: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+      gemini: '<path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/>',
+      finder: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 11h6"/>',
+      admins: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M18 8v6M15 11h6"/>',
+      status: '<path d="M3 12h4l3-8 4 16 3-8h4"/>'
+    };
+    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "Gemini"], ["finder", "Video finder"], ["admins", "Admins & GitHub"], ["status", "System status"]];
+    const ico = k => `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
+    const head = (k, title, sub) => `<div class="sec-h"><span class="sec-ico">${ico(k)}</span><div><h2>${title}</h2><p>${sub}</p></div></div>`;
+    const sw = (id, on, title, sub, extra = "") => `<label class="switch-row"><span><b>${title}</b><small>${sub}</small></span><input type="checkbox" class="switch" id="${id}" ${on ? "checked" : ""} ${extra}></label>`;
     $("#app").innerHTML = `
       <form id="set-form" class="set-layout">
-        <nav class="set-nav" aria-label="Settings sections"><button type="button" data-set-sec="site" aria-current="${setSec === "site" ? "page" : "false"}"><span>🏷️</span>Site</button><button type="button" data-set-sec="cats" aria-current="${setSec === "cats" ? "page" : "false"}"><span>🗂️</span>Categories</button><button type="button" data-set-sec="finder" aria-current="${setSec === "finder" ? "page" : "false"}"><span>🚫</span>Finder filters</button><button type="button" data-set-sec="staff" aria-current="${setSec === "staff" ? "page" : "false"}"><span>🔐</span>Staff &amp; training</button><button type="button" data-set-sec="inbox" aria-current="${setSec === "inbox" ? "page" : "false"}"><span>🙋</span>Requests &amp; Ask AI</button><button type="button" data-set-sec="admins" aria-current="${setSec === "admins" ? "page" : "false"}"><span>👤</span>Admins &amp; GitHub</button><button type="button" data-set-sec="gemini" aria-current="${setSec === "gemini" ? "page" : "false"}"><span>✨</span>Gemini</button><button type="button" data-set-sec="status" aria-current="${setSec === "status" ? "page" : "false"}"><span>🩺</span>Status</button></nav>
+        <nav class="set-nav" aria-label="Settings sections">${NAV.map(([k, l]) => `<button type="button" data-set-sec="${k}" aria-current="${setSec === k ? "page" : "false"}">${ico(k)}${l}</button>`).join("")}</nav>
         <div class="set-body">
         <div class="card-plain set-sec" data-sec="site" ${setSec === "site" ? "" : "hidden"}>
-          <h2>🏷️ Site</h2>
+          ${head("site", "General", "Name, banner and contact details shown in the staff app.")}
           <div class="two">
-            <div class="field"><label for="s-name">Site name</label><input class="input" id="s-name" value="${esc(s.siteName || "")}"></div>
+            <div class="field"><label for="s-name">App name</label><input class="input" id="s-name" value="${esc(s.siteName || "")}"></div>
             <div class="field"><label for="s-tag">Tagline</label><input class="input" id="s-tag" value="${esc(s.tagline || "")}"></div>
           </div>
-          <div class="field"><label for="s-ann">Announcement banner</label><input class="input" id="s-ann" placeholder="e.g. New fire safety videos added this week" value="${esc(s.announcement || "")}"><div class="help">Shown at the top of the library. Leave empty to hide.</div></div>
+          <div class="field"><label for="s-ann">Announcement banner</label><input class="input" id="s-ann" placeholder="e.g. New fire safety videos added this week" value="${esc(s.announcement || "")}"><div class="help">Shown at the top of the staff app until you clear it. Translated automatically.</div></div>
           <div class="two">
-            <div class="field"><label for="s-help">Helpdesk contact</label><input class="input" id="s-help" placeholder="e.g. 04 123 4567" value="${esc(s.helpdesk || "")}"></div>
-            <div class="field"><label for="s-new">“New” badge for (days)</label><input class="input" id="s-new" type="number" min="1" max="60" value="${esc(s.newDays || 7)}"></div>
+            <div class="field"><label for="s-help">Helpdesk contact</label><input class="input" id="s-help" placeholder="e.g. 04 123 4567" value="${esc(s.helpdesk || "")}"><div class="help">Shown at the bottom of the app.</div></div>
+            <div class="field"><label for="s-new">Mark videos as “New” for</label><div class="unit"><input class="input" id="s-new" type="number" min="1" max="60" value="${esc(s.newDays || 7)}"><span>days</span></div></div>
           </div>
         </div>
         <div class="card-plain set-sec" data-sec="cats" ${setSec === "cats" ? "" : "hidden"}>
-          <h2>🗂️ Categories</h2>
-          <p class="count">Icon, name, and words the finder uses to sort new videos (comma separated). Empty categories are hidden from staff.</p>
-          <div id="cat-rows">${(s.categories || []).map((c, i) => catRow(c, i, counts[c.name] || 0)).join("")}</div>
-          <button type="button" class="btn btn-sm" id="cat-add">＋ Add category</button>
-        </div>
-        <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
-          <h2>🚫 Finder: skip videos containing</h2>
-          <textarea class="textarea" id="s-excl">${esc((s.excludeKeywords || []).join(", "))}</textarea>
-          <div class="help">Comma separated. Videos whose title contains any of these are never queued.</div>
+          ${head("cats", "Categories", "The trades staff browse by. The icon follows the name. Keywords help the video finder sort new videos.")}
+          <div id="cat-rows" class="cat-list">${(s.categories || []).map((c, i) => catRow(c, i, counts[c.name] || 0)).join("")}</div>
+          <button type="button" class="btn btn-sm" id="cat-add" style="margin-top:10px">＋ Add category</button>
+          <p class="help" style="margin-top:10px">Renaming a category here doesn't move its videos; edit the videos, or ask for a bulk move. Empty categories are hidden from staff.</p>
         </div>
         <div class="card-plain set-sec" data-sec="staff" ${setSec === "staff" ? "" : "hidden"}>
-          <h2>🔐 Staff sign-in</h2>
-          <label class="check"><input type="checkbox" id="s-login" ${s.staffLogin ? "checked" : ""}> Staff must sign in with their <b>HR number</b> to use the app</label>
-          <div class="help" style="margin:-4px 0 12px">Only HR numbers on your staff list (Staff & records → Staff list) can sign in. Everything each person watches, every quiz, path and certificate is recorded against their HR number, and their progress follows them to a new phone. <b>Add your staff before turning this on</b>, or nobody can get in.</div>
-          <h2 style="margin-top:18px">🎓 Training</h2>
-          <div class="two">
-            <div class="field"><label for="s-pass">Quiz pass mark (%)</label><input class="input" id="s-pass" type="number" min="1" max="100" value="${esc(s.quizPass || 67)}"><div class="help">67% = 2 of 3 right. 100% = all right.</div></div>
-            <div class="field"><label for="s-ref">Safety refresher every (months)</label><input class="input" id="s-ref" type="number" min="0" max="60" value="${esc(s.refresherMonths === undefined ? 12 : s.refresherMonths)}"><div class="help">Safety essentials must be watched again after this. 0 = never.</div></div>
+          ${head("staff", "Staff & training", "Sign-in, quizzes, refreshers and certificates.")}
+          ${sw("s-login", s.staffLogin, "Staff sign in with their HR number", "Only HR numbers on your staff list can use the app. All progress is recorded per person and follows them to a new phone.")}
+          ${sw("s-sign", s.signoffEnabled, "Supervisor sign-off on certificates", "Supervisors confirm a certificate on the technician's phone with their PIN. Manage PINs under Supervisors.")}
+          ${sw("s-stats", s.statsEnabled, "Count video plays and failed searches", "Shown in Insights and on the dashboard. Counts only, no names.")}
+          <div class="two" style="margin-top:14px">
+            <div class="field"><label for="s-pass">Quick check pass mark</label><div class="unit"><input class="input" id="s-pass" type="number" min="1" max="100" value="${esc(s.quizPass || 67)}"><span>%</span></div><div class="help">67% = 2 of 3 right. 100% = all right.</div></div>
+            <div class="field"><label for="s-qn">Questions per quick check</label><div class="unit"><input class="input" id="s-qn" type="number" min="2" max="8" value="${esc(s.quizSize || 3)}"><span>questions</span></div><div class="help">For ordinary videos.</div></div>
+            <div class="field"><label for="s-qne">…for safety essentials</label><div class="unit"><input class="input" id="s-qne" type="number" min="2" max="8" value="${esc(s.quizSizeEss || 5)}"><span>questions</span></div><div class="help">Used when Gemini writes a quiz. Existing quizzes keep their questions.</div></div>
+            <div class="field"><label for="s-ref">Safety refresher every</label><div class="unit"><input class="input" id="s-ref" type="number" min="0" max="60" value="${esc(s.refresherMonths === undefined ? 12 : s.refresherMonths)}"><span>months</span></div><div class="help">Safety essentials must be watched again after this. 0 = never.</div></div>
           </div>
-          <label class="check"><input type="checkbox" id="s-sign" ${s.signoffEnabled ? "checked" : ""}> ✍️ Supervisor sign-off on certificates (supervisors and their PINs: Staff & records → Supervisors)</label>
-          <label class="check"><input type="checkbox" id="s-stats" ${s.statsEnabled ? "checked" : ""}> 📊 Count video views and searches that find nothing (shown in Insights; counts only, no names)</label>
-          <div class="help">With sign-in on, everyone's progress is recorded against their HR number.</div>
         </div>
         <div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
-          <h2>🙋 Requests &amp; Ask AI</h2>
-          <label class="check"><input type="checkbox" id="s-reqon" ${s.requestsEnabled === false ? "" : "checked"}> 🙋 Show the <b>Request a video</b> button to staff (requests appear in the Requests tab)</label>
-          <label class="check"><input type="checkbox" id="s-ai" ${s.aiEnabled ? "checked" : ""}> ✨ Show <b>Ask AI</b> to staff</label>
-          <div class="help" style="margin:-4px 0 12px">Staff ask work questions and add photos; Gemini answers in their language and suggests videos from the library. Questions and photos are not saved.
-            One-time setup: in Supabase open <b>Edge Functions → Secrets</b>, add a secret named <code>GEMINI_API_KEY</code> with your Gemini key. The key stays there, never in the app.</div>
-        </div>
-        <div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
-          <h2>👤 Admins</h2>
-          <p class="help">People who can use this admin portal. Add their email here, then they create their account with <b>Create an admin account</b> on the sign-in screen.</p>
-          <div id="adm-list" class="rows"><p class="help">Loading…</p></div>
-          <div class="bar" style="margin-top:10px"><input class="input grow" id="adm-email" type="email" placeholder="name@albonian.fm"><button type="button" class="btn" id="adm-add">＋ Add admin</button></div>
-          <h2 style="margin-top:22px">🐙 GitHub (optional)</h2>
-          <p class="help">The daily jobs (find new videos, translate, write quizzes) run on GitHub on their schedule. To also start them from here (“Search for new videos now”, “Translate now”), paste a GitHub fine-grained token for the <b>${esc(cfg.owner)}/${esc(cfg.repo)}</b> repo with <b>Actions: Read and write</b>. It is kept only in this browser.</p>
-          <div class="field"><label for="s-ghtoken">GitHub token</label><input class="input" id="s-ghtoken" type="password" autocomplete="off" value="${esc(cfg.token || "")}" placeholder="github_pat_…"></div>
+          ${head("inbox", "Requests & Ask AI", "What staff can ask for from the app.")}
+          ${sw("s-reqon", s.requestsEnabled !== false, "“Request a video” button", "Staff tell you which videos are missing. Requests appear under Requests.")}
+          ${sw("s-ai", s.aiEnabled, "Ask AI", "Staff ask work questions in their language and add photos; Gemini answers and suggests videos. Questions and photos are not saved.")}
+          <div class="note">One-time setup for Ask AI: in Supabase open <b>Edge Functions → Secrets</b> and add <code>GEMINI_API_KEY</code> with your Gemini key. The key stays there, never in the app.</div>
         </div>
         <div class="card-plain set-sec" data-sec="gemini" ${setSec === "gemini" ? "" : "hidden"}>
-          <h2>✨ Auto-draft with Gemini (optional)</h2>
-          <p class="count">Without a key, drafts come from the YouTube description and built-in safety rules. With a free Gemini key, Gemini watches each video and drafts the summary, safety note and steps from what it shows.</p>
-          <ol class="setup-steps">
-            <li>Get a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> (sign in with Google → Create API key).</li>
-            <li>For the <b>✨ Auto-draft</b> button here, paste it below.</li>
-            <li>For the daily review queue, also add it on GitHub: repo <b>Settings → Secrets and variables → Actions → New repository secret</b>, name <code>GEMINI_API_KEY</code>.</li>
-          </ol>
+          ${head("gemini", "Gemini", "Drafts, quizzes, reviews and channel suggestions in this admin.")}
           <div class="two">
-            <div class="field"><label for="s-gem">Gemini API key</label><input class="input" id="s-gem" type="password" autocomplete="off" value="${esc(geminiKey())}"><div class="help">Kept only in this browser.</div></div>
+            <div class="field"><label for="s-gem">Gemini API key</label><input class="input" id="s-gem" type="password" autocomplete="off" value="${esc(geminiKey())}"><div class="help">Kept only in this browser. Get one at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.</div></div>
             <div class="field"><label for="s-gmodel">Model</label><select class="input" id="s-gmodel"><option value="">Automatic (newest available)</option>${ABDraft.MODELS.map(m => `<option ${m === geminiModel() ? "selected" : ""}>${m}</option>`).join("")}</select></div>
           </div>
-          <button type="button" class="btn btn-sm" id="s-gtest">Test Gemini</button> <span class="help" id="s-gtest-msg"></span>
-          <p class="help" style="margin-top:10px">With Gemini on: every new video in the review queue is watched, drafted (summary, safety, PPE, steps) and scored, with a warning if it shows unsafe practice. Requests get a <b>✨ Find videos</b> button, and toolbox talks a <b>✨ Write with Gemini</b> button. The free tier covers about 8 hours of video a day; the daily job stays under that.</p>
+          <div class="bar"><button type="button" class="btn btn-sm" id="s-gtest">Test key</button><span class="help" id="s-gtest-msg"></span></div>
+          <div class="note">The daily jobs use their own copy of the key: on GitHub, repo <b>Settings → Secrets and variables → Actions</b>, secret <code>GEMINI_API_KEY</code>. Ask AI uses the copy in Supabase.</div>
+        </div>
+        <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
+          ${head("finder", "Video finder", "The daily search of your trusted channels. Manage the channels under Channels.")}
+          <div class="field"><label for="s-excl">Never queue videos whose title contains</label>
+            <textarea class="textarea" id="s-excl" placeholder="unboxing, review, vlog">${esc((s.excludeKeywords || []).join(", "))}</textarea>
+            <div class="help">Comma separated, not case-sensitive.</div></div>
+        </div>
+        <div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
+          ${head("admins", "Admins & GitHub", "Who can use this admin, and the optional link to start the daily jobs from here.")}
+          <div id="adm-list" class="rows"><p class="help">Loading…</p></div>
+          <div class="bar" style="margin-top:10px"><input class="input grow" id="adm-email" type="email" placeholder="name@albonian.fm"><button type="button" class="btn" id="adm-add">＋ Add admin</button></div>
+          <p class="help">New admins then use <b>Create an admin account</b> on the sign-in screen with that email.</p>
+          <div class="field" style="margin-top:18px"><label for="s-ghtoken">GitHub token (optional)</label><input class="input" id="s-ghtoken" type="password" autocomplete="off" value="${esc(cfg.token || "")}" placeholder="github_pat_…">
+            <div class="help">Lets “Search for new videos” and “Translate now” start the jobs immediately. Fine-grained token for <b>${esc(cfg.owner)}/${esc(cfg.repo)}</b> with <b>Actions: Read and write</b>. Kept only in this browser.</div></div>
         </div>
         <div class="card-plain set-sec" data-sec="status" ${setSec === "status" ? "" : "hidden"}>
-          <h2>🩺 Status</h2>
+          ${head("status", "System status", "Translations, daily jobs and connections.")}
           <div id="status-box"><p class="help">Loading…</p></div>
         </div>
-        <div class="set-save"><button class="btn btn-primary">Save settings</button><span class="help">Saves all sections.</span></div>
+        <div class="set-save" id="set-save"><span class="dirty" id="set-dirty">All changes saved</span><button class="btn btn-primary">Save settings</button></div>
         </div>
       </form>`;
+    const markDirty = () => { const d = $("#set-dirty"); d.textContent = "Unsaved changes"; d.classList.add("on"); };
+    $("#set-form").addEventListener("input", e => { if (!e.target.closest("#adm-email")) markDirty(); });
+    $("#set-form").addEventListener("change", e => { if (!e.target.closest("#adm-email")) markDirty(); });
     if (setSec === "status") loadStatus();
     loadAdmins();
     $$("[data-set-sec]").forEach(b => b.onclick = () => {
@@ -1688,7 +1698,13 @@
       catch (e) { m.innerHTML = `<span style="color:var(--danger)">✗ ${esc(e.message)}</span>`; }
     };
     $("#cat-add").onclick = () => { $("#cat-rows").insertAdjacentHTML("beforeend", catRow({ name: "", icon: "▶️", keywords: [] }, Date.now(), 0)); };
+    $("#cat-rows").addEventListener("input", e => {
+      const n = e.target.closest(".c-name"); if (!n) return;
+      const ic = n.closest(".cat-row").querySelector(".cat-ico"); ic.setAttribute("style", ABTrades.tone(n.value)); ic.innerHTML = ABTrades.svg(n.value, 22);
+    });
     $("#cat-rows").onclick = e => {
+      const up = e.target.closest("[data-cat-up]");
+      if (up) { const row = up.closest(".cat-row"), prev = row.previousElementSibling; if (prev) { row.parentNode.insertBefore(row, prev); $("#set-dirty").textContent = "Unsaved changes"; $("#set-dirty").classList.add("on"); } return; }
       const b = e.target.closest("[data-cat-del]"); if (!b) return;
       const row = b.closest(".cat-row");
       const n = +row.dataset.count;
@@ -1708,7 +1724,7 @@
         requestsEnabled: $("#s-reqon").checked,
         aiEnabled: $("#s-ai").checked,
         staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked,
-        quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
+        quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), quizSize: Math.min(8, Math.max(2, +$("#s-qn").value || 3)), quizSizeEss: Math.min(8, Math.max(2, +$("#s-qne").value || 5)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
         try {
@@ -1794,11 +1810,11 @@
   }
   function catRow(c, i, count) {
     return `<div class="cat-row" data-count="${count}">
-      <input class="input c-icon" aria-label="Icon" value="${esc(c.icon || "")}" style="text-align:center">
-      <div><input class="input c-name" aria-label="Category name" placeholder="Name" value="${esc(c.name)}">
-        <textarea class="textarea c-kw" aria-label="Keywords" style="min-height:60px;margin-top:6px;font-size:14px" placeholder="keywords, comma, separated">${esc((c.keywords || []).join(", "))}</textarea>
-        <div class="help">${count} video${count === 1 ? "" : "s"}</div></div>
-      <button type="button" class="btn btn-sm btn-danger" data-cat-del aria-label="Remove category">✕</button>
+      <span class="cat-ico" style="${ABTrades.tone(c.name)}">${ABTrades.svg(c.name, 22)}</span>
+      <div class="cat-main"><div class="cat-top"><input class="input c-name" aria-label="Category name" placeholder="Category name" value="${esc(c.name)}"><span class="cat-n">${count} video${count === 1 ? "" : "s"}</span></div>
+        <input type="hidden" class="c-icon" value="${esc(c.icon || "")}">
+        <textarea class="textarea c-kw" aria-label="Keywords" placeholder="keywords, comma, separated">${esc((c.keywords || []).join(", "))}</textarea></div>
+      <div class="cat-act"><button type="button" class="btn btn-sm btn-icon" data-cat-up aria-label="Move up">↑</button><button type="button" class="btn btn-sm btn-icon btn-danger" data-cat-del aria-label="Remove category">✕</button></div>
     </div>`;
   }
 

@@ -1854,7 +1854,7 @@
       const saved = window.ABAI, savedProxy = window.ABProxy;
       try {
         let model;
-        if (which === "gemini") { window.ABAI = { gemini: true, groq: false, first: "gemini" }; model = await ABDraft.aiTest({ key: pasted || "server", model: $("#s-gmodel").value || undefined }); }
+        if (which === "gemini") { window.ABAI = { gemini: true, groq: false, openrouter: false, first: "gemini" }; model = await ABDraft.aiTest({ key: pasted || "server", model: $("#s-gmodel").value || undefined }); }
         else {
           if (pasted) window.ABProxy = ABDraft.aiDirect({ [which]: pasted });
           window.ABAI = { gemini: false, groq: which === "groq", openrouter: which === "openrouter", first: which, orModel: $("#s-ormodel").value.trim() };

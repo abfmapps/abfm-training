@@ -6,6 +6,10 @@
   <title>ABFM Training</title>
   <meta name="description" content="ABFM Training: short training videos for Al Bonian FM technicians.">
   <meta name="theme-color" content="#1B2130">
+  <script>
+    // The staff app's install area is index.html only (so the admin in admin/ stays a separate app).
+    if (/\/$/.test(location.pathname)) history.replaceState(null, "", "index.html" + location.search + location.hash);
+  </script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">

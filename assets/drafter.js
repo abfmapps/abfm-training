@@ -318,9 +318,23 @@ Only ask about what is in the text above.` }] });
     if (quiz.length < Math.min(2, count)) throw new Error("Gemini's quiz was incomplete");
     return quiz.slice(0, count);
   }
+  /* Google Search inside Gemini has its own, much smaller free quota. When it runs out,
+     ask again without search (Gemini answers from what it already knows) and say so. */
+  const isQuota = e => e && (e.status === 429 || /quota|rate.?limit|exhausted/i.test(e.message || ""));
+  async function searchOrRecall(opts) {
+    try { return { ...(await gemini({ ...opts, json: false, tools: [{ google_search: {} }] })), searched: true }; }
+    catch (e) {
+      if (!isQuota(e)) throw e;
+      try { return { ...(await gemini({ ...opts, json: false })), searched: false }; }
+      catch (e2) {
+        if (isQuota(e2)) throw new Error("Gemini's free daily limit is used up. Try again tomorrow, or turn on billing for this key in Google AI Studio.");
+        throw e2;
+      }
+    }
+  }
   /* Find trusted YouTube channels for a trade using Google Search. */
   async function aiFindChannels({ category, keywords, existing, key, model }) {
-    const r = await gemini({ key, model, json: false, tools: [{ google_search: {} }], parts: [{ text:
+    const r = await searchOrRecall({ key, model, parts: [{ text:
       `Find 5 YouTube channels that publish good, practical training videos for facility-maintenance technicians in the trade: "${category}"${keywords && keywords.length ? ` (topics: ${keywords.slice(0, 12).join(", ")})` : ""}.
 Prefer professional trainers, manufacturers, trade associations and experienced technicians who show safe work, in English. Avoid channels that are mostly vlogs, sales, Shorts or unsafe practice.
 ${existing && existing.length ? `We already follow: ${existing.join("; ")}. Suggest different ones.` : ""}
@@ -332,7 +346,9 @@ Reply with JSON only: [{"url": "https://www.youtube.com/@handle", "name": string
       if (/^https:\/\/(www\.|m\.)?youtube\.com\/(@[\w.-]+|channel\/UC[\w-]{22}|c\/[\w.-]+|user\/[\w.-]+)$/.test(url) && !out.some(o => o.url === url))
         out.push({ url: url.replace("://m.", "://www."), name: clean(c.name).slice(0, 80), why: clean(c.why).slice(0, 200) });
     }
-    return out.slice(0, 6);
+    const res = out.slice(0, 6);
+    res.searched = r.searched;
+    return res;
   }
 
   function parseAI(text) {

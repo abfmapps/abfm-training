@@ -1496,7 +1496,7 @@
       <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${geminiKey() ? " Gemini can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
       ${thin.map(c => `<div class="thin-row"><div><b>${esc(c.name)}</b> <span class="small">${c.n} video${c.n === 1 ? "" : "s"} · ${c.chans} channel${c.chans === 1 ? "" : "s"}</span></div>
         <div class="row-actions">${geminiKey() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
-        ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Gemini is searching…</p>` : sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
+        ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Gemini is searching…</p>` : (sugg[c.name].searched === false && sugg[c.name].length ? `<p class="help">Google Search limit reached for today, so these come from Gemini's own knowledge. Some may be out of date — open each one before adding.</p>` : "") + sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
           ${known.has(x.url.toLowerCase()) ? `<span class="badge-s b-ok">Already added</span>` : `<button class="btn btn-sm btn-primary" data-sugg-add="${esc(c.name)}|${esc(x.url)}">＋ Add for ${esc(c.name)}</button>`}</div></div>`).join("") || `<p class="help">No channels found.</p>`}</div>` : ""}</div>`).join("")}
     </div>`;
   }
@@ -1507,7 +1507,7 @@
       try {
         const list = await ABDraft.aiFindChannels({ category: name, keywords: cat.keywords || [], existing: (data.channels.json.channels || []).map(x => x.name), key: geminiKey(), model: geminiModel() || undefined });
         sugg[name] = list;
-      } catch (e) { sugg[name] = { error: "Gemini couldn't search: " + e.message }; }
+      } catch (e) { sugg[name] = { error: "Gemini couldn't suggest channels: " + e.message }; }
       if (view === "channels") renderChannels();
     });
     $$("[data-sugg-add]").forEach(b => b.onclick = async () => {

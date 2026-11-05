@@ -4,7 +4,7 @@
 // Questions and photos are not saved anywhere.
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"];
+const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"];
 const CORS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, apikey, content-type, x-client-info",
@@ -72,7 +72,11 @@ Reply with JSON only: {"answer": string, "videos": [up to 3 ids from the library
     if (!r) continue;
     if (r.status === 404) { last = "model"; continue; }
     if (r.status === 429 || r.status === 503 || r.status === 500) { sawBusy = true; last = m + " busy"; continue; }
-    if (r.status !== 200) return reply({ ok: false, error: "error", detail: (await r.text()).slice(0, 200) });
+    if (r.status !== 200) {
+      const t = await r.text();
+      if (/not found|not supported|is not available|no longer available|deprecated|retired/i.test(t)) { last = "model"; continue; }
+      return reply({ ok: false, error: "error", detail: t.slice(0, 200) });
+    }
     const j = await r.json();
     const raw = (((j.candidates || [])[0] || {}).content?.parts || []).map((p: any) => p.text || "").join("");
     let ans: any;

@@ -192,12 +192,15 @@
 
   /* Gemini draft: the model watches the public YouTube video. */
   /* ---------- Gemini ---------- */
-  const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-2.5-flash"];
+  const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"];
+  /* Models Google has retired. A browser that saved one of these in Settings skips it. */
+  const RETIRED = /^gemini-(1\.|2\.)/;
+  const GONE = /not found|not supported|is not available|no longer available|deprecated|retired|update your code/i;
   const API = "https://generativelanguage.googleapis.com/v1beta/models/";
 
   /* One call to Gemini. Tries the chosen model first, then older ones if the model name is no longer available. */
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
-    const list = [...new Set([model, ...MODELS].filter(Boolean))];
+    const list = [...new Set([model, ...MODELS].filter(m => m && !RETIRED.test(m)))];
     let lastErr;
     for (const m of list) {
       const ctl = typeof AbortController !== "undefined" ? new AbortController() : null;
@@ -216,7 +219,7 @@
         if (!r.ok) {
           const msg = (j.error && j.error.message) || ("HTTP " + r.status);
           const err = new Error(msg); err.status = r.status;
-          if (r.status === 404 || /not found|not supported|is not available/i.test(msg)) { lastErr = err; continue; }  // try an older model
+          if (r.status === 404 || GONE.test(msg)) { lastErr = err; err.gone = true; continue; }  // try an older model
           if (r.status === 503 || r.status === 500 || r.status === 429) { lastErr = err; err.busy = true; continue; }  // overloaded: try the next model
           throw err;
         }
@@ -228,6 +231,7 @@
         if (e.name === "AbortError") e = new Error("Gemini took too long");
         lastErr = e;
         if (e.busy) continue;
+        if (e.gone) continue;
         if (e.status && e.status !== 404) throw e;
         if (!e.status && !/not found/i.test(e.message)) throw e;
       } finally { if (timer) clearTimeout(timer); }

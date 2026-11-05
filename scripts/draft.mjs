@@ -10,6 +10,9 @@ require("../assets/drafter.js");
 const { ruleDraft, aiDraft, aiQuiz } = globalThis.ABDraft;
 
 const KEY = process.env.GEMINI_API_KEY || "";
+// Groq backup: quizzes (text) switch to Groq when Gemini is busy or out of quota. Videos still need Gemini.
+const GROQ = process.env.GROQ_API_KEY || "";
+if (GROQ) globalThis.ABProxy = globalThis.ABDraft.groqDirect(GROQ);
 const MODEL = process.env.GEMINI_MODEL || "";
 const MAX_MINUTES = Number(process.env.MAX_AI_MINUTES || 360);   // free tier allows 8 hours of YouTube video a day
 const MAX_AI = Number(process.env.MAX_AI_DRAFTS || 25);
@@ -20,6 +23,9 @@ const vDoc = await load("videos", { videos: [] });
 const videos = vDoc.videos || [];
 const settings = await load("settings", { categories: [] });
 const categories = (settings.categories || []).map(c => c.name);
+// Settings → AI: which AI is on and which goes first. Video drafts need Gemini.
+globalThis.ABAI = settings.ai || {};
+const GEM = (settings.ai || {}).gemini === false ? "" : KEY;
 const minutes = d => { const p = String(d || "").split(":").map(Number); return p.length > 1 && p.every(n => !isNaN(n)) ? p.reduce((a, n) => a * 60 + n, 0) / 60 : 15; };
 let usedMin = 0;
 const subjectsFor = cat => [...new Set(videos.filter(v => v.category === cat && v.subject).map(v => v.subject))];
@@ -32,7 +38,7 @@ for (const item of pending.queue || []) {
     rules++;
   }
   if (!item.draft.title) item.draft.title = globalThis.ABDraft.trainingTitle(item.title, item.channel);
-  if (KEY && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI && usedMin + minutes(item.duration) <= MAX_MINUTES) {
+  if (GEM && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI && usedMin + minutes(item.duration) <= MAX_MINUTES) {
     usedMin += minutes(item.duration);
     try {
       item.draft = aiDraft ? await aiDraft({ yt: item.yt, title: item.title, category, subjects: subjectsFor(category), categories, key: KEY, model: MODEL }) : item.draft;
@@ -53,7 +59,7 @@ for (const item of pending.queue || []) {
 // Then check videos already in the library that Gemini hasn't reviewed yet (review only — your text is never changed).
 const MAX_LIB = Number(process.env.MAX_AI_LIBRARY || 15);
 let lib = 0;
-if (KEY) {
+if (GEM) {
   for (const v of vDoc.videos || []) {
     if (v.gemini || lib >= MAX_LIB || ai + aiFail >= MAX_AI + MAX_LIB) continue;
     if ((v.geminiTries || 0) >= 3) continue;
@@ -75,7 +81,7 @@ if (KEY) {
 // Write a 3-question quiz for library videos that don't have one yet (from the summary and steps — quick, no video watching).
 const MAX_QUIZ = Number(process.env.MAX_AI_QUIZZES || 20);
 let quizzes = 0;
-if (KEY) {
+if (KEY || GROQ) {
   for (const v of vDoc.videos || []) {
     if (quizzes >= MAX_QUIZ) break;
     if ((v.quiz && v.quiz.length) || v.hidden || (v.quizTries || 0) >= 3 || !(v.steps || []).length) continue;

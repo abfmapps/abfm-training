@@ -196,17 +196,41 @@
   const API = "https://generativelanguage.googleapis.com/v1beta/models/";
 
   /* One call to Gemini. Tries the chosen model first, then older ones if the model name is no longer available. */
+  /* AI choice, from Settings → AI (settings.ai): { gemini: on/off, groq: on/off, first: "gemini" | "groq" }.
+     Set root.ABAI = settings.ai before calling. With both on, the second one takes over when the first is
+     slow, busy or out of quota. Groq can't watch videos or search Google, so those jobs always use Gemini.
+     key === "server": use the owner's shared key through the admin proxy (root.ABProxy); the browser never sees it. */
+  const aiPrefs = () => Object.assign({ gemini: true, groq: true, first: "gemini" }, root.ABAI || {});
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
+    const pref = aiPrefs();
+    const needsGemini = !!tools || parts.some(p => p.file_data);
+    const groqReady = !needsGemini && pref.groq !== false && root.ABProxy && root.ABProxy.groq;
+    const geminiReady = pref.gemini !== false && !!key;
+    if (needsGemini && pref.gemini === false) throw new Error("This needs Gemini (it watches the video or searches the web). Turn Gemini on in Settings → AI.");
+    if (!geminiReady && !groqReady) throw new Error(pref.gemini === false && pref.groq === false ? "AI is turned off in Settings → AI." : "No AI key is set up yet (Settings → AI).");
+    const viaGroq = async () => {
+      const content = parts.map(p => p.inline_data ? { type: "image_url", image_url: { url: `data:${p.inline_data.mime_type};base64,${p.inline_data.data}` } } : { type: "text", text: p.text || "" });
+      const r = await root.ABProxy.call({ kind: "groq", json, content });
+      if (r.status !== 200 || !r.json.text) { const e = new Error((r.json.error && r.json.error.message) || "Groq HTTP " + r.status); e.status = r.status; throw e; }
+      return { text: r.json.text, model: r.json.model, grounding: null };
+    };
+    const groqFirst = groqReady && (!geminiReady || pref.first === "groq");
+    let groqErr = null;
+    if (groqFirst) {
+      try { return await viaGroq(); } catch (e) { groqErr = e; if (!geminiReady) throw e; }
+    }
     const list = [...new Set([model, ...MODELS].filter(Boolean))];
-    let lastErr;
+    const proxy = key === "server" && root.ABProxy ? root.ABProxy : null;
+    const backup = groqReady && !groqFirst;   // Groq is still to try if Gemini struggles
+    let lastErr = groqErr, triedBackup = false;
     for (const m of list) {
       const ctl = typeof AbortController !== "undefined" ? new AbortController() : null;
-      const timer = ctl ? setTimeout(() => ctl.abort(), timeoutMs) : null;
+      const timer = ctl ? setTimeout(() => ctl.abort(), backup && !triedBackup ? Math.min(timeoutMs, 30000) : timeoutMs) : null;
       try {
         const body = { contents: [{ parts }], generationConfig: { temperature: 0.2 } };
         if (json && !tools) body.generationConfig.responseMimeType = "application/json";
         if (tools) body.tools = tools;
-        const r = await fetch(API + encodeURIComponent(m) + ":generateContent", {
+        const r = proxy ? await proxy.fetchGemini(m, body, ctl ? ctl.signal : undefined) : await fetch(API + encodeURIComponent(m) + ":generateContent", {
           method: "POST",
           headers: { "Content-Type": "application/json", "x-goog-api-key": key },
           signal: ctl ? ctl.signal : undefined,
@@ -217,7 +241,7 @@
           const msg = (j.error && j.error.message) || ("HTTP " + r.status);
           const err = new Error(msg); err.status = r.status;
           if (r.status === 404 || /not found|not supported|is not available/i.test(msg)) { lastErr = err; continue; }  // try an older model
-          if (r.status === 503 || r.status === 500 || r.status === 429) { lastErr = err; err.busy = true; continue; }  // overloaded: try the next model
+          if (r.status === 503 || r.status === 500 || r.status === 429) err.busy = true;   // overloaded or out of quota
           throw err;
         }
         const c = (j.candidates || [])[0] || {};
@@ -225,11 +249,15 @@
         if (!text) throw new Error(c.finishReason ? "No answer (" + c.finishReason + ")" : "Empty answer");
         return { text, model: m, grounding: c.groundingMetadata || null };
       } catch (e) {
-        if (e.name === "AbortError") e = new Error("Gemini took too long");
+        if (e.name === "AbortError") { e = new Error("Gemini took too long"); e.busy = backup; }
         lastErr = e;
+        if (backup && !triedBackup && (e.busy || (e.status && e.status !== 404))) {
+          triedBackup = true;
+          try { return await viaGroq(); } catch (g) { lastErr = new Error("Gemini: " + e.message + " · " + g.message); lastErr.busy = !!e.busy; }
+        }
         if (e.busy) continue;
-        if (e.status && e.status !== 404) throw e;
-        if (!e.status && !/not found/i.test(e.message)) throw e;
+        if (e.status && e.status !== 404) throw lastErr;
+        if (!e.status && !/not found/i.test(e.message)) throw lastErr;
       } finally { if (timer) clearTimeout(timer); }
     }
     throw lastErr || new Error("No Gemini model available");
@@ -434,5 +462,27 @@ ${JSON.stringify(lines)}` }] });
     return out.sort((x, y) => y.score - x.score);
   }
 
-  root.ABDraft = { trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
+  /* Groq backup for the daily jobs, which hold the key themselves (GitHub secret GROQ_API_KEY).
+     In the admin the key stays on the server and the proxy plays this role. */
+  const GROQ_TEXT = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "llama-3.1-8b-instant"];
+  const GROQ_VISION = ["meta-llama/llama-4-scout-17b-16e-instruct", "meta-llama/llama-4-maverick-17b-128e-instruct"];
+  function groqDirect(key) {
+    return { groq: true, call: async ({ json, content }) => {
+      const vision = content.some(c => c.type === "image_url");
+      let last = "", status = 503;
+      for (const model of vision ? GROQ_VISION : GROQ_TEXT) {
+        const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+          method: "POST", headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
+          body: JSON.stringify({ model, temperature: 0.2, messages: [{ role: "user", content }], ...(json ? { response_format: { type: "json_object" } } : {}) })
+        });
+        const j = await r.json().catch(() => ({}));
+        if (r.ok) return { status: 200, json: { text: ((j.choices || [])[0] || {}).message?.content || "", model: "groq:" + model } };
+        last = (j.error && j.error.message) || "HTTP " + r.status; status = r.status;
+        if (r.status === 404 || r.status === 429 || r.status >= 500 || /decommission|not found|does not exist|not supported/i.test(last)) continue;
+        break;
+      }
+      return { status, json: { error: { message: "Groq: " + last } } };
+    } };
+  }
+  root.ABDraft = { groqDirect, trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -42,15 +42,56 @@
     return Object.assign({ owner: "abfmapps", repo: "abfm-training", branch: "main", token: "" }, c || {});
   }
   function saveCfg(c) { try { localStorage.setItem(CFG_KEY, JSON.stringify(c)); } catch {} }
+  /* Shared keys: the owner saves the Gemini, Groq and GitHub keys once on the server (private.app_secrets).
+     Every admin can then use them through the admin-proxy edge function; no browser ever sees them. */
+  let keys = { owner: false, gemini: false, groq: false, github: false };
+  async function proxyFetch(payload, signal) {
+    const { data: d } = await sb.auth.getSession();
+    return fetch(SB.url + "/functions/v1/admin-proxy", {
+      method: "POST", signal, cache: "no-store",
+      headers: { "Content-Type": "application/json", apikey: SB.anonKey, Authorization: "Bearer " + (d && d.session ? d.session.access_token : SB.anonKey) },
+      body: JSON.stringify(payload)
+    });
+  }
+  window.ABProxy = {
+    get groq() { return keys.groq; },
+    fetchGemini: (model, body, signal) => proxyFetch({ kind: "gemini", model, body }, signal),
+    call: async payload => { const r = await proxyFetch(payload); return { status: r.status, json: await r.json().catch(() => ({})) }; }
+  };
+  async function loadKeys() {
+    const { data: k } = await sb.rpc("admin_secret_status");
+    if (k && k.ok) keys = k;
+    if (!keys.owner) return loadEnvKeys();
+    // First time: move the owner's keys from this browser to the server so every admin can use them.
+    const moved = [];
+    const local = (() => { try { return localStorage.getItem("ab_gemini_key") || ""; } catch { return ""; } })();
+    if (!keys.gemini && local && !(await sb.rpc("admin_set_secret", { p_name: "gemini", p_value: local })).error) { keys.gemini = true; moved.push("Gemini key"); }
+    if (!keys.github && cfg.token && !(await sb.rpc("admin_set_secret", { p_name: "github", p_value: cfg.token })).error) { keys.github = true; moved.push("GitHub token"); }
+    if (keys.gemini) { try { localStorage.removeItem("ab_gemini_key"); } catch {} }
+    if (keys.github && cfg.token) { cfg.token = ""; saveCfg(cfg); }
+    await loadEnvKeys();
+    if (moved.length) toast(`Your ${moved.join(" and ")} now work for all admins (kept on the server, never shown).`);
+  }
+  /* Keys saved as Supabase Edge Function secrets (e.g. GROQ_API_KEY) count too. */
+  async function loadEnvKeys() {
+    try {
+      const st = await window.ABProxy.call({ kind: "status" });
+      if (st.status === 200) ["gemini", "groq", "github"].forEach(n => { if (st.json[n]) keys[n] = true; });
+    } catch {}
+  }
+  const hasGh = () => !!cfg.token || keys.github;
   async function gh(path, opts = {}) {
-    if (!cfg.token) return { status: 401, ok: false, json: async () => ({}) };
+    if (!cfg.token) {
+      if (!keys.github) return { status: 401, ok: false, json: async () => ({}) };
+      return proxyFetch({ kind: "github", path, method: opts.method || "GET", body: opts.body });
+    }
     return fetch("https://api.github.com" + path, {
       method: opts.method || "GET",
       headers: { Authorization: "Bearer " + cfg.token, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", ...(opts.body ? { "Content-Type": "application/json" } : {}) },
       body: opts.body ? JSON.stringify(opts.body) : undefined, cache: "no-store"
     });
   }
-  const noToken = () => `⚠ To start jobs from here, add a GitHub token in <b>Settings → Admins & GitHub</b>. Without one, the jobs still run on their schedule.`;
+  const noToken = () => keys.owner ? `⚠ To start jobs from here, add a GitHub token in <b>Settings → Admins & GitHub</b>. Without one, the jobs still run on their schedule.` : `⚠ Starting jobs from here isn't set up yet — ask the owner to add the GitHub token. The jobs still run on their schedule.`;
 
   /* ---------- content documents in Supabase ---------- */
   async function readFile(key) {
@@ -175,6 +216,7 @@
       const res = await Promise.all(keys.map(k => readFile(k)));
       keys.forEach((k, i) => data[k] = res[i]);
     } catch (e) { return renderConnect(esc(e.message)); }
+    await loadKeys().catch(() => {});
     $("#tabs").hidden = false; $("#disconnect").hidden = false;
     $("#repo-label").textContent = me;
     render();
@@ -283,7 +325,7 @@
             <div><i style="background:${full === V().length ? "var(--ok)" : "#C98A00"}"></i>${full} of ${V().length} videos translated into 8 languages</div>
             <div><i style="background:${probs ? "var(--danger)" : "var(--ok)"}"></i>${probs ? `${probs} video${probs === 1 ? "" : "s"} no longer play <button data-go="videos" data-show="problems">Show</button>` : "All videos still play on YouTube"}</div>
             <div><i style="background:${noLen ? "#C98A00" : "var(--ok)"}"></i>${noLen ? `${noLen} videos missing a length <button data-go="videos" data-show="no-len">Fill in</button>` : "Every video has a length"}</div>
-            <div><i style="background:${geminiKey() ? "var(--ok)" : "#C98A00"}"></i>${geminiKey() ? "Gemini key saved in this browser" : `No Gemini key in this browser <button data-go="settings" data-sec="gemini">Add</button>`}</div>
+            <div><i style="background:${textAI() ? "var(--ok)" : "#C98A00"}"></i>${textAI() ? `AI: ${aiLabel()}` : keys.owner ? `AI is off or has no key <button data-go="settings" data-sec="gemini">Set up</button>` : "AI isn't set up yet — ask the owner"}</div>
           </div>
         </section>
       </div>`;
@@ -320,7 +362,7 @@
       </div>
       <p class="count">${list.length} of ${V().length} videos · <b>${V().filter(v => v.gemini).length} of ${V().length}</b> checked by Gemini · <b>${V().filter(v => v.quiz && v.quiz.length).length}</b> with a quiz</p>
       ${(() => { const noLen = V().filter(v => !v.duration).length, noQuiz = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden).length;
-        return noLen || (noQuiz && geminiKey()) ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">⏱ Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && geminiKey() ? `<button class="btn btn-sm" id="fill-quiz">🧠 Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg"></span></div>` : ""; })()}
+        return noLen || (noQuiz && textAI()) ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">⏱ Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && textAI() ? `<button class="btn btn-sm" id="fill-quiz">🧠 Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg"></span></div>` : ""; })()}
       <div class="rows">${list.map(v => {
         const p = probs.get(v.yt);
         return `<div class="row ${v.hidden ? "is-hidden" : ""}">
@@ -470,7 +512,7 @@
         <div class="field"><label for="f-chan">Channel</label><input class="input" id="f-chan" value="${esc(v.channel || "")}"></div>
       </div>
       ${v.draftSource ? `<div class="draft-note">✨ ${v.draftSource === "ai" ? "Gemini watched this video and wrote a first draft of the summary, safety note and steps." : "First draft filled in from the YouTube description and safety rules."} ${v.draftSource === "ai" ? "" : STEPS_NOTE[v.stepsFrom] || ""} Check it before publishing.${reviewHtml(v.review)}</div>` : ""}
-      <div class="draft-row"><button type="button" class="btn btn-sm" id="f-draft">✨ Auto-draft</button>${geminiKey() ? `<button type="button" class="btn btn-sm" id="f-check">🔍 Check with Gemini</button>` : ""}<span class="help" id="f-draft-help">${geminiKey() ? "Gemini will watch the video and fill in the summary, safety, PPE and steps." : "Fills in safety, PPE and steps for this kind of job. Add a Gemini key in Settings to draft from the video itself."}</span></div>
+      <div class="draft-row"><button type="button" class="btn btn-sm" id="f-draft">✨ Auto-draft</button>${videoAI() ? `<button type="button" class="btn btn-sm" id="f-check">🔍 Check with Gemini</button>` : ""}<span class="help" id="f-draft-help">${videoAI() ? "Gemini will watch the video and fill in the summary, safety, PPE and steps." : "Fills in safety, PPE and steps for this kind of job. Add a Gemini key in Settings to draft from the video itself."}</span></div>
       <div class="field"><label for="f-summary">What the video shows</label><textarea class="textarea" id="f-summary" placeholder="One or two plain sentences.">${esc(v.summary || "")}</textarea></div>
       <div class="field"><label for="f-safety">Safety warning</label><textarea class="textarea" id="f-safety" placeholder="e.g. Isolate power and prove dead before starting.">${esc(v.safety || "")}</textarea></div>
       <div class="field"><label for="f-ppe">Required PPE</label><input class="input" id="f-ppe" placeholder="Safety Glasses, Work Gloves" value="${esc((v.ppe || []).join(", "))}"><div class="help">Separate with commas.</div></div>
@@ -478,7 +520,7 @@
       <div class="field"><label for="f-quiz">🧠 Quick check (quiz)</label>
         <textarea class="textarea" id="f-quiz" rows="7" placeholder="Question on one line&#10;* the right answer&#10;- a wrong answer&#10;- another wrong answer&#10;&#10;Next question…">${esc(ABDraft.quizToText(v.quiz || []))}</textarea>
         <div class="help">Staff answer this after the video. Put <b>*</b> before the right answer and <b>-</b> before wrong ones; leave a blank line between questions. 3 questions for ordinary videos, 5 for safety essentials (change in Settings). Leave empty for no quiz.</div>
-        ${geminiKey() ? `<div class="draft-row" style="margin-top:6px"><button type="button" class="btn btn-sm" id="f-quiz-ai">✨ Write quiz with Gemini</button><span class="help" id="f-quiz-help">Uses the summary, safety note and steps above.</span></div>` : ""}</div>
+        ${textAI() ? `<div class="draft-row" style="margin-top:6px"><button type="button" class="btn btn-sm" id="f-quiz-ai">✨ Write quiz with AI</button><span class="help" id="f-quiz-help">Uses the summary, safety note and steps above.</span></div>` : ""}</div>
       <label class="check"><input type="checkbox" id="f-ess" ${v.essential ? "checked" : ""}> 🦺 Safety essential (shown in the pinned Safety section)</label>
       <label class="check"><input type="checkbox" id="f-feat" ${v.featured ? "checked" : ""}> Pin to top of the library</label>
       <label class="check"><input type="checkbox" id="f-hidden" ${v.hidden ? "checked" : ""}> Hide from staff</label>
@@ -600,17 +642,26 @@
       ${!compact && rv.talking === false ? `<div class="ai-reason">No narration — mostly visual.</div>` : ""}
     </div>`;
   }
-  const geminiKey = () => { try { return localStorage.getItem("ab_gemini_key") || ""; } catch { return ""; } };
+  const localGemini = () => { try { return localStorage.getItem("ab_gemini_key") || ""; } catch { return ""; } };
+  /* Settings → AI: which AI is on and which goes first. Shared by every admin and the daily jobs. */
+  const aiSet = () => Object.assign({ gemini: true, groq: true, first: "gemini" }, data.settings.json.ai || {});
+  const geminiOn = () => aiSet().gemini !== false && (keys.gemini || !!localGemini());
+  const groqOn = () => aiSet().groq !== false && keys.groq;
+  window.ABAI = { get gemini() { return geminiOn(); }, get groq() { return groqOn(); }, get first() { return aiSet().first; } };
+  const videoAI = () => geminiOn();                 // watching videos and searching the web: Gemini only
+  const textAI = () => geminiOn() || groqOn();      // quizzes, talks, checks: either one
+  const aiLabel = () => geminiOn() && groqOn() ? (aiSet().first === "groq" ? "Groq first, Gemini as backup" : "Gemini first, Groq as backup") : geminiOn() ? "Gemini only" : groqOn() ? "Groq only (no video drafts)" : "off";
+  const geminiKey = () => keys.gemini ? "server" : localGemini() || (keys.groq ? "server" : "");
   async function runDraft() {
     const yt = parseYT($("#f-url").value) || ed.v.yt;
     const title = $("#f-title").value.trim();
     const category = $("#f-cat").value;
     if (!yt || !title) return alert("Paste the YouTube link and check the title first.");
     const filled = ["#f-summary", "#f-safety", "#f-ppe", "#f-steps"].some(id => $(id).value.trim());
-    if (filled && !confirm(geminiKey() ? "Replace the title, summary, safety, PPE and steps with Gemini's draft?" : "Replace what is already in the summary, safety, PPE and steps?")) return;
+    if (filled && !confirm(videoAI() ? "Replace the title, summary, safety, PPE and steps with Gemini's draft?" : "Replace what is already in the summary, safety, PPE and steps?")) return;
     const btn = $("#f-draft"), help = $("#f-draft-help");
     let d;
-    if (geminiKey()) {
+    if (videoAI()) {
       btn.disabled = true; help.textContent = "Gemini is watching the video… (up to a minute)";
       try {
         const subjects = [...new Set(V().filter(v => v.category === category && v.subject).map(v => v.subject))];
@@ -623,14 +674,14 @@
     }
     if (!d) {
       d = ABDraft.ruleDraft({ title, description: ed.v.description || "", category, videos: V() });
-      if (!geminiKey()) help.textContent = "Filled in safety, PPE, level and steps." + (d.summary ? "" : " Write the summary from the video.");
+      if (!videoAI()) help.textContent = "Filled in safety, PPE, level and steps." + (d.summary ? "" : " Write the summary from the video.");
     }
     if (d.title && d.source === "ai") { if (!ed.ytTitle) ed.ytTitle = title; $("#f-title").value = d.title; $("#f-title").dispatchEvent(new Event("input")); }
     if (d.summary) $("#f-summary").value = d.summary;
     if (d.safety) $("#f-safety").value = d.safety;
     if (d.ppe && d.ppe.length) $("#f-ppe").value = d.ppe.join(", ");
     if (d.steps && d.steps.length) $("#f-steps").value = d.steps.join("\n");
-    if (d.source !== "ai" && STEPS_NOTE[d.stepsFrom]) help.textContent = (geminiKey() ? help.textContent + " " : "") + STEPS_NOTE[d.stepsFrom];
+    if (d.source !== "ai" && STEPS_NOTE[d.stepsFrom]) help.textContent = (videoAI() ? help.textContent + " " : "") + STEPS_NOTE[d.stepsFrom];
     if (d.level) $("#f-level").value = d.level;
     if (d.quiz && d.quiz.length && !$("#f-quiz").value.trim()) $("#f-quiz").value = ABDraft.quizToText(d.quiz);
     if (d.subject && !$("#f-subject").value) $("#f-subject").value = d.subject;
@@ -718,23 +769,23 @@
         <div class="q-head">
           <div>
             <h2>Review queue</h2>
-            <p>Every morning the finder checks your trusted channels and puts new uploads here${geminiKey() ? ", reviewed by Gemini" : ""}. Nothing goes live until you approve it.</p>
+            <p>Every morning the finder checks your trusted channels and puts new uploads here${videoAI() ? ", reviewed by Gemini" : ""}. Nothing goes live until you approve it.</p>
             <p class="count" style="margin:0">${p.lastRun ? "Last check: " + esc(new Date(p.lastRun).toLocaleString()) : "The finder hasn't run yet."}</p>
           </div>
         </div>
       </div>
-      ${errs.length ? `<div class="err">⚠ ${errs.length} channel${errs.length > 1 ? "s" : ""} couldn't be checked. See the Channels tab.</div>` : ""}
+      ${errs.length ? `<div class="err err-row"><span>⚠ ${errs.length} channel${errs.length > 1 ? "s" : ""} couldn't be checked. <a href="#" data-go="channels">See which</a></span><button type="button" class="btn btn-sm" data-find>↻ Retry</button></div><div class="find-msg help" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>` : ""}
       ${q.length ? `<div class="bar"><p class="count grow" style="margin:0">${q.length} waiting · <b>${nAi} of ${q.length}</b> checked by Gemini</p>
         <select id="q-sort"><option value="new" ${qSort === "new" ? "selected" : ""}>Newest first</option><option value="ai" ${qSort === "ai" ? "selected" : ""}>Gemini's best first</option></select>
         ${nRej ? `<button class="btn btn-sm" id="q-rej-ai">Reject ${nRej} Gemini says no</button>` : ""}
         <button class="btn btn-sm" id="q-clear">Reject all</button></div>` : ""}
-      ${!geminiKey() && !nAi ? `<div class="hint-box">✨ Turn on Gemini in <b>Settings</b> and it will watch every new video, draft the steps, score how useful it is, and warn you about unsafe practice.</div>` : ""}
+      ${!videoAI() && !nAi ? `<div class="hint-box">✨ Turn on Gemini in <b>Settings</b> and it will watch every new video, draft the steps, score how useful it is, and warn you about unsafe practice.</div>` : ""}
       <div class="grid">${sorted.map(item => `
         <article class="qcard" data-yt="${esc(item.yt)}">
           <div class="thumb" data-preview="${esc(item.yt)}" style="cursor:pointer"><img loading="lazy" src="${thumb(item.yt)}" alt="" width="320" height="180">${item.duration ? `<span class="dur">${esc(item.duration)}</span>` : ""}</div>
           <div class="body">
             <div class="meta"><span>${esc(item.suggestedCategory || "Unsorted")}</span>${item.published ? `<span class="dot">${esc(item.published.slice(0, 10))}</span>` : ""}${item.draft && item.draft.source === "ai" ? `<span class="badge-s b-gem">✓ Checked by Gemini</span>` : `<span class="badge-s b-wait">⏳ Not checked by Gemini yet</span>`}</div>
-            <h3>${esc((item.draft && item.draft.title) || item.title)}</h3>
+            <div class="q-title"><h3>${esc((item.draft && item.draft.title) || item.title)}</h3><button class="btn btn-sm btn-icon q-edit" data-review="${esc(item.yt)}" aria-label="Review and edit before approving" title="Review & edit"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg></button></div>
             ${item.draft && item.draft.title && item.draft.title !== item.title ? `<div class="yt-t">YouTube: ${esc(item.title)}</div>` : ""}
             <div class="count" style="margin:0">${esc(item.channel || "")}</div>
             ${item.aiError && !(item.draft && item.draft.review) ? `<div class="ai-unsafe" style="background:var(--surface-2);color:var(--muted)">Gemini couldn't check it yet (${item.aiTries || 0}/3 tries): ${esc(item.aiError)}</div>` : ""}
@@ -742,8 +793,8 @@
             ${dupNote(item)}
             ${item.description ? `<div class="desc">${esc(item.description)}</div>` : ""}
             <div class="acts">
-              <button class="btn btn-sm" data-reject="${esc(item.yt)}">Reject</button>
-              <button class="btn btn-sm btn-primary" data-approve="${esc(item.yt)}">Review & approve</button>
+              <button class="btn btn-sm" data-reject="${esc(item.yt)}">✕ Reject</button>
+              <button class="btn btn-sm btn-primary" data-approve="${esc(item.yt)}">✓ Approve</button>
             </div>
           </div>
         </article>`).join("")}</div>
@@ -770,6 +821,30 @@
       if (reject) d.rejected = [...new Set([...(d.rejected || []), yt])].slice(-3000);
       return d;
     }, reject ? `Reject queued video ${yt}` : `Approve queued video ${yt}`);
+  }
+  /* ✓ Approve: publish straight from the draft, no editor. Falls back to the editor if something is missing. */
+  async function quickApprove(yt, btn) {
+    const item = (data.pending.json.queue || []).find(i => i.yt === yt); if (!item) return;
+    const d = item.draft || {};
+    const category = cats().includes(item.suggestedCategory) ? item.suggestedCategory : (cats().includes(d.category) ? d.category : "");
+    if (!category) { toast("Choose a category first."); return approve(yt); }
+    const dup = V().find(x => x.yt === yt);
+    if (dup && !confirm(`This video is already in the library as “${dup.title}”. Add it again?`)) return;
+    const slug = category.toLowerCase().replace(/[^a-z]+/g, "").slice(0, 5) || "vid";
+    const v = { id: `${slug}-${yt}`, yt, title: d.title || ABDraft.trainingTitle(item.title, item.channel), category,
+      subject: d.subject || "", level: d.level || "Intermediate", channel: item.channel || "", duration: item.duration || "", added: today(),
+      summary: d.summary || "", safety: d.safety || "", ppe: d.ppe || [], steps: d.steps || [] };
+    if (d.quiz && d.quiz.length) v.quiz = d.quiz;
+    if (d.review) v.gemini = { date: today(), ...d.review };
+    if (item.title && item.title !== v.title) v.ytTitle = item.title;
+    if (category === "Health & Safety") v.essential = true;
+    if (btn) { btn.disabled = true; btn.textContent = "Publishing…"; }
+    try {
+      await update("videos", x => { const i = x.videos.findIndex(y => y.id === v.id); if (i >= 0) x.videos[i] = v; else x.videos.unshift(v); x.updated = today(); return x; }, `Approve video: ${v.title}`);
+      await removeFromQueue(yt, false);
+      toast(`Published “${v.title}”. Live in about a minute.`);
+    } catch (e) { alert(e.message); }
+    render();
   }
   function approve(yt) {
     const item = (data.pending.json.queue || []).find(i => i.yt === yt); if (!item) return;
@@ -983,7 +1058,7 @@
             </div>
           </div>
           <div class="row-actions">
-            ${geminiKey() && r.status === "new" ? `<button class="btn btn-sm" data-rq-find="${esc(r.id)}">✨ Find videos</button>` : ""}
+            ${videoAI() && r.status === "new" ? `<button class="btn btn-sm" data-rq-find="${esc(r.id)}">✨ Find videos</button>` : ""}
             <a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(r.topic)}" target="_blank" rel="noopener">Search YouTube</a>
             ${r.status === "new" ? `<button class="btn btn-sm btn-primary" data-rq-add="${esc(r.id)}">Add video</button><button class="btn btn-sm" data-rq-done="${esc(r.id)}">Mark done</button>` : `<button class="btn btn-sm" data-rq-open="${esc(r.id)}">Reopen</button>`}
             <button class="btn btn-sm btn-danger" data-rq-del="${esc(r.id)}">Delete</button>
@@ -1325,7 +1400,7 @@
         <div class="field"><label for="te-icon">Icon</label><input class="input" id="te-icon" maxlength="4" value="${esc(k.icon || "")}" style="text-align:center;font-size:22px"></div>
         <div class="field"><label for="te-title">Title</label><input class="input" id="te-title" placeholder="e.g. Heat stress" value="${esc(k.title)}"></div>
       </div>
-      ${geminiKey() ? `<div class="draft-row"><button type="button" class="btn btn-sm" id="te-ai">✨ Write with Gemini</button><span class="help" id="te-ai-help">Type a title, then let Gemini write the points and question.</span></div>` : ""}
+      ${textAI() ? `<div class="draft-row"><button type="button" class="btn btn-sm" id="te-ai">✨ Write with AI</button><span class="help" id="te-ai-help">Type a title, then let Gemini write the points and question.</span></div>` : ""}
       <div class="field"><label for="te-points">Key points</label><textarea class="textarea" id="te-points" rows="6" placeholder="One point per line">${esc((k.points || []).join("\n"))}</textarea><div class="help">One point per line. 3–5 short points work best.</div></div>
       <div class="field"><label for="te-ask">Question to ask the team</label><input class="input" id="te-ask" placeholder="e.g. Where is the nearest drinking water on today's site?" value="${esc(k.ask || "")}"></div>
       <div class="two">
@@ -1489,9 +1564,9 @@
     const known = new Set((data.channels.json.channels || []).map(x => x.url.toLowerCase()));
     return `<div class="card-plain thin">
       <h2>📉 Categories that need more videos</h2>
-      <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${geminiKey() ? " Gemini can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
+      <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${videoAI() ? " Gemini can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
       ${thin.map(c => `<div class="thin-row"><div><b>${esc(c.name)}</b> <span class="small">${c.n} video${c.n === 1 ? "" : "s"} · ${c.chans} channel${c.chans === 1 ? "" : "s"}</span></div>
-        <div class="row-actions">${geminiKey() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
+        <div class="row-actions">${videoAI() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
         ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Gemini is searching…</p>` : sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
           ${known.has(x.url.toLowerCase()) ? `<span class="badge-s b-ok">Already added</span>` : `<button class="btn btn-sm btn-primary" data-sugg-add="${esc(c.name)}|${esc(x.url)}">＋ Add for ${esc(c.name)}</button>`}</div></div>`).join("") || `<p class="help">No channels found.</p>`}</div>` : ""}</div>`).join("")}
     </div>`;
@@ -1523,7 +1598,7 @@
   async function runJob(file, show) {
     const wf = `/repos/${cfg.owner}/${cfg.repo}/actions/workflows/${file}`;
     const before = new Date(Date.now() - 5000).toISOString();
-    if (!cfg.token) { show(noToken(), false); return false; }
+    if (!hasGh()) { show(noToken(), false); return false; }
     show("Starting…", true);
     let r; try { r = await gh(wf + "/dispatches", { method: "POST", body: { ref: cfg.branch } }); } catch { r = { status: 0 }; }
     if (r.status !== 204) { show(r.status === 403 || r.status === 404 ? "⚠ Couldn't start it — your GitHub token needs <b>Actions: Read and write</b>." : `⚠ Couldn't start it (${r.status || "no connection"}).`, false); return false; }
@@ -1551,7 +1626,7 @@
     const wf = `/repos/${cfg.owner}/${cfg.repo}/actions/workflows/find-videos.yml`;
     const before = new Date(Date.now() - 5000).toISOString();
     const qBefore = (data.pending.json.queue || []).length;
-    if (!cfg.token) { finderMsg(noToken(), false); return; }
+    if (!hasGh()) { finderMsg(noToken(), false); return; }
     finderMsg("Starting the search…", true);
     let r;
     try { r = await gh(wf + "/dispatches", { method: "POST", body: { ref: cfg.branch } }); } catch (e) { r = { status: 0 }; }
@@ -1561,7 +1636,7 @@
         : `⚠ Couldn't start it (${r.status || "no connection"}). Try again in a minute.`, false);
       return;
     }
-    finderMsg(`Searching your ${(data.channels.json.channels || []).filter(c => c.active !== false).length} channels${geminiKey() ? " — Gemini will then watch and review the new videos" : ""}… This usually takes 1–5 minutes. You can keep working.`);
+    finderMsg(`Searching your ${(data.channels.json.channels || []).filter(c => c.active !== false).length} channels${videoAI() ? " — Gemini will then watch and review the new videos" : ""}… This usually takes 1–5 minutes. You can keep working.`);
     const t0 = Date.now();
     let runId = null;
     while (Date.now() - t0 < 45 * 60000) {
@@ -1604,7 +1679,12 @@
       admins: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M18 8v6M15 11h6"/>',
       status: '<path d="M3 12h4l3-8 4 16 3-8h4"/>'
     };
-    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "Gemini"], ["finder", "Video finder"], ["admins", "Admins & GitHub"], ["status", "System status"]];
+    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "AI"], ["finder", "Video finder"], ["admins", keys.owner ? "Admins & GitHub" : "Admins"], ["status", "System status"]].filter(([k]) => k !== "gemini" || keys.owner);
+    if (setSec === "gemini" && !keys.owner) setSec = "site";
+    const when = d => d ? new Date(d).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
+    const secretField = (id, name, label, setAt, ph, help) => `<div class="field"><label for="${id}">${label}</label>
+      <div class="bar" style="margin:0"><input class="input grow" id="${id}" type="password" autocomplete="new-password" placeholder="${keys[name] ? (setAt ? "Saved " + esc(when(setAt)) : "Saved in Supabase secrets") + " — paste a new one to replace it" : ph}">${keys[name] && setAt ? `<button type="button" class="btn btn-sm btn-danger" data-secret-del="${name}">Remove</button>` : ""}</div>
+      <div class="help">${keys[name] ? "✅ Saved on the server. Every admin can use it; nobody can see it, not even you." : ""} ${help}</div></div>`;
     const ico = k => `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
     const head = (k, title, sub) => `<div class="sec-h"><span class="sec-ico">${ico(k)}</span><div><h2>${title}</h2><p>${sub}</p></div></div>`;
     const sw = (id, on, title, sub, extra = "") => `<label class="switch-row"><span><b>${title}</b><small>${sub}</small></span><input type="checkbox" class="switch" id="${id}" ${on ? "checked" : ""} ${extra}></label>`;
@@ -1646,17 +1726,34 @@
           ${head("inbox", "Requests & Ask AI", "What staff can ask for from the app.")}
           ${sw("s-reqon", s.requestsEnabled !== false, "“Request a video” button", "Staff tell you which videos are missing. Requests appear under Requests.")}
           ${sw("s-ai", s.aiEnabled, "Ask AI", "Staff ask work questions in their language and add photos; Gemini answers and suggests videos. Questions and photos are not saved.")}
-          <div class="note">One-time setup for Ask AI: in Supabase open <b>Edge Functions → Secrets</b> and add <code>GEMINI_API_KEY</code> with your Gemini key. The key stays there, never in the app.</div>
+          <div class="note">Ask AI uses the AI chosen in ${keys.owner ? "<b>Settings → AI</b>" : "the owner's AI settings"}: ${textAI() ? aiLabel() + "." : "none is on yet."}</div>
         </div>
-        <div class="card-plain set-sec" data-sec="gemini" ${setSec === "gemini" ? "" : "hidden"}>
-          ${head("gemini", "Gemini", "Drafts, quizzes, reviews and channel suggestions in this admin.")}
-          <div class="two">
-            <div class="field"><label for="s-gem">Gemini API key</label><input class="input" id="s-gem" type="password" autocomplete="off" value="${esc(geminiKey())}"><div class="help">Kept only in this browser. Get one at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.</div></div>
-            <div class="field"><label for="s-gmodel">Model</label><select class="input" id="s-gmodel"><option value="">Automatic (newest available)</option>${ABDraft.MODELS.map(m => `<option ${m === geminiModel() ? "selected" : ""}>${m}</option>`).join("")}</select></div>
+        ${keys.owner ? `<div class="card-plain set-sec" data-sec="gemini" ${setSec === "gemini" ? "" : "hidden"}>
+          ${head("gemini", "AI", "Only you see this section. Keys saved here work for every admin, Ask AI and the daily jobs, but are never shown to anyone.")}
+          ${(() => { const ai = aiSet(); return `
+          <div class="ai-grid">
+            <div class="ai-card ${ai.gemini !== false ? "on" : ""}">
+              <div class="ai-top"><b>Gemini</b><span class="badge-s ${keys.gemini ? "b-ok" : "b-wait"}">${keys.gemini ? "Key ready" : "No key"}</span><input type="checkbox" class="switch" id="s-ai-gem" aria-label="Use Gemini" ${ai.gemini !== false ? "checked" : ""}></div>
+              <p class="help">Google. The only one that can <b>watch videos</b> (drafts, reviews, the daily finder) and <b>search the web</b> (finding videos and channels).</p>
+              ${secretField("s-gem", "gemini", "API key", keys.geminiSetAt, "AIza…", `Get one at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.`)}
+              <div class="field"><label for="s-gmodel">Model</label><select class="input" id="s-gmodel"><option value="">Automatic (newest available)</option>${ABDraft.MODELS.map(m => `<option ${m === geminiModel() ? "selected" : ""}>${m}</option>`).join("")}</select></div>
+              <div class="bar" style="margin:0"><button type="button" class="btn btn-sm" data-ai-test="gemini">Test Gemini</button><span class="help" id="t-gemini"></span></div>
+            </div>
+            <div class="ai-card ${ai.groq !== false ? "on" : ""}">
+              <div class="ai-top"><b>Groq</b><span class="badge-s ${keys.groq ? "b-ok" : "b-wait"}">${keys.groq ? "Key ready" : "No key"}</span><input type="checkbox" class="switch" id="s-ai-groq" aria-label="Use Groq" ${ai.groq !== false ? "checked" : ""}></div>
+              <p class="help">Very fast, generous free limits. Does <b>text and photos</b>: quizzes, toolbox talks, translations, Ask AI. It can't watch videos or search the web.</p>
+              ${secretField("s-groq", "groq", "API key", keys.groqSetAt, "gsk_…", `Free key at <a href="https://console.groq.com/keys" target="_blank" rel="noopener">console.groq.com/keys</a>.`)}
+              <div class="bar" style="margin:0"><button type="button" class="btn btn-sm" data-ai-test="groq">Test Groq</button><span class="help" id="t-groq"></span></div>
+            </div>
           </div>
-          <div class="bar"><button type="button" class="btn btn-sm" id="s-gtest">Test key</button><span class="help" id="s-gtest-msg"></span></div>
-          <div class="note">The daily jobs use their own copy of the key: on GitHub, repo <b>Settings → Secrets and variables → Actions</b>, secret <code>GEMINI_API_KEY</code>. Ask AI uses the copy in Supabase.</div>
-        </div>
+          <div class="field" style="margin-top:16px"><label>When both are on, try first</label>
+            <div class="seg-pick" role="radiogroup">
+              <label><input type="radio" name="s-ai-first" value="gemini" ${ai.first !== "groq" ? "checked" : ""}><span>Gemini first</span></label>
+              <label><input type="radio" name="s-ai-first" value="groq" ${ai.first === "groq" ? "checked" : ""}><span>Groq first</span></label>
+            </div>
+            <div class="help">If the first one is slow, busy or at its limit, the other takes over automatically. Video jobs always use Gemini.</div></div>
+          <div class="note">The daily jobs on GitHub read their own copies: repo <b>Settings → Secrets and variables → Actions</b>, secrets <code>GEMINI_API_KEY</code> and <code>GROQ_API_KEY</code>. The on/off switches above apply there too.</div>`; })()}
+        </div>` : ""}
         <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
           ${head("finder", "Video finder", "The daily search of your trusted channels. Manage the channels under Channels.")}
           <div class="field"><label for="s-excl">Never queue videos whose title contains</label>
@@ -1668,8 +1765,7 @@
           <div id="adm-list" class="rows"><p class="help">Loading…</p></div>
           <div class="bar" style="margin-top:10px"><input class="input grow" id="adm-email" type="email" placeholder="name@albonian.fm"><button type="button" class="btn" id="adm-add">＋ Add admin</button></div>
           <p class="help">New admins then use <b>Create an admin account</b> on the sign-in screen with that email.</p>
-          <div class="field" style="margin-top:18px"><label for="s-ghtoken">GitHub token (optional)</label><input class="input" id="s-ghtoken" type="password" autocomplete="off" value="${esc(cfg.token || "")}" placeholder="github_pat_…">
-            <div class="help">Lets “Search for new videos” and “Translate now” start the jobs immediately. Fine-grained token for <b>${esc(cfg.owner)}/${esc(cfg.repo)}</b> with <b>Actions: Read and write</b>. Kept only in this browser.</div></div>
+          ${keys.owner ? `<div style="margin-top:18px">${secretField("s-ghtoken", "github", "GitHub token (optional)", keys.githubSetAt, "github_pat_…", `Lets every admin start “Search for new videos”, “Translate now” and Retry immediately. Fine-grained token for <b>${esc(cfg.owner)}/${esc(cfg.repo)}</b> with <b>Actions: Read and write</b>.`)}</div>` : ""}
         </div>
         <div class="card-plain set-sec" data-sec="status" ${setSec === "status" ? "" : "hidden"}>
           ${head("status", "System status", "Translations, daily jobs and connections.")}
@@ -1690,13 +1786,31 @@
       $$(".set-sec").forEach(c => c.hidden = c.dataset.sec !== setSec);
       if (innerWidth < 760) b.scrollIntoView({ inline: "center", block: "nearest" });
     });
-    $("#s-gtest").onclick = async () => {
-      const key = $("#s-gem").value.trim(), m = $("#s-gtest-msg");
-      if (!key) { m.textContent = "Paste a key first."; return; }
+    $$("[data-secret-del]").forEach(b => b.onclick = async () => {
+      const n = b.dataset.secretDel, label = { gemini: "Gemini key", groq: "Groq key", github: "GitHub token" }[n];
+      if (!confirm(`Take away the shared ${label}? Admins won't be able to use it until you add it again.`)) return;
+      const { error: de } = await sb.rpc("admin_set_secret", { p_name: n, p_value: "" });
+      if (de) return alert(de.message);
+      await loadKeys(); toast(label + " taken away."); render();
+    });
+    $$("[data-ai-test]").forEach(btn => btn.onclick = async () => {
+      const which = btn.dataset.aiTest, m = $("#t-" + which);
+      const pasted = $(which === "gemini" ? "#s-gem" : "#s-groq").value.trim();
+      if (!pasted && !keys[which]) { m.textContent = "Paste a key first."; return; }
       m.textContent = "Testing…";
-      try { const model = await ABDraft.aiTest({ key, model: $("#s-gmodel").value || undefined }); m.innerHTML = `<span style="color:var(--ok,#1f9d55);font-weight:700">✓ Works (${esc(model)}).</span> Click Save settings.`; }
-      catch (e) { m.innerHTML = `<span style="color:var(--danger)">✗ ${esc(e.message)}</span>`; }
-    };
+      const saved = window.ABAI, savedProxy = window.ABProxy;
+      try {
+        let model;
+        if (which === "gemini") { window.ABAI = { gemini: true, groq: false, first: "gemini" }; model = await ABDraft.aiTest({ key: pasted || "server", model: $("#s-gmodel").value || undefined }); }
+        else {
+          if (pasted) window.ABProxy = Object.assign({}, savedProxy, ABDraft.groqDirect(pasted));
+          window.ABAI = { gemini: false, groq: true, first: "groq" };
+          model = await ABDraft.aiTest({ key: "", model: undefined });
+        }
+        m.innerHTML = `<span style="color:var(--ok,#1f9d55);font-weight:700">✓ Works (${esc(model)}).</span>${pasted ? " Click Save settings." : ""}`;
+      } catch (e) { m.innerHTML = `<span style="color:var(--danger)">✗ ${esc(e.message)}</span>`; }
+      finally { window.ABAI = saved; window.ABProxy = savedProxy; }
+    });
     $("#cat-add").onclick = () => { $("#cat-rows").insertAdjacentHTML("beforeend", catRow({ name: "", icon: "▶️", keywords: [] }, Date.now(), 0)); };
     $("#cat-rows").addEventListener("input", e => {
       const n = e.target.closest(".c-name"); if (!n) return;
@@ -1726,6 +1840,7 @@
         staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked,
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), quizSize: Math.min(8, Math.max(2, +$("#s-qn").value || 3)), quizSizeEss: Math.min(8, Math.max(2, +$("#s-qne").value || 5)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
+      if ($("#s-ai-gem")) vals.ai = { gemini: $("#s-ai-gem").checked, groq: $("#s-ai-groq").checked, first: (document.querySelector('[name="s-ai-first"]:checked') || {}).value || "gemini" };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
         try {
           const j = await sGet({ what: "staff" });
@@ -1734,11 +1849,16 @@
           if (!confirm(`Turn on staff sign-in? About a minute after saving, staff must enter their HR number. ${n} active staff are on the list.`)) return;
         } catch (err) { alert("Couldn't read the staff list: " + err.message); return; }
       }
-      cfg.token = $("#s-ghtoken").value.trim(); saveCfg(cfg);
-      try {
-        localStorage.setItem("ab_gemini_key", $("#s-gem").value.trim());
-        localStorage.setItem("ab_gemini_model", $("#s-gmodel").value);
-      } catch {}
+      if (keys.owner) {
+        for (const [id, name] of [["#s-gem", "gemini"], ["#s-groq", "groq"], ["#s-ghtoken", "github"]]) {
+          const val = $(id) ? $(id).value.trim() : "";
+          if (!val) continue;
+          const { error: se } = await sb.rpc("admin_set_secret", { p_name: name, p_value: val });
+          if (se) { alert("Couldn't save the key: " + se.message); return; }
+        }
+        await loadKeys();
+        try { const m = $("#s-gmodel"); if (m) localStorage.setItem("ab_gemini_model", m.value); } catch {}
+      }
       await update("settings", d => { Object.assign(d, vals); delete d.requestUrl; delete d.recordsEnabled; return d; }, "Update site settings");
       reqs = null; loadRequests().then(badgeRequests);
       toast("Settings saved. Staff see it the next time they open the app."); render();
@@ -1746,10 +1866,10 @@
   }
   async function loadAdmins() {
     const box = $("#adm-list"); if (!box) return;
-    const { data: rows, error } = await sb.from("admins").select("email, added_at").order("email");
+    const { data: rows, error } = await sb.from("admins").select("email, added_at, role").order("email");
     if (error) { box.innerHTML = `<p class="help">${esc(error.message)}</p>`; return; }
-    box.innerHTML = rows.map(r => `<div class="ch-row"><div><b>${esc(r.email)}</b>${r.email.toLowerCase() === (me || "").toLowerCase() ? ` <span class="badge-s b-ok">You</span>` : ""}</div>
-      <div class="row-actions">${r.email.toLowerCase() === (me || "").toLowerCase() ? "" : `<button type="button" class="btn btn-sm btn-danger" data-adm-del="${esc(r.email)}">Remove</button>`}</div></div>`).join("");
+    box.innerHTML = rows.map(r => `<div class="ch-row"><div><b>${esc(r.email)}</b>${r.role === "owner" ? ` <span class="badge-s b-ess">Owner</span>` : ""}${r.email.toLowerCase() === (me || "").toLowerCase() ? ` <span class="badge-s b-ok">You</span>` : ""}</div>
+      <div class="row-actions">${r.email.toLowerCase() === (me || "").toLowerCase() || r.role === "owner" ? "" : `<button type="button" class="btn btn-sm btn-danger" data-adm-del="${esc(r.email)}">Remove</button>`}</div></div>`).join("");
     $$("[data-adm-del]").forEach(b => b.onclick = async () => {
       if (!confirm(`Remove ${b.dataset.admDel} as an admin?`)) return;
       const { error: e2 } = await sb.from("admins").delete().eq("email", b.dataset.admDel);
@@ -1774,14 +1894,16 @@
       ${ok(full === vids.length, `<span>Translations: <b>${full} of ${vids.length}</b> videos in all 8 languages${full === vids.length ? "" : " — new or edited videos are translated within a few minutes after saving"}</span>${full === vids.length ? "" : `<button type="button" class="btn btn-sm st-retry" data-retry="translate.yml">↻ Retry</button>`}<span class="st-job" id="job-translate.yml"></span>`)}
       ${ok(vids.every(v => v.gemini), `<span>Library: <b>${vids.filter(v => v.gemini).length} of ${vids.length}</b> videos checked by Gemini${vids.every(v => v.gemini) ? "" : " — up to 15 more are checked each morning"}</span>`)}
       ${ok(!q.length || gem === q.length, `<span>Gemini review: <b>${gem} of ${q.length}</b> queued videos checked${gemErr ? ` — last problem: <i>${esc(gemErr.aiError)}</i>` : ""}</span>${q.length && gem < q.length ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml">↻ Retry</button>` : ""}<span class="st-job" id="job-find-videos.yml"></span>`)}
-      ${ok(!Object.values(data.pending.json.channelStatus || {}).some(c => c && c.error), "Channels: " + (Object.values(data.pending.json.channelStatus || {}).filter(c => c && c.error).length ? "some couldn't be checked — see Channels tab" : "all checked OK"))}
-      ${ok(true, `Supabase: connected as ${esc(me || "")}`)}
+      ${(() => { const bad = Object.values(data.pending.json.channelStatus || {}).filter(c => c && c.error).length;
+        return ok(!bad, `<span>Channels: ${bad ? `<b>${bad}</b> couldn't be checked last time — <a href="#" data-go="channels">see which</a>` : "all checked OK"}</span>${bad ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml" data-out="job-ch">↻ Retry</button>` : ""}<span class="st-job" id="job-ch"></span>`); })()}
+      ${ok(geminiOn(), `AI: ${textAI() ? aiLabel() : "off"}${geminiOn() ? "" : " — video drafts and reviews need Gemini"}${keys.owner ? ` · <a href="#" data-go="settings" data-sec="gemini">change</a>` : ""}`)}
+      ${ok(true, `Database: connected (Supabase project “ABFM Training”) · you're signed in to this admin as <b>${esc(me || "")}</b>`)}
       ${ok(!V().some(v => !v.duration), `Video lengths: <b>${V().filter(v => v.duration).length} of ${V().length}</b> known${V().some(v => !v.duration) ? " — use “Fill in missing lengths” on the Videos tab" : ""}`)}
     </ul>
     <h3 style="margin:16px 0 8px">Recent automatic jobs on GitHub</h3>`;
     box.innerHTML = html + `<p class="help">Loading…</p>`;
     try {
-      if (!cfg.token) throw new Error("Add a GitHub token in Settings → Admins & GitHub to see the job history here.");
+      if (!hasGh()) throw new Error(keys.owner ? "Add a GitHub token in Settings → Admins & GitHub to see the job history here." : "The job history shows once the owner adds the GitHub token.");
       const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/runs?per_page=12`);
       if (!r.ok) throw new Error(r.status === 403 || r.status === 404 ? "Your GitHub token needs “Actions: Read” permission to show this." : "GitHub said " + r.status);
       const runs = (await r.json()).workflow_runs || [];
@@ -1795,7 +1917,7 @@
     } catch (e) { html += `<p class="help">${esc(e.message)}</p>`; }
     box.innerHTML = html;
     $$("[data-retry]", box).forEach(b => b.onclick = async () => {
-      const file = b.dataset.retry, out = $("#job-" + CSS.escape(file));
+      const file = b.dataset.retry, out = $("#" + CSS.escape(b.dataset.out || "job-" + file));
       b.disabled = true;
       const done = await runJob(file, (msg) => { if (out) out.innerHTML = msg; });
       b.disabled = false;
@@ -1803,7 +1925,7 @@
     });
     const tb = $("#st-translate");
     if (tb) tb.onclick = async () => {
-      if (!cfg.token) { $("#st-msg").innerHTML = noToken(); return; }
+      if (!hasGh()) { $("#st-msg").innerHTML = noToken(); return; }
       const r = await gh(`/repos/${cfg.owner}/${cfg.repo}/actions/workflows/translate.yml/dispatches`, { method: "POST", body: { ref: cfg.branch } });
       $("#st-msg").textContent = r.status === 204 ? "Started — refresh this page in a few minutes." : "Couldn't start it (" + r.status + "). The token needs “Actions: Read and write”.";
     };
@@ -1832,13 +1954,14 @@
     if (tab) { view = tab.dataset.view; render(); scrollTo(0, 0); return; }
     if (e.target.closest("[data-find]")) { runFinder(); return; }
     if (e.target.closest("[data-close-drawer]") || e.target.id === "drawer") { closeDrawer(); return; }
-    const t = e.target.closest("[data-edit],[data-hide],[data-del],[data-approve],[data-reject],[data-preview],[data-ch-toggle],[data-ch-del]");
+    const t = e.target.closest("[data-edit],[data-hide],[data-del],[data-approve],[data-review],[data-reject],[data-preview],[data-ch-toggle],[data-ch-del]");
     if (!t) return;
     const d = t.dataset;
     if (d.edit) openEditor(V().find(v => v.id === d.edit));
     else if (d.hide) hideToggle(d.hide);
     else if (d.del) del(d.del);
-    else if (d.approve) approve(d.approve);
+    else if (d.approve) quickApprove(d.approve, t);
+    else if (d.review) approve(d.review);
     else if (d.reject) removeFromQueue(d.reject, true).then(() => { toast("Rejected. It won't be suggested again."); render(); });
     else if (d.preview) t.outerHTML = `<div class="preview" style="margin:0;border-radius:0"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(d.preview)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div>`;
     else if (d.chToggle) { const i = +d.chToggle; update("channels", x => { x.channels[i].active = x.channels[i].active === false; return x; }, "Pause/resume channel").then(render); }

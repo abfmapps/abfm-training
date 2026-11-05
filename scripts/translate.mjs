@@ -10,6 +10,9 @@ const require = createRequire(import.meta.url);
 require("../assets/drafter.js");
 const { aiTranslate } = globalThis.ABDraft;
 const GEMINI_KEY = process.env.GEMINI_API_KEY || "";
+// Groq backup: used when Gemini is busy, slow or out of quota.
+const GROQ_KEY = process.env.GROQ_API_KEY || "";
+if (GROQ_KEY) globalThis.ABProxy = globalThis.ABDraft.groqDirect(GROQ_KEY);
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "";
 const LANG_NAMES = { hi: "Hindi", ur: "Urdu", ml: "Malayalam", bn: "Bengali", ta: "Tamil", ne: "Nepali", tl: "Filipino (Tagalog)", ar: "Arabic" };
 let googleDown = 0, usedGemini = 0, lastError = "";
@@ -61,10 +64,10 @@ async function translateLines(lines, tl) {
       if (e.message === "limit") throw e;
       googleDown++; lastError = "Google Translate: " + e.message;
       if (googleDown === 3) console.log("Google Translate isn't responding (" + e.message + ")" + (GEMINI_KEY ? " — switching to Gemini." : " and no GEMINI_API_KEY is set."));
-      if (!GEMINI_KEY) throw e;
+      if (!GEMINI_KEY && !GROQ_KEY) throw e;
     }
   }
-  if (!GEMINI_KEY) throw new Error(lastError || "No translation service available");
+  if (!GEMINI_KEY && !GROQ_KEY) throw new Error(lastError || "No translation service available");
   if (Date.now() - START > TIME_BUDGET) throw new Error("limit");
   const clean = lines.map(s => String(s || "").replace(/\s*\n\s*/g, " ").trim());
   try {
@@ -209,6 +212,7 @@ async function translateTalks(doc) {
 }
 
 const videos = await load("videos", { videos: [] }), settings = await load("settings", {});
+globalThis.ABAI = settings.ai || {};   // Settings → AI: which AI is on and which goes first
 
 let paths = null;
 paths = await load("paths", null);

@@ -51,7 +51,9 @@ Deno.serve(async (req) => {
     const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
       method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(b.body || {}),
     });
-    return new Response(await r.text(), { status: r.status, headers: { ...CORS, "Content-Type": "application/json" } });
+    const t = await r.text();
+    if (!r.ok) console.log(JSON.stringify({ kind: "gemini", model, status: r.status, error: t.slice(0, 300) }));
+    return new Response(t, { status: r.status, headers: { ...CORS, "Content-Type": "application/json" } });
   }
 
   if (b.kind === "groq") {
@@ -68,6 +70,7 @@ Deno.serve(async (req) => {
       const j = await r.json().catch(() => ({}));
       if (r.ok) return reply({ text: j.choices?.[0]?.message?.content || "", model: "groq:" + model });
       last = j.error?.message || "HTTP " + r.status;
+      console.log(JSON.stringify({ kind: "groq", model, status: r.status, error: String(last).slice(0, 300) }));
       if (r.status === 404 || /decommission|not found|does not exist|not supported/i.test(last) || r.status === 429 || r.status >= 500) continue;
       return reply({ error: { message: "Groq: " + last } }, r.status);
     }
@@ -90,6 +93,7 @@ Deno.serve(async (req) => {
         const text = j.choices?.[0]?.message?.content || "";
         if (r.ok && text) return reply({ text, model: "openrouter:" + (j.model || model) });
         last = j.error?.message || (r.ok ? "empty answer" : "HTTP " + r.status);
+        console.log(JSON.stringify({ kind: "openrouter", model, status: r.status, error: String(last).slice(0, 300), raw: r.ok ? JSON.stringify(j).slice(0, 300) : undefined }));
         if (r.status === 401 || r.status === 402 || r.status === 403) return reply({ error: { message: "OpenRouter: " + last } }, r.status);
         if (!(strict && r.status === 400)) break;
       }

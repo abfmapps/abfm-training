@@ -394,7 +394,7 @@
       </div>
       <p class="count">${list.length} of ${V().length} videos · <b>${V().filter(v => v.gemini).length} of ${V().length}</b> checked by Gemini · <b>${V().filter(v => v.quiz && v.quiz.length).length}</b> with a quiz</p>
       ${(() => { const noLen = V().filter(v => !v.duration).length, noQuiz = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden).length;
-        return noLen || (noQuiz && textAI()) ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">${ABIcon("clock")} Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && textAI() ? `<button class="btn btn-sm" id="fill-quiz">${ABIcon("quiz")} Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg"></span></div>` : ""; })()}
+        return noLen || (noQuiz && textAI()) || fillReport ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">${ABIcon("clock")} Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && textAI() ? `<button class="btn btn-sm" id="fill-quiz">${ABIcon("quiz")} Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg">${fillReport}</span></div>` : ""; })()}
       <div class="rows">${list.map(v => {
         const p = probs.get(v.yt);
         return `<div class="row ${v.hidden ? "is-hidden" : ""}">
@@ -475,12 +475,13 @@
     await update("videos", d => { d.videos.forEach(v => { if (!v.duration && found[v.id]) v.duration = found[v.id]; }); return d; }, `Fill in ${n} video lengths`);
     toast(`${n} lengths filled in. Live in about a minute.`); render();
   }
+  let fillReport = "";   // result of the last "Write quizzes" run, kept on screen after the page redraws
   const quizCount = v => { const st = data.settings.json; return v && v.essential ? (+st.quizSizeEss || 5) : (+st.quizSize || 3); };
   async function fillQuizzes() {
     const todo = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden), msg = $("#fill-msg"), btn = $("#fill-quiz");
-    if (!confirm(`${textName()} will write a quiz for ${todo.length} videos: ${+data.settings.json.quizSizeEss || 5} questions for safety essentials, ${+data.settings.json.quizSize || 3} for the others, from each video's summary, safety note and steps. It saves every 10 videos — you can check and edit any quiz afterwards. Start?`)) return;
-    btn.disabled = true;
-    let made = {}, total = 0, fails = 0;
+    if (!confirm(`${textName()} will write a quiz for ${todo.length} videos: ${+data.settings.json.quizSizeEss || 5} questions for safety essentials, ${+data.settings.json.quizSize || 3} for the others, from each video's summary, safety note and steps. It saves every 5 videos — you can check and edit any quiz afterwards. Start?`)) return;
+    btn.disabled = true; fillReport = "";
+    let made = {}, total = 0, fails = 0, inRow = 0, lastErr = "", stopped = "";
     const save = async () => {
       const ids = Object.keys(made); if (!ids.length) return;
       const batch = made; made = {};
@@ -489,13 +490,29 @@
     for (let i = 0; i < todo.length; i++) {
       const v = todo[i];
       msg.textContent = `Writing quiz ${i + 1} of ${todo.length}: ${v.title}`;
-      try { made[v.id] = await ABDraft.aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, count: quizCount(v), key: geminiKey(), model: geminiModel() || undefined }); total++; }
-      catch (e) { fails++; if (/API key|permission|quota|RESOURCE_EXHAUSTED/i.test(e.message)) { msg.textContent = textName() + " stopped: " + e.message; break; } }
-      if (Object.keys(made).length >= 10) await save();
-      await new Promise(r => setTimeout(r, 1500));
+      const ask = () => ABDraft.aiQuiz({ title: v.title, summary: v.summary, safety: v.safety, steps: v.steps, ppe: v.ppe, count: quizCount(v), key: geminiKey(), model: geminiModel() || undefined });
+      try {
+        try { made[v.id] = await ask(); }
+        catch (e) {   // busy or at the per-minute limit: wait a little and try this video once more
+          if (!/busy|limit|rate|overload|429|503|too long|high demand|unavailable/i.test(e.message)) throw e;
+          msg.textContent = `The AI is busy — waiting 20 seconds, then trying “${v.title}” again…`;
+          await new Promise(r => setTimeout(r, 20000));
+          made[v.id] = await ask();
+        }
+        total++; inRow = 0;
+      } catch (e) {
+        fails++; inRow++; lastErr = e.message || String(e);
+        console.warn("Quiz failed for", v.id, lastErr);
+        if (inRow >= 4) { stopped = lastErr; break; }   // something is wrong: stop instead of failing every video
+      }
+      if (Object.keys(made).length >= 5) await save();
+      await new Promise(r => setTimeout(r, 2500));
     }
     await save();
-    toast(`${total} quizzes added${fails ? `, ${fails} failed` : ""}. Live in about a minute.`); render();
+    fillReport = stopped
+      ? `<span style="color:var(--danger)">${ABIcon("alert")} Stopped after ${inRow} failures in a row. ${total ? `${total} quizzes were saved. ` : "Nothing was saved. "}The AI said: <b>${esc(stopped)}</b></span>`
+      : `${ABIcon(fails ? "alert" : "checkCircle", fails ? "" : "ok")} ${total} quiz${total === 1 ? "" : "zes"} saved${fails ? `, ${fails} failed (last problem: ${esc(lastErr)}) — run it again to retry those` : ""}. Live in about a minute.`;
+    toast(stopped ? "Quiz writing stopped — see the message" : `${total} quizzes saved`); render();
   }
 
   async function hideToggle(id) {

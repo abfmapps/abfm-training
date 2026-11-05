@@ -25,6 +25,8 @@
   const SB = window.AB_CONFIG || {};
   const sb = window.supabase.createClient(SB.url, SB.anonKey, { auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true } });
   let me = null;                        // signed-in admin's email
+  let superAdmin = false;               // only the super admin (the owner) sees the restricted Settings sections
+  const SUPER_ONLY = ["inbox", "gemini", "admins", "status"];
   let cfg = loadCfg();                  // optional GitHub link, only to start the daily jobs from here
   const data = {};
   let view = "dashboard";
@@ -61,6 +63,7 @@
   async function loadKeys() {
     const { data: k } = await sb.rpc("admin_secret_status");
     if (k && k.ok) keys = k;
+    keys.owner = keys.owner && superAdmin;
     if (!keys.owner) return loadEnvKeys();
     // First time: move the owner's keys from this browser to the server so every admin can use them.
     const moved = [];
@@ -201,9 +204,11 @@
     me = u && u.user ? u.user.email : null;
     if (!me) return renderConnect();
     const { data: ok } = await sb.rpc("is_admin");
+    const { data: sup } = await sb.rpc("is_super_admin");
+    superAdmin = !!sup;
     if (!ok) {
       $("#disconnect").hidden = false;
-      return renderConnect(`You're signed in as <b>${esc(me)}</b>, but this email isn't on the admin list. Ask an existing admin to add it in <b>Settings → Admins &amp; GitHub</b>.`);
+      return renderConnect(`You're signed in as <b>${esc(me)}</b>, but this email isn't on the admin list. Ask the super admin to add it in <b>Settings → Admins &amp; GitHub</b>.`);
     }
     await start();
   }
@@ -319,7 +324,7 @@
           ${data.settings.json.statsEnabled ? (nores.map(c => `<div class="list-line"><span>“${esc(c.key)}”</span><b>${c.n}</b></div>`).join("") || `<p class="help">Nothing yet.</p>`) : `<p class="help">Counting is off. Turn it on in <a href="#" data-go="settings">Settings → Staff &amp; training</a>.</p>`}
         </section>
         <section class="card-plain" style="flex:1 1 360px">
-          <div class="dash-h"><h2>System health</h2><a href="#" data-go="settings" data-sec="status">Details</a></div>
+          <div class="dash-h"><h2>System health</h2>${superAdmin ? `<a href="#" data-go="settings" data-sec="status">Details</a>` : ""}</div>
           <div class="health">
             <div><i style="background:${lastRun && Date.now() - Date.parse(lastRun) < 36 * 36e5 ? "var(--ok)" : "var(--danger)"}"></i>${lastRun ? "Daily video check ran " + esc(new Date(lastRun).toLocaleString(undefined, { weekday: "short", hour: "2-digit", minute: "2-digit" })) : "Daily video check hasn't run yet"}</div>
             <div><i style="background:${full === V().length ? "var(--ok)" : "#C98A00"}"></i>${full} of ${V().length} videos translated into 8 languages</div>
@@ -1564,10 +1569,10 @@
     const known = new Set((data.channels.json.channels || []).map(x => x.url.toLowerCase()));
     return `<div class="card-plain thin">
       <h2>📉 Categories that need more videos</h2>
-      <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${videoAI() ? " Gemini can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
+      <p class="help">These have fewer than 8 videos. Adding a trusted channel for them lets the daily finder fill them up.${textAI() ? " AI can suggest channels — open each one and check it before adding." : " Add a Gemini key in Settings to get channel suggestions."}</p>
       ${thin.map(c => `<div class="thin-row"><div><b>${esc(c.name)}</b> <span class="small">${c.n} video${c.n === 1 ? "" : "s"} · ${c.chans} channel${c.chans === 1 ? "" : "s"}</span></div>
-        <div class="row-actions">${videoAI() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
-        ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Gemini is searching…</p>` : sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
+        <div class="row-actions">${textAI() ? `<button class="btn btn-sm" data-sugg="${esc(c.name)}">✨ Suggest channels</button>` : ""}<a class="btn btn-sm" href="https://www.youtube.com/results?search_query=${encodeURIComponent(c.name + " training technician")}&sp=EgIQAg%253D%253D" target="_blank" rel="noopener">Search YouTube</a></div>
+        ${sugg[c.name] ? `<div class="fv-list" style="grid-column:1/-1">${sugg[c.name].error ? `<p class="help" style="color:var(--danger)">${esc(sugg[c.name].error)}</p>` : sugg[c.name].loading ? `<p class="help">Searching…</p>` : (sugg[c.name].searched === false && sugg[c.name].length ? `<p class="help">The web-search limit is reached for today, so these come from the AI's own knowledge. Some may be out of date — open each one before adding.</p>` : "") + sugg[c.name].map(x => `<div class="fv"><div><b><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name || x.url)}</a></b><div class="small">${esc(x.why)}</div><div class="small">${esc(x.url)}</div>
           ${known.has(x.url.toLowerCase()) ? `<span class="badge-s b-ok">Already added</span>` : `<button class="btn btn-sm btn-primary" data-sugg-add="${esc(c.name)}|${esc(x.url)}">＋ Add for ${esc(c.name)}</button>`}</div></div>`).join("") || `<p class="help">No channels found.</p>`}</div>` : ""}</div>`).join("")}
     </div>`;
   }
@@ -1578,7 +1583,7 @@
       try {
         const list = await ABDraft.aiFindChannels({ category: name, keywords: cat.keywords || [], existing: (data.channels.json.channels || []).map(x => x.name), key: geminiKey(), model: geminiModel() || undefined });
         sugg[name] = list;
-      } catch (e) { sugg[name] = { error: "Gemini couldn't search: " + e.message }; }
+      } catch (e) { sugg[name] = { error: "Couldn't suggest channels: " + e.message }; }
       if (view === "channels") renderChannels();
     });
     $$("[data-sugg-add]").forEach(b => b.onclick = async () => {
@@ -1679,7 +1684,8 @@
       admins: '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M18 8v6M15 11h6"/>',
       status: '<path d="M3 12h4l3-8 4 16 3-8h4"/>'
     };
-    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "AI"], ["finder", "Video finder"], ["admins", keys.owner ? "Admins & GitHub" : "Admins"], ["status", "System status"]].filter(([k]) => k !== "gemini" || keys.owner);
+    const NAV = [["site", "General"], ["cats", "Categories"], ["staff", "Staff & training"], ["inbox", "Requests & Ask AI"], ["gemini", "AI"], ["finder", "Video finder"], ["admins", keys.owner ? "Admins & GitHub" : "Admins"], ["status", "System status"]].filter(([k]) => superAdmin ? (k !== "gemini" || keys.owner) : !SUPER_ONLY.includes(k));
+    if (!superAdmin && SUPER_ONLY.includes(setSec)) setSec = "site";
     if (setSec === "gemini" && !keys.owner) setSec = "site";
     const when = d => d ? new Date(d).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }) : "";
     const secretField = (id, name, label, setAt, ph, help) => `<div class="field"><label for="${id}">${label}</label>
@@ -1722,12 +1728,12 @@
             <div class="field"><label for="s-ref">Safety refresher every</label><div class="unit"><input class="input" id="s-ref" type="number" min="0" max="60" value="${esc(s.refresherMonths === undefined ? 12 : s.refresherMonths)}"><span>months</span></div><div class="help">Safety essentials must be watched again after this. 0 = never.</div></div>
           </div>
         </div>
-        <div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
+        ${superAdmin ? `<div class="card-plain set-sec" data-sec="inbox" ${setSec === "inbox" ? "" : "hidden"}>
           ${head("inbox", "Requests & Ask AI", "What staff can ask for from the app.")}
           ${sw("s-reqon", s.requestsEnabled !== false, "“Request a video” button", "Staff tell you which videos are missing. Requests appear under Requests.")}
           ${sw("s-ai", s.aiEnabled, "Ask AI", "Staff ask work questions in their language and add photos; Gemini answers and suggests videos. Questions and photos are not saved.")}
           <div class="note">Ask AI uses the AI chosen in ${keys.owner ? "<b>Settings → AI</b>" : "the owner's AI settings"}: ${textAI() ? aiLabel() + "." : "none is on yet."}</div>
-        </div>
+        </div>` : ""}
         ${keys.owner ? `<div class="card-plain set-sec" data-sec="gemini" ${setSec === "gemini" ? "" : "hidden"}>
           ${head("gemini", "AI", "Only you see this section. Keys saved here work for every admin, Ask AI and the daily jobs, but are never shown to anyone.")}
           ${(() => { const ai = aiSet(); return `
@@ -1760,7 +1766,7 @@
             <textarea class="textarea" id="s-excl" placeholder="unboxing, review, vlog">${esc((s.excludeKeywords || []).join(", "))}</textarea>
             <div class="help">Comma separated, not case-sensitive.</div></div>
         </div>
-        <div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
+        ${superAdmin ? `<div class="card-plain set-sec" data-sec="admins" ${setSec === "admins" ? "" : "hidden"}>
           ${head("admins", "Admins & GitHub", "Who can use this admin, and the optional link to start the daily jobs from here.")}
           <div id="adm-list" class="rows"><p class="help">Loading…</p></div>
           <div class="bar" style="margin-top:10px"><input class="input grow" id="adm-email" type="email" placeholder="name@albonian.fm"><button type="button" class="btn" id="adm-add">＋ Add admin</button></div>
@@ -1770,7 +1776,7 @@
         <div class="card-plain set-sec" data-sec="status" ${setSec === "status" ? "" : "hidden"}>
           ${head("status", "System status", "Translations, daily jobs and connections.")}
           <div id="status-box"><p class="help">Loading…</p></div>
-        </div>
+        </div>` : ""}
         <div class="set-save" id="set-save"><span class="dirty" id="set-dirty">All changes saved</span><button class="btn btn-primary">Save settings</button></div>
         </div>
       </form>`;
@@ -1778,7 +1784,7 @@
     $("#set-form").addEventListener("input", e => { if (!e.target.closest("#adm-email")) markDirty(); });
     $("#set-form").addEventListener("change", e => { if (!e.target.closest("#adm-email")) markDirty(); });
     if (setSec === "status") loadStatus();
-    loadAdmins();
+    if (superAdmin) loadAdmins();
     $$("[data-set-sec]").forEach(b => b.onclick = () => {
       setSec = b.dataset.setSec;
       if (setSec === "status") loadStatus();
@@ -1835,11 +1841,10 @@
         siteName: $("#s-name").value.trim(), tagline: $("#s-tag").value.trim(), announcement: $("#s-ann").value.trim(),
         helpdesk: $("#s-help").value.trim(), newDays: Math.max(1, +$("#s-new").value || 7), categories,
         excludeKeywords: $("#s-excl").value.split(",").map(x => x.trim().toLowerCase()).filter(Boolean),
-        requestsEnabled: $("#s-reqon").checked,
-        aiEnabled: $("#s-ai").checked,
         staffLogin: $("#s-login").checked, signoffEnabled: $("#s-sign").checked, statsEnabled: $("#s-stats").checked,
         quizPass: Math.min(100, Math.max(1, +$("#s-pass").value || 67)), quizSize: Math.min(8, Math.max(2, +$("#s-qn").value || 3)), quizSizeEss: Math.min(8, Math.max(2, +$("#s-qne").value || 5)), refresherMonths: Math.max(0, Math.min(60, +$("#s-ref").value || 0))
       };
+      if (superAdmin) { vals.requestsEnabled = $("#s-reqon").checked; vals.aiEnabled = $("#s-ai").checked; }
       if ($("#s-ai-gem")) vals.ai = { gemini: $("#s-ai-gem").checked, groq: $("#s-ai-groq").checked, first: (document.querySelector('[name="s-ai-first"]:checked') || {}).value || "gemini" };
       if (vals.staffLogin && !data.settings.json.staffLogin) {
         try {
@@ -1947,7 +1952,7 @@
       e.preventDefault();
       view = go.dataset.go;
       if (go.dataset.show) ui.show = go.dataset.show;
-      if (go.dataset.sec) setSec = go.dataset.sec;
+      if (go.dataset.sec && (superAdmin || !SUPER_ONLY.includes(go.dataset.sec))) setSec = go.dataset.sec;
       render(); scrollTo(0, 0); return;
     }
     const tab = e.target.closest("#tabs [data-view]");

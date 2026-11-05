@@ -314,6 +314,7 @@ details.box summary { font-weight: 700; cursor: pointer; }
 .dirty { font-size: 13.5px; color: var(--muted); font-weight: 600; }
 .dirty.on { color: var(--brand-ink); }
 .dirty.on::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 99px; background: var(--brand); margin-right: 8px; vertical-align: 1px; }
+<<<<<<< HEAD
 
 /* Review queue card: title with a quick edit pencil, Reject / Approve below */
 .q-title { display: flex; gap: 8px; align-items: flex-start; justify-content: space-between; }
@@ -336,3 +337,5 @@ details.box summary { font-weight: 700; cursor: pointer; }
 .seg-pick span { display: block; padding: 7px 14px; border-radius: 999px; font-weight: 600; font-size: 14px; }
 .seg-pick input:checked + span { background: var(--ink, #1B2130); color: #fff; }
 .seg-pick input:focus-visible + span { outline: 2px solid currentColor; outline-offset: 2px; }
+=======
+>>>>>>> origin/main

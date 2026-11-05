@@ -1,316 +1,1136 @@
 {
-  "lastRun": "2026-11-05T02:24:13.048Z",
-  "channelStatus": {
-    "https://www.youtube.com/@EngineeringMindset": {
-      "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-05T02:23:54.436Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/@ACServiceTech": {
-      "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-05T02:23:57.603Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/@TheElectricalGuy": {
-      "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-05T02:23:58.797Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/@GSHElectrical": {
-      "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-05T02:23:59.985Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/@jwflame": {
-      "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-05T02:24:01.087Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/@RogerWakefield": {
-      "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-05T02:24:03.204Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/c/HVACSchool": {
-      "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-05T02:23:56.614Z",
-      "lastFound": 1,
-      "via": "page"
-    },
-    "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
-      "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-05T02:24:04.261Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/c/Ductdudes": {
-      "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-05T02:24:05.363Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
-      "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-05T02:24:06.453Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
-      "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-05T02:24:08.986Z",
-      "lastFound": 1,
-      "via": "page"
-    },
-    "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
-      "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-05T02:24:10.038Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
-      "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-05T02:24:11.160Z",
-      "lastFound": 0,
-      "via": "page"
-    },
-    "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
-      "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-05T02:24:12.334Z",
-      "lastFound": 0,
-      "via": "page"
-    }
-  },
   "queue": [
     {
-      "yt": "15MXhGjXXhw",
-      "title": "What to Check During an AC Maintenance Tune-Up: Capacitor to Drain Line",
-      "channel": "HVAC School",
-      "channelUrl": "https://www.youtube.com/c/HVACSchool",
-      "published": "2026-11-04T12:23:55.548Z",
-      "duration": "",
-      "channelCategory": "HVAC",
-      "suggestedCategory": "HVAC",
-      "description": "",
-      "found": "2026-11-05T02:23:56.613Z",
+      "yt": "oX2wjCIqMH0",
       "draft": {
-        "source": "ai",
-        "title": "Residential Split AC Maintenance Tune-Up Procedure",
-        "summary": "An HVAC technician demonstrates a complete preventive maintenance check on a split air conditioning system. The video covers electrical testing, non-invasive system diagnostics, drain line cleaning, and indoor unit inspection.",
-        "safety": "Always disconnect main electrical power and properly discharge capacitors before handling electrical components.",
         "ppe": [
           "Safety Glasses",
           "Work Gloves",
-          "Shoe Covers"
-        ],
-        "steps": [
-          "Check compressor and fan motor amperage using a clamp meter",
-          "Disconnect power and test the run capacitor's capacitance and power factor",
-          "Clear the outdoor condensate drain line using a wet-dry vacuum",
-          "Check system operating parameters non-invasively using digital gauges and app",
-          "Inspect and clean the indoor evaporator coil and drain pan",
-          "Flush and prime the condensate drain line with clean water"
-        ],
-        "stepsFrom": "ai",
-        "level": "Intermediate",
-        "subject": "Preventive Maintenance",
-        "category": "HVAC",
-        "review": {
-          "relevance": 9,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "Practical step-by-step demonstration of AC maintenance covering both electrical and airflow diagnostics.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.6-flash"
-      }
-    },
-    {
-      "yt": "lmxTOsW_qq0",
-      "title": "Why and How to Test Heat Pump Defrost - Short #310",
-      "channel": "HVAC School",
-      "channelUrl": "https://www.youtube.com/c/HVACSchool",
-      "published": "2026-11-03T11:13:52.482Z",
-      "duration": "",
-      "channelCategory": "HVAC",
-      "suggestedCategory": "HVAC",
-      "description": "",
-      "found": "2026-11-04T02:13:53.527Z",
-      "draft": {
-        "source": "ai",
-        "title": "Heat Pump Defrost System Overview and Testing",
-        "summary": "Explains why heat pumps require defrost cycles and outlines key principles for testing defrost controls and sensors. Discusses differences between time-temperature and demand defrost logic.",
-        "safety": "Always disconnect electrical power before servicing or inspecting internal wiring on the outdoor unit.",
-        "ppe": [
-          "Safety Glasses",
-          "Protective Gloves",
           "Safety Shoes"
         ],
-        "steps": [
-          "Identify whether the defrost system uses time-temperature or demand logic.",
-          "Determine if sensors are snap-action switches or variable-resistance thermistors.",
-          "Consult manufacturer guidelines before initiating a forced defrost test.",
-          "Observe reversing valve operation, outdoor fan shutoff, and supplemental heat activation.",
-          "Verify that temperature sensors are physically attached to the coil properly.",
-          "Inspect outdoor unit for ice accumulation, blocked airflow, or drainage issues."
-        ],
-        "stepsFrom": "ai",
         "level": "Intermediate",
-        "subject": "Refrigerant & Diagnostics",
-        "category": "HVAC",
-        "review": {
-          "relevance": 7,
-          "quality": 5,
-          "recommend": "maybe",
-          "reason": "The content contains valuable theoretical information, but the video is an audio podcast with a static logo image.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.6-flash"
-      }
+        "steps": [
+          "How a hot water recirculation system can reduce the wait for hot water",
+          "How a whole-home booster pump can address low or inconsistent water pressure",
+          "How professional installation improved comfort in a busy family home",
+          "Why the combination of faster hot water and consistent pressure made everyday routines easier"
+        ],
+        "title": "Hot Water in Under 10 Seconds + Consistent Water Pressure",
+        "safety": "Inform the building and the alarm monitoring company before testing, and never leave a system disabled.",
+        "source": "rules",
+        "subject": "Water Tank Disinfection & Testing",
+        "summary": "See how one California family went from waiting 2 minutes for hot water to getting it in under 10 seconds, while also gaining consistent water pressure throughout their home.",
+        "stepsFrom": "description"
+      },
+      "found": "2026-11-05T10:59:01.631Z",
+      "title": "Hot Water in Under 10 Seconds + Consistent Water Pressure | Grundfos",
+      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "aiTries": 1,
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-11-03T12:01:06+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "See how one California family went from waiting 2 minutes for hot water to getting it in under 10 seconds, while also gaining consistent water pressure throughout their home.\n\nThe Booth family’s busy routines were frequently interrupted by long waits for hot water and water-pressure drops when shower, laundry, dishes, or sprinklers were running at the same time.\n\nA professional installation of the Grundfos ALPHA Comfort System hot water recirculation pump and Grundfos SCALA2 Model 2 whole-home water pressure booster helped change that. The Booths can now run multiple showers and household appliances with consistent water pressure, while getting hot water much faster at every tap.\n\nFor this busy family, the upgrade means more than better-performing plumbing. It means smoother mornings, easier evenings, and more family time together.\n\nIn this video, discover:\n\n• How a hot water recirculation system can reduce the wait for hot water\n• How a whole-home booster pump can address low or inconsistent water pressure\n• How professional installation improved comfort in a busy family home\n• Why the combination of faster hot water and consistent pressure made everyday routines easier\n\nRead the full homeowner case story:\n\n• See how the Booth family improved its hot water and water pressure: http://gfos.ly/6055BHan9X\n\nResults reflect the experience and plumbing conditions of this particular home. Consult a qualified plumbing professional to determine the appropriate solution for your home.",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
     },
     {
-      "yt": "PpRb6lWX44o",
-      "title": "Prepping and tiling a shower. Start to finish. #tile #howtotile",
-      "channel": "Sal DiBlasi (tiling & waterproofing)",
-      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "published": "2026-09-06T02:24:07.575Z",
-      "duration": "",
-      "channelCategory": "",
-      "suggestedCategory": "Civil Jobs",
-      "description": "",
-      "found": "2026-11-05T02:24:08.986Z",
+      "yt": "P5AQrfQGokA",
       "draft": {
-        "source": "ai",
-        "title": "Installing Backer Board and Waterproofing a Shower",
-        "summary": "This video demonstrates the step-by-step process of preparing a shower for tiling, including installing backer board, waterproofing, building a shower pan, and laying tile.",
-        "safety": "Wear appropriate personal protective equipment, including safety glasses and gloves, when handling power tools and building materials.",
         "ppe": [
           "Safety Glasses",
           "Work Gloves",
-          "Knee Pads"
+          "Safety Shoes"
         ],
-        "steps": [
-          "Measure and install shower backer board to the wall studs.",
-          "Cut and fit PVC pipes for the shower drain system.",
-          "Mix and apply mud bed mix for the shower floor.",
-          "Install waterproofing sheet membrane and sealant.",
-          "Apply thin-set mortar and lay wall and floor tiles."
-        ],
-        "stepsFrom": "ai",
         "level": "Advanced",
-        "subject": "Tile Installation",
-        "category": "Civil Jobs",
-        "review": {
-          "relevance": 9,
-          "quality": 9,
-          "recommend": "approve",
-          "reason": "This video provides a comprehensive, detailed guide on shower preparation and tiling suitable for advanced civil maintenance technicians.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.5-flash-lite"
-      }
-    },
-    {
-      "yt": "Q3MssBQinnE",
-      "title": "FLOATING shower  bench seat, How it is done. #tile #howtotile #floatingseat",
-      "channel": "Sal DiBlasi (tiling & waterproofing)",
-      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "published": "2026-09-05T02:14:04.774Z",
-      "duration": "",
-      "channelCategory": "",
-      "suggestedCategory": "Civil Jobs",
-      "description": "",
-      "found": "2026-11-04T02:14:06.053Z",
-      "draft": {
-        "source": "ai",
-        "title": "Installing a Floating Shower Bench Seat",
-        "summary": "This video demonstrates how to build and install a floating bench seat inside a shower using foam board and sealant.",
-        "safety": "Ensure proper ventilation and wear safety glasses when operating power tools and handling sealants.",
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves"
-        ],
         "steps": [
-          "Measure and mark the shower wall for bench height.",
-          "Cut foam board to the correct dimensions using a saw.",
-          "Apply sealant along the marked wall lines.",
-          "Press and secure the foam board bench into place.",
-          "Flood test the shower floor to check for leaks."
+          "Engineering college students",
+          "Diploma students",
+          "Electrical and Electronics Engineers",
+          "Instrumentation Engineers",
+          "Automation beginners",
+          "Students preparing for PLC practical examinations and interviews"
         ],
-        "stepsFrom": "ai",
-        "level": "Intermediate",
-        "subject": "Tile Installation",
-        "category": "Civil Jobs",
-        "review": {
-          "relevance": 8,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "This video provides a clear and practical demonstration of installing a floating shower bench seat.",
-          "unsafe": [],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.5-flash-lite"
-      }
+        "title": "Codesys PLC Tutorials and Sample Problems for Engineering Students",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Want to learn PLC programming through practical examples? This CODESYS PLC tutorial series focuses on programming exercises, sample problems, and logical control applications for engineering students.",
+        "stepsFrom": "description"
+      },
+      "found": "2026-11-05T10:58:43.517Z",
+      "title": "CODESYS PLC Tutorials and Sample Problems for Engineering Students",
+      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "aiTries": 1,
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-11-02T15:42:17+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "Want to learn PLC programming through practical examples? This CODESYS PLC tutorial series focuses on programming exercises, sample problems, and logical control applications for engineering students.\n\nInstead of learning only theoretical concepts, explore how PLC programs are developed using CODESYS and understand how different programming instructions and logic functions are applied to solve automation problems.\n\n**Learning Objectives:**\n\nBy working through the sample problems, students can improve their understanding of PLC logic development, programming techniques, troubleshooting, and industrial automation applications.\n\n**Suitable For:**\n- Engineering college students\n- Diploma students\n- Electrical and Electronics Engineers\n- Instrumentation Engineers\n- Automation beginners\n- Students preparing for PLC practical examinations and interviews\n\nLearn PLC programming step by step using CODESYS.\n\nSubscribe to Instrumentation Tools for more practical tutorials covering PLC, DCS, SCADA, process control, and instrumentation.\n\n#CODESYSProgramming #PLCExamples #PLCSampleProblems #LadderLogic #AutomationTraining\n\nTags:\nCODESYS programming examples, CODESYS PLC examples, PLC sample problems and solutions, practical PLC programming, PLC logic examples, PLC exercises, PLC programming practice, CODESYS training, CODESYS software tutorial, Ladder Logic examples, PLC timers, PLC counters, PLC interlocking, PLC sequence control, PLC simulation, PLC programming exercises, engineering PLC projects, electrical engineering projects, automation problems, PLC logic development, industrial control systems, PLC practical training",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
     },
     {
-      "yt": "r3Qknj22llg",
-      "title": "Panel Wiring is NOT for Everyone",
-      "channel": "GSH Electrical",
-      "channelUrl": "https://www.youtube.com/@GSHElectrical",
-      "published": "2026-09-05T02:13:56.778Z",
-      "duration": "",
-      "channelCategory": "Electrical",
-      "suggestedCategory": "Electrical",
-      "description": "",
-      "found": "2026-11-04T02:13:57.927Z",
+      "yt": "_WdovOCoNaY",
       "draft": {
-        "source": "ai",
-        "title": "Kitchen Fan Control Panel Troubleshooting and Repair",
-        "summary": "Demonstrates how to troubleshoot a commercial kitchen ventilation panel, replace a damaged contactor, repair faulty switch contacts, and wire thermal overload relays.",
-        "safety": "Ensure the power supply is completely isolated before touching internal panel components or changing contact blocks.",
+        "ppe": [
+          "Gas Detector",
+          "Full-Body Harness",
+          "Respirator",
+          "Hard Hat"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Low Oil Alarm a Week After Adding Oil",
+          "Oil Heater Check and Off Cycle Migration",
+          "RTHD Off Cycle Migration and Evaporator Isolation",
+          "Overfed Eductor Loading the Sump With Refrigerant",
+          "Oil Recovery Circuits on Flooded and Falling Film Evaporators",
+          "Trane Gas Pump Oi"
+        ],
+        "title": "Chiller Low Oil Alarm: The Eductor Setting Most Techs Overlook",
+        "safety": "Never enter without a permit, gas test, standby person and rescue plan.",
+        "source": "rules",
+        "subject": "",
+        "summary": "You topped off the oil sump, there is no leak anywhere on the machine, and a week later the low oil level alarm is back. With no oil on the ground, that oil never left the system.",
+        "stepsFrom": "chapters"
+      },
+      "found": "2026-11-05T10:31:33.193Z",
+      "title": "Chiller Low Oil Alarm: The Eductor Setting Most Techs Overlook",
+      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "aiTries": 1,
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-11-01T16:00:07+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "You topped off the oil sump, there is no leak anywhere on the machine, and a week later the low oil level alarm is back. With no oil on the ground, that oil never left the system. It migrated, and it heads for the coldest point in the circuit, which on most machines is the evaporator.\n\nThis one works through every way that happens when you do not know the model yet: off cycle migration, an oil heater that is not doing its job, an oil recovery circuit that cannot pull the oil back, and differential pressure too low to drive the return. Then the much simpler fix on DX and brazed plate machines, and why a check valve will not stop any of it.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why a low oil alarm with no leak points to migration, and why the oil heater is the first thing to confirm\n- Off cycle migration with working oil heaters, and why the RTHD is especially sensitive to a small trickle of water through an evaporator that is not fully isolated\n- How an overfed eductor loads the sump with refrigerant, so the oil rides that refrigerant to the evaporator at shutdown\n- Oil recovery circuits on flooded and falling film evaporators: eductors, jet pumps, and the gas pump style setup Trane uses on the RTHD and RTAF\n- A plugged filter drier leaving the eductor, starving the return to the sump\n- Evaporator refrigerant level running too low or too high, and why either one keeps the eductor from reaching oil that floats on top of the refrigerant\n- Setting the eductor valve, and why one closed too far lets oil stack up in the evaporator\n- Why you need enough differential pressure between evaporator and condenser to drive oil return, and how condenser water that runs too cold takes it away\n- DX shell and tube and brazed plate machines: it comes down to refrigerant velocity, so raise the condenser pressure setpoint or shut off a couple of condenser fans to push head pressure up\n- Multi circuit evaporators where the idle circuit loses its oil while the running circuit keeps the evaporator cold, and external oil separators on air cooled machines that often have no heater\n- Why a migrated circuit may need to trip on oil a couple of times before enough oil comes back to stay online\n- Why a check valve will not stop migration, and the cost and complexity that come with an isolation solenoid valve\n- The YVAA suction isolation valve and the refrigerant migration freeze it was added to prevent, a different problem from oil migration\n- VI control on Daikin screw compressors and why condenser fans do more for oil return than the volume ratio does\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Low Oil Alarm a Week After Adding Oil\n1:10 Oil Heater Check and Off Cycle Migration\n1:55 RTHD Off Cycle Migration and Evaporator Isolation\n2:51 Overfed Eductor Loading the Sump With Refrigerant\n4:24 Oil Recovery Circuits on Flooded and Falling Film Evaporators\n5:27 Trane Gas Pump Oi",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "LMdqTOLaA6w",
+      "draft": {
+        "ppe": [
+          "Welding Gloves",
+          "Shaded Goggles",
+          "Fire-Resistant Clothing"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "KitchenAid ice dispenser symptoms & intro",
+          "Tools you’ll need & safety steps",
+          "Check ice bucket drive & couplers",
+          "Test auger motor voltage with a multimeter",
+          "Check motor winding resistance & remove motor",
+          "Install the new auger motor",
+          "Reinstall ice bucket & test ice dispenser",
+          "Parts info, shipping, and wrap-up"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Auger Motor",
+        "safety": "Hot work: get the permit, clear flammables, keep an extinguisher close and purge with nitrogen when brazing.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Ice dispenser dead, grinding, or just humming? Use a multimeter to test your KitchenAid fridge’s auger motor and see step-by-step how to replace it yourself.",
+        "stepsFrom": "chapters"
+      },
+      "found": "2026-11-05T10:59:35.513Z",
+      "title": "How to Test and Replace a KitchenAid Refrigerator Auger Motor",
+      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "aiTries": 1,
+      "channel": "AppliancePartsPros",
+      "duration": "",
+      "published": "2026-10-30T21:30:27+00:00",
+      "channelUrl": "https://www.youtube.com/@appliancepartspros",
+      "description": "Ice dispenser dead, grinding, or just humming? Use a multimeter to test your KitchenAid fridge’s auger motor and see step-by-step how to replace it yourself.\n\n🛒 Find parts: https://www.appliancepartspros.com/kitchenaid-refrigerator-parts.html\n📞 For help locating the part for your model, call us at 1-877-477-7278 or chat with us on our website http://www.appliancepartspros.com/\n💬 Need help? Ask in our forum: https://forum.appliancepartspros.com\n\n⏱️ CHAPTERS:\n0:00 KitchenAid ice dispenser symptoms & intro\n0:22 Tools you’ll need & safety steps\n0:44 Check ice bucket drive & couplers\n1:05 Test auger motor voltage with a multimeter\n1:39 Check motor winding resistance & remove motor\n2:15 Install the new auger motor\n2:49 Reinstall ice bucket & test ice dispenser\n3:20 Parts info, shipping, and wrap-up\n\n🔧 Tools mentioned: quarter-inch nut driver, phillips head screwdriver, small flat blade screwdriver, multimeter\n📚 New to multimeters? Watch our Multimeter Masterclass: https://www.youtube.com/watch?v=8p0uj2tnDlg\n\nFollow us: Facebook: https://www.facebook.com/appliancepartspros | Reddit: https://www.reddit.com/r/AppliancePros/\n\n##KitchenAidRefrigerator ##IceDispenserFix ##AugerMotorReplacement ##KitchenAidFridgeRepair ##IceMakerRepair ##RefrigeratorRepair ##DIYApplianceRepair ##MultimeterTesting ##HomeApplianceFix ##AppliancePartsPros ##FixItYourself ##NoIceInFridge ##FridgeGrindingNoise ##KitchenAidAugerMotor ##ApplianceRepairTutorial ##RefrigeratorTroubleshooting ##HowToRepairFridge ##DIYKitchenAidRepair",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "z4AWoFUiOIQ",
+      "draft": {
         "ppe": [
           "Safety Glasses",
-          "Insulated Gloves",
+          "Work Gloves",
           "Safety Shoes"
         ],
-        "steps": [
-          "Inspect control panel components for thermal damage or burnt contacts.",
-          "Replace damaged contactors with correctly rated replacement parts.",
-          "Check auxiliary switch contact blocks for physical fractures or loose mechanisms.",
-          "Transfer wiring to an available working contact pair on the switch assembly.",
-          "Verify thermal overload relay NC 95-96 and NO 97-98 terminal functions."
-        ],
-        "stepsFrom": "ai",
         "level": "Intermediate",
-        "subject": "Motor Control",
-        "category": "Electrical",
-        "review": {
-          "relevance": 9,
-          "quality": 8,
-          "recommend": "approve",
-          "reason": "Clear real-world explanation of troubleshooting motor control circuits and thermal overload terminals.",
-          "unsafe": [
-            "Operating inside an open live panel without electrical safety gloves"
-          ],
-          "language": "English",
-          "talking": true
-        },
-        "model": "gemini-3.6-flash"
-      }
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Immersion Cooling Teamwork Improves Efficiency and Reliability",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "The company, founded in 2014 in Amsterdam, the Netherlands, wanted to optimise its next-generation liquid cooling platform.",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-05T10:59:02.840Z",
+      "title": "Immersion cooling teamwork improves efficiency and reliability",
+      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+      "aiTries": 1,
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-30T15:00:45+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Asperitas was one of the first companies in the world to introduce immersion cooling to data centers – an application in which IT servers are completely immersed and operating in a liquid. #Immersioncooling uses dielectric fluid – a non-conducting oil – in its server-cooling tanks. The liquid absorbs the heat from the IT equipment before transferring it to the facility water system.\n\nThe company, founded in 2014 in Amsterdam, the Netherlands, wanted to optimise its next-generation liquid cooling platform. \n\nAsperitas partnered with Grundfos to co-develop its next-generation immersion cooling system for data centers. What started as a desire for more robust pump seals grew into a bigger development with Grundfos E-pumps, bringing better efficiency, reliability and uptime. \n\n“We take an approach where every drop counts of the cooling liquid,” says Andy Young, Chief Technology Officer in Asperitas. “The liquid is really the blood in the veins of the cooling solution, and the pump is the beating heart.”\n\nSee the film and read the story on the link below to learn more.\n\nFull story at Immersion cooling innovation: http://gfos.ly/6058BHof3I",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "c07upgEQxlg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Mastering ALPHA 26-99 and 26-150: Startup to Optimization",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Take your ALPHA 26-99/26-150 knowledge to the next level. In this recorded webinar, Grundfos Regional Training Manager, Steve Fernald, takes a deeper dive into commissioning, optimizing, and troubleshooting the ALPHA 26-99/150 using the Grundfos GO app.",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-05T10:59:05.046Z",
+      "title": "Mastering ALPHA 26-99 and 26-150: Startup to Optimization",
+      "aiError": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa",
+      "aiTries": 1,
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T11:49:43+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Take your ALPHA 26-99/26-150 knowledge to the next level. In this recorded webinar, Grundfos Regional Training Manager, Steve Fernald, takes a deeper dive into commissioning, optimizing, and troubleshooting the ALPHA 26-99/150 using the Grundfos GO app. Learn how to get started with Grundfos GO, explore advanced features that help maximize system performance, and discover practical troubleshooting tools that can simplify startup and service. This session covers key performance advantages, application best practices, and digital tools designed to help you commission, optimize, and maintain hydronic systems with confidence.",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "rY8FzioSVlc",
+      "found": "2026-11-05T10:59:06.308Z",
+      "title": "UPSe & ALPHA 26-99 and 150: The New Range of ECM Circulators",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T11:49:37+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Discover the newest addition to the high-performance ECM circulator lineup from Grundfos. In this webinar recording, Grundfos Regional Training Manager, Steve Fernald, goes over the benefits of ECM technology, the features of the new medium-sized circulators — the UPSe and ALPHA 26-99/150 — and how simplified installation and guided commissioning can help optimize system performance. \n\nThis session covers ALPHA 26-99/150 product features, installation best practices, commissioning tips, and key application considerations to help you select and deploy the right solution with confidence.",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "Ae0Oi9t3K9w",
+      "found": "2026-11-05T10:59:07.454Z",
+      "title": "Wastewater, Drainage and Rainwater Solutions",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T11:49:28+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "In this webinar recording, we'll cover the following topics: \n\nWastewater Applications – Residential sewage and effluent transfer solutions\nDrainage Applications – Sump, dewatering, and flood prevention systems\nRainwater Applications – Rainwater collection, reuse, and management\nProducts – Overview of Grundfos wastewater and drainage pump solutions\nAccessories – Controls, alarms, valves, and installation components\nSelection – Matching the right pump to the application\nFinding Information – Product Center, sizing tools, and technical resources",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "nVI3CknqgFU",
+      "found": "2026-11-05T10:58:27.158Z",
+      "title": "Ignition SCADA 2: Connecting PLCs Using OPC UA",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-10-29T11:11:39+00:00",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "Many industrial facilities use SCADA and HMI systems to monitor and supervise their equipment. If you already know PLCs, learning how to connect them to SCADA is a valuable next step.\n\nOur new course, Ignition SCADA 2: Connecting PLCs Using OPC UA, is now live.\n\nIn this course, you'll learn how to connect PLCs to Ignition using OPC UA. You'll work with a simulated PLC for part of the course, then use a real PLCnext Technology controller to demonstrate an actual OPC UA connection.\n\nYou don't need a physical PLC to get started. The course includes simulator-based exercises, with a real PLC demonstration to show how the connection works in practice.\nIf you haven't taken Ignition SCADA 1: Introduction to Ignition, we recommend starting there first.\n\n▶ Watch the full course here: \nhttps://www.realpars.com/courses/ignition-scada-2-connecting-plcs-using-opc-ua",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "jkFpGyrN6us",
+      "found": "2026-11-05T10:59:08.669Z",
+      "title": "Présentation des broyeurs et stations de relevage SOLOLIFT2",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:24:03+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Lorsque les eaux usées doivent être pompées en aval du réseau d'égouts principal ou sur de longues distances où l'écoulement gravitaire est impossible, une station de relevage est nécessaire. \n\nCette vidéo présente clairement les stations de relevage d'eaux usées SOLOLIFT2 et explique leur fonctionnement, leurs applications et comment choisir le modèle adapté aux besoins domestiques. \n\nVous découvrirez : \n• Ce qu'est une station de relevage et quand elle est nécessaire \n• Comment les eaux usées sont pompées verticalement ou horizontalement vers le réseau d'égouts principal \n• La différence entre les stations de relevage à broyeur pour les eaux de toilettes et les stations de relevage d'eaux grises \n• Comment un broyeur broie les matières solides et le papier toilette pour permettre le pompage dans des canalisations étroites \n\nLa gamme Grundfos SOLOLIFT2 comprend cinq stations de relevage compactes conçues pour couvrir la quasi-totalité des applications d'eaux usées domestiques. Chaque modèle est clairement différencié et ne se chevauche pas, ce qui simplifie et accélère le choix lors d'un remplacement ou d'une nouvelle installation. La gamme comprend : \n\n• WC-1, WC-3 et CWC-3 pour les eaux noires issues des toilettes \n• C-3 et D-2 pour les eaux grises provenant des douches, lavabos, lave-linge et cuisines \n\nTous les modèles SOLOLIFT2 sont conçus pour être robustes, fiables et flexibles, avec des fonctionnalités facilitant l’installation : accès aisé avec des outils de base, blocs pompe-moteur amovibles et conception modulaire pour réduire les temps d’intervention. \n\nLe SOLOLIFT2 C-3 est spécialement conçu pour les applications d’eau chaude sanitaire, tandis que les autres modèles conviennent aux eaux usées domestiques standard. \n\n👉 Pour en savoir plus sur le dimensionnement, la sélection et le remplacement des SOLOLIFT2, consultez Grundfos Ecademy et accédez à la formation complète. http://gfos.ly/6054BHm5Mm \n\n👉 En savoir plus: http://gfos.ly/6055BHm5MW",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "o7ONtLL8SyM",
+      "found": "2026-11-05T10:59:09.872Z",
+      "title": "ALPHA GO | Faster replacements with just two pumps",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:23:30+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "What if you could handle most circulator pump replacements on the first visit with just two pumps in your van?\n\nDiscover how the ALPHA1 GO and ALPHA2 GO can help you replace almost 70% of integrated Grundfos circulator pumps, and most standalone models, without return trips or spare part delays. \n\nWith just two pumps in your van, you can…\n\n✅ Complete replacement jobs in one GO \n✅ Eliminate spare part wait times\n✅ Avoid stock and sizing issues\n✅ Simplify pump selection and installation\n\nLearn more: http://gfos.ly/6056BHm5JY\nSign up for our Grundfos for Installers newsletter: http://gfos.ly/6057BHm5Jl\n\n#ALPHAGO #GrundfosGO #PumpReplacement #GOReplace #PossibilityInEveryDrop",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "srzjuo9SuIc",
+      "found": "2026-11-05T10:59:11.226Z",
+      "title": "ALPHA GO | Smarter commissioning with Guided Setup",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:23:18+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Make commissioning ALPHA GO pumps faster and easier with Guided Setup in the Grundfos GO app.\n\nFrom choosing the right control mode and setpoint to reducing errors, cutting energy use, and improving comfort for your customers, Guided Setup gives you a faster, more reliable way to achieve perfect commissioning every time.\n\n📲 Step-by-step setup in the Grundfos GO app\n⚙️ Optimise ALPHA GO pump performance \n🔁 Fewer call-backs, more comfort, less energy waste\n\nLearn more: http://gfos.ly/6054BHm5yw\nSign up for our Grundfos for Installers newsletter: http://gfos.ly/6055BHm5yb\n\n#ALPHAGO #GrundfosGO #GuidedSetup #PumpCommissioning #PossibilityInEveryDrop",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "J0v72PKh2Mk",
+      "found": "2026-11-05T10:59:12.396Z",
+      "title": "ALPHA GO | Smarter commissioning with Guided Setup",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:23:07+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Make commissioning ALPHA GO pumps faster and easier with Guided Setup in the Grundfos GO app.\n\nFrom choosing the right control mode and setpoint to reducing errors, cutting energy use, and improving comfort for your customers, Guided Setup gives you a faster, more reliable way to achieve perfect commissioning every time.\n\n📲 Step-by-step setup in the Grundfos GO app\n⚙️ Optimise ALPHA GO pump performance \n🔁 Fewer call-backs, more comfort, less energy waste\n\nLearn more: http://gfos.ly/6054BHm5Hm\nSign up for our Grundfos for Installers newsletter: http://gfos.ly/6055BHm5HW\n\n#ALPHAGO #GrundfosGO #GuidedSetup #PumpCommissioning #PossibilityInEveryDrop",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "Jfuoi_zryXA",
+      "found": "2026-11-05T10:59:13.432Z",
+      "title": "ALPHA GO | Faster replacements with just two pumps",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:22:48+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "What if you could handle most circulator pump replacements on the first visit with just two pumps in your van?\n\nDiscover how the ALPHA1 GO and ALPHA2 GO can help you replace almost 70% of integrated Grundfos circulator pumps, and most standalone models, without return trips or spare part delays. \n\nWith just two pumps in your van, you can…\n\n✅ Complete replacement jobs in one GO \n✅ Eliminate spare part wait times\n✅ Avoid stock and sizing issues\n✅ Simplify pump selection and installation\n\nLearn more: http://gfos.ly/6055BHm5GU\nSign up for our Grundfos for Installers newsletter: http://gfos.ly/6056BHm5Gq\n\n#ALPHAGO #GrundfosGO #PumpReplacement #GOReplace #PossibilityInEveryDrop",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "GnHR43h_oNo",
+      "found": "2026-11-05T10:59:36.775Z",
+      "title": "How to Test & Replace a KitchenAid Fridge Ice Door Motor",
+      "channel": "AppliancePartsPros",
+      "duration": "",
+      "published": "2026-10-28T21:30:30+00:00",
+      "channelUrl": "https://www.youtube.com/@appliancepartspros",
+      "description": "Ice not dispensing or hearing buzzing from your KitchenAid fridge? Learn how to test and replace the ice door motor so your dispenser works like new again.\n\n🛒 Find parts: https://www.appliancepartspros.com/kitchenaid-refrigerator-parts.html\n📞 For help locating the part for your model, call us at 1-877-477-7278 or chat with us on our website http://www.appliancepartspros.com/\n💬 Need help? Ask in our forum: https://forum.appliancepartspros.com\n\n⏱️ CHAPTERS:\n0:00 KitchenAid ice dispenser not working\n0:18 Tools you’ll need & safety first\n0:38 How to enter diagnostics mode\n1:05 Testing the ice door motor (Service Test 18)\n1:36 Removing the dispenser user interface\n1:58 Taking out the old ice door motor\n2:22 Installing the new ice door motor\n2:46 Reconnecting wiring, tube & panel\n3:10 Final test & wrap-up\n\n🔧 Tools mentioned: 1/4-inch nut driver, small flat blade screwdriver\n\nFollow us: Facebook: https://www.facebook.com/appliancepartspros | Reddit: https://www.reddit.com/r/AppliancePros/\n\n##KitchenAidRefrigerator ##IceDispenserRepair ##IceDoorMotor ##KitchenAidFridge ##RefrigeratorRepair ##ApplianceRepair ##DIYFridgeFix",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "Rsd1kiC-hNU",
+      "found": "2026-11-05T10:58:44.614Z",
+      "title": "PLC Exercise Logic: Emergency Lamp Application | INST TOOLS",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-10-28T11:00:03+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "Build and test PLC logic for an Emergency Lamp application with this hands-on practice exercise.\n\n#plc #emergencylogic #InstTools\n\nTags:\nplc logic practice, emergency lamp control, emergency lamp ladder logic, plc ladder practice, timer logic, edge detection, one shot, permissive logic, fault handling, alarm handling, reset conditions, industrial panel wiring, automation engineering, plc concepts, discrete control, plc do di, control system design, plc exercise pdf, practical plc project, inst tools plc",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "AcFV8BwGgRc",
+      "found": "2026-11-05T10:58:35.356Z",
+      "title": "Implement a Simple Sequence of Operation Using the BASemulator for Dual-action Temperature Control",
+      "channel": "Contemporary Controls",
+      "duration": "",
+      "published": "2026-10-27T18:55:51+00:00",
+      "channelUrl": "https://www.youtube.com/@ContemporaryControls",
+      "description": "This video demonstrates how to implement a simple sequence of operation (SOO) for dual-action temperature control on an emulated BAScontroller. This SOO is configured using the BASemulator and Sedona Application Editor (SAE) from Contemporary Controls’ BAScontrol Toolset for our BAScontrol22D dual-Ethernet unitary controller. The sequence regulates a basic temperature-regulation control loop between a pair of binary-controlled heating and cooling devices, while maintaining a target setpoint of 68° and a 4° deadband.\n\nLearn more at: https://www.ccontrols.com",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "CPhvXpvXucM",
+      "found": "2026-11-05T10:58:36.556Z",
+      "title": "Termostatos Comunicantes BASstat",
+      "channel": "Contemporary Controls",
+      "duration": "",
+      "published": "2026-10-27T18:45:58+00:00",
+      "channelUrl": "https://www.youtube.com/@ContemporaryControls",
+      "description": "La popular serie BASstat de termostatos con comunicación, que garantizan una integración sencilla en redes BACnet/IP (Wi-Fi) o BACnet MS/TP (EIA-485). Cada modelo de BASstat ofrece distintos beneficios que brindan flexibilidad al instalar un sistema de control de termostato de zona distribuida.\n\nAprende más: https://www.ccontrols.mx",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "51I0ElkMjj8",
+      "found": "2026-11-05T10:58:37.765Z",
+      "title": "Introduction to the EIMK T1L SPE Media Converter",
+      "channel": "Contemporary Controls",
+      "duration": "",
+      "published": "2026-10-27T18:37:16+00:00",
+      "channelUrl": "https://www.youtube.com/@ContemporaryControls",
+      "description": "This video introduces the EIMK-T1L SPE Media Converter which enables long-distance IP communication over single-pair cabling, making it a reliable solution for bridging traditional Ethernet networks with T1L infrastructure. It provides a great retrofit option to use existing serial cables for Modbus, LON or BACnet MS/TP cables for upgrade to IP communications.\n\nLearn more at: https://www.ccontrols.com",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "crVEDQ5IcNA",
+      "found": "2026-11-05T10:31:35.826Z",
+      "title": "How to Test a DC Bus Capacitor Without a False Reading",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-27T15:00:26+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "Your meter reads OL on a DC bus capacitor. Or the number keeps climbing. Or it jumps around before it settles. None of that automatically means the cap is bad. An RTU run cap is usually under a hundred microfarads. The one on my bench came out of a Danfoss Turbocor drive at 8,500, and I've seen them as big as 24,000.\n\nIn this one I test it on two meters, one that tops out at a few hundred microfarads and one that reads up to 20,000, so you can see what the meter is doing while it charges the cap. Then the part that can actually hurt you: why the bleed circuit in your meter isn't built for a cap this size, what to use instead, and what happens when a DC bus doesn't get bled down.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- How big DC bus capacitors get: 8,500 µF on this Turbocor drive, 12,000 to 20,000 on bigger drives, and as high as 24,000\n- What your meter is actually doing on a capacitance test, and why the display climbs from nF to µF as it charges the cap\n- Why a meter that tops out at a few hundred µF ends on OL, and the 0.97 VDC its test charge left behind\n- Moving to a meter that reads up to 20,000 µF, and fully discharging the cap first so you see a real field reading\n- Why an RTU run cap reads almost instantly and a cap this size needs time to charge\n- Static test versus load test, and the volts and amp draw method you can use on RTU caps\n- Why pulling your leads too early means you miss the reading\n- How leftover charge from the DC bus makes the reading jump around while your meter bleeds the cap down\n- Why the bleed circuit inside your meter is built for small caps, not a DC bus\n- Using a dedicated discharge tool like the one York sells: insulated handle, clipped across the cap terminals, not to ground\n- Checking a 7,200 µF reading against the label: 8,500 µF at 20% tolerance puts the floor at 6,800\n- Testing in circuit with the bleed resistor still attached, and why the reading comes in low\n- Why a safety rated discharge tool beats a homemade one built from a dead Turbocor's bleed resistor\n- Why bleeding it down matters: a short across the bus is a big boom, and the shock can kill you\n\nMore chiller training: https://chilleracademy.com\n\n0:00 How Big DC Bus Capacitors Get\n0:53 Watching the Meter Charge the Capacitor\n1:50 Why the First Meter Reads OL\n2:39 Switching to a Meter That Reads 20,000 µF\n3:33 Why Big Caps Charge Slower Than RTU Caps\n4:08 Static Test vs Load Test\n5:01 Why the Reading Builds Slowly and Jumps Around\n6:37 Using a Dedicated Discharge Resistor\n7:10 Checking the Reading Against a 20% Tolerance\n7:51 Testing It In Circuit With the Bleed Resistor\n8:50 Homemade Bleed Resistor vs a Safety Rated Tool\n9:39 Why a Charged DC Bus Can Kill You",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "Pyua5vzXWzM",
+      "found": "2026-11-05T10:59:19.839Z",
+      "title": "i-mop® Pro Lite & XL Walk-Behind Scrubber | Product Overview | Tennant Company",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-27T13:35:33+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "Meet the i-mop® Pro Lite and i-mop® Pro XL\n\nDesigned to combine the flexibility of a mop with the cleaning power of a scrubber, the i-mop® Pro models help cleaning teams work faster, easier, and more efficiently across a wide range of environments. The lightweight, highly maneuverable i-mop Pro Lite is ideal for tight spaces and mobile cleaning applications, while the i-mop Pro XL delivers increased productivity and powerful scrubbing performance for larger areas.\n\n➡️ Learn more about i-mop® Pro Lite: https://www.tennantco.com/en_us/1/machines/scrubbers/product.i-mop-pro-lite.walk-behind-floor-scrubber.8053852.html\n\n➡️ Learn more about i-mop® Pro XL: https://www.tennantco.com/en_us/1/machines/scrubbers/product.i-mop-pro-xl.walk-behind-floor-scrubber.8053855.html\n\n🔔 Subscribe to the Tennant Equipment Insights channel to stay up to date with the latest innovations in cleaning technology.\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "PgxBPLC2vsE",
+      "found": "2026-11-05T10:31:37.030Z",
+      "title": "Chiller Questions Answered LIVE E.52",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-27T06:17:31+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "Welcome to my live Q&A session I'm ready to answer your questions about equipment, techniques, troubleshooting, and industry standards. This stream is designed for Chiller Techs looking to enhance their skills and efficiency in the field.\n\nI use my decade of servicing York, Trane, Carrier, & Daikin chillers to show you why and how these units work, join me & over 800 other techs here https://chilleracademy.com/p/intro-to-chillers",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "YqaTQxEpfOQ",
+      "found": "2026-11-05T10:59:37.950Z",
+      "title": "How to Test & Replace KitchenAid Fridge Dispenser Paddle Switch",
+      "channel": "AppliancePartsPros",
+      "duration": "",
+      "published": "2026-10-26T21:30:25+00:00",
+      "channelUrl": "https://www.youtube.com/@appliancepartspros",
+      "description": "KitchenAid fridge not dispensing water or ice? Use a multimeter to test the dispenser paddle switch and swap it out in a few easy steps.\n\n🛒 Find parts: https://www.appliancepartspros.com/kitchenaid-refrigerator-parts.html\n📞 For help locating the part for your model, call us at 1-877-477-7278 or chat with us on our website http://www.appliancepartspros.com/\n💬 Need help? Ask in our forum: https://forum.appliancepartspros.com\n\n⏱️ CHAPTERS:\n0:00 KitchenAid fridge dispenser problem\n0:23 Tools and safety steps\n0:45 How the dispenser paddle switch works\n1:13 Entering Service Test 9 diagnostics\n1:42 Accessing the dispenser paddle switch\n2:10 Removing and testing the switch with a multimeter\n2:49 Installing the new paddle switch\n3:19 Reassembling the dispenser and control panel\n3:44 Final diagnostics check and dispenser test\n3:58 Where to get the replacement switch\n\n🔧 Tools mentioned: quarter-inch nut driver, small flat-blade screwdriver, multimeter\n📚 New to multimeters? Watch our Multimeter Masterclass: https://www.youtube.com/watch?v=8p0uj2tnDlg\n\nFollow us: Facebook: https://www.facebook.com/appliancepartspros | Reddit: https://www.reddit.com/r/AppliancePros/\n\n##KitchenAidRefrigerator ##FridgeDispenserRepair ##DispenserPaddleSwitch ##KitchenAidFridge ##RefrigeratorRepair ##ApplianceRepair ##DIYApplianceRepair",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "ORwvRHaFbCI",
+      "found": "2026-11-05T10:59:49.045Z",
+      "title": "Johnson Controls Blue Water Webinar - Season 2, Episode 2",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-10-26T16:11:01+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "Best-selling author and leadership expert Steve Gilliland is well known for saying, “Change is inevitable.  Growth is optional.”  At Johnson Controls, we understand how water utilities are struggling to keep up with the ever-accelerating rate of change in metering, sensors, network communication technologies, software, and Artificial Intelligence, while still providing clean, safe drinking water at an affordable price.  Join Jonathan Gunn and Craig Hannah from the Johnson Controls Water Infrastructure Technology Team as they discuss the trends that the water team is seeing in the water industry.  Fellow team member Michael Crandall will provide a brief safety message for all water utility staff members.\n\nIn keeping with the theme emerging technologies in the water industry, Matthew Menzell, Director of Global Product Management at Badger Meter, and Matt Stephenson, Director of Software Products at Badger Meter, will present the latest developments in water meters, software, sensors, and solutions for water utilities from Badger Meter. \n\nJohnson Controls, a global leader in thermal management, mission-critical building systems, energy efficiency, and decarbonization, helps customers use energy more productively, reduce carbon emissions, and operate with the precision and resilience required in rapidly expanding industries such as data centers, healthcare, pharmaceuticals, advanced manufacturing, and higher education.\n\nFor more than 140 years, Johnson Controls has delivered performance where it really matters. Backed by advanced technology, lifecycle services and an industry-leading field organization, we elevate customer performance, turn goals into real-world results and help move society forward.\n\nVisit https://www.johnsoncontrols.com/sustainable-infrastructure/water-solutions-and-services for more information and follow @Johnsoncontrols on social platforms.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "I1bh-fC9EgY",
+      "found": "2026-11-05T10:59:50.242Z",
+      "title": "Custom Environmental Thresholds in OpenBlue Insights",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-10-26T15:50:12+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "This short video demonstrates the new custom environmental thresholds in OpenBlue Insights. See how organizations can define building-specific environmental quality standards, enabling more meaningful ratings based on local conditions while maintaining consistency across dashboards and reporting.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "_82Kxcj6ijI",
+      "found": "2026-11-05T10:58:28.314Z",
+      "title": "What Is an HMI?",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-10-26T14:10:30+00:00",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "▶ Want us to program, design, and upgrade HMIs for your machine or plants? Go here: https://www.realpars.com/solutions/hmi\n\n▶ The article goes into more detail than this video:\nhttps://www.realpars.com/blog/what-is-hmi\n\n⌚Timestamps:\n00:00 - Intro\n00:15 - What Is an HMI?\n00:55 - How an HMI Communicates with a PLC\n03:06 - Types of HMI\n04:34 - HMI vs. SCADA vs. DCS\n05:29 - Summary\n\n=============================\n\nAn HMI, or Human Machine Interface, is the screen an operator uses to see what a machine is doing and to tell it what to do next. It lets a person read the state of a process and control it, without touching the controller or the code behind it.\n\nIn this video, you will learn what an HMI is, how it talks to a PLC, and the types available.\n\n=============================\n\nRelated articles about HMI:\n\nhttps://www.realpars.com/blog/high-performance-hmi\n\nhttps://www.realpars.com/blog/hmi-panel\n\nhttps://www.realpars.com/blog/rockwell-automation-hmis\n\n=============================\n\nMissed our latest articles? Catch up here:\n\nhttps://www.realpars.com/blog/motor-control\n\nhttps://www.realpars.com/blog/pid-controller\n\nhttps://www.realpars.com/blog/oem-jobs-industrial-automation\n\n=============================\n\nFollow us on Facebook 👉 https://www.facebook.com/therealpars\n\nFollow us on Twitter 👉 https://twitter.com/realpars\n\nFollow us on LinkedIn 👉 https://www.linkedin.com/company/realpars\n\nFollow us on Instagram 👉 https://www.instagram.com/realparsdotcom\n\n #RealPars #hmi #scada",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "3yK7LhbxwyA",
+      "found": "2026-11-05T10:31:57.700Z",
+      "title": "Ask LAT Live",
+      "channel": "Learn A Trade (commercial equipment)",
+      "duration": "",
+      "published": "2026-10-26T12:08:45+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
+      "description": "📱 FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n🔴 **WELCOME TO ASK LAT LIVE!** 🔧🎙️\n\n**Real Equipment. Real Problems. Real Solutions.**\n\nJoin us for the premiere of **Ask LAT Live**, presented by Learn A Trade – Commercial Equipment Repair!\n\n📅 **Sunday, October 25, 2026**\n⏰ **7:00 PM Eastern Time**\n📍 **LIVE on the Learn A Trade YouTube Channel**\n\nWhether you're an experienced service technician, just entering the trade, or looking to sharpen your troubleshooting skills, Ask LAT Live is designed for YOU!\n\nWith years of hands-on experience servicing commercial beverage, refrigeration, and ice equipment, I'm bringing real-world technical knowledge directly to the technician community.\n\n🔧 **WHAT'S HAPPENING IN OUR FIRST EPISODE?**\n\n🎉 **Celebrating 3,000 YouTube Subscribers!**\nA special thank-you to everyone who has helped Learn A Trade reach this exciting milestone!\n\n🛠️ **Technician Q&A**\nWe'll tackle real questions submitted by viewers, discuss troubleshooting techniques, and share practical service advice.\n\n📱 **LAT Technician Pro Demonstration**\nGet a look at our technician support app, designed to help service professionals access useful troubleshooting information and technical resources.\n\n💡 **Real-World Service Insights**\nLearn from actual field-service experience, common equipment problems, and practical repair strategies.\n\n💬 **LIVE CHAT & COMMUNITY DISCUSSION**\nJoin the conversation! Ask questions, share your experiences, and connect with other technicians.\n\n**EQUIPMENT WE FOCUS ON:**\n\n🥤 Commercial Fountain Beverage Systems\n🧊 Commercial Ice Machines\n❄️ Frozen Beverage Equipment\n🔧 Refrigeration & Equipment Troubleshooting\n📚 Technician Training & Career Development\n\n🚀 **EXPLORE LEARN A TRADE**\n\n🌐 Website & Training Resources:\nhttps://www.learnatrade.online\n\n📱 FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n⭐ LAT Technician Pro Information:\nhttps://www.learnatrade.online/unlock-lat-technician-pro-access\n\n🔔 **DON'T MISS THE PREMIERE!**\n\nSubscribe to Learn A Trade, turn on notifications, and join us as we launch this new monthly technician discussion series!\n\nHave a technical question you'd like addressed in a future episode? Leave it in the comments!\n\n**Our Mission: Helping Technicians Build Knowledge, Confidence, and Skills—One Repair at a Time.**\n\n#AskLATLive #LearnATrade #CommercialEquipmentRepair #ServiceTechnician #TechnicalTraining #BeverageEquipment #IceMachineRepair #Refrigeration #LATTechnicianPro",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "u69T02JwnGg",
+      "found": "2026-11-05T10:59:39.127Z",
+      "title": "How to Test & Replace KitchenAid Fridge Dispenser UI",
+      "channel": "AppliancePartsPros",
+      "duration": "",
+      "published": "2026-10-24T21:30:04+00:00",
+      "channelUrl": "https://www.youtube.com/@appliancepartspros",
+      "description": "KitchenAid fridge dispenser dead or unresponsive? Learn how to test its dispenser user interface with a multimeter and replace it yourself in just a few minutes.\n\n🛒 Find parts: https://www.appliancepartspros.com/kitchenaid-refrigerator-parts.html\n📞 For help locating the part for your model, call us at 1-877-477-7278 or chat with us on our website http://www.appliancepartspros.com/\n💬 Need help? Ask in our forum: https://forum.appliancepartspros.com\n\n⏱️ CHAPTERS:\n0:00 KitchenAid dispenser not responding? Intro\n0:20 Tools you’ll need & safety first\n0:44 What the dispenser user interface does\n1:08 Entering diagnostics & Service Test 9\n1:45 Checking inputs & dispenser light behavior\n2:05 Removing the dispenser UI & harness access\n2:25 Testing dispenser UI voltage with a multimeter\n2:58 Confirming a bad UI & unplugging the fridge\n3:10 Installing the new dispenser user interface\n3:37 Reassembly, power-up & retesting in diagnostics\n\n🔧 Tools mentioned: quarter-inch nut driver, Phillips head screwdriver, small flat blade screwdriver, multimeter\n📚 New to multimeters? Watch our Multimeter Masterclass: https://www.youtube.com/watch?v=8p0uj2tnDlg\n\nFollow us: Facebook: https://www.facebook.com/appliancepartspros | Reddit: https://www.reddit.com/r/AppliancePros/\n\n##KitchenAidRefrigerator ##DispenserNotWorking ##AppliancePartsPros ##KitchenAidFridge ##RefrigeratorRepair ##DIYApplianceRepair ##ApplianceRepair",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "gm5yt-kttXc",
+      "found": "2026-11-05T10:59:40.338Z",
+      "title": "5 Hidden Appliance Fire Risks You Should Check Today",
+      "channel": "AppliancePartsPros",
+      "duration": "",
+      "published": "2026-10-23T21:30:03+00:00",
+      "channelUrl": "https://www.youtube.com/@appliancepartspros",
+      "description": "Appliance fires usually start small and build up for months—I'll show you 5 hidden fire risks around your dryer, oven, and microwave and how to fix them before they turn dangerous.\n\n🛒 Find parts: https://www.appliancepartspros.com/\n📞 For help locating the part for your model, call us at 1-877-477-7278 or chat with us on our website http://www.appliancepartspros.com/\n💬 Need help? Ask in our forum: https://forum.appliancepartspros.com\n\n⏱️ CHAPTERS:\n0:00 5 silent appliance fire risks\n0:22 #5 Dryer high‑limit thermostat & thermal fuse\n1:04 #4 Electric dryer and oven cords & outlets\n1:46 #3 Unattended food in the microwave\n2:15 #2 Dangerous dryer vent hoses behind the dryer\n2:57 #1 Hidden lint inside vents and cabinets\n3:42 The one rule for burning smells\n4:05 Find parts by model & share your stories\n\n🔧 Tools mentioned: vent brush, vacuum\n\nFollow us: Facebook: https://www.facebook.com/appliancepartspros | Reddit: https://www.reddit.com/r/AppliancePros/\n\n##DryerFirePrevention ##ApplianceSafetyTips ##DryerVentCleaning ##DryerThermalFuse ##DryerMaintenance ##PreventHouseFires ##DryerVentHose",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "epJkHj04A2E",
+      "found": "2026-11-05T10:58:38.990Z",
+      "title": "Intro to The Sedona Application Editor (SAE)",
+      "channel": "Contemporary Controls",
+      "duration": "",
+      "published": "2026-10-22T23:14:02+00:00",
+      "channelUrl": "https://www.youtube.com/@ContemporaryControls",
+      "description": "This video provides an overview of the Sedona Application Editor (SAE), a software tool used to create custom function block (component) wire sheet applications in the Sedona environment. Using a drag-and-drop methodology, components residing in kits are placed on a wire sheet, configured, and interconnected with other components to create data processing and control applications. By keeping the Sedona kits database in the Component Bundle updated with the latest kits, SAE can program any model from our series of BACnet-compliant open controllers that address unitary control and edge control.\n\nLearn more at: https://www.ccontrols.com",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "ZtcyPYnHUR8",
+      "found": "2026-11-05T10:58:40.085Z",
+      "title": "Introduction to the BACnet Discovery Tool (BDT)",
+      "channel": "Contemporary Controls",
+      "duration": "",
+      "published": "2026-10-22T23:07:08+00:00",
+      "channelUrl": "https://www.youtube.com/@ContemporaryControls",
+      "description": "This video demonstrates the main features of Contemporary Controls’ BACnet Discovery Tool (BDT), a free BACnet/IP application for Windows that helps users discover BACnet devices, monitor network activity, and troubleshoot BACnet communications.\n\nThe video shows you how to:\n\nDiscover BACnet devices on a network\nView device and object properties, including network and address information for routed devices\nWrite values to supported objects\nMonitor and graph real-time data\n\nLearn more at: https://www.ccontrols.com",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "nwUqCSaUfyY",
+      "found": "2026-11-05T10:58:17.316Z",
+      "title": "SBA 567: How to Tune PID Loops for Better HVAC Control and Building Automation Performance",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-10-22T12:00:27+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "Struggling with unstable PID loops, HVAC temperature fluctuations, or control systems that constantly hunt for their setpoints? Effective PID loop tuning is essential for improving building automation system (BAS) performance, maintaining stable HVAC control, and reducing unnecessary equipment cycling.\n\nIn Episode 567, discover how to approach PID tuning with a repeatable process instead of relying on guesswork or default controller settings.\n\nWhether you're a BAS technician, HVAC controls engineer, system integrator, or commissioning professional, understanding how PID controllers respond to changing conditions can help you troubleshoot control loop instability and optimize building performance.\n\nTopics Covered:\n•  PID loop tuning fundamentals for HVAC and building automation systems\n•  How bump testing helps evaluate process gain, dead time, and time constants\n•  Understanding Lambda tuning and Ziegler-Nichols tuning methods\n•  Troubleshooting PID oscillation, hunting, and slow control response\n•  Cascade control loops, interacting HVAC systems, and setpoint reset strategies\n•  How seasonal loads and equipment sequencing affect PID performance\n•  Validating and documenting PID tuning for long-term system reliability\n\nLearn why PID tuning involves more than adjusting proportional gain and integral time, and how understanding your HVAC system's behavior can lead to more stable and reliable building controls.\n\n📅 New episodes every Thursday at 7 a.m. Central.\n\nSubscribe to the Smart Buildings Academy Podcast for practical insights into building automation, HVAC controls, BAS troubleshooting, system integration, and smart building technologies.\n\n🔔 Subscribe to our YouTube channel for more building automation training, HVAC control strategies, and technical education.\n\n#PIDTuning #BuildingAutomation #HVACControls #BAS #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager, Smart Buildings Academy helps you gain the skills to confidently design, install, and operate building automation systems. \n\n👉 Subscribe to stay updated on the latest training, tips, and industry insights from our team of experts. \n\n🧠 Topics Covered \n• Building Automation Systems (BAS) \n• HVAC Controls and Programming \n• Smart Building Technologies \n• Energy Management Systems \n• BAS Networking and Communication Protocols (BACnet, Modbus, Niagara) \n• Facilities Management and ",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "nyJU2z9v5SI",
+      "found": "2026-11-05T10:59:21.144Z",
+      "title": "P1 VAC | Machine Walkaround | Tennant Company",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-21T14:04:59+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "P1 VAC Machine Walkaround\n\nTimestamps:\n0:00  Powering on Machine\n1:40  Machine Interface & Controls\n2:35 Start of Machine Walkaround\n7:35 Debris Collection System\n9:55 Additional Tips\n12:34 Changing Panel Filter\n13:55 Changing Dust Mop Attachment\n15:10 Changing Side Brush \n18:00 Replacing Vacuum Bags\n\n➡️ Learn more about the P1 VAC Autonomous Vacuum: https://www.tennantco.com/en_us/1/machines/robotics/product.p1-vac.autonomous-vacuum.2216378.html\n\n🔔 Subscribe for more real‑world footage of autonomous cleaning in action\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "X1Np6JrOfgg",
+      "found": "2026-11-05T10:59:22.279Z",
+      "title": "P1 VAC | Setup, Operation & Mapping | Tennant Company",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-21T14:04:51+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "P1 VAC Setup, Operation & Mapping\n\nTimestamps:\n0:00 Setting up P1 CHRG Dock\n2:07 Charging the P1 VAC\n3:24 P-Series App\n3:57 Creating a Map\n10:02 Creating Cleaning Zones\n13:20 Creating Cleaning Tasks\n15:33 Creating a Cleaning Schedule\n18:29 Setting dock location on map\n19:37 Autonomous Docking\n20:09 Machine Audio Settings\n\n➡️ Learn more about the P1 VAC Autonomous Vacuum: https://www.tennantco.com/en_us/1/machines/robotics/product.p1-vac.autonomous-vacuum.2216378.html\n\n🔔 Subscribe for more real‑world footage of autonomous cleaning in action\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "tAlRtldYCwY",
+      "found": "2026-11-05T10:31:38.055Z",
+      "title": "Screw Compressor Noise: What Most Techs Blame On Bearings",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-20T15:00:12+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The screw compressor sounds like a bag of rocks, and everything points to bearings. Sometimes the bearings are perfectly fine. A weak IGBT in the VFD sends a dirty output to the motor, and the vibration it causes sounds just like a bearing failure. That same IGBT can still pass a diode test on your meter.\n\nIn this one I walk through the diode test on an IGBT module: where to land your leads, the readings I want to see, and why a pass only means it's safe to power up. The module on the bench passes every check. It came out of a screw machine that sounded like it had failed bearings. New module in, and the bearing noise was gone.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Setting your meter to diode mode and finding the input side, output side, and terminal polarity\n- Why you test on the termination pad and not the threads inside the bolt hole\n- Why it doesn't matter which output terminal you test\n- Testing the DC bus side: OL one direction, a voltage reading when you flip the leads, same idea as an SCR check\n- The 0.3 to 0.4 VDC most manufacturers call for, and why I want to see 0.34 to 0.38\n- Running the full test across every terminal pair\n- What a pass actually tells you: no internal short and safe to power up, not proof the module is good\n- Static test versus load test, and why your meter can't see a module that is going weak\n- The module that passed on the bench and still made a screw compressor sound like it had failed bearings\n- Why this applies to any motor on a drive, not just screw compressors\n- Overcurrent and phase faults as other signs the module is going weak\n- Heat, run time, and heat sink cooling: what wears an IGBT down\n- How a weak IGBT's dirty output puts vibration into the rotor that sounds like a bearing failure\n- Why catching it early means a module swap, and letting it run means bearings too\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Setting Up a Diode Test on an IGBT Module\n1:01 Testing the Output and DC Bus Terminals\n1:55 The Readings to Expect: 0.3 to 0.4 VDC\n2:55 Running the Full Test on Every Terminal\n4:05 A Pass Means Safe to Power Up, Not Good\n5:10 The Bearing Noise That Was Really the IGBT\n6:14 Overcurrent, Phase Faults, and What Wears IGBTs Down\n6:47 Why a Dirty Output Sounds Like Bad Bearings\n7:43 Catch It Early or Lose the Bearings",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "JRg7p6yKKtk",
+      "found": "2026-11-05T10:59:23.440Z",
+      "title": "P1 VAC Autonomous Vacuum | Customer Testimonials | Tennant Company",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-20T12:29:10+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "Meet the P1 VAC autonomous vacuum in action and see how it is making a difference in everyday vacuuming.\n\nHear directly from customers and discover how the P1 VAC helps teams maintain consistently clean facilities while improving productivity and making better use of labor resources. From hotels and schools to commercial environments, the P1 VAC delivers dependable autonomous vacuuming with simple operation and reliable results.\n\nDesigned for everyday floor care, the P1 VAC autonomously vacuums, sweeps, and dust mops while navigating real-world environments with ease. Its compact design, intelligent cleaning technology, autonomous docking, and easy-to-use controls help cleaning teams spend less time on routine tasks and more time focusing on what matters most.\n\n➡️ Learn more about the P1 VAC Autonomous Vacuum: https://www.tennantco.com/en_us/1/machines/robotics/product.p1-vac.autonomous-vacuum.2216378.html\n\n🔔 Subscribe for more real‑world footage of autonomous cleaning in action\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "vP0RkE1CDoI",
+      "found": "2026-11-05T10:31:39.202Z",
+      "title": "Chiller Questions Answered LIVE E.51",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-20T06:16:12+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "Welcome to my live Q&A session I'm ready to answer your questions about equipment, techniques, troubleshooting, and industry standards. This stream is designed for Chiller Techs looking to enhance their skills and efficiency in the field.\n\nI use my decade of servicing York, Trane, Carrier, & Daikin chillers to show you why and how these units work, join me & over 800 other techs here https://chilleracademy.com/p/intro-to-chillers",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "zCMK2i_J4YY",
+      "found": "2026-11-05T10:31:40.355Z",
+      "title": "Chiller Startup: The Pulldown Setting Most Techs Overlook",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-17T15:00:20+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The loop is warm, the chiller starts, and every number on the panel moves at once. The compressor rides current limit, approach runs high, and on a variable speed machine the vanes stop partway while the speed climbs. Most of that is what a pulldown is supposed to look like. The job is knowing which readings should settle once you reach set point and which ones are telling you something is wrong.\n\nThis one walks through what to expect on the refrigerant side and the oil side as a water cooled chiller starts and loads, with most of the focus on centrifugals. If a machine trips on overcurrent every time it starts on warm water, look at the pulldown setting. Most panels have one, and it may never have been configured.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- What pulldown does at startup, and why capping the compressor at 70 or 80 percent of current limit saves stress and energy\n- Why a hot pulldown, with 65 to 70 degree water coming in on a machine designed for 54 or 55, ends in current spikes and overcurrent trips\n- The pulldown setting most panels already have, and why it may not be configured on your machine\n- Proving oil differential pressure before a centrifugal will start, and why no oil DP means no start\n- Typical oil temperatures at startup: about 100 to 110 degrees minimum, with heaters usually holding 140 to 160 depending on the manufacturer\n- Why current limiting at startup is normal, and why coasting into set point beats overshooting it and hitting the shutdown set point\n- Vanes first, then speed: how a variable speed centrifugal should load, and the Turbocor exception where the vanes start open\n- Why staging can take several seconds, or even a couple of minutes, between steps\n- Vanes holding at 40 or 60 percent while the drive speeds up: the machine is raising tip speed to stay off the surge line, not running at maximum lift\n- How high condenser water with no condenser water relief causes stair stepping between speed and vane position\n- Catching non condensables on a low pressure machine like a Trane CenTraVac by comparing saturation temperature to drop leg temperature\n- How approach should track load, why it runs high during pulldown, and why high approach at low load can point to a heat exchange problem\n- Why the purge runs hard right after startup: it pulls from the middle of the condenser, and the non condensables were sitting at the top\n- Discharge superheat on constant speed versus variable speed: 40 to 60 degrees unloaded on a constant speed with the vanes closed, 10 to 20 at high load\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Chiller Startup: How Pulldown Limits the Compressor\n1:47 Hot Startup Overcurrent Trips and the Pulldown Setting\n3:10 Oil Differential Pressure and Oil Temperature Before Startup\n4:31 Current Limiting and Coasting Into Set Point\n5:26 How Guide Vanes and the Drive Should Stage Up\n7:13 Time Delays Between S",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "56Iu1NUpdJE",
+      "found": "2026-11-05T10:31:41.468Z",
+      "title": "Hard to Find Chiller Parts: The Supplier Most Techs Overlook",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-15T15:00:00+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The job is bigger than your crew. A 2,000 ton machine to recover, a centrifugal that needs an overhaul, a part the supply house cannot track down. You need help, and the last thing you want is the company you called in going after your customer.\n\nSo I flew to Louisiana and spent two days with ChillCo, one of the partners in the Chiller Academy network. We walk through their big recovery rigs, the centrifugal shop, the rental fleet, and the parts team, and I lay out where they fit, including the jobs where they are not the right call.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- The wrecked 19XR impeller, and why parts like it belong in the training center\n- 500 gallon recovery tanks and big recovery and evacuation rigs: not for rent, but ChillCo will bring them out to your job\n- Why calling in help on a big job can cost you the customer, and why ChillCo does not work that way\n- Where ChillCo fits by size: the 2,000 ton and up machine or a site with several big ones, and who to call instead on a 500 ton centrifugal\n- The parts team: people who know heavy side terminology, with one contact across Trane, Carrier, Dunham-Bush, and more\n- The centrifugal shop, where you can ship in a compressor for an overhaul\n- The rental fleet they can drop on site, including a walk around a Dunham-Bush vertical screw machine on a trailer\n- Full disclosure: ChillCo sponsors the training center, and this visit was not part of that\n- How ChillCo and Compressor Solutions Group (CSG) work together: ChillCo for Frick and centrifugal parts, CSG for smaller and screw compressors\n- Bonus at the end: what is left of a second stage impeller from a Carrier centrifugal\n\nMore chiller training: https://chilleracademy.com",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "YndjcbQy7gQ",
+      "found": "2026-11-05T10:58:18.581Z",
+      "title": "SBA 566: Integrating AV Systems with BAS for Smarter, More Efficient Buildings",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-10-15T12:00:39+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "Are your building automation systems missing valuable data from audiovisual (AV) systems? Integrating AV systems with building automation systems (BAS) can unlock opportunities to improve HVAC efficiency, occupancy-based controls, energy management, and occupant comfort.\n\nIn Episode 566, we explore how AV and BAS integration can help building automation professionals improve commercial building performance by connecting room scheduling platforms, occupancy data, and HVAC control systems.\n\nMany commercial buildings have advanced AV technology and sophisticated BAS controls, yet these systems operate independently. This disconnect can lead to unnecessary heating and cooling, missed energy-saving opportunities, and increased facility management challenges.\n\nLearn what it takes to connect these systems effectively, including communication protocols, BACnet integration, network architecture, cybersecurity, commissioning, and long-term maintenance.\n\nTopics Covered:\n- How AV and BAS integration can improve smart building performance\n- Using conference room scheduling and occupancy data for HVAC optimization\n- BACnet, APIs, gateways, and other BAS integration methods\n- Network segmentation, cybersecurity, and communication challenges\n- Common AV and BAS integration failures and troubleshooting considerations\n- Why joint commissioning and clearly defined contractor responsibilities matter\n- How to reduce integration complexity while improving system reliability\n\nWhether you're a BAS technician, controls engineer, systems integrator, HVAC professional, or facility manager, this episode explores opportunities to make your building automation systems more responsive, efficient, and connected.\n\n📅 New episodes every Thursday at 7 a.m. Central.\n\nSubscribe to the Smart Buildings Academy Podcast for discussions on building automation systems, HVAC controls, BACnet, smart building technology, systems integration, and energy efficiency.\n\n👍 Like this video if you found it valuable.\n\n💬 Comment below: Are you currently integrating AV systems with BAS on your projects?\n\n🔔 Subscribe to our YouTube channel for more building automation training and industry insights.\n\n#BuildingAutomation #BAS #SmartBuildings #BACnet #HVACControls #SystemsIntegration #EnergyEfficiency #BuildingManagementSystems #FacilityManagement #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "NpmRlK30jt8",
+      "found": "2026-11-05T10:58:45.872Z",
+      "title": "#PROGRAMMABLE #LOGIC #CONTROLLERS",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-10-15T11:00:06+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "PROGRAMMABLE LOGIC CONTROLLERS MADE EASY. CHECK YOUR SKILL LEVELS. PLC AUTOMATION FOR BEGINNERS.",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "wNQi27xJZfA",
+      "found": "2026-11-05T10:31:42.721Z",
+      "title": "IGBT vs SCR: What Actually Changes Inside the Module",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-13T15:00:17+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "Open up a chiller drive and the IGBT looks like one big part, with a control module mounted on top and gate pins everywhere. The one I have here is actually three separate IGBT modules, and they are not connected to each other inside at all.\n\nSame basic idea as an SCR, taken a whole lot further. Using a module out of a York machine, I walk through how the gates get fired, where the DC comes in and the AC goes out, and why the IGBT is the device while inverting is the job. Then how the same module can run three separate phases, like the block inside a Turbocor, or get tied together to carry one leg on a bigger machine.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- What an IGBT is, short for insulated gate bipolar transistor, and how it takes the same approach as an SCR with a much more complex circuit inside, diodes included\n- Two parallel circuits running side by side, with two sets of transistors working together\n- Why a three IGBT module is really three independent modules built into one assembly, with no connection between them inside\n- The control module mounted on top and the pin connectors that carry firing signals from the logic board to the gates inside\n- A close look at the gate controllers, with more gate control inputs than you will see on an SCR\n- Where the DC bus feeds in and where the AC comes out when the module is used as an inverter\n- Why the IGBT is the device and inverting or rectifying is the function, since the same part can be applied either way\n- The single block module under the soft start board in a Turbocor, and why it is the same three leg inverter with a dedicated output to the motor on each leg\n- How bigger machines tie all three outputs together with a busbar so one module acts as one leg of power to the compressor\n- Why that spreads the current over three sets of IGBTs instead of asking one set to handle the entire load\n- Separate phases run 120 degrees apart, while outputs tied into one leg all run in sync, with two more modules putting out the other two phases\n\nMore chiller training: https://chilleracademy.com\n\n0:00 What an IGBT Is: Two Sets of Transistors Inside\n0:57 Three Independent IGBT Modules in One Assembly\n1:29 IGBT Gate Controllers and the Logic Board\n2:51 Inverter or Rectifier: The IGBT Is Just the Device\n3:30 Turbocor Inverter: Three Legs in One Block Module\n4:33 Why Bigger Machines Tie Three Outputs Into One Leg\n5:10 Three Phase Output: 120 Degrees Apart or in Sync",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "ZJdC-tIfMuk",
+      "found": "2026-11-05T10:59:14.945Z",
+      "title": "Digitala lösningar för VA-sektorn",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-13T14:22:31+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Övervaka driften, förutse problem och förhindra oplanerade driftstopp med Grundfos Digitala Lösningar. Vi har även smarta lösningar som minskar läckage, rörbrott och energianvändning. Denna film ger en kort introduktion till vad vi har att erbjuda VA-sektorn. Kostnadseffektiva IT-lösningar med hög cybersäkerhet. \n\nVi står inför en ny era inom vatten- och avloppshantering. Den börjar här - med dig.\nVill du läsa mer om våra digitala lösningar, besök: http://gfos.ly/6052BHEUxE",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "Rx9wOHER6wk",
+      "found": "2026-11-05T10:59:16.036Z",
+      "title": "Behöver du en ny pump?",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-13T14:22:12+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Tack vare ett unikt samarbete med certifierade pumpserviceföretag\nruntom i landet har du alltid snabb tillgång till service\ni världsklass samt ett lokalt lager med reservdelar, pumpar och\ntillbehör. Se aktuellt lagersaldo på www.pumpdirekt.se",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "w5_4kncWf4Q",
+      "found": "2026-11-05T10:58:29.435Z",
+      "title": "What is Industrial AI?",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-10-12T14:07:55+00:00",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "▶ Get a free SPS ticket with code BeAtSPS26: https://sps.mesago.com/nuernberg/en/expo/for_visitors/tickets.html?wt_mc=Organic-Social.youtube.mf-mesago.sps.cross-country.vt.cv.sps_realpars\n\nUse this code to get your free ticket for SPS: BeAtSPS26\n\nPlease note that this is not a invitation code. So you should not add it at the start of the process. You can add this at the end of the process as a discount code. The code is case sensitive. It is valid only for the Expo Pass.\n\n▶ Need help with industrial AI?\nSee how AI could work in your plant: https://www.realpars.com/solutions/industrial-ai\n\n▶ The article goes into more detail than this video: https://sps.mesago.com/nuernberg/en/sps_insights/industry_news/industry-news-articles/industrial-ai-explained.html\n\n============================\n\n⌚Timestamps:\n\n00:00 - Three types of AI\n07:03 - Generative AI limitations\n12:05 - When generative AI is useful\n14:15 - Closed-loop AI\n16:14 - AI drift\n17:46 - Load shifting\n19:28 - Predictive maintenance\n20:52 - Considerations Before Using AI\n\n=============================\n\nWhat can AI do in your plant? @Shahpour  explains three types of AI: predictive, generative, and autonomous. You’ll learn how they’re used in plants, their limitations, and what to consider before starting an AI project.\n\n=============================\n\nThis video is created in collaboration with Mesago @SPSSmartProductionSolutions \n\nThanks to BATEAU BLANC for providing some of the footage used in this video: https://bateaublanc.com/",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "T4PhYiElCrc",
+      "found": "2026-11-05T10:31:25.427Z",
+      "title": "AC Running But Not Cooling? | AC Troubleshooting Guide",
+      "channel": "MEP Techniques (facility O&M)",
+      "duration": "",
+      "published": "2026-10-11T08:22:53+00:00",
+      "channelUrl": "https://www.youtube.com/@MEPTechniqueprabhu",
+      "description": "AC Running But Not Cooling? In this  AC troubleshooting guide, learn how to identify common reasons why your air conditioner is running but not cooling properly.\n\nIf your AC is ON but blowing warm air, taking too long to cool the room, or not providing enough cooling, this video will help you understand the possible causes and what to check.\n\n🔧 In this AC troubleshooting video, you will learn about:\n\n* Common reasons why an AC is not cooling\n* AC running but blowing warm air\n* Thermostat settings and airflow problems\n* Dirty air filters and blocked coils\n* Outdoor unit, fan, and compressor-related issues\n* Possible refrigerant (AC gas) problems\n* Basic troubleshooting checks before calling a technician\n\n⏱️ Video duration: 10 minutes\n\nWhether you are a homeowner, an AC technician, or a beginner learning air conditioning repair, this guide will help you understand the AC troubleshooting process.\n\n👍 If this video helps you, please LIKE, SHARE, and SUBSCRIBE for more AC repair, air conditioning troubleshooting, and HVAC tips.\n\n💬 Comment below: What problem is your AC having? Is it running but not cooling, blowing warm air, or cooling very slowly?\n\n⚠️ Safety note: Switch off the power before inspecting the equipment. Electrical components, capacitors, refrigerant handling, and compressor repairs should be handled by a qualified technician.\n\n#ACNotCooling #ACTroubleshooting #AirConditionerRepair #ACNotCooling #ACTroubleshooting #airconditionerrepair",
+      "channelCategory": "",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "WFnsL3PV5EM",
+      "found": "2026-11-05T10:31:58.908Z",
+      "title": "🎉 3,000 SUBSCRIBERS! THANK YOU! 🎉",
+      "channel": "Learn A Trade (commercial equipment)",
+      "duration": "",
+      "published": "2026-10-11T02:33:44+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
+      "description": "Join this channel to get access to perks:\nhttps://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA/join\n👇\n\n🎉 3,000 SUBSCRIBERS! THANK YOU! 🎉\n\nWe've reached an incredible milestone here at Learn A Trade, and I couldn't have done it without YOU!\n\nWhat started as a mission to share real-world knowledge about commercial beverage equipment repair has grown into a community of technicians, aspiring professionals, and people passionate about learning the trade.\n\n🔧 And we're just getting started!\n\n🎙️ INTRODUCING ASK LAT LIVE!\n\nA brand-new monthly podcast and interactive technician Q&A show where we'll discuss:\n\n✅ Real-world equipment troubleshooting\n✅ Commercial beverage dispensers & ice machines\n✅ Frozen beverage and coffee equipment\n✅ Technician questions from our YouTube community\n✅ Repair tips, industry knowledge & field experiences\n✅ LIVE viewer questions and discussions!\n\n📅 PREMIERE: Sunday, October 25, 2026\n🕖 7:00 PM Eastern Time\n\nWhether you're an experienced technician or just getting started, Ask LAT Live is YOUR opportunity to learn, connect, and grow!\n\n💬 GOT A TECHNICAL QUESTION? Drop it in the comments! Your question could be featured on an upcoming episode.\n\n🔔 SUBSCRIBE, TURN ON NOTIFICATIONS & JOIN US LIVE!\n\nThank you for helping Learn A Trade reach 3,000 subscribers. This is only the beginning!\n\nLet's keep learning, troubleshooting, and growing together!\n\n🔧 Learn A Trade — Learn the Trade. Build Your Future.\n\n🔥 Hashtags\n\n#LearnATrade #AskLATLive #3000Subscribers #CommercialEquipmentRepair #BeverageEquipment #TechnicianTraining #IceMachineRepair #YouTubeLive #SkilledTrades #TechSupport\n👇\n🔧 Try the FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n🚀 Upgrade to Pro:\nhttps://www.learnatrade.online/unlock-lat-technician-pro-access\n\n📩 Contact: info@learnatrade.online",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "aoCKe6uU_AI",
+      "found": "2026-11-05T10:31:26.617Z",
+      "title": "Stop Making This Mistake! How to Measure Room Temperature Correctly",
+      "channel": "MEP Techniques (facility O&M)",
+      "duration": "",
+      "published": "2026-10-10T11:07:36+00:00",
+      "channelUrl": "https://www.youtube.com/@MEPTechniqueprabhu",
+      "description": "Are you measuring room temperature correctly? 🌡️\n\nIn this video, we explain how to measure space temperature correctly in HVAC systems, common mistakes when using an infrared (IR) thermometer, and the proper location to measure indoor air temperature.\n\nMany technicians use an IR thermometer without realizing that it measures surface temperature, not the actual air temperature. This can lead to incorrect readings and confusion during HVAC inspection and troubleshooting.\n\nIn this 3-minute video, you will learn:\n\n✅ The difference between an IR thermometer and a space temperature thermometer\n✅ Common mistakes when measuring room temperature\n✅ Why an IR thermometer cannot directly measure room air temperature\n✅ The correct location to measure space temperature\n✅ Practical HVAC temperature measurement tips for technicians\n\nWhether you are an HVAC technician, MEP engineer, facility management professional, maintenance technician, or engineering student, this video will help you understand proper space temperature measurement.\n\n📌 Remember: Use a suitable space temperature thermometer or air-temperature probe to measure indoor air temperature. Use an IR thermometer for surface temperature measurements.\n\nIf you find this video useful, please LIKE, SHARE, and SUBSCRIBE for more practical HVAC tips, MEP knowledge, and technical learning.\n\nThank you for watching!\n\n#HVAC #MEP #HVACTechnician #TemperatureMeasurement #infraredthermometer",
+      "channelCategory": "",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "wYlWMfnPVOk",
+      "found": "2026-11-05T10:31:54.579Z",
+      "title": "Solar panels cleaning",
+      "channel": "KITCHEN TECH",
+      "duration": "",
+      "published": "2026-10-09T11:33:30+00:00",
+      "channelUrl": "https://www.youtube.com/@WPKITCHENTECH",
+      "description": "",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "sNoaW1vfFYI",
+      "found": "2026-11-05T10:31:43.994Z",
+      "title": "Chiller Drive Electronics: The VFD Manuals Most Techs Overlook",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-08T15:00:14+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "You want to understand the electronics inside a chiller drive, and the OEM manual only takes you so far. The rest of the drive service literature is hard to get your hands on.\n\nThe way around it is a manual you can actually find. The components in a big chiller drive are the same ones inside a Danfoss VLT or an ABB drive, just at a bigger scale. The operation and service manuals for those drives explain how those parts work, and they use a lot of the same terminology. This one covers which manuals to grab, where the OEM drive manuals fit in, and why the manufacturer's spec still comes first.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why drive manuals are a good place to learn the electronics used in chiller drives\n- The Danfoss VLT and ABB 530, 550, and 580 manuals, the easiest ones to get your hands on\n- Why you want the operation and service manuals, not the install manuals, to learn how the drive works\n- How the parts in a large chiller drive are the same ones in a packaged VFD, just bigger\n- Why packaged drives are built to be replaced and chiller drives are built to be repaired, even though the parts work the same way\n- Looking past the Turbocor manual to other OEM drive manuals, and how York numbers theirs\n- Which York drive manual is probably the easiest to track down, even though none of them come easy\n- What a good drive manual teaches you: how the electronics work at a deeper level and how they should behave\n- Why you follow the manufacturer's spec over my word every time, because there is a reason behind their decisions\n- The fundamentals and industry standards still hold, but one manufacturer may call out a detail others won't\n- A new electronics reference for techs I found recently and hope to talk about more soon\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Learning Drive Electronics From Danfoss VLT and ABB Manuals\n0:40 Chiller Drive vs Packaged VFD: Same Parts, Bigger Scale\n1:18 York Drive Manuals: Which Ones to Search For\n2:36 Why the Manufacturer Spec Beats General Advice\n3:36 The Search for a Good Electronics Book for Techs",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "XIE_18yMqco",
+      "found": "2026-11-05T10:58:19.928Z",
+      "title": "SBA 565: How to Estimate Building Automation Labor and Protect Project Margins",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-10-08T12:00:03+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "Why do profitable building automation projects lose margin after they are sold?\n\nLabor estimation is often the difference between the margin you expect at booking and the margin you actually see at project closeout.\n\nIn Episode 565, we examine how building automation professionals can build more accurate and defensible labor estimates for BAS and controls projects.\n\nYou’ll learn how to think about labor estimation across the full project lifecycle, from engineering and programming to integration, commissioning, project management, and closeout. We also explore why historical job-cost data matters, how site conditions affect labor requirements, and why communication between sales and operations should happen before a proposal reaches the customer.\n\nTopics Covered:\n• Building automation labor estimation  \n• BAS project estimating and job costing  \n• Protecting project margins on controls projects  \n• Breaking controls projects into labor phases  \n• Using historical labor data to improve estimates  \n• Accounting for integration and commissioning requirements  \n• Identifying hidden labor that can impact profitability  \n• Aligning BAS sales engineers with project managers and technicians  \n• Using completed projects to improve future estimates  \n• Creating clearer proposal assumptions, qualifications, and exclusions  \n\nIf you work in building automation sales, estimating, engineering, project management, operations, or field service, this episode will help you evaluate whether your labor estimates reflect the work your team will actually perform.\n\nThe goal is not to add hours to every project. It is to build a labor number that sales can defend, operations can execute, and the business can trust.\n\n🎧 Listen to more episodes of the Smart Buildings Academy Podcast and explore building automation training at Smart Buildings Academy.\n\nSubscribe for new episodes covering building automation systems, BAS controls, HVAC controls, system integration, energy efficiency, smart buildings, sales engineering, project management, and controls careers.\n\n#BuildingAutomation #BAS #HVACControls #SmartBuildings #ProjectManagement #SalesEngineering #SystemIntegration #EnergyEfficiency #FacilityManagement #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager, Smart Buildings Academy helps you gain the skills to confidently design, install, and operate building automatio",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "CirQSo_M8I0",
+      "found": "2026-11-05T10:58:46.929Z",
+      "title": "PLC Automatic Home Lighting Control Logic [SIEMENS TIA PORTAL]",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-10-08T09:45:21+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "In this video, learn Automatic Home Lighting Control using PLC and Siemens TIA Portal. A simple and practical PLC Ladder Logic example for beginners in automation and PLC programming.\n\nTags:\nPLC automatic home lighting, automatic home lighting PLC, home lighting control PLC, Siemens TIA Portal, TIA Portal PLC, Siemens PLC, PLC programming, PLC ladder logic, automatic lighting control, home lighting automation, PLC home automation, Siemens S7 PLC, TIA Portal tutorial, PLC tutorial, ladder logic, Siemens ladder logic, PLC control logic, lighting control logic, PLC automation, home automation PLC, PLC project, PLC example, automation tutorial, Siemens automation",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "2qzGmdGws7w",
+      "found": "2026-11-05T10:59:51.444Z",
+      "title": "A2L & A3 Refrigerants: Ensuring Compliance",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-10-07T15:16:03+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "This webinar explains the changing regulatory and compliance landscape for A2L and A3 refrigerants, including equipment deadlines, certification requirements, and refrigerant leak mitigation standards. It also presents PENN product compliance and the System 550 solution for integrated HVAC/R control, leak detection, mitigation, and remote monitoring.\n\nThis presentation reviews regulatory changes impacting A2L and A3 refrigerants, including the AIM Act, EPA Technology Transitions Rule, and compliance deadlines for HVAC/R equipment. It also highlights PENN-certified solutions, including the System 550 platform, refrigerant leak detection technology, and mitigation capabilities that help customers meet safety, compliance, and performance requirements.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "HZoaVC8hmew",
+      "found": "2026-11-05T10:31:45.065Z",
+      "title": "Turbocor Bearing Faults: Why Good Compressors Get Condemned",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-06T15:00:35+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The Turbocor keeps throwing bearing faults and the inverter tests good electrically, so the shaft gets the blame. Call it a demag and you are replacing the whole compressor. I have made that call more than once, and in hindsight those were probably inverter problems.\n\nA disruption from the IGBTs in the inverter can leave the magnetic bearings struggling to keep the shaft centered. This one walks through the order I wish I had followed: change the inverter first, see if the bearing faults improve, and only then condemn the compressor for a demagnetized shaft. It also covers how to lay that choice out for the customer up front, and why the inverter is not a wasted expense even if it turns out to be the shaft.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why the inverter is an early suspect for bearing faults: IGBT trouble makes it hard for the bearings to keep the shaft centered\n- Why condemning a Turbocor for a demag means replacing the whole compressor\n- How the inverter inside the compressor can test good electrically and still be behind the faults\n- The Turbocors I condemned for a demag that, in hindsight, probably had an inverter problem\n- Changing the inverter first and watching whether the bearing faults improve\n- When the faults do not improve, why the demag shaft becomes the likely call and the compressor comes next\n- Laying out the choice for the customer up front: a brand new compressor, or an inverter first to try to save this one\n- If the inverter does not fix it, why the old compressor still has value for salvage parts\n- Why the inverter you put in is not a wasted expense: stored properly, the customer can keep it and use it later\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Turbocor Bearing Faults: Inverter or Demag Shaft\n0:34 Change the Inverter Before Condemning the Compressor\n1:09 New Compressor or Inverter First: The Customer Conversation",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "ZRNhndAwKg8",
+      "found": "2026-11-05T10:59:52.810Z",
+      "title": "WLSR8000 Wireless SA Bus Receiver. Engineer less. Install Faster.",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-10-05T19:21:46+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "Simplify room sensing with the Johnson Controls WLSR800 Wireless SA Bus Receiver. Connect wireless sensors to HVAC controllers quickly and easily while reducing installation complexity and supporting flexible building deployments.\n\nIdeal for offices, schools, museums, retail spaces, banks, and historic buildings, the Wireless SA Bus Receiver provides the flexibility of wireless communication where running wires may be difficult, costly, or disruptive. By delivering reliable building data and streamlined integration, it helps maintain efficient HVAC operation while making building automation projects faster and easier to deploy.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "1S0Cyl_3yG8",
+      "found": "2026-11-05T10:58:30.657Z",
+      "title": "FactoryTalk Optix 1: Basic HMI Development",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-10-05T13:00:30+00:00",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "FactoryTalk Optix is Rockwell's new HMI software. More and more plants are starting to use it. This course helps you learn it from the start.\n\nYou will build one small HMI project from zero. It controls a simple conveyor. You will make a new project, design the screen, connect it to PLC tags, and add buttons and a status light. Then you test it on your own computer with an emulated PLC.\n\nThis course is a good fit if you already know some Studio 5000 and want to add HMI skills to your work. You also get a RealPars certificate when you finish.\n\nStart today: https://www.realpars.com/courses/factorytalk-optix-basic-hmi-development",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "6p58Z7hAQSA",
+      "found": "2026-11-05T10:31:55.590Z",
+      "title": "Machine Machine troubleshooting AI",
+      "channel": "KITCHEN TECH",
+      "duration": "",
+      "published": "2026-10-05T10:00:01+00:00",
+      "channelUrl": "https://www.youtube.com/@WPKITCHENTECH",
+      "description": "",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "iC4URaB4z7A",
+      "found": "2026-11-05T10:31:46.956Z",
+      "title": "Good SCR vs Weak SCR: What the Diode Test Actually Shows",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-03T15:00:16+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The chiller keeps throwing intermittent start failures, you diode test the SCRs, and the readings land inside the factory range. Technically in spec is not the same as good. A reading sitting near either edge of that range, with intermittent faults on top of it, likely means the set is getting weak.\n\nThis one runs a diode test on an SCR in both lead directions, shows what a passing part reads, and covers what a pass does not prove. A shorted SCR can blow apart the moment power goes back on, which is why this test comes first after blown fuses or a tripped breaker.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why SCR testing calls for a meter with a diode test function, which not every meter has, and why diode mode beats checking on ohms\n- The test itself: black lead on terminal 1, red lead on 2 and then 3, then swap the leads and run both pairs again\n- What a passing SCR read here: OL both ways from 1 to 2, and 0.38 VDC one way with OL the other from 1 to 3\n- Where most factory recommendations land: 0.3 to 0.4 VDC\n- The tighter 0.36 to 0.38 window that comes from an electronics background, why readings closer to 0.3 or 0.4 get more concerning, and why that is a warning sign, not a number to condemn on\n- When a 0.32 reading with intermittent start failures, DC bus alarms, or current faults at startup is reason to change the SCRs out, even though they are still in spec\n- Why some SCRs show a reading in one direction on both terminal pairs, and why the other SCRs in the drive become your reference when you have no manufacturer data like Turbocor's\n- Why two SCRs failing together is common, all three at once is not, and why the whole set gets replaced even when some still test good\n- What a passing diode test actually proves, and why an SCR that reads good can still give you problems under load\n- Testing before you restore power after blown fuses or a tripped breaker, because a shorted SCR does not just fail, it can blow apart\n- Why SCRs are starting to get phased out for IGBTs, which now handle AC to DC on the rectifier side, not just DC to AC on the inverter side\n- Why IGBTs give cleaner power than SCRs, and how harmonic filters clean up both the incoming feed and the harmonics an SCR drive sends back into the grid\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Why Your Meter Needs a Diode Test for SCRs\n1:31 Testing Terminals 1 to 2 and 1 to 3\n2:04 Swap the Leads: What a Passing SCR Reads\n2:36 Factory Spec vs a Tighter 0.36 to 0.38 Window\n3:48 In Spec but Weak: When to Replace SCRs Anyway\n4:33 SCR Readings Vary: Compare Across the Drive\n5:37 Replace the Whole SCR Set, Even the Good Ones\n6:07 Shorted SCRs: Why You Test Before Restoring Power\n7:43 Why SCRs Are Being Phased Out for IGBTs\n8:44 Why SCR Drives Need Harmonic Filters",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "QRsMpak-tcc",
+      "found": "2026-11-05T10:31:27.769Z",
+      "title": "Electrical Distribution Board Preventive Maintenance- PPE, Tools and Safe work sequence",
+      "channel": "MEP Techniques (facility O&M)",
+      "duration": "",
+      "published": "2026-10-03T14:07:57+00:00",
+      "channelUrl": "https://www.youtube.com/@MEPTechniqueprabhu",
+      "description": "This 2-minute simulation demonstrates the essential steps for carrying out preventive maintenance on an electrical distribution board.\n\nThe simulation focuses on:\n✅ Selecting the correct PPE\n✅ Identifying and selecting the required tools\n✅ Following the correct preventive maintenance sequence\n✅ Applying safe electrical work practices\n✅ Completing the task in a systematic and controlled manner\n\nThis video is intended for electrical technicians, maintenance personnel, supervisors, HSE professionals, and technical training purposes.\n\n⚠️ Safety Reminder: Always follow your company’s approved electrical safety procedures, isolation/LOTO requirements, risk assessment, and applicable local regulations before performing actual electrical maintenance.\n\n#ElectricalMaintenance #PreventiveMaintenance #ElectricalSafety #DistributionBoard #DBMaintenance #ElectricalEngineering #PPE #LOTO #ElectricalTechnician #SafetyTraining #MaintenanceTraining #HSE #ElectricalSafetyTraining #TechnicalTraining #SafetySimulation",
+      "channelCategory": "",
+      "suggestedCategory": "Electrical"
+    },
+    {
+      "yt": "St4ZL1Cex3c",
+      "found": "2026-11-05T10:31:48.133Z",
+      "title": "SCR Testing: The Floating Nut Mistake Most Techs Make",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-10-01T15:00:39+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "You put your meter lead on an SCR terminal and get nothing. Inside that terminal is a small nut that floats free, and it is not connected to the terminal plate. Probe the nut, or probe a screw that is backed out and not touching the plate, and the meter never sees the SCR. The plate is the connection point, and IGBTs have the same setup.\n\nThen I get into how this silicon controlled rectifier gives a drive its DC bus: AC line voltage in, DC out, and two small pins that carry the trigger signal. You will also see why a contactor has contacts and moving parts and an SCR has neither, and why every SCR is mounted to a heat sink.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- The SCR terminal layout: line voltage in on terminal 1, DC out on terminals 2 and 3, one positive and one negative\n- The small nut that floats inside each terminal, same idea as the floating lugs in some scroll compressor terminal boxes\n- Why the terminal plate, not the nut, is the real connection point for your reading\n- The two mistakes I see techs make all the time: probing the inner nut, or probing a screw that is backed out and not touching the plate\n- IGBTs use the same setup: the top plate is the connection point, and the threaded nut underneath is only there to hold the screw and terminal in place\n- How the two circuits inside an SCR module turn AC line voltage into positive and negative DC, which is how a drive gets its DC bus\n- Terminals 4 and 5, the two small pins a trigger board or SCR control module uses to trigger the SCR\n- How a contactor switches, with contact pads you can replace and mechanical motion every time it pulls in\n- Why an SCR has no contacts and no moving parts: triggering the gate is what lets current through the silicon\n- Why every SCR is mounted to a heat sink, air cooled or fluid cooled, in a soft starter or a drive\n- How the amount of heat decides the size of the heat sink and how much cooling it needs\n\nMore chiller training: https://chilleracademy.com\n\n0:00 SCR Terminal Layout: AC In, DC Out\n0:42 The Floating Nut Inside an SCR Terminal\n1:26 Why Probing the Nut Gives You No Reading\n2:16 IGBTs Use the Same Terminal Setup\n2:52 SCR Stands for Silicon Controlled Rectifier\n3:32 How SCRs Give a Drive Its DC Bus\n4:22 Terminals 4 and 5: The Gate Trigger Pins\n4:52 SCR vs Contactor: No Contacts, No Moving Parts\n6:33 Why Every SCR Is Mounted to a Heat Sink",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "bWlDvRdLKmI",
+      "found": "2026-11-05T10:58:20.979Z",
+      "title": "SBA 564: What Is a PID Loop Really Doing in Building Automation?",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-10-01T12:00:26+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "PID loops are everywhere in building automation systems, but what is a PID controller actually doing when it controls a valve, damper, pump, temperature, or pressure?\n\nIn Episode 564 of the Smart Buildings Academy Podcast, we break down PID control in practical BAS terms. You’ll learn how to think about proportional, integral, and derivative control when troubleshooting real HVAC and building automation systems.\n\nWhen a control loop starts hunting, overshooting setpoint, driving an output to 100%, or struggling to stabilize, changing PID tuning values may seem like the answer. But the tuning parameters might not be the real problem.\n\nThis episode explores how to read PID loop behavior, use BAS trends to investigate control problems, and recognize when sensors, actuators, control sequences, or mechanical equipment may be contributing to the issue.\n\nTopics Covered\n• PID control in building automation systems\n• Proportional, integral, and derivative control\n• PID loop hunting, overshoot, offset, and windup\n• Using BAS trends for PID troubleshooting\n• Sensor, actuator, sequencing, and mechanical problems\n• HVAC control loop behavior and tuning considerations\n• How equipment response affects BAS control performance\n\nIf you work with BAS programming, HVAC controls, system integration, commissioning, or building automation troubleshooting, this episode will help you develop a clearer framework for understanding what your control loops are telling you.\n\n🎧 Listen to more episodes of the Smart Buildings Academy Podcast and explore building automation training at Smart Buildings Academy.\n\nSubscribe for more content on building automation systems, HVAC controls, BAS programming, system integration, commissioning, control sequences, energy management, and smart buildings.\n\n#BuildingAutomation #PIDControl #BAS #HVACControls #SmartBuildings #BuildingControls #HVAC #SystemIntegration #BuildingAutomationSystems #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager, Smart Buildings Academy helps you gain the skills to confidently design, install, and operate building automation systems. \n\n👉 Subscribe to stay updated on the latest training, tips, and industry insights from our team of experts. \n\n🧠 Topics Covered \n• Building Automation Systems (BAS) \n• HVAC Controls and Programming \n• Smart Building Technologies \n• Energy Management Systems \n• BAS Networking an",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "42DMUFUf0PM",
+      "found": "2026-11-05T10:31:49.346Z",
+      "title": "How Chiller Drive SCRs Work and What Destroys Them",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-09-29T15:00:23+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The SCR is sitting right there in the chiller drive, and most techs were never shown what it actually does in the circuit. The electronics side rarely gets explained in plain terms.\n\nThink of it as a check valve for electricity. The AC sine wave comes in and splits into two paths. Each path lets current through one way and stops it the other way, so each one passes only half the wave. One half feeds the positive side of the DC bus, the other half feeds the negative side, and from there it moves on to the IGBTs. I walk the sine wave through it step by step, tie it back to the schematic, and cover why the SCR has to have its heat pulled out or it fails.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Following an AC sine wave into the SCR and where it splits into two circuits\n- What the diode symbol looks like so you can spot it on a schematic\n- Why a diode works like a check valve for electricity, letting current through one way and stopping it the other way\n- How that is different from a mechanical check valve like the discharge check valve on a compressor, since nothing inside it moves\n- Why a full sine wave goes in and only half of it comes out of each diode\n- How the capacitors filter what comes out of the diodes\n- Why the textbook terms matter less than knowing where the DC bus gets its positive and negative\n- How one diode passes the negative half of the wave and the other passes the positive half\n- Why what comes out is DC instead of AC, and how it moves on to the IGBTs to do work\n- How the schematic lines up with what is physically happening in the circuit\n- Why stopping part of the flow is exactly what the SCR is supposed to do\n- Why the SCR has to have its heat pulled out, or it overheats and fails\n\nMore chiller training: https://chilleracademy.com\n\n0:00 What an SCR Does in a Chiller Drive\n0:33 Where the Sine Wave Splits Into Two Circuits\n1:16 The Diode as an Electrical Check Valve\n1:55 How the Diode Chops Off Half the Sine Wave\n3:15 How the DC Bus Gets Its Positive and Negative\n4:21 Why Stopping Part of the Flow Is the Goal\n5:00 Pulling Heat Out of the SCR Before It Fails",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "HHhSo_Kv1TA",
+      "found": "2026-11-05T10:58:31.827Z",
+      "title": "Motor Control Methods Explained",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-09-29T13:33:17+00:00",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "▶ Need a Motor Control Panel?\nWe design, build, and test custom motor control panels for plants and OEMs.\n https://www.realpars.com/solutions/motor-control-panels\n\n▶ The article goes into more detail than this video:\nhttps://www.realpars.com/blog/motor-control\n\n⌚Timestamps:\n00:00 - Intro\n01:00 - Basic motor starter\n02:59 - Soft starter\n03:31 - Variable Frequency Drive (VFD)\n03:58 - Wrap Up\n\n=============================\n\nEvery motor in a plant or factory needs some way to start it, stop it, and control it. And the motor control method that you choose has real consequences. If you pick something too simple, you risk wearing out mechanical systems and damaging product. If you choose something too complex, you increase cost and commissioning time. \n\nIn this video, you will learn the different motor control methods and how to choose the right one for your application.\n\n\n=============================\n\nMissed our latest articles? Catch up here:\n\nhttps://www.realpars.com/blog/pid-controller\n\nhttps://www.realpars.com/blog/oem-jobs-industrial-automation\n\nhttps://www.realpars.com/blog/electrical-troubleshooting-principles\n\n=============================\n\nFollow us on Facebook 👉 https://www.facebook.com/therealpars\n\nFollow us on Twitter 👉 https://twitter.com/realpars\n\nFollow us on LinkedIn 👉 https://www.linkedin.com/company/realpars\n\nFollow us on Instagram 👉 https://www.instagram.com/realparsdotcom\n\n #motorcontrol #vfd  #Realpars",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "YA3v1mqFUVk",
+      "found": "2026-11-05T10:32:00.093Z",
+      "title": "Helpful Tips when Taking on Large Commercial Projects",
+      "channel": "Learn A Trade (commercial equipment)",
+      "duration": "",
+      "published": "2026-09-28T04:00:14+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
+      "description": "🔧 Try the FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n🚀 Upgrade to Pro:\nhttps://www.learnatrade.online/unlock-lat-technician-pro-access\n👇\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA/join\n👇\nThis channel is intended to educate those interested in working in the Commercial Beverage Equipment, HVAC and Refrigeration trade. We will offer educational training resources, actual onsite repair videos to help those watching see some of the work and tools involved. We will share the theory involved in the trade along with interviews of industry professional. We feel that this channel will help those in the industry already and those looking to get into the industry!\n👇\n🔧 Try the FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n🚀 Upgrade to Pro:\nhttps://www.learnatrade.online/unlock-lat-technician-pro-access\n\n📩 Contact: info@learnatrade.online",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "Qynme-tYqcM",
+      "found": "2026-11-05T10:58:48.148Z",
+      "title": "What is a 2-wire Transmitter? | Instrumentation Interview Questions",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-26T11:00:00+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "Learn the basics of a 2-wire transmitter and understand how power and the 4-20 mA signal are transmitted through the same two wires. This instrumentation interview question explains the basic wiring, current loop operation, power supply, transmitter output, and practical industrial applications.\n\nThis video is useful for Instrumentation Engineers, E&I Engineers, Control Engineers, Instrumentation Technicians, PLC/DCS Engineers, freshers, and experienced professionals preparing for technical interviews in process industries and oil & gas.\n\nTopics covered:\n0:00 What is a 2-wire transmitter?\n0:30 4-20 mA current loop\n2:18 Current Signal\n4:00 Typical 2-wire Loop Wiring\n4:48 Multiple Transmitters\n5:42 Signal Representation\n6:39 Range and Faults\n8:18 Total Loop Load Impedance\n9:26 Industrial instrumentation applications\n10:05 2-wire vs 3-wire vs 4-wire transmitters\n13:01 Summary\n\nTags\n\n2 wire transmitter, what is 2 wire transmitter, 2 wire transmitter working, 2 wire transmitter wiring, 4-20 mA transmitter, instrumentation interview questions, instrumentation interview questions and answers, instrumentation engineer interview, transmitter interview questions, process instrumentation, instrumentation engineering, E&I interview questions, process control interview, industrial automation, oil and gas instrumentation, pressure transmitter, temperature transmitter, flow transmitter, level transmitter\n\nHashtags\n\n#Instrumentation #interview #job #2WireTransmitter  #4to20mA #ProcessControl",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "8VmBClXBy0Y",
+      "found": "2026-11-05T10:59:54.043Z",
+      "title": "Powering the AI Economy: Sustainable Infrastructure for a New Energy Reality",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-25T14:15:50+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "As AI drives unprecedented demand for digital infrastructure and energy, industry leaders discuss how data centers are evolving to deliver the capacity, efficiency, resilience, and sustainability needed to support the next wave of innovation.\n\nRecorded during New York Climate Week 2026 as part of Powering the New Energy Reality in the Age of AI, Johnson Controls, Microsoft and Accenture brought together industry leaders to discuss how data centers are evolving to deliver the capacity, efficiency, resilience and sustainability needed to support the next wave of AI innovation.\n\nThe discussion explores how organizations are navigating the rapid growth of AI while balancing the need for speed, reliability, efficiency, resilience and sustainability. \n\nTopics include the growing demand for digital infrastructure and energy, the evolving role of data centers, increasing power and cooling requirements, utility and grid challenges, infrastructure planning, and the importance of collaboration across the value chain.\n\nFeatured speakers:\nElnaz Azolaty, Business and Sustainability Strategy, Accenture\nJames Mazurek, Utilities Strategy Lead, Accenture\nArushi Srivastava, Deal Solutioning, Innovations GTA and Strategy Lead, NTT DATA North America\nMatt Kightlinger, Vice President of Commercial Sales, Data Centers, Johnson Controls",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "wmrfQ1WOOr0",
+      "found": "2026-11-05T10:59:55.247Z",
+      "title": "Sustainability, Growth, and the AI Economy: A Global CSO Perspective",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-25T13:58:39+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "During New York Climate Week 2026, Johnson Controls, in partnership with Microsoft and Accenture, brought together sustainability leaders for Powering the new energy reality in the age of AI. In this global CSO panel, speakers explore AI, growth and energy—the challenges and opportunities—and how sustainability can become the growth driver and the unlock for the AI economy.\n \nKey highlights\nUsing AI to drive productivity, efficiency and decarbonisation.\nInnovating around energy, water, space and noise.\nTurning data-centre heat into a valuable resource.\nMoving from “either/or” to “both/and” for growth and sustainability.\n\nFeatured speakers\nDaniel Daggett, Vice President, Global Sustainability, Johnson Controls\nKatie McGinty, Vice President, Chief Sustainability and External Relations Officer, Johnson Controls\nRobert Bernard, Chief Energy and Sustainability Officer, CBRE\nJoe Speicher, Chief Sustainability Officer, Autodesk",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "M39epCsCc1s",
+      "found": "2026-11-05T10:59:56.273Z",
+      "title": "AI in Action: Reducing Energy Costs and Optimizing Mission-Critical Operations",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-25T13:39:44+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "Regional business leaders share how they are applying AI-powered solutions to improve operational performance, reduce energy consumption and enhance resilience across buildings and mission-critical environments.\n\nRecorded during New York Climate Week 2026 as part of Powering the New Energy Reality in the Age of AI, Johnson Controls, Microsoft and Accenture brought industry leaders together to discuss how AI is being applied across building operations and commercial real estate.\nThe discussion explores operational efficiency, energy management, decarbonization planning, building data and the role of AI in supporting building operators and improving building performance.\n\nFeatured speakers:\nJamie Cameron, General Manager and Vice President, OpenBlue, Johnson Controls\nJason Clarke, Chief Engineer, GFP Real Estate\nMichael Krall, Director, Smart Building Lead, Barclays\nGiuliana Kunkel, Vice President, Sustainable Investing, BGO",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "CN_rELrtWDA",
+      "found": "2026-11-05T10:59:57.436Z",
+      "title": "AI Frontiers Shaping the Future of Autonomous Buildings",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-25T13:17:53+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "Recorded during New York Climate Week 2026 as part of Powering the New Energy Reality in the Age of AI, this discussion explores how AI, connected systems and digital technologies are shaping the future of autonomous buildings and critical infrastructure.\n\nPanelists share perspectives on the technologies and capabilities enabling autonomous operations, the role of AI in supporting building operators, and how connected building systems can help advance efficiency, resilience and sustainability goals.\n\nFeatured speakers:\n\nMartha Reyna-Medina, Partner Development Manager, Microsoft\nIrina Koitz PhD, Senior Director, Digital Product Management and AI, Johnson Controls\nTrinity Lloyd, Global Lead, Discovery and AI for Science, Energy and Resources, Microsoft\nJosephine Tucker, Head of Energy Advisory and Sustainability, JLL",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "K2zh_8U-Eek",
+      "found": "2026-11-05T10:58:22.104Z",
+      "title": "SBA 563: How to Prepare for Better Building Automation Service Calls",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-09-24T12:00:07+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "What separates an effective building automation service call from hours of wasted troubleshooting?\n\nPreparation.\n\nIn Episode 563, we break down how BAS technicians can prepare for service calls before arriving on site, approach HVAC controls troubleshooting with a clear process, and communicate findings in a way that helps both customers and future technicians.\n\nWhether you work in building automation systems, HVAC controls, facilities management, system integration, or smart buildings, this episode explores how a more disciplined service process can help you spend less time chasing symptoms and more time identifying what is actually happening in the building.\n\nTopics Covered\n• Preparing for BAS and HVAC controls service calls\n• Turning customer complaints into useful troubleshooting information\n• Planning tools, credentials, software, and site access\n• Building troubleshooting hypotheses before arriving on site\n• Documenting BAS service work and communicating results to customers\n\nIf you are a BAS technician, controls engineer, system integrator, HVAC professional, or facility manager looking to improve building automation troubleshooting and service workflows, this episode is for you.\n\nLearn more about Smart Buildings Academy and explore additional building automation training, BAS education, and podcast episodes at Smart Buildings Academy.\n\nSubscribe for more content covering building automation systems, HVAC controls, BAS troubleshooting, smart buildings, energy efficiency, system integration, and facility management.\n\n#BuildingAutomation #BAS #HVACControls #SmartBuildings #BuildingAutomationSystems #HVAC #FacilityManagement #BASTraining #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager, Smart Buildings Academy helps you gain the skills to confidently design, install, and operate building automation systems. \n\n👉 Subscribe to stay updated on the latest training, tips, and industry insights from our team of experts. \n\n🧠 Topics Covered \n• Building Automation Systems (BAS) \n• HVAC Controls and Programming \n• Smart Building Technologies \n• Energy Management Systems \n• BAS Networking and Communication Protocols (BACnet, Modbus, Niagara) \n• Facilities Management and System Integration \n\n💡 Learn More \n🌐 Website: https://smartbuildingsacademy.com \n📘 Facebook: https://facebook.com/smartbuildingsacademy \n💼 LinkedIn: https://linkedin.com/comp",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "0J9C2drfBT8",
+      "found": "2026-11-05T10:58:49.286Z",
+      "title": "Industrial Automation and Process Weighing Systems | GRAVITECH",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-24T11:00:17+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "Industrial Automation and Process Weighing Systems from GRAVITECH.",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "q6Bstn8_i8s",
+      "found": "2026-11-05T10:58:50.479Z",
+      "title": "FATEK PLC Automation Products | Industrial Automation Expo",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-22T12:00:33+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "🎥 Discover FATEK PLC Automation Products!\n\nTake a quick look at FATEK’s latest PLC and industrial automation solutions showcased at the Industrial Automation Expo. ⚙️🏭\n\nFrom PLCs and motion control to advanced automation solutions, explore what FATEK brings to modern industrial applications. 🚀\n\nTags:\nFATEK PLC, FATEK automation, FATEK PLC automation, industrial automation, PLC, programmable logic controller, PLC automation, industrial PLC, factory automation, automation products, PLC programming, PLC control, motion control, industrial control, machine automation, control systems, smart manufacturing, automation expo, industrial automation expo, FATEK PLC products, FATEK technology, PLC systems, industrial controls, automation engineering, instrumentation, electrical automation, automation solutions, PLC applications",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "t6Cw-2QZsOs",
+      "found": "2026-11-05T11:00:05.213Z",
+      "title": "I Built a Laser Fishtank for...Air Filters?",
+      "channel": "CaptiveAire",
+      "duration": "",
+      "published": "2026-09-17T17:28:42+00:00",
+      "channelUrl": "https://www.youtube.com/@CaptiveAire",
+      "description": "What’s in the air you breathe? In this video, we explore air filtration technologies through the use of laser visualizations, electron microscopes, particle counters, and more. \n\n00:00 Introduction\n00:47 Part 1 - Up in the Air (Air Quality)\n06:03 Part 2 - Asbestos and Flour (How Filters Work)\n18:57 Part 3 - A Miniature World (Under the Microscope)\n29:57 Part 4 - Houston, We’ve Had a Problem (CO2)\n38:02 Conclusion\n\nVideos mentioned:\nhttps://youtu.be/WE2LPedFbgA\nhttps://youtu.be/vF72pOHc1zY\nhttps://youtu.be/XzOBKYoAj-0\nhttps://youtu.be/UKRVxEOD9t0",
+      "channelCategory": "Duct & Kitchen Exhaust",
+      "suggestedCategory": "Duct & Kitchen Exhaust"
+    },
+    {
+      "yt": "g6_EdIrLMQA",
+      "found": "2026-11-05T10:58:23.345Z",
+      "title": "SBA 562: How to Size Secondary Power Loops for Building Automation",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-09-17T12:00:03+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "Are overloaded secondary power loops causing hidden problems in your building automation system?\n\nIn Smart Buildings Academy Podcast Episode 562, we break down how to estimate electrical loads for secondary power loops and identify power issues that can cause controller reboots, slow actuators, voltage drop, premature device failures, and zones that struggle to maintain setpoint.\n\nIf you work with BAS controls, HVAC controls, 24 VAC transformers, controllers, actuators, or control panels, understanding secondary power loop design is essential for building reliable systems and troubleshooting intermittent electrical problems.\n\nIn this episode, you’ll learn about:\n\n• Estimating electrical loads for BAS secondary power loops\n• Sizing 24 VAC transformers for building automation devices\n• Accounting for transformer capacity and electrical load\n• Understanding inrush current and startup conditions\n• Calculating voltage drop on long control wiring runs\n• Diagnosing intermittent BAS power problems\n• Transformer phasing, commons, and grounding\n• Verifying secondary voltage and current under load\n• Avoiding common control panel and transformer sizing mistakes\n• Documenting electrical measurements for future troubleshooting\n\nA BAS power problem does not always trip a breaker or create an obvious fault. Sometimes it appears as a controller that randomly reboots, an actuator that cannot fully travel, or equipment that works until multiple loads energize.\n\nKnowing how to properly calculate, verify, and document a secondary power loop can help you prevent these problems before they reach the field.\n\nSubscribe to Smart Buildings Academy for building automation training covering BAS controls, HVAC controls, system integration, troubleshooting, control sequences, and smart building technologies.\n\n#BuildingAutomation #BAS #HVACControls #SmartBuildings #BuildingControls #ElectricalTroubleshooting #HVAC #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager, Smart Buildings Academy helps you gain the skills to confidently design, install, and operate building automation systems. \n\n👉 Subscribe to stay updated on the latest training, tips, and industry insights from our team of experts. \n\n🧠 Topics Covered \n• Building Automation Systems (BAS) \n• HVAC Controls and Programming \n• Smart Building Technologies \n• Energy Management Systems \n• BAS Networking and Communicati",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "67JzE6RGdt8",
+      "found": "2026-11-05T10:59:58.538Z",
+      "title": "OpenBlue AI Solutions for Intelligent Operations",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-16T15:50:42+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "What if your building could do more than collect data? What if it could use that data to think, recommend, and act?\n\nOpenBlue transforms disconnected building data into actionable insights and autonomous operations. Built on an open, unified data platform, OpenBlue leverages AI agents to help building owners, operators, and facilities teams make faster, smarter decisions while reducing manual effort.\n\nIn this video, discover how OpenBlue can:\n• Harmonize data across building systems and assets\n • Deliver instant answers through AI-powered insights\n • Automate time-consuming operational tasks\n • Detect faults and identify issues before they impact performance\n • Reduce energy consumption and carbon emissions\n • Optimize equipment performance with AI-generated recommendations\n • Support intelligent, autonomous building operations\n\nFrom operational efficiency and sustainability to occupant comfort and building performance, OpenBlue helps transform connected buildings into intelligent buildings.\n\nLearn more about OpenBlue: https://openblue.johnsoncontrols.com",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "F9sVet4JmHg",
+      "found": "2026-11-05T10:59:59.574Z",
+      "title": "How UTSA Cut Space Data Work From Weeks to Days with OpenBlue",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-16T15:44:03+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "How can universities manage thousands of rooms, streamline reporting, and make better space decisions without spending weeks buried in spreadsheets?\n\nIn this customer testimonial, Veronica Garcia Lopez, Space Inventory Senior Manager at UTSA (The University of Texas at San Antonio), shares how OpenBlue Workplace helped transform campus space management across more than 6.3 million square feet and approximately 22,000 rooms.\n\nIn this video, you'll learn how UTSA:\n- Reduced space data and reporting work from weeks to days\n- Replaced manual spreadsheets and legacy databases with a centralized platform\n- Simplified annual state reporting with automated workflows\n- Improved space inventory accuracy and data quality\n- Made more informed decisions about space allocation and utilization\n- Scaled operations to support campus growth and new buildings\n\nWith OpenBlue Workplace, UTSA can quickly generate building reports, confidently certify space data, and gain better visibility into how campus space is being used. The result is less manual effort, more accurate reporting, and smarter planning for the future.\n\nHear firsthand how OpenBlue Workplace became an extension of Veronica's team and why she recommends the solution to other higher education institutions looking to modernize space management.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "t-S2vDCccYo",
+      "found": "2026-11-05T10:59:27.278Z",
+      "title": "Creating a Place to Call Home: A Hometown H2O Project in Willis, VA",
+      "channel": "Goulds Water Technology",
+      "duration": "",
+      "published": "2026-09-15T18:50:00+00:00",
+      "channelUrl": "https://www.youtube.com/@gouldswatertechnology",
+      "description": "For the Brown family, this HometownH2O project was about more than a new well. It was about dependability, peace of mind and having the water needed to support the life they've worked hard to build. \n\nThis HometownH2O project, a program of The Chris Long Foundation's Waterboys initiative, brought together industry partners, local experts and volunteers with a shared goal: helping provide reliable water access where it's needed most. \n\nThank you to Water Well Trust, Xylem, CMC Supply, Inc. and Rorrer Well Drilling Inc. for their partnership and dedication throughout this project.\n\nLOOKING FOR A PROFESSIONAL DEALER in your area? Visit https://www.Xylem.com/WaterWarriors/ and click \"Get a Dealer\". \n\nTHANKS TO OUR PARTNERS \n1. Water Well Trust - https://www.waterwelltrust.org/apply/ \n2. Chris Long Foundation - https://chrislongfoundation.org/ \n\nFOLLOW US ON SOCIAL\nhttps://www.instagram.com/gouldswatertechnology/\nhttps://www.facebook.com/GouldsWaterTechnology/\nhttps://www.linkedin.com/gouldswatertechnology/\nhttps://www.youtube.com/gouldswatertechnology/",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "YxW6ka6v9XY",
+      "found": "2026-11-05T10:58:51.785Z",
+      "title": "Simple PLC program for Lighting Control System",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-15T15:15:20+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "Simple PLC program for Lighting Control System Learn in this video.\n\n#simple #lighting #program",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "kPKPbmyWDSY",
+      "found": "2026-11-05T10:58:33.195Z",
+      "title": "How PID Control Works in Simple Terms",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-09-14T13:00:36+00:00",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "▶ Want to learn industrial automation? Go here: https://realpars.com\n▶Want to train your team in industrial automation? Go here: https://www.realpars.com/business\n\n▶ You can read the full post here:\nhttps://www.realpars.com/blog/pid-controller\n\n⌚Timestamps:\n00:00 - Intro\n00:48 - What is process control?\n01:38 - What is a PID loop?\n03:23 - The proportional factor\n04:13 - The integral factor\n05:10 - The derivative factor\n05:53 - Putting all three together\n06:20 - Which control mode should you use?\n07:19 - What does tuning a PID loop mean?\n08:41 - Open-loop vs closed-loop tuning\n09:23 - Wrap-Up\n\n=============================\n\nLearn how a PID controller works, what proportional, integral, and derivative action do, and how PID tuning improves process control. We also explain when to use P-only, PI, or full PID control, plus the difference between open-loop and closed-loop tuning.\n\n=============================\n\nCheck out the courses mentioned in the video:\n\nPID Controller Tuning Using TIA Portal: https://www.realpars.com/courses/how-to-configure-a-pid-controller-in-tia-portal\n\nPID Controller Basics: \nhttps://www.realpars.com/courses/pid-controller\n\n=============================\n\nDid you miss out on the latest and greatest? Catch up now by watching our videos right here:\n\nhttps://www.realpars.com/blog/oem-jobs-industrial-automation\n\nhttps://www.realpars.com/blog/electrical-troubleshooting-principles\n\nhttps://www.realpars.com/blog/factory-job-roles\n\n=============================\n\nFollow us on Facebook 👉 https://www.facebook.com/therealpars\n\nFollow us on Twitter 👉 https://twitter.com/realpars\n\nFollow us on LinkedIn 👉 https://www.linkedin.com/company/realpars\n\nFollow us on Instagram 👉 https://www.instagram.com/realparsdotcom\n\n #pidcontroller #PID_loop #Realpars",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "RYbT--KoK2w",
+      "found": "2026-11-05T10:58:24.545Z",
+      "title": "SBA 561: Database Fundamentals Every Building Automation Professional Should Know",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-09-10T12:00:20+00:00",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "Databases power more of your building automation system than you might realize. From BAS trend data and alarms to audit logs, user accounts, configuration, and historical records, database performance can directly affect how reliably your smart building systems operate.\n\nIn Episode 561 of the Smart Buildings Academy Podcast, we break down database fundamentals specifically for building automation professionals. Learn how databases fit into modern BAS architecture, what happens to data as it moves from controllers to supervisory and enterprise systems, and why database knowledge matters when troubleshooting HVAC controls and smart building technology.\n\nThis episode explores topics including:\n\n• Database fundamentals for building automation systems\n• BAS trend data, sampling, retention, and storage\n• Tables, records, fields, queries, and database indexes\n• Primary keys, foreign keys, and data relationships\n• Configuration, history, events, audits, and user data\n• Database backups and restore testing\n• Timestamps and time zones in building automation data\n• Database storage monitoring and system reliability\n• Individual user accounts and BAS audit trails\n• Collaboration between building automation and IT teams\n• Database terminology BAS professionals should understand\n\nIf you work with building automation systems, HVAC controls, system integration, smart buildings, facilities management, or energy management, understanding database fundamentals can help you troubleshoot systems, communicate with IT, and identify risks before they affect building operations.\n\nSubscribe to Smart Buildings Academy for weekly episodes covering building automation, HVAC controls, BAS programming, system integration, smart building technology, energy efficiency, and facilities management.\n\n#BuildingAutomation #BAS #SmartBuildings #HVACControls #Database #SystemIntegration #FacilityManagement #EnergyEfficiency #SmartBuildingsAcademy\n\n____________________________________________________________ \n\nSmart Buildings Academy provides turnkey training and development solutions for the building automation and smart buildings market. Since 2012, we've helped thousands of professionals and companies upskill in building automation systems (BAS), HVAC controls, and smart building technologies. \n\nOn this channel, we share podcast episodes covering topics such as building automation programming, HVAC controls design, BACnet and Niagara training, BAS troubleshooting, and energy management systems. \n\nWhether you're a new BAS technician, a controls engineer, or a facilities manager, Smart Buildings Academy helps you gain the skills to confidently design, install, and operate building automation systems. \n\n👉 Subscribe to stay updated on the latest training, tips, and industry insights from our team of experts. \n\n🧠 Topics Covered \n• Building Automation Systems (BAS) \n• HVAC Controls and Programming \n• Smart Building Technologies \n• Energy Management Systems \n• BAS Networking and Communicat",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "BXQLR4hW-fA",
+      "found": "2026-11-05T11:00:00.703Z",
+      "title": "Revolutionizing Heat with Sabroe HitemHP Heat Pump",
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-09-09T16:42:54+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "Introducing the Sabroe HitemHP heat pump from Johnson Controls. \n\nThe ultra-efficient HitemHP series is our latest generation of industrial, ultra-efficient, high-temperature heat pumps. Designed to reach high temperatures up to 122°C and to produce indirect steam, this is the ultimate solution for replacing boilers and accelerating decarbonization journey.\n\nA single-stage, low-pressure heat pump, offering exceptional reliability and cost-efficiency, while running on natural refrigerants. The highly flexible design can be configured with Butane or Iso-Butane, depending on the required temperature.\n\nUsing natural refrigerants, Sabroe products provide green technology that paves the way for carbon neutral operations and industrial processes, even when high heat capacities are required.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "gVYJs9_QiCs",
+      "found": "2026-11-05T10:58:52.887Z",
+      "title": "One Platform for Every PLC DCS and SCADA | KETSOL KMS",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-07T10:04:28+00:00",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "Discover KETSOL KMS, a unified industrial platform that connects PLC, DCS and SCADA systems, bringing plant data together for real-time monitoring, analytics and smarter decisions.\n\nWebsite: https://ketsol.ai/kms\n\n** Video Topics **\n0:00 KETSOL\n0:30 PLC and Controllers\n1:09 From PLC tag to plant decision\n2:52 Connect every PLC, DCS and SCADA on a plant\n5:48 Kepware vs KMS platform\n6:43 Tank Farm Management\n7:20 Energy Meters\n8:22 Industrial Communication Protocols\n9:52 KETSOL Manufacturing Suite\n10:15 Modbus Connection\n10:54 Energy Meters Configuration\n12:15 Live Readings\n14:13 Modbus Communication Status\n14:50 Import and Export Configurations\n16:08 Historian\n16:54 Conclusion\n\n#plc #scada #dcs #ketsol #kms \n\nTags:\nKETSOL KMS, KMS, Ketsol Manufacturing Suite, manufacturing operating system, industrial automation, PLC, DCS, SCADA, PLC integration, DCS integration, SCADA integration, industrial data platform, manufacturing data, industrial IoT, IIoT, plant monitoring, real time monitoring, industrial analytics, manufacturing intelligence, PLC data, SCADA data, DCS data, industrial data integration, smart manufacturing, factory automation, plant intelligence, industrial AI, automation platform, process automation, digital manufacturing, Industry 4.0",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
     }
   ],
+  "lastRun": "2026-11-05T11:00:08.216Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -352,6 +1172,277 @@
     "P4ZgX9QDNng",
     "RgGCqK9m-Sg",
     "IlxIEBFE20w",
-    "j8RTTNx27P4"
-  ]
+    "j8RTTNx27P4",
+    "r3Qknj22llg",
+    "YW-9gtsDbtc",
+    "DdLbtq4Ybt8",
+    "TpTVUJPIkTU",
+    "NTPLqxrDI7s"
+  ],
+  "channelStatus": {
+    "https://www.youtube.com/@NADCA": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T11:00:07.500Z"
+    },
+    "https://www.youtube.com/@naffco": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:58:53.650Z"
+    },
+    "https://www.youtube.com/@NFPAorg": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:43.357Z"
+    },
+    "https://www.youtube.com/@jwflame": {
+      "id": "UC2uFFhnMKyF82UY2TbXRaNg",
+      "checked": "2026-11-05T10:58:00.290Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@RealPars": {
+      "id": "UCUKKQwBQZczpYzETkZNxi-w",
+      "checked": "2026-11-05T10:58:33.195Z",
+      "lastFound": 6
+    },
+    "https://www.youtube.com/@grundfos": {
+      "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
+      "checked": "2026-11-05T10:59:16.036Z",
+      "lastFound": 15
+    },
+    "https://www.youtube.com/c/MEPWork": {
+      "id": "UCfF4RfukNFrF-6toUG3vz2A",
+      "checked": "2026-11-05T10:58:09.053Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@DaveyWater": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:28.792Z"
+    },
+    "https://www.youtube.com/c/Ductdudes": {
+      "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
+      "checked": "2026-11-05T10:58:02.632Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@CaptiveAire": {
+      "id": "UCt0ArHe_-CKAr1So3IEwmsA",
+      "checked": "2026-11-05T11:00:05.213Z",
+      "lastFound": 1
+    },
+    "https://www.youtube.com/@Multi-Clean": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:24.208Z"
+    },
+    "https://www.youtube.com/@ProTeamVacs": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:24.967Z"
+    },
+    "https://www.youtube.com/@RATIONALUSA": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:41.843Z"
+    },
+    "https://www.youtube.com/@TheNICETGuy": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T11:00:01.471Z"
+    },
+    "https://www.youtube.com/c/HVACSchool": {
+      "id": "UCdLlUhD9LUGm0-NTYDASPFA",
+      "checked": "2026-11-05T10:57:57.049Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@GreenheckFan": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T11:00:02.994Z"
+    },
+    "https://www.youtube.com/@repairclinic": {
+      "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
+      "checked": "2026-11-05T10:59:30.701Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/c/MEPTECHTIPS": {
+      "id": "UCok_Mb_GOms4JgmrhePQFZQ",
+      "checked": "2026-11-05T10:58:07.457Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@ACServiceTech": {
+      "id": "UCYohLjTaUZLF3-JjttxG_CA",
+      "checked": "2026-11-05T10:57:57.882Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@ControlTrends": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:58:40.845Z"
+    },
+    "https://www.youtube.com/@GSHElectrical": {
+      "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
+      "checked": "2026-11-05T10:57:59.513Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@ISSAworldwide": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:17.546Z"
+    },
+    "https://www.youtube.com/@WPKITCHENTECH": {
+      "id": "UCMWXBdzjivSKJybL-Fwc6ug",
+      "checked": "2026-11-05T10:58:12.981Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@DulscoOfficial": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:58:56.836Z"
+    },
+    "https://www.youtube.com/@FarnekServices": {
+      "id": "UCqp0HaeyY54DFLsS4J9y-pA",
+      "checked": "2026-11-05T10:58:55.327Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@RogerWakefield": {
+      "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
+      "checked": "2026-11-05T10:58:01.068Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@TennantCompany": {
+      "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
+      "checked": "2026-11-05T10:59:23.440Z",
+      "lastFound": 4
+    },
+    "https://www.youtube.com/@GreenWorldGroup": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:58:54.410Z"
+    },
+    "https://www.youtube.com/@JohnsonControls": {
+      "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
+      "checked": "2026-11-05T11:00:00.703Z",
+      "lastFound": 14
+    },
+    "https://www.youtube.com/@PriceIndustries": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T11:00:05.990Z"
+    },
+    "https://www.youtube.com/@TacoComfortTech": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:28.030Z"
+    },
+    "https://www.youtube.com/@FranklinElectric": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:29.541Z"
+    },
+    "https://www.youtube.com/@HoshizakiAmerica": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:41.089Z"
+    },
+    "https://www.youtube.com/@TheElectricalGuy": {
+      "id": "UCdKPm5KM99O75NtArFkMDDA",
+      "checked": "2026-11-05T10:57:58.715Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@EngineeringMindset": {
+      "id": "UCk0fGHsCEzGig-rSzkfCjMw",
+      "checked": "2026-11-05T10:57:56.261Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@MEPTechniqueprabhu": {
+      "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
+      "checked": "2026-11-05T10:58:08.236Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@appliancepartspros": {
+      "id": "UCnMCOX6qSbTUQPyJJzRwPcg",
+      "checked": "2026-11-05T10:59:40.338Z",
+      "lastFound": 7
+    },
+    "https://www.youtube.com/@FireProtectionHowTo": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T11:00:02.233Z"
+    },
+    "https://www.youtube.com/@ContemporaryControls": {
+      "id": "UCaEBP03sPPq_ky-R2MersZg",
+      "checked": "2026-11-05T10:58:40.085Z",
+      "lastFound": 5
+    },
+    "https://www.youtube.com/@InstrumentationTools": {
+      "id": "UCTAiA-Th943Q23CZu8dm11A",
+      "checked": "2026-11-05T10:58:52.887Z",
+      "lastFound": 9
+    },
+    "https://www.youtube.com/@TheLifeSafetyChannel": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:42.608Z"
+    },
+    "https://www.youtube.com/@SmartBuildingsAcademy": {
+      "id": "UC1jHv6K8yM329bjDh9F78fA",
+      "checked": "2026-11-05T10:58:24.545Z",
+      "lastFound": 8
+    },
+    "https://www.youtube.com/@gouldswatertechnology": {
+      "id": "UCZNoAFeciz-_Z86fkoyEDXg",
+      "checked": "2026-11-05T10:59:27.278Z",
+      "lastFound": 1
+    },
+    "https://www.youtube.com/@omnicontainmentsystems": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T11:00:06.743Z"
+    },
+    "https://www.youtube.com/@emiratessafetylaboratory": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:58:56.072Z"
+    },
+    "https://www.youtube.com/@TheWindowCleaningBlueprint": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-05T10:59:16.787Z"
+    },
+    "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
+      "id": "UC46JAqOlymW5jBo6B2ImQGg",
+      "checked": "2026-11-05T10:58:09.821Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
+      "id": "UCAucPo2IFoRX1YY3v60seLg",
+      "checked": "2026-11-05T10:58:12.216Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
+      "id": "UCFIWnoCs9snc7V0_eHmfzeA",
+      "checked": "2026-11-05T10:58:13.800Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
+      "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
+      "checked": "2026-11-05T10:58:01.850Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
+      "id": "UCR1ksygazAOr59yLZ4Mp5tA",
+      "checked": "2026-11-05T10:58:05.845Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
+      "id": "UCRdNcv3g_4rpbNEyFopZwDg",
+      "checked": "2026-11-05T10:58:10.598Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
+      "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
+      "checked": "2026-11-05T10:58:04.252Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
+      "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
+      "checked": "2026-11-05T10:58:06.696Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
+      "id": "UCbZdXox6mKHdcT2QdVT-goQ",
+      "checked": "2026-11-05T10:58:03.406Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UChzTKRTOQeUjLi3tK8ci2rQ": {
+      "id": "UChzTKRTOQeUjLi3tK8ci2rQ",
+      "via": "page",
+      "checked": "2026-11-05T10:58:11.445Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
+      "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "checked": "2026-11-05T10:58:05.022Z",
+      "lastFound": 0
+    }
+  }
 }

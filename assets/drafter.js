@@ -500,9 +500,26 @@ ${JSON.stringify(lines)}` }] });
   const GROQ_TEXT = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "llama-3.1-8b-instant"];
   const GROQ_VISION = ["meta-llama/llama-4-scout-17b-16e-instruct", "meta-llama/llama-4-maverick-17b-128e-instruct"];
   /* OpenRouter (OpenAI format): the model chosen in Settings, then OpenRouter's automatic pick. */
+  let orFree = null;
+  async function orFreeModels(vision) {
+    if (!orFree) {
+      try {
+        const list = ((await (await fetch("https://openrouter.ai/api/v1/models")).json()) || {}).data || [];
+        const free = list.filter(m => m && typeof m.id === "string" && !m.id.startsWith("openrouter/") && (m.id.endsWith(":free") || (String((m.pricing || {}).prompt) === "0" && String((m.pricing || {}).completion) === "0")));
+        const rank = m => (/gpt-oss|llama-3\.3-70b|deepseek|qwen|gemma|mistral|llama-4/i.test(m.id) ? 1e9 : 0) + (m.context_length || 0);
+        free.sort((a, b) => rank(b) - rank(a));
+        orFree = { text: free.map(m => m.id), vision: free.filter(m => ((m.architecture || {}).input_modalities || []).includes("image")).map(m => m.id) };
+      } catch { orFree = { text: [], vision: [] }; }
+    }
+    return (vision ? orFree.vision : orFree.text).slice(0, 4);
+  }
   async function openrouterCall(key, { json, content, model }) {
     let last = "", status = 503;
-    for (const m of [...new Set([model, "openrouter/auto"].filter(Boolean))]) {
+    const vision = content.some(c => c.type === "image_url");
+    const models = [...new Set([model, "openrouter/auto"].filter(Boolean))];
+    let addedFree = false;
+    for (let mi = 0; mi < models.length && mi < 6; mi++) {
+      const m = models[mi];
       for (const strict of json ? [true, false] : [false]) {
         const r = await fetch("https://openrouter.ai/api/v1/chat/completions", {
           method: "POST", headers: { Authorization: "Bearer " + key, "Content-Type": "application/json", "HTTP-Referer": "https://abfmapps.github.io/abfm-training/", "X-Title": "ABFM Training" },
@@ -512,9 +529,10 @@ ${JSON.stringify(lines)}` }] });
         const text = (((j.choices || [])[0] || {}).message || {}).content || "";
         if (r.ok && text) return { status: 200, json: { text, model: "openrouter:" + (j.model || m) } };
         last = (j.error && j.error.message) || (r.ok ? "empty answer" : "HTTP " + r.status); status = r.ok ? 503 : r.status;
-        if ([401, 402, 403].includes(r.status)) return { status, json: { error: { message: "OpenRouter: " + last } } };
+        if (r.status === 401) return { status, json: { error: { message: "OpenRouter: " + last } } };
         if (!(strict && r.status === 400)) break;
       }
+      if (mi === models.length - 1 && !addedFree) { addedFree = true; for (const f of await orFreeModels(vision)) if (!models.includes(f)) models.push(f); }
     }
     return { status, json: { error: { message: "OpenRouter: " + last } } };
   }

@@ -5,6 +5,24 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"];
+// OpenRouter free models, from its public model list (cached for an hour). Used when the chosen model
+// or the automatic pick is not allowed (e.g. the account only allows free models, or has no credit).
+let orFreeCache: { at: number; text: string[]; vision: string[] } | null = null;
+async function orFreeModels(vision: boolean): Promise<string[]> {
+  if (!orFreeCache || Date.now() - orFreeCache.at > 3600_000) {
+    try {
+      const r = await fetch("https://openrouter.ai/api/v1/models", { signal: AbortSignal.timeout(8000) });
+      const list: any[] = ((await r.json()) || {}).data || [];
+      const free = list.filter((m) => m && typeof m.id === "string" && !m.id.startsWith("openrouter/") &&
+        (m.id.endsWith(":free") || (String(m.pricing?.prompt) === "0" && String(m.pricing?.completion) === "0")) &&
+        (m.architecture?.output_modalities || ["text"]).includes("text"));
+      const rank = (m: any) => (/gpt-oss|llama-3\.3-70b|deepseek|qwen|gemma|mistral|llama-4/i.test(m.id) ? 1e9 : 0) + (m.context_length || 0);
+      free.sort((a, b) => rank(b) - rank(a));
+      orFreeCache = { at: Date.now(), text: free.map((m) => m.id), vision: free.filter((m) => (m.architecture?.input_modalities || []).includes("image")).map((m) => m.id) };
+    } catch { orFreeCache = { at: Date.now() - 3000_000, text: [], vision: [] }; }
+  }
+  return (vision ? orFreeCache.vision : orFreeCache.text).slice(0, 4);
+}
 const CORS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, apikey, content-type, x-client-info",
@@ -145,7 +163,8 @@ Reply with JSON only: {"answer": string, "videos": [up to 3 ids from the library
     content.push({ type: "text", text: text || "What do you see in this photo, and what should I check or do?" });
     msgs.push({ role: "user", content });
     const models = [...new Set([typeof ai.orModel === "string" && ai.orModel.trim(), "openrouter/auto"].filter(Boolean) as string[])];
-    for (const m of models) {
+    for (const m of (await orFreeModels(images.length > 0))) if (!models.includes(m)) models.push(m);   // free models as the last resort
+    for (const m of models.slice(0, 6)) {
       let r: Response;
       try {
         r = await fetch("https://openrouter.ai/api/v1/chat/completions", {

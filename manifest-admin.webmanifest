@@ -2,7 +2,7 @@
   "name": "Training Admin",
   "short_name": "Training Admin",
   "description": "Manage the ABFM Training videos, staff and records.",
-  "id": "./admin.html",
+  "id": "/abfm-training/admin.html",
   "start_url": "./admin.html",
   "scope": "./admin.html",
   "display": "standalone",

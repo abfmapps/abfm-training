@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <title>ABFM Training</title>
-  <meta name="description" content="ABFM Training: short training videos for Al Bonian FM ground technicians.">
-  <meta name="theme-color" content="#ff570c">
+  <meta name="description" content="ABFM Training: short training videos for Al Bonian FM technicians.">
+  <meta name="theme-color" content="#1B2130">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -13,6 +13,9 @@
   <meta name="apple-mobile-web-app-title" content="ABFM Training">
   <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="preconnect" href="https://xzyzovlmlppvctbpxnrw.supabase.co" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
@@ -20,35 +23,34 @@
     <div class="top-in">
       <a class="brand" href="#/" aria-label="Home">
         <img class="brand-mark" src="assets/logo.png" alt="ABFM logo">
-        <span>
-          <span class="brand-name" id="site-name">ABFM <b>Training</b></span><br>
+        <span style="min-width:0">
           <span class="brand-sub" id="site-tag">Al Bonian Facilities Management</span>
+          <span class="brand-name" id="site-name">ABFM <b>Training</b></span>
         </span>
       </a>
       <nav class="tabs-desktop" aria-label="Sections">
-        <button data-tab="library" data-t="library">Library</button>
-        <button data-tab="new" data-t="new">New</button>
-        <button data-tab="saved" data-t="saved">Saved</button>
-        <button data-tab="ai" class="ai-tab" hidden>✨ <span data-t="askAi">Ask AI</span></button>
-        <button data-tab="me">👤 <span data-t="me">My training</span></button>
+        <button data-tab="home"><span data-t="home">Home</span></button>
+        <button data-tab="library"><span data-t="library">Library</span></button>
+        <button data-tab="ai" class="ai-tab" hidden><span data-t="askAi">Ask AI</span></button>
+        <button data-tab="me"><span data-t="me">My training</span></button>
       </nav>
       <div class="top-actions">
         <button class="btn btn-sm btn-ghost" id="install-btn" hidden>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
           <span data-t="install">Install app</span>
         </button>
         <button class="btn btn-sm lang-btn" id="lang-btn" aria-haspopup="dialog">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
           <span id="lang-label">EN</span>
         </button>
       </div>
     </div>
-    <div class="search-wrap" id="search-wrap">
+    <div class="search-wrap" id="search-wrap" hidden>
       <div class="search" role="search">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         <input id="q" type="search" autocomplete="off" enterkeyhint="search" placeholder="Search videos…" aria-label="Search videos">
         <button class="clear" id="q-clear" aria-label="Clear search" hidden>
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
         </button>
       </div>
     </div>
@@ -59,44 +61,31 @@
     <div id="announce" class="notice" hidden></div>
 
     <section id="login-view" class="login" hidden>
-      <form id="login-form" class="login-card" novalidate>
+      <div class="login-hero">
         <img class="login-logo" src="assets/logo.png" alt="ABFM logo" width="72" height="72">
-        <h1 data-t="loginTitle">Sign in</h1>
+        <h1>ABFM<br><span>Training</span></h1>
+        <p data-t="loginTagline">Short videos, step guides and safety checks for Al Bonian FM technicians.</p>
+      </div>
+      <form id="login-form" class="login-card" novalidate>
+        <h2 data-t="loginTitle">Sign in</h2>
         <p class="sub" data-t="loginHint">Enter your HR number to start.</p>
         <label class="login-field"><span data-t="hrNumber">HR number</span>
-          <input id="l-hr" inputmode="text" autocomplete="username" autocapitalize="characters" spellcheck="false" maxlength="30" required></label>
+          <input id="l-hr" inputmode="numeric" autocomplete="username" autocapitalize="characters" spellcheck="false" maxlength="30" required></label>
         <p class="req-msg" id="l-msg" role="status" aria-live="polite"></p>
-        <button class="btn btn-primary" id="l-go" style="width:100%" data-t="signIn">Sign in</button>
-        <button type="button" class="btn btn-ghost btn-sm" id="l-lang" style="margin-top:10px">🌐 <span data-t="language">Language</span></button>
+        <button class="btn btn-primary btn-block" id="l-go" data-t="signIn">Sign in</button>
+        <p class="login-help" data-t="loginHelp">Don't know your HR number? Ask your supervisor.</p>
+        <div class="lang-chips" id="l-langs" role="group" aria-label="Language"></div>
       </form>
     </section>
 
-    <section id="list-view">
+    <section id="home-view" hidden></section>
+
+    <section id="list-view" hidden>
+      <div class="lib-head"><h1 id="lib-title" data-t="library">Library</h1>
+        <button class="btn btn-sm req-btn" id="req-btn" data-request hidden><span data-t="reqShort">Request</span></button></div>
       <div class="chips" id="cats" role="group" aria-label="Categories"></div>
       <div class="toolbar">
         <div class="seg" id="levels" role="group" aria-label="Level"></div>
-        <button class="btn btn-sm req-btn" id="req-btn" data-request hidden>🙋 <span data-t="reqShort">Request</span></button>
-      </div>
-      <div id="assign-wrap" class="assign-wrap" hidden></div>
-      <a id="refresh-note" class="notice refresh-note" href="#/me" hidden></a>
-      <a id="talk-card" class="talk-card" href="#/talk" hidden></a>
-      <div id="cont-wrap" hidden>
-        <div class="section-h"><h2>▶ <span data-t="continueWatching">Continue watching</span></h2></div>
-        <div class="rail" id="cont-rail"></div>
-      </div>
-      <div id="ess-wrap" class="ess-wrap" hidden>
-        <div class="section-h"><h2>🦺 <span data-t="safetyEssentials">Safety essentials</span></h2></div>
-        <p class="section-sub" data-t="essentialsHint">Must-know safety for every technician</p>
-        <div class="rail" id="ess-rail"></div>
-      </div>
-      <div id="paths-wrap" hidden>
-        <div class="section-h"><h2>🎓 <span data-t="paths">Learning paths</span></h2></div>
-        <p class="section-sub" data-t="pathsHint">Step-by-step courses. Your progress stays on this phone.</p>
-        <div class="rail path-rail" id="paths-rail"></div>
-      </div>
-      <div id="rail-wrap" hidden>
-        <div class="section-h"><h2 data-t="newThisWeek">New this week</h2></div>
-        <div class="rail" id="rail"></div>
       </div>
       <div class="count-row">
         <p class="count" id="count"></p>
@@ -116,24 +105,20 @@
   </main>
 
   <nav class="bnav" aria-label="Sections">
+    <button data-tab="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3z"/><path d="M10 20v-6h4v6"/></svg>
+      <span data-t="home">Home</span><span class="badge" id="home-badge" hidden></span>
+    </button>
     <button data-tab="library">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="m10 8.5 4 2-4 2z" fill="currentColor"/><path d="M7 21h10"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="m10 8.5 4 2-4 2z" fill="currentColor"/><path d="M7 21h10"/></svg>
       <span data-t="library">Library</span>
     </button>
-    <button data-tab="new">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>
-      <span data-t="new">New</span><span class="badge" id="new-badge" hidden></span>
-    </button>
-    <button data-tab="saved">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
-      <span data-t="saved">Saved</span>
-    </button>
     <button data-tab="ai" class="ai-tab" hidden>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/><path d="M5 16l.6 1.4L7 18l-1.4.6L5 20l-.6-1.4L3 18l1.4-.6z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>
       <span data-t="aiNav">Ask AI</span>
     </button>
     <button data-tab="me">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
       <span data-t="meNav">Me</span><span class="badge" id="me-badge" hidden></span>
     </button>
   </nav>
@@ -150,23 +135,19 @@
     <div class="sheet-in">
       <h2 data-t="install">Install app</h2>
       <p class="sub" data-t="installIos">To install: tap Share, then Add to Home Screen.</p>
-      <button class="btn btn-primary" style="width:100%" data-close>OK</button>
+      <button class="btn btn-primary btn-block" data-close>OK</button>
     </div>
   </div>
 
   <div class="sheet" id="req-sheet" role="dialog" aria-modal="true" aria-labelledby="req-title" hidden>
     <div class="sheet-in">
-      <h2 id="req-title">🙋 <span data-t="requestVideo">Request a video</span></h2>
+      <h2 id="req-title" data-t="requestVideo">Request a video</h2>
       <p class="sub" data-t="requestHint">Can't find what you need? Tell us and we'll look for a video.</p>
       <form id="req-form" class="req-form" novalidate>
         <label><span data-t="reqTopic">What do you need a video about?</span>
           <input id="r-topic" required maxlength="200" autocomplete="off"></label>
         <label><span data-t="reqTrade">Trade</span><select id="r-cat"></select></label>
         <label><span data-t="reqDetails">More details (optional)</span><textarea id="r-details" rows="3" maxlength="1000"></textarea></label>
-        <div class="req-two">
-          <label><span data-t="reqName">Your name (optional)</span><input id="r-name" maxlength="80" autocomplete="name"></label>
-          <label><span data-t="reqSite">Site / building (optional)</span><input id="r-site" maxlength="80"></label>
-        </div>
         <input id="r-web" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
         <p class="req-msg" id="r-msg" role="status" aria-live="polite"></p>
         <div class="req-actions">
@@ -177,26 +158,9 @@
     </div>
   </div>
 
-  <div class="sheet" id="profile-sheet" role="dialog" aria-modal="true" aria-labelledby="pf-title" hidden>
-    <div class="sheet-in">
-      <h2 id="pf-title">👤 <span data-t="profile">My details</span></h2>
-      <p class="sub" data-t="profileHint">Saved on this phone and printed on your certificates.</p>
-      <form id="pf-form" class="req-form" novalidate>
-        <label><span data-t="pName">Full name</span><input id="pf-name" maxlength="80" autocomplete="name" required></label>
-        <label><span data-t="pTrade">My trade</span><select id="pf-trade"></select></label>
-        <label><span data-t="pSite">Site / building (optional)</span><input id="pf-site" maxlength="80"></label>
-        <p class="req-msg" id="pf-msg" role="status" aria-live="polite"></p>
-        <div class="req-actions">
-          <button type="button" class="btn" data-close data-t="cancel">Cancel</button>
-          <button class="btn btn-primary" data-t="saveDetails">Save</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
   <div class="sheet" id="sign-sheet" role="dialog" aria-modal="true" aria-labelledby="sg-title" hidden>
     <div class="sheet-in">
-      <h2 id="sg-title">✍️ <span data-t="signoff">Supervisor sign-off</span></h2>
+      <h2 id="sg-title" data-t="signoff">Supervisor sign-off</h2>
       <p class="sub" data-t="supHint">Your supervisor enters their PIN to confirm you can do this work safely.</p>
       <form id="sg-form" class="req-form" novalidate>
         <label><span data-t="supPin">Supervisor PIN</span><input id="sg-pin" type="password" inputmode="numeric" autocomplete="off" maxlength="12" required></label>

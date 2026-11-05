@@ -1,13 +1,57 @@
 {
-  "siteName": "ABFM Training",
-  "tagline": "Al Bonian Facilities Management",
-  "announcement": "",
-  "helpdesk": "",
+  "tr": {
+    "ar": {
+      "src": "d5100fa7b70a",
+      "tagline": "البنيان لإدارة المرافق",
+      "announcement": ""
+    },
+    "bn": {
+      "src": "d5100fa7b70a",
+      "tagline": "আল বনিয়ান সুবিধা ব্যবস্থাপনা",
+      "announcement": ""
+    },
+    "hi": {
+      "src": "d5100fa7b70a",
+      "tagline": "अल बोनियन सुविधाएं प्रबंधन",
+      "announcement": ""
+    },
+    "ml": {
+      "src": "d5100fa7b70a",
+      "tagline": "അൽ ബോണിയൻ സൗകര്യങ്ങൾ മാനേജ്മെൻ്റ്",
+      "announcement": ""
+    },
+    "ne": {
+      "src": "d5100fa7b70a",
+      "tagline": "अल बोनियन सुविधा व्यवस्थापन",
+      "announcement": ""
+    },
+    "ta": {
+      "src": "d5100fa7b70a",
+      "tagline": "அல் போனியன் வசதிகள் மேலாண்மை",
+      "announcement": ""
+    },
+    "tl": {
+      "src": "d5100fa7b70a",
+      "tagline": "Pamamahala ng mga Pasilidad ng Al Bonian",
+      "announcement": ""
+    },
+    "ur": {
+      "src": "d5100fa7b70a",
+      "tagline": "البونین سہولیات کا انتظام",
+      "announcement": ""
+    }
+  },
   "newDays": 7,
+  "tagline": "Al Bonian Facilities Management",
+  "helpdesk": "",
+  "quizPass": 80,
+  "quizSize": 3,
+  "siteName": "ABFM Training",
+  "aiEnabled": false,
   "categories": [
     {
-      "name": "Health & Safety",
       "icon": "🦺",
+      "name": "Health & Safety",
       "keywords": [
         "safety",
         "ppe",
@@ -23,23 +67,22 @@
         "heat illness",
         "first aid",
         "manual handling",
-        "hazard"
+        "hazard",
+        "permit to work",
+        "risk assessment",
+        "near miss",
+        "scaffold",
+        "toolbox talk"
       ]
     },
     {
-      "name": "HVAC",
       "icon": "❄️",
+      "name": "HVAC & Chillers",
       "keywords": [
         "hvac",
         "air condition",
-        "ac",
         "a/c",
-        "split",
-        "refrigerant",
-        "refrigeration",
-        "compressor",
-        "condenser",
-        "evaporator",
+        "split ac",
         "chiller",
         "ahu",
         "air handler",
@@ -47,171 +90,298 @@
         "fan coil",
         "vrf",
         "vrv",
+        "package unit",
+        "refrigerant",
+        "refrigeration",
+        "compressor",
+        "condenser",
+        "evaporator",
+        "cooling tower",
         "superheat",
         "subcool",
-        "thermostat",
-        "mini-split",
-        "heat pump",
         "r410",
         "r32",
+        "r22",
         "brazing",
-        "flare"
+        "flare",
+        "district cooling",
+        "heat exchanger",
+        "thermostat"
       ]
     },
     {
-      "name": "Plumbing",
-      "icon": "🚰",
-      "keywords": [
-        "plumb",
-        "faucet",
-        "tap",
-        "toilet",
-        "flush",
-        "drain",
-        "pipe",
-        "leak",
-        "valve",
-        "water heater",
-        "geyser",
-        "sink",
-        "trap",
-        "ppr",
-        "pex",
-        "pump",
-        "backflow",
-        "cistern"
-      ]
-    },
-    {
-      "name": "Electrical",
       "icon": "⚡",
+      "name": "Electrical",
       "keywords": [
-        "electric",
+        "electrical",
+        "electrician",
         "wiring",
-        "wire",
-        "multimeter",
-        "meter",
-        "voltage",
+        "cable",
         "breaker",
         "mcb",
+        "mccb",
         "rcd",
         "rcbo",
+        "elcb",
+        "distribution board",
         "socket",
-        "outlet",
+        "switch",
+        "lighting",
+        "led",
         "contactor",
         "motor",
         "vfd",
-        "drive",
-        "three-phase",
+        "three phase",
         "3 phase",
-        "panel",
-        "db",
-        "earth",
+        "earthing",
         "megger",
         "insulation resistance",
-        "lighting",
+        "generator",
         "ats",
-        "generator"
+        "multimeter",
+        "clamp meter"
       ]
     },
     {
-      "name": "Duct Cleaning",
-      "icon": "🌀",
+      "icon": "🚰",
+      "name": "Plumbing & Drainage",
       "keywords": [
-        "duct clean",
-        "duct",
-        "air duct",
-        "diffuser",
-        "grille",
-        "kitchen exhaust",
-        "hood clean"
+        "plumbing",
+        "plumber",
+        "pipe",
+        "leak",
+        "tap",
+        "faucet",
+        "mixer",
+        "toilet",
+        "flush",
+        "cistern",
+        "drain",
+        "drainage",
+        "sewer",
+        "manhole",
+        "p-trap",
+        "valve",
+        "water heater",
+        "geyser",
+        "ppr",
+        "upvc",
+        "backflow",
+        "flushometer"
       ]
     },
     {
-      "name": "Water Tank Cleaning",
-      "icon": "💧",
+      "icon": "🧯",
+      "name": "Fire & Life Safety",
       "keywords": [
-        "water tank",
-        "tank clean",
-        "tank disinfect",
-        "chlorination",
-        "storage tank"
+        "fire",
+        "fire alarm",
+        "smoke detector",
+        "heat detector",
+        "sprinkler",
+        "fire pump",
+        "extinguisher",
+        "hose reel",
+        "fire panel",
+        "suppression",
+        "fm-200",
+        "fm200",
+        "emergency light",
+        "exit sign",
+        "civil defence",
+        "nfpa",
+        "alarm valve"
       ]
     },
     {
-      "name": "Civil Jobs",
+      "icon": "🖥️",
+      "name": "BMS & Controls",
+      "keywords": [
+        "bms",
+        "building management",
+        "building automation",
+        "controls",
+        "ddc",
+        "controller",
+        "bacnet",
+        "modbus",
+        "sensor",
+        "actuator",
+        "scada",
+        "plc",
+        "automation"
+      ]
+    },
+    {
       "icon": "🧱",
+      "name": "Civil & Carpentry",
       "keywords": [
-        "drywall",
-        "gypsum",
+        "civil",
+        "mason",
+        "masonry",
         "plaster",
+        "block work",
+        "concrete",
         "tile",
         "tiling",
         "grout",
-        "concrete",
-        "masonry",
-        "block",
+        "gypsum",
+        "drywall",
+        "false ceiling",
         "ceiling",
+        "carpentry",
+        "carpenter",
         "door",
         "hinge",
+        "door closer",
         "lock",
-        "carpentry",
-        "floor"
+        "cabinet",
+        "wood",
+        "partition"
       ]
     },
     {
-      "name": "Painting & Waterproofing",
       "icon": "🎨",
+      "name": "Painting & Waterproofing",
       "keywords": [
         "paint",
         "painting",
         "primer",
+        "putty",
+        "roller",
+        "spray",
+        "coating",
+        "epoxy",
         "waterproof",
+        "waterproofing",
         "membrane",
         "sealant",
-        "silicone",
         "caulk",
-        "epoxy",
-        "damp"
+        "crack repair"
       ]
     },
     {
-      "name": "Landscaping",
-      "icon": "🌿",
+      "icon": "💧",
+      "name": "Water Tanks & Pumps",
       "keywords": [
-        "landscap",
+        "water tank",
+        "tank cleaning",
+        "disinfection",
+        "chlorination",
+        "legionella",
+        "water quality",
+        "booster pump",
+        "transfer pump",
+        "pressure pump",
+        "float switch",
+        "water storage",
+        "pump"
+      ]
+    },
+    {
+      "icon": "🌀",
+      "name": "Duct & Kitchen Exhaust",
+      "keywords": [
+        "duct",
+        "ductwork",
+        "duct cleaning",
+        "kitchen exhaust",
+        "exhaust hood",
+        "grease",
+        "exhaust fan",
+        "fresh air",
+        "indoor air quality",
+        "damper",
+        "air filter"
+      ]
+    },
+    {
+      "icon": "🌴",
+      "name": "Landscaping & Irrigation",
+      "keywords": [
+        "landscape",
+        "landscaping",
         "irrigation",
-        "sprinkler system",
+        "sprinkler head",
+        "drip",
+        "emitter",
+        "irrigation controller",
+        "irrigation timer",
         "lawn",
-        "garden",
+        "grass",
+        "palm",
         "tree",
-        "hedge",
+        "pruning",
         "mower",
-        "drip"
+        "hedge"
       ]
     },
     {
-      "name": "Fire Systems",
-      "icon": "🧯",
+      "icon": "🍳",
+      "name": "Kitchen & Laundry Appliances",
       "keywords": [
-        "fire alarm",
-        "fire pump",
-        "smoke detector",
-        "sprinkler",
-        "extinguisher",
-        "fire panel",
-        "fire fighting",
-        "firefighting",
-        "hose reel",
-        "emergency light"
+        "kitchen equipment",
+        "commercial kitchen",
+        "oven",
+        "fryer",
+        "cooker",
+        "dishwasher",
+        "ice machine",
+        "refrigerator",
+        "fridge",
+        "freezer",
+        "cold room",
+        "washing machine",
+        "dryer",
+        "laundry",
+        "microwave",
+        "appliance"
       ]
     },
     {
-      "name": "UAE Regulations",
-      "icon": "▶️",
-      "keywords": []
+      "icon": "🧽",
+      "name": "Cleaning & Housekeeping",
+      "keywords": [
+        "cleaning",
+        "cleaner",
+        "housekeeping",
+        "janitorial",
+        "floor scrubber",
+        "mopping",
+        "vacuum cleaner",
+        "sanitize",
+        "chemical dilution",
+        "washroom",
+        "glass cleaning",
+        "window cleaning",
+        "carpet cleaning"
+      ]
+    },
+    {
+      "icon": "📋",
+      "name": "UAE Rules & Compliance",
+      "keywords": [
+        "uae",
+        "dubai",
+        "abu dhabi",
+        "sharjah",
+        "municipality",
+        "civil defence",
+        "dewa",
+        "mohre",
+        "oshad",
+        "midday break",
+        "regulation",
+        "compliance",
+        "labour law"
+      ]
     }
   ],
+  "staffLogin": true,
+  "quizSizeEss": 5,
+  "announcement": "",
+  "statsEnabled": true,
+  "signoffEnabled": false,
   "excludeKeywords": [
     "#shorts",
     "live stream",
@@ -222,48 +392,6 @@
     "q&a",
     "vlog"
   ],
-  "tr": {
-    "hi": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "अल बोनियन सुविधाएं प्रबंधन"
-    },
-    "ur": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "البونین سہولیات کا انتظام"
-    },
-    "ml": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "അൽ ബോണിയൻ സൗകര്യങ്ങൾ മാനേജ്മെൻ്റ്"
-    },
-    "bn": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "আল বনিয়ান সুবিধা ব্যবস্থাপনা"
-    },
-    "ta": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "அல் போனியன் வசதிகள் மேலாண்மை"
-    },
-    "ne": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "अल बोनियन सुविधा व्यवस्थापन"
-    },
-    "tl": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "Pamamahala ng mga Pasilidad ng Al Bonian"
-    },
-    "ar": {
-      "src": "d5100fa7b70a",
-      "announcement": "",
-      "tagline": "البنيان لإدارة المرافق"
-    }
-  },
-  "requestUrl": "https://script.google.com/macros/s/AKfycbwpleJrcLhhWdUbBeQTq_gkAtcbmf_IUsAIR6SUztRIuu3JradpRYHv-ypufr4cR4IW/exec",
-  "aiEnabled": false
+  "refresherMonths": 3,
+  "requestsEnabled": true
 }

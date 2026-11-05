@@ -1,91 +1,217 @@
 {
-  "lookbackDays": 60,
-  "skipShorts": true,
-  "maxQueue": 150,
   "channels": [
     {
-      "name": "The Engineering Mindset",
       "url": "https://www.youtube.com/@EngineeringMindset",
-      "category": "",
-      "active": true
+      "name": "The Engineering Mindset",
+      "active": true,
+      "category": ""
     },
     {
-      "name": "HVAC School",
       "url": "https://www.youtube.com/c/HVACSchool",
-      "category": "HVAC",
-      "active": true
+      "name": "HVAC School",
+      "active": true,
+      "category": "HVAC & Chillers"
     },
     {
-      "name": "AC Service Tech LLC",
       "url": "https://www.youtube.com/@ACServiceTech",
-      "category": "HVAC",
-      "active": true
+      "name": "AC Service Tech LLC",
+      "active": true,
+      "category": "HVAC & Chillers"
     },
     {
-      "name": "The Electrical Guy",
       "url": "https://www.youtube.com/@TheElectricalGuy",
-      "category": "Electrical",
-      "active": true
+      "name": "The Electrical Guy",
+      "active": true,
+      "category": "Electrical"
     },
     {
-      "name": "GSH Electrical",
       "url": "https://www.youtube.com/@GSHElectrical",
-      "category": "Electrical",
-      "active": true
+      "name": "GSH Electrical",
+      "active": true,
+      "category": "Electrical"
     },
     {
-      "name": "John Ward (jwflame)",
       "url": "https://www.youtube.com/@jwflame",
-      "category": "Electrical",
-      "active": true
+      "name": "John Ward (jwflame)",
+      "active": true,
+      "category": "Electrical"
     },
     {
-      "name": "Roger Wakefield Plumbing Education",
       "url": "https://www.youtube.com/@RogerWakefield",
-      "category": "Plumbing",
-      "active": true
+      "name": "Roger Wakefield Plumbing Education",
+      "active": true,
+      "category": "Plumbing & Drainage"
     },
     {
-      "name": "Love2HVAC with Ty Branaman",
       "url": "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ",
-      "category": "HVAC",
-      "active": true
+      "name": "Love2HVAC with Ty Branaman",
+      "active": true,
+      "category": "HVAC & Chillers"
     },
     {
-      "name": "Duct Dudes",
       "url": "https://www.youtube.com/c/Ductdudes",
-      "category": "Duct Cleaning",
-      "active": true
+      "name": "Duct Dudes",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
     },
     {
-      "name": "Vancouver Carpenter",
       "url": "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ",
-      "category": "Civil Jobs",
-      "active": true
+      "name": "Vancouver Carpenter",
+      "active": true,
+      "category": "Civil & Carpentry"
     },
     {
-      "name": "Sal DiBlasi (tiling & waterproofing)",
       "url": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "category": "",
-      "active": true
+      "name": "Sal DiBlasi (tiling & waterproofing)",
+      "active": true,
+      "category": ""
     },
     {
-      "name": "Paint Life TV",
       "url": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "category": "Painting & Waterproofing",
-      "active": true
+      "name": "Paint Life TV",
+      "active": true,
+      "category": "Painting & Waterproofing"
     },
     {
-      "name": "Sprinkler Warehouse (irrigation)",
       "url": "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA",
-      "category": "Landscaping",
-      "active": true
+      "name": "Sprinkler Warehouse (irrigation)",
+      "active": true,
+      "category": "Landscaping & Irrigation"
     },
     {
-      "name": "QuickResponseFS (fire sprinklers)",
       "url": "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA",
-      "category": "Fire Systems",
-      "active": true
+      "name": "QuickResponseFS (fire sprinklers)",
+      "active": true,
+      "category": "Fire & Life Safety"
+    },
+    {
+      "url": "https://www.youtube.com/c/MEPTECHTIPS",
+      "name": "MEP Tech Tips (Dubai)",
+      "active": true,
+      "category": ""
+    },
+    {
+      "url": "https://www.youtube.com/@MEPTechniqueprabhu",
+      "name": "MEP Techniques (facility O&M)",
+      "active": true,
+      "category": ""
+    },
+    {
+      "url": "https://www.youtube.com/c/MEPWork",
+      "name": "MEP Work",
+      "active": true,
+      "category": ""
+    },
+    {
+      "url": "https://www.youtube.com/c/DaikinMiddleEastandAfrica",
+      "name": "Daikin Middle East and Africa",
+      "active": true,
+      "category": "HVAC & Chillers"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "name": "HVACTIME (chillers)",
+      "active": true,
+      "category": "HVAC & Chillers"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UChzTKRTOQeUjLi3tK8ci2rQ",
+      "name": "Fully4world (AC, Hindi/Urdu)",
+      "active": true,
+      "category": "HVAC & Chillers"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg",
+      "name": "Tech Systems (BMS)",
+      "active": true,
+      "category": "BMS & Controls"
+    },
+    {
+      "url": "https://www.youtube.com/@WPKITCHENTECH",
+      "name": "KITCHEN TECH",
+      "active": true,
+      "category": "Kitchen & Laundry Appliances"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
+      "name": "Learn A Trade (commercial equipment)",
+      "active": true,
+      "category": "Kitchen & Laundry Appliances"
+    },
+    {
+      "url": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "name": "Smart Buildings Academy",
+      "active": true,
+      "category": "BMS & Controls"
+    },
+    {
+      "url": "https://www.youtube.com/@RealPars",
+      "name": "RealPars",
+      "active": true,
+      "category": "BMS & Controls"
+    },
+    {
+      "url": "https://www.youtube.com/@ContemporaryControls",
+      "name": "Contemporary Controls",
+      "active": true,
+      "category": "BMS & Controls"
+    },
+    {
+      "url": "https://www.youtube.com/@InstrumentationTools",
+      "name": "Instrumentation Tools",
+      "active": true,
+      "category": "BMS & Controls"
+    },
+    {
+      "url": "https://www.youtube.com/@FarnekServices",
+      "name": "Farnek",
+      "active": true,
+      "category": "UAE Rules & Compliance"
+    },
+    {
+      "url": "https://www.youtube.com/@grundfos",
+      "name": "Grundfos",
+      "active": true,
+      "category": "Water Tanks & Pumps"
+    },
+    {
+      "url": "https://www.youtube.com/@TennantCompany",
+      "name": "Tennant Company",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@gouldswatertechnology",
+      "name": "Goulds Water Technology",
+      "active": true,
+      "category": "Water Tanks & Pumps"
+    },
+    {
+      "url": "https://www.youtube.com/@repairclinic",
+      "name": "RepairClinic.com",
+      "active": true,
+      "category": "Kitchen & Laundry Appliances"
+    },
+    {
+      "url": "https://www.youtube.com/@appliancepartspros",
+      "name": "AppliancePartsPros",
+      "active": true,
+      "category": "Kitchen & Laundry Appliances"
+    },
+    {
+      "url": "https://www.youtube.com/@JohnsonControls",
+      "name": "Johnson Controls",
+      "active": true,
+      "category": "Fire & Life Safety"
+    },
+    {
+      "url": "https://www.youtube.com/@CaptiveAire",
+      "name": "CaptiveAire",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
     }
-  ]
+  ],
+  "maxQueue": 150,
+  "skipShorts": true,
+  "lookbackDays": 60
 }

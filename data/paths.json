@@ -1,321 +1,562 @@
 {
   "paths": [
     {
-      "id": "new-hvac-tech",
+      "id": "safety-induction",
+      "tr": {
+        "ar": {
+          "src": "0fb0e926fce2",
+          "auto": true,
+          "title": "مقدمة السلامة لكل فني",
+          "description": "السلامة المهمة للجميع في الموقع: الفصل والقفل (Lockout)، إجهاد الحرارة، السلاليم والحزام (Harness)، طفايات الحريق، PPE، والقيادة الآمنة."
+        },
+        "hi": {
+          "src": "0fb0e926fce2",
+          "auto": true,
+          "title": "हर टेक्नीशियन के लिए सेफ्टी इंडक्शन",
+          "description": "साइट पर सभी के लिए जरूरी सेफ्टी: आइसोलेशन और लॉकआउट, गर्मी से बचाव, सीढ़ी और हार्नेस, आग बुझाने वाले यंत्र, PPE और सेफ ड्राइविंग।"
+        },
+        "ne": {
+          "src": "0fb0e926fce2",
+          "auto": true,
+          "title": "प्रत्येक टेक्निशियनका लागि सेफ्टी इन्डक्सन",
+          "description": "साइटमा सबैले जान्नै पर्ने सुरक्षा कुराहरू: आइसोलेसन र लकआउट, अत्यधिक गर्मी, भर्‍याङ र हार्नेस, अग्नि नियन्त्रक यन्त्र (फायर एक्सटिङ्गুইशर), PPE र सुरक्षित ड्राइभिङ।"
+        },
+        "ta": {
+          "src": "0fb0e926fce2",
+          "auto": true,
+          "title": "எல்லா டெக்னீஷியன்களுக்கும் பாதுகாப்பு அறிமுகம்",
+          "description": "அனைவரும் தெரிந்து கொள்ள வேண்டிய பாதுகாப்பு: மின்சாரத்தைத் துண்டித்து பூட்டுதல் (LOTO), வெயில் பாதிப்பு, ஏணிகள் மற்றும் பெல்ட்டுகள், தீ அணைப்பான்கள், PPE மற்றும் பாதுகாப்பான வாகனம் ஓட்டுதல்."
+        }
+      },
+      "icon": "🦺",
+      "title": "Safety Induction for Every Technician",
+      "videos": [
+        "healt-n1gWyBOn4OM",
+        "healt-CdFPlD3vQ20",
+        "healt-kuGqzVgPTso",
+        "healt-rOPiqAf-DlI",
+        "healt-SPpL4bu7Bng",
+        "healt-sWuOBu3GjHw",
+        "healt-seuWV6qTl4k",
+        "fires-GVBamXXVD30",
+        "hvac-912yUrU0Mw8",
+        "hvac-KrrbmWSa1ug"
+      ],
+      "description": "The must-know safety for everyone on site: isolation and lockout, heat stress, ladders and harnesses, fire extinguishers, PPE and safe driving."
+    },
+    {
+      "id": "split-ac-fcu",
+      "tr": {
+        "ml": {
+          "src": "5357951d527c",
+          "auto": true,
+          "title": "സ്പ്ലിറ്റ് എസിയും എഫ്സിയു മെയിന്റനൻസും",
+          "description": "പുതിയ എസി ടെക്നീഷ്യൻമാർക്ക്: കൂളിംഗ് സൈക്കിൾ എങ്ങനെ പ്രവർത്തിക്കുന്നു, സ്പ്ലിറ്റ് യൂണിറ്റിന്റെയും എഫ്സിയുവിന്റെയും ഭാഗങ്ങൾ, പതിവ് സർവീസ്, ഫിൽട്ടറുകൾ, അടഞ്ഞുപോയ ഡ്രെയ്നുകൾ."
+        },
+        "tl": {
+          "src": "5357951d527c",
+          "auto": true,
+          "title": "Maintenance ng Split AC at FCU",
+          "description": "Para sa mga bagong AC technician: paano gumagana ang cooling cycle, mga parte ng split unit at FCU, routine service, mga filter, at baradong drain."
+        }
+      },
       "icon": "❄️",
-      "title": "New HVAC Technician",
-      "description": "Start here if you are new to air conditioning: how the system works, basic maintenance, installation and testing.",
+      "title": "Split AC and FCU Maintenance",
       "videos": [
         "hvac-101",
         "hvac-102",
+        "hvac-rSnOG-oMC5w",
         "hvac-104",
+        "hvac-15MXhGjXXhw",
+        "hvac-PdkasaHKP3c",
         "hvac-103",
+        "hvac-MYi4EHtfCEE",
+        "hvac-WaICUTIW3og"
+      ],
+      "description": "For new AC technicians: how the cooling cycle works, the parts of a split unit and FCU, routine service, filters and blocked drains."
+    },
+    {
+      "id": "refrigerant-work",
+      "tr": {
+        "ar": {
+          "src": "fc95555ff6ca",
+          "auto": true,
+          "title": "شغل الفريون: تركيب، اختبار، وشحن",
+          "description": "فلير وبرازي، اختبار تسريب بالنيتروجين، تفريغ هواء عميق، سحب الفريون، وقراءة الـ superheat والـ subcooling"
+        },
+        "bn": {
+          "src": "fc95555ff6ca",
+          "auto": true,
+          "title": "রেফ্রিজারেন্ট কাজ: ইনস্টল, টেস্ট, চার্জ",
+          "description": "ফ্লেয়ারিং ও ব্রেজিং, নাইট্রোজেন দিয়ে লিক টেস্ট, ডিপ ভ্যাকুয়াম করা, রেফ্রিজারেন্ট রিকভার করা এবং সুপারহিট ও সাবকুলিং মাপা।"
+        },
+        "ne": {
+          "src": "fc95555ff6ca",
+          "auto": true,
+          "title": "Refrigerant Work: Install, Test, Charge",
+          "description": "Flaring र brazing गर्ने, nitrogen बाट leak test गर्ने, deep vacuum तान्ने, refrigerant recover गर्ने र superheat तथा subcooling चेक गर्ने।"
+        },
+        "ta": {
+          "src": "fc95555ff6ca",
+          "auto": true,
+          "title": "ரெப்ரிஜரண்ட் வேலை: மாட்டுவது, டெஸ்ட் செய்வது, சார்ஜ் செய்வது.",
+          "description": "ஃப்ளேரிங் மற்றும் பிரேசிங், நைட்ரஜன் லீக் டெஸ்டிங், வேக்கம் செய்வது, ரெப்ரிஜரண்ட் எடுப்பது மற்றும் சூப்பர்ஹீட், சப் கூலிங் பார்ப்பது."
+        },
+        "tl": {
+          "src": "fc95555ff6ca",
+          "auto": true,
+          "title": "Trabaho sa Refrigerant: Mag-install, Mag-test, at Magkarga",
+          "description": "Flaring at brazing, nitrogen leak testing, pag-vacuum, pag-recover ng refrigerant, at pagbasa ng superheat at subcooling."
+        }
+      },
+      "icon": "🧊",
+      "title": "Refrigerant Work: Install, Test, Charge",
+      "videos": [
         "hvac-105",
+        "hvac-110",
         "hvac-108",
-        "hvac-107"
+        "hvac-107",
+        "hvac-111",
+        "hvac-tbXKvnKZrYs"
       ],
-      "tr": {
-        "hi": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "नए एचवीएसी तकनीशियन",
-          "description": "यदि आप एयर कंडीशनिंग में नए हैं तो यहां से शुरुआत करें: सिस्टम कैसे काम करता है, बुनियादी रखरखाव, स्थापना और परीक्षण।"
-        },
-        "ur": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "نیا HVAC ٹیکنیشن",
-          "description": "یہاں سے شروع کریں اگر آپ ایئر کنڈیشنگ میں نئے ہیں: سسٹم کیسے کام کرتا ہے، بنیادی دیکھ بھال، انسٹالیشن اور ٹیسٹنگ۔"
-        },
-        "ml": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "പുതിയ HVAC ടെക്നീഷ്യൻ",
-          "description": "നിങ്ങൾ എയർ കണ്ടീഷനിംഗിൽ പുതിയ ആളാണെങ്കിൽ ഇവിടെ ആരംഭിക്കുക: സിസ്റ്റം എങ്ങനെ പ്രവർത്തിക്കുന്നു, അടിസ്ഥാന അറ്റകുറ്റപ്പണികൾ, ഇൻസ്റ്റാളേഷൻ, പരിശോധന എന്നിവ."
-        },
-        "bn": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "নতুন HVAC টেকনিশিয়ান",
-          "description": "আপনি শীতাতপনিয়ন্ত্রণে নতুন হলে এখানে শুরু করুন: সিস্টেম কীভাবে কাজ করে, মৌলিক রক্ষণাবেক্ষণ, ইনস্টলেশন এবং পরীক্ষা।"
-        },
-        "ta": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "புதிய HVAC டெக்னீஷியன்",
-          "description": "நீங்கள் ஏர் கண்டிஷனிங்கிற்கு புதியவராக இருந்தால் இங்கே தொடங்கவும்: கணினி எவ்வாறு செயல்படுகிறது, அடிப்படை பராமரிப்பு, நிறுவல் மற்றும் சோதனை."
-        },
-        "ne": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "नयाँ HVAC प्राविधिक",
-          "description": "यदि तपाईं वातानुकूलितमा नयाँ हुनुहुन्छ भने यहाँ सुरु गर्नुहोस्: प्रणालीले कसरी काम गर्छ, आधारभूत मर्मत, स्थापना र परीक्षण।"
-        },
-        "tl": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "Bagong HVAC Technician",
-          "description": "Magsimula dito kung bago ka sa air conditioning: kung paano gumagana ang system, pangunahing pagpapanatili, pag-install at pagsubok."
-        },
-        "ar": {
-          "auto": true,
-          "src": "a84b7146e61a",
-          "title": "فني تكييف وتكييف جديد",
-          "description": "ابدأ هنا إذا كنت جديدًا في مجال تكييف الهواء: كيفية عمل النظام والصيانة الأساسية والتركيب والاختبار."
-        }
-      }
+      "description": "Flaring and brazing, nitrogen leak testing, pulling a deep vacuum, recovering refrigerant and reading superheat and subcooling."
     },
     {
-      "id": "electrical-basics",
+      "id": "hvac-fault-finding",
+      "tr": {
+        "bn": {
+          "src": "e71e3ca997bf",
+          "auto": true,
+          "title": "HVAC ফল্ট ফাইন্ডিং",
+          "description": "অভিজ্ঞ টেকনিশিয়ানদের জন্য: মিটার চালানো, ফিউজ কেটে যাওয়া, কম্প্রেসার স্টার্ট না হওয়া, এক্সপেনশন ভালভ, লাইনে সমস্যা এবং VRF সিস্টেম।"
+        },
+        "hi": {
+          "src": "e71e3ca997bf",
+          "auto": true,
+          "title": "HVAC फॉल्ट ढूंढना",
+          "description": "अनुभवी टेक्नीशियंस के लिए: मीटर चलाना, उड़े हुए फ्यूज, चालू न होने वाले कंप्रेसर, एक्सपेंशन वाल्व, रुकावट और VRF सिस्टम।"
+        },
+        "ne": {
+          "src": "e71e3ca997bf",
+          "auto": true,
+          "title": "HVAC समस्या पत्ता लगाउने",
+          "description": "अनुभवी टेक्नीशियनका लागि: मिटर चलाउने तरिका, फ्यूज उडेको, कम्प्रेसर नचल्ने, एक्सपान्सन भल्ब, ब्लकेज र VRF सिस्टम।"
+        },
+        "ur": {
+          "src": "e71e3ca997bf",
+          "auto": true,
+          "title": "HVAC فالٹ ڈھونڈنا",
+          "description": "تجربہ کار ٹیکنیشنز کے لیے: میٹر چلانا، اڑے ہوئے فیوز، کمپریسر جو اسٹارٹ نہ ہوں، ایکسپینشن والو، بلاکیج اور VRF سسٹمز۔"
+        }
+      },
+      "icon": "🔧",
+      "title": "HVAC Fault Finding",
+      "videos": [
+        "hvac-RlW4P-zL81Q",
+        "hvac-kkLvyE_YJE8",
+        "hvac-kKVHfHLgVW0",
+        "hvac-112",
+        "hvac-ztzTNf3smr4",
+        "hvac-113",
+        "hvac-gFUrDX_ze-M",
+        "hvac-tQE1nGz3Ydg",
+        "hvac-109"
+      ],
+      "description": "For experienced technicians: meter skills, blown fuses, compressors that won't start, expansion valves, restrictions and VRF systems."
+    },
+    {
+      "id": "electrical-safety-testing",
+      "tr": {
+        "hi": {
+          "src": "37c9fb9f530b",
+          "auto": true,
+          "title": "इलेक्ट्रिकल सेफ्टी और टेस्टिंग",
+          "description": "डिस्ट्रीब्यूशन बोर्ड को सुरक्षित रूप से बंद करना, क्लैम्प मीटर का उपयोग, RCD और रिंग सर्किट की जाँच, इंसुलेशन रेजिस्टेंस और बाथरूम के नियम।"
+        },
+        "ta": {
+          "src": "37c9fb9f530b",
+          "auto": true,
+          "title": "மின் பாதுகாப்பு மற்றும் பரிசோதனை",
+          "description": "டிஸ்ட்ரிபியூஷன் போர்டுகளை பாதுகாப்பாக ஆஃப் செய்வது, கிளாம்ப் மீட்டர் பயன்படுத்துவது, RCD மற்றும் ரிங் சர்க்யூட்டுகளைப் பரிசோதிப்பது, இன்சுலேஷன் ரெசிஸ்டன்ஸ் மற்றும் பாத்ரூம் விதிகள்."
+        },
+        "tl": {
+          "src": "37c9fb9f530b",
+          "auto": true,
+          "title": "Kaligtasang Elektrikal at Pagsusuri",
+          "description": "Ligtas na pag-isolate ng mga distribution board, paggamit ng clamp meter, pag-test ng RCD at ring circuit, insulation resistance, at mga patakaran sa banyo."
+        },
+        "ur": {
+          "src": "37c9fb9f530b",
+          "auto": true,
+          "title": "بجلی کی حفاظت اور ٹیسٹنگ",
+          "description": "ڈسٹری بیوژن بورڈز کو محفوظ طریقے سے بند کرنا، کلیمپ میٹر کا استعمال، RCDs اور رنگ سرکٹس کی ٹیسٹنگ، انسولیشن ریزسٹنس اور باتھ روم کے اصول۔"
+        }
+      },
       "icon": "⚡",
-      "title": "Electrical Safety & Test Instruments",
-      "description": "Safe testing before any electrical work: voltage testers, multimeters, clamp meters, three-phase basics and RCD testing.",
+      "title": "Electrical Safety and Testing",
       "videos": [
+        "elect-Q-j9IsxKZog",
         "elec-103",
-        "elec-104",
-        "elec-105",
-        "elec-109"
+        "elec-109",
+        "elect-IElUDCQfTgg",
+        "elec-116",
+        "elect-X9gHO8AOllk",
+        "elect-Fg7lFCOJPm4"
       ],
-      "tr": {
-        "hi": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "विद्युत सुरक्षा एवं परीक्षण उपकरण",
-          "description": "किसी भी विद्युत कार्य से पहले सुरक्षित परीक्षण: वोल्टेज परीक्षक, मल्टीमीटर, क्लैंप मीटर, तीन-चरण मूल बातें और आरसीडी परीक्षण।"
-        },
-        "ur": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "الیکٹریکل سیفٹی اور ٹیسٹ کے آلات",
-          "description": "کسی بھی برقی کام سے پہلے محفوظ جانچ: وولٹیج ٹیسٹرز، ملٹی میٹر، کلیمپ میٹر، تھری فیز بیسک اور آر سی ڈی ٹیسٹنگ۔"
-        },
-        "ml": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "ഇലക്ട്രിക്കൽ സേഫ്റ്റി & ടെസ്റ്റ് ഉപകരണങ്ങൾ",
-          "description": "ഏതെങ്കിലും ഇലക്ട്രിക്കൽ ജോലിക്ക് മുമ്പ് സുരക്ഷിതമായ പരിശോധന: വോൾട്ടേജ് ടെസ്റ്ററുകൾ, മൾട്ടിമീറ്ററുകൾ, ക്ലാമ്പ് മീറ്ററുകൾ, ത്രീ-ഫേസ് അടിസ്ഥാനകാര്യങ്ങൾ, ആർസിഡി ടെസ്റ്റിംഗ്."
-        },
-        "bn": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "বৈদ্যুতিক নিরাপত্তা এবং পরীক্ষা যন্ত্র",
-          "description": "কোনো বৈদ্যুতিক কাজের আগে নিরাপদ পরীক্ষা: ভোল্টেজ পরীক্ষক, মাল্টিমিটার, ক্ল্যাম্প মিটার, তিন-ফেজ বেসিক এবং আরসিডি পরীক্ষা।"
-        },
-        "ta": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "மின் பாதுகாப்பு மற்றும் சோதனைக் கருவிகள்",
-          "description": "எந்தவொரு மின் வேலைக்கும் முன் பாதுகாப்பான சோதனை: மின்னழுத்த சோதனையாளர்கள், மல்டிமீட்டர்கள், கிளாம்ப் மீட்டர்கள், மூன்று-கட்ட அடிப்படைகள் மற்றும் RCD சோதனை."
-        },
-        "ne": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "विद्युतीय सुरक्षा र परीक्षण उपकरणहरू",
-          "description": "कुनै पनि विद्युतीय काम अघि सुरक्षित परीक्षण: भोल्टेज परीक्षकहरू, मल्टिमिटरहरू, क्ल्याम्प मिटरहरू, तीन-चरण आधारभूत र RCD परीक्षण।"
-        },
-        "tl": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "Mga Instrumentong Pangkaligtasan sa Elektrisidad at Pagsubok",
-          "description": "Ligtas na pagsubok bago ang anumang gawaing elektrikal: mga tester ng boltahe, multimeter, clamp meter, three-phase basics at RCD testing."
-        },
-        "ar": {
-          "auto": true,
-          "src": "9e2c98ad0660",
-          "title": "أدوات السلامة والاختبار الكهربائية",
-          "description": "اختبار آمن قبل أي عمل كهربائي: أجهزة اختبار الجهد، وأجهزة القياس المتعددة، وأجهزة القياس المشبكية، والأساسيات ثلاثية الطور، واختبار RCD."
-        }
-      }
+      "description": "Isolating distribution boards safely, using a clamp meter, testing RCDs and ring circuits, insulation resistance and bathroom rules."
     },
     {
-      "id": "motor-control",
+      "id": "motors-controls",
+      "tr": {
+        "ar": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "المحركات، الكونتكتورات و VFDs",
+          "description": "كهرباء ثلاثية الأطور، الكونتكتورات والأوفرلود، دوائر التشغيل والإيقاف، VFDs ونظام تحويل المولد (ATS)."
+        },
+        "bn": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "মোটর, কন্টাক্টর এবং VFD",
+          "description": "থ্রি-ফেজ পাওয়ার, কন্টাক্টর ও ওভারলোড, স্টার্ট/স্টপ সার্কিট, VFD এবং জেনারেটর চেঞ্জওভার (ATS)।"
+        },
+        "hi": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "मोटर, कॉन्टैक्टर और VFD",
+          "description": "थ्री-फेस पावर, कॉन्टैक्टर और ओवरलोड, स्टार्ट/स्टॉप सर्किट, VFD और जनरेटर चेंजओवर (ATS)।"
+        },
+        "ml": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "മോട്ടോറുകൾ, കോൺടാക്ടറുകൾ, VFD-കൾ",
+          "description": "ത്രീ-ഫേസ് പവർ, കോൺടാക്ടറുകൾ, ഓവർലോഡുകൾ, സ്റ്റാർട്ട്/സ്റ്റോപ്പ് സർക്യൂട്ടുകൾ, VFD-കളും ജനറേറ്റർ ചേഞ്ച്ഓവറും (ATS)."
+        },
+        "ne": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "मोटरहरू, कन्टाक्टरहरू र VFD हरू",
+          "description": "थ्री-फेज पावर, कन्टाक्टरहरू र ओभरलोडहरू, स्टार्ट/स्टप सर्किटहरू, VFD हरू र जेनेरेटर चेन्जओभर (ATS)।"
+        },
+        "tl": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "Mga Motor, Kontaktor at VFD",
+          "description": "Tatlong-phase na kuryente, kontaktor at overload, start/stop circuit, VFD at lipat-kuryente ng generator (ATS)."
+        },
+        "ur": {
+          "src": "ec5c61e3aa18",
+          "auto": true,
+          "title": "موٹرز، کنٹیکٹرز اور VFDs",
+          "description": "تھری فیز پاور، کنٹیکٹرز اور اوورلوڈز، سٹارٹ/سٹاپ سرکٹس، VFDs اور جنریٹر چینج اوور (ATS)"
+        }
+      },
       "icon": "⚙️",
-      "title": "Motor Control Basics",
-      "description": "Contactors, overloads, start/stop circuits, star-delta starters and motor insulation testing.",
+      "title": "Motors, Contactors and VFDs",
       "videos": [
-        "elec-106",
+        "elec-104",
+        "elect-EElZjxhQxHs",
         "elec-107",
+        "elec-106",
         "elec-108",
         "elec-110",
-        "elec-116"
+        "elec-112",
+        "elec-114",
+        "elec-111"
       ],
-      "tr": {
-        "hi": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "मोटर नियंत्रण मूल बातें",
-          "description": "संपर्ककर्ता, ओवरलोड, स्टार्ट/स्टॉप सर्किट, स्टार-डेल्टा स्टार्टर और मोटर इन्सुलेशन परीक्षण।"
-        },
-        "ur": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "موٹر کنٹرول کی بنیادی باتیں",
-          "description": "رابطہ کار، اوورلوڈز، اسٹارٹ/اسٹاپ سرکٹس، اسٹار ڈیلٹا اسٹارٹرز اور موٹر انسولیشن ٹیسٹنگ۔"
-        },
-        "ml": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "മോട്ടോർ നിയന്ത്രണ അടിസ്ഥാനങ്ങൾ",
-          "description": "കോൺടാക്റ്റുകൾ, ഓവർലോഡുകൾ, സ്റ്റാർട്ട്/സ്റ്റോപ്പ് സർക്യൂട്ടുകൾ, സ്റ്റാർ-ഡെൽറ്റ സ്റ്റാർട്ടറുകൾ, മോട്ടോർ ഇൻസുലേഷൻ ടെസ്റ്റിംഗ്."
-        },
-        "bn": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "মোটর কন্ট্রোল বেসিক",
-          "description": "কন্টাক্টর, ওভারলোড, স্টার্ট/স্টপ সার্কিট, স্টার-ডেল্টা স্টার্টার এবং মোটর ইনসুলেশন টেস্টিং।"
-        },
-        "ta": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "மோட்டார் கட்டுப்பாட்டு அடிப்படைகள்",
-          "description": "தொடர்புகள், ஓவர்லோடுகள், ஸ்டார்ட்/ஸ்டாப் சர்க்யூட்கள், ஸ்டார்-டெல்டா ஸ்டார்டர்கள் மற்றும் மோட்டார் இன்சுலேஷன் சோதனை."
-        },
-        "ne": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "मोटर नियन्त्रण आधारभूत",
-          "description": "सम्पर्ककर्ताहरू, ओभरलोडहरू, स्टार्ट/स्टप सर्किटहरू, स्टार-डेल्टा स्टार्टरहरू र मोटर इन्सुलेशन परीक्षण।"
-        },
-        "tl": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "Mga Pangunahing Kaalaman sa Pagkontrol ng Motor",
-          "description": "Mga contactor, overload, start/stop circuit, star-delta starter at pagsubok sa insulasyon ng motor."
-        },
-        "ar": {
-          "auto": true,
-          "src": "84fc79f44826",
-          "title": "أساسيات التحكم في المحركات",
-          "description": "الموصلات، والأحمال الزائدة، ودوائر التشغيل/الإيقاف، ومشغلات ستار دلتا، واختبار عزل المحركات."
-        }
-      }
+      "description": "Three-phase power, contactors and overloads, start/stop circuits, VFDs and generator changeover (ATS)."
     },
     {
-      "id": "plumbing-fundamentals",
+      "id": "electrical-installation",
+      "tr": {
+        "ar": {
+          "src": "5422e608c93c",
+          "auto": true,
+          "title": "أساسيات التمديدات الكهربائية",
+          "description": "تقشير الكابلات، وتوصيل المقابس والمفاتيح، والمواسير، وحوامل الكابلات، ونهايات كابلات SWA، بشكل مرتب وحسب الأصول."
+        },
+        "ta": {
+          "src": "5422e608c93c",
+          "auto": true,
+          "title": "மின்சார அமைப்பு அடிப்படைகள்",
+          "description": "கேபிள் நடுக்குதல், சாக்கெட் மற்றும் ஸ்விட்ச் வயரிங், கன்டூயித், கேபிள் ட்ரே மற்றும் SWA கிளாண்ட் வேலைகளை நேர்த்தியாகவும் தரமாகவும் செய்தல்."
+        },
+        "tl": {
+          "src": "5422e608c93c",
+          "auto": true,
+          "title": "Pangunahing Kaalaman sa Paglalagay ng Kuryente",
+          "description": "Pagbalat ng kable, pagkakabit ng saksakan at switch, conduit, cable tray, at SWA glands nang maayos at tama sa standard."
+        },
+        "ur": {
+          "src": "5422e608c93c",
+          "auto": true,
+          "title": "بنیادی الیکٹریکل انسٹالیشن",
+          "description": "کیبل چھینلنا، ساکٹ اور سوئچ لگانا، کینڈوٹ، کیبل ٹرے اور SWA گلینڈز لگانا، صفائی سے اور معیار کے مطابق۔"
+        }
+      },
+      "icon": "🔌",
+      "title": "Electrical Installation Basics",
+      "videos": [
+        "elect-GeLWlyNRWuk",
+        "elec-105",
+        "elect-3m0bOJL5Bjs",
+        "elect-pOfXina3uUQ",
+        "elect-nhcaeubedhs",
+        "elect-bj-qXukUy_8",
+        "elect--JRAv-7Xg68"
+      ],
+      "description": "Stripping cable, wiring sockets and switches, conduit, cable tray and SWA glands, done neatly and to standard."
+    },
+    {
+      "id": "plumbing-service-calls",
+      "tr": {
+        "hi": {
+          "src": "22fc562f3bfa",
+          "auto": true,
+          "title": "प्लंबिंग सर्विस कॉल्स",
+          "description": "रोजमर्रा के काम: लीक होते नल, कार्ट्रिज, टॉयलेट और फ्लश वाल्व, ट्रैप, एंगल वाल्व और छिपे हुए लीक ढूंढना।"
+        },
+        "ml": {
+          "src": "22fc562f3bfa",
+          "auto": true,
+          "title": "പ്ലംബിംഗ് സർവീസ് കോളുകൾ",
+          "description": "റോയുമുള്ള ജോലികൾ: ചോരുന്ന ടാപ്പുകൾ, കാട്രിഡ്ജുകൾ, ടോയ്ലറ്റുകൾ, ഫ്ലഷ് വാൽവുകൾ, ട്രാപ്പുകൾ, ആംഗിൾ വാൽവുകൾ, ഒളിഞ്ഞിരിക്കുന്ന ചോർച്ചകൾ കണ്ടെത്തൽ."
+        },
+        "ne": {
+          "src": "22fc562f3bfa",
+          "auto": true,
+          "title": "plumbing service calls",
+          "description": "दैनिक कामहरू: लिक हुने धारा, कार्ट्रिज, कमोड र फ्लस भल्भ, ट्र्याप, एंगल भल्भ र लुकेको लिकेज पत्ता लगाउने।"
+        },
+        "ta": {
+          "src": "22fc562f3bfa",
+          "auto": true,
+          "title": "ப்ளம்பிங் சர்வீஸ் கால்ஸ்",
+          "description": "தினசரி வேலைகள்: லீக் ஆகும் டேப்கள், கார்ட்ரிட்ஜ்கள், டாய்லெட் மற்றும் ஃபிளஷ் வால்வுகள், ட்ராப்கள், ஆங்கிள் வால்வுகள் மற்றும் மறைந்திருக்கும் லீக்குகளைக் கண்டுபிடித்தல்."
+        },
+        "tl": {
+          "src": "22fc562f3bfa",
+          "auto": true,
+          "title": "Tawag para sa Serbisyo sa Tubero",
+          "description": "Mga pang-araw-araw na trabaho: tulo na gripo, cartridges, inidoro at flush valve, bitag (traps), angle valve, at paghahanap ng tago na tulo."
+        },
+        "ur": {
+          "src": "22fc562f3bfa",
+          "auto": true,
+          "title": "پلمبنگ سروس کالز",
+          "description": "روزمرہ کے کام: نل سے پانی ٹپکنا، کارٹریج، ٹॉयलेट اور فلش والو، ٹریپ، اینگل والو اور چھپے ہوئے لیک ڈھونڈنا۔"
+        }
+      },
       "icon": "🚰",
-      "title": "Plumbing Fundamentals",
-      "description": "The everyday plumbing jobs: taps, cartridges, shut-off valves, traps, toilets and finding leaks.",
+      "title": "Plumbing Service Calls",
       "videos": [
         "plumb-101",
         "plumb-102",
+        "plumb-104",
+        "plumb-103",
         "plumb-106",
         "plumb-105",
-        "plumb-103",
-        "plumb-104",
-        "plumb-109"
+        "plumb-109",
+        "plumb-107",
+        "plumb-115",
+        "plumb-110"
       ],
-      "tr": {
-        "hi": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "नलसाज़ी की बुनियादी बातें",
-          "description": "रोजमर्रा के प्लंबिंग कार्य: नल, कार्ट्रिज, शट-ऑफ वाल्व, जाल, शौचालय और लीक ढूंढना।"
-        },
-        "ur": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "پلمبنگ کے بنیادی اصول",
-          "description": "پلمبنگ کی روزمرہ کی نوکریاں: نلکے، کارتوس، شٹ آف والوز، ٹریپس، بیت الخلاء اور لیک تلاش کرنا۔"
-        },
-        "ml": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "പ്ലംബിംഗ് അടിസ്ഥാനകാര്യങ്ങൾ",
-          "description": "ദൈനംദിന പ്ലംബിംഗ് ജോലികൾ: ടാപ്പുകൾ, കാട്രിഡ്ജുകൾ, ഷട്ട്-ഓഫ് വാൽവുകൾ, കെണികൾ, ടോയ്‌ലറ്റുകൾ, ചോർച്ച കണ്ടെത്തൽ."
-        },
-        "bn": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "নদীর গভীরতানির্ণয় মৌলিক বিষয়",
-          "description": "প্রতিদিনের প্লাম্বিং কাজ: ট্যাপ, কার্তুজ, শাট-অফ ভালভ, ফাঁদ, টয়লেট এবং ফুটো খুঁজে বের করা।"
-        },
-        "ta": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "பிளம்பிங் அடிப்படைகள்",
-          "description": "தினசரி பிளம்பிங் வேலைகள்: குழாய்கள், தோட்டாக்கள், அடைப்பு வால்வுகள், பொறிகள், கழிப்பறைகள் மற்றும் கசிவுகளைக் கண்டறிதல்."
-        },
-        "ne": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "प्लम्बिंग आधारभूत कुराहरू",
-          "description": "दैनिक प्लम्बिङ कार्यहरू: ट्यापहरू, कारतूसहरू, बन्द-अफ भल्भहरू, पासोहरू, शौचालयहरू र चुहावटहरू फेला पार्नु।"
-        },
-        "tl": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "Mga Batayan sa Pagtutubero",
-          "description": "Ang pang-araw-araw na mga trabaho sa pagtutubero: mga gripo, mga cartridge, mga shut-off valve, mga bitag, mga palikuran at paghahanap ng mga tagas."
-        },
-        "ar": {
-          "auto": true,
-          "src": "6156c03f8487",
-          "title": "أساسيات السباكة",
-          "description": "وظائف السباكة اليومية: الصنابير، والخراطيش، وصمامات الإغلاق، والفخاخ، والمراحيض وإيجاد التسريبات."
-        }
-      }
+      "description": "The everyday jobs: dripping taps, cartridges, toilets and flush valves, traps, angle valves and finding hidden leaks."
     },
     {
-      "id": "refrigerant-handling",
-      "icon": "🧪",
-      "title": "Refrigerant Handling",
-      "description": "Pressure testing, evacuation, brazing with nitrogen and refrigerant recovery, in the right order.",
-      "videos": [
-        "hvac-108",
-        "hvac-107",
-        "hvac-110",
-        "hvac-111"
-      ],
+      "id": "fire-life-safety",
       "tr": {
         "hi": {
+          "src": "3b565ff3b830",
           "auto": true,
-          "src": "669fef2461d3",
-          "title": "रेफ्रिजरेंट हैंडलिंग",
-          "description": "दबाव परीक्षण, निकासी, नाइट्रोजन और रेफ्रिजरेंट पुनर्प्राप्ति के साथ टांकना, सही क्रम में।"
-        },
-        "ur": {
-          "auto": true,
-          "src": "669fef2461d3",
-          "title": "ریفریجرینٹ ہینڈلنگ",
-          "description": "پریشر ٹیسٹنگ، انخلاء، نائٹروجن کے ساتھ بریزنگ اور ریفریجرینٹ ریکوری، صحیح ترتیب میں۔"
-        },
-        "ml": {
-          "auto": true,
-          "src": "669fef2461d3",
-          "title": "റഫ്രിജറൻ്റ് കൈകാര്യം ചെയ്യൽ",
-          "description": "പ്രഷർ ടെസ്റ്റിംഗ്, ഒഴിപ്പിക്കൽ, നൈട്രജൻ ഉപയോഗിച്ച് ബ്രേസിംഗ്, റഫ്രിജറൻ്റ് വീണ്ടെടുക്കൽ, ശരിയായ ക്രമത്തിൽ."
-        },
-        "bn": {
-          "auto": true,
-          "src": "669fef2461d3",
-          "title": "রেফ্রিজারেন্ট হ্যান্ডলিং",
-          "description": "প্রেসার পরীক্ষা, উচ্ছেদ, নাইট্রোজেন দিয়ে ব্রেজিং এবং রেফ্রিজারেন্ট পুনরুদ্ধার, সঠিক ক্রমে।"
+          "title": "फायर और लाइफ सेफ्टी बेसिक्स",
+          "description": "सिलेंडर चलाना, स्मोक डिटेक्टर और फायर अलार्म पैनल कैसे काम करते हैं, स्प्रिंकलर के प्रकार और वेट अलार्म वाल्व।"
         },
         "ta": {
+          "src": "3b565ff3b830",
           "auto": true,
-          "src": "669fef2461d3",
-          "title": "குளிர்பதன கையாளுதல்",
-          "description": "அழுத்த சோதனை, வெளியேற்றம், நைட்ரஜனுடன் பிரேசிங் மற்றும் குளிர்பதன மீட்பு, சரியான வரிசையில்."
-        },
-        "ne": {
-          "auto": true,
-          "src": "669fef2461d3",
-          "title": "फ्रिज ह्यान्डलिंग",
-          "description": "दबाब परीक्षण, निकासी, नाइट्रोजन र फ्रिज रिकभरीको साथ ब्रेजिङ, सही क्रममा।"
+          "title": "தீ மற்றும் உயிர் பாதுகாப்பு அடிப்படைகள்",
+          "description": "தீயை அணைக்கும் கருவியைப் பயன்படுத்துவது, டிடெக்டர்கள் மற்றும் ஃபயர் அலாரம் பேனல்கள் வேலை செய்யும் முறை, ஸ்பிரிங்லர் வகைகள் மற்றும் வெட் அலாரம் வால்வு."
         },
         "tl": {
+          "src": "3b565ff3b830",
           "auto": true,
-          "src": "669fef2461d3",
-          "title": "Paghawak ng Nagpapalamig",
-          "description": "Pagsusuri ng presyon, paglisan, pagpapatigas ng nitrogen at pagbawi ng nagpapalamig, sa tamang pagkakasunud-sunod."
-        },
-        "ar": {
-          "auto": true,
-          "src": "669fef2461d3",
-          "title": "التعامل مع المبردات",
-          "description": "اختبار الضغط، والإخلاء، والنحاس باستخدام النيتروجين واسترداد غاز التبريد، بالترتيب الصحيح."
+          "title": "Mga Pangunahing Kaalaman sa Sunog at Kaligtasan",
+          "description": "Paggamit ng extinguisher, paano gumagana ang mga detector at fire alarm panel, mga uri ng sprinkler at ang wet alarm valve."
         }
-      }
+      },
+      "icon": "🧯",
+      "title": "Fire and Life Safety Basics",
+      "videos": [
+        "fires-GVBamXXVD30",
+        "fires-SQDWNdO6xE4",
+        "fires-NIxWpqcj8t4",
+        "fires-nyBTkpNB0hU",
+        "fires-bym_AagItOc",
+        "fires-9urpPzmsxHo"
+      ],
+      "description": "Using an extinguisher, how detectors and fire alarm panels work, sprinkler types and the wet alarm valve."
+    },
+    {
+      "id": "confined-space-tanks",
+      "tr": {
+        "ar": {
+          "src": "9f7770399d62",
+          "auto": true,
+          "title": "الأماكن المغلقة وخزانات المياه",
+          "description": "الدخول الآمن للخزانات والجور، ثم تنظيف وتطهير وفحص خزانات تخزين المياه."
+        },
+        "ml": {
+          "src": "9f7770399d62",
+          "auto": true,
+          "title": "അടച്ച സ്ഥലങ്ങളും വെള്ളത്തൊട്ടികളും",
+          "description": "തൊട്ടികളിലേക്കും കുഴிகளിലേക്കും സുരക്ഷിതമായി പ്രവേശിക്കുക, തുടർന്ന് ജല സംഭരണികൾ വൃത്തിയാക്കുക, അണുവിമുക്തമാക്കുക, പരിശോധിക്കുക."
+        },
+        "ta": {
+          "src": "9f7770399d62",
+          "auto": true,
+          "title": "மூடப்பட்ட இடங்கள் மற்றும் நீர் தொட்டிகள்",
+          "description": "தொட்டிகள் மற்றும் குழிகளுக்குள் பாதுகாப்பாக நுழைவது, பின்னர் நீர் சேமிப்பு தொட்டிகளை சுத்தம் செய்தல், கிருமி நீக்கம் செய்தல் மற்றும் பரிசோதித்தல்."
+        },
+        "tl": {
+          "src": "9f7770399d62",
+          "auto": true,
+          "title": "Mga Masikip na Lugar at Tore ng Tubig",
+          "description": "Ligtas na pagpasok sa mga tangke at hukay, tapos ay paglilinis, pagdidisimpekta at pagsusuri ng mga tangke ng tubig."
+        }
+      },
+      "icon": "💧",
+      "title": "Confined Spaces and Water Tanks",
+      "videos": [
+        "healt-_loONTyxmks",
+        "healt-aCvcvjyL01E",
+        "water-3ZwVOsB_vGs",
+        "water-jmdOfrL4zz0",
+        "water-M7qGBZX_GZo"
+      ],
+      "description": "Safe entry into tanks and pits, then cleaning, disinfecting and testing water storage tanks."
+    },
+    {
+      "id": "finishes-repairs",
+      "tr": {
+        "hi": {
+          "src": "cdd8c76d0f9f",
+          "auto": true,
+          "title": "पेंटिंग, टiling और रिपेयर",
+          "description": "बिना दाग के पेंटिंग, कॉकिंग, drywall रिपेयर, गीले एरिया में वॉटरप्रूफing और टiling।"
+        },
+        "ne": {
+          "src": "cdd8c76d0f9f",
+          "auto": true,
+          "title": "पेन्टिङ, टायलिङ र मर्मत",
+          "description": "दाग बिनाको पेन्टिङ, जोर्नी भर्ने काम (काकिङ), ड्राइवाल मर्मत, पानी नचुहिने बनाउने (वाटरप्रुफिङ) र टायलिङ।"
+        },
+        "tl": {
+          "src": "cdd8c76d0f9f",
+          "auto": true,
+          "title": "Pintura, Tile at Kumpuni",
+          "description": "Malinis na pintura na walang mantsa, pag-caulk, kumpuni ng drywall, waterproofing ng basang lugar at pag-tile."
+        },
+        "ur": {
+          "src": "cdd8c76d0f9f",
+          "auto": true,
+          "title": "پینٹنگ، ٹائلنگ اور مرمت",
+          "description": "بغیر نشان کے صفائی سے پینٹ کرنا، جوڑوں کو بھرنا، دیوار کی مرمت، گیلی جگہوں کی واٹر پروفنگ اور ٹائل لگانا۔"
+        }
+      },
+      "icon": "🎨",
+      "title": "Painting, Tiling and Repairs",
+      "videos": [
+        "paint-oWyQjMBQIik",
+        "paint--8gLPN1W_o0",
+        "civil-Fdy9uRvpI-E",
+        "civil-EVN_tUlynHU",
+        "paint-rwfmx5cCWdE",
+        "civil-PpRb6lWX44o",
+        "civil-3M8oj9zh3Uo"
+      ],
+      "description": "Clean painting without lap marks, caulking, drywall repairs, waterproofing wet areas and tiling."
+    },
+    {
+      "id": "irrigation",
+      "tr": {
+        "ar": {
+          "src": "e7e6197c27f7",
+          "auto": true,
+          "title": "الري وتنسيق الموقع",
+          "description": "وحدات التحكم والمؤقتات، الصمامات، الضغط المنخفض، الرشاشات وأنابيب التنقيط."
+        },
+        "hi": {
+          "src": "e7e6197c27f7",
+          "auto": true,
+          "title": "सिंचाई और लैंडस्केपिंग",
+          "description": "कंट्रोलर्स और टाइमर्स, वाल्व्स, कम दबाव, स्प्रिंकलर हेड और ड्रिप लाइनें।"
+        },
+        "ml": {
+          "src": "e7e6197c27f7",
+          "auto": true,
+          "title": "ജലസേചനവും ലാൻഡ്സ്കേപ്പിംഗും",
+          "description": "കൺട്രോളറുകൾ, ടൈമറുകൾ, വാൽവുകൾ, ലോ പ്രഷർ, സ്പ്രിങ്ക്ലർ ഹെഡുകൾ, ഡ്രിപ്പ് ലൈനുകൾ."
+        },
+        "ta": {
+          "src": "e7e6197c27f7",
+          "auto": true,
+          "title": "பாசன அமைப்பு மற்றும் பூங்கா பராமரிப்பு",
+          "description": "கண்ட்ரோலர்கள் மற்றும் டைமர்கள், வால்வுகள், குறைந்த அழுத்தம், ஸ்பிரிங்ளர் ஹெட்ஸ் மற்றும் ட்ரிப் லைன்கள்."
+        }
+      },
+      "icon": "🌴",
+      "title": "Irrigation and Landscaping",
+      "videos": [
+        "lands-xrGuelmdIQI",
+        "lands-qoBe4nTrVz0",
+        "lands-jCowCVTR6VE",
+        "lands-s8XagZQ9Suk",
+        "lands-XmQR2emG9D4",
+        "lands-QvTpFOz1GTQ",
+        "lands-t_dSruoWQIw"
+      ],
+      "description": "Controllers and timers, valves, low pressure, sprinkler heads and drip lines."
+    },
+    {
+      "id": "duct-air-quality",
+      "tr": {
+        "ne": {
+          "src": "b4668ea9078e",
+          "auto": true,
+          "title": "डक्ट सरसफाई र इनडोर हावा",
+          "description": "डक्ट र कोइल राम्ररी सफा गर्ने, फिल्टर र हावाको बहाव राम्रो राख्ने।"
+        },
+        "ta": {
+          "src": "b4668ea9078e",
+          "auto": true,
+          "title": "டக்ட் சுத்தம் செய்தல் மற்றும் உள்ளக காற்று",
+          "description": "டக்ட் மற்றும் காயl-களை சரியாக சுத்தம் செய்தல், ஃபில்டர்கள் மற்றும் காற்றோட்டத்தை சீராக பராமரித்தல்."
+        },
+        "tl": {
+          "src": "b4668ea9078e",
+          "auto": true,
+          "title": "Paglilinis ng Duct at Indoor Air",
+          "description": "Linising mabuti ang mga duct at coil, mga filter, at panatilihing maayos ang daloy ng hangin."
+        },
+        "ur": {
+          "src": "b4668ea9078e",
+          "auto": true,
+          "title": "ڈکٹ اور اندرونی ہوا کی صفائی",
+          "description": "ڈکٹس اور کوئلز کو اچھے طریقے سے صاف کرنا، فلٹرز کی دیکھ بھال اور ہوا کا بہاؤ بہتر رکھنا۔"
+        }
+      },
+      "icon": "🌀",
+      "title": "Duct Cleaning and Indoor Air",
+      "videos": [
+        "ductc-5N-1DIz4amg",
+        "ductc-iVQVXkH_MAo",
+        "ductc-J0NFvScegbk",
+        "hvac-PdkasaHKP3c",
+        "hvac-CqM2TkvT2-U"
+      ],
+      "description": "Cleaning ducts and coils the right way, filters and keeping air flowing well."
     }
-  ]
+  ],
+  "assignments": []
 }

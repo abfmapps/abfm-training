@@ -1,6 +1,6 @@
 // Where the daily jobs read and save the app content: the "docs" table in Supabase.
-// Needs two GitHub repository secrets: SUPABASE_URL and SUPABASE_SERVICE_KEY (the service_role key,
-// Supabase → Project Settings → API Keys). The service key never goes into the app.
+// Needs the GitHub repository secret SUPABASE_SERVICE_KEY: the Secret key (sb_secret_…) from
+// Supabase → Project Settings → API Keys. It never goes into the app.
 //
 // Saving is safe if an admin saves at the same time: if the document changed while the job was running,
 // the job re-reads it and only copies over the fields it is responsible for.
@@ -14,7 +14,10 @@ if (!KEY) {
   console.error(msg);
   process.exit(1);
 }
-const H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
+// New-style secret keys (sb_secret_…) go in the apikey header only; the older service_role key (a JWT) also as Bearer.
+const H = KEY.startsWith("sb_")
+  ? { apikey: KEY, "Content-Type": "application/json" }
+  : { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
 const versions = {}, originals = {};
 
 export async function load(name, fallback) {

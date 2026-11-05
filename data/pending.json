@@ -1,6 +1,53 @@
 {
   "queue": [
     {
+      "yt": "nyTgss2aMC8",
+      "draft": {
+        "ppe": [
+          "Safety Goggles",
+          "Cold-Resistant Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Connected Systems and the Future of Refrigeration",
+        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
+        "source": "rules",
+        "subject": "Addressable Fire Alarms",
+        "summary": "The future of refrigeration starts with A2L refrigerants and smarter control systems. But the real game-changer is data.",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-05T19:22:41.790Z",
+      "title": "Connected systems and the future of refrigeration",
+      "aiError": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa",
+      "aiTries": 1,
+      "channel": "Johnson Controls",
+      "duration": "",
+      "published": "2026-11-05T16:33:39+00:00",
+      "channelUrl": "https://www.youtube.com/@JohnsonControls",
+      "description": "The future of refrigeration starts with A2L refrigerants and smarter control systems. But the real game-changer is data.​\n\nWith cloud connectivity, refrigeration systems can now provide real-time insights that help operators monitor performance, diagnose issues and implement predictive maintenance strategies. ​\n\nWatch the full video to discover what the PENN System 550 can do for you.",
+      "channelCategory": "Fire & Life Safety",
+      "suggestedCategory": "Fire & Life Safety"
+    },
+    {
+      "yt": "bNf6VpaPcMY",
+      "found": "2026-11-05T19:22:29.391Z",
+      "title": "Vacuum Chiller Pressurizing: The Isolation Step Most Techs Skip",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-11-05T16:00:08+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The chiller is off and sitting in a vacuum. Pull a purge filter, change the oil filter, or take an oil sample from the sump, and the machine draws air in.\n\nA viewer asked how a contractor should set up a kit to get low pressure machines to a positive pressure for service, and what goes in a recovery kit for them. Here is the RefTec pressurizer I prefer, where to hook it up, the set points I run for routine service and leak search, and the recovery gear I carry for big low pressure jobs versus a small centrifugal or an air cooled machine.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nRecovery machine used: Navac NRDC4M\nAvailable through TruTech Tools. Code HVACTIME gets you 6 percent off.\n\nWhat's covered:\n\n- Why I recommend RefTec gear for low pressure work, where custom built rigs fit in, and why parts and support matter\n- Why RefTec recommends hooking the pressurizer to the evaporator: at idle the liquid refrigerant stacks in a flooded or falling film barrel, so the heat goes right where it is needed\n- Why I usually go through the condenser instead: the chilled water side is often a closed loop with no chemical feed, and you can upset that treatment\n- Why a low pressure machine sits in a vacuum when it is off, usually 1 to 3 psi below atmosphere, and how a filter change or oil sample can pull air into it\n- Isolating both barrels on inlet and outlet, and why a chilled water valve that bleeds by keeps the pressure from ever coming up\n- The set points I run: 1 psi for routine service, 5 to 8 psig for a leak search\n- What decides how long it takes: 230 or 460 volts, the size of the machine, and whether your isolation valves hold\n- Building your own heater rig, why it has to be a closed pressurized vessel and not an open barrel, and why you have to watch the pressure by hand\n- How the water loop recirculates through the heat chamber, and how the pressure sensor kicks the heater back on to hold set point as the machine cools during a long leak search\n- RefTec's LoVac, Cheetah, and AllVac, and why the AllVac is the one to get if you only buy one machine: high and low pressure, with an oil change between POE and mineral\n- Hose size for large transfers: half inch minimum, three quarter inch preferred\n- Why I leave the AllVac on the truck for a small centrifugal like a WMC or an air cooled job and grab the Navac NRDC4M instead\n- Why the pressurizer is a service and leak search tool, not part of your recovery setup\n- Liquid pump versus push pull or pull pull, and why I skip the liquid pump whether I am charging or recovering\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Pressurizer and Recovery Kits for Vacuum Chillers\n0:24 Why RefTec for Low Pressure Chillers\n1:04 Pressurizer on the Evaporator vs the Condenser\n1:58 Water Treatment Risk on the Chilled Water Side\n3:30 Why Low Pressure Chillers Sit in a Vacuum\n4:38 Isolating Both Barrels on Inlet and Outlet\n5:33 Pressure Set Points f",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
       "yt": "uiyQcyjlFPc",
       "draft": {
         "ppe": [
@@ -324,78 +371,6 @@
       "published": "2026-10-30T15:00:45+00:00",
       "channelUrl": "https://www.youtube.com/@grundfos",
       "description": "Asperitas was one of the first companies in the world to introduce immersion cooling to data centers – an application in which IT servers are completely immersed and operating in a liquid. #Immersioncooling uses dielectric fluid – a non-conducting oil – in its server-cooling tanks. The liquid absorbs the heat from the IT equipment before transferring it to the facility water system.\n\nThe company, founded in 2014 in Amsterdam, the Netherlands, wanted to optimise its next-generation liquid cooling platform. \n\nAsperitas partnered with Grundfos to co-develop its next-generation immersion cooling system for data centers. What started as a desire for more robust pump seals grew into a bigger development with Grundfos E-pumps, bringing better efficiency, reliability and uptime. \n\n“We take an approach where every drop counts of the cooling liquid,” says Andy Young, Chief Technology Officer in Asperitas. “The liquid is really the blood in the veins of the cooling solution, and the pump is the beating heart.”\n\nSee the film and read the story on the link below to learn more.\n\nFull story at Immersion cooling innovation: http://gfos.ly/6058BHof3I",
-      "channelCategory": "Water Tanks & Pumps",
-      "suggestedCategory": "Water Tanks & Pumps"
-    },
-    {
-      "yt": "rY8FzioSVlc",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What is the maximum allowed electrical position for pump orientation?",
-            "answer": 0,
-            "options": [
-              "3 o'clock position",
-              "9 o'clock position",
-              "12 o'clock position"
-            ]
-          },
-          {
-            "q": "Which application mode is set as default for the ALPHA pump?",
-            "answer": 1,
-            "options": [
-              "Constant speed",
-              "AUTOADAPT",
-              "0-10V control"
-            ]
-          },
-          {
-            "q": "How do you connect to the Grundfos GO app for advanced settings?",
-            "answer": 1,
-            "options": [
-              "Wi-Fi connection",
-              "Bluetooth connectivity",
-              "USB cable connection"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Verify pump model and part number for the application.",
-          "Check box contents including gaskets, fittings, and instruction manual.",
-          "Confirm correct orientation and mounting position.",
-          "Connect wiring securely to the front-facing terminal connector.",
-          "Configure pump settings using the user interface or Grundfos GO app."
-        ],
-        "title": "Installing Grundfos UPSe and ALPHA Circulators",
-        "review": {
-          "reason": "Clear and detailed product training for new circulator pump models.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Disconnect electrical power before servicing or wiring circulator pumps.",
-        "source": "ai",
-        "subject": "Water Tank Cleaning",
-        "summary": "An overview of features, specifications, and setup instructions for the new Grundfos UPSe and ALPHA 26-99/150 ECM circulator pump range.",
-        "category": "Water Tanks & Pumps",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-05T10:59:06.308Z",
-      "title": "UPSe & ALPHA 26-99 and 150: The New Range of ECM Circulators",
-      "channel": "Grundfos",
-      "duration": "",
-      "published": "2026-10-29T11:49:37+00:00",
-      "channelUrl": "https://www.youtube.com/@grundfos",
-      "description": "Discover the newest addition to the high-performance ECM circulator lineup from Grundfos. In this webinar recording, Grundfos Regional Training Manager, Steve Fernald, goes over the benefits of ECM technology, the features of the new medium-sized circulators — the UPSe and ALPHA 26-99/150 — and how simplified installation and guided commissioning can help optimize system performance. \n\nThis session covers ALPHA 26-99/150 product features, installation best practices, commissioning tips, and key application considerations to help you select and deploy the right solution with confidence.",
       "channelCategory": "Water Tanks & Pumps",
       "suggestedCategory": "Water Tanks & Pumps"
     },
@@ -1325,7 +1300,7 @@
       "suggestedCategory": "BMS & Controls"
     }
   ],
-  "lastRun": "2026-11-05T13:36:49.437Z",
+  "lastRun": "2026-11-05T19:22:43.336Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -1377,172 +1352,172 @@
   "channelStatus": {
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-05T13:36:25.331Z",
+      "checked": "2026-11-05T19:22:17.671Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
-      "checked": "2026-11-05T13:36:40.677Z",
+      "checked": "2026-11-05T19:22:33.404Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
-      "checked": "2026-11-05T13:36:43.857Z",
+      "checked": "2026-11-05T19:22:36.664Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
-      "checked": "2026-11-05T13:36:34.204Z",
+      "checked": "2026-11-05T19:22:26.463Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-05T13:36:27.701Z",
+      "checked": "2026-11-05T19:22:20.089Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
-      "checked": "2026-11-05T13:36:48.722Z",
+      "checked": "2026-11-05T19:22:42.617Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-05T13:36:22.100Z",
+      "checked": "2026-11-05T19:22:14.362Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
-      "checked": "2026-11-05T13:36:46.294Z",
+      "checked": "2026-11-05T19:22:39.006Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
-      "checked": "2026-11-05T13:36:32.549Z",
+      "checked": "2026-11-05T19:22:24.853Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-05T13:36:22.949Z",
+      "checked": "2026-11-05T19:22:15.196Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-05T13:36:24.553Z",
+      "checked": "2026-11-05T19:22:16.776Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
-      "checked": "2026-11-05T13:36:37.360Z",
+      "checked": "2026-11-05T19:22:31.014Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
-      "checked": "2026-11-05T13:36:43.073Z",
+      "checked": "2026-11-05T19:22:35.883Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-05T13:36:26.116Z",
+      "checked": "2026-11-05T19:22:18.492Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "checked": "2026-11-05T13:36:44.648Z",
+      "checked": "2026-11-05T19:22:37.430Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
-      "checked": "2026-11-05T13:36:47.929Z",
-      "lastFound": 0
+      "checked": "2026-11-05T19:22:41.790Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-05T13:36:23.739Z",
+      "checked": "2026-11-05T19:22:16.003Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-05T13:36:21.298Z",
+      "checked": "2026-11-05T19:22:13.448Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
-      "checked": "2026-11-05T13:36:33.413Z",
+      "checked": "2026-11-05T19:22:25.677Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@appliancepartspros": {
       "id": "UCnMCOX6qSbTUQPyJJzRwPcg",
-      "checked": "2026-11-05T13:36:47.125Z",
+      "checked": "2026-11-05T19:22:39.830Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
-      "checked": "2026-11-05T13:36:41.464Z",
+      "checked": "2026-11-05T19:22:34.189Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
-      "checked": "2026-11-05T13:36:42.292Z",
+      "checked": "2026-11-05T19:22:34.965Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
-      "checked": "2026-11-05T13:36:39.966Z",
-      "lastFound": 1
+      "checked": "2026-11-05T19:22:32.595Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
-      "checked": "2026-11-05T13:36:45.518Z",
+      "checked": "2026-11-05T19:22:38.216Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
-      "checked": "2026-11-05T13:36:34.987Z",
+      "checked": "2026-11-05T19:22:27.238Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
-      "checked": "2026-11-05T13:36:36.578Z",
+      "checked": "2026-11-05T19:22:30.206Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
-      "checked": "2026-11-05T13:36:38.166Z",
+      "checked": "2026-11-05T19:22:31.806Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-05T13:36:26.903Z",
+      "checked": "2026-11-05T19:22:19.275Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-05T13:36:30.967Z",
+      "checked": "2026-11-05T19:22:23.223Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
-      "checked": "2026-11-05T13:36:35.772Z",
-      "lastFound": 0
+      "checked": "2026-11-05T19:22:29.391Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-05T13:36:29.305Z",
+      "checked": "2026-11-05T19:22:21.661Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-05T13:36:31.764Z",
+      "checked": "2026-11-05T19:22:24.032Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-05T13:36:28.489Z",
+      "checked": "2026-11-05T19:22:20.860Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-05T13:36:30.086Z",
+      "checked": "2026-11-05T19:22:22.443Z",
       "lastFound": 0
     }
   }

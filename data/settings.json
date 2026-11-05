@@ -1,8 +1,10 @@
 {
   "ai": {
     "groq": true,
-    "first": "groq",
-    "gemini": true
+    "first": "openrouter",
+    "gemini": true,
+    "orModel": "",
+    "openrouter": true
   },
   "tr": {
     "ar": {

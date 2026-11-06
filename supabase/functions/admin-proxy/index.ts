@@ -61,6 +61,23 @@ Deno.serve(async (req) => {
     return reply({ gemini, groq, openrouter, github });
   }
 
+  // The Gemini models this key can really use (so the app never has to guess model names).
+  if (b.kind === "gemini-models") {
+    const key = await secret("gemini");
+    if (!key) return reply({ error: { message: "No shared Gemini key." } }, 412);
+    const out: string[] = [];
+    let token = "";
+    for (let i = 0; i < 5; i++) {
+      const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200" + (token ? "&pageToken=" + encodeURIComponent(token) : ""), { headers: { "x-goog-api-key": key } });
+      if (!r.ok) return reply({ error: { message: "Gemini model list: HTTP " + r.status } }, r.status);
+      const j = await r.json();
+      for (const m of j.models || []) if ((m.supportedGenerationMethods || []).includes("generateContent")) out.push(String(m.name || "").replace(/^models\//, ""));
+      token = j.nextPageToken || "";
+      if (!token) break;
+    }
+    return reply({ models: out });
+  }
+
   if (b.kind === "gemini") {
     const model = String(b.model || "");
     if (!/^[a-z0-9.\-]+$/i.test(model)) return reply({ error: { message: "bad model" } }, 400);

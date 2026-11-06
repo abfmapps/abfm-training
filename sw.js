@@ -1,5 +1,5 @@
 /* Offline support. When you change files in assets/, bump VERSION here and the ?v= numbers in index.html and admin.html so browsers fetch the new files. */
-const VERSION = "abfm-training-v31";
+const VERSION = "abfm-training-v32";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "manifest-admin.webmanifest",
   "assets/app.css", "assets/app.js", "assets/i18n.js", "assets/config.js", "assets/trades.js", "assets/icons.js",

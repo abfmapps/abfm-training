@@ -41,7 +41,7 @@ Every save goes straight to Supabase, and staff see it the next time they open t
 
 ## 4. How the daily update works
 
-Every morning at about 05:23 Dubai time, GitHub runs `scripts/find-videos.mjs`. It:
+When you press **Search for new videos** in the admin (it never runs on its own), GitHub runs `scripts/find-videos.mjs`. It:
 1. Checks each trusted channel for uploads from the last 21 days (you can change this).
 2. Skips Shorts, live streams, videos already in the library, videos you rejected, and titles with excluded words.
 3. Guesses a category from the title and puts each video in your **Review queue**. **Nothing goes live until you approve it.**

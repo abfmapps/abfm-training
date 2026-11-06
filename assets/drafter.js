@@ -192,7 +192,7 @@
 
   /* Gemini draft: the model watches the public YouTube video. */
   /* ---------- Gemini ---------- */
-  const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"];
+  const MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.8-flash-lite", "gemini-3.6-flash-lite", "gemini-3.5-flash-lite"];
   /* Models Google has retired. A browser that saved one of these in Settings skips it. */
   const RETIRED = /^gemini-(1\.|2\.)/;
   const GONE = /not found|not supported|is not available|no longer available|deprecated|retired|update your code/i;
@@ -239,7 +239,11 @@
     const list = [...new Set([model, ...MODELS].filter(m => m && !RETIRED.test(m)))];
     const proxy = key === "server" && root.ABProxy ? root.ABProxy : null;
     const backup = groqReady && !groqFirst;   // Groq is still to try if Gemini struggles
-    let lastErr = groqErr, triedBackup = false;
+    let lastErr = groqErr, triedBackup = false, anyBusy = false;
+    // Never stop: if every model is busy or out of quota, wait a few seconds and go round the list once more.
+    for (let pass = 0; pass < 2; pass++) {
+    if (pass) { if (!anyBusy) break; await new Promise(res => setTimeout(res, 8000)); }
+    anyBusy = false;
     for (const m of list) {
       const ctl = typeof AbortController !== "undefined" ? new AbortController() : null;
       const timer = ctl ? setTimeout(() => ctl.abort(), backup && !triedBackup ? Math.min(timeoutMs, 30000) : timeoutMs) : null;
@@ -258,7 +262,7 @@
           const msg = (j.error && j.error.message) || ("HTTP " + r.status);
           const err = new Error(msg); err.status = r.status;
           if (r.status === 404 || GONE.test(msg)) { lastErr = err; err.gone = true; continue; }  // try an older model
-          if (r.status === 503 || r.status === 500 || r.status === 429) err.busy = true;   // overloaded or out of quota
+          if (r.status === 503 || r.status === 500 || r.status === 429) { err.busy = true; anyBusy = true; }   // overloaded or out of quota: next model
           throw err;
         }
         const c = (j.candidates || [])[0] || {};
@@ -266,7 +270,7 @@
         if (!text) throw new Error(c.finishReason ? "No answer (" + c.finishReason + ")" : "Empty answer");
         return { text, model: m, grounding: c.groundingMetadata || null };
       } catch (e) {
-        if (e.name === "AbortError") { e = new Error("Gemini took too long"); e.busy = backup; }
+        if (e.name === "AbortError") { e = new Error("Gemini took too long"); e.busy = backup; anyBusy = true; }
         lastErr = e;
         if (backup && !triedBackup && (e.busy || (e.status && e.status !== 404))) {
           triedBackup = true;
@@ -276,6 +280,7 @@
         if (e.status && e.status !== 404) throw lastErr;
         if (!e.status && !/not found/i.test(e.message)) throw lastErr;
       } finally { if (timer) clearTimeout(timer); }
+    }
     }
     throw lastErr || new Error("No Gemini model available");
   }

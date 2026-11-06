@@ -4,7 +4,7 @@
 // Questions and photos are not saved anywhere.
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
-const MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"];
+const MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3-flash"];
 // OpenRouter free models, from its public model list (cached for an hour). Used when the chosen model
 // or the automatic pick is not allowed (e.g. the account only allows free models, or has no credit).
 let orFreeCache: { at: number; text: string[]; vision: string[] } | null = null;

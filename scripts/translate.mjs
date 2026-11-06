@@ -65,7 +65,7 @@ async function translateLines(lines, tl) {
     catch (e) {
       if (e.message === "limit") throw e;
       googleDown++; lastError = "Google Translate: " + e.message;
-      if (googleDown === 3) console.log("Google Translate isn't responding (" + e.message + ")" + (GEMINI_KEY ? " — switching to Gemini." : " and no GEMINI_API_KEY is set."));
+      if (googleDown === 3) console.log("Google Translate isn't responding (" + e.message + ")" + ((GEMINI_KEY || GROQ_KEY || OR_KEY) ? " — switching to the selected AI (Groq / OpenRouter first, Gemini last)." : " and no AI key is set."));
       if (!GEMINI_KEY && !GROQ_KEY && !OR_KEY) throw e;
     }
   }
@@ -77,7 +77,7 @@ async function translateLines(lines, tl) {
     usedGemini++;
     await sleep(4000);                // stay inside Gemini's free-tier rate limit
     return t;
-  } catch (e) { lastError = "Gemini: " + e.message; throw e; }
+  } catch (e) { lastError = "AI: " + e.message; throw e; }
 }
 
 const hashOf = v => createHash("sha1").update(JSON.stringify([v.title, v.summary, v.safety, v.steps || [], v.ppe || []])).digest("hex").slice(0, 12);

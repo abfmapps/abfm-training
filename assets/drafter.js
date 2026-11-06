@@ -512,11 +512,17 @@ Use simple English, practical advice, and local context where useful (UAE emerge
     const r = await gemini({ key, model, timeoutMs: 90000, parts: [{ text:
       `Translate each item of this JSON array from English into ${langName}, for facility-maintenance technicians with basic schooling.
 Keep it short and plain. Keep technical terms, brand names, model numbers and units that workers normally say in English (e.g. AC, RCD, PPE, R410A, VFD) in English or in the common local form.
-Reply with JSON only: an array of exactly ${lines.length} strings, in the same order. Empty strings stay empty.
+Reply with JSON only: an array of exactly ${lines.length} strings, in the same order (if you must use an object, use {"translations": [ ...the strings... ]}). Empty strings stay empty.
 ${JSON.stringify(lines)}` }] });
-    const out = jsonOf(r.text);
-    if (!Array.isArray(out) || out.length !== lines.length) throw new Error("Gemini returned " + (Array.isArray(out) ? out.length : "no") + " lines instead of " + lines.length);
-    return out.map(x => clean(x));
+    let out = jsonOf(r.text);
+    // Text AIs in JSON mode must answer with an object, so they wrap the list: {"translations": [...]} or {"1": "...", "2": "..."}.
+    if (out && !Array.isArray(out) && typeof out === "object") {
+      const arr = Object.values(out).find(v => Array.isArray(v));
+      const vals = Object.values(out);
+      out = arr || (vals.length === lines.length && vals.every(v => typeof v === "string") ? vals : out);
+    }
+    if (!Array.isArray(out) || out.length !== lines.length) throw new Error("The AI returned " + (Array.isArray(out) ? out.length : "no") + " lines instead of " + lines.length);
+    return out.map(x => clean(typeof x === "string" ? x : (x && (x.text || x.translation)) || ""));
   }
   /* Quick check that a key works. */
   async function aiTest({ key, model }) {

@@ -28,8 +28,8 @@ const categories = (settings.categories || []).map(c => c.name);
 // Settings → AI: which AI is on and which goes first. Video drafts need Gemini.
 globalThis.ABAI = settings.ai || {};
 const GEM = (settings.ai || {}).gemini === false ? "" : KEY;
-// Gemini is only for what other AIs can't do (watching videos). New videos are drafted by Groq / OpenRouter from the
-// title and description; Gemini watches a video only when no other AI is available, or when you press it in the admin.
+// New-video drafts: Gemini watches the video (best quality). Only when Gemini is off or has no key,
+// Groq / OpenRouter draft from the title and description instead.
 const TEXT_AI = (GROQ && (settings.ai || {}).groq !== false) || (OPENROUTER && (settings.ai || {}).openrouter !== false);
 const minutes = d => { const p = String(d || "").split(":").map(Number); return p.length > 1 && p.every(n => !isNaN(n)) ? p.reduce((a, n) => a * 60 + n, 0) / 60 : 15; };
 let usedMin = 0;
@@ -43,7 +43,7 @@ for (const item of pending.queue || []) {
     rules++;
   }
   if (!item.draft.title) item.draft.title = globalThis.ABDraft.trainingTitle(item.title, item.channel);
-  if (TEXT_AI && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI) {
+  if (!GEM && TEXT_AI && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI) {
     try {
       item.draft = await aiDraftText({ title: item.title, description: item.description, channel: item.channel, category, subjects: subjectsFor(category), categories });
       delete item.aiTries; delete item.aiError; ai++;
@@ -54,7 +54,7 @@ for (const item of pending.queue || []) {
       console.log(`  ! Text draft failed for ${item.yt}: ${e.message}`);
     }
     await sleep(1500);
-  } else if (GEM && !TEXT_AI && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI && usedMin + minutes(item.duration) <= MAX_MINUTES) {
+  } else if (GEM && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI && usedMin + minutes(item.duration) <= MAX_MINUTES) {
     usedMin += minutes(item.duration);
     try {
       item.draft = aiDraft ? await aiDraft({ yt: item.yt, title: item.title, category, subjects: subjectsFor(category), categories, key: KEY, model: MODEL }) : item.draft;

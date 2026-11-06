@@ -192,7 +192,7 @@
 
   /* Gemini draft: the model watches the public YouTube video. */
   /* ---------- Gemini ---------- */
-  const MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3-flash"];
+  const MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash"];
   /* Models Google has retired. A browser that saved one of these in Settings skips it. */
   const RETIRED = /^gemini-(1\.|2\.)/;
   const GONE = /not found|not supported|is not available|no longer available|deprecated|retired|update your code/i;
@@ -207,6 +207,7 @@
   const aiPrefs = () => Object.assign({ gemini: true, groq: true, openrouter: true, first: "groq" }, root.ABAI || {});
   const TEXT_AIS = { groq: "Groq", openrouter: "OpenRouter" };
   const textDown = {};   // a text AI that answered "no credit" or "bad key" is skipped until the page is reloaded
+  const cool = {};   // model -> time until which it is skipped (it just said "quota"), so a busy model isn't hammered
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
     const pref = aiPrefs();
     const needsGemini = !!tools || parts.some(p => p.file_data);
@@ -239,12 +240,13 @@
     const list = [...new Set([model, ...MODELS].filter(m => m && !RETIRED.test(m)))];
     const proxy = key === "server" && root.ABProxy ? root.ABProxy : null;
     const backup = groqReady && !groqFirst;   // Groq is still to try if Gemini struggles
-    let lastErr = groqErr, triedBackup = false, anyBusy = false;
+    let lastErr = groqErr, triedBackup = false, anyBusy = false, quotaHit = false;
     // Never stop: if every model is busy or out of quota, wait a few seconds and go round the list once more.
     for (let pass = 0; pass < 2; pass++) {
     if (pass) { if (!anyBusy) break; await new Promise(res => setTimeout(res, 8000)); }
     anyBusy = false;
     for (const m of list) {
+      if (cool[m] > Date.now()) { quotaHit = true; continue; }
       const ctl = typeof AbortController !== "undefined" ? new AbortController() : null;
       const timer = ctl ? setTimeout(() => ctl.abort(), backup && !triedBackup ? Math.min(timeoutMs, 30000) : timeoutMs) : null;
       try {
@@ -262,7 +264,8 @@
           const msg = (j.error && j.error.message) || ("HTTP " + r.status);
           const err = new Error(msg); err.status = r.status;
           if (r.status === 404 || GONE.test(msg)) { lastErr = err; err.gone = true; continue; }  // try an older model
-          if (r.status === 503 || r.status === 500 || r.status === 429) { err.busy = true; anyBusy = true; }   // overloaded or out of quota: next model
+          if (r.status === 429) { err.busy = true; cool[m] = Date.now() + 90000; quotaHit = true; }   // out of quota: skip this model for 90 s
+          else if (r.status === 503 || r.status === 500) { err.busy = true; anyBusy = true; }   // overloaded or out of quota: next model
           throw err;
         }
         const c = (j.candidates || [])[0] || {};
@@ -282,6 +285,7 @@
       } finally { if (timer) clearTimeout(timer); }
     }
     }
+    if (quotaHit && (!lastErr || lastErr.busy)) { const e = new Error("Every Gemini model is at its limit right now (free quota). Wait a few minutes and try again; daily limits reset overnight."); e.busy = true; throw e; }
     throw lastErr || new Error("No Gemini model available");
   }
   const jsonOf = text => {

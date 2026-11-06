@@ -207,6 +207,28 @@
   const aiPrefs = () => Object.assign({ gemini: true, groq: true, openrouter: true, first: "groq" }, root.ABAI || {});
   const TEXT_AIS = { groq: "Groq", openrouter: "OpenRouter" };
   const textDown = {};   // a text AI that answered "no credit" or "bad key" is skipped until the page is reloaded
+  /* The Gemini models this key can really use, asked from Google once (so a model name is never guessed).
+     Our favourites go first; every other Gemini text model the key has follows, so there are always more to rotate through. */
+  const SKIP_MODEL = /tts|image|live|embed|transcribe|translate|robotics|omni|nano|lyria|computer|audio|aqa|imagen|veo|learnlm|gemma|deep-research|antigravity|argon/i;
+  let availP = null;
+  function availableModels(key, proxy) {
+    if (!availP) availP = (async () => {
+      try {
+        let names = [];
+        if (proxy) { const r = await proxy.call({ kind: "gemini-models" }); if (r.status === 200) names = r.json.models || []; }
+        else if (key) {
+          const r = await fetch(API.replace(/models\/$/, "models") + "?pageSize=200", { headers: { "x-goog-api-key": key } });
+          if (r.ok) names = ((await r.json()).models || []).filter(m => (m.supportedGenerationMethods || []).includes("generateContent")).map(m => String(m.name).replace(/^models\//, ""));
+        }
+        const ok = names.filter(n => /^gemini-\d/.test(n) && !SKIP_MODEL.test(n) && !RETIRED.test(n) && !/-(\d{3}|latest|exp.*)$/.test(n));
+        if (!ok.length) return null;
+        const rank = n => /pro/.test(n) ? 2 : /lite/.test(n) ? 0 : 1;   // lite first (biggest free daily limits), pro last
+        const rest = ok.filter(n => !MODELS.includes(n)).sort((a, b) => rank(a) - rank(b) || b.localeCompare(a));
+        return [...MODELS.filter(n => ok.includes(n)), ...rest];
+      } catch { return null; }
+    })();
+    return availP.then(v => { if (!v) availP = null; return v; });   // a failed lookup is tried again next time
+  }
   const cool = {};   // model -> time until which it is skipped (it just said "quota"), so a busy model isn't hammered
   async function gemini({ key, model, parts, json = true, tools, timeoutMs = 150000 }) {
     const pref = aiPrefs();
@@ -237,8 +259,9 @@
     if (groqFirst) {
       try { return await viaGroq(); } catch (e) { groqErr = e; if (!geminiReady) throw e; }
     }
-    const list = [...new Set([model, ...MODELS].filter(m => m && !RETIRED.test(m)))];
     const proxy = key === "server" && root.ABProxy ? root.ABProxy : null;
+    const avail = await availableModels(key, proxy);
+    const list = [...new Set([model, ...(avail || MODELS)].filter(m => m && !RETIRED.test(m)))].slice(0, 12);
     const backup = groqReady && !groqFirst;   // Groq is still to try if Gemini struggles
     let lastErr = groqErr, triedBackup = false, anyBusy = false, quotaHit = false;
     // Never stop: if every model is busy or out of quota, wait a few seconds and go round the list once more.

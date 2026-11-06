@@ -393,6 +393,7 @@
         <button class="btn btn-primary" id="add-video">＋ Add video</button>
       </div>
       <p class="count">${list.length} of ${V().length} videos · <b>${V().filter(v => v.gemini).length} of ${V().length}</b> checked by Gemini · <b>${V().filter(v => v.quiz && v.quiz.length).length}</b> with a quiz</p>
+      ${dupGroups().length ? `<div class="bar"><button class="btn btn-sm" id="dedupe">${ABIcon("copy")} Remove duplicates (${dupGroups().length})</button><span class="help grow">Checks similar videos, keeps the best one of each and deletes the rest. You review it first.</span></div>` : ""}
       ${(() => { const noLen = V().filter(v => !v.duration).length, noQuiz = V().filter(v => !(v.quiz && v.quiz.length) && !v.hidden).length;
         return noLen || (noQuiz && textAI()) || fillReport ? `<div class="bar">${noLen ? `<button class="btn btn-sm" id="fill-len">${ABIcon("clock")} Fill in ${noLen} missing length${noLen > 1 ? "s" : ""}</button>` : ""}${noQuiz && textAI() ? `<button class="btn btn-sm" id="fill-quiz">${ABIcon("quiz")} Write quizzes for ${noQuiz} video${noQuiz > 1 ? "s" : ""}</button>` : ""}<span class="help grow" id="fill-msg">${fillReport}</span></div>` : ""; })()}
       <div class="rows">${list.map(v => {
@@ -426,6 +427,7 @@
     $("#v-show").onchange = e => { ui.show = e.target.value; renderVideos(); };
     $("#add-video").onclick = () => openEditor(null);
     const sp = $("#see-probs"); if (sp) sp.onclick = () => { ui.show = "problems"; renderVideos(); };
+    const dd = $("#dedupe"); if (dd) dd.onclick = openDedupe;
     const fl = $("#fill-len"); if (fl) fl.onclick = fillLengths;
     const fq = $("#fill-quiz"); if (fq) fq.onclick = fillQuizzes;
   }
@@ -520,6 +522,53 @@
     const to = !v.hidden;
     await update("videos", d => { const x = d.videos.find(y => y.id === id); if (x) { if (to) x.hidden = true; else delete x.hidden; } d.updated = today(); return d; }, `${to ? "Hide" : "Show"} video: ${v.title}`);
     toast(to ? "Hidden from staff" : "Visible to staff again"); render();
+  }
+  /* ---------- Remove duplicates: group similar videos, keep the best of each, delete the rest (after you review) ---------- */
+  function dupGroups() {
+    const vs = V(), parent = new Map(vs.map(v => [v.id, v.id]));
+    const find = x => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
+    for (const v of vs) for (const d of ABDraft.findDuplicates(v, vs)) parent.set(find(v.id), find(d.item.id));
+    const by = new Map();
+    for (const v of vs) { const k = find(v.id); if (!by.has(k)) by.set(k, []); by.get(k).push(v); }
+    return [...by.values()].filter(g => g.length > 1);
+  }
+  const keepScore = v => {
+    const g = v.gemini || {};
+    return (g.relevance || 0) + (g.quality || 0) + (v.quiz && v.quiz.length ? 3 : 0) + Object.keys(v.tr || {}).length * 0.25
+      + (v.featured ? 2 : 0) + (v.essential ? 2 : 0) + Math.min((v.steps || []).length, 6) * 0.3 + (v.hidden ? -3 : 0) + (v.duration ? 0.5 : 0);
+  };
+  function openDedupe() {
+    const groups = dupGroups().map(g => g.slice().sort((a, b) => keepScore(b) - keepScore(a) || String(a.added).localeCompare(String(b.added))));
+    $("#drawer-title").textContent = "Remove duplicates";
+    $("#drawer-body").innerHTML = `
+      <p class="help">For each group, the best video is kept (rated highest by Gemini, with a quiz and all translations). Change the one to keep if you disagree, and untick <b>Delete the others</b> if the videos are actually different. Learning paths switch to the video you keep.</p>
+      ${groups.map((g, gi) => {
+        const sure = g.slice(1).every(o => { const d = ABDraft.findDuplicates(o, [g[0]])[0]; return d && (d.same || d.score >= 0.8); });
+        return `<div class="card-plain" data-dg="${gi}" style="margin-bottom:12px">
+          ${g.map((v, i) => `<label class="check" style="display:flex;gap:8px;align-items:flex-start;margin:6px 0"><input type="radio" name="keep${gi}" value="${esc(v.id)}" ${i === 0 ? "checked" : ""}> <span><b>${esc(v.title)}</b><br><small>${esc(v.category || "")} · ${v.gemini ? "Gemini " + esc(String(v.gemini.relevance)) + "/10 · " : ""}${v.quiz && v.quiz.length ? "quiz · " : ""}${Object.keys(v.tr || {}).length}/8 languages · ${esc(v.duration || "no length")} · added ${esc(v.added || "")}</small></span></label>`).join("")}
+          <label class="check" style="margin-top:8px"><input type="checkbox" class="dg-del" ${sure ? "checked" : ""}> Delete the others${sure ? "" : " (looks different, check before ticking)"}</label>
+        </div>`;
+      }).join("")}`;
+    const foot = () => { const n = [...document.querySelectorAll("#drawer-body [data-dg]")].reduce((a, el, gi) => a + (el.querySelector(".dg-del").checked ? groups[gi].length - 1 : 0), 0); const b = $("#dd-go"); b.textContent = n ? `Delete ${n} video${n > 1 ? "s" : ""}` : "Nothing to delete"; b.disabled = !n; };
+    $("#drawer-foot").innerHTML = `<button class="btn" data-close-drawer>Cancel</button><button class="btn btn-primary" id="dd-go">Delete</button>`;
+    $("#drawer-body").onchange = foot; foot();
+    $("#dd-go").onclick = async () => {
+      const kill = new Map();   // deleted id -> kept id
+      document.querySelectorAll("#drawer-body [data-dg]").forEach((el, gi) => {
+        if (!el.querySelector(".dg-del").checked) return;
+        const keep = el.querySelector("input[type=radio]:checked").value;
+        groups[gi].forEach(v => { if (v.id !== keep) kill.set(v.id, keep); });
+      });
+      if (!kill.size || !confirm(`Delete ${kill.size} duplicate video${kill.size > 1 ? "s" : ""}? The best of each group is kept.`)) return;
+      const b = $("#dd-go"); b.disabled = true; b.textContent = "Deleting…";
+      await update("videos", d => { d.videos = d.videos.filter(y => !kill.has(y.id)); d.updated = today(); return d; }, `Remove ${kill.size} duplicate videos`);
+      if ((data.paths.json.paths || []).some(p => (p.videos || []).some(x => kill.has(x))))
+        await update("paths", d => { (d.paths || []).forEach(p => p.videos = [...new Set((p.videos || []).map(x => kill.get(x) || x))]); return d; }, "Learning paths: use the kept video");
+      if ((data.toolbox.json.talks || []).some(k => kill.has(k.video)))
+        await update("toolbox", d => { (d.talks || []).forEach(k => { if (kill.has(k.video)) k.video = kill.get(k.video); }); return d; }, "Toolbox talks: use the kept video");
+      closeDrawer(); toast(`Deleted ${kill.size} duplicate${kill.size > 1 ? "s" : ""}`); render();
+    };
+    $("#drawer").hidden = false;
   }
   async function del(id) {
     const v = V().find(x => x.id === id); if (!v) return;

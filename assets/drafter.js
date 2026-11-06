@@ -192,9 +192,9 @@
 
   /* Gemini draft: the model watches the public YouTube video. */
   /* ---------- Gemini ---------- */
-  const MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3-flash", "gemini-2.5-flash", "gemini-2.5-flash-lite"];
+  const MODELS = ["gemini-3.5-flash-lite", "gemini-3.1-flash-lite", "gemini-3.8-flash", "gemini-3.6-flash", "gemini-3-flash"];
   /* Models Google has retired. A browser that saved one of these in Settings skips it. */
-  const RETIRED = /^gemini-(1\.|2\.0)/;
+  const RETIRED = /^gemini-(1\.|2\.)/;
   const GONE = /not found|not supported|is not available|no longer available|deprecated|retired|update your code/i;
   const API = "https://generativelanguage.googleapis.com/v1beta/models/";
 

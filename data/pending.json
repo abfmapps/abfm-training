@@ -402,31 +402,66 @@
       "yt": "Ae0Oi9t3K9w",
       "draft": {
         "ppe": [
-          "Gas Detector",
-          "Full-Body Harness",
-          "Respirator",
-          "Hard Hat"
+          "Safety Glasses",
+          "Safety Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "Which sewer system uses one pipe for wastewater and rainwater?",
+            "answer": 0,
+            "options": [
+              "Combined system",
+              "Separated system",
+              "Pressurized system"
+            ]
+          },
+          {
+            "q": "What is the primary function of a grinder pump?",
+            "answer": 1,
+            "options": [
+              "To increase water temperature",
+              "To shred solids into smaller pieces",
+              "To filter out fine sand"
+            ]
+          },
+          {
+            "q": "Which tool can be used for online pump sizing and selection?",
+            "answer": 0,
+            "options": [
+              "Grundfos Product Center",
+              "Local Municipal Database",
+              "Building Management System"
+            ]
+          }
         ],
         "level": "Intermediate",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Understand wastewater, drainage, and rainwater classifications.",
+          "Choose between combined and separated sewer systems.",
+          "Select appropriate impellers and installation methods for pumps.",
+          "Utilize the Grundfos Product Center for pump sizing and selection."
         ],
-        "title": "Wastewater, Drainage and Rainwater Solutions",
-        "safety": "Never enter without a permit, gas test, standby person and rescue plan.",
-        "source": "rules",
-        "subject": "",
-        "summary": "In this webinar recording, we'll cover the following topics: Wastewater Applications – Residential sewage and effluent transfer solutions Drainage Applications – Sump, dewatering, and flood prevention systems Rainwater Applications – Rainwater collection, r…",
-        "stepsFrom": "general"
+        "title": "Residential Wastewater and Drainage Pump Solutions",
+        "review": {
+          "reason": "Comprehensive overview of residential wastewater, drainage, and rainwater pump solutions and sizing.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure proper electrical isolation before installing or servicing any water pump equipment.",
+        "source": "ai",
+        "subject": "Water Tank Cleaning",
+        "summary": "This webinar covers smart wastewater, drainage, and rainwater pump solutions for residential buildings.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-05T10:59:07.454Z",
       "title": "Wastewater, Drainage and Rainwater Solutions",
-      "aiError": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa",
-      "aiTries": 2,
       "channel": "Grundfos",
       "duration": "",
       "published": "2026-10-29T11:49:28+00:00",
@@ -437,6 +472,65 @@
     },
     {
       "yt": "nVI3CknqgFU",
+      "draft": {
+        "ppe": [
+          "Safety Glasses"
+        ],
+        "quiz": [
+          {
+            "q": "What protocol is used for OPC UA data exchange?",
+            "answer": 0,
+            "options": [
+              "TCP/IP",
+              "HTTP only",
+              "USB"
+            ]
+          },
+          {
+            "q": "What tool is used for the HMI interface in this course?",
+            "answer": 0,
+            "options": [
+              "Ignition Perspective",
+              "Excel spreadsheet",
+              "Browser simulator"
+            ]
+          },
+          {
+            "q": "What must be marked for external OPC UA access in PLC programming?",
+            "answer": 0,
+            "options": [
+              "Global variables",
+              "Local comments",
+              "Network cables"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Understand OPC UA architecture and endpoint URLs",
+          "Set up simulation and client tools",
+          "Configure gateway connections",
+          "Mark PLC global variables for OPC UA access",
+          "Create perspective HMI and bind tags"
+        ],
+        "title": "Connecting PLCs Using OPC UA",
+        "review": {
+          "reason": "Clear and detailed demonstration of connecting PLCs using OPC UA for BMS and controls technicians.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure proper network security and authorized access when configuring server endpoint URLs.",
+        "source": "ai",
+        "subject": "Electrical Diagnostics",
+        "summary": "This video introduces Ignition SCADA and demonstrates how to connect PLCs using OPC UA servers and client software.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:58:27.158Z",
       "title": "Ignition SCADA 2: Connecting PLCs Using OPC UA",
       "channel": "RealPars",
@@ -449,6 +543,65 @@
     },
     {
       "yt": "jkFpGyrN6us",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "When is a lifting station required?",
+            "answer": 0,
+            "options": [
+              "When installing plumbing below or far from the main sewer line",
+              "Only when replacing a toilet bowl",
+              "Whenever water pressure is too high"
+            ]
+          },
+          {
+            "q": "What is the purpose of a macerator?",
+            "answer": 1,
+            "options": [
+              "To heat wastewater",
+              "To shred solid waste and toilet paper into slurry",
+              "To filter clean drinking water"
+            ]
+          },
+          {
+            "q": "What tools are needed for basic unit access?",
+            "answer": 1,
+            "options": [
+              "Specialized hydraulic presses",
+              "Basic tools like screwdrivers",
+              "Welding equipment"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Identify when a lifting station is needed for below-sewer installations.",
+          "Select the correct Sololift2 model based on greywater or blackwater needs.",
+          "Use basic tools like screwdrivers for maintenance access.",
+          "Replace the pump motor assembly or level switch components as needed."
+        ],
+        "title": "Understanding Sololift2 Lifting Stations",
+        "review": {
+          "reason": "Clear and informative animation explaining lifting stations and the Sololift2 range.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure power is disconnected before performing any maintenance or servicing on the lifting station.",
+        "source": "ai",
+        "subject": "Water Tank Cleaning",
+        "summary": "This video introduces the Grundfos Sololift2 range of lifting stations and macerators, explaining their purpose, models, and maintenance.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:08.669Z",
       "title": "Présentation des broyeurs et stations de relevage SOLOLIFT2",
       "channel": "Grundfos",
@@ -461,6 +614,67 @@
     },
     {
       "yt": "o7ONtLL8SyM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Safety Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step when replacing a pump?",
+            "answer": 0,
+            "options": [
+              "Scan the old pump with the app",
+              "Remove the pump immediately",
+              "Open the water valves"
+            ]
+          },
+          {
+            "q": "What should you do before removing the pump?",
+            "answer": 1,
+            "options": [
+              "Turn the power on",
+              "Isolate the power supply",
+              "Clean the floor"
+            ]
+          },
+          {
+            "q": "How do you find the right replacement pump?",
+            "answer": 1,
+            "options": [
+              "Guess the model",
+              "Use the Grundfos Go app",
+              "Ask a colleague"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Scan the existing pump nameplate using the Grundfos Go app.",
+          "Identify the correct replacement pump model from the app results.",
+          "Isolate the power and close the valves to the pump.",
+          "Remove the old pump head and install the new unit.",
+          "Configure the new pump settings using the mobile application."
+        ],
+        "title": "Replacing Circulator Pumps With Grundfos Alpha Go",
+        "review": {
+          "reason": "The video provides a clear, professional guide on using modern tools to simplify pump replacement.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Always ensure the power supply to the pump is isolated and locked out before starting any replacement work.",
+        "source": "ai",
+        "subject": "Water Tanks & Pumps",
+        "summary": "This video demonstrates how to use the Grundfos Go app to identify and replace existing circulator pumps with the Alpha Go range.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:09.872Z",
       "title": "ALPHA GO | Faster replacements with just two pumps",
       "channel": "Grundfos",
@@ -473,6 +687,68 @@
     },
     {
       "yt": "srzjuo9SuIc",
+      "draft": {
+        "ppe": [
+          "Safety Shoes",
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the primary purpose of the Alpha Go app?",
+            "answer": 1,
+            "options": [
+              "To clean the pump casing",
+              "To guide the pump commissioning process",
+              "To replace the pump motor"
+            ]
+          },
+          {
+            "q": "What must be done before starting the pump identification process?",
+            "answer": 0,
+            "options": [
+              "Remove the underfloor heating actuators",
+              "Drain the entire water system",
+              "Replace the pump power cable"
+            ]
+          },
+          {
+            "q": "How does the app connect to the pump?",
+            "answer": 2,
+            "options": [
+              "Via a wired USB connection",
+              "Via a Wi-Fi router",
+              "Via a Bluetooth connection"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Connect the pump to the Alpha Go app via Bluetooth.",
+          "Enter the building's area size and construction year.",
+          "Select the desired temperature difference for the system.",
+          "Remove actuators from the underfloor heating manifold.",
+          "Follow the app's guided steps to identify system head loss.",
+          "Refit actuators and confirm the final pump settings."
+        ],
+        "title": "Commissioning Grundfos Circulator Pumps Using Alpha Go",
+        "review": {
+          "reason": "The video provides a clear, professional, and practical demonstration of modern pump commissioning tools.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure the power supply is isolated and locked out before performing any electrical work on the pump.",
+        "source": "ai",
+        "subject": "Water Tanks & Pumps",
+        "summary": "This video demonstrates how to use the Grundfos Alpha Go mobile app to accurately commission and set up circulator pumps. It highlights the guided setup process to optimize pump performance and energy efficiency.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:11.226Z",
       "title": "ALPHA GO | Smarter commissioning with Guided Setup",
       "channel": "Grundfos",
@@ -485,6 +761,68 @@
     },
     {
       "yt": "J0v72PKh2Mk",
+      "draft": {
+        "ppe": [
+          "Safety Shoes",
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step to commission the pump?",
+            "answer": 0,
+            "options": [
+              "Connect the pump to the app via Bluetooth",
+              "Remove all the pipes from the pump",
+              "Restart the building's main power supply"
+            ]
+          },
+          {
+            "q": "Which data is required for the pump setup?",
+            "answer": 1,
+            "options": [
+              "The color of the pump",
+              "The building's energy demand",
+              "The name of the pump manufacturer"
+            ]
+          },
+          {
+            "q": "What should you do if the app asks to remove actuators?",
+            "answer": 2,
+            "options": [
+              "Ignore the instruction",
+              "Replace them with new ones",
+              "Remove them to balance the system"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Connect the pump to the Grundfos GO app via Bluetooth.",
+          "Enter the system area size and building energy demand.",
+          "Select the desired supply and return temperature difference.",
+          "Remove underfloor heating actuators if required by the app.",
+          "Follow the app prompts to identify and set the pump head.",
+          "Refit actuators and confirm the commissioning process is complete."
+        ],
+        "title": "Commissioning Grundfos Circulator Pumps Using Guided Setup",
+        "review": {
+          "reason": "The video provides a clear, professional, and practical guide for technicians on using modern digital tools for pump commissioning.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure the pump power supply is isolated and locked out before performing any electrical connections or maintenance.",
+        "source": "ai",
+        "subject": "Water Tanks & Pumps",
+        "summary": "This video demonstrates how to use the Grundfos GO app to accurately commission circulator pumps by entering system parameters. It shows how the app guides the technician through the setup process to optimize pump performance.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:12.396Z",
       "title": "ALPHA GO | Smarter commissioning with Guided Setup",
       "channel": "Grundfos",
@@ -497,6 +835,67 @@
     },
     {
       "yt": "Jfuoi_zryXA",
+      "draft": {
+        "ppe": [
+          "Safety Gloves",
+          "Safety Shoes",
+          "Safety Glasses"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step when replacing a circulator pump?",
+            "answer": 1,
+            "options": [
+              "Remove the pump immediately",
+              "Scan the pump label with the app",
+              "Drain the entire building water system"
+            ]
+          },
+          {
+            "q": "What must you do before removing the pump?",
+            "answer": 0,
+            "options": [
+              "Isolate the power supply",
+              "Clean the pump exterior",
+              "Check the water temperature"
+            ]
+          },
+          {
+            "q": "How many pump models cover most replacements in this system?",
+            "answer": 2,
+            "options": [
+              "Five",
+              "Ten",
+              "Two"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Scan the existing pump label using the Grundfos Go app.",
+          "Identify the correct replacement pump model from the app results.",
+          "Isolate the power and close the valves to the pump.",
+          "Remove the old pump head and install the new unit.",
+          "Configure the new pump settings using the mobile application."
+        ],
+        "title": "Replacing Circulator Pumps Using Grundfos Go",
+        "review": {
+          "reason": "The video provides a clear, practical demonstration of using digital tools for efficient pump maintenance.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always isolate the power supply to the pump before starting any replacement work.",
+        "source": "ai",
+        "subject": "Water Tanks & Pumps",
+        "summary": "This video demonstrates how to use the Grundfos Go app to identify and replace circulator pumps efficiently. It highlights how two pump models can cover most replacement needs.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:13.432Z",
       "title": "ALPHA GO | Faster replacements with just two pumps",
       "channel": "Grundfos",
@@ -509,6 +908,66 @@
     },
     {
       "yt": "GnHR43h_oNo",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Cut-Resistant Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step before starting this repair?",
+            "answer": 1,
+            "options": [
+              "Remove the ice bin",
+              "Disconnect the power supply",
+              "Empty the refrigerator"
+            ]
+          },
+          {
+            "q": "How do you access the ice door motor?",
+            "answer": 0,
+            "options": [
+              "Remove the user interface panel",
+              "Unscrew the back panel",
+              "Open the freezer door"
+            ]
+          },
+          {
+            "q": "What should you do after installing the new motor?",
+            "answer": 1,
+            "options": [
+              "Test the ice maker",
+              "Verify operation via service test 18",
+              "Clean the dispenser area"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Unplug the refrigerator power cord.",
+          "Remove the dispenser user interface panel.",
+          "Disconnect the water tube and motor wiring harness.",
+          "Unscrew the ice door assembly from the door.",
+          "Install the new motor and reconnect all components."
+        ],
+        "title": "Replacing a KitchenAid Refrigerator Ice Door Motor",
+        "review": {
+          "reason": "Clear, professional, and accurate technical instruction for a common appliance repair.",
+          "unsafe": [],
+          "quality": 10,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 10
+        },
+        "safety": "Always disconnect the refrigerator from the power supply before starting any repair work.",
+        "source": "ai",
+        "subject": "Refrigerator Cooling",
+        "summary": "This video demonstrates how to test and replace a faulty ice door motor in a KitchenAid refrigerator. It covers the diagnostic process using the service menu and the physical replacement steps.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:36.775Z",
       "title": "How to Test & Replace a KitchenAid Fridge Ice Door Motor",
       "channel": "AppliancePartsPros",
@@ -521,6 +980,67 @@
     },
     {
       "yt": "Rsd1kiC-hNU",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Anti-Static Wrist Strap"
+        ],
+        "quiz": [
+          {
+            "q": "What type of contact is used for switch one?",
+            "answer": 1,
+            "options": [
+              "Normally open",
+              "Normally closed",
+              "Emergency stop"
+            ]
+          },
+          {
+            "q": "How are switches two and three connected?",
+            "answer": 0,
+            "options": [
+              "In parallel",
+              "In series",
+              "Directly to ground"
+            ]
+          },
+          {
+            "q": "What software is used for this PLC exercise?",
+            "answer": 2,
+            "options": [
+              "AutoCAD",
+              "Microsoft Excel",
+              "CODESYS"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Create a new standard project in CODESYS.",
+          "Select the appropriate device and programming language.",
+          "Insert normally closed contact for switch one.",
+          "Connect switches two and three in parallel.",
+          "Add switches four and five in series.",
+          "Connect switches six, seven, and eight in parallel."
+        ],
+        "title": "Programming PLC Logic for Emergency Lamp",
+        "review": {
+          "reason": "The video provides a clear, step-by-step guide to basic PLC ladder logic programming.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure all PLC programming and testing is done in a simulated environment before applying to live equipment.",
+        "source": "ai",
+        "subject": "Electrical Diagnostics",
+        "summary": "This video demonstrates how to create a ladder logic program for an emergency lamp in the CODESYS software. It shows how to use normally open and normally closed contacts to control the output.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:58:44.614Z",
       "title": "PLC Exercise Logic: Emergency Lamp Application | INST TOOLS",
       "channel": "Instrumentation Tools",
@@ -533,6 +1053,66 @@
     },
     {
       "yt": "AcFV8BwGgRc",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Anti-Static Wrist Strap"
+        ],
+        "quiz": [
+          {
+            "q": "What is the purpose of the deadband in this control loop?",
+            "answer": 1,
+            "options": [
+              "To increase energy consumption",
+              "To prevent rapid cycling between heating and cooling",
+              "To set the maximum temperature limit"
+            ]
+          },
+          {
+            "q": "Which software is used to program the control logic?",
+            "answer": 0,
+            "options": [
+              "Sedona Application Editor",
+              "Microsoft Excel",
+              "Web Browser only"
+            ]
+          },
+          {
+            "q": "What is the default username for the Sedona login?",
+            "answer": 2,
+            "options": [
+              "user",
+              "guest",
+              "admin"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Open the BASemulator and select the controller platform.",
+          "Configure virtual points for setpoint and deadband values.",
+          "Define binary outputs for heating and cooling devices.",
+          "Drag and drop components into the Sedona Application Editor.",
+          "Link component outputs to inputs to create the control logic."
+        ],
+        "title": "Implementing Dual-Action Temperature Control in BAS",
+        "review": {
+          "reason": "The video provides a clear, step-by-step technical guide for BMS programming.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure all network configurations are performed in a controlled, offline environment to prevent accidental equipment operation.",
+        "source": "ai",
+        "subject": "BMS & Controls",
+        "summary": "This video demonstrates how to configure a temperature control sequence for a BAScontroller using the BASemulator and Sedona Application Editor.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:58:35.356Z",
       "title": "Implement a Simple Sequence of Operation Using the BASemulator for Dual-action Temperature Control",
       "channel": "Contemporary Controls",
@@ -545,6 +1125,67 @@
     },
     {
       "yt": "CPhvXpvXucM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Insulated Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What communication protocols do BASstat thermostats support?",
+            "answer": 1,
+            "options": [
+              "Only Wi-Fi",
+              "BACnet IP and MS/TP",
+              "Only Bluetooth"
+            ]
+          },
+          {
+            "q": "Which model is designed for modulating control applications?",
+            "answer": 0,
+            "options": [
+              "BAST-421",
+              "BAST-121",
+              "BAST-221"
+            ]
+          },
+          {
+            "q": "What is the required input voltage for these thermostats?",
+            "answer": 2,
+            "options": [
+              "230VAC",
+              "12VDC",
+              "24VAC"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Identify the communication type needed for your BACnet network.",
+          "Select the appropriate model based on your heating or cooling application.",
+          "Configure the thermostat settings using the engineering menu.",
+          "Integrate the device into your existing BACnet system.",
+          "Monitor energy consumption using the built-in tracking features."
+        ],
+        "title": "Understanding BASstat Communicating Thermostats",
+        "review": {
+          "reason": "The video provides a clear and professional overview of the product features and applications for BMS technicians.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "Spanish",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure the power is disconnected before performing any installation or maintenance on the thermostat.",
+        "source": "ai",
+        "subject": "BMS & Controls",
+        "summary": "This video introduces the BASstat series of communicating thermostats, highlighting their compatibility with BACnet networks and their energy-saving features.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:58:36.556Z",
       "title": "Termostatos Comunicantes BASstat",
       "channel": "Contemporary Controls",
@@ -557,6 +1198,67 @@
     },
     {
       "yt": "51I0ElkMjj8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Insulated Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What is the primary function of the EIMK-T1L?",
+            "answer": 0,
+            "options": [
+              "To convert Ethernet to single-pair T1L cabling",
+              "To increase the voltage of the power supply",
+              "To replace the entire building network"
+            ]
+          },
+          {
+            "q": "What is the maximum distance supported by the EIMK-T1L?",
+            "answer": 1,
+            "options": [
+              "100 meters",
+              "1 kilometer",
+              "5 kilometers"
+            ]
+          },
+          {
+            "q": "How is the EIMK-T1L mounted?",
+            "answer": 2,
+            "options": [
+              "Using adhesive tape",
+              "Directly to the wall",
+              "On a DIN rail"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Mount the EIMK-T1L unit onto a standard DIN rail.",
+          "Connect the 24V AC/DC power supply to the device.",
+          "Attach the single-pair cable to the T1L connector.",
+          "Connect the Ethernet cable to the RJ45 port.",
+          "Configure advanced features using the external DIP switches."
+        ],
+        "title": "Using EIMK-T1L Media Converters for BMS Networks",
+        "review": {
+          "reason": "The video provides a clear and concise technical overview of a specific device used in building automation.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the power supply is disconnected before installing or wiring the media converter to prevent electrical shock.",
+        "source": "ai",
+        "subject": "Electrical Diagnostics",
+        "summary": "This video introduces the EIMK-T1L media converter, which allows connecting modern Ethernet devices to older serial-based building management networks using existing wiring.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:58:37.765Z",
       "title": "Introduction to the EIMK T1L SPE Media Converter",
       "channel": "Contemporary Controls",
@@ -569,6 +1271,70 @@
     },
     {
       "yt": "crVEDQ5IcNA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Insulated Gloves",
+          "Insulated Tools"
+        ],
+        "quiz": [
+          {
+            "q": "What is the most important step before testing a capacitor?",
+            "answer": 1,
+            "options": [
+              "Clean the terminals",
+              "Discharge the capacitor",
+              "Measure the voltage"
+            ]
+          },
+          {
+            "q": "Why should you use a discharge resistor?",
+            "answer": 0,
+            "options": [
+              "To prevent electrical shock",
+              "To increase the capacitance",
+              "To clean the terminals"
+            ]
+          },
+          {
+            "q": "What happens if you test a charged capacitor?",
+            "answer": 2,
+            "options": [
+              "The meter will be accurate",
+              "The capacitor will charge faster",
+              "It can cause a dangerous arc"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Identify the capacitor terminals and polarity.",
+          "Set the multimeter to the capacitance measurement mode.",
+          "Discharge the capacitor using an insulated resistor.",
+          "Connect the multimeter leads to the capacitor terminals.",
+          "Observe the capacitance reading on the meter."
+        ],
+        "title": "Testing Large DC Bus Capacitors",
+        "review": {
+          "reason": "The video provides essential safety information for handling high-voltage components in chillers.",
+          "unsafe": [
+            "Touching terminals without confirming discharge",
+            "Lack of proper PPE"
+          ],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Always discharge the capacitor completely before testing to avoid dangerous electrical shock.",
+        "source": "ai",
+        "subject": "Electrical Diagnostics",
+        "summary": "This video demonstrates how to safely test a large DC bus capacitor using a multimeter and explains the importance of discharging it before testing.",
+        "category": "HVAC & Chillers",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:31:35.826Z",
       "title": "How to Test a DC Bus Capacitor Without a False Reading",
       "channel": "HVACTIME (chillers)",
@@ -581,6 +1347,67 @@
     },
     {
       "yt": "Pyua5vzXWzM",
+      "draft": {
+        "ppe": [
+          "Safety Shoes",
+          "Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is a key feature of the i-mop Pro?",
+            "answer": 0,
+            "options": [
+              "360-degree maneuverability",
+              "Automatic floor waxing",
+              "Built-in vacuum cleaner"
+            ]
+          },
+          {
+            "q": "How do you maintain the machine's cleaning performance?",
+            "answer": 1,
+            "options": [
+              "Change the water every week",
+              "Use different brush and pad options",
+              "Always use hot water only"
+            ]
+          },
+          {
+            "q": "What should you do after finishing the cleaning task?",
+            "answer": 1,
+            "options": [
+              "Leave the tanks full",
+              "Empty the dirty water tank",
+              "Spray water on the handle"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Check the battery charge level on the handle display.",
+          "Attach the appropriate brush or pad for the floor type.",
+          "Fill the clean water tank and secure it to the machine.",
+          "Engage the power button to begin the scrubbing process.",
+          "Maneuver the machine around obstacles using the flexible head.",
+          "Remove and empty the dirty water tank after use."
+        ],
+        "title": "Operating the i-mop Pro Scrubber",
+        "review": {
+          "reason": "The video provides a clear and professional overview of the equipment's features and operation.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the battery is properly secured and the floor is clear of large debris before starting the machine.",
+        "source": "ai",
+        "subject": "Floor Scrubbing Equipment",
+        "summary": "This video introduces the i-mop Pro Lite and Pro XL walk-behind floor scrubbers, highlighting their maneuverability and modular design.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:19.839Z",
       "title": "i-mop® Pro Lite & XL Walk-Behind Scrubber | Product Overview | Tennant Company",
       "channel": "Tennant Company",
@@ -593,6 +1420,69 @@
     },
     {
       "yt": "PgxBPLC2vsE",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Insulated Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What does a high motor current alarm on a chiller often indicate?",
+            "answer": 1,
+            "options": [
+              "Low refrigerant charge",
+              "Faulty cooling fan or IGBT",
+              "Dirty air filters"
+            ]
+          },
+          {
+            "q": "What setting should the multimeter be on to test an IGBT?",
+            "answer": 2,
+            "options": [
+              "Voltage mode",
+              "Resistance mode",
+              "Diode test mode"
+            ]
+          },
+          {
+            "q": "Why is it important to test IGBTs after a fan failure?",
+            "answer": 1,
+            "options": [
+              "To check for refrigerant leaks",
+              "To ensure the IGBT was not damaged by high current",
+              "To clean the electrical contacts"
+            ]
+          }
+        ],
+        "level": "Advanced",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Isolate the chiller and lock out the power supply.",
+          "Identify the faulty cooling fan and replace it.",
+          "Set the multimeter to diode test mode.",
+          "Test the IGBTs by measuring the voltage drop across the terminals.",
+          "Compare the readings to identify a faulty IGBT."
+        ],
+        "title": "Troubleshooting Chiller High Motor Current Alarms",
+        "review": {
+          "reason": "Provides valuable diagnostic techniques for advanced chiller troubleshooting.",
+          "unsafe": [
+            "Testing electrical components without clear evidence of LOTO"
+          ],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always ensure the chiller is properly isolated and locked out before performing any electrical testing or component replacement.",
+        "source": "ai",
+        "subject": "Chilled Water Systems",
+        "summary": "This video explains the causes of high motor current alarms in chillers and demonstrates how to test IGBTs using a multimeter.",
+        "category": "HVAC & Chillers",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:31:37.030Z",
       "title": "Chiller Questions Answered LIVE E.52",
       "channel": "HVACTIME (chillers)",
@@ -605,6 +1495,67 @@
     },
     {
       "yt": "YqaTQxEpfOQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What should be done before opening the dispenser control panel?",
+            "answer": 1,
+            "options": [
+              "Shut off the water line",
+              "Disconnect electrical power",
+              "Empty the ice container"
+            ]
+          },
+          {
+            "q": "Which service test number is used to verify dispenser paddle operation?",
+            "answer": 1,
+            "options": [
+              "Service Test 3",
+              "Service Test 9",
+              "Service Test 15"
+            ]
+          },
+          {
+            "q": "What meter setting is used to test the removed switch?",
+            "answer": 2,
+            "options": [
+              "AC Voltage",
+              "DC Current",
+              "Continuity"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.6-flash",
+        "steps": [
+          "Disconnect power to the refrigerator before starting any disassembly.",
+          "Enter service diagnostics mode and advance to test 9.",
+          "Release the retaining tabs under the dispenser panel using a screwdriver.",
+          "Unplug the wiring harnesses and remove the ice door motor assembly.",
+          "Test the paddle switch for continuity using a multimeter.",
+          "Install the new switch, reassemble the dispenser, and restore power."
+        ],
+        "title": "Testing and Replacing a Fridge Dispenser Paddle Switch",
+        "review": {
+          "reason": "Clear, well-explained step-by-step repair guide with safety precautions and proper diagnostic testing.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Disconnect power to the refrigerator before disassembling the dispenser panel to prevent electrical shock.",
+        "source": "ai",
+        "subject": "Refrigerator Cooling",
+        "summary": "Learn how to diagnose and replace a faulty dispenser paddle switch on a KitchenAid refrigerator. The video covers service diagnostic testing, continuity testing with a multimeter, and replacing the switch assembly.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:37.950Z",
       "title": "How to Test & Replace KitchenAid Fridge Dispenser Paddle Switch",
       "channel": "AppliancePartsPros",
@@ -617,6 +1568,66 @@
     },
     {
       "yt": "ORwvRHaFbCI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "How often should you test your smoke detectors?",
+            "answer": 1,
+            "options": [
+              "Every 10 years",
+              "Regularly",
+              "Only when they beep"
+            ]
+          },
+          {
+            "q": "What should you check on a fire extinguisher?",
+            "answer": 0,
+            "options": [
+              "The pressure gauge",
+              "The color of the label",
+              "The weight of the handle"
+            ]
+          },
+          {
+            "q": "When should a smoke detector be replaced?",
+            "answer": 1,
+            "options": [
+              "After 5 years",
+              "After 10 years",
+              "Never"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Test smoke detectors to ensure they are working properly.",
+          "Replace smoke detector batteries annually.",
+          "Check the gauge on fire extinguishers for proper pressure.",
+          "Schedule professional chimney cleaning before use.",
+          "Inspect carbon monoxide detectors for expiration dates."
+        ],
+        "title": "Fire Safety and Maintenance Best Practices",
+        "review": {
+          "reason": "The video provides essential, basic fire safety information relevant to all facility maintenance staff.",
+          "unsafe": [],
+          "quality": 6,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 7
+        },
+        "safety": "Ensure all smoke and carbon monoxide detectors are tested regularly and replaced if they are over 10 years old.",
+        "source": "ai",
+        "subject": "Fire Extinguisher PASS Technique",
+        "summary": "This video provides a safety overview for fire prevention, including checking smoke detectors, carbon monoxide alarms, and fire extinguishers. It also covers basic safety tips for driving in foggy conditions and Halloween safety.",
+        "category": "Fire & Life Safety",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:49.045Z",
       "title": "Johnson Controls Blue Water Webinar - Season 2, Episode 2",
       "channel": "Johnson Controls",
@@ -629,6 +1640,65 @@
     },
     {
       "yt": "I1bh-fC9EgY",
+      "draft": {
+        "ppe": [
+          "None"
+        ],
+        "quiz": [
+          {
+            "q": "Where can you change environmental thresholds for a specific building?",
+            "answer": 0,
+            "options": [
+              "In the Environmental Thresholds settings tab",
+              "In the User Profile settings",
+              "In the Notifications menu"
+            ]
+          },
+          {
+            "q": "What happens when you update environmental thresholds?",
+            "answer": 1,
+            "options": [
+              "The system shuts down",
+              "Dashboards and floor plans update automatically",
+              "The building power turns off"
+            ]
+          },
+          {
+            "q": "How can you see who changed a threshold setting?",
+            "answer": 0,
+            "options": [
+              "By checking the history view",
+              "By calling the manufacturer",
+              "By restarting the computer"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Navigate to the Environmental Thresholds settings tab.",
+          "Select the specific building from the configuration dropdown.",
+          "Adjust the threshold ranges for each environmental metric.",
+          "Save the new settings to update the dashboards.",
+          "View the audit trail in the history window to track changes."
+        ],
+        "title": "Configuring Environmental Thresholds in OpenBlue Insights",
+        "review": {
+          "reason": "This is a software-specific tutorial for building management systems, which is useful for BMS technicians but not for general fire safety staff.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "maybe",
+          "relevance": 6
+        },
+        "safety": "Ensure you have the correct administrative permissions before modifying any system thresholds.",
+        "source": "ai",
+        "subject": "Addressable Fire Alarms",
+        "summary": "This video explains how to set and manage building-specific environmental thresholds for air quality, noise, and humidity. It shows how these settings update dashboards and floor plans for better monitoring.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:50.242Z",
       "title": "Custom Environmental Thresholds in OpenBlue Insights",
       "channel": "Johnson Controls",
@@ -641,6 +1711,66 @@
     },
     {
       "yt": "_82Kxcj6ijI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What is the primary role of an HMI?",
+            "answer": 1,
+            "options": [
+              "To execute control logic",
+              "To monitor and control machines",
+              "To provide 3-phase power"
+            ]
+          },
+          {
+            "q": "What should you do if the HMI says the motor is running?",
+            "answer": 0,
+            "options": [
+              "Check the machine physically",
+              "Assume it is safe to touch",
+              "Restart the HMI immediately"
+            ]
+          },
+          {
+            "q": "Which device makes the actual control decisions?",
+            "answer": 2,
+            "options": [
+              "The HMI screen",
+              "The operator",
+              "The PLC"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Identify the HMI as the operator interface for monitoring and control.",
+          "Understand that the PLC executes control logic for the machine.",
+          "Recognize that the HMI displays information and sends operator commands.",
+          "Verify machine status by checking physical components, not just the screen.",
+          "Select the appropriate HMI form factor for the specific application."
+        ],
+        "title": "Understanding Human Machine Interface Basics",
+        "review": {
+          "reason": "This video provides a clear, foundational understanding of HMI and PLC interaction, which is essential for our controls technicians.",
+          "unsafe": [],
+          "quality": 10,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always verify the actual state of the machine before performing maintenance, as the HMI screen may not always reflect the true status of the equipment.",
+        "source": "ai",
+        "subject": "Electrical Diagnostics",
+        "summary": "This video explains the function of a Human Machine Interface (HMI) and how it communicates with a Programmable Logic Controller (PLC) to control industrial machinery. It also outlines the different types of HMI hardware available for various applications.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:58:28.314Z",
       "title": "What Is an HMI?",
       "channel": "RealPars",
@@ -653,8 +1783,32 @@
     },
     {
       "yt": "3yK7LhbxwyA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Ask LAT Live",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "📱 FREE LAT Technician App: 🔴 **WELCOME TO ASK LAT LIVE! ** 🔧🎙️ Join us for the premiere of **Ask LAT Live**, presented by Learn A Trade – Commercial Equipment Repair!",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:31:57.700Z",
       "title": "Ask LAT Live",
+      "aiError": "Gemini's answer was incomplete",
+      "aiTries": 1,
       "channel": "Learn A Trade (commercial equipment)",
       "duration": "",
       "published": "2026-10-26T12:08:45+00:00",
@@ -665,8 +1819,34 @@
     },
     {
       "yt": "u69T02JwnGg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "KitchenAid dispenser not responding? Intro",
+          "Tools you’ll need & safety first",
+          "What the dispenser user interface does",
+          "Entering diagnostics & Service Test 9",
+          "Checking inputs & dispenser light behavior",
+          "Removing the dispenser UI & harness access",
+          "Testing dispenser UI voltage with a multimeter",
+          "Confirming a bad UI & unplugging the fridge"
+        ],
+        "title": "How to Test & Replace KitchenAid Fridge Dispenser UI",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "KitchenAid fridge dispenser dead or unresponsive? Learn how to test its dispenser user interface with a multimeter and replace it yourself in just a few minutes.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:59:39.127Z",
       "title": "How to Test & Replace KitchenAid Fridge Dispenser UI",
+      "aiError": "This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to u",
+      "aiTries": 1,
       "channel": "AppliancePartsPros",
       "duration": "",
       "published": "2026-10-24T21:30:04+00:00",
@@ -677,6 +1857,66 @@
     },
     {
       "yt": "gm5yt-kttXc",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Cut-Resistant Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step before inspecting a dryer?",
+            "answer": 1,
+            "options": [
+              "Remove the lint screen",
+              "Disconnect the power supply",
+              "Open the dryer door"
+            ]
+          },
+          {
+            "q": "Which type of dryer vent hose is recommended?",
+            "answer": 2,
+            "options": [
+              "Flexible plastic hose",
+              "White vinyl accordion hose",
+              "Rigid metal ducting"
+            ]
+          },
+          {
+            "q": "What should you do if an appliance smells like it is burning?",
+            "answer": 0,
+            "options": [
+              "Turn it off and unplug it",
+              "Continue the cycle to finish",
+              "Open the door to let air in"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Unplug the appliance before starting any inspection.",
+          "Test electrical components for continuity using a multimeter.",
+          "Replace damaged cords or thermal fuses with OEM parts.",
+          "Clear lint buildup from the dryer vent and internal components.",
+          "Replace flexible plastic vent hoses with rigid metal ducting."
+        ],
+        "title": "Identifying Common Appliance Fire Hazards",
+        "review": {
+          "reason": "The video provides clear, actionable safety advice for common appliance issues.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always disconnect the power supply before inspecting or repairing any appliance.",
+        "source": "ai",
+        "subject": "Appliance Fire Safety",
+        "summary": "This video identifies five common fire risks in dryers and microwaves and explains how to inspect and address them.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-05T10:59:40.338Z",
       "title": "5 Hidden Appliance Fire Risks You Should Check Today",
       "channel": "AppliancePartsPros",
@@ -689,6 +1929,68 @@
     },
     {
       "yt": "6DUAPo0u4I4",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Cut-Resistant Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step before servicing the refrigerator?",
+            "answer": 1,
+            "options": [
+              "Empty the ice bin",
+              "Disconnect the power supply",
+              "Remove the water filter"
+            ]
+          },
+          {
+            "q": "Which tool is used to test for electrical voltage?",
+            "answer": 0,
+            "options": [
+              "Multimeter",
+              "Nut driver",
+              "Flat-head screwdriver"
+            ]
+          },
+          {
+            "q": "What should you check if the auger motor does not rotate?",
+            "answer": 2,
+            "options": [
+              "The water pressure",
+              "The ice bin alignment",
+              "The motor winding continuity"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Disconnect the power supply before starting repairs.",
+          "Access the user interface to test for power.",
+          "Verify the water valve operation using a multimeter.",
+          "Inspect the auger motor for proper rotation.",
+          "Check the ice door mechanism for obstructions."
+        ],
+        "title": "Troubleshooting KitchenAid Refrigerator Dispenser Issues",
+        "review": {
+          "reason": "The video provides a clear, step-by-step technical guide for troubleshooting common appliance issues.",
+          "unsafe": [
+            "Testing live voltage without adequate insulation"
+          ],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always disconnect the power supply before servicing the refrigerator to prevent electric shock.",
+        "source": "ai",
+        "subject": "Refrigerator Cooling",
+        "summary": "This video demonstrates how to diagnose and repair a non-functioning water and ice dispenser on a KitchenAid refrigerator. It covers testing the user interface, water valve, auger motor, and ice door mechanism.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-06T02:26:02.505Z",
       "title": "KitchenAid Fridge Dispenser Not Working? Test These 5 Parts First",
       "channel": "AppliancePartsPros",
@@ -701,6 +2003,67 @@
     },
     {
       "yt": "PdlcgPrs0rg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What must you do before starting this repair?",
+            "answer": 1,
+            "options": [
+              "Empty the freezer",
+              "Disconnect power and water",
+              "Clean the refrigerator"
+            ]
+          },
+          {
+            "q": "How do you disconnect the water tubes?",
+            "answer": 0,
+            "options": [
+              "Press the locking collar",
+              "Cut the tubes",
+              "Unscrew the fittings"
+            ]
+          },
+          {
+            "q": "Why should you purge the system after repair?",
+            "answer": 1,
+            "options": [
+              "To cool the fridge",
+              "To remove air",
+              "To test the light"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Disconnect power and turn off the water supply.",
+          "Remove the water filter and the reservoir cover.",
+          "Disconnect the water tubes and electrical connectors.",
+          "Unscrew the filter head and remove it from the housing.",
+          "Install the new filter head and reconnect all components.",
+          "Restore power and water, then purge the system."
+        ],
+        "title": "Replacing a KitchenAid Refrigerator Water Filter Head",
+        "review": {
+          "reason": "The video provides a clear, professional, and easy-to-follow procedure for a common appliance repair task.",
+          "unsafe": [],
+          "quality": 10,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always disconnect the refrigerator from the power supply and turn off the household water supply before starting any repairs.",
+        "source": "ai",
+        "subject": "Refrigerator Cooling",
+        "summary": "This video demonstrates how to test and replace a faulty water filter head in a KitchenAid refrigerator. It covers the necessary tools, safety precautions, and the step-by-step removal and installation process.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
+      },
       "found": "2026-11-06T02:26:03.462Z",
       "title": "How to Test and Replace a KitchenAid Fridge Water Filter Head",
       "channel": "AppliancePartsPros",
@@ -713,6 +2076,28 @@
     },
     {
       "yt": "h1eeg45sDHc",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Water Reservoir",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:04.564Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Water Reservoir",
       "channel": "AppliancePartsPros",
@@ -725,6 +2110,28 @@
     },
     {
       "yt": "OoFGafYy7uk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Ice Optics",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:05.333Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Ice Optics",
       "channel": "AppliancePartsPros",
@@ -737,6 +2144,28 @@
     },
     {
       "yt": "epJkHj04A2E",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Intro to The Sedona Application Editor (SAE)",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "This video provides an overview of the Sedona Application Editor (SAE), a software tool used to create custom function block (component) wire sheet applications in the Sedona environment.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:58:38.990Z",
       "title": "Intro to The Sedona Application Editor (SAE)",
       "channel": "Contemporary Controls",
@@ -749,6 +2178,28 @@
     },
     {
       "yt": "ZtcyPYnHUR8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Introduction to the BACnet Discovery Tool (BDT)",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "This video demonstrates the main features of Contemporary Controls’ BACnet Discovery Tool (BDT), a free BACnet/IP application for Windows that helps users discover BACnet devices, monitor network activity, and troubleshoot BACnet communications.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:58:40.085Z",
       "title": "Introduction to the BACnet Discovery Tool (BDT)",
       "channel": "Contemporary Controls",
@@ -761,6 +2212,30 @@
     },
     {
       "yt": "nwUqCSaUfyY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "PID loop tuning fundamentals for HVAC and building automation systems",
+          "How bump testing helps evaluate process gain, dead time, and time constants",
+          "Understanding Lambda tuning and Ziegler-Nichols tuning methods",
+          "Troubleshooting PID oscillation, hunting, and slow control response",
+          "Cascade control loops, interacting HVAC systems, and setpoint reset strategies",
+          "How seasonal loads and equipment sequencing affect PID performance",
+          "Validating and documenting PID tuning for long-term system reliability",
+          "Building Automation Systems (BAS)"
+        ],
+        "title": "SBA 567: How to Tune PID Loops for Better HVAC Control and…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "Struggling with unstable PID loops, HVAC temperature fluctuations, or control systems that constantly hunt for their setpoints?",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:17.316Z",
       "title": "SBA 567: How to Tune PID Loops for Better HVAC Control and Building Automation Performance",
       "channel": "Smart Buildings Academy",
@@ -773,6 +2248,30 @@
     },
     {
       "yt": "nyJU2z9v5SI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Powering on Machine",
+          "Machine Interface & Controls",
+          "Debris Collection System",
+          "Additional Tips",
+          "Changing Panel Filter",
+          "Changing Dust Mop Attachment",
+          "Changing Side Brush",
+          "Replacing Vacuum Bags"
+        ],
+        "title": "P1 VAC: Machine Walkaround",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "▬▬ About Tennant Company ▬▬▬▬▬ Tennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:59:21.144Z",
       "title": "P1 VAC | Machine Walkaround | Tennant Company",
       "channel": "Tennant Company",
@@ -785,6 +2284,29 @@
     },
     {
       "yt": "X1Np6JrOfgg",
+      "draft": {
+        "ppe": [
+          "Safety Goggles",
+          "Cold-Resistant Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Setting up P1 CHRG Dock",
+          "Charging the P1 VAC",
+          "P-Series App",
+          "Creating a Map",
+          "Creating Cleaning Zones",
+          "Creating Cleaning Tasks",
+          "Creating a Cleaning Schedule",
+          "Setting dock location on map"
+        ],
+        "title": "P1 VAC: Setup, Operation & Mapping",
+        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
+        "source": "rules",
+        "subject": "",
+        "summary": "P1 VAC Setup, Operation & Mapping ▬▬ About Tennant Company ▬▬▬▬▬ Tennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:59:22.279Z",
       "title": "P1 VAC | Setup, Operation & Mapping | Tennant Company",
       "channel": "Tennant Company",
@@ -797,6 +2319,30 @@
     },
     {
       "yt": "tAlRtldYCwY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Setting Up a Diode Test on an IGBT Module",
+          "Testing the Output and DC Bus Terminals",
+          "The Readings to Expect: 0.3 to 0.4 VDC",
+          "Running the Full Test on Every Terminal",
+          "A Pass Means Safe to Power Up, Not Good",
+          "The Bearing Noise That Was Really the IGBT",
+          "Overcurrent, Phase Faults, and What Wears IGBTs Down",
+          "Why a Dirty Output Sounds Like Bad Bearings"
+        ],
+        "title": "Screw Compressor Noise: What Most Techs Blame On Bearings",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "The screw compressor sounds like a bag of rocks, and everything points to bearings. Sometimes the bearings are perfectly fine.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:38.055Z",
       "title": "Screw Compressor Noise: What Most Techs Blame On Bearings",
       "channel": "HVACTIME (chillers)",
@@ -809,6 +2355,28 @@
     },
     {
       "yt": "JRg7p6yKKtk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "P1 VAC Autonomous Vacuum: Customer Testimonials",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Meet the P1 VAC autonomous vacuum in action and see how it is making a difference in everyday vacuuming.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:23.440Z",
       "title": "P1 VAC Autonomous Vacuum | Customer Testimonials | Tennant Company",
       "channel": "Tennant Company",
@@ -821,6 +2389,28 @@
     },
     {
       "yt": "vP0RkE1CDoI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Chiller Questions Answered LIVE E.51",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "Welcome to my live Q&A session I'm ready to answer your questions about equipment, techniques, troubleshooting, and industry standards.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:31:39.202Z",
       "title": "Chiller Questions Answered LIVE E.51",
       "channel": "HVACTIME (chillers)",
@@ -833,6 +2423,28 @@
     },
     {
       "yt": "zCMK2i_J4YY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Chiller Startup: How Pulldown Limits the Compressor",
+          "Hot Startup Overcurrent Trips and the Pulldown Setting",
+          "Oil Differential Pressure and Oil Temperature Before Startup",
+          "Current Limiting and Coasting Into Set Point",
+          "How Guide Vanes and the Drive Should Stage Up",
+          "Time Delays Between S"
+        ],
+        "title": "Chiller Startup: The Pulldown Setting Most Techs Overlook",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "The loop is warm, the chiller starts, and every number on the panel moves at once. The compressor rides current limit, approach runs high, and on a variable speed machine the vanes stop partway while the speed climbs.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:40.355Z",
       "title": "Chiller Startup: The Pulldown Setting Most Techs Overlook",
       "channel": "HVACTIME (chillers)",
@@ -845,6 +2457,28 @@
     },
     {
       "yt": "4lWYHmidMbg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Ice Maker",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:06.155Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Ice Maker",
       "channel": "AppliancePartsPros",
@@ -857,6 +2491,28 @@
     },
     {
       "yt": "6sMVeolijKQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Water Inlet Valve",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:07.032Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Water Inlet Valve",
       "channel": "AppliancePartsPros",
@@ -869,6 +2525,28 @@
     },
     {
       "yt": "bhxqe0lzgBg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Icebox Fan",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:07.863Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Icebox Fan",
       "channel": "AppliancePartsPros",
@@ -881,6 +2559,28 @@
     },
     {
       "yt": "kMclmZvs-Ik",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Service a CM/CME 32-2 Pump",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Water Tank Cleaning",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:54.900Z",
       "title": "How to service a CM/CME 32-2 pump",
       "channel": "Grundfos",
@@ -893,6 +2593,28 @@
     },
     {
       "yt": "wifvo_BLmcA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Praktiska Tips För GO-appen",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:55.813Z",
       "title": "Praktiska tips för GO-appen",
       "channel": "Grundfos",
@@ -905,6 +2627,28 @@
     },
     {
       "yt": "VMqkyDH6eaY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "ALPHA2 GO: Svar På Fyra Vanliga Frågor",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Water Tank Cleaning",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:56.832Z",
       "title": "ALPHA2 GO: svar på fyra vanliga frågor",
       "channel": "Grundfos",
@@ -917,6 +2661,27 @@
     },
     {
       "yt": "56Iu1NUpdJE",
+      "draft": {
+        "ppe": [
+          "Safety Goggles",
+          "Cold-Resistant Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "The wrecked 19XR impeller, and why parts like it belong in the training center",
+          "Why calling in help on a big job can cost you the customer, and why ChillCo does not work that way",
+          "The parts team: people who know heavy side terminology, with one contact across Trane, Carrier, Dunham-Bush, and more",
+          "The centrifugal shop, where you can ship in a compressor for an overhaul",
+          "The rental fleet they can drop on site, including a walk around a Dunham-Bush vertical screw machine on a trailer",
+          "Bonus at the end: what is left of a second stage impeller from a Carrier centrifugal"
+        ],
+        "title": "Hard to Find Chiller Parts: The Supplier Most Techs Overlook",
+        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "The job is bigger than your crew. A 2,000 ton machine to recover, a centrifugal that needs an overhaul, a part the supply house cannot track down.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:31:41.468Z",
       "title": "Hard to Find Chiller Parts: The Supplier Most Techs Overlook",
       "channel": "HVACTIME (chillers)",
@@ -929,6 +2694,29 @@
     },
     {
       "yt": "YndjcbQy7gQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "How AV and BAS integration can improve smart building performance",
+          "Using conference room scheduling and occupancy data for HVAC optimization",
+          "BACnet, APIs, gateways, and other BAS integration methods",
+          "Network segmentation, cybersecurity, and communication challenges",
+          "Common AV and BAS integration failures and troubleshooting considerations",
+          "Why joint commissioning and clearly defined contractor responsibilities matter",
+          "How to reduce integration complexity while improving system reliability"
+        ],
+        "title": "SBA 566: Integrating AV Systems with BAS for Smarter, More…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "Are your building automation systems missing valuable data from audiovisual (AV) systems?",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:18.581Z",
       "title": "SBA 566: Integrating AV Systems with BAS for Smarter, More Efficient Buildings",
       "channel": "Smart Buildings Academy",
@@ -941,6 +2729,28 @@
     },
     {
       "yt": "NpmRlK30jt8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Check the controller has power and the transformer is working",
+          "Check the date, time, program and rain sensor settings",
+          "Run each zone manually to find which ones fail",
+          "Measure the solenoid resistance on faulty zones with a multimeter",
+          "Check the wire connections and the common wire",
+          "Fix or replace the faulty part and test again"
+        ],
+        "title": "#PROGRAMMABLE #LOGIC #CONTROLLERS",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "PROGRAMMABLE LOGIC CONTROLLERS MADE EASY. CHECK YOUR SKILL LEVELS. PLC AUTOMATION FOR BEGINNERS.",
+        "stepsFrom": "topic"
+      },
       "found": "2026-11-05T10:58:45.872Z",
       "title": "#PROGRAMMABLE #LOGIC #CONTROLLERS",
       "channel": "Instrumentation Tools",
@@ -953,6 +2763,29 @@
     },
     {
       "yt": "wNQi27xJZfA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "What an IGBT Is: Two Sets of Transistors Inside",
+          "Three Independent IGBT Modules in One Assembly",
+          "IGBT Gate Controllers and the Logic Board",
+          "Inverter or Rectifier: The IGBT Is Just the Device",
+          "Turbocor Inverter: Three Legs in One Block Module",
+          "Why Bigger Machines Tie Three Outputs Into One Leg",
+          "Three Phase Output: 120 Degrees Apart or in Sync"
+        ],
+        "title": "IGBT vs SCR: What Actually Changes Inside the Module",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "Open up a chiller drive and the IGBT looks like one big part, with a control module mounted on top and gate pins everywhere.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:42.721Z",
       "title": "IGBT vs SCR: What Actually Changes Inside the Module",
       "channel": "HVACTIME (chillers)",
@@ -965,6 +2798,28 @@
     },
     {
       "yt": "ZJdC-tIfMuk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Digitala Lösningar För VA-sektorn",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Övervaka driften, förutse problem och förhindra oplanerade driftstopp med Grundfos Digitala Lösningar. Vi har även smarta lösningar som minskar läckage, rörbrott och energianvändning.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:14.945Z",
       "title": "Digitala lösningar för VA-sektorn",
       "channel": "Grundfos",
@@ -977,6 +2832,28 @@
     },
     {
       "yt": "Rx9wOHER6wk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Behöver Du En Ny Pump?",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Water Tank Cleaning",
+        "summary": "Tack vare ett unikt samarbete med certifierade pumpserviceföretag runtom i landet har du alltid snabb tillgång till service i världsklass samt ett lokalt lager med reservdelar, pumpar och",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:16.036Z",
       "title": "Behöver du en ny pump?",
       "channel": "Grundfos",
@@ -989,6 +2866,30 @@
     },
     {
       "yt": "w5_4kncWf4Q",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Three types of AI",
+          "Generative AI limitations",
+          "When generative AI is useful",
+          "Closed-loop AI",
+          "AI drift",
+          "Load shifting",
+          "Predictive maintenance",
+          "Considerations Before Using AI"
+        ],
+        "title": "What Is Industrial AI?",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Use this code to get your free ticket for SPS: BeAtSPS26 ▶ Need help with industrial AI? What can AI do in your plant? @Shahpour explains three types of AI: predictive, generative, and autonomous.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:58:29.435Z",
       "title": "What is Industrial AI?",
       "channel": "RealPars",
@@ -1001,6 +2902,29 @@
     },
     {
       "yt": "T4PhYiElCrc",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Common reasons why an AC is not cooling",
+          "AC running but blowing warm air",
+          "Thermostat settings and airflow problems",
+          "Dirty air filters and blocked coils",
+          "Outdoor unit, fan, and compressor-related issues",
+          "Possible refrigerant (AC gas) problems",
+          "Basic troubleshooting checks before calling a technician"
+        ],
+        "title": "AC Running But Not Cooling?: AC Troubleshooting Guide",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Preventive Maintenance",
+        "summary": "AC Running But Not Cooling? In this AC troubleshooting guide, learn how to identify common reasons why your air conditioner is running but not cooling properly.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:31:25.427Z",
       "title": "AC Running But Not Cooling? | AC Troubleshooting Guide",
       "channel": "MEP Techniques (facility O&M)",
@@ -1013,6 +2937,28 @@
     },
     {
       "yt": "WFnsL3PV5EM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Real-world equipment troubleshooting",
+          "Commercial beverage dispensers & ice machines",
+          "Frozen beverage and coffee equipment",
+          "Technician questions from our YouTube community",
+          "Repair tips, industry knowledge & field experiences",
+          "LIVE viewer questions and discussions!"
+        ],
+        "title": "3,000 Subscribers! Thank You",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "We've reached an incredible milestone here at Learn A Trade, and I couldn't have done it without YOU!",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:31:58.908Z",
       "title": "🎉 3,000 SUBSCRIBERS! THANK YOU! 🎉",
       "channel": "Learn A Trade (commercial equipment)",
@@ -1025,6 +2971,27 @@
     },
     {
       "yt": "aoCKe6uU_AI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "The difference between an IR thermometer and a space temperature thermometer",
+          "Common mistakes when measuring room temperature",
+          "Why an IR thermometer cannot directly measure room air temperature",
+          "The correct location to measure space temperature",
+          "Practical HVAC temperature measurement tips for technicians"
+        ],
+        "title": "Stop Making This Mistake! How to Measure Room Temperature Correctly",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerant & Diagnostics",
+        "summary": "Are you measuring room temperature correctly? 🌡️ In this video, we explain how to measure space temperature correctly in HVAC systems, common mistakes when using an infrared (IR) thermometer, and the proper location to measure indoor air temperature.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:31:26.617Z",
       "title": "Stop Making This Mistake! How to Measure Room Temperature Correctly",
       "channel": "MEP Techniques (facility O&M)",
@@ -1037,6 +3004,28 @@
     },
     {
       "yt": "wYlWMfnPVOk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Solar Panels Cleaning",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:31:54.579Z",
       "title": "Solar panels cleaning",
       "channel": "KITCHEN TECH",
@@ -1049,6 +3038,28 @@
     },
     {
       "yt": "1zfCDfCin6s",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Main Control Board",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:09.791Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Main Control Board",
       "channel": "AppliancePartsPros",
@@ -1061,6 +3072,28 @@
     },
     {
       "yt": "hj7ojbN76bI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "KitchenAid Fridge No Ice? Test These 8 Parts First",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:08.812Z",
       "title": "KitchenAid Fridge No Ice? Test These 8 Parts First",
       "channel": "AppliancePartsPros",
@@ -1073,6 +3106,27 @@
     },
     {
       "yt": "sNoaW1vfFYI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Learning Drive Electronics From Danfoss VLT and ABB Manuals",
+          "Chiller Drive vs Packaged VFD: Same Parts, Bigger Scale",
+          "York Drive Manuals: Which Ones to Search For",
+          "Why the Manufacturer Spec Beats General Advice",
+          "The Search for a Good Electronics Book for Techs"
+        ],
+        "title": "Chiller Drive Electronics: The VFD Manuals Most Techs Overlook",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "You want to understand the electronics inside a chiller drive, and the OEM manual only takes you so far. The rest of the drive service literature is hard to get your hands on.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:43.994Z",
       "title": "Chiller Drive Electronics: The VFD Manuals Most Techs Overlook",
       "channel": "HVACTIME (chillers)",
@@ -1085,6 +3139,30 @@
     },
     {
       "yt": "XIE_18yMqco",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Building automation labor estimation",
+          "BAS project estimating and job costing",
+          "Protecting project margins on controls projects",
+          "Breaking controls projects into labor phases",
+          "Using historical labor data to improve estimates",
+          "Accounting for integration and commissioning requirements",
+          "Identifying hidden labor that can impact profitability",
+          "Aligning BAS sales engineers with project managers and technicians"
+        ],
+        "title": "SBA 565: How to Estimate Building Automation Labor and Protect…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "Why do profitable building automation projects lose margin after they are sold? Labor estimation is often the difference between the margin you expect at booking and the margin you actually see at project closeout.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:19.928Z",
       "title": "SBA 565: How to Estimate Building Automation Labor and Protect Project Margins",
       "channel": "Smart Buildings Academy",
@@ -1097,6 +3175,28 @@
     },
     {
       "yt": "CirQSo_M8I0",
+      "draft": {
+        "ppe": [
+          "Hard Hat",
+          "Safety Shoes",
+          "Work Gloves"
+        ],
+        "level": "Advanced",
+        "steps": [
+          "Inspect rails, rungs, feet and locks before use",
+          "Set it on firm ground at a 1-in-4 angle (1 m out for every 4 m up)",
+          "Extend it at least 1 metre above the landing point",
+          "Tie it off or have someone foot the ladder",
+          "Face the ladder and keep three points of contact",
+          "Keep your belt buckle between the rails — move the ladder rather than lean"
+        ],
+        "title": "PLC Automatic Home Lighting Control Logic [SIEMENS TIA PORTAL]",
+        "safety": "Inspect the ladder first, keep three points of contact and never stand on the top rungs.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Learn Automatic Home Lighting Control using PLC and Siemens TIA Portal. A simple and practical PLC Ladder Logic example for beginners in automation and PLC programming.",
+        "stepsFrom": "topic"
+      },
       "found": "2026-11-05T10:58:46.929Z",
       "title": "PLC Automatic Home Lighting Control Logic [SIEMENS TIA PORTAL]",
       "channel": "Instrumentation Tools",
@@ -1109,6 +3209,27 @@
     },
     {
       "yt": "2qzGmdGws7w",
+      "draft": {
+        "ppe": [
+          "Safety Goggles",
+          "Cold-Resistant Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "A2L & A3 Refrigerants: Ensuring Compliance",
+        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
+        "source": "rules",
+        "subject": "",
+        "summary": "This webinar explains the changing regulatory and compliance landscape for A2L and A3 refrigerants, including equipment deadlines, certification requirements, and refrigerant leak mitigation standards.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:51.444Z",
       "title": "A2L & A3 Refrigerants: Ensuring Compliance",
       "channel": "Johnson Controls",
@@ -1121,6 +3242,28 @@
     },
     {
       "yt": "3pBoQYn9CY4",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "EnBW Stuttgart: Setting a New Standard in Wastewater Heat Utilization",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:14.634Z",
       "title": "EnBW Stuttgart - Setting a new standard in wastewater heat utilization",
       "channel": "Johnson Controls",
@@ -1133,6 +3276,28 @@
     },
     {
       "yt": "u8Ix8izstiQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "EnBW Stuttgart: Un Nuevo Estándar En Sostenibilidad Urbana",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:15.407Z",
       "title": "EnBW Stuttgart - Un nuevo estándar en sostenibilidad urbana",
       "channel": "Johnson Controls",
@@ -1145,6 +3310,28 @@
     },
     {
       "yt": "RgXoYixjnPs",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "EnBW Stuttgart: Une Nouvelle Référence Dans La Valorisation De La…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:16.319Z",
       "title": "EnBW Stuttgart - Une nouvelle référence dans la valorisation de la chaleur des eaux usées",
       "channel": "Johnson Controls",
@@ -1157,6 +3344,27 @@
     },
     {
       "yt": "cquNVjvEu4o",
+      "draft": {
+        "ppe": [
+          "Safety Goggles",
+          "Cold-Resistant Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "EnBW Stuttgart: A New Standard for Waste Heat Recovery",
+        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:17.175Z",
       "title": "EnBW Stuttgart - A new standard for waste heat recovery",
       "channel": "Johnson Controls",
@@ -1169,6 +3377,28 @@
     },
     {
       "yt": "VIdzDQ4ORbs",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "EnBW Stuttgart: A New Standard in Utilizing Waste Heat",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:18.108Z",
       "title": "EnBW Stuttgart - A new standard in utilizing waste heat",
       "channel": "Johnson Controls",
@@ -1181,6 +3411,28 @@
     },
     {
       "yt": "tLXUG_cV4D0",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "KitchenAid Fridge Freezer Not Cooling? Test These 3 Parts",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:10.685Z",
       "title": "KitchenAid Fridge Freezer Not Cooling? Test These 3 Parts",
       "channel": "AppliancePartsPros",
@@ -1193,6 +3445,28 @@
     },
     {
       "yt": "SNBlVuJWUAQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a Maytag Washer Lid Lock",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:11.683Z",
       "title": "How to Test and Replace a Maytag Washer Lid Lock",
       "channel": "AppliancePartsPros",
@@ -1205,6 +3479,28 @@
     },
     {
       "yt": "x7vWZvvvUcg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test and Replace a KitchenAid Refrigerator Defrost Heater",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerator Cooling",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:26:12.560Z",
       "title": "How to Test and Replace a KitchenAid Refrigerator Defrost Heater",
       "channel": "AppliancePartsPros",
@@ -1217,6 +3513,28 @@
     },
     {
       "yt": "lZzTcJSf6IY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Fluke vs Fieldpiece vs UEI: Ohms Output Voltage Explained",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerant & Diagnostics",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:35.618Z",
       "title": "Fluke vs Fieldpiece vs UEI: Ohms Output Voltage Explained",
       "channel": "HVACTIME (chillers)",
@@ -1229,6 +3547,28 @@
     },
     {
       "yt": "Nx2OH6-0ud0",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Continuity vs Ohms: What Trade School Got Wrong",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:36.606Z",
       "title": "Continuity vs Ohms: What Trade School Got Wrong",
       "channel": "HVACTIME (chillers)",
@@ -1241,6 +3581,28 @@
     },
     {
       "yt": "vxPT-JFmnmw",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Test a Bleed Resistor Without a False Reading",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Preventive Maintenance",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:37.581Z",
       "title": "How to Test a Bleed Resistor Without a False Reading",
       "channel": "HVACTIME (chillers)",
@@ -1253,6 +3615,28 @@
     },
     {
       "yt": "ExDSqkpYbPs",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "The Centrifugal Trainer I Had Built for HVAC Techs",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:38.446Z",
       "title": "The Centrifugal Trainer I Had Built for HVAC Techs",
       "channel": "HVACTIME (chillers)",
@@ -1265,6 +3649,28 @@
     },
     {
       "yt": "CZ36tosgPw0",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Low Water Flow on a York YCIV: Why Discharge Superheat Drops",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Refrigerant & Diagnostics",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:39.386Z",
       "title": "Low Water Flow on a York YCIV: Why Discharge Superheat Drops",
       "channel": "HVACTIME (chillers)",
@@ -1277,6 +3683,28 @@
     },
     {
       "yt": "ZsBfkbrC6n8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Head Pressure vs Actual Pressure: The Loop Math Chiller Techs Skip",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Chilled Water Systems",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:40.379Z",
       "title": "Head Pressure vs Actual Pressure: The Loop Math Chiller Techs Skip",
       "channel": "HVACTIME (chillers)",
@@ -1289,6 +3717,25 @@
     },
     {
       "yt": "HZoaVC8hmew",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Turbocor Bearing Faults: Inverter or Demag Shaft",
+          "Change the Inverter Before Condemning the Compressor",
+          "New Compressor or Inverter First: The Customer Conversation"
+        ],
+        "title": "Turbocor Bearing Faults: Why Good Compressors Get Condemned",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "The Turbocor keeps throwing bearing faults and the inverter tests good electrically, so the shaft gets the blame. Call it a demag and you are replacing the whole compressor.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:45.065Z",
       "title": "Turbocor Bearing Faults: Why Good Compressors Get Condemned",
       "channel": "HVACTIME (chillers)",
@@ -1301,6 +3748,28 @@
     },
     {
       "yt": "ZRNhndAwKg8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Check the controller has power and the transformer is working",
+          "Check the date, time, program and rain sensor settings",
+          "Run each zone manually to find which ones fail",
+          "Measure the solenoid resistance on faulty zones with a multimeter",
+          "Check the wire connections and the common wire",
+          "Fix or replace the faulty part and test again"
+        ],
+        "title": "WLSR8000 Wireless SA Bus Receiver. Engineer Less. Install Faster.",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Simplify room sensing with the Johnson Controls WLSR800 Wireless SA Bus Receiver. Connect wireless sensors to HVAC controllers quickly and easily while reducing installation complexity and supporting flexible building deployments.",
+        "stepsFrom": "topic"
+      },
       "found": "2026-11-05T10:59:52.810Z",
       "title": "WLSR8000 Wireless SA Bus Receiver. Engineer less. Install Faster.",
       "channel": "Johnson Controls",
@@ -1313,6 +3782,28 @@
     },
     {
       "yt": "1S0Cyl_3yG8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "FactoryTalk Optix 1: Basic HMI Development",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "FactoryTalk Optix is Rockwell's new HMI software. More and more plants are starting to use it. This course helps you learn it from the start.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:58:30.657Z",
       "title": "FactoryTalk Optix 1: Basic HMI Development",
       "channel": "RealPars",
@@ -1325,6 +3816,28 @@
     },
     {
       "yt": "6p58Z7hAQSA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Machine Machine Troubleshooting AI",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:31:55.590Z",
       "title": "Machine Machine troubleshooting AI",
       "channel": "KITCHEN TECH",
@@ -1337,6 +3850,30 @@
     },
     {
       "yt": "iC4URaB4z7A",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Why Your Meter Needs a Diode Test for SCRs",
+          "Testing Terminals 1 to 2 and 1 to 3",
+          "Swap the Leads: What a Passing SCR Reads",
+          "Factory Spec vs a Tighter 0.36 to 0.38 Window",
+          "In Spec but Weak: When to Replace SCRs Anyway",
+          "SCR Readings Vary: Compare Across the Drive",
+          "Replace the Whole SCR Set, Even the Good Ones",
+          "Shorted SCRs: Why You Test Before Restoring Power"
+        ],
+        "title": "Good SCR vs Weak SCR: What the Diode Test Actually Shows",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Preventive Maintenance",
+        "summary": "The chiller keeps throwing intermittent start failures, you diode test the SCRs, and the readings land inside the factory range.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:46.956Z",
       "title": "Good SCR vs Weak SCR: What the Diode Test Actually Shows",
       "channel": "HVACTIME (chillers)",
@@ -1349,6 +3886,27 @@
     },
     {
       "yt": "QRsMpak-tcc",
+      "draft": {
+        "ppe": [
+          "Work Gloves",
+          "Safety Shoes",
+          "Hard Hat"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Selecting the correct PPE",
+          "Identifying and selecting the required tools",
+          "Following the correct preventive maintenance sequence",
+          "Applying safe electrical work practices",
+          "Completing the task in a systematic and controlled manner"
+        ],
+        "title": "Electrical Distribution Board Preventive Maintenance- PPE, Tools…",
+        "safety": "Plan the lift, get help for heavy loads and keep the load close to your body.",
+        "source": "rules",
+        "subject": "Power Distribution",
+        "summary": "This 2-minute simulation demonstrates the essential steps for carrying out preventive maintenance on an electrical distribution board.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:31:27.769Z",
       "title": "Electrical Distribution Board Preventive Maintenance- PPE, Tools and Safe work sequence",
       "channel": "MEP Techniques (facility O&M)",
@@ -1361,6 +3919,30 @@
     },
     {
       "yt": "St4ZL1Cex3c",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "SCR Terminal Layout: AC In, DC Out",
+          "The Floating Nut Inside an SCR Terminal",
+          "Why Probing the Nut Gives You No Reading",
+          "IGBTs Use the Same Terminal Setup",
+          "SCR Stands for Silicon Controlled Rectifier",
+          "How SCRs Give a Drive Its DC Bus",
+          "Terminals 4 and 5: The Gate Trigger Pins",
+          "SCR vs Contactor: No Contacts, No Moving Parts"
+        ],
+        "title": "SCR Testing: The Floating Nut Mistake Most Techs Make",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "You put your meter lead on an SCR terminal and get nothing. Inside that terminal is a small nut that floats free, and it is not connected to the terminal plate.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:48.133Z",
       "title": "SCR Testing: The Floating Nut Mistake Most Techs Make",
       "channel": "HVACTIME (chillers)",
@@ -1373,6 +3955,30 @@
     },
     {
       "yt": "bWlDvRdLKmI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "PID control in building automation systems",
+          "Proportional, integral, and derivative control",
+          "PID loop hunting, overshoot, offset, and windup",
+          "Using BAS trends for PID troubleshooting",
+          "Sensor, actuator, sequencing, and mechanical problems",
+          "HVAC control loop behavior and tuning considerations",
+          "How equipment response affects BAS control performance",
+          "Building Automation Systems (BAS)"
+        ],
+        "title": "SBA 564: What Is a PID Loop Really Doing in Building Automation?",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "PID loops are everywhere in building automation systems, but what is a PID controller actually doing when it controls a valve, damper, pump, temperature, or pressure?",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:20.979Z",
       "title": "SBA 564: What Is a PID Loop Really Doing in Building Automation?",
       "channel": "Smart Buildings Academy",
@@ -1385,6 +3991,29 @@
     },
     {
       "yt": "42DMUFUf0PM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "What an SCR Does in a Chiller Drive",
+          "Where the Sine Wave Splits Into Two Circuits",
+          "The Diode as an Electrical Check Valve",
+          "How the Diode Chops Off Half the Sine Wave",
+          "How the DC Bus Gets Its Positive and Negative",
+          "Why Stopping Part of the Flow Is the Goal",
+          "Pulling Heat Out of the SCR Before It Fails"
+        ],
+        "title": "How Chiller Drive SCRs Work and What Destroys Them",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Electrical Diagnostics",
+        "summary": "The SCR is sitting right there in the chiller drive, and most techs were never shown what it actually does in the circuit.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:31:49.346Z",
       "title": "How Chiller Drive SCRs Work and What Destroys Them",
       "channel": "HVACTIME (chillers)",
@@ -1397,6 +4026,25 @@
     },
     {
       "yt": "HHhSo_Kv1TA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Basic motor starter",
+          "Soft starter",
+          "Variable Frequency Drive (VFD)"
+        ],
+        "title": "Motor Control Methods Explained",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "▶ Need a Motor Control Panel? We design, build, and test custom motor control panels for plants and OEMs. ▶ The article goes into more detail than this video: Every motor in a plant or factory needs some way to start it, stop it, and control it.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:58:31.827Z",
       "title": "Motor Control Methods Explained",
       "channel": "RealPars",
@@ -1409,6 +4057,28 @@
     },
     {
       "yt": "YA3v1mqFUVk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Helpful Tips When Taking on Large Commercial Projects",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "🔧 Try the FREE LAT Technician App: This channel is intended to educate those interested in working in the Commercial Beverage Equipment, HVAC and Refrigeration trade.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:32:00.093Z",
       "title": "Helpful Tips when Taking on Large Commercial Projects",
       "channel": "Learn A Trade (commercial equipment)",
@@ -1421,6 +4091,30 @@
     },
     {
       "yt": "Qynme-tYqcM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "What is a 2-wire transmitter?",
+          "4-20 mA current loop",
+          "Current Signal",
+          "Typical 2-wire Loop Wiring",
+          "Multiple Transmitters",
+          "Signal Representation",
+          "Range and Faults",
+          "Total Loop Load Impedance"
+        ],
+        "title": "What Is a 2-wire Transmitter?: Instrumentation Interview Questions",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Learn the basics of a 2-wire transmitter and understand how power and the 4-20 mA signal are transmitted through the same two wires.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:58:48.148Z",
       "title": "What is a 2-wire Transmitter? | Instrumentation Interview Questions",
       "channel": "Instrumentation Tools",
@@ -1433,6 +4127,28 @@
     },
     {
       "yt": "8VmBClXBy0Y",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Powering the AI Economy: Sustainable Infrastructure for a New…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "As AI drives unprecedented demand for digital infrastructure and energy, industry leaders discuss how data centers are evolving to deliver the capacity, efficiency, resilience, and sustainability needed to support the next wave of innovation.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:54.043Z",
       "title": "Powering the AI Economy: Sustainable Infrastructure for a New Energy Reality",
       "channel": "Johnson Controls",
@@ -1445,6 +4161,28 @@
     },
     {
       "yt": "wmrfQ1WOOr0",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Sustainability, Growth, and the AI Economy: A Global CSO Perspective",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "During New York Climate Week 2026, Johnson Controls, in partnership with Microsoft and Accenture, brought together sustainability leaders for Powering the new energy reality in the age of AI.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:55.247Z",
       "title": "Sustainability, Growth, and the AI Economy: A Global CSO Perspective",
       "channel": "Johnson Controls",
@@ -1457,6 +4195,28 @@
     },
     {
       "yt": "M39epCsCc1s",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "AI in Action: Reducing Energy Costs and Optimizing…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Sprinkler Systems",
+        "summary": "Regional business leaders share how they are applying AI-powered solutions to improve operational performance, reduce energy consumption and enhance resilience across buildings and mission-critical environments.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:56.273Z",
       "title": "AI in Action: Reducing Energy Costs and Optimizing Mission-Critical Operations",
       "channel": "Johnson Controls",
@@ -1469,6 +4229,28 @@
     },
     {
       "yt": "CN_rELrtWDA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "AI Frontiers Shaping the Future of Autonomous Buildings",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Recorded during New York Climate Week 2026 as part of Powering the New Energy Reality in the Age of AI, this discussion explores how AI, connected systems and digital technologies are shaping the future of autonomous buildings and critical infrastructure.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:57.436Z",
       "title": "AI Frontiers Shaping the Future of Autonomous Buildings",
       "channel": "Johnson Controls",
@@ -1481,6 +4263,30 @@
     },
     {
       "yt": "K2zh_8U-Eek",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Preparing for BAS and HVAC controls service calls",
+          "Turning customer complaints into useful troubleshooting information",
+          "Planning tools, credentials, software, and site access",
+          "Building troubleshooting hypotheses before arriving on site",
+          "Documenting BAS service work and communicating results to customers",
+          "Building Automation Systems (BAS)",
+          "HVAC Controls and Programming",
+          "Smart Building Technologies"
+        ],
+        "title": "SBA 563: How to Prepare for Better Building Automation Service Calls",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "What separates an effective building automation service call from hours of wasted troubleshooting?",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:22.104Z",
       "title": "SBA 563: How to Prepare for Better Building Automation Service Calls",
       "channel": "Smart Buildings Academy",
@@ -1493,6 +4299,28 @@
     },
     {
       "yt": "0J9C2drfBT8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Industrial Automation and Process Weighing Systems: Gravitech",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "Industrial Automation and Process Weighing Systems from GRAVITECH.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:58:49.286Z",
       "title": "Industrial Automation and Process Weighing Systems | GRAVITECH",
       "channel": "Instrumentation Tools",
@@ -1505,6 +4333,28 @@
     },
     {
       "yt": "q6Bstn8_i8s",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "FATEK PLC Automation Products: Industrial Automation Expo",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "🎥 Discover FATEK PLC Automation Products! Take a quick look at FATEK’s latest PLC and industrial automation solutions showcased at the Industrial Automation Expo.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:58:50.479Z",
       "title": "FATEK PLC Automation Products | Industrial Automation Expo",
       "channel": "Instrumentation Tools",
@@ -1517,6 +4367,26 @@
     },
     {
       "yt": "t6Cw-2QZsOs",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Part 1 - Up in the Air (Air Quality)",
+          "Part 2 - Asbestos and Flour (How Filters Work)",
+          "Part 3 - A Miniature World (Under the Microscope)",
+          "Part 4 - Houston, We’ve Had a Problem (CO2)"
+        ],
+        "title": "I Built a Laser Fishtank For...air Filters?",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "What’s in the air you breathe? In this video, we explore air filtration technologies through the use of laser visualizations, electron microscopes, particle counters, and more.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T11:00:05.213Z",
       "title": "I Built a Laser Fishtank for...Air Filters?",
       "channel": "CaptiveAire",
@@ -1529,6 +4399,30 @@
     },
     {
       "yt": "g6_EdIrLMQA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Estimating electrical loads for BAS secondary power loops",
+          "Sizing 24 VAC transformers for building automation devices",
+          "Accounting for transformer capacity and electrical load",
+          "Understanding inrush current and startup conditions",
+          "Calculating voltage drop on long control wiring runs",
+          "Diagnosing intermittent BAS power problems",
+          "Transformer phasing, commons, and grounding",
+          "Verifying secondary voltage and current under load"
+        ],
+        "title": "SBA 562: How to Size Secondary Power Loops for Building Automation",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "Are overloaded secondary power loops causing hidden problems in your building automation system?",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:23.345Z",
       "title": "SBA 562: How to Size Secondary Power Loops for Building Automation",
       "channel": "Smart Buildings Academy",
@@ -1541,6 +4435,29 @@
     },
     {
       "yt": "67JzE6RGdt8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Harmonize data across building systems and assets",
+          "Deliver instant answers through AI-powered insights",
+          "Automate time-consuming operational tasks",
+          "Detect faults and identify issues before they impact performance",
+          "Reduce energy consumption and carbon emissions",
+          "Optimize equipment performance with AI-generated recommendations",
+          "Support intelligent, autonomous building operations"
+        ],
+        "title": "OpenBlue AI Solutions for Intelligent Operations",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "What if your building could do more than collect data? What if it could use that data to think, recommend, and act? OpenBlue transforms disconnected building data into actionable insights and autonomous operations.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:59:58.538Z",
       "title": "OpenBlue AI Solutions for Intelligent Operations",
       "channel": "Johnson Controls",
@@ -1553,6 +4470,28 @@
     },
     {
       "yt": "F9sVet4JmHg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Reduced space data and reporting work from weeks to days",
+          "Replaced manual spreadsheets and legacy databases with a centralized platform",
+          "Simplified annual state reporting with automated workflows",
+          "Improved space inventory accuracy and data quality",
+          "Made more informed decisions about space allocation and utilization",
+          "Scaled operations to support campus growth and new buildings"
+        ],
+        "title": "How UTSA Cut Space Data Work From Weeks to Days",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Smoke Detectors",
+        "summary": "How can universities manage thousands of rooms, streamline reporting, and make better space decisions without spending weeks buried in spreadsheets?",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:59:59.574Z",
       "title": "How UTSA Cut Space Data Work From Weeks to Days with OpenBlue",
       "channel": "Johnson Controls",
@@ -1565,6 +4504,28 @@
     },
     {
       "yt": "t-S2vDCccYo",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Creating a Place to Call Home: A Hometown H2O Project in Willis, VA",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "For the Brown family, this HometownH2O project was about more than a new well. It was about dependability, peace of mind and having the water needed to support the life they've worked hard to build.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:59:27.278Z",
       "title": "Creating a Place to Call Home: A Hometown H2O Project in Willis, VA",
       "channel": "Goulds Water Technology",
@@ -1577,6 +4538,28 @@
     },
     {
       "yt": "YxW6ka6v9XY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Simple PLC Program for Lighting Control System",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Simple PLC program for Lighting Control System Learn in this video.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T10:58:51.785Z",
       "title": "Simple PLC program for Lighting Control System",
       "channel": "Instrumentation Tools",
@@ -1589,6 +4572,30 @@
     },
     {
       "yt": "kPKPbmyWDSY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "What is process control?",
+          "What is a PID loop?",
+          "The proportional factor",
+          "The integral factor",
+          "The derivative factor",
+          "Putting all three together",
+          "Which control mode should you use?",
+          "What does tuning a PID loop mean?"
+        ],
+        "title": "How PID Control Works in Simple Terms",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "▶ You can read the full post here: Learn how a PID controller works, what proportional, integral, and derivative action do, and how PID tuning improves process control.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:58:33.195Z",
       "title": "How PID Control Works in Simple Terms",
       "channel": "RealPars",
@@ -1601,6 +4608,30 @@
     },
     {
       "yt": "RYbT--KoK2w",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Database fundamentals for building automation systems",
+          "BAS trend data, sampling, retention, and storage",
+          "Tables, records, fields, queries, and database indexes",
+          "Primary keys, foreign keys, and data relationships",
+          "Configuration, history, events, audits, and user data",
+          "Database backups and restore testing",
+          "Timestamps and time zones in building automation data",
+          "Database storage monitoring and system reliability"
+        ],
+        "title": "SBA 561: Database Fundamentals Every Building Automation…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "Databases power more of your building automation system than you might realize.",
+        "stepsFrom": "description"
+      },
       "found": "2026-11-05T10:58:24.545Z",
       "title": "SBA 561: Database Fundamentals Every Building Automation Professional Should Know",
       "channel": "Smart Buildings Academy",
@@ -1613,6 +4644,28 @@
     },
     {
       "yt": "BXQLR4hW-fA",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Revolutionizing Heat",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Introducing the Sabroe HitemHP heat pump from Johnson Controls. The ultra-efficient HitemHP series is our latest generation of industrial, ultra-efficient, high-temperature heat pumps.",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-05T11:00:00.703Z",
       "title": "Revolutionizing Heat with Sabroe HitemHP Heat Pump",
       "channel": "Johnson Controls",
@@ -1625,6 +4678,30 @@
     },
     {
       "yt": "gVYJs9_QiCs",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "KETSOL",
+          "PLC and Controllers",
+          "From PLC tag to plant decision",
+          "Connect every PLC, DCS and SCADA on a plant",
+          "Kepware vs KMS platform",
+          "Tank Farm Management",
+          "Energy Meters",
+          "Industrial Communication Protocols"
+        ],
+        "title": "One Platform for Every PLC DCS and SCADA: Ketsol KMS",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "Discover KETSOL KMS, a unified industrial platform that connects PLC, DCS and SCADA systems, bringing plant data together for real-time monitoring, analytics and smarter decisions.",
+        "stepsFrom": "chapters"
+      },
       "found": "2026-11-05T10:58:52.887Z",
       "title": "One Platform for Every PLC DCS and SCADA | KETSOL KMS",
       "channel": "Instrumentation Tools",
@@ -1636,7 +4713,233 @@
       "suggestedCategory": "BMS & Controls"
     },
     {
+      "yt": "Ca1Sz3QBbYQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "SBA 556: The Building Automation Skill That Prevents Costly Callbacks",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T07:31:07.660Z",
+      "title": "SBA 556: The Building Automation Skill That Prevents Costly Callbacks",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-09-07T07:31:06.575Z",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "BfsIjxTZEKY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "X2 ROVR SCRUB Autonomous Floor Scrubber for Small Spaces",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T07:17:40.181Z",
+      "title": "X2 ROVR SCRUB Autonomous Floor Scrubber for Small Spaces | Tennant Company",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-09-07T07:17:39.060Z",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "9UHe-q2sSwE",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "PLC Logic Development Using Codesys",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T07:17:35.822Z",
+      "title": "PLC Logic Development Using CODESYS",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-07T07:17:34.549Z",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "jRFexD9gyxM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "X2 ROVR SCRUB Robotic Scrubber: Operator Training",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T07:12:55.277Z",
+      "title": "X2 ROVR SCRUB  Robotic Scrubber | Operator Training",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-09-07T07:12:54.135Z",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "0p8pAZMXIzo",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Industrial Electrical Troubleshooting Made",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T07:12:49.279Z",
+      "title": "Industrial Electrical Troubleshooting Made Simple",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-09-07T07:12:48.022Z",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "IP4V7mOo5XI",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "SBA 557: Valve Sizing 101: Better HVAC Control Starts at the Valve",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T07:12:47.050Z",
+      "title": "SBA 557: Valve Sizing 101 | Better HVAC Control Starts at the Valve",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-09-07T07:12:45.871Z",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
       "yt": "rwQK6LzZ4qw",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Wastek Smart Scale: Smart Waste Management",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:11:21.393Z",
       "title": "WASTEK Smart Scale | Smart Waste Management | Farnek Sustainability",
       "channel": "Farnek",
@@ -1649,6 +4952,28 @@
     },
     {
       "yt": "xrI_fx7Wd8E",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "PLC Engineer Questions",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:11:19.259Z",
       "title": "PLC Engineer Questions",
       "channel": "Instrumentation Tools",
@@ -1661,6 +4986,28 @@
     },
     {
       "yt": "SRSlEo3jT48",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "OEM Jobs in Industrial Automation",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:11:16.169Z",
       "title": "OEM Jobs in Industrial Automation",
       "channel": "RealPars",
@@ -1673,6 +5020,28 @@
     },
     {
       "yt": "9vw90N597do",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "SBA 558: IP Security Fundamentals Every Building Automation…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:11:14.124Z",
       "title": "SBA 558: IP Security Fundamentals Every Building Automation Professional Should Know",
       "channel": "Smart Buildings Academy",
@@ -1685,6 +5054,28 @@
     },
     {
       "yt": "9ORx5KUZ-5c",
+      "draft": {
+        "ppe": [
+          "Respirator",
+          "Safety Goggles",
+          "Chemical Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Make Airless Spraying Easy. This Tool Makes Spraying WAY Faster",
+        "safety": "Ventilate the area, keep ignition sources away and protect your eyes and lungs from fumes and spray.",
+        "source": "rules",
+        "subject": "Masking Trim for Airless Spraying",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:11:01.670Z",
       "title": "Make airless spraying easy.  This Tool Makes Spraying WAY Faster",
       "channel": "Paint Life TV",
@@ -1697,6 +5088,28 @@
     },
     {
       "yt": "sUKjNv2Lu2o",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "PLC Program (Siemens TIA)",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:06:46.644Z",
       "title": "PLC Program (Siemens TIA) with Simulation Software",
       "channel": "Instrumentation Tools",
@@ -1709,6 +5122,28 @@
     },
     {
       "yt": "Mf1C7Y0D0ec",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Introduction to Ignition SCADA",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:06:43.409Z",
       "title": "Introduction to Ignition SCADA",
       "channel": "RealPars",
@@ -1721,6 +5156,28 @@
     },
     {
       "yt": "Ey_J7_wxHSk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "SBA 559: How to Coordinate Electrical, Mechanical, and Controls…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:06:41.200Z",
       "title": "SBA 559: How to Coordinate Electrical, Mechanical, and Controls Contractors",
       "channel": "Smart Buildings Academy",
@@ -1733,6 +5190,28 @@
     },
     {
       "yt": "MbM0Za6OnGU",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "Cornelius ED-150 Fountain Machine Install Steps",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T07:06:38.818Z",
       "title": "Cornelius ED-150 Fountain Machine Install Steps",
       "channel": "Learn A Trade (commercial equipment)",
@@ -1745,6 +5224,28 @@
     },
     {
       "yt": "HMh8C1fkJSg",
+      "draft": {
+        "ppe": [
+          "Respirator",
+          "Safety Goggles",
+          "Chemical Gloves"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Protect floors and furniture, and ventilate the room",
+          "Clean, scrape, fill and sand the surface",
+          "Apply primer to bare or patched areas",
+          "Cut in edges and corners with a brush",
+          "Roll the main areas in sections, keeping a wet edge",
+          "Apply a second coat once the first is dry"
+        ],
+        "title": "How to Paint Exterior Trim (Brushes, Rollers & Pro Tips)",
+        "safety": "Ventilate the area, keep ignition sources away and protect your eyes and lungs from fumes and spray.",
+        "source": "rules",
+        "subject": "Painting & Waterproofing",
+        "summary": "",
+        "stepsFrom": "topic"
+      },
       "found": "2026-11-06T07:06:26.358Z",
       "title": "How to Paint Exterior Trim Like a Pro (Brushes, Rollers & Pro Tips)",
       "channel": "Paint Life TV",
@@ -1757,6 +5258,28 @@
     },
     {
       "yt": "YYSneb2uZho",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "SBA 560: Damper Sizing for Better HVAC Control and Building Automation",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:46.749Z",
       "title": "SBA 560: Damper Sizing for Better HVAC Control and Building Automation",
       "channel": "Smart Buildings Academy",
@@ -1769,6 +5292,28 @@
     },
     {
       "yt": "4fJFdHCeFVM",
+      "draft": {
+        "ppe": [
+          "Respirator",
+          "Safety Goggles",
+          "Chemical Gloves"
+        ],
+        "level": "Beginner",
+        "steps": [
+          "Protect floors and furniture, and ventilate the room",
+          "Clean, scrape, fill and sand the surface",
+          "Apply primer to bare or patched areas",
+          "Cut in edges and corners with a brush",
+          "Roll the main areas in sections, keeping a wet edge",
+          "Apply a second coat once the first is dry"
+        ],
+        "title": "Mask Faster ! Essential Masking Tools for New Construction Painting",
+        "safety": "Ventilate the area, keep ignition sources away and protect your eyes and lungs from fumes and spray.",
+        "source": "rules",
+        "subject": "Masking Trim for Airless Spraying",
+        "summary": "",
+        "stepsFrom": "topic"
+      },
       "found": "2026-11-06T02:25:27.091Z",
       "title": "Mask Faster Like a Pro! Essential Masking Tools for New Construction Painting",
       "channel": "Paint Life TV",
@@ -1781,6 +5326,28 @@
     },
     {
       "yt": "ZUl6u2L07z8",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "How to Prep and Install a Mud Base for a Linear Drain Over an…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "",
+        "stepsFrom": "general"
+      },
       "found": "2026-11-06T02:25:25.068Z",
       "title": "How to prep and install a mud base for a linear drain over an uneven concrete floor.",
       "channel": "Sal DiBlasi (tiling & waterproofing)",
@@ -1792,7 +5359,7 @@
       "suggestedCategory": "Plumbing & Drainage"
     }
   ],
-  "lastRun": "2026-11-06T07:11:29.145Z",
+  "lastRun": "2026-11-06T07:31:19.079Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -1846,206 +5413,201 @@
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
       "via": "page",
-      "checked": "2026-11-06T07:10:54.420Z",
+      "checked": "2026-11-06T07:30:48.287Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
       "via": "page",
-      "checked": "2026-11-06T07:11:16.169Z",
-      "lastFound": 1
+      "checked": "2026-11-06T07:31:08.727Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
       "via": "page",
-      "checked": "2026-11-06T07:11:22.474Z",
+      "checked": "2026-11-06T07:31:12.950Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
       "via": "page",
-      "checked": "2026-11-06T07:11:06.796Z",
+      "checked": "2026-11-06T07:30:59.954Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
       "via": "page",
-      "checked": "2026-11-06T07:10:57.420Z",
+      "checked": "2026-11-06T07:30:51.465Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
       "via": "page",
-      "checked": "2026-11-06T07:11:28.287Z",
+      "checked": "2026-11-06T07:31:18.352Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
       "via": "page",
-      "checked": "2026-11-06T07:10:50.354Z",
+      "checked": "2026-11-06T07:30:43.910Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
       "via": "page",
-      "checked": "2026-11-06T07:11:25.339Z",
+      "error": "Feed not available (404). Backup also failed: Couldn't read the channel page.",
+      "checked": "2026-11-06T07:31:16.168Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
       "via": "page",
-      "checked": "2026-11-06T07:11:04.836Z",
+      "checked": "2026-11-06T07:30:57.884Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
       "via": "page",
-      "checked": "2026-11-06T07:10:51.267Z",
+      "checked": "2026-11-06T07:30:44.953Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
       "via": "page",
-      "checked": "2026-11-06T07:10:53.443Z",
+      "checked": "2026-11-06T07:30:47.226Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
       "via": "page",
-      "checked": "2026-11-06T07:11:10.864Z",
+      "checked": "2026-11-06T07:31:04.315Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
       "via": "page",
-      "checked": "2026-11-06T07:11:21.393Z",
-      "lastFound": 1
+      "checked": "2026-11-06T07:31:11.892Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
       "via": "page",
-      "checked": "2026-11-06T07:10:55.465Z",
+      "checked": "2026-11-06T07:30:49.412Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "checked": "2026-11-06T07:11:23.387Z",
+      "via": "page",
+      "checked": "2026-11-06T07:31:14.030Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
       "via": "page",
-      "checked": "2026-11-06T07:11:27.322Z",
+      "checked": "2026-11-06T07:31:17.279Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
       "via": "page",
-      "checked": "2026-11-06T07:10:52.287Z",
+      "checked": "2026-11-06T07:30:46.111Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
       "via": "page",
-      "checked": "2026-11-06T07:10:49.384Z",
+      "checked": "2026-11-06T07:30:42.748Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
       "via": "page",
-      "checked": "2026-11-06T07:11:05.842Z",
-      "lastFound": 0
-    },
-    "https://www.youtube.com/@appliancepartspros": {
-      "id": "UCnMCOX6qSbTUQPyJJzRwPcg",
-      "via": "page",
-      "error": "Feed not available (404). Backup also failed: Couldn't read the channel page.",
-      "checked": "2026-11-06T07:11:26.282Z",
+      "checked": "2026-11-06T07:30:58.926Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
       "via": "page",
-      "checked": "2026-11-06T07:11:17.167Z",
+      "checked": "2026-11-06T07:31:09.784Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
       "via": "page",
-      "checked": "2026-11-06T07:11:19.259Z",
-      "lastFound": 1
+      "checked": "2026-11-06T07:31:10.852Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
       "via": "page",
-      "checked": "2026-11-06T07:11:14.124Z",
+      "checked": "2026-11-06T07:31:07.660Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
       "via": "page",
-      "checked": "2026-11-06T07:11:24.369Z",
+      "checked": "2026-11-06T07:31:15.086Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
       "via": "page",
-      "checked": "2026-11-06T07:11:07.831Z",
+      "checked": "2026-11-06T07:31:00.990Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
       "via": "page",
-      "checked": "2026-11-06T07:11:09.832Z",
+      "checked": "2026-11-06T07:31:03.253Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
       "via": "page",
-      "checked": "2026-11-06T07:11:11.877Z",
+      "checked": "2026-11-06T07:31:05.433Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
       "via": "page",
-      "checked": "2026-11-06T07:10:56.442Z",
+      "checked": "2026-11-06T07:30:50.476Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
       "via": "page",
-      "checked": "2026-11-06T07:11:02.784Z",
+      "checked": "2026-11-06T07:30:55.830Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
       "via": "page",
-      "checked": "2026-11-06T07:11:08.839Z",
+      "checked": "2026-11-06T07:31:02.146Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
       "via": "page",
-      "checked": "2026-11-06T07:10:59.404Z",
+      "checked": "2026-11-06T07:30:53.711Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
       "via": "page",
-      "checked": "2026-11-06T07:11:03.803Z",
+      "checked": "2026-11-06T07:30:56.845Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
       "via": "page",
-      "checked": "2026-11-06T07:10:58.354Z",
+      "checked": "2026-11-06T07:30:52.508Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
       "via": "page",
-      "checked": "2026-11-06T07:11:01.670Z",
-      "lastFound": 1
+      "checked": "2026-11-06T07:30:54.761Z",
+      "lastFound": 0
     }
   }
 }

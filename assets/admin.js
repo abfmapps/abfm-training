@@ -117,7 +117,9 @@
     busy(true);
     try {
       for (let i = 0; i < 3; i++) {
-        const { json, sha } = await readFile(key);
+        // First try with the copy already on screen (saves downloading the whole file again); if someone else saved
+        // meanwhile the version check fails and it reads the latest copy and tries again.
+        const { json, sha } = i === 0 && data[key] && data[key].sha ? { json: JSON.parse(JSON.stringify(data[key].json)), sha: data[key].sha } : await readFile(key);
         const next = fn(json) || json;
         try {
           const newVer = await writeFile(key, next, sha, message);
@@ -206,8 +208,7 @@
     const { data: u } = await sb.auth.getUser();
     me = u && u.user ? u.user.email : null;
     if (!me) return renderConnect();
-    const { data: ok } = await sb.rpc("is_admin");
-    const { data: sup } = await sb.rpc("is_super_admin");
+    const [{ data: ok }, { data: sup }] = await Promise.all([sb.rpc("is_admin"), sb.rpc("is_super_admin")]);
     superAdmin = !!sup;
     if (!ok) {
       $("#disconnect").hidden = false;
@@ -221,10 +222,12 @@
     $("#app").innerHTML = `<p class="count" style="padding:24px 0">Loading…</p>`;
     try {
       const keys = Object.keys(FILES);
+      // Content and keys load at the same time (they used to load one after the other).
+      const keysP = loadKeys().catch(() => {});
       const res = await Promise.all(keys.map(k => readFile(k)));
       keys.forEach((k, i) => data[k] = res[i]);
+      await keysP;
     } catch (e) { return renderConnect(esc(e.message)); }
-    await loadKeys().catch(() => {});
     $("#tabs").hidden = false; $("#bnav").hidden = false; $("#disconnect").hidden = false;
     buildMore();
     $("#repo-label").textContent = me;
@@ -377,7 +380,7 @@
     if (ui.show === "no-len") list = list.filter(v => !v.duration);
     if (ui.show === "no-quiz") list = list.filter(v => !(v.quiz && v.quiz.length));
     if (ui.show === "gem-unsafe") list = list.filter(v => v.gemini && (v.gemini.unsafe || []).length);
-    const dupOf = new Map(V().map(v => [v.id, ABDraft.findDuplicates(v, V())]));
+    const dupOf = dupMap();
     if (ui.show === "dups") list = list.filter(v => dupOf.get(v.id).length);
     if (words.length) list = list.filter(v => { const h = [v.title, v.ytTitle, v.channel, v.subject, v.category, v.id].join(" ").toLowerCase(); return words.every(w => h.includes(w)); });
     list = [...list].sort((a, b) => (b.added || "").localeCompare(a.added || ""));
@@ -524,10 +527,17 @@
     toast(to ? "Hidden from staff" : "Visible to staff again"); render();
   }
   /* ---------- Remove duplicates: group similar videos, keep the best of each, delete the rest (after you review) ---------- */
+  let dupKey = "", dupCache = null;   // the duplicate check compares every pair of videos: do it once per save, not on every keystroke
+  function dupMap() {
+    const key = (data.videos.sha || 0) + ":" + V().length;
+    if (dupKey !== key || !dupCache) { dupKey = key; dupCache = new Map(V().map(v => [v.id, ABDraft.findDuplicates(v, V())])); }
+    return dupCache;
+  }
   function dupGroups() {
     const vs = V(), parent = new Map(vs.map(v => [v.id, v.id]));
     const find = x => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
-    for (const v of vs) for (const d of ABDraft.findDuplicates(v, vs)) parent.set(find(v.id), find(d.item.id));
+    const dm = dupMap();
+    for (const v of vs) for (const d of dm.get(v.id) || []) parent.set(find(v.id), find(d.item.id));
     const by = new Map();
     for (const v of vs) { const k = find(v.id); if (!by.has(k)) by.set(k, []); by.get(k).push(v); }
     return [...by.values()].filter(g => g.length > 1);

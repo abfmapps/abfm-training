@@ -492,7 +492,9 @@ ${JSON.stringify(lines)}` }] });
   /* Duplicate check: compares the meaningful words of two titles (0 = nothing in common, 1 = same). */
   const STOP = new Set("a an the and or of for to in on with your you how what why is are it its this that from by at as be do does using use used easy simple quick guide tutorial video explained explanation step steps full complete beginner beginners basic basics part new best way ways diy pro like professional training tips tip learn lesson course 2023 2024 2025 2026 vs".split(" "));
   const stem = w => w.replace(/(ings|ing|ers|er|es|ed|s)$/, "").replace(/(.)\1$/, "$1");
-  const tokens = t => new Set(String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").split(" ").filter(w => w.length > 1 && !STOP.has(w)).map(stem).filter(w => w.length > 1));
+  const tokCache = new Map();   // titles are compared many times: split each one only once
+  const tokens = t => { const k = String(t || ""); let r = tokCache.get(k); if (!r) { if (tokCache.size > 5000) tokCache.clear(); r = tokens0(k); tokCache.set(k, r); } return r; };
+  const tokens0 = t => new Set(String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").split(" ").filter(w => w.length > 1 && !STOP.has(w)).map(stem).filter(w => w.length > 1));
   function similarity(a, b) {
     const A = tokens(a), B = tokens(b);
     if (!A.size || !B.size) return 0;

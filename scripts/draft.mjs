@@ -7,7 +7,7 @@ import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
 require("../assets/drafter.js");
-const { ruleDraft, aiDraft, aiQuiz } = globalThis.ABDraft;
+const { ruleDraft, aiDraft, aiDraftText, aiQuiz } = globalThis.ABDraft;
 
 const KEY = process.env.GEMINI_API_KEY || "";
 // Groq backup: quizzes (text) switch to Groq when Gemini is busy or out of quota. Videos still need Gemini.
@@ -28,6 +28,9 @@ const categories = (settings.categories || []).map(c => c.name);
 // Settings → AI: which AI is on and which goes first. Video drafts need Gemini.
 globalThis.ABAI = settings.ai || {};
 const GEM = (settings.ai || {}).gemini === false ? "" : KEY;
+// Gemini is only for what other AIs can't do (watching videos). New videos are drafted by Groq / OpenRouter from the
+// title and description; Gemini watches a video only when no other AI is available, or when you press it in the admin.
+const TEXT_AI = (GROQ && (settings.ai || {}).groq !== false) || (OPENROUTER && (settings.ai || {}).openrouter !== false);
 const minutes = d => { const p = String(d || "").split(":").map(Number); return p.length > 1 && p.every(n => !isNaN(n)) ? p.reduce((a, n) => a * 60 + n, 0) / 60 : 15; };
 let usedMin = 0;
 const subjectsFor = cat => [...new Set(videos.filter(v => v.category === cat && v.subject).map(v => v.subject))];
@@ -40,7 +43,18 @@ for (const item of pending.queue || []) {
     rules++;
   }
   if (!item.draft.title) item.draft.title = globalThis.ABDraft.trainingTitle(item.title, item.channel);
-  if (GEM && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI && usedMin + minutes(item.duration) <= MAX_MINUTES) {
+  if (TEXT_AI && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI) {
+    try {
+      item.draft = await aiDraftText({ title: item.title, description: item.description, channel: item.channel, category, subjects: subjectsFor(category), categories });
+      delete item.aiTries; delete item.aiError; ai++;
+      if (item.draft.category && categories.includes(item.draft.category) && !item.channelCategory) item.suggestedCategory = item.draft.category;
+      console.log(`  ✓ Text AI (${item.draft.model}): ${item.title} → ${item.draft.review.recommend}`);
+    } catch (e) {
+      item.aiTries = (item.aiTries || 0) + 1; item.aiError = String(e.message || e).slice(0, 200); aiFail++;
+      console.log(`  ! Text draft failed for ${item.yt}: ${e.message}`);
+    }
+    await sleep(1500);
+  } else if (GEM && !TEXT_AI && item.draft.source !== "ai" && (item.aiTries || 0) < 3 && ai + aiFail < MAX_AI && usedMin + minutes(item.duration) <= MAX_MINUTES) {
     usedMin += minutes(item.duration);
     try {
       item.draft = aiDraft ? await aiDraft({ yt: item.yt, title: item.title, category, subjects: subjectsFor(category), categories, key: KEY, model: MODEL }) : item.draft;
@@ -59,7 +73,8 @@ for (const item of pending.queue || []) {
   }
 }
 // Then check videos already in the library that Gemini hasn't reviewed yet (review only — your text is never changed).
-const MAX_LIB = Number(process.env.MAX_AI_LIBRARY || 15);
+// Off by default: watching already-published videos costs Gemini tokens. Set MAX_AI_LIBRARY to turn it on.
+const MAX_LIB = Number(process.env.MAX_AI_LIBRARY || 0);
 let lib = 0;
 if (GEM) {
   for (const v of vDoc.videos || []) {

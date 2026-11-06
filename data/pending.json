@@ -5,29 +5,64 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Work Gloves"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "Which pipe material is more flexible during a freeze?",
+            "answer": 1,
+            "options": [
+              "Copper",
+              "PEX",
+              "Rigid steel"
+            ]
+          },
+          {
+            "q": "Where should you drip a faucet before a hard freeze?",
+            "answer": 0,
+            "options": [
+              "Furthest from the water entry point",
+              "Closest to the water meter",
+              "Only in the bathroom"
+            ]
+          },
+          {
+            "q": "What should be insulated to protect against freezes?",
+            "answer": 1,
+            "options": [
+              "The argument",
+              "The pipe",
+              "The room temperature"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Compare how copper and PEX pipes react to freezing water.",
+          "Identify vulnerable areas like exterior walls and uninsulated crawl spaces.",
+          "Insulate the pipe properly rather than relying solely on pipe material.",
+          "Drip faucets furthest from the water entry point during hard freezes."
         ],
-        "title": "PEX vs Copper: Which One Survives a Freeze?",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "Which one survives: PEX or copper? When water freezes and expands inside it, the pipe can split. PEX has some flexibility, which gives it a better chance of surviving a freeze.",
-        "stepsFrom": "general"
+        "title": "Choosing Between PEX and Copper Pipes for Freezes",
+        "review": {
+          "reason": "Provides useful plumbing knowledge on freeze protection and pipe types for technicians.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure proper insulation and take preventive measures before a hard freeze to avoid costly pipe damage.",
+        "source": "ai",
+        "subject": "Pipe Joining",
+        "summary": "This video explains how copper and PEX pipes react during freezing weather and provides tips on preventing pipe bursts.",
+        "category": "Plumbing & Drainage",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T09:17:27.123Z",
       "title": "PEX vs copper: which one survives a freeze?",
-      "aiError": "Expected double-quoted property name in JSON at position 1033 (line 21 column 3)",
-      "aiTries": 2,
       "channel": "Roger Wakefield Plumbing Education",
       "duration": "",
       "published": "2026-11-05T18:06:20+00:00",
@@ -106,6 +141,79 @@
       "description": "",
       "channelCategory": "Kitchen & Laundry Appliances",
       "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "uT91J47LpZ0",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Knee Pads",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What tool is used to comb the mortar?",
+            "answer": 0,
+            "options": [
+              "Notched trowel",
+              "Paint roller",
+              "Sponge"
+            ]
+          },
+          {
+            "q": "What is placed between tiles to ensure even gaps?",
+            "answer": 1,
+            "options": [
+              "Wood shims",
+              "Leveling clips and spacers",
+              "Masking tape"
+            ]
+          },
+          {
+            "q": "What type of tiles are being installed?",
+            "answer": 1,
+            "options": [
+              "Carpet tiles",
+              "Wood-look plank tiles",
+              "Marble slabs"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Apply thinset mortar to the floor substrate.",
+          "Comb through the mortar with a notched trowel.",
+          "Place tile spacers and leveling clips.",
+          "Lay wood-look plank tiles onto the mortar bed.",
+          "Secure tiles using wedges and a leveling tool."
+        ],
+        "title": "Installing Wood Look Plank Tiles",
+        "review": {
+          "reason": "Clear, practical demonstration of wood-look plank tile installation over uncoupling membrane.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": false,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always wear knee pads and proper protective gear when working on hard floors for extended periods.",
+        "source": "ai",
+        "subject": "Tile Installation",
+        "summary": "This video demonstrates laying mortar, uncoupling membrane, and installing wood-look plank tiles with leveling clips.",
+        "category": "Civil & Carpentry",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:33.835Z",
+      "title": "Dark Wood look Plank tile install #diy #tiles #construction #planktile",
+      "channel": "Sal DiBlasi (tiling & waterproofing)",
+      "duration": "",
+      "published": "2026-11-04T14:00:01+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
+      "description": "SUBSCRIBE Learn how to tile the right way.\nDark Wood look Plank tile install #diy #tiles #construction #planktile Quick little video to show the installation process of a large wood lock porcelain plank tile. All tile installed by Sal DiBlasi, Elite-tile Company, in the Boston North Shore area. This video contains affiliate links, which means I will receive a small commission if you click on the product link. #tile #transformthetrade  #howtotile #installingtile #howtoinstalltile #liticrete #mapei #Schlutersystems #diy #construction #ardex\n\n🙂 This is my Amazon Store 🙂 https://www.amazon.com/shop/saldiblasi\n\nPayPal\nhttps://www.paypal.com/donate/?hosted_button_id=UMJSX3UHEHQGQ\n\nPatreon  https://www.patreon.com/c/saldiblasi\n\n🌲 Link Tree 🌲\nhttps://linktr.ee/saldiblasi\n\n☕ Buy me a coffee ☕\nhttps://www.buymeacoffee.com/saldibs2",
+      "channelCategory": "",
+      "suggestedCategory": "Civil & Carpentry"
     },
     {
       "yt": "oX2wjCIqMH0",
@@ -215,6 +323,77 @@
       "suggestedCategory": "HVAC & Chillers"
     },
     {
+      "yt": "V6q8jEMEJxw",
+      "draft": {
+        "ppe": [
+          "High-Visibility Vest",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What type of machine is shown in the supermarket?",
+            "answer": 0,
+            "options": [
+              "Autonomous floor scrubber",
+              "Manual vacuum cleaner",
+              "Electric pallet jack"
+            ]
+          },
+          {
+            "q": "What safety precaution should you take near autonomous cleaning equipment?",
+            "answer": 1,
+            "options": [
+              "Ride on top of it",
+              "Keep clear of moving machinery",
+              "Ignore it completely"
+            ]
+          },
+          {
+            "q": "Where is the machine operating in the video?",
+            "answer": 0,
+            "options": [
+              "In a supermarket aisle",
+              "In an office lobby",
+              "In an outdoor parking lot"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Inspect the autonomous floor scrubber before operation",
+          "Ensure aisle is clear of obstacles and debris",
+          "Power on and select cleaning route",
+          "Monitor machine during operation"
+        ],
+        "title": "Autonomous Floor Scrubber Operation",
+        "review": {
+          "reason": "Novelty video featuring a Halloween decoration on a cleaning robot, not suitable for formal technical training.",
+          "unsafe": [],
+          "quality": 4,
+          "talking": false,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 3
+        },
+        "safety": "Keep clear of moving autonomous cleaning machinery to avoid collision.",
+        "source": "ai",
+        "subject": "Floor Scrubbing Equipment",
+        "summary": "An autonomous floor scrubbing machine operates in a supermarket aisle during closing shift.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:54.680Z",
+      "title": "POV:  You got put on the closing shift... for eternity. 💀 Happy Halloween! #halloween",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-31T18:00:14+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "LMdqTOLaA6w",
       "draft": {
         "ppe": [
@@ -289,27 +468,503 @@
       "suggestedCategory": "Water Tanks & Pumps"
     },
     {
+      "yt": "f3qbgP7pnJc",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Nitrile Gloves",
+          "Respirator Mask"
+        ],
+        "quiz": [
+          {
+            "q": "What is the main benefit of using a hose whip?",
+            "answer": 1,
+            "options": [
+              "It increases paint pressure",
+              "It improves gun maneuverability",
+              "It prevents paint from drying"
+            ]
+          },
+          {
+            "q": "What must you do before changing a hose whip?",
+            "answer": 0,
+            "options": [
+              "Depressurize the sprayer",
+              "Clean the spray tip",
+              "Turn off the lights"
+            ]
+          },
+          {
+            "q": "What is the maximum pressure for this hose whip?",
+            "answer": 2,
+            "options": [
+              "1,000 PSI",
+              "2,500 PSI",
+              "3,500 PSI"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Select a compatible hose whip for your airless sprayer.",
+          "Verify the hose whip pressure rating matches your equipment.",
+          "Attach the hose whip to the airless spray gun.",
+          "Connect the spray hose to the other end of the whip.",
+          "Test the connection for leaks before starting the paint job."
+        ],
+        "title": "Using Airless Paint Sprayer Hose Whips",
+        "review": {
+          "reason": "The video clearly explains a useful tool for improving ergonomics and control during airless spraying.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Always ensure the airless sprayer is depressurized before connecting or disconnecting any hoses or whips.",
+        "source": "ai",
+        "subject": "Painting & Waterproofing",
+        "summary": "This video demonstrates the use of a flexible hose whip attachment for airless paint sprayers to improve maneuverability. It highlights the specifications and benefits of using these whips during painting tasks.",
+        "category": "Painting & Waterproofing",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:35.828Z",
+      "title": "Custom airless hose whips from Paint Life Supply Co.",
+      "channel": "Paint Life TV",
+      "duration": "",
+      "published": "2026-10-29T18:58:10+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "description": "Find our custom whips here: https://paintlifesupply.com/collections/game-changers",
+      "channelCategory": "Painting & Waterproofing",
+      "suggestedCategory": "Painting & Waterproofing"
+    },
+    {
+      "yt": "c07upgEQxlg",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What is the maximum water temperature for the ALPHA 26-150 pump?",
+            "answer": 0,
+            "options": [
+              "212°F",
+              "230°F",
+              "250°F"
+            ]
+          },
+          {
+            "q": "Which app is used for Bluetooth connectivity and pump setup?",
+            "answer": 0,
+            "options": [
+              "Grundfos GO",
+              "Grundfos Connect",
+              "Alpha Setup"
+            ]
+          },
+          {
+            "q": "What color LED indicates a warning on the pump interface?",
+            "answer": 2,
+            "options": [
+              "Green",
+              "Red",
+              "Yellow"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Review ECM circulator benefits and DOE energy standards.",
+          "Unbox the pump and check accessories like gaskets and wiring connectors.",
+          "Verify proper horizontal orientation with the motor facing a wall.",
+          "Wire the pump using the toolless terminal power connector.",
+          "Connect via Bluetooth to the Grundfos GO app for guided setup and diagnostics."
+        ],
+        "title": "Mastering Grundfos Alpha Pump Startup and Optimization",
+        "review": {
+          "reason": "Comprehensive training on modern circulator pump installation and app-based setup.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure power is disconnected and system pressure is relieved before servicing or replacing any pump.",
+        "source": "ai",
+        "subject": "Water Tanks & Pumps",
+        "summary": "This webinar covers the features, replacement selection, installation, and optimization of Grundfos Alpha 26-99 and 26-150 pumps.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:50.332Z",
+      "title": "Mastering ALPHA 26-99 and 26-150: Startup to Optimization",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T11:49:43+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Take your ALPHA 26-99/26-150 knowledge to the next level. In this recorded webinar, Grundfos Regional Training Manager, Steve Fernald, takes a deeper dive into commissioning, optimizing, and troubleshooting the ALPHA 26-99/150 using the Grundfos GO app. Learn how to get started with Grundfos GO, explore advanced features that help maximize system performance, and discover practical troubleshooting tools that can simplify startup and service. This session covers key performance advantages, application best practices, and digital tools designed to help you commission, optimize, and maintain hydronic systems with confidence.",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "o7ONtLL8SyM",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Cut-Resistant Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step when replacing a pump?",
+            "answer": 0,
+            "options": [
+              "Scan the old pump with the app",
+              "Turn on the water supply",
+              "Remove the pump immediately"
+            ]
+          },
+          {
+            "q": "What should you do before removing the pump?",
+            "answer": 1,
+            "options": [
+              "Check the water temperature",
+              "Disconnect and isolate the power",
+              "Clean the pump housing"
+            ]
+          },
+          {
+            "q": "How do you find the right replacement pump?",
+            "answer": 1,
+            "options": [
+              "Guess the model number",
+              "Use the Grundfos Go app",
+              "Ask a colleague for advice"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Scan the old pump's QR code using the Grundfos Go app.",
+          "Identify the correct replacement pump model from the app results.",
+          "Disconnect the power and remove the old pump from the system.",
+          "Install the new Grundfos Alpha Go pump.",
+          "Configure the new pump settings using the mobile app."
+        ],
+        "title": "Replacing Circulator Pumps With Grundfos Alpha Go",
+        "review": {
+          "reason": "The video provides a clear, professional demonstration of a modern tool for pump replacement.",
+          "unsafe": [
+            "No clear demonstration of electrical isolation or lockout/tagout procedures"
+          ],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Always ensure the power supply to the pump is disconnected and locked out before starting any maintenance work.",
+        "source": "ai",
+        "subject": "Water Tank Pump Maintenance",
+        "summary": "This video demonstrates how to use the Grundfos Go app to identify and replace circulator pumps efficiently. It highlights how two pump models can cover most replacement needs.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:51.479Z",
+      "title": "ALPHA GO | Faster replacements with just two pumps",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:23:30+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "What if you could handle most circulator pump replacements on the first visit with just two pumps in your van?\n\nDiscover how the ALPHA1 GO and ALPHA2 GO can help you replace almost 70% of integrated Grundfos circulator pumps, and most standalone models, without return trips or spare part delays. \n\nWith just two pumps in your van, you can…\n\n✅ Complete replacement jobs in one GO \n✅ Eliminate spare part wait times\n✅ Avoid stock and sizing issues\n✅ Simplify pump selection and installation\n\nLearn more: http://gfos.ly/6056BHm5JY\nSign up for our Grundfos for Installers newsletter: http://gfos.ly/6057BHm5Jl\n\n#ALPHAGO #GrundfosGO #PumpReplacement #GOReplace #PossibilityInEveryDrop",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "J0v72PKh2Mk",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Safety Gloves",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "What is the primary purpose of using the Grundfos GO app?",
+            "answer": 1,
+            "options": [
+              "To clean the pump exterior",
+              "To accurately commission the pump",
+              "To replace the pump motor"
+            ]
+          },
+          {
+            "q": "How does the app connect to the circulator pump?",
+            "answer": 0,
+            "options": [
+              "Via Bluetooth",
+              "Via Wi-Fi network",
+              "Via USB cable"
+            ]
+          },
+          {
+            "q": "What information is required for the guided setup?",
+            "answer": 2,
+            "options": [
+              "The pump color",
+              "The installer's name",
+              "System size and energy demand"
+            ]
+          }
+        ],
+        "level": "Intermediate",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Download and open the Grundfos GO app on your mobile device.",
+          "Connect the app to the circulator pump via Bluetooth.",
+          "Enter the system size and building energy demand in the app.",
+          "Select the required supply and return temperature difference.",
+          "Follow the app instructions to identify and set the pump head.",
+          "Confirm the final settings to complete the commissioning process."
+        ],
+        "title": "Commissioning Grundfos Circulator Pumps Using Guided Setup",
+        "review": {
+          "reason": "The video provides clear, professional instructions for a specific technical task relevant to pump maintenance.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Ensure the pump is properly isolated from the power supply before performing any maintenance or wiring adjustments.",
+        "source": "ai",
+        "subject": "Water Tank Pump Maintenance",
+        "summary": "This video demonstrates how to use the Grundfos GO app to accurately commission circulator pumps by entering system parameters. It shows the step-by-step process of connecting the app to the pump to optimize performance and energy efficiency.",
+        "category": "Water Tanks & Pumps",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:52.614Z",
+      "title": "ALPHA GO | Smarter commissioning with Guided Setup",
+      "channel": "Grundfos",
+      "duration": "",
+      "published": "2026-10-29T07:23:07+00:00",
+      "channelUrl": "https://www.youtube.com/@grundfos",
+      "description": "Make commissioning ALPHA GO pumps faster and easier with Guided Setup in the Grundfos GO app.\n\nFrom choosing the right control mode and setpoint to reducing errors, cutting energy use, and improving comfort for your customers, Guided Setup gives you a faster, more reliable way to achieve perfect commissioning every time.\n\n📲 Step-by-step setup in the Grundfos GO app\n⚙️ Optimise ALPHA GO pump performance \n🔁 Fewer call-backs, more comfort, less energy waste\n\nLearn more: http://gfos.ly/6054BHm5Hm\nSign up for our Grundfos for Installers newsletter: http://gfos.ly/6055BHm5HW\n\n#ALPHAGO #GrundfosGO #GuidedSetup #PumpCommissioning #PossibilityInEveryDrop",
+      "channelCategory": "Water Tanks & Pumps",
+      "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "hva73EFJVRs",
+      "draft": {
+        "ppe": [
+          "Safety Shoes",
+          "High-Visibility Vest"
+        ],
+        "quiz": [
+          {
+            "q": "What is the primary function of the Tennant X6 ROVR?",
+            "answer": 0,
+            "options": [
+              "Autonomous floor scrubbing",
+              "Window cleaning",
+              "Waste collection"
+            ]
+          },
+          {
+            "q": "What should you do before starting the robot?",
+            "answer": 0,
+            "options": [
+              "Clear the floor of obstacles",
+              "Paint the walls",
+              "Turn off all lights"
+            ]
+          },
+          {
+            "q": "What is a key safety requirement when using this robot?",
+            "answer": 1,
+            "options": [
+              "Wear a hard hat",
+              "Ensure the area is clear of people",
+              "Use a ladder"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Inspect the machine for any visible damage.",
+          "Ensure the floor area is clear of debris.",
+          "Activate the autonomous cleaning mode on the control panel.",
+          "Monitor the robot as it navigates the floor."
+        ],
+        "title": "Operating the Tennant X6 ROVR Autonomous Floor Scrubber",
+        "review": {
+          "reason": "The video provides a clear visual of the equipment, though it lacks detailed operational instructions.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": false,
+          "language": "None",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the area is clear of obstacles and people before activating the autonomous cleaning mode.",
+        "source": "ai",
+        "subject": "Floor Scrubbing Equipment",
+        "summary": "This video demonstrates the Tennant X6 ROVR autonomous floor scrubber moving through a hallway. It highlights the machine's design and its ability to navigate independently.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:55.807Z",
+      "title": "Set it up. Let it clean. 🤖 #floorcleaningrobot",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-27T20:30:22+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "Sit back and watch the X6 ROVR show you how it's done. \n\n☑️ Cleans autonomously \n☑️ Navigates and adapts to changing environments\n☑️ Covers the spots that are easy to miss \n\n📹 @Eric St. Gelais\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "kD_grCpbP3k",
+      "draft": {
+        "ppe": [
+          "Safety Shoes",
+          "High-Visibility Vest"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step before starting the robot?",
+            "answer": 0,
+            "options": [
+              "Clear the area of obstacles",
+              "Wash the floor with water",
+              "Turn off all lights"
+            ]
+          },
+          {
+            "q": "Where do you select the cleaning program?",
+            "answer": 1,
+            "options": [
+              "On the robot's handle",
+              "On the touchscreen display",
+              "On the remote control"
+            ]
+          },
+          {
+            "q": "What should you do while the robot is cleaning?",
+            "answer": 1,
+            "options": [
+              "Leave the room immediately",
+              "Monitor the robot's progress",
+              "Turn off the power supply"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Position the robot in the starting area.",
+          "Power on the floor scrubbing machine.",
+          "Select the cleaning program on the touchscreen.",
+          "Activate the autonomous cleaning mode.",
+          "Monitor the robot as it cleans the floor."
+        ],
+        "title": "Operating Autonomous Floor Scrubbing Robots",
+        "review": {
+          "reason": "The video clearly shows the deployment of autonomous floor cleaning equipment.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": false,
+          "language": "None",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the floor area is clear of obstacles and people before activating the autonomous cleaning mode.",
+        "source": "ai",
+        "subject": "Floor Scrubbing Equipment",
+        "summary": "This video demonstrates the operation of two autonomous floor scrubbing robots cleaning a large indoor hall.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T11:33:56.908Z",
+      "title": "Twice the ROVR. Double the shine. 💎 #floorcleaningrobot #floorcleaningmachine",
+      "channel": "Tennant Company",
+      "duration": "",
+      "published": "2026-10-21T15:00:15+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "See the X6 ROVR and X4 ROVR work together to help keep large event and conference spaces clean, polished, and ready for guests.\n\n📹 Hauns Anderson\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "ernyFWiVNew",
       "draft": {
         "ppe": [
-          "Safety Goggles",
-          "Cold-Resistant Gloves"
+          "Safety Shoes",
+          "High-Visibility Vest"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What should you do before starting the floor scrubber?",
+            "answer": 0,
+            "options": [
+              "Clear the floor of obstacles",
+              "Add extra water",
+              "Turn off all lights"
+            ]
+          },
+          {
+            "q": "What is the first step when using the machine?",
+            "answer": 1,
+            "options": [
+              "Turn on the lights",
+              "Position the machine",
+              "Clean the squeegee"
+            ]
+          },
+          {
+            "q": "How should you move the machine while cleaning?",
+            "answer": 1,
+            "options": [
+              "Move it very quickly",
+              "Guide it slowly",
+              "Pull it backwards"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Position the machine on the floor area to be cleaned.",
+          "Lower the squeegee assembly to the floor surface.",
+          "Activate the machine to begin scrubbing and drying.",
+          "Guide the machine slowly across the floor surface."
         ],
-        "title": "Watch the T300 in Action",
-        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
-        "source": "rules",
-        "subject": "",
-        "summary": "See the Tennant T300 floor scrubber at work. With powerful scrubbing and vacuum-assisted water recovery, the T300 helps remove dirt and recover dirty solution in a single pass, leaving floors cleaner and ready for use faster.",
-        "stepsFrom": "general"
+        "title": "Operating the T300 Floor Scrubber",
+        "review": {
+          "reason": "The video provides a clear, practical demonstration of standard floor cleaning equipment operation.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": false,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the floor area is clear of obstacles and debris before starting the machine.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "This video demonstrates the basic operation of a T300 floor scrubbing machine in a workshop environment.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:51:20.263Z",
       "title": "👉 Watch the T300 in action #floorcleaningmachine",
@@ -326,24 +981,62 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
+          "Cut-Resistant Gloves",
           "Safety Shoes"
         ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+        "quiz": [
+          {
+            "q": "What is the primary purpose of the HVAC/R symposium?",
+            "answer": 0,
+            "options": [
+              "To provide training and showcase new equipment",
+              "To sell used air conditioning units",
+              "To host a social party for technicians"
+            ]
+          },
+          {
+            "q": "Where can technicians register for the symposium?",
+            "answer": 1,
+            "options": [
+              "By calling the local supplier",
+              "At hvacrschool.com/symposium",
+              "By visiting the nearest office"
+            ]
+          },
+          {
+            "q": "What type of companies are present at the symposium?",
+            "answer": 1,
+            "options": [
+              "Only plumbing companies",
+              "HVAC equipment and tool manufacturers",
+              "Only software development companies"
+            ]
+          }
         ],
-        "title": "Sponsor the HVAC/R Symposium: Lock In Your Spot for 2027",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Electrical Diagnostics",
-        "summary": "Over two days, attendees get demos and training sessions on HVAC science, system and duct design, moisture management, equipment commissioning and more, with NATE credit available.",
-        "stepsFrom": "general"
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Register for the annual HVAC/R training symposium online.",
+          "Visit sponsor booths to see the latest HVAC equipment.",
+          "Engage with industry leaders and manufacturers at the event.",
+          "Learn about new tools and diagnostic software for HVAC systems."
+        ],
+        "title": "HVAC/R Training Symposium Overview",
+        "review": {
+          "reason": "This video is a promotional advertisement for a conference and does not provide technical training or procedures.",
+          "unsafe": [],
+          "quality": 5,
+          "talking": true,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Always follow all manufacturer safety guidelines and wear appropriate personal protective equipment when handling HVAC equipment.",
+        "source": "ai",
+        "subject": "Fundamentals",
+        "summary": "This video provides an overview of the annual HVAC/R training symposium, highlighting the various industry sponsors and equipment manufacturers present at the event.",
+        "category": "HVAC & Chillers",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:49:32.477Z",
       "title": "Sponsor the HVAC/R Symposium — Lock In Your Spot for 2027",
@@ -359,25 +1052,63 @@
       "yt": "MC8J8POUGr4",
       "draft": {
         "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Safety Shoes",
+          "High Visibility Vest"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What is the primary focus of the Johnson Controls studio?",
+            "answer": 0,
+            "options": [
+              "HVAC and cooling technology",
+              "Plumbing pipe installation",
+              "Landscaping design"
+            ]
+          },
+          {
+            "q": "What should you do when visiting a technical exhibition?",
+            "answer": 1,
+            "options": [
+              "Run through the aisles",
+              "Engage with staff for information",
+              "Touch all equipment without asking"
+            ]
+          },
+          {
+            "q": "Why is it important to review technical brochures?",
+            "answer": 0,
+            "options": [
+              "To learn about system specifications",
+              "To decorate your office",
+              "To use as scrap paper"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Enter the innovation studio exhibition area.",
+          "Observe various HVAC and cooling equipment displays.",
+          "Engage with technical staff for product information.",
+          "Review technical brochures and documentation provided.",
+          "Discuss system specifications and applications."
         ],
-        "title": "Chillventa 2026: Johnson Controls Innovation Studio Experience in…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "Our Chillventa recap video brings together some of the most exciting innovations showcased during the event, including large-scale heat pumps, chillers, building technologies and digital solutions that support energy efficiency and decarbonization.",
-        "stepsFrom": "general"
+        "title": "Overview of Johnson Controls HVAC Innovation Studio",
+        "review": {
+          "reason": "The video is a marketing recap of a trade show and does not provide specific technical training or procedures.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": false,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Always maintain awareness of your surroundings when walking through busy exhibition areas.",
+        "source": "ai",
+        "subject": "Fire Alarm Control Panel Basics",
+        "summary": "This video provides a tour of the Johnson Controls innovation studio showcasing various HVAC and cooling equipment models. It highlights the company's latest technology and solutions for commercial cooling systems.",
+        "category": "HVAC & Chillers",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:51:28.541Z",
       "title": "Chillventa 2026: Johnson Controls Innovation Studio Experience in Nuremberg - Recap",
@@ -393,25 +1124,63 @@
       "yt": "CBixOpXNQAM",
       "draft": {
         "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Disposable Gloves",
+          "Safety Glasses"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What must you do before cleaning the stove?",
+            "answer": 0,
+            "options": [
+              "Turn off the gas supply",
+              "Turn on the burners",
+              "Remove the gas pipes"
+            ]
+          },
+          {
+            "q": "When is it safe to start cleaning the stove?",
+            "answer": 1,
+            "options": [
+              "While the burners are hot",
+              "After the burners have cooled down",
+              "Immediately after cooking"
+            ]
+          },
+          {
+            "q": "What should you do after wiping the surface?",
+            "answer": 1,
+            "options": [
+              "Leave it wet",
+              "Dry it thoroughly",
+              "Apply oil to the surface"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Turn off the gas supply to the stove.",
+          "Ensure all burners are cool to the touch.",
+          "Apply a suitable cleaning agent to the surface.",
+          "Wipe the stove surface with a clean cloth.",
+          "Dry the surface thoroughly to prevent water spots."
         ],
-        "title": "4 Burner Cleaned",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
+        "title": "Cleaning A Gas Stove Surface",
+        "review": {
+          "reason": "The video provides a clear, simple demonstration of basic stove maintenance.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": false,
+          "language": "None",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the gas supply is turned off and the burners are completely cool before cleaning.",
+        "source": "ai",
+        "subject": "Appliance Fire Safety",
+        "summary": "This video demonstrates the process of wiping down and cleaning the surface of a four-burner gas stove.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:50:33.016Z",
       "title": "4 burner cleaned 👌 #airconditioner #howtomakechickenchangezi #whowillbemylifepartnerta",
@@ -427,25 +1196,64 @@
       "yt": "Y_dH4nOJvpE",
       "draft": {
         "ppe": [
-          "Insulated Gloves",
           "Safety Glasses",
+          "Insulated Gloves",
           "Safety Shoes"
         ],
-        "level": "Beginner",
-        "steps": [
-          "Get permission and the right permit for the job",
-          "Isolate the circuit and lock it off",
-          "Prove dead with a tested voltage tester",
-          "Carry out the work as shown in the video",
-          "Check all connections are tight and covers fitted",
-          "Restore power and test the installation"
+        "quiz": [
+          {
+            "q": "Which terminal is used for the switched live wire?",
+            "answer": 2,
+            "options": [
+              "Neutral terminal",
+              "Loop terminal",
+              "Switched line terminal"
+            ]
+          },
+          {
+            "q": "What must you do before starting this electrical task?",
+            "answer": 0,
+            "options": [
+              "Isolate the power supply",
+              "Clean the ceiling rose",
+              "Replace the light bulb"
+            ]
+          },
+          {
+            "q": "Where is the earth wire connected in the ceiling rose?",
+            "answer": 1,
+            "options": [
+              "Neutral terminal",
+              "Earth terminal",
+              "Loop terminal"
+            ]
+          }
         ],
-        "title": "Ceiling Rose Connections Explained",
-        "safety": "Isolate and prove dead before any work. Only qualified staff may work near live parts.",
-        "source": "rules",
-        "subject": "",
-        "summary": "In this short video, we explain the 3-plate method of connecting a light. Wiring a lighting circuits Videos are training aids for City and Guilds (C and G) and EAL courses Level 1, 2, 3 plus AM2, AM2S and AM2E.",
-        "stepsFrom": "general"
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Identify the neutral, loop, and switched line terminals.",
+          "Connect the supply neutral to the neutral terminal block.",
+          "Connect the permanent live supply to the loop terminal.",
+          "Connect the switched live wire to the switched line terminal.",
+          "Connect the earth wire to the earth terminal."
+        ],
+        "title": "Wiring a Ceiling Rose",
+        "review": {
+          "reason": "The video provides a clear and accurate explanation of ceiling rose wiring suitable for junior technicians.",
+          "unsafe": [],
+          "quality": 9,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 10
+        },
+        "safety": "Always ensure the electrical supply is isolated and locked out before starting any wiring work.",
+        "source": "ai",
+        "subject": "Wiring Accessories",
+        "summary": "This video explains the wiring connections for a standard ceiling rose, including neutral, loop, and switched line terminals.",
+        "category": "Electrical",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:49:39.468Z",
       "title": "Ceiling Rose Connections Explained",
@@ -461,25 +1269,62 @@
       "yt": "htpbDeamZF4",
       "draft": {
         "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Safety Shoes",
+          "High Visibility Vest"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What type of machine is cleaning the hospital corridor?",
+            "answer": 0,
+            "options": [
+              "Autonomous floor scrubber",
+              "Manual push mop",
+              "Industrial vacuum cleaner"
+            ]
+          },
+          {
+            "q": "Where is the cleaning operation taking place?",
+            "answer": 1,
+            "options": [
+              "Outdoor parking lot",
+              "Hospital corridor",
+              "Retail warehouse"
+            ]
+          },
+          {
+            "q": "What should be ensured before starting autonomous cleaning?",
+            "answer": 0,
+            "options": [
+              "Corridor is clear of obstructions",
+              "All lights are turned off",
+              "Doors are securely locked"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Power on the autonomous floor cleaning machine.",
+          "Position the robot at the start of the corridor.",
+          "Monitor the robot as it navigates the hospital hallway.",
+          "Ensure unobstructed path during automated cleaning."
         ],
-        "title": "Autonomous Floor Cleaning for Hospitals",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "The X4 ROVR helps automate routine floor cleaning, so healthcare teams can focus on what matters most. ▬▬ About Tennant Company ▬▬▬▬▬ Tennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning.",
-        "stepsFrom": "general"
+        "title": "Operating Autonomous Hospital Floor Cleaning Robot",
+        "review": {
+          "reason": "Shows practical application of autonomous cleaning equipment in healthcare facilities.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": false,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 8
+        },
+        "safety": "Ensure the hospital corridor is clear of patients and visitors before deploying autonomous cleaning equipment.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "An autonomous floor scrubbing robot cleans a hospital corridor while moving past doors.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:51:21.436Z",
       "title": "Autonomous floor cleaning for hospitals 🏥 #hospitalcleaning #facilitymanagement #floorcleaningrobot",
@@ -496,24 +1341,62 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Ear Defenders",
-          "Work Gloves"
+          "Knee Pads",
+          "Dust Mask"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What tool is used to undercut the door trim?",
+            "answer": 0,
+            "options": [
+              "Oscillating multi-tool",
+              "Circular saw",
+              "Hand chisel"
+            ]
+          },
+          {
+            "q": "What is placed under the cutting blade to set the height?",
+            "answer": 1,
+            "options": [
+              "A piece of wood",
+              "Cardboard and a tile",
+              "A measuring tape"
+            ]
+          },
+          {
+            "q": "How should the tile be positioned when acting as a guide?",
+            "answer": 0,
+            "options": [
+              "Upside down",
+              "Right side up",
+              "Vertically against the wall"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Place cardboard and an upside-down tile under the door trim.",
+          "Position the oscillating tool blade flat on the tile surface.",
+          "Cut the door trim carefully to the desired height.",
+          "Remove cut debris and test-fit the new tile underneath."
         ],
-        "title": "Simple Trick to Undercut Door Trim for Tile",
-        "safety": "Check the tool and lead before use, keep guards on and unplug before changing bits or blades.",
-        "source": "rules",
+        "title": "Undercutting Door Trim for Tile Installation",
+        "review": {
+          "reason": "Provides a clear, practical technique for undercutting door frames during tiling work.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 9
+        },
+        "safety": "Always wear safety glasses when operating power cutting tools.",
+        "source": "ai",
         "subject": "Tile Installation",
-        "summary": "",
-        "stepsFrom": "general"
+        "summary": "Demonstrates a quick trick using cardboard and an oscillating multi-tool to undercut door trim for tile flooring.",
+        "category": "Civil & Carpentry",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:49:59.695Z",
       "title": "Simple Trick to Undercut Door Trim for Tile #diy #tiles #construction",
@@ -529,25 +1412,61 @@
       "yt": "GO-gRjSLrng",
       "draft": {
         "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Safety Shoes",
+          "Formal Attire"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What is the main topic of the leadership forum?",
+            "answer": 0,
+            "options": [
+              "Recognizing government leadership excellence",
+              "HVAC system installation",
+              "Plumbing pipe repairs"
+            ]
+          },
+          {
+            "q": "Who is recognized during the ceremony?",
+            "answer": 1,
+            "options": [
+              "Facility technicians",
+              "Dubai government leaders",
+              "Contractor supervisors"
+            ]
+          },
+          {
+            "q": "What is emphasized by the speakers?",
+            "answer": 0,
+            "options": [
+              "Completing achievements and new practices",
+              "Electrical wiring standards",
+              "Drainage maintenance procedures"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Gather attendees for the leadership forum ceremony.",
+          "Present recognition awards to outstanding government leaders.",
+          "Deliver speeches emphasizing dedication and excellence in leadership."
         ],
-        "title": "القيادة الملهمة",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "لحظة استثنائية تختصر مسيرة من العطاء والتميّز، وتحتفي بقيادة جعلت من تمكين الكفاءات وصناعة القيادات نهجاً مؤسسياً... كلّ التهاني معاليكم، وإلى مزيد من الإنجازات والنجاحات.",
-        "stepsFrom": "general"
+        "title": "Inspiring Leadership Recognition and Compliance",
+        "review": {
+          "reason": "Useful for organizational culture and leadership awareness, but not a technical maintenance procedure.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "Arabic",
+          "recommend": "maybe",
+          "relevance": 6
+        },
+        "safety": "Ensure proper event staging and crowd management protocols are followed during official gatherings.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "This video shows a leadership forum recognizing outstanding Dubai government leaders and officials.",
+        "category": "UAE Rules & Compliance",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:52:06.190Z",
       "title": "القيادة الملهمة",
@@ -564,24 +1483,62 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
+          "High-Visibility Vest",
           "Safety Shoes"
         ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+        "quiz": [
+          {
+            "q": "What is the primary focus of leadership succession planning?",
+            "answer": 0,
+            "options": [
+              "Preparing employees for higher roles",
+              "Reducing daily work hours",
+              "Purchasing new office equipment"
+            ]
+          },
+          {
+            "q": "Why is delegation important for team growth?",
+            "answer": 0,
+            "options": [
+              "It builds employee confidence and skills",
+              "It eliminates the need for management",
+              "It slows down project completion"
+            ]
+          },
+          {
+            "q": "How are employee ideas utilized?",
+            "answer": 0,
+            "options": [
+              "They are reviewed and implemented",
+              "They are ignored by management",
+              "They are stored without evaluation"
+            ]
+          }
         ],
-        "title": "دبي… حيث تصنع القيادة أثراً، ويصنع الفريق مستقبلاً",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "في #بلدية_دبي، تؤمن قيادتنا بقدرات كوادرها، وتمنحهم مساحة للنمو والتطور والإبداع، وترسّخ فيهم ثقافة العمل بروح الفريق الواحد، لتتكامل الجهود وتتوحّد الطموحات في صناعة المستقبل وتحقيق الإنجازات.",
-        "stepsFrom": "general"
+        "level": "Intermediate",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Identify capable employees for leadership roles.",
+          "Provide training and skills enhancement opportunities.",
+          "Empower team members with delegated responsibilities.",
+          "Evaluate employee performance and gather feedback."
+        ],
+        "title": "Leadership Succession Planning and Team Development",
+        "review": {
+          "reason": "The video focuses on organizational leadership and administrative policies rather than technical maintenance skills.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "Arabic",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Ensure proper coordination and communication with team members during any organizational transitions.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "This video highlights leadership succession planning, employee empowerment, and team development at Dubai Municipality.",
+        "category": "UAE Rules & Compliance",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:52:07.322Z",
       "title": "دبي… حيث تصنع القيادة أثراً، ويصنع الفريق مستقبلاً",
@@ -596,26 +1553,60 @@
     {
       "yt": "NrxmpElA1fE",
       "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+        "ppe": [],
+        "quiz": [
+          {
+            "q": "What is a quiet way to lose margin when estimating?",
+            "answer": 0,
+            "options": [
+              "Estimating for the crew you wish you had",
+              "Using accurate unit rates",
+              "Adjusting for site conditions"
+            ]
+          },
+          {
+            "q": "What should estimators use as a foundation for building estimates?",
+            "answer": 1,
+            "options": [
+              "Desired crew size",
+              "Unit rates",
+              "Random guesswork"
+            ]
+          },
+          {
+            "q": "When do hidden hours typically show up in a project?",
+            "answer": 2,
+            "options": [
+              "Before the project starts",
+              "During initial planning",
+              "When the job is already in trouble"
+            ]
+          }
         ],
         "level": "Intermediate",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Base build estimates from accurate unit rates.",
+          "Adjust estimates for site and existing conditions.",
+          "Factor in integration and customer requirements.",
+          "Account for schedule and crew constraints."
         ],
-        "title": "The Quietest Way Projects Lose Margin",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
+        "title": "Avoiding Hidden Project Cost Overruns",
+        "review": {
+          "reason": "Provides good business insight into project estimating and cost control.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 7
+        },
+        "safety": "Ensure accurate resource planning to prevent unbudgeted labor overruns and project delays.",
+        "source": "ai",
+        "subject": "BMS & Controls",
+        "summary": "This video discusses how estimating projects based on desired crews rather than unit rates leads to hidden labor losses.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:50:48.801Z",
       "title": "The Quietest Way Projects Lose Margin",
@@ -632,24 +1623,61 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Safety Shoes",
+          "Gloves"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "Where are the aircon units mounted in the video?",
+            "answer": 1,
+            "options": [
+              "On the roof",
+              "On the exterior wall",
+              "Inside the kitchen"
+            ]
+          },
+          {
+            "q": "What brand of aircon units is shown?",
+            "answer": 0,
+            "options": [
+              "Midea",
+              "Samsung",
+              "Carrier"
+            ]
+          },
+          {
+            "q": "What is important when working at heights near outdoor units?",
+            "answer": 0,
+            "options": [
+              "Fall protection and ladder safety",
+              "Wearing sunglasses",
+              "Using a garden hose"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Locate the mounted outdoor aircon units on the exterior wall.",
+          "Inspect the exterior condition of the Midea units and brackets.",
+          "Check refrigerant piping and electrical connections running to the units."
         ],
-        "title": "Midea Aircon Unit Installed",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
+        "title": "Inspecting Midea Aircon Outdoor Units",
+        "review": {
+          "reason": "This is a brief, silent pan of outdoor AC units without any instructional content or technical procedure.",
+          "unsafe": [],
+          "quality": 4,
+          "talking": false,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 3
+        },
+        "safety": "Ensure proper fall protection and safe ladder placement when working at heights near outdoor aircon units.",
+        "source": "ai",
+        "subject": "Appliance Fire Safety",
+        "summary": "This video shows an exterior inspection of installed Midea aircon outdoor compressor units mounted on a building wall.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:50:34.280Z",
       "title": "Midea Aircon unit installed 👌",
@@ -665,25 +1693,61 @@
       "yt": "eRWHhFutXbU",
       "draft": {
         "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Safety Gloves"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "Which screw type tended to strip out more often?",
+            "answer": 1,
+            "options": [
+              "Torx screws",
+              "Robertson screws",
+              "Machine screws"
+            ]
+          },
+          {
+            "q": "What PPE was worn in the video?",
+            "answer": 0,
+            "options": [
+              "Safety Gloves",
+              "Welding Mask",
+              "Ear Plugs"
+            ]
+          },
+          {
+            "q": "What was the main topic of the video?",
+            "answer": 1,
+            "options": [
+              "Drywall installation",
+              "Screw comparison",
+              "Painting tips"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Examine the heads of Torx and Robertson screws.",
+          "Compare rust levels on different screw types.",
+          "Assess stripping rates of Robertson screws during removal.",
+          "Compare the overall quality and reliability of screw heads."
         ],
-        "title": "A Follow Up About Screws",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
+        "title": "Comparing Torx and Robertson Screws",
+        "review": {
+          "reason": "Useful discussion on fastener selection for carpentry work, though not a step-by-step instructional procedure.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "maybe",
+          "relevance": 5
+        },
+        "safety": "Wear appropriate protective gloves while handling sharp, rusted hardware.",
+        "source": "ai",
+        "subject": "Civil & Carpentry",
+        "summary": "This video compares the durability and removal performance of Torx and Robertson screws in wooden structures.",
+        "category": "Civil & Carpentry",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:49:49.309Z",
       "title": "A Follow Up About Screws",
@@ -700,24 +1764,62 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
+          "High-Visibility Vest",
           "Safety Shoes"
         ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+        "quiz": [
+          {
+            "q": "Where are hidden hours typically found?",
+            "answer": 0,
+            "options": [
+              "Proposals or operations",
+              "Only in storage rooms",
+              "Never found"
+            ]
+          },
+          {
+            "q": "What does job cost feedback help improve?",
+            "answer": 1,
+            "options": [
+              "Company uniforms",
+              "Future estimates",
+              "Office lighting"
+            ]
+          },
+          {
+            "q": "How many options are there for finding hidden hours?",
+            "answer": 1,
+            "options": [
+              "One option",
+              "Two options",
+              "Three options"
+            ]
+          }
         ],
-        "title": "Hidden Hours: Pay Now or Pay Later",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Identify hidden hours at your desk or during operations.",
+          "Include identified hours into project proposals.",
+          "Close the loop with job cost feedback.",
+          "Use feedback to improve future estimates over time."
+        ],
+        "title": "Estimating and Job Cost Feedback",
+        "review": {
+          "reason": "The video is about business estimating and sales rather than technical maintenance procedures.",
+          "unsafe": [],
+          "quality": 5,
+          "talking": true,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Ensure all estimates are reviewed thoroughly before final submission.",
+        "source": "ai",
+        "subject": "BMS & Controls",
+        "summary": "This video explains how hidden hours are found in proposals or operations, and why job cost feedback improves estimates over time.",
+        "category": "BMS & Controls",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:50:49.982Z",
       "title": "Hidden Hours: Pay Now or Pay Later",
@@ -737,21 +1839,59 @@
           "Work Gloves",
           "Safety Shoes"
         ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+        "quiz": [
+          {
+            "q": "Which screw type was found to be easier to remove after 5 years?",
+            "answer": 1,
+            "options": [
+              "Robertson",
+              "Torx",
+              "Philips"
+            ]
+          },
+          {
+            "q": "What condition were the older Robertson screws found in?",
+            "answer": 1,
+            "options": [
+              "Like new",
+              "Rusty or stripped",
+              "Clean and straight"
+            ]
+          },
+          {
+            "q": "What project is the worker rebuilding in the video?",
+            "answer": 0,
+            "options": [
+              "A skate ramp",
+              "A wooden fence",
+              "A deck"
+            ]
+          }
         ],
-        "title": "Torx Screws vs Robertson or Philips",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "I finally found a reason to use Torx over all other screws.",
-        "stepsFrom": "general"
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Select Torx and Robertson screws for comparison.",
+          "Drive screws into wood using a power drill.",
+          "Remove old and rusted screws from the ramp.",
+          "Inspect screw heads for wear, rust, and stripping after use."
+        ],
+        "title": "Torx Screws Vs Robertson Screws",
+        "review": {
+          "reason": "Clear comparison of fastener durability useful for carpentry training.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 7
+        },
+        "safety": "Ensure proper footing and stable posture while operating power tools to prevent slips and injuries.",
+        "source": "ai",
+        "subject": "Drywall Repair",
+        "summary": "A worker compares the durability and ease of removal of Torx screws versus Robertson screws when rebuilding a wooden skate ramp.",
+        "category": "Civil & Carpentry",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:49:50.581Z",
       "title": "Torx Screws vs Robertson or Philips",
@@ -768,24 +1908,60 @@
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
+          "Insulated Gloves"
         ],
-        "level": "Intermediate",
+        "quiz": [
+          {
+            "q": "What component is inspected in the video?",
+            "answer": 0,
+            "options": [
+              "A door switch",
+              "A circuit breaker",
+              "A water valve"
+            ]
+          },
+          {
+            "q": "What should be done before inspecting electrical parts?",
+            "answer": 0,
+            "options": [
+              "Isolate power",
+              "Increase voltage",
+              "Wash with water"
+            ]
+          },
+          {
+            "q": "What PPE is recommended for electrical inspection?",
+            "answer": 0,
+            "options": [
+              "Insulated Gloves",
+              "Ear Muffs",
+              "Respirator"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
+          "Hold the switch casing securely in your hand.",
+          "Examine the switch toggle mechanism for proper movement.",
+          "Inspect the housing and terminals for any visible damage."
         ],
-        "title": "Door Switch for Chiller",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Refrigerator Cooling",
-        "summary": "",
-        "stepsFrom": "general"
+        "title": "Inspecting a Chiller Door Switch",
+        "review": {
+          "reason": "It clearly shows a close-up of a chiller door switch component.",
+          "unsafe": [],
+          "quality": 5,
+          "talking": false,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 7
+        },
+        "safety": "Ensure the circuit is isolated and de-energized before handling electrical components.",
+        "source": "ai",
+        "subject": "Appliance Fire Safety",
+        "summary": "This video shows a close-up inspection of a small electrical door switch used in a chiller.",
+        "category": "Kitchen & Laundry Appliances",
+        "stepsFrom": "ai"
       },
       "found": "2026-11-06T08:50:35.465Z",
       "title": "Door Switch for chiller",
@@ -2848,7 +4024,7 @@
       "suggestedCategory": "BMS & Controls"
     }
   ],
-  "lastRun": "2026-11-06T10:12:34.332Z",
+  "lastRun": "2026-11-06T11:34:03.340Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -2958,182 +4134,182 @@
   "channelStatus": {
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-06T10:11:58.747Z",
+      "checked": "2026-11-06T11:33:28.710Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MOHREUAE": {
       "id": "UCvR9cTL5kGeU_NqSr0hkFYQ",
-      "checked": "2026-11-06T10:12:32.795Z",
+      "checked": "2026-11-06T11:34:01.808Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
-      "checked": "2026-11-06T10:12:17.001Z",
+      "checked": "2026-11-06T11:33:45.724Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
-      "checked": "2026-11-06T10:12:26.074Z",
-      "lastFound": 5
+      "checked": "2026-11-06T11:33:52.614Z",
+      "lastFound": 3
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
-      "checked": "2026-11-06T10:12:10.110Z",
+      "checked": "2026-11-06T11:33:39.967Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-06T10:12:01.132Z",
+      "checked": "2026-11-06T11:33:31.068Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
-      "checked": "2026-11-06T10:12:31.241Z",
+      "checked": "2026-11-06T11:34:00.170Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-06T10:11:55.482Z",
+      "checked": "2026-11-06T11:33:25.407Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DEWAOfficial": {
       "id": "UCwqM2Kj0TAvbNHpeivY5I-g",
-      "checked": "2026-11-06T10:12:32.039Z",
+      "checked": "2026-11-06T11:34:01.015Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
-      "checked": "2026-11-06T10:12:29.580Z",
+      "checked": "2026-11-06T11:33:58.542Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
-      "checked": "2026-11-06T10:12:08.506Z",
+      "checked": "2026-11-06T11:33:38.295Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-06T10:11:56.303Z",
+      "checked": "2026-11-06T11:33:26.197Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-06T10:11:57.954Z",
+      "checked": "2026-11-06T11:33:27.890Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
-      "checked": "2026-11-06T10:12:14.574Z",
-      "lastFound": 1
+      "checked": "2026-11-06T11:33:43.277Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
-      "checked": "2026-11-06T10:12:19.456Z",
+      "checked": "2026-11-06T11:33:48.247Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-06T10:11:59.536Z",
+      "checked": "2026-11-06T11:33:29.415Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "checked": "2026-11-06T10:12:27.931Z",
-      "lastFound": 1
+      "checked": "2026-11-06T11:33:56.908Z",
+      "lastFound": 3
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
-      "checked": "2026-11-06T10:12:30.434Z",
+      "checked": "2026-11-06T11:33:59.353Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-06T10:11:57.137Z",
+      "checked": "2026-11-06T11:33:27.087Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DubaiMunicipality": {
       "id": "UCgoUXrrSn2pdbOd3S1Hr2hA",
-      "checked": "2026-11-06T10:12:33.621Z",
+      "checked": "2026-11-06T11:34:02.628Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-06T10:11:54.681Z",
+      "checked": "2026-11-06T11:33:24.564Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
-      "checked": "2026-11-06T10:12:09.310Z",
+      "checked": "2026-11-06T11:33:39.157Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
-      "checked": "2026-11-06T10:12:17.829Z",
+      "checked": "2026-11-06T11:33:46.614Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
-      "checked": "2026-11-06T10:12:18.672Z",
+      "checked": "2026-11-06T11:33:47.427Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
-      "checked": "2026-11-06T10:12:16.196Z",
+      "checked": "2026-11-06T11:33:44.907Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
-      "checked": "2026-11-06T10:12:28.765Z",
+      "checked": "2026-11-06T11:33:57.740Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
-      "checked": "2026-11-06T10:12:10.951Z",
+      "checked": "2026-11-06T11:33:40.797Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
-      "checked": "2026-11-06T10:12:12.555Z",
+      "checked": "2026-11-06T11:33:42.475Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
-      "checked": "2026-11-06T10:12:15.365Z",
+      "checked": "2026-11-06T11:33:44.085Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-06T10:12:00.346Z",
+      "checked": "2026-11-06T11:33:30.220Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-06T10:12:06.792Z",
+      "checked": "2026-11-06T11:33:36.654Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
-      "checked": "2026-11-06T10:12:11.759Z",
+      "checked": "2026-11-06T11:33:41.655Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-06T10:12:03.961Z",
+      "checked": "2026-11-06T11:33:33.835Z",
       "lastFound": 1
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-06T10:12:07.703Z",
+      "checked": "2026-11-06T11:33:37.478Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-06T10:12:01.913Z",
+      "checked": "2026-11-06T11:33:31.873Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-06T10:12:05.998Z",
+      "checked": "2026-11-06T11:33:35.828Z",
       "lastFound": 1
     }
   }

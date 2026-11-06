@@ -1,13 +1,783 @@
 {
   "videos": [
     {
+      "id": "lands-DE_kw8jZNTc",
+      "yt": "DE_kw8jZNTc",
+      "ppe": [
+        "Safety Glasses",
+        "Gloves",
+        "Work Boots"
+      ],
+      "quiz": [
+        {
+          "q": "What is the best time of day to water your lawn?",
+          "answer": 0,
+          "options": [
+            "5 AM to 9 AM",
+            "Midnight to 3 AM",
+            "12 PM to 3 PM"
+          ]
+        },
+        {
+          "q": "Why is watering at night bad for lawns?",
+          "answer": 1,
+          "options": [
+            "It attracts pests instantly",
+            "It promotes fungus growth",
+            "It washes away all the soil"
+          ]
+        },
+        {
+          "q": "What happens to grass when watered in the morning?",
+          "answer": 2,
+          "options": [
+            "It freezes quickly",
+            "It stays wet all day",
+            "It dries as the morning warms up"
+          ]
+        }
+      ],
+      "added": "2026-11-06",
+      "level": "Beginner",
+      "steps": [
+        "Avoid watering lawns at night to prevent fungus growth.",
+        "Schedule your sprinklers to run between 5 AM and 9 AM.",
+        "Utilize morning warmth to help grass blades dry properly."
+      ],
+      "title": "Best Time to Water Your Lawn",
+      "gemini": {
+        "date": "2026-11-06",
+        "reason": "Provides clear, practical irrigation scheduling advice for landscaping maintenance.",
+        "unsafe": [],
+        "quality": 8,
+        "talking": true,
+        "language": "English",
+        "recommend": "approve",
+        "relevance": 9
+      },
+      "safety": "Ensure sprinkler heads and lines are clear of hazards before operating.",
+      "channel": "Sprinkler Warehouse (irrigation)",
+      "subject": "Irrigation Valve Troubleshooting",
+      "summary": "This video explains why watering a lawn at night can cause fungus growth and recommends early morning watering instead.",
+      "ytTitle": "Is It Bad to Water Your Lawn at Night? | Sprinkler Warehouse",
+      "category": "Landscaping & Irrigation",
+      "duration": ""
+    },
+    {
+      "id": "civil-uT91J47LpZ0",
+      "yt": "uT91J47LpZ0",
+      "ppe": [
+        "Safety Glasses",
+        "Knee Pads",
+        "Work Gloves"
+      ],
+      "quiz": [
+        {
+          "q": "What is applied to the floor before laying plank tiles?",
+          "answer": 1,
+          "options": [
+            "Carpet underlay",
+            "Mortar and uncoupling membrane",
+            "Plastic sheet"
+          ]
+        },
+        {
+          "q": "What tool helps align and level the tiles evenly?",
+          "answer": 0,
+          "options": [
+            "Leveling clips and wedges",
+            "Screwdriver",
+            "Hammer only"
+          ]
+        },
+        {
+          "q": "When are the leveling clips typically removed?",
+          "answer": 2,
+          "options": [
+            "Before the mortar is applied",
+            "While the mortar is wet",
+            "After the mortar cures"
+          ]
+        }
+      ],
+      "added": "2026-11-06",
+      "level": "Intermediate",
+      "steps": [
+        "Apply and comb mortar over the floor membrane.",
+        "Place tile spacers and leveling clips along tile edges.",
+        "Press wood-look plank tiles firmly into the mortar bed.",
+        "Insert wedges into the clips and tighten them with a tool.",
+        "Remove leveling clips and wedges after the mortar cures."
+      ],
+      "title": "Installing Wood Look Plank Tiles",
+      "gemini": {
+        "date": "2026-11-06",
+        "reason": "Clear demonstration of laying wood-look plank tiles with clips.",
+        "unsafe": [],
+        "quality": 8,
+        "talking": false,
+        "language": "English",
+        "recommend": "approve",
+        "relevance": 9
+      },
+      "safety": "Wear appropriate personal protective equipment including knee pads and safety glasses when handling tools and materials.",
+      "channel": "Sal DiBlasi (tiling & waterproofing)",
+      "subject": "Tile Installation",
+      "summary": "A worker demonstrates how to spread mortar, place uncoupling membrane, apply thin-set, and lay wood-look plank tiles with leveling clips.",
+      "ytTitle": "Dark Wood look Plank tile install #diy #tiles #construction #planktile",
+      "category": "Civil & Carpentry",
+      "duration": ""
+    },
+    {
+      "id": "plumb-bBfIyWEMnmc",
+      "yt": "bBfIyWEMnmc",
+      "ppe": [
+        "Safety Glasses",
+        "Safety Boots",
+        "Gloves"
+      ],
+      "quiz": [
+        {
+          "q": "What indicates a potential hot water leak under the slab?",
+          "answer": 1,
+          "options": [
+            "A cold spot on the wall",
+            "A warm spot on the floor",
+            "A low water pressure gauge"
+          ]
+        },
+        {
+          "q": "What test should be done first to confirm a hot water line leak?",
+          "answer": 0,
+          "options": [
+            "Pressure test",
+            "Acoustic test",
+            "Thermal scan"
+          ]
+        },
+        {
+          "q": "What tool is used to pinpoint the exact location of the leak under concrete?",
+          "answer": 1,
+          "options": [
+            "Jackhammer",
+            "Acoustic detector",
+            "Infrared thermometer"
+          ]
+        }
+      ],
+      "added": "2026-11-06",
+      "level": "Intermediate",
+      "steps": [
+        "Identify warm spots on the floor indicating a possible leak.",
+        "Perform a pressure test to confirm the hot water line is leaking.",
+        "Use thermal imaging to map out the heat on the concrete.",
+        "Use acoustic leak detection equipment to pinpoint the exact leak location."
+      ],
+      "title": "Detecting Slab Leaks Using Thermal Imaging",
+      "gemini": {
+        "date": "2026-11-06",
+        "reason": "Provides clear methodology for detecting slab leaks without guesswork.",
+        "unsafe": [],
+        "quality": 8,
+        "talking": true,
+        "language": "English",
+        "recommend": "approve",
+        "relevance": 9
+      },
+      "safety": "Ensure proper PPE is worn before conducting any diagnostic or excavation work.",
+      "channel": "Roger Wakefield Plumbing Education",
+      "subject": "Leak Detection",
+      "summary": "This video explains how a hot water leak under a concrete slab is identified by a warm floor spot, pressure testing, and acoustic detection.",
+      "ytTitle": "Warm Spot on Your Floor? It Could Be a Slab Leak",
+      "category": "Plumbing & Drainage",
+      "duration": ""
+    },
+    {
+      "id": "water-J0v72PKh2Mk",
+      "yt": "J0v72PKh2Mk",
+      "ppe": [
+        "Safety Glasses",
+        "Work Gloves",
+        "Safety Shoes"
+      ],
+      "quiz": [
+        {
+          "q": "Which app is used for guided setup and commissioning in the video?",
+          "answer": 0,
+          "options": [
+            "Grundfos GO",
+            "Grundfos Connect",
+            "Grundfos Setup"
+          ]
+        },
+        {
+          "q": "What should you do before identifying head loss during setup?",
+          "answer": 1,
+          "options": [
+            "Drain the entire boiler",
+            "Remove actuators",
+            "Increase pump speed to max"
+          ]
+        },
+        {
+          "q": "What connectivity technology does the app use to link with the pump?",
+          "answer": 1,
+          "options": [
+            "Wi-Fi",
+            "Bluetooth",
+            "Infrared"
+          ]
+        }
+      ],
+      "added": "2026-11-06",
+      "level": "Intermediate",
+      "steps": [
+        "Connect to the Grundfos pump using the Grundfos GO app via Bluetooth.",
+        "Enter building and system parameters like area size and temperature difference.",
+        "Follow guided setup steps to remove actuators and identify head loss.",
+        "Select the right control mode and setpoint for optimal efficiency."
+      ],
+      "title": "Circulator Pump Commissioning With Grundfos GO",
+      "gemini": {
+        "date": "2026-11-06",
+        "reason": "Clear and helpful demonstration of digital pump commissioning using manufacturer tools.",
+        "unsafe": [],
+        "quality": 9,
+        "talking": true,
+        "language": "English",
+        "recommend": "approve",
+        "relevance": 9
+      },
+      "safety": "Ensure system pressure is isolated and electrical power is safely handled before servicing or replacing pumps.",
+      "channel": "Grundfos",
+      "subject": "Water Tanks & Pumps",
+      "summary": "This video demonstrates how to use the Grundfos GO app and Guided Setup for accurate commissioning of circulator pumps.",
+      "ytTitle": "ALPHA GO | Smarter commissioning with Guided Setup",
+      "category": "Water Tanks & Pumps",
+      "duration": ""
+    },
+    {
+      "id": "plumb--hMV1guDMJQ",
+      "yt": "-hMV1guDMJQ",
+      "ppe": [],
+      "quiz": [
+        {
+          "q": "What should you do with the main water valve before leaving?",
+          "answer": 1,
+          "options": [
+            "Leave it fully open",
+            "Shut it off",
+            "Remove the handle"
+          ]
+        },
+        {
+          "q": "Why open one faucet after shutting the main water?",
+          "answer": 1,
+          "options": [
+            "To flush the lines",
+            "To take the pressure off the house",
+            "To test the water heater"
+          ]
+        },
+        {
+          "q": "How should you open the main water valve upon returning?",
+          "answer": 0,
+          "options": [
+            "Slowly",
+            "As fast as possible",
+            "Only halfway"
+          ]
+        }
+      ],
+      "added": "2026-11-06",
+      "level": "Beginner",
+      "steps": [
+        "Shut off the main water valve before leaving for a trip.",
+        "Open one faucet to relieve pressure in the house lines.",
+        "Leave the tank water heater full and untouched.",
+        "Close the faucet upon returning home.",
+        "Open the main water valve slowly to let air sputter out."
+      ],
+      "title": "Shutting Off Main Water Before Travel",
+      "gemini": {
+        "date": "2026-11-06",
+        "reason": "Provides a clear, simple procedure for shutting off water systems before long absences.",
+        "unsafe": [],
+        "quality": 9,
+        "talking": true,
+        "language": "English",
+        "recommend": "approve",
+        "relevance": 8
+      },
+      "safety": "Ensure the main water valve is fully closed before opening a fixture to relieve pressure.",
+      "channel": "Roger Wakefield Plumbing Education",
+      "subject": "Valves & Fittings",
+      "summary": "The instructor explains how to shut off the main water supply and relieve system pressure before leaving home for a trip to prevent major leaks.",
+      "ytTitle": "Leaving Town? Do THIS Before You Go",
+      "category": "Plumbing & Drainage",
+      "duration": ""
+    },
+    {
+      "id": "water-k-Sv4R-GuyE",
+      "yt": "k-Sv4R-GuyE",
+      "ppe": [
+        "Safety Glasses",
+        "Work Gloves",
+        "Safety Shoes"
+      ],
+      "quiz": [
+        {
+          "q": "What should you do before replacing a circulator pump?",
+          "answer": 0,
+          "options": [
+            "Isolate and depressurize the system",
+            "Increase the water pressure",
+            "Turn up the thermostat"
+          ]
+        },
+        {
+          "q": "How do you identify the existing pump model using the app?",
+          "answer": 1,
+          "options": [
+            "Measure pipe diameter with a ruler",
+            "Scan the product label with your phone",
+            "Guess based on boiler size"
+          ]
+        },
+        {
+          "q": "What tool helps configure the new Alpha Go pump?",
+          "answer": 2,
+          "options": [
+            "A desktop computer",
+            "A standard multimeter",
+            "The mobile application"
+          ]
+        }
+      ],
+      "added": "2026-11-06",
+      "level": "Intermediate",
+      "steps": [
+        "Scan the existing pump product label using the mobile app.",
+        "Review the recommended replacement pump model on the app.",
+        "Remove the old pump head and disconnect electrical wiring.",
+        "Install the new Alpha Go pump and connect the wiring.",
+        "Configure and verify the pump settings using the mobile app."
+      ],
+      "title": "Replacing Heating Circulator Pumps with Alpha Go",
+      "gemini": {
+        "date": "2026-11-06",
+        "reason": "Clear demonstration of modern pump replacement and app-based configuration for technicians.",
+        "unsafe": [],
+        "quality": 8,
+        "talking": true,
+        "language": "German",
+        "recommend": "approve",
+        "relevance": 9
+      },
+      "safety": "Ensure the system is isolated and depressurized before starting any pump replacement work.",
+      "channel": "Grundfos",
+      "subject": "Water Tanks & Pumps",
+      "summary": "This video demonstrates how to use the Grundfos Go app and the Alpha Go series to quickly identify and replace existing heating circulator pumps.",
+      "ytTitle": "ALPHA GO | Schnellerer Austausch mit nur zwei Pumpen",
+      "category": "Water Tanks & Pumps",
+      "duration": ""
+    },
+    {
       "id": "bmsco-uiyQcyjlFPc",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات واقية",
+            "أحذية السلامة"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "حدد حالات الاستخدام التشغيلي الواضحة قبل تنفيذ التوأم الرقمي.",
+            "توحيد اصطلاحات تسمية النقاط عبر جميع أنظمة التشغيل الآلي للمبنى.",
+            "قم بتنفيذ العلامات الدلالية باستخدام معايير مثل Haystack أو Brick Schema.",
+            "ضمان جمع البيانات بشكل موثوق، والبنية التحتية للشبكة، وبروتوكولات الأمن السيبراني.",
+            "ابدأ صغيرًا من خلال تجربة الأدوات الرقمية المزدوجة على مبنى أو نظام واحد."
+          ],
+          "title": "التوائم الرقمية للمباني: الاستخدام العملي مقابل الضجيج",
+          "safety": "تأكد من إجراءات وضع علامة القفل المناسبة والسلامة الكهربائية عند فحص أو صيانة وحدات التحكم والمعدات الميدانية BMS.",
+          "summary": "يشرح هذا الفيديو دور التوائم الرقمية في إدارة المباني، ويفصل بين حالات الاستخدام الواقعية مثل اكتشاف الأخطاء والضجيج التسويقي."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "প্রতিরক্ষামূলক গ্লাভস",
+            "নিরাপত্তা জুতা"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "ডিজিটাল টুইন বাস্তবায়নের আগে পরিষ্কার অপারেশনাল ব্যবহারের ক্ষেত্রে সংজ্ঞায়িত করুন।",
+            "সমস্ত বিল্ডিং অটোমেশন সিস্টেম জুড়ে বিন্দু নামকরণের প্রথাকে মানসম্মত করুন।",
+            "হেস্ট্যাক বা ব্রিক স্কিমার মতো মান ব্যবহার করে শব্দার্থিক ট্যাগিং প্রয়োগ করুন।",
+            "নির্ভরযোগ্য ডেটা সংগ্রহ, নেটওয়ার্ক পরিকাঠামো এবং সাইবার নিরাপত্তা প্রোটোকল নিশ্চিত করুন।",
+            "একটি একক বিল্ডিং বা সিস্টেমে ডিজিটাল টুইন টুলস পাইলট করে ছোট শুরু করুন।"
+          ],
+          "title": "বিল্ডিংয়ের জন্য ডিজিটাল টুইনস: ব্যবহারিক ব্যবহার বনাম হাইপ",
+          "safety": "বিএমএস ফিল্ড কন্ট্রোলার এবং সরঞ্জাম পরিদর্শন বা রক্ষণাবেক্ষণ করার সময় সঠিক লকআউট ট্যাগআউট পদ্ধতি এবং বৈদ্যুতিক নিরাপত্তা নিশ্চিত করুন।",
+          "summary": "এই ভিডিওটি বিল্ডিং ম্যানেজমেন্টে ডিজিটাল টুইনস কী তা ব্যাখ্যা করে, বিপণন প্রচার থেকে ত্রুটি সনাক্তকরণের মতো বাস্তবসম্মত ব্যবহারের ক্ষেত্রে আলাদা করে।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "सुरक्षात्मक दस्ताने",
+            "सुरक्षा जूते"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "डिजिटल ट्विन को लागू करने से पहले स्पष्ट परिचालन उपयोग के मामलों को परिभाषित करें।",
+            "सभी भवन स्वचालन प्रणालियों में बिंदु नामकरण परंपराओं का मानकीकरण करें।",
+            "हेस्टैक या ब्रिक स्कीमा जैसे मानकों का उपयोग करके सिमेंटिक टैगिंग लागू करें।",
+            "विश्वसनीय डेटा संग्रह, नेटवर्क अवसंरचना और साइबर सुरक्षा प्रोटोकॉल सुनिश्चित करें।",
+            "एक ही इमारत या सिस्टम पर डिजिटल ट्विन टूल का संचालन करके छोटी शुरुआत करें।"
+          ],
+          "title": "इमारतों के लिए डिजिटल जुड़वां: व्यावहारिक उपयोग बनाम प्रचार",
+          "safety": "बीएमएस फ़ील्ड नियंत्रकों और उपकरणों का निरीक्षण या रखरखाव करते समय उचित लॉकआउट टैगआउट प्रक्रियाएं और विद्युत सुरक्षा सुनिश्चित करें।",
+          "summary": "यह वीडियो बताता है कि भवन प्रबंधन में डिजिटल जुड़वाँ क्या हैं, गलती का पता लगाने जैसे यथार्थवादी उपयोग के मामलों को मार्केटिंग प्रचार से अलग किया गया है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "സംരക്ഷണ കയ്യുറകൾ",
+            "സുരക്ഷാ ഷൂസ്"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "ഒരു ഡിജിറ്റൽ ഇരട്ട നടപ്പിലാക്കുന്നതിന് മുമ്പ് വ്യക്തമായ പ്രവർത്തന ഉപയോഗ കേസുകൾ നിർവചിക്കുക.",
+            "എല്ലാ ബിൽഡിംഗ് ഓട്ടോമേഷൻ സിസ്റ്റങ്ങളിലും പോയിൻ്റ് നെയിമിംഗ് കൺവെൻഷനുകൾ സ്റ്റാൻഡേർഡ് ചെയ്യുക.",
+            "ഹേസ്റ്റാക്ക് അല്ലെങ്കിൽ ബ്രിക്ക് സ്കീമ പോലുള്ള മാനദണ്ഡങ്ങൾ ഉപയോഗിച്ച് സെമാൻ്റിക് ടാഗിംഗ് നടപ്പിലാക്കുക.",
+            "വിശ്വസനീയമായ ഡാറ്റ ശേഖരണം, നെറ്റ്‌വർക്ക് ഇൻഫ്രാസ്ട്രക്ചർ, സൈബർ സുരക്ഷാ പ്രോട്ടോക്കോളുകൾ എന്നിവ ഉറപ്പാക്കുക.",
+            "ഒരൊറ്റ കെട്ടിടത്തിലോ സിസ്റ്റത്തിലോ ഡിജിറ്റൽ ഇരട്ട ഉപകരണങ്ങൾ പൈലറ്റ് ചെയ്തുകൊണ്ട് ചെറുതായി ആരംഭിക്കുക."
+          ],
+          "title": "കെട്ടിടങ്ങൾക്കുള്ള ഡിജിറ്റൽ ഇരട്ടകൾ: പ്രായോഗിക ഉപയോഗം vs ഹൈപ്പ്",
+          "safety": "BMS ഫീൽഡ് കൺട്രോളറുകളും ഉപകരണങ്ങളും പരിശോധിക്കുമ്പോഴോ പരിപാലിക്കുമ്പോഴോ ശരിയായ ലോക്കൗട്ട് ടാഗ്ഔട്ട് നടപടിക്രമങ്ങളും ഇലക്ട്രിക്കൽ സുരക്ഷയും ഉറപ്പാക്കുക.",
+          "summary": "മാർക്കറ്റിംഗ് ഹൈപ്പിൽ നിന്ന് തകരാർ കണ്ടെത്തൽ പോലുള്ള റിയലിസ്റ്റിക് ഉപയോഗ കേസുകൾ വേർതിരിക്കുന്ന ബിൽഡിംഗ് മാനേജ്‌മെൻ്റിലെ ഡിജിറ്റൽ ഇരട്ടകൾ എന്താണെന്ന് ഈ വീഡിയോ വിശദീകരിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "सुरक्षात्मक दस्ताने",
+            "सुरक्षा जुत्ता"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "डिजिटल ट्विन लागू गर्नु अघि स्पष्ट परिचालन प्रयोग केसहरू परिभाषित गर्नुहोस्।",
+            "सबै निर्माण स्वचालन प्रणालीहरूमा बिन्दु नामकरण सम्मेलनहरूलाई मानकीकृत गर्नुहोस्।",
+            "Haystack वा Brick Schema जस्ता मापदण्डहरू प्रयोग गरेर सिमान्टिक ट्यागिङ लागू गर्नुहोस्।",
+            "भरपर्दो डाटा सङ्कलन, नेटवर्क पूर्वाधार, र साइबर सुरक्षा प्रोटोकलहरू सुनिश्चित गर्नुहोस्।",
+            "एकल भवन वा प्रणालीमा डिजिटल जुम्ल्याहा उपकरणहरू पाइलट गरेर सानो सुरु गर्नुहोस्।"
+          ],
+          "title": "भवनहरूका लागि डिजिटल जुम्ल्याहा: व्यावहारिक प्रयोग बनाम हाइप",
+          "safety": "BMS क्षेत्र नियन्त्रक र उपकरणहरूको निरीक्षण वा मर्मत गर्दा उचित लकआउट ट्यागआउट प्रक्रियाहरू र विद्युतीय सुरक्षा सुनिश्चित गर्नुहोस्।",
+          "summary": "यो भिडियोले डिजिटल जुम्ल्याहाहरू निर्माण व्यवस्थापनमा के हुन् भनी वर्णन गर्दछ, वास्तविक प्रयोगका केसहरूलाई मार्केटिङ हाइपबाट त्रुटि पत्ता लगाउने जस्ता वास्तविक प्रयोगका केसहरूलाई अलग गर्दै।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "பாதுகாப்பு கையுறைகள்",
+            "பாதுகாப்பு காலணிகள்"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "டிஜிட்டல் இரட்டையை செயல்படுத்துவதற்கு முன் தெளிவான செயல்பாட்டு பயன்பாட்டு நிகழ்வுகளை வரையறுக்கவும்.",
+            "அனைத்து கட்டிட தன்னியக்க அமைப்புகளிலும் புள்ளி பெயரிடும் மரபுகளை தரப்படுத்தவும்.",
+            "ஹேஸ்டாக் அல்லது செங்கல் ஸ்கீமா போன்ற தரங்களைப் பயன்படுத்தி சொற்பொருள் குறிச்சொல்லைச் செயல்படுத்தவும்.",
+            "நம்பகமான தரவு சேகரிப்பு, நெட்வொர்க் உள்கட்டமைப்பு மற்றும் இணைய பாதுகாப்பு நெறிமுறைகளை உறுதிப்படுத்தவும்.",
+            "ஒரு கட்டிடம் அல்லது அமைப்பில் டிஜிட்டல் இரட்டைக் கருவிகளை இயக்குவதன் மூலம் சிறியதாகத் தொடங்குங்கள்."
+          ],
+          "title": "கட்டிடங்களுக்கான டிஜிட்டல் இரட்டையர்கள்: நடைமுறை பயன்பாடு vs ஹைப்",
+          "safety": "BMS புலக் கட்டுப்படுத்திகள் மற்றும் உபகரணங்களை ஆய்வு செய்யும் போது அல்லது பராமரிக்கும் போது சரியான லாக்அவுட் டேக்அவுட் நடைமுறைகள் மற்றும் மின் பாதுகாப்பை உறுதி செய்யவும்.",
+          "summary": "மார்கெட்டிங் ஹைப்பிலிருந்து தவறு கண்டறிதல் போன்ற யதார்த்தமான பயன்பாட்டு நிகழ்வுகளைப் பிரித்து, கட்டுமான நிர்வாகத்தில் டிஜிட்டல் இரட்டையர்கள் என்ன என்பதை இந்த வீடியோ விளக்குகிறது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes na proteksiyon",
+            "Mga Sapatos na Pangkaligtasan"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "Tukuyin ang malinaw na mga kaso ng paggamit sa pagpapatakbo bago ipatupad ang isang digital twin.",
+            "I-standardize ang mga convention sa pagbibigay ng pangalan sa lahat ng mga sistema ng automation ng gusali.",
+            "Ipatupad ang semantic tagging gamit ang mga pamantayan tulad ng Haystack o Brick Schema.",
+            "Tiyakin ang maaasahang pangongolekta ng data, imprastraktura ng network, at mga protocol ng cybersecurity.",
+            "Magsimula nang maliit sa pamamagitan ng pag-pilot ng mga digital twin tool sa isang gusali o system."
+          ],
+          "title": "Digital Twins para sa Mga Gusali: Praktikal na Paggamit kumpara sa Hype",
+          "safety": "Tiyakin ang wastong mga pamamaraan ng pag-lockout tagout at kaligtasan ng kuryente kapag nag-inspeksyon o nagpapanatili ng mga BMS field controller at kagamitan.",
+          "summary": "Ipinapaliwanag ng video na ito kung ano ang digital twins sa pamamahala ng gusali, na naghihiwalay sa mga makatotohanang kaso ng paggamit tulad ng pagtukoy ng fault sa marketing hype."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "حفاظتی دستانے",
+            "حفاظتی جوتے"
+          ],
+          "src": "f1ad6a66fa09",
+          "auto": true,
+          "steps": [
+            "ڈیجیٹل ٹوئن کو لاگو کرنے سے پہلے آپریشنل استعمال کے واضح معاملات کی وضاحت کریں۔",
+            "تمام بلڈنگ آٹومیشن سسٹمز میں پوائنٹ نامی کنونشنز کو معیاری بنائیں۔",
+            "Haystack یا Brick Schema جیسے معیارات کا استعمال کرتے ہوئے سیمنٹک ٹیگنگ کو نافذ کریں۔",
+            "قابل اعتماد ڈیٹا اکٹھا کرنے، نیٹ ورک کے بنیادی ڈھانچے اور سائبر سیکیورٹی پروٹوکول کو یقینی بنائیں۔",
+            "ایک ہی عمارت یا سسٹم پر ڈیجیٹل ٹوئن ٹولز کو پائلٹ کرکے چھوٹی شروعات کریں۔"
+          ],
+          "title": "عمارتوں کے لیے ڈیجیٹل جڑواں: عملی استعمال بمقابلہ ہائپ",
+          "safety": "BMS فیلڈ کنٹرولرز اور آلات کا معائنہ یا دیکھ بھال کرتے وقت مناسب لاک آؤٹ ٹیگ آؤٹ طریقہ کار اور برقی حفاظت کو یقینی بنائیں۔",
+          "summary": "یہ ویڈیو وضاحت کرتا ہے کہ عمارت کے انتظام میں ڈیجیٹل جڑواں بچے کیا ہیں، حقیقت پسندانہ استعمال کے معاملات کو الگ کرتے ہوئے جیسے غلطی کا پتہ لگانا مارکیٹنگ ہائپ سے۔"
+        }
+      },
       "yt": "uiyQcyjlFPc",
       "ppe": [
         "Safety Glasses",
         "Protective Gloves",
         "Safety Shoes"
       ],
+      "trq": {
+        "ar": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "ما الذي يفصل التوأم الرقمي الحقيقي عن نموذج BIM ثلاثي الأبعاد الثابت؟",
+              "options": [
+                "واجهة مستخدم ملونة",
+                "الاتصال بالبيانات التشغيلية الحية",
+                "تقديم عالية الوضوح"
+              ]
+            },
+            {
+              "q": "ما هو العنصر الأساسي الذي يعد حاسمًا لنجاح التوأم الرقمي؟",
+              "options": [
+                "تسمية نقطة متسقة ووضع العلامات الدلالية",
+                "شراء أغلى البرامج",
+                "تركيب كاميرات ثلاثية الأبعاد في كل مكان"
+              ]
+            },
+            {
+              "q": "ما هي الإستراتيجية الموصى بها عند تنفيذ التوأم الرقمي؟",
+              "options": [
+                "النشر عبر جميع مباني المحفظة مرة واحدة",
+                "ابدأ صغيرًا بمبنى أو نظام واحد",
+                "تجاهل المدخلات من فنيي المنشأة"
+              ]
+            }
+          ]
+        },
+        "bn": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "একটি স্থির 3D BIM মডেল থেকে একটি বাস্তব ডিজিটাল যমজকে কী আলাদা করে?",
+              "options": [
+                "একটি রঙিন ইউজার ইন্টারফেস",
+                "লাইভ অপারেশনাল ডেটার সাথে সংযোগ",
+                "উচ্চ সংজ্ঞা রেন্ডারিং"
+              ]
+            },
+            {
+              "q": "ডিজিটাল যুগল সাফল্যের জন্য কোন ভিত্তি উপাদান গুরুত্বপূর্ণ?",
+              "options": [
+                "সামঞ্জস্যপূর্ণ পয়েন্ট নামকরণ এবং শব্দার্থিক ট্যাগিং",
+                "সবচেয়ে দামি সফটওয়্যার কেনা",
+                "সর্বত্র 3D ক্যামেরা স্থাপন করা হচ্ছে"
+              ]
+            },
+            {
+              "q": "একটি ডিজিটাল টুইন বাস্তবায়ন করার সময় প্রস্তাবিত কৌশল কি?",
+              "options": [
+                "একবারে সমস্ত পোর্টফোলিও বিল্ডিং জুড়ে স্থাপন করুন",
+                "একটি বিল্ডিং বা সিস্টেম দিয়ে ছোট শুরু করুন",
+                "সুবিধা প্রযুক্তিবিদদের থেকে ইনপুট উপেক্ষা করুন"
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "एक वास्तविक डिजिटल ट्विन को स्थिर 3डी बीआईएम मॉडल से क्या अलग करता है?",
+              "options": [
+                "एक रंगीन यूजर इंटरफ़ेस",
+                "लाइव परिचालन डेटा से कनेक्शन",
+                "उच्च परिभाषा प्रतिपादन"
+              ]
+            },
+            {
+              "q": "डिजिटल ट्विन की सफलता के लिए कौन सा आधार तत्व महत्वपूर्ण है?",
+              "options": [
+                "सुसंगत बिंदु नामकरण और सिमेंटिक टैगिंग",
+                "सबसे महंगा सॉफ्टवेयर खरीदना",
+                "हर जगह 3डी कैमरे लगाए जा रहे हैं"
+              ]
+            },
+            {
+              "q": "डिजिटल ट्विन लागू करते समय अनुशंसित रणनीति क्या है?",
+              "options": [
+                "सभी पोर्टफ़ोलियो भवनों में एक साथ तैनात करें",
+                "एक इमारत या सिस्टम से छोटी शुरुआत करें",
+                "सुविधा तकनीशियनों के इनपुट पर ध्यान न दें"
+              ]
+            }
+          ]
+        },
+        "ml": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "സ്റ്റാറ്റിക് 3D BIM മോഡലിൽ നിന്ന് യഥാർത്ഥ ഡിജിറ്റൽ ഇരട്ടകളെ വേർതിരിക്കുന്നത് എന്താണ്?",
+              "options": [
+                "വർണ്ണാഭമായ ഒരു ഉപയോക്തൃ ഇൻ്റർഫേസ്",
+                "തത്സമയ പ്രവർത്തന ഡാറ്റയിലേക്കുള്ള കണക്ഷൻ",
+                "ഹൈ ഡെഫനിഷൻ റെൻഡറിംഗ്"
+              ]
+            },
+            {
+              "q": "ഡിജിറ്റൽ ഇരട്ട വിജയത്തിന് നിർണായകമായ അടിസ്ഥാന ഘടകം ഏതാണ്?",
+              "options": [
+                "സ്ഥിരമായ പോയിൻ്റ് നാമകരണവും സെമാൻ്റിക് ടാഗിംഗും",
+                "ഏറ്റവും ചെലവേറിയ സോഫ്റ്റ്‌വെയർ വാങ്ങുന്നു",
+                "എല്ലായിടത്തും 3D ക്യാമറകൾ സ്ഥാപിക്കുന്നു"
+              ]
+            },
+            {
+              "q": "ഒരു ഡിജിറ്റൽ ഇരട്ട നടപ്പിലാക്കുമ്പോൾ ശുപാർശ ചെയ്യുന്ന തന്ത്രം എന്താണ്?",
+              "options": [
+                "എല്ലാ പോർട്ട്‌ഫോളിയോ കെട്ടിടങ്ങളിലും ഒരേസമയം വിന്യസിക്കുക",
+                "ഒരു കെട്ടിടം അല്ലെങ്കിൽ സിസ്റ്റം ഉപയോഗിച്ച് ചെറുതായി ആരംഭിക്കുക",
+                "ഫെസിലിറ്റി ടെക്നീഷ്യൻമാരിൽ നിന്നുള്ള ഇൻപുട്ട് അവഗണിക്കുക"
+              ]
+            }
+          ]
+        },
+        "ne": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "स्थिर 3D BIM मोडेलबाट वास्तविक डिजिटल जुम्ल्याहालाई कुन कुराले अलग गर्छ?",
+              "options": [
+                "एक रंगीन प्रयोगकर्ता इन्टरफेस",
+                "प्रत्यक्ष परिचालन डेटा जडान",
+                "उच्च परिभाषा प्रतिपादन"
+              ]
+            },
+            {
+              "q": "डिजिटल जुम्ल्याहा सफलताको लागि कुन आधारभूत तत्व महत्त्वपूर्ण छ?",
+              "options": [
+                "सुसंगत बिन्दु नामकरण र अर्थ ट्यागिङ",
+                "सबैभन्दा महँगो सफ्टवेयर किन्दै",
+                "जताततै थ्रीडी क्यामेरा जडान गर्दै"
+              ]
+            },
+            {
+              "q": "डिजिटल जुम्ल्याहा कार्यान्वयन गर्दा सिफारिस गरिएको रणनीति के हो?",
+              "options": [
+                "एकैचोटि सबै पोर्टफोलियो भवनहरूमा तैनात गर्नुहोस्",
+                "एउटा भवन वा प्रणालीको साथ सानो सुरु गर्नुहोस्",
+                "सुविधा प्राविधिकहरूबाट इनपुट बेवास्ता गर्नुहोस्"
+              ]
+            }
+          ]
+        },
+        "ta": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "நிலையான 3D BIM மாடலில் இருந்து உண்மையான டிஜிட்டல் இரட்டையை எது பிரிக்கிறது?",
+              "options": [
+                "வண்ணமயமான பயனர் இடைமுகம்",
+                "நேரடி செயல்பாட்டு தரவுக்கான இணைப்பு",
+                "உயர் வரையறை ரெண்டரிங்"
+              ]
+            },
+            {
+              "q": "டிஜிட்டல் இரட்டை வெற்றிக்கு எந்த அடிப்படை உறுப்பு முக்கியமானது?",
+              "options": [
+                "நிலையான புள்ளி பெயரிடல் மற்றும் சொற்பொருள் குறியிடல்",
+                "மிகவும் விலையுயர்ந்த மென்பொருளை வாங்குதல்",
+                "எல்லா இடங்களிலும் 3D கேமராக்களை நிறுவுதல்"
+              ]
+            },
+            {
+              "q": "டிஜிட்டல் இரட்டையை செயல்படுத்தும்போது பரிந்துரைக்கப்படும் உத்தி என்ன?",
+              "options": [
+                "அனைத்து போர்ட்ஃபோலியோ கட்டிடங்களிலும் ஒரே நேரத்தில் வரிசைப்படுத்தவும்",
+                "ஒரு கட்டிடம் அல்லது அமைப்புடன் சிறியதாகத் தொடங்குங்கள்",
+                "வசதி தொழில்நுட்ப வல்லுநர்களின் உள்ளீட்டைப் புறக்கணிக்கவும்"
+              ]
+            }
+          ]
+        },
+        "tl": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "Ano ang naghihiwalay sa isang tunay na digital twin mula sa isang static na 3D BIM na modelo?",
+              "options": [
+                "Isang makulay na user interface",
+                "Koneksyon sa live na data ng pagpapatakbo",
+                "High definition rendering"
+              ]
+            },
+            {
+              "q": "Aling elemento ng pundasyon ang mahalaga para sa tagumpay ng digital twin?",
+              "options": [
+                "Pare-parehong point name at semantic tagging",
+                "Pagbili ng pinakamahal na software",
+                "Pag-install ng mga 3D camera sa lahat ng dako"
+              ]
+            },
+            {
+              "q": "Ano ang inirerekomendang diskarte kapag nagpapatupad ng digital twin?",
+              "options": [
+                "I-deploy sa lahat ng portfolio na gusali nang sabay-sabay",
+                "Magsimula sa maliit sa isang gusali o sistema",
+                "Huwag pansinin ang input mula sa mga technician ng pasilidad"
+              ]
+            }
+          ]
+        },
+        "ur": {
+          "src": "c9c2f435460b",
+          "items": [
+            {
+              "q": "ایک حقیقی ڈیجیٹل جڑواں کو جامد 3D BIM ماڈل سے کیا الگ کرتا ہے؟",
+              "options": [
+                "ایک رنگین یوزر انٹرفیس",
+                "لائیو آپریشنل ڈیٹا سے کنکشن",
+                "ہائی ڈیفینیشن رینڈرنگ"
+              ]
+            },
+            {
+              "q": "ڈیجیٹل جڑواں کامیابی کے لیے کون سا بنیادی عنصر اہم ہے؟",
+              "options": [
+                "مسلسل پوائنٹ کا نام اور سیمنٹک ٹیگنگ",
+                "مہنگا ترین سافٹ ویئر خریدنا",
+                "ہر جگہ 3D کیمرے نصب کرنا"
+              ]
+            },
+            {
+              "q": "ڈیجیٹل ٹوئن کو لاگو کرتے وقت تجویز کردہ حکمت عملی کیا ہے؟",
+              "options": [
+                "ایک ساتھ تمام پورٹ فولیو عمارتوں میں تعینات کریں۔",
+                "ایک عمارت یا سسٹم کے ساتھ چھوٹی شروعات کریں۔",
+                "سہولت کے تکنیکی ماہرین کے ان پٹ کو نظر انداز کریں۔"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What separates a real digital twin from a static 3D BIM model?",
@@ -67,10 +837,382 @@
     },
     {
       "id": "firel-I1bh-fC9EgY",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "لا أحد"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "انتقل إلى علامة التبويب إعدادات الحدود البيئية.",
+            "حدد المبنى المحدد من القائمة المنسدلة للتكوين.",
+            "اضبط نطاقات العتبة لكل مقياس بيئي.",
+            "احفظ الإعدادات الجديدة لتحديث لوحات المعلومات.",
+            "قم بعرض مسار التدقيق في نافذة السجل لتتبع التغييرات."
+          ],
+          "title": "تكوين العتبات البيئية في OpenBlue Insights",
+          "safety": "تأكد من حصولك على الأذونات الإدارية الصحيحة قبل تعديل أي حدود للنظام.",
+          "summary": "يشرح هذا الفيديو كيفية تعيين وإدارة الحدود البيئية الخاصة بالمبنى فيما يتعلق بجودة الهواء والضوضاء والرطوبة. ويوضح كيفية تحديث هذه الإعدادات للوحات المعلومات ومخططات الطوابق لتحسين المراقبة."
+        },
+        "bn": {
+          "ppe": [
+            "কোনোটিই নয়"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "এনভায়রনমেন্টাল থ্রেশহোল্ড সেটিংস ট্যাবে নেভিগেট করুন।",
+            "কনফিগারেশন ড্রপডাউন থেকে নির্দিষ্ট বিল্ডিং নির্বাচন করুন।",
+            "প্রতিটি পরিবেশগত মেট্রিকের জন্য থ্রেশহোল্ড রেঞ্জগুলি সামঞ্জস্য করুন।",
+            "ড্যাশবোর্ড আপডেট করতে নতুন সেটিংস সংরক্ষণ করুন।",
+            "পরিবর্তনগুলি ট্র্যাক করতে ইতিহাস উইন্ডোতে অডিট ট্রেল দেখুন৷"
+          ],
+          "title": "OpenBlue Insights-এ পরিবেশগত থ্রেশহোল্ড কনফিগার করা হচ্ছে",
+          "safety": "কোনো সিস্টেম থ্রেশহোল্ড পরিবর্তন করার আগে আপনার সঠিক প্রশাসনিক অনুমতি আছে তা নিশ্চিত করুন।",
+          "summary": "এই ভিডিওটি ব্যাখ্যা করে যে কীভাবে বায়ুর গুণমান, শব্দ এবং আর্দ্রতার জন্য বিল্ডিং-নির্দিষ্ট পরিবেশগত থ্রেশহোল্ড সেট এবং পরিচালনা করতে হয়। এটি দেখায় কীভাবে এই সেটিংসগুলি আরও ভাল পর্যবেক্ষণের জন্য ড্যাশবোর্ড এবং ফ্লোর প্ল্যান আপডেট করে৷"
+        },
+        "hi": {
+          "ppe": [
+            "कोई नहीं"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "पर्यावरणीय सीमाएँ सेटिंग टैब पर जाएँ।",
+            "कॉन्फ़िगरेशन ड्रॉपडाउन से विशिष्ट भवन का चयन करें.",
+            "प्रत्येक पर्यावरण मीट्रिक के लिए सीमा सीमाएँ समायोजित करें।",
+            "डैशबोर्ड को अपडेट करने के लिए नई सेटिंग्स सहेजें।",
+            "परिवर्तनों को ट्रैक करने के लिए इतिहास विंडो में ऑडिट ट्रेल देखें।"
+          ],
+          "title": "ओपनब्लू इनसाइट्स में पर्यावरणीय सीमाएँ कॉन्फ़िगर करना",
+          "safety": "किसी भी सिस्टम सीमा को संशोधित करने से पहले सुनिश्चित करें कि आपके पास सही प्रशासनिक अनुमतियाँ हैं।",
+          "summary": "यह वीडियो बताता है कि वायु गुणवत्ता, शोर और आर्द्रता के लिए भवन-विशिष्ट पर्यावरणीय सीमाएँ कैसे निर्धारित और प्रबंधित करें। यह दिखाता है कि ये सेटिंग्स बेहतर निगरानी के लिए डैशबोर्ड और फ्लोर प्लान को कैसे अपडेट करती हैं।"
+        },
+        "ml": {
+          "ppe": [
+            "ഒന്നുമില്ല"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "എൻവയോൺമെൻ്റൽ ത്രെഷോൾഡ് സെറ്റിംഗ്സ് ടാബിലേക്ക് നാവിഗേറ്റ് ചെയ്യുക.",
+            "കോൺഫിഗറേഷൻ ഡ്രോപ്പ്ഡൗണിൽ നിന്ന് നിർദ്ദിഷ്ട കെട്ടിടം തിരഞ്ഞെടുക്കുക.",
+            "ഓരോ പരിസ്ഥിതി മെട്രിക്കിനും പരിധി ശ്രേണികൾ ക്രമീകരിക്കുക.",
+            "ഡാഷ്‌ബോർഡുകൾ അപ്‌ഡേറ്റ് ചെയ്യുന്നതിന് പുതിയ ക്രമീകരണങ്ങൾ സംരക്ഷിക്കുക.",
+            "മാറ്റങ്ങൾ ട്രാക്ക് ചെയ്യുന്നതിന് ചരിത്ര വിൻഡോയിലെ ഓഡിറ്റ് ട്രയൽ കാണുക."
+          ],
+          "title": "ഓപ്പൺബ്ലൂ ഇൻസൈറ്റുകളിൽ പരിസ്ഥിതി ത്രെഷോൾഡുകൾ കോൺഫിഗർ ചെയ്യുന്നു",
+          "safety": "ഏതെങ്കിലും സിസ്റ്റം ത്രെഷോൾഡുകൾ പരിഷ്കരിക്കുന്നതിന് മുമ്പ് നിങ്ങൾക്ക് ശരിയായ അഡ്മിനിസ്ട്രേറ്റീവ് അനുമതികൾ ഉണ്ടെന്ന് ഉറപ്പാക്കുക.",
+          "summary": "വായുവിൻ്റെ ഗുണനിലവാരം, ശബ്‌ദം, ഈർപ്പം എന്നിവയ്‌ക്കായി കെട്ടിട-നിർദ്ദിഷ്‌ട പാരിസ്ഥിതിക പരിധികൾ എങ്ങനെ സജ്ജീകരിക്കാമെന്നും നിയന്ത്രിക്കാമെന്നും ഈ വീഡിയോ വിശദീകരിക്കുന്നു. മികച്ച നിരീക്ഷണത്തിനായി ഈ ക്രമീകരണങ്ങൾ ഡാഷ്‌ബോർഡുകളും ഫ്ലോർ പ്ലാനുകളും അപ്‌ഡേറ്റ് ചെയ്യുന്നതെങ്ങനെയെന്ന് ഇത് കാണിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "कुनै पनि छैन"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "वातावरणीय थ्रेसहोल्ड सेटिङ ट्याबमा नेभिगेट गर्नुहोस्।",
+            "कन्फिगरेसन ड्रपडाउनबाट विशिष्ट भवन चयन गर्नुहोस्।",
+            "प्रत्येक वातावरणीय मेट्रिकको लागि थ्रेसहोल्ड दायराहरू समायोजन गर्नुहोस्।",
+            "ड्यासबोर्डहरू अद्यावधिक गर्न नयाँ सेटिङहरू बचत गर्नुहोस्।",
+            "परिवर्तनहरू ट्र्याक गर्न इतिहास सञ्झ्यालमा अडिट ट्रेल हेर्नुहोस्।"
+          ],
+          "title": "OpenBlue Insights मा वातावरणीय थ्रेसहोल्डहरू कन्फिगर गर्दै",
+          "safety": "कुनै पनि प्रणाली थ्रेसहोल्ड परिमार्जन गर्नु अघि तपाईंसँग सही प्रशासनिक अनुमतिहरू छन् भनी सुनिश्चित गर्नुहोस्।",
+          "summary": "यो भिडियोले हावाको गुणस्तर, आवाज र आर्द्रताको लागि भवन-विशिष्ट वातावरणीय थ्रेसहोल्डहरू कसरी सेट गर्ने र व्यवस्थापन गर्ने भनेर बताउँछ। यसले देखाउँछ कि यी सेटिङहरूले कसरी राम्रो निगरानीको लागि ड्यासबोर्डहरू र भुइँ योजनाहरू अद्यावधिक गर्छन्।"
+        },
+        "ta": {
+          "ppe": [
+            "இல்லை"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "சுற்றுச்சூழல் வரம்புகள் அமைப்புகள் தாவலுக்குச் செல்லவும்.",
+            "உள்ளமைவு கீழ்தோன்றலில் இருந்து குறிப்பிட்ட கட்டிடத்தைத் தேர்ந்தெடுக்கவும்.",
+            "ஒவ்வொரு சுற்றுச்சூழல் அளவீட்டுக்கான வரம்புகளை சரிசெய்யவும்.",
+            "டாஷ்போர்டுகளைப் புதுப்பிக்க புதிய அமைப்புகளைச் சேமிக்கவும்.",
+            "மாற்றங்களைக் கண்காணிக்க வரலாற்றுச் சாளரத்தில் தணிக்கைப் பாதையைப் பார்க்கவும்."
+          ],
+          "title": "OpenBlue நுண்ணறிவுகளில் சுற்றுச்சூழல் வரம்புகளை உள்ளமைத்தல்",
+          "safety": "எந்த சிஸ்டம் வரம்புகளையும் மாற்றும் முன், உங்களிடம் சரியான நிர்வாக அனுமதிகள் உள்ளதா என்பதை உறுதிப்படுத்திக் கொள்ளுங்கள்.",
+          "summary": "காற்றின் தரம், சத்தம் மற்றும் ஈரப்பதம் ஆகியவற்றிற்கான கட்டிடம் சார்ந்த சுற்றுச்சூழல் வரம்புகளை எவ்வாறு அமைப்பது மற்றும் நிர்வகிப்பது என்பதை இந்த வீடியோ விளக்குகிறது. சிறந்த கண்காணிப்புக்காக இந்த அமைப்புகள் டாஷ்போர்டுகள் மற்றும் தரைத் திட்டங்களை எவ்வாறு மேம்படுத்துகின்றன என்பதை இது காட்டுகிறது."
+        },
+        "tl": {
+          "ppe": [
+            "wala"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "Mag-navigate sa tab na mga setting ng Environmental Thresholds.",
+            "Piliin ang partikular na gusali mula sa dropdown ng configuration.",
+            "Isaayos ang mga hanay ng threshold para sa bawat sukatan ng kapaligiran.",
+            "I-save ang mga bagong setting para i-update ang mga dashboard.",
+            "Tingnan ang audit trail sa history window upang subaybayan ang mga pagbabago."
+          ],
+          "title": "Pag-configure ng Mga Pangkapaligiran na Threshold sa OpenBlue Insights",
+          "safety": "Tiyaking mayroon kang tamang mga pahintulot na pang-administratibo bago baguhin ang anumang mga limitasyon ng system.",
+          "summary": "Ipinapaliwanag ng video na ito kung paano itakda at pamahalaan ang mga threshold sa kapaligiran na partikular sa gusali para sa kalidad ng hangin, ingay, at halumigmig. Ipinapakita nito kung paano ina-update ng mga setting na ito ang mga dashboard at floor plan para sa mas mahusay na pagsubaybay."
+        },
+        "ur": {
+          "ppe": [
+            "کوئی نہیں۔"
+          ],
+          "src": "36466d386fe6",
+          "auto": true,
+          "steps": [
+            "ماحولیاتی حد کی ترتیبات کے ٹیب پر جائیں۔",
+            "کنفیگریشن ڈراپ ڈاؤن سے مخصوص عمارت کو منتخب کریں۔",
+            "ہر ماحولیاتی میٹرک کے لیے حد کی حدود کو ایڈجسٹ کریں۔",
+            "ڈیش بورڈز کو اپ ڈیٹ کرنے کے لیے نئی سیٹنگز کو محفوظ کریں۔",
+            "تبدیلیوں کو ٹریک کرنے کے لیے ہسٹری ونڈو میں آڈٹ ٹریل دیکھیں۔"
+          ],
+          "title": "OpenBlue Insights میں ماحولیاتی حدوں کو ترتیب دینا",
+          "safety": "کسی بھی سسٹم کی حد میں ترمیم کرنے سے پہلے یقینی بنائیں کہ آپ کے پاس درست انتظامی اجازتیں ہیں۔",
+          "summary": "یہ ویڈیو بتاتی ہے کہ ہوا کے معیار، شور اور نمی کے لیے عمارت کی مخصوص ماحولیاتی حدوں کو کیسے ترتیب دیا جائے اور ان کا نظم کیا جائے۔ اس سے پتہ چلتا ہے کہ یہ ترتیبات کس طرح بہتر نگرانی کے لیے ڈیش بورڈز اور فلور پلانز کو اپ ڈیٹ کرتی ہیں۔"
+        }
+      },
       "yt": "I1bh-fC9EgY",
       "ppe": [
         "None"
       ],
+      "trq": {
+        "ar": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "أين يمكنك تغيير الحدود البيئية لمبنى معين؟",
+              "options": [
+                "في علامة التبويب إعدادات الحدود البيئية",
+                "في إعدادات ملف تعريف المستخدم",
+                "في قائمة الإخطارات"
+              ]
+            },
+            {
+              "q": "ماذا يحدث عند تحديث الحدود البيئية؟",
+              "options": [
+                "يتم إيقاف تشغيل النظام",
+                "يتم تحديث لوحات المعلومات ومخططات الطوابق تلقائيًا",
+                "تنطفئ طاقة المبنى"
+              ]
+            },
+            {
+              "q": "كيف يمكنك معرفة من قام بتغيير إعداد الحد؟",
+              "options": [
+                "عن طريق التحقق من عرض التاريخ",
+                "عن طريق الاتصال بالشركة المصنعة",
+                "عن طريق إعادة تشغيل الكمبيوتر"
+              ]
+            }
+          ]
+        },
+        "bn": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "কোথায় আপনি একটি নির্দিষ্ট বিল্ডিং জন্য পরিবেশগত থ্রেশহোল্ড পরিবর্তন করতে পারেন?",
+              "options": [
+                "এনভায়রনমেন্টাল থ্রেশহোল্ড সেটিংস ট্যাবে",
+                "ব্যবহারকারীর প্রোফাইল সেটিংসে",
+                "বিজ্ঞপ্তি মেনুতে"
+              ]
+            },
+            {
+              "q": "আপনি যখন পরিবেশগত থ্রেশহোল্ড আপডেট করেন তখন কী হয়?",
+              "options": [
+                "সিস্টেম বন্ধ হয়ে যায়",
+                "ড্যাশবোর্ড এবং ফ্লোর প্ল্যান স্বয়ংক্রিয়ভাবে আপডেট হয়",
+                "বিল্ডিং পাওয়ার বন্ধ হয়ে যায়"
+              ]
+            },
+            {
+              "q": "আপনি কিভাবে দেখতে পারেন কে একটি থ্রেশহোল্ড সেটিং পরিবর্তন করেছে?",
+              "options": [
+                "হিস্ট্রি ভিউ চেক করে",
+                "নির্মাতাকে ফোন করে",
+                "কম্পিউটার রিস্টার্ট করে"
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "आप किसी विशिष्ट भवन के लिए पर्यावरणीय सीमाएँ कहाँ बदल सकते हैं?",
+              "options": [
+                "पर्यावरणीय सीमाएँ सेटिंग टैब में",
+                "उपयोगकर्ता प्रोफ़ाइल सेटिंग में",
+                "अधिसूचना मेनू में"
+              ]
+            },
+            {
+              "q": "जब आप पर्यावरणीय सीमाएँ अद्यतन करते हैं तो क्या होता है?",
+              "options": [
+                "सिस्टम बंद हो जाता है",
+                "डैशबोर्ड और फ़्लोर प्लान स्वचालित रूप से अपडेट होते हैं",
+                "भवन की बिजली बंद हो जाती है"
+              ]
+            },
+            {
+              "q": "आप यह कैसे देख सकते हैं कि थ्रेशोल्ड सेटिंग किसने बदली?",
+              "options": [
+                "इतिहास दृश्य की जाँच करके",
+                "निर्माता को कॉल करके",
+                "कंप्यूटर को पुनरारंभ करके"
+              ]
+            }
+          ]
+        },
+        "ml": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "ഒരു നിർദ്ദിഷ്ട കെട്ടിടത്തിൻ്റെ പാരിസ്ഥിതിക പരിധി എവിടെ മാറ്റാനാകും?",
+              "options": [
+                "എൻവയോൺമെൻ്റൽ ത്രെഷോൾഡ് ക്രമീകരണ ടാബിൽ",
+                "ഉപയോക്തൃ പ്രൊഫൈൽ ക്രമീകരണങ്ങളിൽ",
+                "അറിയിപ്പുകൾ മെനുവിൽ"
+              ]
+            },
+            {
+              "q": "നിങ്ങൾ പാരിസ്ഥിതിക പരിധികൾ അപ്ഡേറ്റ് ചെയ്യുമ്പോൾ എന്ത് സംഭവിക്കും?",
+              "options": [
+                "സിസ്റ്റം ഷട്ട് ഡൗൺ ചെയ്യുന്നു",
+                "ഡാഷ്‌ബോർഡുകളും ഫ്ലോർ പ്ലാനുകളും സ്വയമേവ അപ്‌ഡേറ്റ് ചെയ്യുന്നു",
+                "കെട്ടിടത്തിൻ്റെ വൈദ്യുതി ഓഫാകും"
+              ]
+            },
+            {
+              "q": "ആരാണ് ഒരു പരിധി ക്രമീകരണം മാറ്റിയതെന്ന് നിങ്ങൾക്ക് എങ്ങനെ കാണാൻ കഴിയും?",
+              "options": [
+                "ചരിത്ര കാഴ്ച പരിശോധിച്ചുകൊണ്ട്",
+                "നിർമ്മാതാവിനെ വിളിച്ച്",
+                "കമ്പ്യൂട്ടർ പുനരാരംഭിക്കുന്നതിലൂടെ"
+              ]
+            }
+          ]
+        },
+        "ne": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "तपाइँ एक विशेष भवनको लागि वातावरणीय थ्रेसहोल्डहरू कहाँ परिवर्तन गर्न सक्नुहुन्छ?",
+              "options": [
+                "वातावरणीय थ्रेसहोल्ड सेटिङ ट्याबमा",
+                "प्रयोगकर्ता प्रोफाइल सेटिङहरूमा",
+                "सूचना मेनुमा"
+              ]
+            },
+            {
+              "q": "तपाईंले वातावरणीय थ्रेसहोल्डहरू अद्यावधिक गर्दा के हुन्छ?",
+              "options": [
+                "प्रणाली बन्द हुन्छ",
+                "ड्यासबोर्डहरू र फ्लोर योजनाहरू स्वचालित रूपमा अद्यावधिक हुन्छन्",
+                "भवनको पावर बन्द हुन्छ"
+              ]
+            },
+            {
+              "q": "कसले थ्रेसहोल्ड सेटिङ परिवर्तन गर्यो भनेर कसरी हेर्न सक्नुहुन्छ?",
+              "options": [
+                "इतिहास दृश्य जाँच गरेर",
+                "निर्मातालाई फोन गरेर",
+                "कम्प्युटर रिस्टार्ट गरेर"
+              ]
+            }
+          ]
+        },
+        "ta": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "ஒரு குறிப்பிட்ட கட்டிடத்திற்கான சுற்றுச்சூழல் வரம்புகளை எங்கு மாற்றலாம்?",
+              "options": [
+                "சுற்றுச்சூழல் வரம்புகள் அமைப்புகள் தாவலில்",
+                "பயனர் சுயவிவர அமைப்புகளில்",
+                "அறிவிப்புகள் மெனுவில்"
+              ]
+            },
+            {
+              "q": "சுற்றுச்சூழல் வரம்புகளைப் புதுப்பிக்கும்போது என்ன நடக்கும்?",
+              "options": [
+                "கணினி மூடப்படும்",
+                "டாஷ்போர்டுகள் மற்றும் தரைத் திட்டங்கள் தானாகவே புதுப்பிக்கப்படும்",
+                "கட்டிட மின்சாரம் அணைக்கப்படுகிறது"
+              ]
+            },
+            {
+              "q": "த்ரெஷோல்ட் அமைப்பை யார் மாற்றினார்கள் என்று எப்படி பார்க்க முடியும்?",
+              "options": [
+                "வரலாற்றுக் காட்சியைச் சரிபார்ப்பதன் மூலம்",
+                "உற்பத்தியாளரை அழைப்பதன் மூலம்",
+                "கணினியை மறுதொடக்கம் செய்வதன் மூலம்"
+              ]
+            }
+          ]
+        },
+        "tl": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "Saan mo maaaring baguhin ang mga limitasyon sa kapaligiran para sa isang partikular na gusali?",
+              "options": [
+                "Sa tab na mga setting ng Mga Threshold sa Pangkapaligiran",
+                "Sa mga setting ng User Profile",
+                "Sa menu ng Mga Notification"
+              ]
+            },
+            {
+              "q": "Ano ang mangyayari kapag nag-update ka ng mga limitasyon sa kapaligiran?",
+              "options": [
+                "Ang sistema ay nagsasara",
+                "Awtomatikong nag-a-update ang mga dashboard at floor plan",
+                "Ang kapangyarihan ng gusali ay naka-off"
+              ]
+            },
+            {
+              "q": "Paano mo makikita kung sino ang nagbago ng setting ng threshold?",
+              "options": [
+                "Sa pamamagitan ng pagsuri sa view ng kasaysayan",
+                "Sa pamamagitan ng pagtawag sa tagagawa",
+                "Sa pamamagitan ng pag-restart ng computer"
+              ]
+            }
+          ]
+        },
+        "ur": {
+          "src": "86b0457f6b47",
+          "items": [
+            {
+              "q": "آپ کسی مخصوص عمارت کے لیے ماحولیاتی حدیں کہاں تبدیل کر سکتے ہیں؟",
+              "options": [
+                "ماحولیاتی حد کی ترتیبات کے ٹیب میں",
+                "صارف پروفائل کی ترتیبات میں",
+                "اطلاعات کے مینو میں"
+              ]
+            },
+            {
+              "q": "جب آپ ماحولیاتی حد کو اپ ڈیٹ کرتے ہیں تو کیا ہوتا ہے؟",
+              "options": [
+                "سسٹم بند ہو جاتا ہے۔",
+                "ڈیش بورڈز اور فلور پلانز خود بخود اپ ڈیٹ ہو جاتے ہیں۔",
+                "عمارت کی بجلی بند ہوجاتی ہے۔"
+              ]
+            },
+            {
+              "q": "آپ کیسے دیکھ سکتے ہیں کہ کس نے حد کی ترتیب کو تبدیل کیا؟",
+              "options": [
+                "تاریخ کا نظارہ چیک کرکے",
+                "کارخانہ دار کو کال کرکے",
+                "کمپیوٹر کو دوبارہ شروع کرکے"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "Where can you change environmental thresholds for a specific building?",
@@ -130,12 +1272,284 @@
     },
     {
       "id": "hvacc-_zQ8ayHQ0kw",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات العمل",
+            "أحذية السلامة"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "التعرف على أعراض وأخطاء نظام التبريد",
+            "تحقق من ضغوط النظام ومستويات الحرارة الزائدة",
+            "فحص برمجة وحدة التحكم والمعلمات",
+            "تحقق من وضع المستشعر والأسلاك بشكل صحيح",
+            "مكونات الاختبار باستخدام إرشادات الشركة المصنعة"
+          ],
+          "title": "السبب الجذري للتبريد التجاري استكشاف الأخطاء وإصلاحها",
+          "safety": "عزل الطاقة وخفض ضغط خطوط التبريد قبل صيانة معدات التبريد التجارية.",
+          "summary": "يناقش الفنيون الأسباب الجذرية وطرق استكشاف الأخطاء وإصلاحها لفشل نظام التبريد التجاري والسوبر ماركت."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "কাজের গ্লাভস",
+            "নিরাপত্তা জুতা"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "রেফ্রিজারেশন সিস্টেমের লক্ষণ এবং ত্রুটি সনাক্ত করুন",
+            "সিস্টেমের চাপ এবং সুপারহিটের মাত্রা পরীক্ষা করুন",
+            "কন্ট্রোলার প্রোগ্রামিং এবং পরামিতি পরিদর্শন করুন",
+            "সঠিক সেন্সর স্থাপন এবং তারের যাচাই করুন",
+            "প্রস্তুতকারকের নির্দেশিকা ব্যবহার করে উপাদান পরীক্ষা করুন"
+          ],
+          "title": "বাণিজ্যিক রেফ্রিজারেশন মূল কারণ সমস্যা সমাধান",
+          "safety": "বাণিজ্যিক রেফ্রিজারেশন সরঞ্জাম সরবরাহ করার আগে শক্তি বিচ্ছিন্ন করুন এবং রেফ্রিজারেন্ট লাইনগুলিকে চাপমুক্ত করুন।",
+          "summary": "প্রযুক্তিবিদরা বাণিজ্যিক রেফ্রিজারেশন এবং সুপারমার্কেট সিস্টেম ব্যর্থতার জন্য মূল কারণ এবং সমস্যা সমাধানের পদ্ধতি নিয়ে আলোচনা করেন।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "काम के दस्ताने",
+            "सुरक्षा जूते"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "प्रशीतन प्रणाली के लक्षणों और दोषों को पहचानें",
+            "सिस्टम दबाव और सुपरहीट स्तर की जाँच करें",
+            "नियंत्रक प्रोग्रामिंग और मापदंडों का निरीक्षण करें",
+            "उचित सेंसर प्लेसमेंट और वायरिंग सत्यापित करें",
+            "निर्माता दिशानिर्देशों का उपयोग करके घटकों का परीक्षण करें"
+          ],
+          "title": "वाणिज्यिक प्रशीतन मूल कारण समस्या निवारण",
+          "safety": "वाणिज्यिक प्रशीतन उपकरण की सर्विसिंग से पहले बिजली को अलग करें और रेफ्रिजरेंट लाइनों का दबाव कम करें।",
+          "summary": "तकनीशियन वाणिज्यिक प्रशीतन और सुपरमार्केट सिस्टम विफलताओं के मूल कारणों और समस्या निवारण तरीकों पर चर्चा करते हैं।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "വർക്ക് ഗ്ലൗസ്",
+            "സുരക്ഷാ ഷൂസ്"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "റഫ്രിജറേഷൻ സിസ്റ്റത്തിൻ്റെ ലക്ഷണങ്ങളും തകരാറുകളും തിരിച്ചറിയുക",
+            "സിസ്റ്റം മർദ്ദവും സൂപ്പർഹീറ്റ് ലെവലും പരിശോധിക്കുക",
+            "കൺട്രോളർ പ്രോഗ്രാമിംഗും പാരാമീറ്ററുകളും പരിശോധിക്കുക",
+            "ശരിയായ സെൻസർ പ്ലെയ്‌സ്‌മെൻ്റും വയറിംഗും പരിശോധിക്കുക",
+            "നിർമ്മാതാവിൻ്റെ മാർഗ്ഗനിർദ്ദേശങ്ങൾ ഉപയോഗിച്ച് ഘടകങ്ങൾ പരിശോധിക്കുക"
+          ],
+          "title": "വാണിജ്യ റഫ്രിജറേഷൻ റൂട്ട് കാരണം ട്രബിൾഷൂട്ടിംഗ്",
+          "safety": "വാണിജ്യ റഫ്രിജറേഷൻ ഉപകരണങ്ങൾക്ക് സേവനം നൽകുന്നതിന് മുമ്പ് പവർ വേർതിരിച്ച് റഫ്രിജറൻറ് ലൈനുകൾ ഡിപ്രഷറൈസ് ചെയ്യുക.",
+          "summary": "വാണിജ്യ റഫ്രിജറേഷൻ, സൂപ്പർമാർക്കറ്റ് സിസ്റ്റം പരാജയങ്ങൾ എന്നിവയുടെ മൂലകാരണങ്ങളും ട്രബിൾഷൂട്ടിംഗ് രീതികളും സാങ്കേതിക വിദഗ്ധർ ചർച്ച ചെയ്യുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कार्य दस्ताने",
+            "सुरक्षा जुत्ता"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "प्रशीतन प्रणाली लक्षण र त्रुटिहरू पहिचान गर्नुहोस्",
+            "प्रणालीको दबाब र सुपरहिट स्तरहरू जाँच गर्नुहोस्",
+            "नियन्त्रक प्रोग्रामिङ र प्यारामिटरहरू निरीक्षण गर्नुहोस्",
+            "उचित सेन्सर प्लेसमेन्ट र तारहरू प्रमाणित गर्नुहोस्",
+            "निर्माता दिशानिर्देशहरू प्रयोग गरेर घटकहरू परीक्षण गर्नुहोस्"
+          ],
+          "title": "व्यावसायिक प्रशीतन मूल कारण समस्या निवारण",
+          "safety": "व्यावसायिक प्रशीतन उपकरणहरू सेवा गर्नु अघि शक्ति अलग गर्नुहोस् र फ्रिज लाइनहरू डिप्रेसराइज गर्नुहोस्।",
+          "summary": "प्राविधिकहरूले व्यावसायिक प्रशीतन र सुपरमार्केट प्रणाली विफलताहरूको लागि मूल कारणहरू र समस्या निवारण विधिहरू छलफल गर्छन्।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "வேலை கையுறைகள்",
+            "பாதுகாப்பு காலணிகள்"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "குளிர்பதன அமைப்பு அறிகுறிகள் மற்றும் தவறுகளை அடையாளம் காணவும்",
+            "கணினி அழுத்தம் மற்றும் சூப்பர் ஹீட் அளவை சரிபார்க்கவும்",
+            "கட்டுப்படுத்தி நிரலாக்கம் மற்றும் அளவுருக்களை ஆய்வு செய்யவும்",
+            "சரியான சென்சார் இடம் மற்றும் வயரிங் சரிபார்க்கவும்",
+            "உற்பத்தியாளர் வழிகாட்டுதல்களைப் பயன்படுத்தி கூறுகளை சோதிக்கவும்"
+          ],
+          "title": "வணிக குளிர்பதன மூல காரணத்தை சரிசெய்தல்",
+          "safety": "வணிக குளிர்பதன உபகரணங்களுக்கு சேவை செய்வதற்கு முன் சக்தியை தனிமைப்படுத்தி குளிரூட்டல் வரிகளை அழுத்தவும்.",
+          "summary": "தொழில்நுட்ப வல்லுநர்கள் வணிக குளிர்பதனம் மற்றும் பல்பொருள் அங்காடி அமைப்பு தோல்விகளுக்கான மூல காரணங்கள் மற்றும் சரிசெய்தல் முறைகள் பற்றி விவாதிக்கின்றனர்."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes sa trabaho",
+            "Mga Sapatos na Pangkaligtasan"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "Tukuyin ang mga sintomas at pagkakamali ng sistema ng pagpapalamig",
+            "Suriin ang mga presyon ng system at mga antas ng sobrang init",
+            "Suriin ang programming at mga parameter ng controller",
+            "I-verify ang wastong pagkakalagay ng sensor at mga kable",
+            "Subukan ang mga bahagi gamit ang mga alituntunin ng tagagawa"
+          ],
+          "title": "Pag-troubleshoot ng Dahilan ng Root Refrigeration sa Komersyal",
+          "safety": "Ihiwalay ang kapangyarihan at i-depress ang mga linya ng nagpapalamig bago i-serve ang komersyal na kagamitan sa pagpapalamig.",
+          "summary": "Tinatalakay ng mga technician ang mga ugat na sanhi at mga paraan ng pag-troubleshoot para sa komersyal na pagpapalamig at mga pagkabigo sa sistema ng supermarket."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "کام کے دستانے",
+            "حفاظتی جوتے"
+          ],
+          "src": "65bbc89ae6ac",
+          "auto": true,
+          "steps": [
+            "ریفریجریشن سسٹم کی علامات اور خرابیوں کی نشاندہی کریں۔",
+            "سسٹم پریشر اور سپر ہیٹ لیول چیک کریں۔",
+            "کنٹرولر پروگرامنگ اور پیرامیٹرز کا معائنہ کریں۔",
+            "سینسر کی مناسب جگہ اور وائرنگ کی تصدیق کریں۔",
+            "کارخانہ دار کی ہدایات کا استعمال کرتے ہوئے اجزاء کی جانچ کریں۔"
+          ],
+          "title": "کمرشل ریفریجریشن روٹ کاز ٹربل شوٹنگ",
+          "safety": "کمرشل ریفریجریشن کے سامان کی خدمت کرنے سے پہلے بجلی کو الگ کر دیں اور ریفریجرینٹ لائنوں کو دبا دیں۔",
+          "summary": "تکنیکی ماہرین تجارتی ریفریجریشن اور سپر مارکیٹ کے نظام کی ناکامیوں کی بنیادی وجوہات اور خرابیوں کا سراغ لگانے کے طریقوں پر تبادلہ خیال کرتے ہیں۔"
+        }
+      },
       "yt": "_zQ8ayHQ0kw",
       "ppe": [
         "Safety Glasses",
         "Work Gloves",
         "Safety Shoes"
       ],
+      "trq": {
+        "hi": {
+          "src": "bcb636bfa40a",
+          "items": [
+            {
+              "q": "प्रशीतन प्रणाली की खराबी का निवारण करते समय सबसे पहले क्या जाँच की जानी चाहिए?",
+              "options": [
+                "सिस्टम लक्षण एवं दोष",
+                "पूरे कंप्रेसर को बदलें",
+                "बाहरी आवरण को पेंट करें"
+              ]
+            },
+            {
+              "q": "उचित सिस्टम कूलिंग की जांच के लिए कौन सा पैरामीटर महत्वपूर्ण है?",
+              "options": [
+                "कमरे की रोशनी का स्तर",
+                "अतिताप स्तर और दबाव",
+                "जल आपूर्ति पाइप का आकार"
+              ]
+            },
+            {
+              "q": "निदान के दौरान नियंत्रक में क्या सत्यापित किया जाना चाहिए?",
+              "options": [
+                "अलार्म ध्वनि की मात्रा",
+                "प्रोग्रामिंग और पैरामीटर",
+                "डिस्प्ले स्क्रीन का रंग"
+              ]
+            }
+          ]
+        },
+        "ml": {
+          "src": "bcb636bfa40a",
+          "items": [
+            {
+              "q": "റഫ്രിജറേഷൻ സിസ്റ്റത്തിലെ തകരാറുകൾ പരിഹരിക്കുമ്പോൾ ആദ്യം എന്താണ് പരിശോധിക്കേണ്ടത്?",
+              "options": [
+                "സിസ്റ്റത്തിൻ്റെ ലക്ഷണങ്ങളും തകരാറുകളും",
+                "മുഴുവൻ കംപ്രസ്സറും മാറ്റിസ്ഥാപിക്കുക",
+                "പുറം കേസിംഗ് പെയിൻ്റ് ചെയ്യുക"
+              ]
+            },
+            {
+              "q": "ശരിയായ സിസ്റ്റം കൂളിംഗ് പരിശോധിക്കാൻ ഏത് പാരാമീറ്റർ പ്രധാനമാണ്?",
+              "options": [
+                "റൂം ലൈറ്റിംഗ് ലെവൽ",
+                "സൂപ്പർഹീറ്റ് നിലകളും സമ്മർദ്ദങ്ങളും",
+                "ജലവിതരണ പൈപ്പ് വലിപ്പം"
+              ]
+            },
+            {
+              "q": "ഡയഗ്നോസ്റ്റിക് സമയത്ത് കൺട്രോളറിൽ എന്താണ് പരിശോധിക്കേണ്ടത്?",
+              "options": [
+                "അലാറം ശബ്ദ വോളിയം",
+                "പ്രോഗ്രാമിംഗും പാരാമീറ്ററുകളും",
+                "സ്ക്രീനിൻ്റെ നിറം പ്രദർശിപ്പിക്കുക"
+              ]
+            }
+          ]
+        },
+        "ne": {
+          "src": "bcb636bfa40a",
+          "items": [
+            {
+              "q": "रेफ्रिजेरेसन सिस्टमको समस्या खोज्दा सबैभन्दा पहिले के चेक गर्ने?",
+              "options": [
+                "सिस्टमको लक्षण र समस्याहरू",
+                "पूरा compressor फेर्ने",
+                "बाहिरी कभरमा पेन्ट गर्ने"
+              ]
+            },
+            {
+              "q": "सिस्टम राम्रोसँग चिस्याउन कुन कुरा चेक गर्न जरुरी छ?",
+              "options": [
+                "कोठाको लाइटको उज्यालो",
+                "Superheat level र pressure",
+                "पानीको पाइपको साइज"
+              ]
+            },
+            {
+              "q": "डायग्नोस्टिक्स गर्दा controller मा के चेक गर्नुपर्छ?",
+              "options": [
+                "Alarm को आवाज",
+                "Programming र parameters",
+                "Display screen को रङ"
+              ]
+            }
+          ]
+        },
+        "ur": {
+          "src": "bcb636bfa40a",
+          "items": [
+            {
+              "q": "ریفریجریشن سسٹم کی خرابیوں کا ازالہ کرتے وقت سب سے پہلے کیا چیک کیا جانا چاہیے؟",
+              "options": [
+                "سسٹم کی علامات اور خرابیاں",
+                "پورے کمپریسر کو تبدیل کریں۔",
+                "بیرونی سانچے کو پینٹ کریں۔"
+              ]
+            },
+            {
+              "q": "مناسب نظام کولنگ کی جانچ کرنے کے لیے کون سا پیرامیٹر اہم ہے؟",
+              "options": [
+                "کمرے کی روشنی کی سطح",
+                "سپر ہیٹ کی سطح اور دباؤ",
+                "پانی کی فراہمی کے پائپ کا سائز"
+              ]
+            },
+            {
+              "q": "تشخیص کے دوران کنٹرولر میں کن چیزوں کی تصدیق ہونی چاہیے؟",
+              "options": [
+                "الارم آواز والیوم",
+                "پروگرامنگ اور پیرامیٹرز",
+                "ڈسپلے اسکرین کا رنگ"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What should be checked first when troubleshooting refrigeration system faults?",
@@ -195,11 +1609,150 @@
     },
     {
       "id": "hvacc-sNoaW1vfFYI",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات معزولة"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "تحديد تشغيل محرك الأقراص الموصى به وأدلة السطح من Danfoss وABB.",
+            "قارن بين محركات الأقراص الصغيرة التي تستخدم لمرة واحدة ومجموعات محركات الأقراص الكبيرة القابلة للإصلاح.",
+            "افهم أن المبادئ الإلكترونية الأساسية تظل متسقة عبر الشركات المصنعة المختلفة لمحركات الأقراص.",
+            "راجع مواصفات الشركة المصنعة جنبًا إلى جنب مع إرشادات التدريب العامة."
+          ],
+          "title": "كتيبات محرك المبرد وإلكترونيات VFD",
+          "safety": "اتبع دائمًا معايير السلامة الكهربائية المناسبة ومواصفات الشركة المصنعة عند العمل مع VFD وإلكترونيات القيادة.",
+          "summary": "يوصي مقدم العرض باستخدام كتيبات الشركة المصنعة لـ VFD، مثل مستندات محرك Danfoss وABB، كموارد قيمة لتعلم إلكترونيات المبرد."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "ইনসুলেটেড গ্লাভস"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "Danfoss এবং ABB থেকে প্রস্তাবিত ড্রাইভ অপারেশন এবং পৃষ্ঠ ম্যানুয়াল সনাক্ত করুন।",
+            "বড় মেরামতযোগ্য ড্রাইভ সমাবেশের সাথে ছোট ডিসপোজেবল ড্রাইভের তুলনা করুন।",
+            "বুঝুন যে অন্তর্নিহিত বৈদ্যুতিন নীতিগুলি বিভিন্ন ড্রাইভ নির্মাতাদের মধ্যে সামঞ্জস্যপূর্ণ থাকে৷",
+            "সাধারণ প্রশিক্ষণ নির্দেশিকা বরাবর প্রস্তুতকারকের স্পেসিফিকেশনের সাথে পরামর্শ করুন।"
+          ],
+          "title": "চিলার ড্রাইভ ম্যানুয়াল এবং ভিএফডি ইলেকট্রনিক্স",
+          "safety": "VFD এবং ড্রাইভ ইলেকট্রনিক্সের সাথে কাজ করার সময় সর্বদা যথাযথ বৈদ্যুতিক নিরাপত্তা এবং প্রস্তুতকারকের স্পেসিফিকেশন অনুসরণ করুন।",
+          "summary": "উপস্থাপক চিলার ইলেকট্রনিক্স শেখার জন্য মূল্যবান সম্পদ হিসাবে ড্যানফস এবং ABB ড্রাইভ নথির মতো VFD প্রস্তুতকারক ম্যানুয়ালগুলির সুপারিশ করেন।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इंसुलेटेड दस्ताने"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "डैनफॉस और एबीबी से अनुशंसित ड्राइव संचालन और सतह मैनुअल की पहचान करें।",
+            "बड़ी मरम्मत योग्य ड्राइव असेंबलियों के साथ छोटी डिस्पोजेबल ड्राइव की तुलना करें।",
+            "समझें कि अंतर्निहित इलेक्ट्रॉनिक सिद्धांत विभिन्न ड्राइव निर्माताओं के बीच एक जैसे रहते हैं।",
+            "सामान्य प्रशिक्षण दिशानिर्देशों के साथ-साथ निर्माता विनिर्देशों से परामर्श लें।"
+          ],
+          "title": "चिलर ड्राइव मैनुअल और वीएफडी इलेक्ट्रॉनिक्स",
+          "safety": "वीएफडी और ड्राइव इलेक्ट्रॉनिक्स के साथ काम करते समय हमेशा उचित विद्युत सुरक्षा और निर्माता विनिर्देशों का पालन करें।",
+          "summary": "प्रस्तुतकर्ता चिलर इलेक्ट्रॉनिक्स सीखने के लिए मूल्यवान संसाधनों के रूप में वीएफडी निर्माता मैनुअल, जैसे डैनफॉस और एबीबी ड्राइव दस्तावेजों की सिफारिश करता है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "ഇൻസുലേറ്റഡ് ഗ്ലൗസ്"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "Danfoss, ABB എന്നിവയിൽ നിന്നുള്ള ശുപാർശിത ഡ്രൈവ് പ്രവർത്തനവും ഉപരിതല മാനുവലുകളും തിരിച്ചറിയുക.",
+            "ചെറിയ ഡിസ്പോസിബിൾ ഡ്രൈവുകളെ വലിയ റിപ്പയർ ചെയ്യാവുന്ന ഡ്രൈവ് അസംബ്ലികളുമായി താരതമ്യം ചെയ്യുക.",
+            "വ്യത്യസ്ത ഡ്രൈവ് നിർമ്മാതാക്കളിലുടനീളം അടിസ്ഥാന ഇലക്ട്രോണിക് തത്വങ്ങൾ സ്ഥിരത പുലർത്തുന്നുവെന്ന് മനസ്സിലാക്കുക.",
+            "പൊതുവായ പരിശീലന മാർഗ്ഗനിർദ്ദേശങ്ങൾക്കൊപ്പം നിർമ്മാതാവിൻ്റെ സവിശേഷതകൾ പരിശോധിക്കുക."
+          ],
+          "title": "ചില്ലർ ഡ്രൈവ് മാനുവലുകളും VFD ഇലക്ട്രോണിക്സും",
+          "safety": "VFD, ഡ്രൈവ് ഇലക്ട്രോണിക്സ് എന്നിവയിൽ പ്രവർത്തിക്കുമ്പോൾ എല്ലായ്പ്പോഴും ശരിയായ ഇലക്ട്രിക്കൽ സുരക്ഷയും നിർമ്മാതാവിൻ്റെ സവിശേഷതകളും പാലിക്കുക.",
+          "summary": "ചില്ലർ ഇലക്‌ട്രോണിക്‌സ് പഠിക്കുന്നതിനുള്ള വിലയേറിയ ഉറവിടങ്ങളായി ഡാൻഫോസ്, എബിബി ഡ്രൈവ് ഡോക്യുമെൻ്റുകൾ പോലുള്ള VFD നിർമ്മാതാക്കളുടെ മാനുവലുകൾ അവതാരകൻ ശുപാർശ ചെയ്യുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इन्सुलेटेड दस्ताने"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "Danfoss र ABB बाट सिफारिस गरिएको ड्राइभ सञ्चालन र सतह पुस्तिकाहरू पहिचान गर्नुहोस्।",
+            "साना डिस्पोजेबल ड्राइभहरू ठूला मर्मत योग्य ड्राइभ एसेम्बलीहरूसँग तुलना गर्नुहोस्।",
+            "बुझ्नुहोस् कि अन्तर्निहित इलेक्ट्रोनिक सिद्धान्तहरू विभिन्न ड्राइभ निर्माताहरूमा एकरूप रहन्छन्।",
+            "सामान्य प्रशिक्षण दिशानिर्देशहरूको साथमा निर्माता निर्दिष्टीकरणहरू परामर्श गर्नुहोस्।"
+          ],
+          "title": "चिलर ड्राइभ म्यानुअल र VFD इलेक्ट्रोनिक्स",
+          "safety": "VFD र ड्राइभ इलेक्ट्रोनिक्ससँग काम गर्दा सधैं उचित विद्युतीय सुरक्षा र निर्माता निर्दिष्टीकरणहरू पालना गर्नुहोस्।",
+          "summary": "प्रस्तुतकर्ताले चिलर इलेक्ट्रोनिक्स सिक्नको लागि मूल्यवान स्रोतहरूको रूपमा Danfoss र ABB ड्राइभ कागजातहरू जस्ता VFD निर्माता पुस्तिकाहरू सिफारिस गर्छन्।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "காப்பிடப்பட்ட கையுறைகள்"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "Danfoss மற்றும் ABB இலிருந்து பரிந்துரைக்கப்பட்ட இயக்கி செயல்பாடு மற்றும் மேற்பரப்பு கையேடுகளை அடையாளம் காணவும்.",
+            "சிறிய டிஸ்போசபிள் டிரைவ்களை பெரிய ரிப்பேர் செய்யக்கூடிய டிரைவ் அசெம்பிளிகளுடன் ஒப்பிடவும்.",
+            "வெவ்வேறு டிரைவ் உற்பத்தியாளர்களிடையே அடிப்படையான மின்னணுக் கொள்கைகள் சீரானதாக இருப்பதைப் புரிந்து கொள்ளுங்கள்.",
+            "பொதுவான பயிற்சி வழிகாட்டுதல்களுடன் உற்பத்தியாளர் விவரக்குறிப்புகளைப் பார்க்கவும்."
+          ],
+          "title": "சில்லர் டிரைவ் கையேடுகள் மற்றும் VFD எலக்ட்ரானிக்ஸ்",
+          "safety": "VFD மற்றும் டிரைவ் எலக்ட்ரானிக்ஸ் உடன் பணிபுரியும் போது சரியான மின் பாதுகாப்பு மற்றும் உற்பத்தியாளர் குறிப்புகளை எப்போதும் பின்பற்றவும்.",
+          "summary": "சில்லர் எலக்ட்ரானிக்ஸ் கற்றுக்கொள்வதற்கான மதிப்புமிக்க ஆதாரங்களாக டான்ஃபோஸ் மற்றும் ஏபிபி டிரைவ் ஆவணங்கள் போன்ற VFD உற்பத்தியாளர் கையேடுகளை வழங்குபவர் பரிந்துரைக்கிறார்."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Insulated Gloves"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "Tukuyin ang inirerekomendang pagpapatakbo ng pagmamaneho at mga manwal sa ibabaw mula sa Danfoss at ABB.",
+            "Ikumpara ang mas maliliit na disposable drive sa mas malalaking repairable drive assemblies.",
+            "Unawain na ang mga pinagbabatayan ng electronic na prinsipyo ay nananatiling pare-pareho sa iba't ibang mga manufacturer ng drive.",
+            "Kumonsulta sa mga detalye ng tagagawa kasama ng pangkalahatang mga alituntunin sa pagsasanay."
+          ],
+          "title": "Mga Manwal ng Chiller Drive at VFD Electronics",
+          "safety": "Palaging sundin ang wastong kaligtasan sa kuryente at mga detalye ng tagagawa kapag nagtatrabaho sa VFD at drive electronics.",
+          "summary": "Inirerekomenda ng nagtatanghal ang mga manual ng tagagawa ng VFD, tulad ng mga dokumento ng Danfoss at ABB drive, bilang mahalagang mapagkukunan para sa pag-aaral ng chiller electronics."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "موصل دستانے"
+          ],
+          "src": "e52d5bb57e21",
+          "auto": true,
+          "steps": [
+            "Danfoss اور ABB سے تجویز کردہ ڈرائیو آپریشن اور سطحی کتابچے کی شناخت کریں۔",
+            "چھوٹی ڈسپوزایبل ڈرائیوز کا موازنہ بڑی قابل مرمت ڈرائیو اسمبلیوں سے کریں۔",
+            "سمجھیں کہ بنیادی الیکٹرانک اصول مختلف ڈرائیو مینوفیکچررز میں یکساں رہتے ہیں۔",
+            "عام تربیتی رہنما خطوط کے ساتھ مینوفیکچرر کی وضاحتیں دیکھیں۔"
+          ],
+          "title": "چلر ڈرائیو مینوئلز اور وی ایف ڈی الیکٹرانکس",
+          "safety": "VFD اور ڈرائیو الیکٹرانکس کے ساتھ کام کرتے وقت ہمیشہ مناسب الیکٹریکل سیفٹی اور مینوفیکچرر کی وضاحتوں پر عمل کریں۔",
+          "summary": "پیش کنندہ VFD مینوفیکچرر مینوئلز، جیسے Danfoss اور ABB ڈرائیو دستاویزات، کو chiller الیکٹرانکس سیکھنے کے لیے قیمتی وسائل کے طور پر تجویز کرتا ہے۔"
+        }
+      },
       "yt": "sNoaW1vfFYI",
       "ppe": [
         "Safety Glasses",
         "Insulated Gloves"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "Which manufacturer manuals are recommended for chiller drive study?",
@@ -258,11 +1811,150 @@
     },
     {
       "id": "kitch-WFnsL3PV5EM",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات معزولة"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "تحقق من سحب أمبير باستخدام مقياس المشبك.",
+            "فحص الأسلاك على المغنطرون.",
+            "توصيلات الأسلاك الصحيحة إذا تم توصيلها بشكل غير صحيح.",
+            "تحقق من رسم أمبير بعد إجراء التصحيحات."
+          ],
+          "title": "تشخيص ارتفاع أمبير السحب في أفران توربو شيف",
+          "safety": "افصل الطاقة قبل صيانة مكونات فرن الميكروويف عالي الجهد.",
+          "summary": "يناقش مقدم العرض استكشاف مشكلات سحب الأمبير العالي وإصلاحها في فرن Turbo Chef وتأثيرات المغنطرونات الخاطئة."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "ইনসুলেটেড গ্লাভস"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "একটি ক্ল্যাম্প মিটার দিয়ে amp ড্র পরীক্ষা করুন।",
+            "ম্যাগনেট্রনের তারের পরিদর্শন করুন।",
+            "ভুলভাবে তারের সংযোগ ঠিক করুন।",
+            "সংশোধন করার পরে amp ড্র যাচাই করুন।"
+          ],
+          "title": "টার্বো শেফ ওভেনে হাই অ্যাম্প ড্র নির্ণয় করা",
+          "safety": "উচ্চ-ভোল্টেজ মাইক্রোওয়েভ ওভেনের উপাদানগুলিকে পরিষেবা দেওয়ার আগে বিদ্যুৎ সংযোগ বিচ্ছিন্ন করুন।",
+          "summary": "উপস্থাপক একটি টার্বো শেফ ওভেনে হাই এম্প ড্র সমস্যা সমাধান এবং ভুল ম্যাগনেট্রনের প্রভাব নিয়ে আলোচনা করেছেন।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इंसुलेटेड दस्ताने"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "क्लैंप मीटर से एम्प ड्रा की जाँच करें।",
+            "मैग्नेट्रोन पर वायरिंग का निरीक्षण करें।",
+            "यदि गलत तरीके से वायरिंग की गई है तो वायर कनेक्शन को सही करें।",
+            "सुधार करने के बाद amp ड्रा सत्यापित करें।"
+          ],
+          "title": "टर्बो शेफ ओवन में हाई एम्प ड्रा का निदान",
+          "safety": "हाई-वोल्टेज माइक्रोवेव ओवन घटकों की सर्विसिंग से पहले बिजली काट दें।",
+          "summary": "प्रस्तुतकर्ता टर्बो शेफ ओवन पर उच्च एम्प ड्रॉ के समस्या निवारण और गलत वायर्ड मैग्नेट्रोन के प्रभावों पर चर्चा करता है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "ഇൻസുലേറ്റഡ് ഗ്ലൗസ്"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "ഒരു ക്ലാമ്പ് മീറ്റർ ഉപയോഗിച്ച് ആംപ് ഡ്രോ പരിശോധിക്കുക.",
+            "മാഗ്നെട്രോണിലെ വയറിംഗ് പരിശോധിക്കുക.",
+            "തെറ്റായി വയർ ചെയ്താൽ വയർ കണക്ഷനുകൾ ശരിയാക്കുക.",
+            "തിരുത്തലുകൾ വരുത്തിയ ശേഷം ആംപ് ഡ്രോ പരിശോധിക്കുക."
+          ],
+          "title": "ടർബോ ഷെഫ് ഓവനുകളിൽ ഉയർന്ന ആംപ് ഡ്രോ നിർണ്ണയിക്കുന്നു",
+          "safety": "ഉയർന്ന വോൾട്ടേജ് മൈക്രോവേവ് ഓവൻ ഘടകങ്ങൾക്ക് സേവനം നൽകുന്നതിന് മുമ്പ് വൈദ്യുതി വിച്ഛേദിക്കുക.",
+          "summary": "ടർബോ ഷെഫ് ഓവനിലെ ഉയർന്ന ആംപ് ഡ്രോ പ്രശ്‌നങ്ങളും തെറ്റായ മാഗ്നെട്രോണുകളുടെ ഫലങ്ങളും അവതാരകൻ ചർച്ച ചെയ്യുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इन्सुलेटेड दस्ताने"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "क्ल्याम्प मिटरको साथ एम्प ड्र जाँच गर्नुहोस्।",
+            "म्याग्नेट्रोनमा तारहरू निरीक्षण गर्नुहोस्।",
+            "यदि गलत तरिकाले तार जोडिएको छ भने तार जडानहरू ठीक गर्नुहोस्।",
+            "सुधार गरेपछि amp ड्र प्रमाणित गर्नुहोस्।"
+          ],
+          "title": "टर्बो शेफ ओभनहरूमा उच्च एम्प ड्रको निदान गर्दै",
+          "safety": "उच्च भोल्टेज माइक्रोवेभ ओभन कम्पोनेन्टहरू सर्भिस गर्नु अघि पावर विच्छेद गर्नुहोस्।",
+          "summary": "प्रस्तुतकर्ताले टर्बो शेफ ओभनमा हाई एम्प ड्र समस्याहरू र गलत वायर्ड म्याग्नेट्रोनको प्रभावहरू बारे छलफल गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "காப்பிடப்பட்ட கையுறைகள்"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "ஒரு கிளாம்ப் மீட்டர் மூலம் ஆம்ப் டிராவைச் சரிபார்க்கவும்.",
+            "மேக்னட்ரானில் வயரிங் சரிபார்க்கவும்.",
+            "முறையற்ற முறையில் வயரிங் இருந்தால் கம்பி இணைப்புகளை சரிசெய்யவும்.",
+            "திருத்தங்களைச் செய்த பிறகு ஆம்ப் டிராவைச் சரிபார்க்கவும்."
+          ],
+          "title": "டர்போ செஃப் ஓவன்களில் உயர் ஆம்ப் டிராவைக் கண்டறிதல்",
+          "safety": "உயர் மின்னழுத்த நுண்ணலை அடுப்பு கூறுகளுக்கு சேவை செய்வதற்கு முன் மின்சாரத்தை துண்டிக்கவும்.",
+          "summary": "டர்போ செஃப் அடுப்பில் உள்ள உயர் ஆம்ப் டிரா சிக்கல்கள் மற்றும் தவறான மேக்னட்ரான்களின் விளைவுகளைத் தீர்ப்பது பற்றி தொகுப்பாளர் விவாதிக்கிறார்."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Insulated Gloves"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "Suriin ang amp draw gamit ang isang clamp meter.",
+            "Suriin ang mga kable sa magnetron.",
+            "Iwasto ang mga koneksyon sa wire kung hindi wasto ang pagkaka-wire.",
+            "I-verify ang amp draw pagkatapos gumawa ng mga pagwawasto."
+          ],
+          "title": "Pag-diagnose ng High Amp Draw sa Turbo Chef Ovens",
+          "safety": "Idiskonekta ang power bago i-serve ang mga high-voltage na bahagi ng microwave oven.",
+          "summary": "Tinatalakay ng nagtatanghal ang pag-troubleshoot ng mga isyu sa high amp draw sa isang Turbo Chef oven at ang mga epekto ng mga miswired magnetron."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "موصل دستانے"
+          ],
+          "src": "6249ba302374",
+          "auto": true,
+          "steps": [
+            "ایک کلیمپ میٹر کے ساتھ AMP ڈرا چیک کریں۔",
+            "میگنیٹرون پر وائرنگ کا معائنہ کریں۔",
+            "تار کے کنکشن درست کریں اگر تار غلط طریقے سے لگائی گئی ہو۔",
+            "تصحیح کرنے کے بعد amp ڈرا کی تصدیق کریں۔"
+          ],
+          "title": "ٹربو شیف اوونز میں ہائی ایم پی ڈرا کی تشخیص",
+          "safety": "ہائی وولٹیج مائیکرو ویو اوون کے اجزاء کی خدمت کرنے سے پہلے بجلی منقطع کریں۔",
+          "summary": "پیش کنندہ ٹربو شیف اوون پر ہائی ایم پی ڈرا کے مسائل کے حل اور غلط وائرڈ میگنیٹران کے اثرات پر تبادلہ خیال کرتا ہے۔"
+        }
+      },
       "yt": "WFnsL3PV5EM",
       "ppe": [
         "Safety Glasses",
         "Insulated Gloves"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "What tool is used to check amp draw?",
@@ -321,11 +2013,188 @@
     },
     {
       "id": "firel-2qzGmdGws7w",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات العمل"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "قم بمراجعة لوائح التبريد الفيدرالية ولوائح الولاية",
+            "فهم تصنيفات المبردات A2L وA3",
+            "تحقق من تواريخ امتثال المعدات وحدود إمكانية الاحترار العالمي",
+            "حدد المكونات المعتمدة من UL للتوافق مع A2L وA3",
+            "قم بتركيب أنظمة معتمدة للكشف عن تسرب غاز التبريد"
+          ],
+          "title": "الامتثال التنظيمي لغازات التبريد A2L وA3",
+          "safety": "تأكد من أنك على دراية بلوائح المبردات الحكومية والفدرالية قبل التثبيت.",
+          "summary": "تغطي هذه الندوة عبر الويب المشهد التنظيمي وتواريخ الامتثال ومعايير السلامة لغازات التبريد A2L وA3."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "কাজের গ্লাভস"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "ফেডারেল এবং রাজ্য রেফ্রিজারেন্ট প্রবিধান পর্যালোচনা করুন",
+            "A2L এবং A3 রেফ্রিজারেন্ট শ্রেণীবিভাগ বুঝুন",
+            "সরঞ্জাম সম্মতির তারিখ এবং GWP সীমা পরীক্ষা করুন",
+            "A2L এবং A3 সম্মতির জন্য UL-প্রত্যয়িত উপাদান নির্বাচন করুন",
+            "অনুমোদিত রেফ্রিজারেন্ট লিক সনাক্তকরণ সিস্টেম ইনস্টল করুন"
+          ],
+          "title": "A2L এবং A3 রেফ্রিজারেন্ট রেগুলেটরি কমপ্লায়েন্স",
+          "safety": "ইনস্টলেশনের আগে নিশ্চিত করুন যে আপনি রাজ্য এবং ফেডারেল রেফ্রিজারেন্ট প্রবিধান সম্পর্কে সচেতন।",
+          "summary": "এই ওয়েবিনারটি A2L এবং A3 রেফ্রিজারেন্টগুলির জন্য নিয়ন্ত্রক ল্যান্ডস্কেপ, সম্মতির তারিখ এবং নিরাপত্তা মানগুলি কভার করে৷"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "काम के दस्ताने"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "संघीय और राज्य रेफ्रिजरेंट नियमों की समीक्षा करें",
+            "A2L और A3 रेफ्रिजरेंट वर्गीकरण को समझें",
+            "उपकरण अनुपालन तिथियों और GWP सीमाओं की जाँच करें",
+            "A2L और A3 अनुपालन के लिए UL-प्रमाणित घटकों का चयन करें",
+            "अनुमोदित रेफ्रिजरेंट लीक डिटेक्शन सिस्टम स्थापित करें"
+          ],
+          "title": "A2L और A3 रेफ्रिजरेंट नियामक अनुपालन",
+          "safety": "सुनिश्चित करें कि आप स्थापना से पहले राज्य और संघीय रेफ्रिजरेंट नियमों से अवगत हैं।",
+          "summary": "यह वेबिनार A2L और A3 रेफ्रिजरेंट्स के लिए नियामक परिदृश्य, अनुपालन तिथियों और सुरक्षा मानकों को शामिल करता है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "വർക്ക് ഗ്ലൗസ്"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "ഫെഡറൽ, സംസ്ഥാന റഫ്രിജറൻ്റ് നിയന്ത്രണങ്ങൾ അവലോകനം ചെയ്യുക",
+            "A2L, A3 റഫ്രിജറൻ്റ് വർഗ്ഗീകരണങ്ങൾ മനസ്സിലാക്കുക",
+            "ഉപകരണങ്ങൾ പാലിക്കുന്ന തീയതികളും GWP പരിധികളും പരിശോധിക്കുക",
+            "A2L, A3 എന്നിവ പാലിക്കുന്നതിന് UL- സാക്ഷ്യപ്പെടുത്തിയ ഘടകങ്ങൾ തിരഞ്ഞെടുക്കുക",
+            "അംഗീകൃത റഫ്രിജറൻ്റ് ലീക്ക് ഡിറ്റക്ഷൻ സിസ്റ്റങ്ങൾ ഇൻസ്റ്റാൾ ചെയ്യുക"
+          ],
+          "title": "A2L & A3 റഫ്രിജറൻ്റ് റെഗുലേറ്ററി കംപ്ലയൻസ്",
+          "safety": "ഇൻസ്റ്റാളുചെയ്യുന്നതിന് മുമ്പ് സംസ്ഥാന, ഫെഡറൽ റഫ്രിജറൻ്റ് നിയന്ത്രണങ്ങളെക്കുറിച്ച് നിങ്ങൾക്ക് അറിയാമെന്ന് ഉറപ്പാക്കുക.",
+          "summary": "റെഗുലേറ്ററി ലാൻഡ്‌സ്‌കേപ്പ്, പാലിക്കുന്ന തീയതികൾ, A2L, A3 റഫ്രിജറൻ്റുകളുടെ സുരക്ഷാ മാനദണ്ഡങ്ങൾ എന്നിവ ഈ വെബിനാർ ഉൾക്കൊള്ളുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कार्य दस्ताने"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "संघीय र राज्य रेफ्रिजरेन्ट नियमहरूको समीक्षा गर्नुहोस्",
+            "A2L र A3 रेफ्रिजरेन्ट वर्गीकरण बुझ्नुहोस्",
+            "उपकरण अनुपालन मितिहरू र GWP सीमाहरू जाँच गर्नुहोस्",
+            "A2L र A3 अनुपालनको लागि UL-प्रमाणित कम्पोनेन्टहरू चयन गर्नुहोस्",
+            "अनुमोदित फ्रिज चुहावट पत्ता लगाउने प्रणालीहरू स्थापना गर्नुहोस्"
+          ],
+          "title": "A2L र A3 रेफ्रिजरेन्ट नियामक अनुपालन",
+          "safety": "सुनिश्चित गर्नुहोस् कि तपाइँ स्थापना गर्नु अघि राज्य र संघीय रेफ्रिजरेन्ट नियमहरू बारे सचेत हुनुहुन्छ।",
+          "summary": "यो वेबिनारले A2L र A3 रेफ्रिजरेन्टहरूका लागि नियामक परिदृश्य, अनुपालन मितिहरू, र सुरक्षा मापदण्डहरू समावेश गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "வேலை கையுறைகள்"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "கூட்டாட்சி மற்றும் மாநில குளிர்பதன விதிமுறைகளை மதிப்பாய்வு செய்யவும்",
+            "A2L மற்றும் A3 குளிர்பதன வகைப்பாடுகளைப் புரிந்து கொள்ளுங்கள்",
+            "உபகரணங்கள் இணக்க தேதிகள் மற்றும் GWP வரம்புகளை சரிபார்க்கவும்",
+            "A2L மற்றும் A3 இணக்கத்திற்கான UL-சான்றளிக்கப்பட்ட கூறுகளைத் தேர்ந்தெடுக்கவும்",
+            "அங்கீகரிக்கப்பட்ட குளிர்பதன கசிவு கண்டறிதல் அமைப்புகளை நிறுவவும்"
+          ],
+          "title": "A2L & A3 குளிர்பதன ஒழுங்குமுறை இணக்கம்",
+          "safety": "நிறுவும் முன், மாநில மற்றும் கூட்டாட்சி குளிர்பதன விதிமுறைகளை நீங்கள் அறிந்திருப்பதை உறுதிசெய்யவும்.",
+          "summary": "இந்த வெபினார் ஒழுங்குமுறை நிலப்பரப்பு, இணக்க தேதிகள் மற்றும் A2L மற்றும் A3 குளிரூட்டிகளுக்கான பாதுகாப்பு தரங்களை உள்ளடக்கியது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes sa trabaho"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "Suriin ang mga regulasyon ng pederal at estado ng nagpapalamig",
+            "Unawain ang klasipikasyon ng A2L at A3 na nagpapalamig",
+            "Suriin ang mga petsa ng pagsunod sa kagamitan at mga limitasyon ng GWP",
+            "Pumili ng UL-certified na mga bahagi para sa pagsunod sa A2L at A3",
+            "Mag-install ng mga aprubadong sistema ng pagtukoy ng pagtagas ng nagpapalamig"
+          ],
+          "title": "A2L at A3 Refrigerant Regulatory Compliance",
+          "safety": "Tiyaking alam mo ang mga regulasyon ng estado at pederal na nagpapalamig bago i-install.",
+          "summary": "Sinasaklaw ng webinar na ito ang tanawin ng regulasyon, mga petsa ng pagsunod, at mga pamantayan sa kaligtasan para sa mga A2L at A3 na nagpapalamig."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "کام کے دستانے"
+          ],
+          "src": "32063dd535fb",
+          "auto": true,
+          "steps": [
+            "وفاقی اور ریاستی ریفریجرینٹ کے ضوابط کا جائزہ لیں۔",
+            "A2L اور A3 ریفریجرینٹ کی درجہ بندی کو سمجھیں۔",
+            "سامان کی تعمیل کی تاریخوں اور GWP کی حدود کو چیک کریں۔",
+            "A2L اور A3 کی تعمیل کے لیے UL سے تصدیق شدہ اجزاء منتخب کریں۔",
+            "منظور شدہ ریفریجرینٹ لیک کا پتہ لگانے کے نظام نصب کریں۔"
+          ],
+          "title": "A2L اور A3 ریفریجرینٹ ریگولیٹری تعمیل",
+          "safety": "اس بات کو یقینی بنائیں کہ آپ تنصیب سے پہلے ریاستی اور وفاقی ریفریجرینٹ کے ضوابط سے واقف ہیں۔",
+          "summary": "یہ ویبینار A2L اور A3 ریفریجرینٹس کے لیے ریگولیٹری لینڈ سکیپ، تعمیل کی تاریخوں اور حفاظتی معیارات کا احاطہ کرتا ہے۔"
+        }
+      },
       "yt": "2qzGmdGws7w",
       "ppe": [
         "Safety Glasses",
         "Work Gloves"
       ],
+      "trq": {
+        "ur": {
+          "src": "5f34ee12b920",
+          "items": [
+            {
+              "q": "Montreal Protocol کس سال نافذ ہوا؟",
+              "options": [
+                "1987",
+                "2016",
+                "2020"
+              ]
+            },
+            {
+              "q": "Refrigerant regulations میں GWP کا کیا مطلب ہے؟",
+              "options": [
+                "Gas Water Pressure",
+                "Global Warming Potential",
+                "Green Working Program"
+              ]
+            },
+            {
+              "q": "A2L refrigerants کے لیے بند کمروں میں سب سے اہم بچاؤ کا طریقہ کیا ہے؟",
+              "options": [
+                "Refrigerant leak detection system",
+                "Manual shut-off valves",
+                "Increased ventilation ducts"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What year did the Montreal Protocol go into effect?",
@@ -385,10 +2254,141 @@
     },
     {
       "id": "bmsco-CirQSo_M8I0",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "حدد مدخلات المستشعر الرئيسي ومستشعر الغرفة في جدول العلامات الافتراضي.",
+            "قم بتعيين مخرجات الإضاءة وعناوين علامة إضاءة الردهة.",
+            "أدخل جهة اتصال المستشعر الرئيسية في الشبكة 1 لتنشيط جميع الأضواء.",
+            "أضف مستشعرات الغرفة كجهات اتصال مغلقة عادةً للتحكم في إضاءة الغرفة الفردية."
+          ],
+          "title": "منطق التحكم في الإضاءة المنزلية PLC",
+          "safety": "تأكد من التحقق الصحيح من منطق برنامج PLC وعنونة الإدخال / الإخراج قبل النشر لمنع سلوك النظام غير المتوقع.",
+          "summary": "يوضح هذا الفيديو كيفية إنشاء برنامج منطق سلم PLC في Siemens TIA Portal للتحكم في إضاءة المنزل بناءً على مدخلات مستشعر الباب."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "ডিফল্ট ট্যাগ টেবিলে প্রধান সেন্সর এবং রুম সেন্সর ইনপুট সংজ্ঞায়িত করুন।",
+            "আলোর আউটপুট এবং লবি লাইট ট্যাগ ঠিকানা বরাদ্দ করুন।",
+            "সমস্ত আলো সক্রিয় করতে নেটওয়ার্ক 1-এ একটি প্রধান সেন্সর পরিচিতি সন্নিবেশ করুন৷",
+            "পৃথক রুমের আলো নিয়ন্ত্রণ করতে সাধারণত বন্ধ পরিচিতি হিসাবে রুম সেন্সর যোগ করুন।"
+          ],
+          "title": "পিএলসি হোম লাইটিং কন্ট্রোল লজিক",
+          "safety": "অপ্রত্যাশিত সিস্টেম আচরণ রোধ করতে স্থাপনার আগে PLC প্রোগ্রাম লজিক এবং I/O ঠিকানার যথাযথ যাচাইকরণ নিশ্চিত করুন।",
+          "summary": "দরজার সেন্সর ইনপুটগুলির উপর ভিত্তি করে বাড়ির আলো নিয়ন্ত্রণ করতে সিমেন্স টিআইএ পোর্টালে কীভাবে একটি পিএলসি মই লজিক প্রোগ্রাম তৈরি করা যায় তা এই ভিডিওটি প্রদর্শন করে।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा कांच"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "डिफ़ॉल्ट टैग तालिका में मुख्य सेंसर और रूम सेंसर इनपुट को परिभाषित करें।",
+            "लाइट आउटपुट और लॉबी लाइट टैग पते निर्दिष्ट करें।",
+            "सभी लाइटों को सक्रिय करने के लिए नेटवर्क 1 में एक मुख्य सेंसर संपर्क डालें।",
+            "व्यक्तिगत कमरे की रोशनी को नियंत्रित करने के लिए सामान्य रूप से बंद संपर्कों के रूप में कमरे के सेंसर जोड़ें।"
+          ],
+          "title": "पीएलसी होम लाइटिंग कंट्रोल लॉजिक",
+          "safety": "अप्रत्याशित सिस्टम व्यवहार को रोकने के लिए तैनाती से पहले पीएलसी प्रोग्राम लॉजिक और I/O एड्रेसिंग का उचित सत्यापन सुनिश्चित करें।",
+          "summary": "यह वीडियो दर्शाता है कि दरवाजा सेंसर इनपुट के आधार पर घर की रोशनी को नियंत्रित करने के लिए सीमेंस टीआईए पोर्टल में पीएलसी लैडर लॉजिक प्रोग्राम कैसे बनाया जाए।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "ഡിഫോൾട്ട് ടാഗ് ടേബിളിൽ പ്രധാന സെൻസറും റൂം സെൻസർ ഇൻപുട്ടുകളും നിർവചിക്കുക.",
+            "ലൈറ്റ് ഔട്ട്പുട്ടുകളും ലോബി ലൈറ്റ് ടാഗ് വിലാസങ്ങളും നൽകുക.",
+            "എല്ലാ ലൈറ്റുകളും സജീവമാക്കുന്നതിന് നെറ്റ്‌വർക്ക് 1-ൽ ഒരു പ്രധാന സെൻസർ കോൺടാക്റ്റ് ചേർക്കുക.",
+            "വ്യക്തിഗത മുറിയിലെ ലൈറ്റിംഗ് നിയന്ത്രിക്കാൻ സാധാരണ അടച്ച കോൺടാക്റ്റുകളായി റൂം സെൻസറുകൾ ചേർക്കുക."
+          ],
+          "title": "PLC ഹോം ലൈറ്റിംഗ് കൺട്രോൾ ലോജിക്",
+          "safety": "അപ്രതീക്ഷിതമായ സിസ്റ്റം പെരുമാറ്റം തടയുന്നതിന് വിന്യാസത്തിന് മുമ്പ് PLC പ്രോഗ്രാം ലോജിക്കിൻ്റെയും I/O വിലാസത്തിൻ്റെയും ശരിയായ പരിശോധന ഉറപ്പാക്കുക.",
+          "summary": "ഡോർ സെൻസർ ഇൻപുട്ടുകളെ അടിസ്ഥാനമാക്കി ഹോം ലൈറ്റിംഗ് നിയന്ത്രിക്കുന്നതിന് സീമെൻസ് TIA പോർട്ടലിൽ PLC ലാഡർ ലോജിക് പ്രോഗ്രാം എങ്ങനെ സൃഷ്ടിക്കാമെന്ന് ഈ വീഡിയോ കാണിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "पूर्वनिर्धारित ट्याग तालिकामा मुख्य सेन्सर र कोठा सेन्सर इनपुटहरू परिभाषित गर्नुहोस्।",
+            "लाइट आउटपुटहरू र लबी लाइट ट्याग ठेगानाहरू असाइन गर्नुहोस्।",
+            "सबै बत्तीहरू सक्रिय गर्न नेटवर्क 1 मा मुख्य सेन्सर सम्पर्क घुसाउनुहोस्।",
+            "कोठाको सेन्सरहरू सामान्यतया बन्द सम्पर्कहरू जस्तै व्यक्तिगत कोठाको प्रकाश नियन्त्रण गर्न थप्नुहोस्।"
+          ],
+          "title": "PLC गृह प्रकाश नियन्त्रण तर्क",
+          "safety": "अप्रत्याशित प्रणाली व्यवहार रोक्नको लागि तैनाती अघि PLC कार्यक्रम तर्क र I/O ठेगानाको उचित प्रमाणीकरण सुनिश्चित गर्नुहोस्।",
+          "summary": "यस भिडियोले सिमेन्स TIA पोर्टलमा ढोका सेन्सर इनपुटहरूमा आधारित घरको प्रकाश नियन्त्रण गर्न कसरी PLC भर्याङ तर्क कार्यक्रम सिर्जना गर्ने भनेर देखाउँछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "இயல்புநிலை டேக் டேபிளில் பிரதான சென்சார் மற்றும் அறை சென்சார் உள்ளீடுகளை வரையறுக்கவும்.",
+            "ஒளி வெளியீடுகள் மற்றும் லாபி லைட் டேக் முகவரிகளை ஒதுக்கவும்.",
+            "அனைத்து விளக்குகளையும் செயல்படுத்த நெட்வொர்க் 1 இல் முக்கிய சென்சார் தொடர்பைச் செருகவும்.",
+            "தனிப்பட்ட அறை விளக்குகளைக் கட்டுப்படுத்த, அறை உணரிகளை பொதுவாக மூடிய தொடர்புகளாகச் சேர்க்கவும்."
+          ],
+          "title": "PLC முகப்பு விளக்கு கட்டுப்பாட்டு தர்க்கம்",
+          "safety": "எதிர்பாராத கணினி நடத்தையைத் தடுக்க, வரிசைப்படுத்துவதற்கு முன் PLC நிரல் லாஜிக் மற்றும் I/O முகவரியின் சரியான சரிபார்ப்பை உறுதிசெய்யவும்.",
+          "summary": "கதவு சென்சார் உள்ளீடுகளின் அடிப்படையில் வீட்டு விளக்குகளைக் கட்டுப்படுத்த, சீமென்ஸ் TIA போர்ட்டலில் PLC லேடர் லாஜிக் திட்டத்தை எவ்வாறு உருவாக்குவது என்பதை இந்த வீடியோ விளக்குகிறது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "Tukuyin ang pangunahing sensor at room sensor input sa default na tag table.",
+            "Magtalaga ng mga light output at lobby light tag address.",
+            "Maglagay ng pangunahing contact ng sensor sa Network 1 para i-activate ang lahat ng ilaw.",
+            "Magdagdag ng mga sensor ng kwarto bilang mga karaniwang saradong contact para makontrol ang indibidwal na pag-iilaw ng kwarto."
+          ],
+          "title": "PLC Home Lighting Control Logic",
+          "safety": "Tiyakin ang wastong pag-verify ng PLC program logic at I/O addressing bago i-deploy upang maiwasan ang hindi inaasahang pagkilos ng system.",
+          "summary": "Ipinapakita ng video na ito kung paano gumawa ng PLC ladder logic program sa Siemens TIA Portal para makontrol ang pag-iilaw ng bahay batay sa mga input ng sensor ng pinto."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے"
+          ],
+          "src": "71e6a1e6b818",
+          "auto": true,
+          "steps": [
+            "ڈیفالٹ ٹیگ ٹیبل میں مین سینسر اور روم سینسر ان پٹ کی وضاحت کریں۔",
+            "لائٹ آؤٹ پٹس اور لابی لائٹ ٹیگ ایڈریس تفویض کریں۔",
+            "تمام لائٹس کو چالو کرنے کے لیے نیٹ ورک 1 میں مرکزی سینسر کا رابطہ داخل کریں۔",
+            "کمرے کی انفرادی روشنی کو کنٹرول کرنے کے لیے کمرے کے سینسر کو عام طور پر بند رابطوں کے طور پر شامل کریں۔"
+          ],
+          "title": "PLC ہوم لائٹنگ کنٹرول منطق",
+          "safety": "غیر متوقع نظام کے رویے کو روکنے کے لیے تعیناتی سے پہلے PLC پروگرام منطق اور I/O ایڈریسنگ کی درست تصدیق کو یقینی بنائیں۔",
+          "summary": "اس ویڈیو میں دکھایا گیا ہے کہ سیمنز ٹی آئی اے پورٹل میں پی ایل سی سیڑھی لاجک پروگرام کیسے بنایا جاتا ہے تاکہ دروازے کے سینسر ان پٹ کی بنیاد پر گھر کی روشنی کو کنٹرول کیا جا سکے۔"
+        }
+      },
       "yt": "CirQSo_M8I0",
       "ppe": [
         "Safety Glasses"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "What software is used in the video for PLC programming?",
@@ -447,12 +2447,197 @@
     },
     {
       "id": "bmsco-XIE_18yMqco",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "سترة عالية الوضوح",
+            "أحذية ذات مقدمة فولاذية"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "تقسيم تقدير الوظائف إلى فئات ومراحل العمل.",
+            "تقدير العمالة باستخدام معدلات الوحدة مضروبة في حجم العمل.",
+            "حساب ظروف الموقع وتعقيدات التكامل.",
+            "قم بتضمين النسب المئوية للطوارئ للأسلاك التي لم يتم التحقق منها.",
+            "قم بمراجعة الساعات الفعلية مقابل التقديرات بعد إغلاق الوظيفة."
+          ],
+          "title": "تقدير العمالة والهوامش لأتمتة البناء",
+          "safety": "تأكد من التحقق من جميع تقييمات موقع المشروع وتحديد نطاقه قبل الانتهاء من أي تقدير للعمالة.",
+          "summary": "يشرح هذا الفيديو كيفية تقدير العمالة بدقة لبناء مشاريع التشغيل الآلي وحماية هوامش الربح عن طريق تقسيم العمل إلى فئات ومراحل."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "হাই-ভিজিবিলিটি ভেস্ট",
+            "স্টিল-টোড বুট"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "আনুমানিক কাজগুলিকে শ্রম বিভাগ এবং পর্যায়গুলিতে বিভক্ত করুন।",
+            "কাজের পরিমাণ দ্বারা গুণিত ইউনিট হার ব্যবহার করে শ্রম অনুমান করুন।",
+            "সাইটের অবস্থা এবং ইন্টিগ্রেশন জটিলতার জন্য অ্যাকাউন্ট।",
+            "অযাচাইকৃত তারের জন্য আকস্মিক শতাংশ অন্তর্ভুক্ত করুন।",
+            "কাজ বন্ধ হওয়ার পরে অনুমানের বিপরীতে প্রকৃত ঘন্টা পর্যালোচনা করুন।"
+          ],
+          "title": "বিল্ডিং অটোমেশন শ্রম এবং মার্জিন অনুমান করা",
+          "safety": "কোনো শ্রম অনুমান চূড়ান্ত হওয়ার আগে সমস্ত প্রকল্প সাইটের মূল্যায়ন এবং স্কোপিং যাচাই করা হয়েছে তা নিশ্চিত করুন।",
+          "summary": "এই ভিডিওটি ব্যাখ্যা করে যে কীভাবে অটোমেশন প্রকল্প নির্মাণের জন্য শ্রমের সঠিকভাবে অনুমান করা যায় এবং কাজকে বিভাগ এবং ধাপে ভাগ করে লাভের মার্জিন রক্ষা করা যায়।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "उच्च दृश्यता बनियान",
+            "स्टील-पैर के जूते"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "नौकरियों के आकलन को श्रम श्रेणियों और चरणों में बाँटें।",
+            "कार्य की मात्रा से गुणा की गई इकाई दरों का उपयोग करके श्रम का अनुमान लगाएं।",
+            "साइट की स्थितियों और एकीकरण जटिलताओं का ध्यान रखें।",
+            "असत्यापित वायरिंग के लिए आकस्मिकता प्रतिशत शामिल करें।",
+            "कार्य समाप्ति के बाद अनुमान के विरुद्ध वास्तविक घंटों की समीक्षा करें।"
+          ],
+          "title": "बिल्डिंग ऑटोमेशन श्रम और मार्जिन का अनुमान लगाना",
+          "safety": "किसी भी श्रम अनुमान को अंतिम रूप देने से पहले सुनिश्चित करें कि सभी परियोजना स्थल मूल्यांकन और स्कोपिंग सत्यापित हैं।",
+          "summary": "यह वीडियो बताता है कि स्वचालन परियोजनाओं के निर्माण के लिए श्रम का सटीक अनुमान कैसे लगाया जाए और काम को श्रेणियों और चरणों में विभाजित करके लाभ मार्जिन की रक्षा कैसे की जाए।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "ഹൈ-വിസിബിലിറ്റി വെസ്റ്റ്",
+            "സ്റ്റീൽ-ടോഡ് ബൂട്ട്സ്"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "എസ്റ്റിമേറ്റ് ചെയ്യുന്ന ജോലികളെ ലേബർ വിഭാഗങ്ങളായും ഘട്ടങ്ങളായും വിഭജിക്കുക.",
+            "ജോലിയുടെ അളവ് കൊണ്ട് ഗുണിച്ച യൂണിറ്റ് നിരക്കുകൾ ഉപയോഗിച്ച് തൊഴിലാളികളെ കണക്കാക്കുക.",
+            "സൈറ്റ് വ്യവസ്ഥകൾക്കും സംയോജന സങ്കീർണ്ണതകൾക്കുമുള്ള അക്കൗണ്ട്.",
+            "സ്ഥിരീകരിക്കാത്ത വയറിങ്ങിനായി ആകസ്മിക ശതമാനം ഉൾപ്പെടുത്തുക.",
+            "ജോലി അവസാനിപ്പിച്ചതിന് ശേഷമുള്ള കണക്കുകൾക്കെതിരെ യഥാർത്ഥ സമയം അവലോകനം ചെയ്യുക."
+          ],
+          "title": "ബിൽഡിംഗ് ഓട്ടോമേഷൻ ലേബറും മാർജിനുകളും കണക്കാക്കുന്നു",
+          "safety": "ഏതെങ്കിലും ലേബർ എസ്റ്റിമേറ്റ് അന്തിമമാക്കുന്നതിന് മുമ്പ് എല്ലാ പ്രോജക്റ്റ് സൈറ്റ് വിലയിരുത്തലുകളും സ്കോപ്പിംഗും പരിശോധിച്ചുറപ്പിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക.",
+          "summary": "ഓട്ടോമേഷൻ പ്രോജക്‌റ്റുകൾ നിർമ്മിക്കുന്നതിനുള്ള തൊഴിലാളികളെ എങ്ങനെ കൃത്യമായി കണക്കാക്കാമെന്നും ജോലിയെ വിഭാഗങ്ങളായും ഘട്ടങ്ങളായും വിഭജിച്ച് ലാഭവിഹിതം എങ്ങനെ സംരക്ഷിക്കാമെന്നും ഈ വീഡിയോ വിശദീകരിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "उच्च दृश्यता भेस्ट",
+            "स्टिल-टोड जुत्ता"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "श्रम कोटि र चरणहरूमा अनुमानित कार्यहरू तोड्नुहोस्।",
+            "कामको मात्राले गुणा गरी एकाइ दरहरू प्रयोग गरेर श्रम अनुमान गर्नुहोस्।",
+            "साइट अवस्था र एकीकरण जटिलताहरूको लागि खाता।",
+            "अप्रमाणित तारहरूको लागि आकस्मिक प्रतिशतहरू समावेश गर्नुहोस्।",
+            "काम समापन पछि अनुमान विरुद्ध वास्तविक घण्टा समीक्षा गर्नुहोस्।"
+          ],
+          "title": "निर्माण स्वचालन श्रम र मार्जिन अनुमान",
+          "safety": "कुनै पनि श्रम अनुमानलाई अन्तिम रूप दिनु अघि सबै परियोजना साइट मूल्याङ्कन र स्कोपिङ प्रमाणित गरिएको सुनिश्चित गर्नुहोस्।",
+          "summary": "यस भिडियोले स्वचालन परियोजनाहरू निर्माण गर्न श्रमको सही अनुमान कसरी गर्ने र कामलाई कोटी र चरणहरूमा विभाजन गरेर नाफाको मार्जिनलाई कसरी सुरक्षित गर्ने भनेर वर्णन गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "உயர்-தெரியும் உள்ளாடை",
+            "ஸ்டீல்-டோட் பூட்ஸ்"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "மதிப்பிடும் வேலைகளை தொழிலாளர் வகைகளாகவும் கட்டங்களாகவும் பிரிக்கவும்.",
+            "யூனிட் விகிதங்களைப் பயன்படுத்தி வேலை அளவைப் பெருக்குவதன் மூலம் உழைப்பை மதிப்பிடுங்கள்.",
+            "தள நிலைமைகள் மற்றும் ஒருங்கிணைப்பு சிக்கல்களுக்கான கணக்கு.",
+            "சரிபார்க்கப்படாத வயரிங்க்கான தற்செயல் சதவீதங்களைச் சேர்க்கவும்.",
+            "வேலை முடிந்த பிறகு மதிப்பீடுகளுக்கு எதிராக உண்மையான நேரத்தை மதிப்பாய்வு செய்யவும்."
+          ],
+          "title": "கட்டிட ஆட்டோமேஷன் தொழிலாளர் மற்றும் விளிம்புகளை மதிப்பிடுதல்",
+          "safety": "எந்தவொரு தொழிலாளர் மதிப்பீடும் இறுதி செய்யப்படுவதற்கு முன், அனைத்து திட்ட தள மதிப்பீடுகள் மற்றும் ஸ்கோப்பிங் சரிபார்க்கப்படுவதை உறுதிசெய்யவும்.",
+          "summary": "ஆட்டோமேஷன் திட்டங்களை உருவாக்குவதற்கான உழைப்பை எவ்வாறு துல்லியமாக மதிப்பிடுவது மற்றும் வேலையை வகைகளாகவும் கட்டங்களாகவும் பிரிப்பதன் மூலம் லாப வரம்புகளை எவ்வாறு பாதுகாப்பது என்பதை இந்த வீடியோ விளக்குகிறது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "High-Visibility Vest",
+            "Steel-Toed Boots"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "Hatiin ang pagtatantya ng mga trabaho sa mga kategorya at yugto ng paggawa.",
+            "Tantyahin ang paggawa gamit ang mga rate ng yunit na pinarami ng dami ng trabaho.",
+            "Isaalang-alang ang mga kundisyon ng site at pagiging kumplikado ng pagsasama.",
+            "Isama ang mga porsyento ng contingency para sa hindi na-verify na mga kable.",
+            "Suriin ang mga aktwal na oras laban sa mga pagtatantya pagkatapos ng pagsara ng trabaho."
+          ],
+          "title": "Pagtatantya ng Building Automation Labor at Margins",
+          "safety": "Tiyakin na ang lahat ng pagtatasa at saklaw ng lugar ng proyekto ay napatunayan bago ang anumang pagtatantya ng paggawa ay pinal.",
+          "summary": "Ipinapaliwanag ng video na ito kung paano tumpak na tantiyahin ang paggawa para sa pagbuo ng mga proyekto sa automation at protektahan ang mga margin ng tubo sa pamamagitan ng paghahati-hati ng trabaho sa mga kategorya at mga yugto."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "ہائی ویزیبلٹی ویسٹ",
+            "اسٹیل کے پیر کے جوتے"
+          ],
+          "src": "ac8fd8fadf5f",
+          "auto": true,
+          "steps": [
+            "تخمینہ لگانے والی ملازمتوں کو لیبر کے زمرے اور مراحل میں تقسیم کریں۔",
+            "یونٹ کی شرح کو ملازمت کے حجم سے ضرب کر کے لیبر کا تخمینہ لگائیں۔",
+            "سائٹ کے حالات اور انضمام کی پیچیدگیوں کا حساب۔",
+            "غیر تصدیق شدہ وائرنگ کے لیے ہنگامی فیصد شامل کریں۔",
+            "کام ختم ہونے کے بعد تخمینوں کے خلاف اصل اوقات کا جائزہ لیں۔"
+          ],
+          "title": "بلڈنگ آٹومیشن لیبر اور مارجن کا تخمینہ لگانا",
+          "safety": "اس بات کو یقینی بنائیں کہ کسی بھی لیبر کے تخمینے کو حتمی شکل دینے سے پہلے پروجیکٹ سائٹ کے تمام جائزوں اور اسکوپنگ کی تصدیق کی گئی ہے۔",
+          "summary": "اس ویڈیو میں بتایا گیا ہے کہ آٹومیشن پروجیکٹس کی تعمیر کے لیے محنت کا درست اندازہ کیسے لگایا جائے اور کام کو زمروں اور مراحل میں تقسیم کرکے منافع کے مارجن کی حفاظت کی جائے۔"
+        }
+      },
       "yt": "XIE_18yMqco",
       "ppe": [
         "Safety Glasses",
         "High-Visibility Vest",
         "Steel-Toed Boots"
       ],
+      "trq": {
+        "ta": {
+          "src": "e23f32b32632",
+          "items": [
+            {
+              "q": "Building automation projects-ல் வேலை நேரத்தை எதை வைத்து கணக்கிட வேண்டும்?",
+              "options": [
+                "Project",
+                "Phase",
+                "Guesswork"
+              ]
+            },
+            {
+              "q": "உறுதி செய்யப்படாத wiring-க்கு எந்த வகை செலவை கணக்கிட வேண்டும்?",
+              "options": [
+                "Padding",
+                "Contingency",
+                "Zero cost"
+              ]
+            },
+            {
+              "q": "உண்மையான வேலை நேரத்தை எப்போது கணக்கீட்டுடன் ஒப்பிட வேண்டும்?",
+              "options": [
+                "வேலை முடிந்த பிறகு",
+                "எப்பொழுதும் இல்லை",
+                "Bidding-க்கு முன்னால்"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What should labor be estimated by on building automation projects?",
@@ -512,12 +2697,197 @@
     },
     {
       "id": "hvacc-aoCKe6uU_AI",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "خوذة السلامة",
+            "زي العمل"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "حدد مستشعر درجة حرارة الهواء أو المسبار.",
+            "قياس في المنطقة المحتلة من الغرفة.",
+            "أبقِ المستشعر بعيدًا عن المسودات ومصادر الحرارة.",
+            "لا تلمس أو تتنفس مباشرة على المستشعر.",
+            "انتظر حتى تستقر قيمة المستشعر قبل التسجيل."
+          ],
+          "title": "القياس الصحيح لدرجة حرارة الغرفة",
+          "safety": "تأكد من استخدام الأداة الصحيحة لقياس درجة حرارة الهواء بدلاً من درجة حرارة السطح.",
+          "summary": "يشرح هذا الفيديو لماذا تقيس موازين الحرارة بالأشعة تحت الحمراء درجة حرارة السطح بدلاً من درجة حرارة الهواء ويوضح كيفية قياس درجة حرارة الغرفة بشكل صحيح باستخدام مقياس حرارة الهواء."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "নিরাপত্তা হেলমেট",
+            "কাজের ইউনিফর্ম"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "একটি বায়ু-তাপমাত্রা সেন্সর বা প্রোব নির্বাচন করুন।",
+            "ঘরের দখলকৃত অঞ্চলে পরিমাপ করুন।",
+            "খসড়া এবং তাপ উত্স থেকে সেন্সর দূরে রাখুন।",
+            "সেন্সরে সরাসরি স্পর্শ করবেন না বা শ্বাস নেবেন না।",
+            "রেকর্ড করার আগে সেন্সর মান স্থিতিশীল না হওয়া পর্যন্ত অপেক্ষা করুন।"
+          ],
+          "title": "সঠিক রুম তাপমাত্রা পরিমাপ",
+          "safety": "নিশ্চিত করুন যে আপনি পৃষ্ঠের তাপমাত্রার পরিবর্তে বায়ুর তাপমাত্রা পরিমাপের জন্য সঠিক যন্ত্র ব্যবহার করছেন।",
+          "summary": "এই ভিডিওটি ব্যাখ্যা করে যে কেন ইনফ্রারেড থার্মোমিটার বায়ুর তাপমাত্রার পরিবর্তে পৃষ্ঠের তাপমাত্রা পরিমাপ করে এবং একটি বায়ু থার্মোমিটার ব্যবহার করে কীভাবে সঠিকভাবে ঘরের তাপমাত্রা পরিমাপ করা যায় তা প্রদর্শন করে।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "सुरक्षा हेलमेट",
+            "कार्य वर्दी"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "वायु-तापमान सेंसर या जांच का चयन करें।",
+            "कमरे के कब्जे वाले क्षेत्र में मापें।",
+            "सेंसर को ड्राफ्ट और ताप स्रोतों से दूर रखें।",
+            "सेंसर को सीधे न छूएं और न ही सांस लें।",
+            "रिकॉर्डिंग से पहले सेंसर मान स्थिर होने तक प्रतीक्षा करें।"
+          ],
+          "title": "कमरे के तापमान का सही माप",
+          "safety": "सुनिश्चित करें कि आप सतह के तापमान के बजाय हवा के तापमान को मापने के लिए सही उपकरण का उपयोग करें।",
+          "summary": "यह वीडियो बताता है कि इन्फ्रारेड थर्मामीटर हवा के तापमान के बजाय सतह के तापमान को क्यों मापते हैं और यह दर्शाता है कि एयर थर्मामीटर का उपयोग करके कमरे के तापमान को सही तरीके से कैसे मापें।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "സുരക്ഷാ ഹെൽമെറ്റ്",
+            "വർക്ക് യൂണിഫോം"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "ഒരു എയർ-ടെമ്പറേച്ചർ സെൻസർ അല്ലെങ്കിൽ പ്രോബ് തിരഞ്ഞെടുക്കുക.",
+            "മുറിയുടെ അധിനിവേശ മേഖലയിൽ അളക്കുക.",
+            "ഡ്രാഫ്റ്റുകളിൽ നിന്നും താപ സ്രോതസ്സുകളിൽ നിന്നും സെൻസർ സൂക്ഷിക്കുക.",
+            "സെൻസറിൽ നേരിട്ട് തൊടുകയോ ശ്വസിക്കുകയോ ചെയ്യരുത്.",
+            "റെക്കോർഡ് ചെയ്യുന്നതിന് മുമ്പ് സെൻസർ മൂല്യം സ്ഥിരപ്പെടുത്തുന്നത് വരെ കാത്തിരിക്കുക."
+          ],
+          "title": "ശരിയായ മുറിയിലെ താപനില അളക്കൽ",
+          "safety": "ഉപരിതല താപനിലയെക്കാൾ വായുവിൻ്റെ താപനില അളക്കാൻ നിങ്ങൾ ശരിയായ ഉപകരണം ഉപയോഗിക്കുന്നുണ്ടെന്ന് ഉറപ്പാക്കുക.",
+          "summary": "ഇൻഫ്രാറെഡ് തെർമോമീറ്ററുകൾ വായുവിൻ്റെ താപനിലയ്ക്ക് പകരം ഉപരിതല താപനില അളക്കുന്നത് എന്തുകൊണ്ടാണെന്നും എയർ തെർമോമീറ്റർ ഉപയോഗിച്ച് മുറിയിലെ താപനില എങ്ങനെ ശരിയായി അളക്കാമെന്നും ഈ വീഡിയോ വിശദീകരിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "सुरक्षा हेलमेट",
+            "वर्दी कार्य"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "वायु-तापमान सेन्सर वा प्रोब चयन गर्नुहोस्।",
+            "कोठा को कब्जा क्षेत्र मा मापन।",
+            "सेन्सरलाई ड्राफ्ट र गर्मी स्रोतहरूबाट टाढा राख्नुहोस्।",
+            "सेन्सरमा सीधै छुन वा सास फेर्न नदिनुहोस्।",
+            "रेकर्डिङ अघि सेन्सर मान स्थिर नभएसम्म पर्खनुहोस्।"
+          ],
+          "title": "सही कोठाको तापमान मापन",
+          "safety": "सतहको तापक्रमको सट्टा हावाको तापक्रम नाप्नको लागि सही उपकरण प्रयोग गरेको सुनिश्चित गर्नुहोस्।",
+          "summary": "यो भिडियोले इन्फ्रारेड थर्मोमिटरले हावाको तापक्रमको सट्टा सतहको तापक्रम किन नाप्छ र कसरी हावा थर्मोमिटर प्रयोग गरेर कोठाको तापक्रम सही तरिकाले नाप्ने भनेर देखाउँछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "பாதுகாப்பு ஹெல்மெட்",
+            "வேலை சீருடை"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "காற்று வெப்பநிலை சென்சார் அல்லது ஆய்வைத் தேர்ந்தெடுக்கவும்.",
+            "அறையின் ஆக்கிரமிக்கப்பட்ட மண்டலத்தில் அளவிடவும்.",
+            "வரைவுகள் மற்றும் வெப்ப மூலங்களிலிருந்து சென்சாரை விலக்கி வைக்கவும்.",
+            "சென்சாரில் நேரடியாகத் தொடவோ அல்லது சுவாசிக்கவோ கூடாது.",
+            "பதிவு செய்வதற்கு முன் சென்சார் மதிப்பு உறுதிப்படுத்தப்படும் வரை காத்திருக்கவும்."
+          ],
+          "title": "சரியான அறை வெப்பநிலை அளவீடு",
+          "safety": "மேற்பரப்பு வெப்பநிலையை விட காற்றின் வெப்பநிலையை அளவிட சரியான கருவியைப் பயன்படுத்துவதை உறுதிசெய்யவும்.",
+          "summary": "அகச்சிவப்பு வெப்பமானிகள் காற்றின் வெப்பநிலைக்கு பதிலாக மேற்பரப்பு வெப்பநிலையை ஏன் அளவிடுகின்றன என்பதை இந்த வீடியோ விளக்குகிறது மற்றும் காற்று வெப்பமானியைப் பயன்படுத்தி அறையின் வெப்பநிலையை எவ்வாறு சரியாக அளவிடுவது என்பதை விளக்குகிறது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Safety helmet",
+            "Uniform sa Trabaho"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "Pumili ng air-temperature sensor o probe.",
+            "Sukatin sa occupied zone ng silid.",
+            "Ilayo ang sensor sa mga draft at pinagmumulan ng init.",
+            "Huwag hawakan o huminga nang direkta sa sensor.",
+            "Maghintay hanggang mag-stabilize ang halaga ng sensor bago mag-record."
+          ],
+          "title": "Tamang Pagsukat ng Temperatura ng Kwarto",
+          "safety": "Tiyaking ginagamit mo ang tamang instrumento para sa pagsukat ng temperatura ng hangin kaysa sa temperatura sa ibabaw.",
+          "summary": "Ipinapaliwanag ng video na ito kung bakit sinusukat ng infrared thermometer ang temperatura sa ibabaw sa halip na ang temperatura ng hangin at ipinapakita kung paano sukatin nang tama ang temperatura ng kuwarto gamit ang air thermometer."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "حفاظتی ہیلمیٹ",
+            "ورک یونیفارم"
+          ],
+          "src": "39b368375660",
+          "auto": true,
+          "steps": [
+            "ہوا کے درجہ حرارت کا سینسر یا پروب منتخب کریں۔",
+            "کمرے کے مقبوضہ زون میں پیمائش کریں۔",
+            "سینسر کو ڈرافٹ اور گرمی کے ذرائع سے دور رکھیں۔",
+            "سینسر پر براہ راست ہاتھ نہ لگائیں یا سانس نہ لیں۔",
+            "ریکارڈنگ سے پہلے سینسر کی قدر کے مستحکم ہونے تک انتظار کریں۔"
+          ],
+          "title": "کمرے کے درجہ حرارت کی درست پیمائش",
+          "safety": "اس بات کو یقینی بنائیں کہ آپ سطح کے درجہ حرارت کی بجائے ہوا کے درجہ حرارت کی پیمائش کے لیے صحیح آلہ استعمال کر رہے ہیں۔",
+          "summary": "اس ویڈیو میں بتایا گیا ہے کہ انفراریڈ تھرمامیٹر ہوا کے درجہ حرارت کی بجائے سطح کے درجہ حرارت کی پیمائش کیوں کرتے ہیں اور یہ ظاہر کرتے ہیں کہ ایئر تھرمامیٹر کا استعمال کرتے ہوئے کمرے کے درجہ حرارت کو صحیح طریقے سے کیسے ناپ سکتے ہیں۔"
+        }
+      },
       "yt": "aoCKe6uU_AI",
       "ppe": [
         "Safety Glasses",
         "Safety Helmet",
         "Work Uniform"
       ],
+      "trq": {
+        "tl": {
+          "src": "b3e9a927847d",
+          "items": [
+            {
+              "q": "Ano ang sinusukat ng infrared thermometer?",
+              "options": [
+                "Temperatura ng surface",
+                "Temperatura ng hangin sa kwarto",
+                "Temperatura ng fluid"
+              ]
+            },
+            {
+              "q": "Saan dapat sukatin ang temperatura ng kwarto?",
+              "options": [
+                "Direkta sa ilalim ng air diffuser",
+                "Sa occupied zone",
+                "Sa labas na pader"
+              ]
+            },
+            {
+              "q": "Anong instrument ang sumusukat ng temperatura ng hangin?",
+              "options": [
+                "Infrared thermometer",
+                "Air thermometer o probe",
+                "Immersion probe"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What does an infrared thermometer measure?",
@@ -577,12 +2947,189 @@
     },
     {
       "id": "kitch-3yK7LhbxwyA",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات معزولة",
+            "المتعدد"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "اختبر مستشعرات درجة الحرارة باستخدام مقياس متعدد مضبوط على المقاومة.",
+            "تحقق من قطبية الأسلاك المناسبة على مغناطيسات الميكروويف لمنع سحب الأمبير العالي.",
+            "تحقق من منظمات ثاني أكسيد الكربون وصمامات فحص الكربونات للتشغيل السليم.",
+            "استخدم التطبيقات الفنية ومكتبات سير العمل لتشخيص مشكلات المعدات."
+          ],
+          "title": "أسئلة وأجوبة حول إصلاح المعدات التجارية واستكشاف الأخطاء وإصلاحها",
+          "safety": "افصل الطاقة عن الجهاز قبل اختبار المكونات الكهربائية.",
+          "summary": "يغطي هذا الفيديو الأسئلة الفنية واستكشاف الأخطاء وإصلاحها فيما يتعلق بمعدات المشروبات والأغذية التجارية، بما في ذلك الثرمستورات والمشابك وسحب الأمبير."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "ইনসুলেটেড গ্লাভস",
+            "মাল্টিমিটার"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "প্রতিরোধের জন্য একটি মাল্টিমিটার সেট ব্যবহার করে তাপমাত্রা সেন্সর পরীক্ষা করুন।",
+            "হাই এম্প ড্র প্রতিরোধ করতে মাইক্রোওয়েভ ম্যাগনেট্রনগুলিতে সঠিক তারের পোলারিটি যাচাই করুন।",
+            "সঠিক অপারেশনের জন্য CO2 নিয়ন্ত্রক এবং কার্বনেট চেক ভালভ পরীক্ষা করুন।",
+            "সরঞ্জামের সমস্যা নির্ণয় করতে প্রযুক্তিবিদ অ্যাপস এবং ওয়ার্কফ্লো লাইব্রেরি ব্যবহার করুন।"
+          ],
+          "title": "বাণিজ্যিক সরঞ্জাম মেরামত প্রশ্নোত্তর এবং সমস্যা সমাধান",
+          "safety": "বৈদ্যুতিক উপাদান পরীক্ষা করার আগে সরঞ্জামের সাথে বিদ্যুৎ সংযোগ বিচ্ছিন্ন করুন।",
+          "summary": "এই ভিডিওটি থার্মিস্টর, ক্ল্যাম্প এবং amp ড্র সহ বাণিজ্যিক পানীয় এবং খাদ্য সরঞ্জামগুলির জন্য প্রযুক্তিবিদদের প্রশ্ন এবং সমস্যা সমাধানের কভার করে।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इंसुलेटेड दस्ताने",
+            "मल्टीमीटर"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "प्रतिरोध पर सेट मल्टीमीटर का उपयोग करके तापमान सेंसर का परीक्षण करें।",
+            "उच्च amp ड्रॉ को रोकने के लिए माइक्रोवेव मैग्नेट्रोन पर उचित वायरिंग ध्रुवता सत्यापित करें।",
+            "उचित संचालन के लिए CO2 नियामकों और कार्बोनेट चेक वाल्वों की जाँच करें।",
+            "उपकरण समस्याओं के निदान के लिए तकनीशियन ऐप्स और वर्कफ़्लो लाइब्रेरी का उपयोग करें।"
+          ],
+          "title": "वाणिज्यिक उपकरण मरम्मत प्रश्नोत्तरी और समस्या निवारण",
+          "safety": "विद्युत घटकों का परीक्षण करने से पहले उपकरण की बिजली काट दें।",
+          "summary": "यह वीडियो तकनीशियन के प्रश्नों और थर्मिस्टर्स, क्लैंप और एम्प ड्रॉ सहित वाणिज्यिक पेय और खाद्य उपकरणों के लिए समस्या निवारण को कवर करता है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "ഇൻസുലേറ്റഡ് ഗ്ലൗസ്",
+            "മൾട്ടിമീറ്റർ"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "പ്രതിരോധത്തിനായി ഒരു മൾട്ടിമീറ്റർ സെറ്റ് ഉപയോഗിച്ച് ടെമ്പറേച്ചർ സെൻസറുകൾ പരിശോധിക്കുക.",
+            "ഉയർന്ന ആംപ് ഡ്രോ തടയാൻ മൈക്രോവേവ് മാഗ്നെട്രോണുകളിൽ ശരിയായ വയറിംഗ് പോളാരിറ്റി പരിശോധിക്കുക.",
+            "ശരിയായ പ്രവർത്തനത്തിനായി CO2 റെഗുലേറ്ററുകളും കാർബണേറ്റ് ചെക്ക് വാൽവുകളും പരിശോധിക്കുക.",
+            "ഉപകരണ പ്രശ്‌നങ്ങൾ കണ്ടെത്തുന്നതിന് ടെക്നീഷ്യൻ ആപ്പുകളും വർക്ക്ഫ്ലോ ലൈബ്രറികളും ഉപയോഗിക്കുക."
+          ],
+          "title": "വാണിജ്യ ഉപകരണങ്ങളുടെ റിപ്പയർ ചോദ്യോത്തരവും ട്രബിൾഷൂട്ടിംഗും",
+          "safety": "ഇലക്ട്രിക്കൽ ഘടകങ്ങൾ പരിശോധിക്കുന്നതിന് മുമ്പ് ഉപകരണത്തിലേക്ക് വൈദ്യുതി വിച്ഛേദിക്കുക.",
+          "summary": "തെർമിസ്റ്ററുകൾ, ക്ലാമ്പുകൾ, ആംപ് ഡ്രോകൾ എന്നിവയുൾപ്പെടെയുള്ള വാണിജ്യ പാനീയങ്ങൾക്കും ഭക്ഷണ ഉപകരണങ്ങൾക്കുമുള്ള സാങ്കേതിക വിദഗ്ധരുടെ ചോദ്യങ്ങളും ട്രബിൾഷൂട്ടിംഗും ഈ വീഡിയോ ഉൾക്കൊള്ളുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इन्सुलेटेड दस्ताने",
+            "मल्टिमिटर"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "प्रतिरोधमा मल्टिमिटर सेट प्रयोग गरेर तापमान सेन्सरहरू परीक्षण गर्नुहोस्।",
+            "उच्च एम्प ड्रलाई रोक्न माइक्रोवेभ म्याग्नेट्रोनहरूमा उचित तारको ध्रुवता प्रमाणित गर्नुहोस्।",
+            "उचित सञ्चालनको लागि CO2 नियामकहरू र कार्बोनेट जाँच भल्भहरू जाँच गर्नुहोस्।",
+            "उपकरण समस्याहरू निदान गर्न प्राविधिक एपहरू र कार्यप्रवाह पुस्तकालयहरू प्रयोग गर्नुहोस्।"
+          ],
+          "title": "व्यावसायिक उपकरण मर्मत प्रश्नोत्तर र समस्या निवारण",
+          "safety": "विद्युतीय कम्पोनेन्टहरू परीक्षण गर्नु अघि उपकरणमा पावर विच्छेद गर्नुहोस्।",
+          "summary": "यस भिडियोले प्राविधिक प्रश्नहरू र थर्मिस्टर्स, क्ल्याम्पहरू, र एम्प ड्र सहित व्यावसायिक पेय पदार्थ र खाद्य उपकरणहरूको लागि समस्या निवारण समावेश गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "காப்பிடப்பட்ட கையுறைகள்",
+            "மல்டிமீட்டர்"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "மல்டிமீட்டர் செட் ரெசிஸ்டன்ஸ் பயன்படுத்தி வெப்பநிலை உணரிகளை சோதிக்கவும்.",
+            "அதிக ஆம்ப் டிராவைத் தடுக்க மைக்ரோவேவ் மேக்னட்ரான்களில் சரியான வயரிங் துருவமுனைப்பைச் சரிபார்க்கவும்.",
+            "சரியான செயல்பாட்டிற்கு CO2 ரெகுலேட்டர்கள் மற்றும் கார்பனேட் காசோலை வால்வுகளைச் சரிபார்க்கவும்.",
+            "உபகரணச் சிக்கல்களைக் கண்டறிய தொழில்நுட்பப் பயன்பாடுகள் மற்றும் பணிப்பாய்வு நூலகங்களைப் பயன்படுத்தவும்."
+          ],
+          "title": "வணிக உபகரணங்களைப் பழுதுபார்த்தல் கேள்வி பதில் மற்றும் சரிசெய்தல்",
+          "safety": "மின் கூறுகளைச் சோதிப்பதற்கு முன், சாதனங்களின் மின் இணைப்பைத் துண்டிக்கவும்.",
+          "summary": "இந்த வீடியோ, தெர்மிஸ்டர்கள், கிளாம்ப்கள் மற்றும் ஆம்ப் டிராக்கள் உள்ளிட்ட வணிக பானங்கள் மற்றும் உணவு உபகரணங்களுக்கான தொழில்நுட்பக் கேள்விகள் மற்றும் சரிசெய்தல் ஆகியவற்றை உள்ளடக்கியது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Insulated Gloves",
+            "Multimeter"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "Subukan ang mga sensor ng temperatura gamit ang isang multimeter na nakatakda sa paglaban.",
+            "I-verify ang tamang wiring polarity sa mga microwave magnetron para maiwasan ang high amp draw.",
+            "Suriin ang CO2 regulators at carbonate check valves para sa tamang operasyon.",
+            "Gumamit ng mga technician app at workflow library para masuri ang mga isyu sa kagamitan."
+          ],
+          "title": "Q&A sa Pag-aayos ng Komersyal na Kagamitan at Pag-troubleshoot",
+          "safety": "Idiskonekta ang kuryente sa kagamitan bago subukan ang mga de-koryenteng bahagi.",
+          "summary": "Sinasaklaw ng video na ito ang mga tanong ng technician at pag-troubleshoot para sa komersyal na inumin at kagamitan sa pagkain, kabilang ang mga thermistor, clamp, at amp draw."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "موصل دستانے",
+            "ملٹی میٹر"
+          ],
+          "src": "65e713e19c96",
+          "auto": true,
+          "steps": [
+            "مزاحمت کے لیے ملٹی میٹر سیٹ کا استعمال کرتے ہوئے درجہ حرارت کے سینسر کی جانچ کریں۔",
+            "ہائی ایم پی ڈرا کو روکنے کے لیے مائیکرو ویو میگنیٹران پر مناسب وائرنگ پولرٹی کی تصدیق کریں۔",
+            "مناسب آپریشن کے لیے CO2 ریگولیٹرز اور کاربونیٹ چیک والوز کو چیک کریں۔",
+            "آلات کے مسائل کی تشخیص کے لیے ٹیکنیشن ایپس اور ورک فلو لائبریریوں کا استعمال کریں۔"
+          ],
+          "title": "تجارتی سازوسامان کی مرمت سوال و جواب اور ٹربل شوٹنگ",
+          "safety": "برقی اجزاء کی جانچ کرنے سے پہلے آلات سے بجلی منقطع کریں۔",
+          "summary": "اس ویڈیو میں ٹیکنیشن کے سوالات اور تجارتی مشروبات اور کھانے کے آلات بشمول تھرمسٹرز، کلیمپس، اور amp ڈراز کے لیے ٹربل شوٹنگ کا احاطہ کیا گیا ہے۔"
+        }
+      },
       "yt": "3yK7LhbxwyA",
       "ppe": [
         "Safety Glasses",
         "Insulated Gloves",
         "Multimeter"
       ],
+      "trq": {
+        "ta": {
+          "src": "18d3a4e9c03f",
+          "items": [
+            {
+              "q": "thermistor sensor-ஐ டெஸ்ட் செய்ய என்ன டூல் பயன்படுத்த வேண்டும்?",
+              "options": [
+                "ohms-ல் செட் செய்த Multimeter",
+                "Pressure gauge",
+                "Leak detector"
+              ]
+            },
+            {
+              "q": "magnetron-ன் சிவப்பு ஒயர் எதில் கனெக்ட் செய்ய வேண்டும்?",
+              "options": [
+                "F terminal",
+                "FA terminal",
+                "Ground terminal"
+              ]
+            },
+            {
+              "q": "CO2 regulator output-ன் பொதுவான ஆரம்ப அளவு என்ன?",
+              "options": [
+                "30 to 40 PSI",
+                "75 to 95 PSI",
+                "100 to 120 PSI"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What tool is used to test a thermistor sensor?",
@@ -641,12 +3188,167 @@
     },
     {
       "id": "bmsco-w5_4kncWf4Q",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قبعة صلبة",
+            "أحذية اصبع القدم الصلب"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "حدد الذكاء الاصطناعي التنبؤي، والذكاء الاصطناعي التوليدي، والذكاء الاصطناعي المستقل باعتبارها الأنواع الثلاثة الرئيسية.",
+            "فهم الذكاء الاصطناعي التنبؤي باستخدام البيانات والتعلم والتنبؤ للصيانة.",
+            "التعرف على قيود الذكاء الاصطناعي التوليدية مثل الهلوسة ونقص التفكير الحقيقي.",
+            "تقييم الذكاء الاصطناعي ذو الحلقة المغلقة ومفهوم انجراف الذكاء الاصطناعي مع مرور الوقت.",
+            "ابدأ تنفيذ الذكاء الاصطناعي من خلال تحديد عنق الزجاجة التشغيلي الحقيقي."
+          ],
+          "title": "فهم أنواع الذكاء الاصطناعي الصناعي وقيوده",
+          "safety": "تحقق دائمًا من مخرجات الذكاء الاصطناعي وحافظ على الإشراف البشري في المنشآت الصناعية لمنع حالات الفشل الكارثية.",
+          "summary": "يشرح هذا الفيديو الأنواع الثلاثة الرئيسية للذكاء الاصطناعي الصناعي: التنبؤية، والتوليدية، والمستقلة، بالإضافة إلى القيود الأساسية الخاصة بها."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "হার্ড হ্যাট",
+            "স্টিলের পায়ের বুট"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "ভবিষ্যদ্বাণীমূলক এআই, জেনারেটিভ এআই এবং স্বায়ত্তশাসিত এআই তিনটি প্রধান প্রকার হিসাবে চিহ্নিত করুন।",
+            "রক্ষণাবেক্ষণের জন্য ডেটা, শেখার এবং ভবিষ্যদ্বাণী ব্যবহার করে ভবিষ্যদ্বাণীমূলক AI বুঝুন।",
+            "হ্যালুসিনেশন এবং বাস্তব চিন্তার অভাবের মতো জেনারেটিভ এআই সীমাবদ্ধতাগুলিকে চিনুন।",
+            "ক্লোজড-লুপ AI এবং সময়ের সাথে AI ড্রিফটের ধারণা মূল্যায়ন করুন।",
+            "একটি বাস্তব অপারেশনাল বাধা চিহ্নিত করে AI বাস্তবায়ন শুরু করুন।"
+          ],
+          "title": "ইন্ডাস্ট্রিয়াল এআই এর ধরন এবং সীমাবদ্ধতা বোঝা",
+          "safety": "সর্বদা AI আউটপুট যাচাই করুন এবং বিপর্যয়মূলক ব্যর্থতা রোধ করতে শিল্প কারখানায় মানুষের তদারকি বজায় রাখুন।",
+          "summary": "এই ভিডিওটি তিনটি প্রধান ধরণের শিল্প AI ব্যাখ্যা করে: ভবিষ্যদ্বাণীমূলক, উৎপাদনশীল এবং স্বায়ত্তশাসিত, তাদের মূল সীমাবদ্ধতা সহ।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कठोर टोपी",
+            "इस्पात पैर की अंगुली जूते"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "पूर्वानुमानित AI, जेनरेटिव AI और स्वायत्त AI को तीन मुख्य प्रकारों के रूप में पहचानें।",
+            "रखरखाव के लिए डेटा, सीखने और भविष्यवाणी का उपयोग करके पूर्वानुमानित एआई को समझें।",
+            "मतिभ्रम और वास्तविक सोच की कमी जैसी जेनेरिक एआई सीमाओं को पहचानें।",
+            "बंद-लूप एआई और समय के साथ एआई बहाव की अवधारणा का मूल्यांकन करें।",
+            "वास्तविक परिचालन बाधा की पहचान करके एआई कार्यान्वयन शुरू करें।"
+          ],
+          "title": "औद्योगिक एआई प्रकार और सीमाओं को समझना",
+          "safety": "विनाशकारी विफलताओं को रोकने के लिए हमेशा एआई आउटपुट को सत्यापित करें और औद्योगिक संयंत्रों में मानवीय निगरानी बनाए रखें।",
+          "summary": "यह वीडियो औद्योगिक एआई के तीन मुख्य प्रकारों के बारे में बताता है: पूर्वानुमानित, उत्पादक और स्वायत्त, साथ ही उनकी मुख्य सीमाएं।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "ഹാർഡ് ഹാറ്റ്",
+            "സ്റ്റീൽ ടോ ബൂട്ട്സ്"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "പ്രവചനാത്മക AI, ജനറേറ്റീവ് AI, സ്വയംഭരണ AI എന്നിവ മൂന്ന് പ്രധാന തരങ്ങളായി തിരിച്ചറിയുക.",
+            "അറ്റകുറ്റപ്പണികൾക്കായി ഡാറ്റ, പഠനം, പ്രവചനം എന്നിവ ഉപയോഗിച്ച് പ്രവചനാത്മക AI മനസ്സിലാക്കുക.",
+            "ഹാലുസിനേഷൻ, യഥാർത്ഥ ചിന്തയുടെ അഭാവം എന്നിവ പോലുള്ള ജനറേറ്റീവ് AI പരിമിതികൾ തിരിച്ചറിയുക.",
+            "ക്ലോസ്ഡ്-ലൂപ്പ് AI, കാലക്രമേണ AI ഡ്രിഫ്റ്റ് എന്ന ആശയം എന്നിവ വിലയിരുത്തുക.",
+            "ഒരു യഥാർത്ഥ പ്രവർത്തന തടസ്സം തിരിച്ചറിഞ്ഞ് AI നടപ്പിലാക്കൽ ആരംഭിക്കുക."
+          ],
+          "title": "വ്യാവസായിക AI തരങ്ങളും പരിമിതികളും മനസ്സിലാക്കുക",
+          "safety": "വിനാശകരമായ പരാജയങ്ങൾ തടയുന്നതിന് AI ഔട്ട്‌പുട്ടുകൾ എല്ലായ്പ്പോഴും പരിശോധിച്ചുറപ്പിക്കുകയും വ്യവസായ പ്ലാൻ്റുകളിൽ മനുഷ്യൻ്റെ മേൽനോട്ടം നിലനിർത്തുകയും ചെയ്യുക.",
+          "summary": "ഈ വീഡിയോ വ്യാവസായിക AI-യുടെ മൂന്ന് പ്രധാന തരങ്ങളെ വിശദീകരിക്കുന്നു: പ്രവചനാത്മകം, ജനറേറ്റീവ്, സ്വയംഭരണാധികാരം, അവയുടെ പ്രധാന പരിമിതികൾ."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कडा टोपी",
+            "स्टिल टू जुत्ता"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "तीन मुख्य प्रकारका रूपमा भविष्यवाणी गर्ने एआई, जेनेरेटिभ एआई र स्वायत्त एआईलाई पहिचान गर्नुहोस्।",
+            "डेटा, सिकाइ, र मर्मतसम्भारको लागि भविष्यवाणी प्रयोग गरेर भविष्यवाणी गर्ने एआई बुझ्नुहोस्।",
+            "जेनेरेटिभ एआई सीमितताहरू पहिचान गर्नुहोस् जस्तै भ्रम र वास्तविक सोचको कमी।",
+            "क्लोज्ड-लूप एआई र समयसँगै एआई बहावको अवधारणाको मूल्याङ्कन गर्नुहोस्।",
+            "वास्तविक परिचालन बाधा पहिचान गरेर AI कार्यान्वयन सुरु गर्नुहोस्।"
+          ],
+          "title": "औद्योगिक एआई प्रकार र सीमाहरू बुझ्दै",
+          "safety": "सधैं AI आउटपुटहरू प्रमाणित गर्नुहोस् र विनाशकारी विफलताहरू रोक्नको लागि औद्योगिक प्लान्टहरूमा मानव निरीक्षण कायम राख्नुहोस्।",
+          "summary": "यस भिडियोले तीन मुख्य प्रकारका औद्योगिक एआई: भविष्यवाणी गर्ने, उत्पादन गर्ने र स्वायत्तताका साथै तिनीहरूका मुख्य सीमितताहरू बताउँछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "கடினமான தொப்பி",
+            "ஸ்டீல் டோ பூட்ஸ்"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "முன்கணிப்பு AI, ஜெனரேட்டிவ் AI மற்றும் தன்னாட்சி AI ஆகியவற்றை மூன்று முக்கிய வகைகளாகக் கண்டறியவும்.",
+            "பராமரிப்புக்கான தரவு, கற்றல் மற்றும் கணிப்பு ஆகியவற்றைப் பயன்படுத்தி முன்கணிப்பு AI ஐப் புரிந்து கொள்ளுங்கள்.",
+            "மாயத்தோற்றம் மற்றும் உண்மையான சிந்தனை இல்லாமை போன்ற உருவாக்கக்கூடிய AI வரம்புகளை அங்கீகரிக்கவும்.",
+            "க்ளோஸ்-லூப் AI மற்றும் காலப்போக்கில் AI சறுக்கல் பற்றிய கருத்தை மதிப்பிடுங்கள்.",
+            "உண்மையான செயல்பாட்டுத் தடையைக் கண்டறிந்து AI செயல்படுத்தலைத் தொடங்கவும்."
+          ],
+          "title": "தொழில்துறை AI வகைகள் மற்றும் வரம்புகளைப் புரிந்துகொள்வது",
+          "safety": "பேரழிவு தோல்விகளைத் தடுக்க, AI வெளியீடுகளை எப்போதும் சரிபார்க்கவும் மற்றும் தொழில்துறை ஆலைகளில் மனித மேற்பார்வையைப் பராமரிக்கவும்.",
+          "summary": "இந்த வீடியோ தொழில்துறை AI இன் மூன்று முக்கிய வகைகளை விளக்குகிறது: முன்கணிப்பு, உருவாக்கம் மற்றும் தன்னாட்சி, அவற்றின் முக்கிய வரம்புகளுடன்."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Hard Hat",
+            "Steel Toe Boots"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "Tukuyin ang predictive AI, generative AI, at autonomous AI bilang tatlong pangunahing uri.",
+            "Unawain ang predictive AI gamit ang data, pag-aaral, at hula para sa pagpapanatili.",
+            "Kilalanin ang mga generative na limitasyon ng AI tulad ng guni-guni at kawalan ng tunay na pag-iisip.",
+            "Suriin ang closed-loop AI at ang konsepto ng AI drift sa paglipas ng panahon.",
+            "Simulan ang pagpapatupad ng AI sa pamamagitan ng pagtukoy ng tunay na bottleneck sa pagpapatakbo."
+          ],
+          "title": "Pag-unawa sa Mga Uri at Limitasyon ng Industrial AI",
+          "safety": "Palaging i-verify ang mga output ng AI at panatilihin ang pangangasiwa ng tao sa mga pang-industriyang planta upang maiwasan ang mga sakuna na pagkabigo.",
+          "summary": "Ipinapaliwanag ng video na ito ang tatlong pangunahing uri ng pang-industriyang AI: predictive, generative, at autonomous, kasama ang kanilang mga pangunahing limitasyon."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "ہارڈ ہیٹ",
+            "اسٹیل پیر کے جوتے"
+          ],
+          "src": "443990efd19d",
+          "auto": true,
+          "steps": [
+            "تین اہم اقسام کے طور پر پیشن گوئی AI، جنریٹو AI، اور خود مختار AI کی شناخت کریں۔",
+            "دیکھ بھال کے لیے ڈیٹا، سیکھنے اور پیشین گوئی کا استعمال کرتے ہوئے پیشن گوئی کرنے والے AI کو سمجھیں۔",
+            "تخلیقی AI حدود کو پہچانیں جیسے فریب اور حقیقی سوچ کی کمی۔",
+            "بند لوپ AI اور وقت کے ساتھ ساتھ AI بہاؤ کے تصور کا جائزہ لیں۔",
+            "ایک حقیقی آپریشنل رکاوٹ کی نشاندہی کرکے AI کا نفاذ شروع کریں۔"
+          ],
+          "title": "صنعتی AI کی اقسام اور حدود کو سمجھنا",
+          "safety": "تباہ کن ناکامیوں کو روکنے کے لیے ہمیشہ AI آؤٹ پٹس کی تصدیق کریں اور صنعتی پلانٹس میں انسانی نگرانی کو برقرار رکھیں۔",
+          "summary": "یہ ویڈیو صنعتی AI کی تین اہم اقسام کی وضاحت کرتی ہے: پیشین گوئی، تخلیقی، اور خود مختار، ان کی بنیادی حدود کے ساتھ۔"
+        }
+      },
       "yt": "w5_4kncWf4Q",
       "ppe": [
         "Safety Glasses",
         "Hard Hat",
         "Steel Toe Boots"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "What are the three main types of industrial AI?",
@@ -706,12 +3408,167 @@
     },
     {
       "id": "hvacc-T4PhYiElCrc",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات معزولة",
+            "أحذية السلامة"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "قم بتأكيد الشكوى الفعلية وتحقق من إعدادات منظم الحرارة.",
+            "افحص مرشح الهواء وشبكة الإرجاع وشبكة الإمداد بحثًا عن أي انسدادات.",
+            "قم بقياس درجات حرارة الهواء الراجع والإمداد للعثور على الفرق في درجات الحرارة.",
+            "قراءة ضغوط المبردات وحساب الحرارة الزائدة والتبريد الفرعي.",
+            "تحقق من المكونات الكهربائية والمكثفات ودوران المروحة."
+          ],
+          "title": "استكشاف أخطاء مكيف الهواء الذي يعمل بدون تبريد وإصلاحها",
+          "safety": "قم دائمًا بعزل الطاقة الكهربائية والتحقق من عدم وجود جهد باستخدام معدات الوقاية الشخصية المناسبة قبل فتح اللوحات.",
+          "summary": "يوضح هذا الفيديو تسلسلاً خطوة بخطوة لاستكشاف الأخطاء وإصلاحها لوحدات تكييف الهواء التي تعمل دون إنتاج هواء بارد، ويغطي عمليات فحص تدفق الهواء، واختلافات درجات الحرارة، وتحليل الضغط."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "ইনসুলেটেড গ্লাভস",
+            "নিরাপত্তা জুতা"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "প্রকৃত অভিযোগ নিশ্চিত করুন এবং থার্মোস্ট্যাট সেটিংস পরীক্ষা করুন।",
+            "এয়ার ফিল্টার, রিটার্ন গ্রিল, এবং ব্লকেজের জন্য সরবরাহ গ্রিল পরিদর্শন করুন।",
+            "রিটার্ন পরিমাপ করুন এবং তাপমাত্রার পার্থক্য খুঁজে বের করতে বাতাসের তাপমাত্রা সরবরাহ করুন।",
+            "রেফ্রিজারেন্ট চাপ পড়ুন এবং সুপারহিট এবং সাবকুলিং গণনা করুন।",
+            "বৈদ্যুতিক উপাদান, ক্যাপাসিটর এবং ফ্যানের ঘূর্ণন পরীক্ষা করুন।"
+          ],
+          "title": "কুলিং ছাড়াই চলমান একটি এসি সমস্যার সমাধান করা",
+          "safety": "সর্বদা বৈদ্যুতিক শক্তি আলাদা করুন এবং প্যানেল খোলার আগে সঠিক PPE ব্যবহার করে ভোল্টেজের অনুপস্থিতি যাচাই করুন।",
+          "summary": "এই ভিডিওটি AC ইউনিটগুলির জন্য একটি ধাপে ধাপে সমস্যা সমাধানের ক্রম রূপরেখা দেয় যা ঠান্ডা বাতাস তৈরি না করেই চলে, বায়ুপ্রবাহের পরীক্ষা, তাপমাত্রার পার্থক্য এবং চাপ বিশ্লেষণ করে।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इंसुलेटेड दस्ताने",
+            "सुरक्षा जूते"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "वास्तविक शिकायत की पुष्टि करें और थर्मोस्टेट सेटिंग्स की जाँच करें।",
+            "रुकावटों के लिए एयर फिल्टर, रिटर्न ग्रिल और सप्लाई ग्रिल का निरीक्षण करें।",
+            "तापमान अंतर जानने के लिए वापसी और आपूर्ति वायु तापमान को मापें।",
+            "रेफ्रिजरेंट दबाव पढ़ें और सुपरहीट और सबकूलिंग की गणना करें।",
+            "विद्युत घटकों, संधारित्र और पंखे के घुमाव की जाँच करें।"
+          ],
+          "title": "बिना कूलिंग के चलने वाले एसी की समस्या का निवारण",
+          "safety": "हमेशा विद्युत शक्ति को अलग रखें और पैनल खोलने से पहले उचित पीपीई का उपयोग करके वोल्टेज की अनुपस्थिति को सत्यापित करें।",
+          "summary": "यह वीडियो ठंडी हवा पैदा किए बिना चलने वाली एसी इकाइयों के लिए चरण-दर-चरण समस्या निवारण अनुक्रम की रूपरेखा देता है, जिसमें वायु प्रवाह जांच, तापमान अंतर और दबाव विश्लेषण शामिल है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "ഇൻസുലേറ്റഡ് ഗ്ലൗസ്",
+            "സുരക്ഷാ ഷൂസ്"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "യഥാർത്ഥ പരാതി സ്ഥിരീകരിച്ച് തെർമോസ്റ്റാറ്റ് ക്രമീകരണങ്ങൾ പരിശോധിക്കുക.",
+            "തടസ്സങ്ങൾക്കായി എയർ ഫിൽട്ടർ, റിട്ടേൺ ഗ്രിൽ, സപ്ലൈ ഗ്രിൽ എന്നിവ പരിശോധിക്കുക.",
+            "താപനില വ്യത്യാസം കണ്ടെത്താൻ, റിട്ടേൺ അളക്കുക, വിതരണ വായു താപനില.",
+            "റഫ്രിജറൻ്റ് മർദ്ദം വായിച്ച് സൂപ്പർഹീറ്റും സബ്‌കൂളിംഗും കണക്കാക്കുക.",
+            "ഇലക്ട്രിക്കൽ ഘടകങ്ങൾ, കപ്പാസിറ്റർ, ഫാൻ റൊട്ടേഷൻ എന്നിവ പരിശോധിക്കുക."
+          ],
+          "title": "കൂളിംഗ് ഇല്ലാതെ പ്രവർത്തിക്കുന്ന എസി ട്രബിൾഷൂട്ട് ചെയ്യുന്നു",
+          "safety": "പാനലുകൾ തുറക്കുന്നതിന് മുമ്പ് എല്ലായ്‌പ്പോഴും വൈദ്യുത പവർ വേർതിരിച്ച് ശരിയായ പിപിഇ ഉപയോഗിച്ച് വോൾട്ടേജിൻ്റെ അഭാവം പരിശോധിക്കുക.",
+          "summary": "തണുത്ത വായു ഉൽപ്പാദിപ്പിക്കാതെ പ്രവർത്തിക്കുന്ന എസി യൂണിറ്റുകൾക്കായുള്ള ഘട്ടം ഘട്ടമായുള്ള ട്രബിൾഷൂട്ടിംഗ് സീക്വൻസ്, എയർ ഫ്ലോ പരിശോധനകൾ, താപനില വ്യത്യാസങ്ങൾ, മർദ്ദം വിശകലനം എന്നിവ ഈ വീഡിയോയിൽ വിവരിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "इन्सुलेटेड दस्ताने",
+            "सुरक्षा जुत्ता"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "वास्तविक उजुरी पुष्टि गर्नुहोस् र थर्मोस्टेट सेटिङहरू जाँच गर्नुहोस्।",
+            "एयर फिल्टर, रिटर्न ग्रिल, र अवरोधहरूको लागि आपूर्ति ग्रिल निरीक्षण गर्नुहोस्।",
+            "तापमान भिन्नता पत्ता लगाउनको लागि रिटर्न र आपूर्ति हावाको तापमान मापन गर्नुहोस्।",
+            "रेफ्रिजरेन्ट दबाब पढ्नुहोस् र सुपरहिट र सबकुलिङ गणना गर्नुहोस्।",
+            "विद्युतीय कम्पोनेन्टहरू, क्यापेसिटर र फ्यान रोटेशन जाँच गर्नुहोस्।"
+          ],
+          "title": "बिना चिसो चलिरहेको AC को समस्या निवारण",
+          "safety": "सधैं बिजुली पावर अलग गर्नुहोस् र प्यानल खोल्नु अघि उचित PPE प्रयोग गरी भोल्टेजको अनुपस्थिति प्रमाणित गर्नुहोस्।",
+          "summary": "यस भिडियोले AC एकाइहरूको लागि चरण-दर-चरण समस्या निवारण अनुक्रमलाई रूपरेखा दिन्छ जुन चिसो हावा उत्पादन नगरी चल्छ, वायु प्रवाह जाँचहरू, तापक्रम भिन्नताहरू, र दबाब विश्लेषणलाई कभर गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "காப்பிடப்பட்ட கையுறைகள்",
+            "பாதுகாப்பு காலணிகள்"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "உண்மையான புகாரை உறுதிசெய்து, தெர்மோஸ்டாட் அமைப்புகளைச் சரிபார்க்கவும்.",
+            "ஏர் ஃபில்டர், ரிட்டர்ன் கிரில் மற்றும் சப்ளை கிரில் ஆகியவற்றை அடைப்புகளுக்கு பரிசோதிக்கவும்.",
+            "வெப்பநிலை வேறுபாட்டைக் கண்டறிய, திரும்ப மற்றும் விநியோக காற்று வெப்பநிலையை அளவிடவும்.",
+            "குளிர்பதன அழுத்தங்களைப் படித்து, சூப்பர் ஹீட் மற்றும் சப்கூலிங்கைக் கணக்கிடுங்கள்.",
+            "மின் கூறுகள், மின்தேக்கி மற்றும் விசிறி சுழற்சியை சரிபார்க்கவும்."
+          ],
+          "title": "குளிரூட்டல் இல்லாமல் இயங்கும் ஏசியை சரிசெய்தல்",
+          "safety": "பேனல்களைத் திறப்பதற்கு முன் எப்போதும் மின் சக்தியைத் தனிமைப்படுத்தி, சரியான PPE ஐப் பயன்படுத்தி மின்னழுத்தம் இல்லாததைச் சரிபார்க்கவும்.",
+          "summary": "குளிர்ந்த காற்றை உற்பத்தி செய்யாமல் இயங்கும் ஏசி யூனிட்களுக்கான படிப்படியான சரிசெய்தல் வரிசையை இந்த வீடியோ கோடிட்டுக் காட்டுகிறது, காற்றோட்ட சோதனைகள், வெப்பநிலை வேறுபாடுகள் மற்றும் அழுத்தம் பகுப்பாய்வு ஆகியவற்றை உள்ளடக்கியது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Insulated Gloves",
+            "Mga Sapatos na Pangkaligtasan"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "Kumpirmahin ang aktwal na reklamo at suriin ang mga setting ng thermostat.",
+            "Suriin ang air filter, ibalik ang grill, at i-supply ang grill kung may mga bara.",
+            "Sukatin ang pagbalik at ibigay ang temperatura ng hangin upang mahanap ang pagkakaiba ng temperatura.",
+            "Basahin ang mga presyon ng nagpapalamig at kalkulahin ang superheat at subcooling.",
+            "Suriin ang mga de-koryenteng bahagi, kapasitor, at pag-ikot ng fan."
+          ],
+          "title": "Pag-troubleshoot ng AC na Tumatakbo nang Walang Paglamig",
+          "safety": "Palaging ihiwalay ang kuryente at i-verify ang kawalan ng boltahe gamit ang tamang PPE bago buksan ang mga panel.",
+          "summary": "Binabalangkas ng video na ito ang sunud-sunod na pagkakasunud-sunod ng pag-troubleshoot para sa mga unit ng AC na tumatakbo nang hindi gumagawa ng malamig na hangin, sumasaklaw sa mga pagsusuri sa daloy ng hangin, pagkakaiba sa temperatura, at pagsusuri sa presyon."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "موصل دستانے",
+            "حفاظتی جوتے"
+          ],
+          "src": "88bc99ed37be",
+          "auto": true,
+          "steps": [
+            "اصل شکایت کی تصدیق کریں اور تھرموسٹیٹ کی ترتیبات چیک کریں۔",
+            "ایئر فلٹر، ریٹرن گرل، اور رکاوٹوں کے لیے سپلائی گرل کا معائنہ کریں۔",
+            "واپسی کی پیمائش کریں اور درجہ حرارت کے فرق کو تلاش کرنے کے لیے ہوا کے درجہ حرارت کی فراہمی کریں۔",
+            "ریفریجرینٹ پریشر پڑھیں اور سپر ہیٹ اور سب کولنگ کا حساب لگائیں۔",
+            "برقی اجزاء، کپیسیٹر، اور پنکھے کی گردش کو چیک کریں۔"
+          ],
+          "title": "بغیر ٹھنڈک کے چلنے والے AC کا مسئلہ حل کرنا",
+          "safety": "ہمیشہ برقی طاقت کو الگ کریں اور پینل کھولنے سے پہلے مناسب PPE کا استعمال کرتے ہوئے وولٹیج کی عدم موجودگی کی تصدیق کریں۔",
+          "summary": "اس ویڈیو میں AC یونٹس کے لیے مرحلہ وار خرابیوں کا سراغ لگانے کے سلسلے کا خاکہ پیش کیا گیا ہے جو ٹھنڈی ہوا پیدا کیے بغیر چلتے ہیں، ہوا کے بہاؤ کی جانچ، درجہ حرارت کے فرق اور دباؤ کے تجزیہ کو کور کرتے ہیں۔"
+        }
+      },
       "yt": "T4PhYiElCrc",
       "ppe": [
         "Safety Glasses",
         "Insulated Gloves",
         "Safety Shoes"
       ],
+      "trq": {},
       "quiz": [
         {
           "q": "What should you check first before adjusting refrigerant?",
@@ -771,12 +3628,197 @@
     },
     {
       "id": "hvacc-zCMK2i_J4YY",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات العمل",
+            "أحذية السلامة"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "تحقق من ضغط الزيت ودرجة الحرارة المناسبة قبل بدء تشغيل المبرد.",
+            "قم بتكوين الإعداد المنسدل للحد من التدريج الضاغط وتجنب التيار الزائد.",
+            "مراقبة تدفق الزيت وضغط الزيت التفاضلي أثناء التشغيل.",
+            "مراقبة حركة ريشة التوجيه وسرعة الاستجابة أثناء بدء التشغيل.",
+            "تتبع قيم النهج وتفريغ الحرارة الزائدة بالنسبة لحمل الماكينة."
+          ],
+          "title": "إعدادات بدء تشغيل المبرد والمنسدلة",
+          "safety": "تأكد من التحقق من الضغط التفاضلي المناسب للزيت ونقاط ضبط درجة الحرارة قبل محاولة بدء التشغيل لمنع تلف المعدات.",
+          "summary": "يشرح مقدم العرض تركيز المعلمة أثناء بدء تشغيل المبرد المبرد بالماء، وظروف السحب، وإدارة الزيت، وسرعات الضاغط."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "কাজের গ্লাভস",
+            "নিরাপত্তা জুতা"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "চিলার শুরু করার আগে সঠিক তেলের চাপ এবং তাপমাত্রা যাচাই করুন।",
+            "কম্প্রেসার স্টেজিং সীমিত করতে এবং ওভারকারেন্ট এড়াতে পুলডাউন সেটিং কনফিগার করুন।",
+            "অপারেশন চলাকালীন তেল প্রবাহ এবং তেল ডিফারেনশিয়াল চাপ নিরীক্ষণ করুন।",
+            "স্টার্টআপের সময় গাইড ভ্যানের চলাচল এবং গতির প্রতিক্রিয়া পর্যবেক্ষণ করুন।",
+            "ট্র্যাক পদ্ধতির মান এবং ডিসচার্জ সুপারহিট মেশিন লোড আপেক্ষিক."
+          ],
+          "title": "চিলার স্টার্টআপ এবং পুলডাউন সেটিংস",
+          "safety": "সরঞ্জামের ক্ষতি রোধ করতে স্টার্টআপ করার আগে সঠিক তেলের ডিফারেনশিয়াল চাপ এবং তাপমাত্রা সেটপয়েন্টগুলি যাচাই করা হয়েছে তা নিশ্চিত করুন।",
+          "summary": "উপস্থাপক ওয়াটার-কুলড চিলার স্টার্টআপ, পুলডাউন অবস্থা, তেল ব্যবস্থাপনা এবং কম্প্রেসার গতির সময় প্যারামিটার ফোকাস ব্যাখ্যা করেন।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "काम के दस्ताने",
+            "सुरक्षा जूते"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "चिलर चालू करने से पहले उचित तेल का दबाव और तापमान सत्यापित करें।",
+            "कंप्रेसर स्टेजिंग को सीमित करने और ओवरकरंट से बचने के लिए पुलडाउन सेटिंग कॉन्फ़िगर करें।",
+            "ऑपरेशन के दौरान तेल प्रवाह और तेल अंतर दबाव की निगरानी करें।",
+            "स्टार्टअप के दौरान गाइड वेन मूवमेंट और गति प्रतिक्रिया का निरीक्षण करें।",
+            "मशीन लोड के सापेक्ष अप्रोच मानों और डिस्चार्ज सुपरहीट को ट्रैक करें।"
+          ],
+          "title": "चिलर स्टार्टअप और पुलडाउन सेटिंग्स",
+          "safety": "उपकरण क्षति को रोकने के लिए स्टार्टअप का प्रयास करने से पहले सुनिश्चित करें कि उचित तेल अंतर दबाव और तापमान सेटपॉइंट सत्यापित हैं।",
+          "summary": "प्रस्तुतकर्ता वाटर-कूल्ड चिलर स्टार्टअप, पुलडाउन स्थितियों, तेल प्रबंधन और कंप्रेसर गति के दौरान पैरामीटर फोकस के बारे में बताता है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "വർക്ക് ഗ്ലൗസ്",
+            "സുരക്ഷാ ഷൂസ്"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "ചില്ലർ ആരംഭിക്കുന്നതിന് മുമ്പ് ശരിയായ എണ്ണ മർദ്ദവും താപനിലയും പരിശോധിക്കുക.",
+            "കംപ്രസർ സ്റ്റേജിംഗ് പരിമിതപ്പെടുത്താനും ഓവർകറൻ്റ് ഒഴിവാക്കാനും പുൾഡൗൺ ക്രമീകരണം കോൺഫിഗർ ചെയ്യുക.",
+            "ഓപ്പറേഷൻ സമയത്ത് ഓയിൽ ഫ്ലോയും ഓയിൽ ഡിഫറൻഷ്യൽ മർദ്ദവും നിരീക്ഷിക്കുക.",
+            "സ്റ്റാർട്ടപ്പ് സമയത്ത് ഗൈഡ് വെയ്ൻ ചലനവും വേഗത പ്രതികരണവും നിരീക്ഷിക്കുക.",
+            "മെഷീൻ ലോഡുമായി ബന്ധപ്പെട്ട സമീപന മൂല്യങ്ങളും ഡിസ്ചാർജ് സൂപ്പർഹീറ്റും ട്രാക്കുചെയ്യുക."
+          ],
+          "title": "ചില്ലർ സ്റ്റാർട്ടപ്പ്, പുൾഡൗൺ ക്രമീകരണങ്ങൾ",
+          "safety": "ഉപകരണങ്ങളുടെ കേടുപാടുകൾ തടയുന്നതിന് സ്റ്റാർട്ടപ്പ് ശ്രമിക്കുന്നതിന് മുമ്പ് ശരിയായ ഓയിൽ ഡിഫറൻഷ്യൽ മർദ്ദവും താപനില സെറ്റ് പോയിൻ്റുകളും പരിശോധിച്ചിട്ടുണ്ടെന്ന് ഉറപ്പാക്കുക.",
+          "summary": "വാട്ടർ-കൂൾഡ് ചില്ലർ സ്റ്റാർട്ടപ്പ്, പുൾഡൌൺ അവസ്ഥകൾ, ഓയിൽ മാനേജ്മെൻ്റ്, കംപ്രസർ വേഗത എന്നിവയ്ക്കിടയിലുള്ള പാരാമീറ്റർ ഫോക്കസ് അവതാരകൻ വിശദീകരിക്കുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कार्य दस्ताने",
+            "सुरक्षा जुत्ता"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "चिलर सुरु हुनु अघि उचित तेलको दबाब र तापमान प्रमाणित गर्नुहोस्।",
+            "कम्प्रेसर स्टेजिङ सीमित गर्न र ओभरकरेन्टबाट बच्न पुलडाउन सेटिङ कन्फिगर गर्नुहोस्।",
+            "सञ्चालन समयमा तेल प्रवाह र तेल भिन्न दबाव निगरानी।",
+            "स्टार्टअपको समयमा गाइड वेन आन्दोलन र गति प्रतिक्रिया अवलोकन गर्नुहोस्।",
+            "ट्र्याक दृष्टिकोण मान र डिस्चार्ज सुपरहिट मेसिन लोड सापेक्ष।"
+          ],
+          "title": "चिलर स्टार्टअप र पुलडाउन सेटिङहरू",
+          "safety": "उपकरणको क्षतिलाई रोक्नको लागि स्टार्टअप प्रयास गर्नु अघि उचित तेल विभेदक दबाव र तापमान सेटपोइन्टहरू प्रमाणित गरिएको सुनिश्चित गर्नुहोस्।",
+          "summary": "प्रस्तुतकर्ताले वाटर-कूल्ड चिलर स्टार्टअप, पुलडाउन अवस्था, तेल व्यवस्थापन, र कम्प्रेसर गतिको समयमा प्यारामिटर फोकसको व्याख्या गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "வேலை கையுறைகள்",
+            "பாதுகாப்பு காலணிகள்"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "சில்லர் தொடங்கும் முன் சரியான எண்ணெய் அழுத்தம் மற்றும் வெப்பநிலையை சரிபார்க்கவும்.",
+            "கம்ப்ரசர் ஸ்டேஜிங்கைக் கட்டுப்படுத்தவும், அதிக மின்னோட்டத்தைத் தவிர்க்கவும் இழுக்கும் அமைப்பை உள்ளமைக்கவும்.",
+            "செயல்பாட்டின் போது எண்ணெய் ஓட்டம் மற்றும் எண்ணெய் வேறுபாடு அழுத்தத்தை கண்காணிக்கவும்.",
+            "தொடக்கத்தின் போது வழிகாட்டி வேன் இயக்கம் மற்றும் வேக பதிலைக் கவனிக்கவும்.",
+            "இயந்திர சுமையுடன் தொடர்புடைய அணுகுமுறை மதிப்புகள் மற்றும் வெளியேற்ற சூப்பர்ஹீட் ஆகியவற்றைக் கண்காணிக்கவும்."
+          ],
+          "title": "சில்லர் ஸ்டார்ட்அப் மற்றும் புல்டவுன் அமைப்புகள்",
+          "safety": "உபகரணங்கள் சேதமடைவதைத் தடுக்க, துவக்க முயற்சிக்கும் முன், சரியான எண்ணெய் வேறுபாடு அழுத்தம் மற்றும் வெப்பநிலை நிலைகள் சரிபார்க்கப்படுவதை உறுதிசெய்யவும்.",
+          "summary": "நீர்-குளிரூட்டப்பட்ட குளிர்விப்பான் தொடக்கம், புல்டவுன் நிலைகள், எண்ணெய் மேலாண்மை மற்றும் கம்ப்ரசர் வேகத்தின் போது அளவுரு கவனம் செலுத்துவதை வழங்குபவர் விளக்குகிறார்."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes sa trabaho",
+            "Mga Sapatos na Pangkaligtasan"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "I-verify ang wastong presyon at temperatura ng langis bago magsimula ang chiller.",
+            "I-configure ang pulldown setting para limitahan ang compressor staging at maiwasan ang overcurrent.",
+            "Subaybayan ang daloy ng langis at presyon ng pagkakaiba ng langis sa panahon ng operasyon.",
+            "Obserbahan ang paggalaw ng guide vane at bilis ng pagtugon sa panahon ng pagsisimula.",
+            "Subaybayan ang mga halaga ng diskarte at paglabas ng sobrang init na nauugnay sa pagkarga ng makina."
+          ],
+          "title": "Mga Setting ng Chiller Startup at Pulldown",
+          "safety": "Tiyakin na ang tamang oil differential pressure at mga setpoint ng temperatura ay na-verify bago subukan ang startup upang maiwasan ang pagkasira ng kagamitan.",
+          "summary": "Ipinapaliwanag ng nagtatanghal ang focus ng parameter sa panahon ng water-cooled chiller startup, pulldown condition, oil management, at compressor speeds."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "کام کے دستانے",
+            "حفاظتی جوتے"
+          ],
+          "src": "b32a0b993b66",
+          "auto": true,
+          "steps": [
+            "چلر شروع ہونے سے پہلے مناسب تیل کے دباؤ اور درجہ حرارت کی تصدیق کریں۔",
+            "کمپریسر سٹیجنگ کو محدود کرنے اور اوور کرنٹ سے بچنے کے لیے پل ڈاؤن سیٹنگ کو کنفیگر کریں۔",
+            "آپریشن کے دوران تیل کے بہاؤ اور تیل کے فرق کے دباؤ کی نگرانی کریں۔",
+            "آغاز کے دوران گائیڈ وین کی نقل و حرکت اور رفتار کے ردعمل کا مشاہدہ کریں۔",
+            "اپروچ ویلیوز کو ٹریک کریں اور مشین کے بوجھ کے مقابلہ میں سپر ہیٹ ڈسچارج کریں۔"
+          ],
+          "title": "چلر اسٹارٹ اپ اور پل ڈاؤن سیٹنگز",
+          "safety": "اس بات کو یقینی بنائیں کہ سامان کو پہنچنے والے نقصان کو روکنے کے لیے شروع کرنے کی کوشش کرنے سے پہلے مناسب تیل کے فرق کے دباؤ اور درجہ حرارت کے سیٹ پوائنٹس کی تصدیق کی گئی ہے۔",
+          "summary": "پیش کنندہ واٹر کولڈ چلر اسٹارٹ اپ کے دوران پیرامیٹر فوکس، پل ڈاؤن کنڈیشنز، آئل مینجمنٹ اور کمپریسر کی رفتار کی وضاحت کرتا ہے۔"
+        }
+      },
       "yt": "zCMK2i_J4YY",
       "ppe": [
         "Safety Glasses",
         "Work Gloves",
         "Safety Shoes"
       ],
+      "trq": {
+        "hi": {
+          "src": "6eed6884291b",
+          "items": [
+            {
+              "q": "Centrifugal chiller चालू होने से पहले क्या चेक करना चाहिए?",
+              "options": [
+                "सही oil flow और differential pressure",
+                "Maximum fan speed",
+                "Refrigerant recovery mode"
+              ]
+            },
+            {
+              "q": "Startup के दौरान chillers में pulldown setting क्यों इस्तेमाल करते हैं?",
+              "options": [
+                "Water temperature बढ़ाने के लिए",
+                "Compressor का काम कम करने और overcurrent से बचने के लिए",
+                "Evaporator barrel खाली करने के लिए"
+              ]
+            },
+            {
+              "q": "High approach value का क्या मतलब हो सकता है?",
+              "options": [
+                "Low refrigerant charge",
+                "Heat exchange में कोई समस्या",
+                "Normal operation"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What should be established before a centrifugal chiller turns on?",
@@ -836,11 +3878,188 @@
     },
     {
       "id": "kitch-4lWYHmidMbg",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات العمل"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "افصل الثلاجة وأزل الطعام والأرفف ولفافة صندوق الثلج.",
+            "قم بإزالة فلتر الماء وغطاء خزان الماء.",
+            "قم بفك وإزالة مجموعة صندوق الثلج من الثلاجة.",
+            "افصل الموصلات الكهربائية وأزل صانع الثلج.",
+            "قم بتركيب صانع الثلج الجديد وأعد تجميع صندوق الثلج والغطاء."
+          ],
+          "title": "استبدال صانع الثلج لثلاجة كيتشن إيد",
+          "safety": "قم دائمًا بفصل الثلاجة أو فصل قاطع الدائرة الكهربائية قبل اختبار المكونات الكهربائية أو صيانتها.",
+          "summary": "تعرف على كيفية استكشاف أخطاء مجموعة صانع الثلج وإصلاحها واختبارها واستبدالها في ثلاجة KitchenAid."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "কাজের গ্লাভস"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "রেফ্রিজারেটরটি আনপ্লাগ করুন এবং খাবার, তাক এবং আইস বক্স ফ্যাসিয়া সরিয়ে দিন।",
+            "জলের ফিল্টার এবং জলাশয় কভার সরান।",
+            "রেফ্রিজারেটর থেকে আইস বক্স সমাবেশটি খুলুন এবং সরান।",
+            "বৈদ্যুতিক সংযোগকারী সংযোগ বিচ্ছিন্ন করুন এবং বরফ প্রস্তুতকারক সরান।",
+            "নতুন বরফ প্রস্তুতকারক ইনস্টল করুন এবং বরফ বাক্স এবং কভার পুনরায় একত্রিত করুন।"
+          ],
+          "title": "KitchenAid রেফ্রিজারেটর আইস মেকার প্রতিস্থাপন",
+          "safety": "সর্বদা রেফ্রিজারেটরটি আনপ্লাগ করুন বা বৈদ্যুতিক উপাদানগুলি পরীক্ষা বা পরিষেবা দেওয়ার আগে সার্কিট ব্রেকার সংযোগ বিচ্ছিন্ন করুন।",
+          "summary": "কিভাবে একটি KitchenAid রেফ্রিজারেটরে আইস মেকার সমাবেশের সমস্যা সমাধান, পরীক্ষা এবং প্রতিস্থাপন করতে হয় তা জানুন।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "काम के दस्ताने"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "रेफ्रिजरेटर को अनप्लग करें और भोजन, अलमारियों और आइस बॉक्स प्रावरणी को हटा दें।",
+            "जल फ़िल्टर और जल भंडार कवर हटा दें।",
+            "रेफ्रिजरेटर से आइस बॉक्स असेंबली को खोलें और हटा दें।",
+            "विद्युत कनेक्टर्स को डिस्कनेक्ट करें और बर्फ बनाने वाली मशीन को हटा दें।",
+            "नया आइस मेकर स्थापित करें और आइस बॉक्स और कवर को फिर से जोड़ें।"
+          ],
+          "title": "किचनएड रेफ्रिजरेटर आइस मेकर रिप्लेसमेंट",
+          "safety": "विद्युत घटकों का परीक्षण या सर्विसिंग करने से पहले हमेशा रेफ्रिजरेटर को अनप्लग करें या सर्किट ब्रेकर को डिस्कनेक्ट करें।",
+          "summary": "जानें कि किचनएड रेफ्रिजरेटर में आइस मेकर असेंबली का समस्या निवारण, परीक्षण और प्रतिस्थापन कैसे करें।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "വർക്ക് ഗ്ലൗസ്"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "റഫ്രിജറേറ്റർ അൺപ്ലഗ് ചെയ്ത് ഭക്ഷണം, ഷെൽഫുകൾ, ഐസ് ബോക്സ് ഫാസിയ എന്നിവ നീക്കം ചെയ്യുക.",
+            "വാട്ടർ ഫിൽട്ടറും വാട്ടർ റിസർവോയർ കവറും നീക്കം ചെയ്യുക.",
+            "ഫ്രിഡ്ജിൽ നിന്ന് ഐസ് ബോക്സ് അസംബ്ലി അഴിച്ച് നീക്കം ചെയ്യുക.",
+            "ഇലക്ട്രിക്കൽ കണക്ടറുകൾ വിച്ഛേദിച്ച് ഐസ് മേക്കർ നീക്കം ചെയ്യുക.",
+            "പുതിയ ഐസ് മേക്കർ ഇൻസ്റ്റാൾ ചെയ്ത് ഐസ് ബോക്സും കവറും വീണ്ടും കൂട്ടിച്ചേർക്കുക."
+          ],
+          "title": "KitchenAid റഫ്രിജറേറ്റർ ഐസ് മേക്കർ മാറ്റിസ്ഥാപിക്കൽ",
+          "safety": "ഇലക്ട്രിക്കൽ ഘടകങ്ങൾ പരിശോധിക്കുന്നതിനോ സർവീസ് ചെയ്യുന്നതിനോ മുമ്പായി എപ്പോഴും റഫ്രിജറേറ്റർ അൺപ്ലഗ് ചെയ്യുക അല്ലെങ്കിൽ സർക്യൂട്ട് ബ്രേക്കർ വിച്ഛേദിക്കുക.",
+          "summary": "ഒരു KitchenAid റഫ്രിജറേറ്ററിൽ ഐസ് മേക്കർ അസംബ്ലി എങ്ങനെ ട്രബിൾഷൂട്ട് ചെയ്യാമെന്നും പരിശോധിക്കാമെന്നും മാറ്റിസ്ഥാപിക്കാമെന്നും അറിയുക."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कार्य दस्ताने"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "फ्रिज अनप्लग गर्नुहोस् र खाना, अलमारियाँ, र आइस बक्स फासिया हटाउनुहोस्।",
+            "पानी फिल्टर र पानी भण्डार कभर हटाउनुहोस्।",
+            "फ्रिजबाट आइस बक्स एसेम्ब्ली खोल्नुहोस् र हटाउनुहोस्।",
+            "बिजुली जडानहरू विच्छेद गर्नुहोस् र आइस मेकर हटाउनुहोस्।",
+            "नयाँ आइस मेकर स्थापना गर्नुहोस् र आइस बक्स र कभरलाई पुन: जम्मा गर्नुहोस्।"
+          ],
+          "title": "KitchenAid रेफ्रिजरेटर आइस मेकर प्रतिस्थापन",
+          "safety": "इलेक्ट्रिकल कम्पोनेन्टहरू परीक्षण वा सर्भिस गर्नु अघि सधैं फ्रिज अनप्लग गर्नुहोस् वा सर्किट ब्रेकरलाई विच्छेद गर्नुहोस्।",
+          "summary": "KitchenAid रेफ्रिजरेटरमा आइस मेकर एसेम्बलीलाई कसरी समस्या निवारण गर्ने, परीक्षण गर्ने र प्रतिस्थापन गर्ने बारे जान्नुहोस्।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "வேலை கையுறைகள்"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "குளிர்சாதன பெட்டியை அவிழ்த்து, உணவு, அலமாரிகள் மற்றும் ஐஸ் பாக்ஸ் திசுப்படலத்தை அகற்றவும்.",
+            "நீர் வடிகட்டி மற்றும் நீர் தேக்க அட்டையை அகற்றவும்.",
+            "குளிர்சாதன பெட்டியில் இருந்து ஐஸ் பாக்ஸ் அசெம்பிளியை அவிழ்த்து அகற்றவும்.",
+            "மின் இணைப்பிகளைத் துண்டித்து, ஐஸ் மேக்கரை அகற்றவும்.",
+            "புதிய ஐஸ் மேக்கரை நிறுவி ஐஸ் பெட்டியை மீண்டும் இணைத்து மூடி வைக்கவும்."
+          ],
+          "title": "KitchenAid குளிர்சாதன பெட்டி ஐஸ் மேக்கர் மாற்றுதல்",
+          "safety": "எலெக்ட்ரிக்கல் பாகங்களைச் சோதிப்பதற்கு அல்லது சர்வீஸ் செய்வதற்கு முன் எப்போதும் குளிர்சாதனப் பெட்டியைத் துண்டிக்கவும் அல்லது சர்க்யூட் பிரேக்கரைத் துண்டிக்கவும்.",
+          "summary": "KitchenAid குளிர்சாதனப் பெட்டியில் ஐஸ் மேக்கர் அசெம்பிளியை எவ்வாறு சரிசெய்தல், சோதித்தல் மற்றும் மாற்றுவது என்பதை அறிக."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes sa trabaho"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "Tanggalin sa saksakan ang refrigerator at alisin ang pagkain, istante, at ice box fascia.",
+            "Alisin ang water filter at water reservoir cover.",
+            "Alisin at alisin ang ice box assembly mula sa refrigerator.",
+            "Idiskonekta ang mga de-koryenteng konektor at alisin ang gumagawa ng yelo.",
+            "I-install ang bagong ice maker at muling buuin ang ice box at takip."
+          ],
+          "title": "Kapalit ng KitchenAid Refrigerator Ice Maker",
+          "safety": "Palaging i-unplug ang refrigerator o idiskonekta ang circuit breaker bago subukan o serbisyuhan ang mga de-koryenteng bahagi.",
+          "summary": "Alamin kung paano i-troubleshoot, subukan, at palitan ang ice maker assembly sa refrigerator ng KitchenAid."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "کام کے دستانے"
+          ],
+          "src": "2f0687cd5a7f",
+          "auto": true,
+          "steps": [
+            "ریفریجریٹر کو ان پلگ کریں اور کھانا، شیلف اور آئس باکس فاشیا کو ہٹا دیں۔",
+            "پانی کے فلٹر اور پانی کے ذخائر کا احاطہ ہٹا دیں۔",
+            "ریفریجریٹر سے آئس باکس اسمبلی کو کھولیں اور ہٹا دیں۔",
+            "الیکٹریکل کنیکٹرز کو منقطع کریں اور آئس میکر کو ہٹا دیں۔",
+            "نیا آئس میکر انسٹال کریں اور آئس باکس اور کور کو دوبارہ جوڑیں۔"
+          ],
+          "title": "KitchenAid ریفریجریٹر آئس میکر کی تبدیلی",
+          "safety": "برقی اجزاء کی جانچ یا سروس کرنے سے پہلے ہمیشہ ریفریجریٹر کو ان پلگ کریں یا سرکٹ بریکر کو منقطع کریں۔",
+          "summary": "KitchenAid ریفریجریٹر میں آئس میکر اسمبلی کو خراب کرنے، جانچنے اور تبدیل کرنے کا طریقہ سیکھیں۔"
+        }
+      },
       "yt": "4lWYHmidMbg",
       "ppe": [
         "Safety Glasses",
         "Work Gloves"
       ],
+      "trq": {
+        "hi": {
+          "src": "4652521e2628",
+          "items": [
+            {
+              "q": "इलेक्ट्रिकल कंपोनेंट्स टेस्ट करने से पहले क्या करना चाहिए?",
+              "options": [
+                "रेफ्रिजरेटर का प्लग निकाल दें",
+                "फ्रीजर का दरवाजा खोलें",
+                "तापमान बढ़ाएं"
+              ]
+            },
+            {
+              "q": "एरर कोड E1 का क्या मतलब है?",
+              "options": [
+                "कोई एरर नहीं मिला",
+                "आइस कंपार्टमेंट पर्याप्त ठंडा नहीं है",
+                "मोटर ने होम पोजीशन खो दी है"
+              ]
+            },
+            {
+              "q": "आइस बॉक्स कवर के स्क्रू खोलने के लिए किस टूल का इस्तेमाल करें?",
+              "options": [
+                "Phillips screwdriver",
+                "Quarter-inch nut driver",
+                "Adjustable wrench"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What must you do before testing electrical components?",
@@ -2222,7 +5441,37 @@
         "Safety Glasses",
         "Anti-Static Wrist Strap"
       ],
-      "trq": {},
+      "trq": {
+        "ar": {
+          "src": "06c19e6b0c38",
+          "items": [
+            {
+              "q": "اي نوع كونتاكت مستخدم للسويتش رقم 1؟",
+              "options": [
+                "Normally open",
+                "Normally closed",
+                "Emergency stop"
+              ]
+            },
+            {
+              "q": "كيف متصل السويتش 2 و 3؟",
+              "options": [
+                "In parallel",
+                "In series",
+                "Directly to ground"
+              ]
+            },
+            {
+              "q": "اي سوفت وير مستخدم لتمرين الـ PLC هذا؟",
+              "options": [
+                "AutoCAD",
+                "Microsoft Excel",
+                "CODESYS"
+              ]
+            }
+          ]
+        }
+      },
       "quiz": [
         {
           "q": "What type of contact is used for switch one?",
@@ -5237,6 +8486,23 @@
     {
       "id": "water-jkFpGyrN6us",
       "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات العمل"
+          ],
+          "src": "43adeeee04a3",
+          "auto": true,
+          "steps": [
+            "تحديد متى تكون هناك حاجة إلى محطة رفع للتركيبات الموجودة أسفل المجاري.",
+            "حدد طراز Sololift2 الصحيح بناءً على احتياجات المياه الرمادية أو المياه السوداء.",
+            "استخدم الأدوات الأساسية مثل مفكات البراغي للوصول إلى الصيانة.",
+            "استبدل مجموعة محرك المضخة أو مكونات مفتاح المستوى حسب الحاجة."
+          ],
+          "title": "فهم محطات الرفع Sololift2",
+          "safety": "تأكد من فصل الطاقة قبل إجراء أي صيانة أو صيانة لمحطة الرفع.",
+          "summary": "يقدم هذا الفيديو مجموعة Grundfos Sololift2 من محطات الرفع وأجهزة الطحن، موضحًا الغرض منها ونماذجها وصيانتها."
+        },
         "bn": {
           "ppe": [
             "নিরাপত্তা চশমা",
@@ -5322,6 +8588,23 @@
           "safety": "லிஃப்டிங் ஸ்டேஷனில் ஏதேனும் பராமரிப்பு அல்லது சர்வீஸ் செய்வதற்கு முன் மின்சாரம் துண்டிக்கப்பட்டுள்ளதா என்பதை உறுதிப்படுத்தவும்.",
           "summary": "இந்த வீடியோ Grundfos Sololift2 வரம்பில் உள்ள தூக்கும் நிலையங்கள் மற்றும் மேசரேட்டர்களை அறிமுகப்படுத்துகிறது, அவற்றின் நோக்கம், மாதிரிகள் மற்றும் பராமரிப்பு ஆகியவற்றை விளக்குகிறது."
         },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes sa trabaho"
+          ],
+          "src": "43adeeee04a3",
+          "auto": true,
+          "steps": [
+            "Tukuyin kung kailan kailangan ang istasyon ng pag-angat para sa mga pag-install sa ilalim ng imburnal.",
+            "Piliin ang tamang modelo ng Sololift2 batay sa mga pangangailangan ng greywater o blackwater.",
+            "Gumamit ng mga pangunahing tool tulad ng mga screwdriver para sa access sa pagpapanatili.",
+            "Palitan ang pump motor assembly o level switch component kung kinakailangan."
+          ],
+          "title": "Pag-unawa sa Sololift2 Lifting Stations",
+          "safety": "Tiyaking nakadiskonekta ang kuryente bago magsagawa ng anumang maintenance o servicing sa lifting station.",
+          "summary": "Ipinakilala ng video na ito ang hanay ng Grundfos Sololift2 ng mga lifting station at macerator, na nagpapaliwanag ng layunin, modelo, at pagpapanatili ng mga ito."
+        },
         "ur": {
           "ppe": [
             "حفاظتی شیشے",
@@ -5403,6 +8686,152 @@
     },
     {
       "id": "kitch-6sMVeolijKQ",
+      "tr": {
+        "ar": {
+          "ppe": [
+            "نظارات السلامة",
+            "قفازات العمل"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "افصل الطاقة عن الثلاجة.",
+            "قم بإزالة الطعام والأرفف ولفافة صندوق الثلج.",
+            "قم بإزالة غطاء خزان المياه.",
+            "افصل أنابيب المياه والموصلات الكهربائية.",
+            "قم بتركيب الصمام الجديد وأعد توصيل جميع المكونات."
+          ],
+          "title": "استبدال صمام مدخل مياه الثلاجة",
+          "safety": "قم دائمًا بفصل مصدر الطاقة عن الثلاجة قبل إجراء أي اختبارات كهربائية أو إزالة اللوحات.",
+          "summary": "يوضح هذا الفيديو كيفية اختبار واستبدال صمام مدخل المياه المعيب في ثلاجة KitchenAid. ويغطي الأدوات اللازمة واحتياطات السلامة والتثبيت خطوة بخطوة."
+        },
+        "bn": {
+          "ppe": [
+            "নিরাপত্তা চশমা",
+            "কাজের গ্লাভস"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "রেফ্রিজারেটরের সাথে বিদ্যুৎ সংযোগ বিচ্ছিন্ন করুন।",
+            "খাবার, তাক এবং আইস বক্স ফ্যাসিয়া সরান।",
+            "জলাশয় কভার সরান.",
+            "জলের টিউব এবং বৈদ্যুতিক সংযোগকারী সংযোগ বিচ্ছিন্ন করুন।",
+            "নতুন ভালভ ইনস্টল করুন এবং সমস্ত উপাদান পুনরায় সংযোগ করুন।"
+          ],
+          "title": "একটি রেফ্রিজারেটর ওয়াটার ইনলেট ভালভ প্রতিস্থাপন",
+          "safety": "কোনো বৈদ্যুতিক পরীক্ষা বা প্যানেল সরানোর আগে সর্বদা রেফ্রিজারেটরের পাওয়ার সাপ্লাই সংযোগ বিচ্ছিন্ন করুন।",
+          "summary": "এই ভিডিওটি দেখায় কিভাবে একটি KitchenAid রেফ্রিজারেটরে একটি ত্রুটিপূর্ণ জলের ইনলেট ভালভ পরীক্ষা এবং প্রতিস্থাপন করতে হয়। এটি প্রয়োজনীয় সরঞ্জাম, নিরাপত্তা সতর্কতা, এবং ধাপে ধাপে ইনস্টলেশন কভার করে।"
+        },
+        "hi": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "काम के दस्ताने"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "रेफ्रिजरेटर की बिजली काट दें।",
+            "भोजन, अलमारियाँ और आइस बॉक्स प्रावरणी हटा दें।",
+            "जल भंडार का ढक्कन हटा दें.",
+            "पानी के ट्यूब और विद्युत कनेक्टर्स को डिस्कनेक्ट करें।",
+            "नया वाल्व स्थापित करें और सभी घटकों को फिर से कनेक्ट करें।"
+          ],
+          "title": "रेफ्रिजरेटर वॉटर इनलेट वाल्व को बदलना",
+          "safety": "कोई भी विद्युत परीक्षण करने या पैनल हटाने से पहले हमेशा रेफ्रिजरेटर की बिजली आपूर्ति काट दें।",
+          "summary": "यह वीडियो दर्शाता है कि किचनएड रेफ्रिजरेटर में दोषपूर्ण वॉटर इनलेट वाल्व का परीक्षण और प्रतिस्थापन कैसे करें। इसमें आवश्यक उपकरण, सुरक्षा सावधानियां और चरण-दर-चरण स्थापना शामिल है।"
+        },
+        "ml": {
+          "ppe": [
+            "സുരക്ഷാ ഗ്ലാസുകൾ",
+            "വർക്ക് ഗ്ലൗസ്"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "റഫ്രിജറേറ്ററിലേക്കുള്ള വൈദ്യുതി വിച്ഛേദിക്കുക.",
+            "ഭക്ഷണം, അലമാരകൾ, ഐസ് ബോക്സ് ഫാസിയ എന്നിവ നീക്കം ചെയ്യുക.",
+            "വാട്ടർ റിസർവോയർ കവർ നീക്കം ചെയ്യുക.",
+            "വാട്ടർ ട്യൂബുകളും ഇലക്ട്രിക്കൽ കണക്ടറുകളും വിച്ഛേദിക്കുക.",
+            "പുതിയ വാൽവ് ഇൻസ്റ്റാൾ ചെയ്ത് എല്ലാ ഘടകങ്ങളും വീണ്ടും ബന്ധിപ്പിക്കുക."
+          ],
+          "title": "ഒരു റഫ്രിജറേറ്റർ വാട്ടർ ഇൻലെറ്റ് വാൽവ് മാറ്റിസ്ഥാപിക്കുന്നു",
+          "safety": "ഏതെങ്കിലും ഇലക്ട്രിക്കൽ ടെസ്റ്റുകൾ നടത്തുന്നതിന് മുമ്പ് അല്ലെങ്കിൽ പാനലുകൾ നീക്കം ചെയ്യുന്നതിനുമുമ്പ് എല്ലായ്പ്പോഴും റഫ്രിജറേറ്ററിലേക്കുള്ള പവർ സപ്ലൈ വിച്ഛേദിക്കുക.",
+          "summary": "ഒരു KitchenAid റഫ്രിജറേറ്ററിലെ തെറ്റായ വാട്ടർ ഇൻലെറ്റ് വാൽവ് എങ്ങനെ പരിശോധിക്കാമെന്നും മാറ്റിസ്ഥാപിക്കാമെന്നും ഈ വീഡിയോ കാണിക്കുന്നു. ആവശ്യമായ ഉപകരണങ്ങൾ, സുരക്ഷാ മുൻകരുതലുകൾ, ഘട്ടം ഘട്ടമായുള്ള ഇൻസ്റ്റാളേഷൻ എന്നിവ ഇതിൽ ഉൾപ്പെടുന്നു."
+        },
+        "ne": {
+          "ppe": [
+            "सुरक्षा चश्मा",
+            "कार्य दस्ताने"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "फ्रिजमा पावर विच्छेद गर्नुहोस्।",
+            "खाना, अलमारियाँ, र आइस बक्स fascia हटाउनुहोस्।",
+            "पानी जलाशय आवरण हटाउनुहोस्।",
+            "पानीको ट्युब र बिजुली जडानहरू विच्छेद गर्नुहोस्।",
+            "नयाँ भल्भ स्थापना गर्नुहोस् र सबै कम्पोनेन्टहरू पुन: जडान गर्नुहोस्।"
+          ],
+          "title": "एक फ्रिज पानी इनलेट भल्भ प्रतिस्थापन",
+          "safety": "कुनै पनि विद्युतीय परीक्षण वा प्यानलहरू हटाउनु अघि सधैं फ्रिजमा बिजुली आपूर्ति विच्छेद गर्नुहोस्।",
+          "summary": "यो भिडियोले KitchenAid रेफ्रिजरेटरमा त्रुटिपूर्ण पानी इनलेट भल्भ कसरी परीक्षण गर्ने र बदल्ने देखाउँछ। यसले आवश्यक उपकरणहरू, सुरक्षा सावधानीहरू, र चरण-दर-चरण स्थापना समावेश गर्दछ।"
+        },
+        "ta": {
+          "ppe": [
+            "பாதுகாப்பு கண்ணாடிகள்",
+            "வேலை கையுறைகள்"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "குளிர்சாதன பெட்டியில் மின்சாரத்தை துண்டிக்கவும்.",
+            "உணவு, அலமாரிகள் மற்றும் ஐஸ் பாக்ஸ் திசுப்படலத்தை அகற்றவும்.",
+            "நீர் தேக்க மூடியை அகற்றவும்.",
+            "நீர் குழாய்கள் மற்றும் மின் இணைப்பிகளை துண்டிக்கவும்.",
+            "புதிய வால்வை நிறுவி, அனைத்து கூறுகளையும் மீண்டும் இணைக்கவும்."
+          ],
+          "title": "ஒரு குளிர்சாதனப்பெட்டி வாட்டர் இன்லெட் வால்வை மாற்றுதல்",
+          "safety": "மின் சோதனைகள் அல்லது பேனல்களை அகற்றும் முன் குளிர்சாதனப் பெட்டியின் மின் இணைப்பை எப்போதும் துண்டிக்கவும்.",
+          "summary": "இந்த வீடியோ KitchenAid குளிர்சாதன பெட்டியில் உள்ள தவறான நீர் நுழைவு வால்வை எவ்வாறு பரிசோதித்து மாற்றுவது என்பதை விளக்குகிறது. இது தேவையான கருவிகள், பாதுகாப்பு முன்னெச்சரிக்கைகள் மற்றும் படிப்படியான நிறுவல் ஆகியவற்றை உள்ளடக்கியது."
+        },
+        "tl": {
+          "ppe": [
+            "Salaming Pangkaligtasan",
+            "Mga guwantes sa trabaho"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "Idiskonekta ang kuryente sa refrigerator.",
+            "Alisin ang pagkain, istante, at ang ice box fascia.",
+            "Alisin ang takip ng reservoir ng tubig.",
+            "Idiskonekta ang mga tubo ng tubig at mga konektor ng kuryente.",
+            "I-install ang bagong balbula at muling ikonekta ang lahat ng mga bahagi."
+          ],
+          "title": "Pagpapalit ng Refrigerator Water Inlet Valve",
+          "safety": "Palaging idiskonekta ang power supply sa refrigerator bago magsagawa ng anumang mga electrical test o magtanggal ng mga panel.",
+          "summary": "Ipinapakita ng video na ito kung paano subukan at palitan ang isang sira na water inlet valve sa refrigerator ng KitchenAid. Sinasaklaw nito ang mga kinakailangang tool, pag-iingat sa kaligtasan, at hakbang-hakbang na pag-install."
+        },
+        "ur": {
+          "ppe": [
+            "حفاظتی شیشے",
+            "کام کے دستانے"
+          ],
+          "src": "89ba1d297e23",
+          "auto": true,
+          "steps": [
+            "ریفریجریٹر سے بجلی منقطع کریں۔",
+            "کھانا، شیلف، اور آئس باکس فاشیا کو ہٹا دیں۔",
+            "پانی کے ذخائر کا احاطہ ہٹا دیں۔",
+            "پانی کی نلیاں اور بجلی کے کنیکٹر منقطع کریں۔",
+            "نیا والو انسٹال کریں اور تمام اجزاء کو دوبارہ جوڑیں۔"
+          ],
+          "title": "ریفریجریٹر واٹر انلیٹ والو کو تبدیل کرنا",
+          "safety": "کسی بھی برقی ٹیسٹ یا پینل کو ہٹانے سے پہلے ہمیشہ ریفریجریٹر سے بجلی کی فراہمی منقطع کریں۔",
+          "summary": "یہ ویڈیو دکھاتا ہے کہ KitchenAid ریفریجریٹر میں ناقص واٹر انلیٹ والو کی جانچ اور اسے تبدیل کرنے کا طریقہ۔ یہ ضروری آلات، حفاظتی احتیاطی تدابیر اور مرحلہ وار تنصیب کا احاطہ کرتا ہے۔"
+        }
+      },
       "yt": "6sMVeolijKQ",
       "ppe": [
         "Safety Glasses",

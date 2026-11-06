@@ -199,12 +199,6 @@
       "category": "Duct & Kitchen Exhaust"
     },
     {
-      "url": "https://www.youtube.com/@DCDDubai",
-      "name": "Dubai Civil Defence",
-      "active": true,
-      "category": "UAE Rules & Compliance"
-    },
-    {
       "url": "https://www.youtube.com/@DEWAOfficial",
       "name": "DEWA",
       "active": true,
@@ -217,19 +211,13 @@
       "category": "UAE Rules & Compliance"
     },
     {
-      "url": "https://www.youtube.com/@ADPHCUAE",
-      "name": "Abu Dhabi Public Health Centre",
-      "active": true,
-      "category": "UAE Rules & Compliance"
-    },
-    {
       "url": "https://www.youtube.com/@DubaiMunicipality",
       "name": "Dubai Municipality",
       "active": true,
       "category": "UAE Rules & Compliance"
     }
   ],
-  "maxQueue": 50,
+  "maxQueue": 150,
   "skipShorts": false,
   "lookbackDays": 60
 }

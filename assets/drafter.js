@@ -314,7 +314,15 @@
   const jsonOf = text => {
     const m = String(text || "").match(/[\[{][\s\S]*[\]}]/);
     if (!m) throw new Error("Gemini didn't return the expected format");
-    return JSON.parse(m[0]);
+    try { return JSON.parse(m[0]); } catch (first) {
+      // AI answers sometimes have small slips: a comma before } or ], a key without quotes, curly quotes, a missing comma
+      // between lines, or a cut-off ending. Repair those and try again.
+      let t = m[0].replace(/[\u201C\u201D]/g, '"').replace(/,\s*([}\]])/g, "$1")
+        .replace(/([{,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:/g, '$1"$2":')
+        .replace(/("|\]|\}|\d|true|false|null)(\s*\n\s*)(")/g, "$1,$2$3");
+      for (const cand of [t, t.replace(/,\s*$/, "") + "]}", t + "}"]) { try { return JSON.parse(cand); } catch {} }
+      throw first;
+    }
   };
 
   function aiPrompt({ title, category, subjects, categories }) {

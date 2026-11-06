@@ -1,106 +1,69 @@
 {
   "queue": [
     {
-      "yt": "k-Sv4R-GuyE",
+      "yt": "pxPVKzHgwK8",
       "draft": {
         "ppe": [
           "Safety Glasses",
-          "Safety Shoes",
           "Work Gloves"
         ],
         "quiz": [
           {
-            "q": "How many pumps do you need in your van to replace most models?",
-            "answer": 1,
-            "options": [
-              "Four pumps",
-              "Two pumps",
-              "Ten pumps"
-            ]
-          },
-          {
-            "q": "What tool is used to scan and identify the existing pump?",
+            "q": "What should you do first before accessing components?",
             "answer": 0,
             "options": [
-              "Grundfos Go app",
-              "Multimeter",
-              "Pipe wrench"
+              "Unplug the refrigerator",
+              "Open the freezer door",
+              "Clean the condenser coils"
             ]
           },
           {
-            "q": "What should you do before replacing the pump?",
+            "q": "What is the expected resistance range for the damper windings?",
             "answer": 1,
             "options": [
-              "Paint the pipes",
-              "Isolate and depressurize the system",
-              "Turn up the thermostat"
+              "10 to 50 ohms",
+              "373 to 456 ohms",
+              "1000 to 2000 ohms"
+            ]
+          },
+          {
+            "q": "How many pins does the damper wire connector have?",
+            "answer": 2,
+            "options": [
+              "2 pins",
+              "3 pins",
+              "4 pins"
             ]
           }
         ],
         "level": "Intermediate",
         "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Scan the old pump or nameplate using the Grundfos Go app.",
-          "Review the recommended replacement pump model and setup instructions.",
-          "Select the correct pump from the two pumps carried in transport.",
-          "Install the new pump on the existing pipe connections.",
-          "Configure and verify the pump settings using the app."
+          "Unplug the refrigerator before starting work.",
+          "Remove the control board cover on the back.",
+          "Press the test button to run test modes.",
+          "Check for airflow and test multimeter resistance.",
+          "Replace the air tower assembly if faulty."
         ],
-        "title": "Grundfos Alpha Go Pump Replacement",
+        "title": "Testing and Replacing a Refrigerator Air Damper",
         "review": {
-          "reason": "It clearly demonstrates a modern pump replacement method and app usage for HVAC technicians.",
+          "reason": "Clear and detailed step-by-step troubleshooting for appliance technicians.",
           "unsafe": [],
-          "quality": 8,
+          "quality": 9,
           "talking": true,
-          "language": "German",
+          "language": "English",
           "recommend": "approve",
-          "relevance": 9
+          "relevance": 10
         },
-        "safety": "Ensure the system power is safely isolated and depressurized before replacing any circulator pump.",
+        "safety": "Always unplug the refrigerator before accessing internal electrical components to prevent electric shock.",
         "source": "ai",
-        "subject": "Water Tank Cleaning",
-        "summary": "This video introduces the Grundfos Alpha Go pump series, which allows technicians to replace nearly 70 percent of integrated circulator pumps using just two pumps in their van.",
-        "category": "Water Tanks & Pumps",
+        "subject": "Refrigerator Cooling",
+        "summary": "This video demonstrates how to test an LG refrigerator air damper using test mode and replace the air tower assembly.",
+        "category": "Kitchen & Laundry Appliances",
         "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T02:25:53.313Z",
-      "title": "ALPHA GO | Faster replacement with just two pumps",
-      "channel": "Grundfos",
-      "duration": "",
-      "published": "2026-11-06T00:25:52.345Z",
-      "channelUrl": "https://www.youtube.com/@grundfos",
-      "description": "",
-      "channelCategory": "Water Tanks & Pumps",
-      "suggestedCategory": "Water Tanks & Pumps"
-    },
-    {
-      "yt": "pxPVKzHgwK8",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "How to Test and Replace an LG Refrigerator Air Damper",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Refrigerator Temperature Sensor Troubleshooting",
-        "summary": "",
-        "stepsFrom": "general"
       },
       "found": "2026-11-06T02:26:01.699Z",
       "title": "How to Test and Replace an LG Refrigerator Air Damper",
-      "aiError": "Gemini took too long",
-      "aiTries": 1,
       "channel": "AppliancePartsPros",
       "duration": "",
       "published": "2026-11-05T23:26:00.973Z",
@@ -108,80 +71,6 @@
       "description": "",
       "channelCategory": "Kitchen & Laundry Appliances",
       "suggestedCategory": "Kitchen & Laundry Appliances"
-    },
-    {
-      "yt": "g-uBaFwGuio",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Protective Footwear"
-        ],
-        "quiz": [
-          {
-            "q": "What should be done before removing an old circulation pump?",
-            "answer": 1,
-            "options": [
-              "Increase water pressure",
-              "Isolate electrical power and shut water valves",
-              "Bypass the control panel"
-            ]
-          },
-          {
-            "q": "How is the correct replacement pump identified using Grundfos GO?",
-            "answer": 1,
-            "options": [
-              "By guessing pipe dimensions",
-              "By scanning the pump nameplate or QR code",
-              "By measuring electrical current"
-            ]
-          },
-          {
-            "q": "What tool helps configure the new ALPHA GO pump settings?",
-            "answer": 0,
-            "options": [
-              "Mobile app via wireless connection",
-              "Manual pressure gauge",
-              "Hydraulic calibration key"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.6-flash",
-        "steps": [
-          "Scan the old pump QR code or nameplate using the mobile app.",
-          "Select the recommended replacement pump model identified in the app.",
-          "Isolate electrical power and close water supply valves.",
-          "Remove the existing pump head or full pump housing.",
-          "Install and secure the new ALPHA GO pump assembly.",
-          "Configure pump settings and verify operation via the mobile app."
-        ],
-        "title": "Grundfos ALPHA GO Circulation Pump Replacement",
-        "review": {
-          "reason": "Promotional product video in Polish, but clearly shows app-assisted pump identification and replacement.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": true,
-          "language": "Polish",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Isolate the electrical power supply and close water isolation valves before replacing any circulation pump.",
-        "source": "ai",
-        "subject": "Circulation Pump Replacement",
-        "summary": "This video demonstrates using the Grundfos GO app to scan an existing circulation pump, identify a compatible ALPHA GO replacement model, and install the new pump unit.",
-        "category": "Water Tanks & Pumps",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T02:25:54.149Z",
-      "title": "ALPHA GO | Two pumps for a quick replacement",
-      "channel": "Grundfos",
-      "duration": "",
-      "published": "2026-11-05T23:25:52.345Z",
-      "channelUrl": "https://www.youtube.com/@grundfos",
-      "description": "",
-      "channelCategory": "Water Tanks & Pumps",
-      "suggestedCategory": "Water Tanks & Pumps"
     },
     {
       "yt": "nyTgss2aMC8",
@@ -217,80 +106,6 @@
       "description": "The future of refrigeration starts with A2L refrigerants and smarter control systems. But the real game-changer is data.​\n\nWith cloud connectivity, refrigeration systems can now provide real-time insights that help operators monitor performance, diagnose issues and implement predictive maintenance strategies. ​\n\nWatch the full video to discover what the PENN System 550 can do for you.",
       "channelCategory": "Fire & Life Safety",
       "suggestedCategory": "Fire & Life Safety"
-    },
-    {
-      "yt": "bNf6VpaPcMY",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Protective Gloves",
-          "Safety Shoes"
-        ],
-        "quiz": [
-          {
-            "q": "Why must water barrel isolation valves be completely closed before heating?",
-            "answer": 0,
-            "options": [
-              "To prevent heat loss into the facility water loop",
-              "To increase water flow speed in the main building",
-              "To drain the cooling tower quickly"
-            ]
-          },
-          {
-            "q": "What pressure range does the presenter recommend for leak searching low-pressure chillers?",
-            "answer": 1,
-            "options": [
-              "1 to 2 PSIG",
-              "5 to 8 PSIG",
-              "25 to 30 PSIG"
-            ]
-          },
-          {
-            "q": "What is the primary function of a chiller pressurizer unit?",
-            "answer": 1,
-            "options": [
-              "To freeze the refrigerant into solid form",
-              "To raise internal pressure above vacuum for servicing",
-              "To flush oil out of the compressor motor"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.6-flash",
-        "steps": [
-          "Isolate both evaporator and condenser water barrels using shut-off valves.",
-          "Connect the pressurizer hot water loop to the evaporator barrel.",
-          "Recirculate heated water to raise the refrigerant temperature and pressure.",
-          "Set the desired target pressure on the automated heater control panel.",
-          "Perform required maintenance or leak testing once positive pressure is achieved.",
-          "Use a high-capacity recovery unit with push-pull setup for refrigerant extraction."
-        ],
-        "title": "Pressurizing Low-Pressure Chillers for Service and Recovery",
-        "review": {
-          "reason": "Provides valuable technical insights on safely raising low-pressure chiller pressure and selecting appropriate recovery gear.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Always monitor system pressure and ensure isolation valves hold properly to prevent over-pressurization or vessel damage.",
-        "source": "ai",
-        "subject": "Chilled Water Systems",
-        "summary": "This video explains how to pressurize low-pressure vacuum chillers using a hot water recirculating heater unit for maintenance and leak searching. It also covers isolation valve safety and recovery equipment selection.",
-        "category": "HVAC & Chillers",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-05T19:22:29.391Z",
-      "title": "Vacuum Chiller Pressurizing: The Isolation Step Most Techs Skip",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-11-05T16:00:08+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "The chiller is off and sitting in a vacuum. Pull a purge filter, change the oil filter, or take an oil sample from the sump, and the machine draws air in.\n\nA viewer asked how a contractor should set up a kit to get low pressure machines to a positive pressure for service, and what goes in a recovery kit for them. Here is the RefTec pressurizer I prefer, where to hook it up, the set points I run for routine service and leak search, and the recovery gear I carry for big low pressure jobs versus a small centrifugal or an air cooled machine.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nRecovery machine used: Navac NRDC4M\nAvailable through TruTech Tools. Code HVACTIME gets you 6 percent off.\n\nWhat's covered:\n\n- Why I recommend RefTec gear for low pressure work, where custom built rigs fit in, and why parts and support matter\n- Why RefTec recommends hooking the pressurizer to the evaporator: at idle the liquid refrigerant stacks in a flooded or falling film barrel, so the heat goes right where it is needed\n- Why I usually go through the condenser instead: the chilled water side is often a closed loop with no chemical feed, and you can upset that treatment\n- Why a low pressure machine sits in a vacuum when it is off, usually 1 to 3 psi below atmosphere, and how a filter change or oil sample can pull air into it\n- Isolating both barrels on inlet and outlet, and why a chilled water valve that bleeds by keeps the pressure from ever coming up\n- The set points I run: 1 psi for routine service, 5 to 8 psig for a leak search\n- What decides how long it takes: 230 or 460 volts, the size of the machine, and whether your isolation valves hold\n- Building your own heater rig, why it has to be a closed pressurized vessel and not an open barrel, and why you have to watch the pressure by hand\n- How the water loop recirculates through the heat chamber, and how the pressure sensor kicks the heater back on to hold set point as the machine cools during a long leak search\n- RefTec's LoVac, Cheetah, and AllVac, and why the AllVac is the one to get if you only buy one machine: high and low pressure, with an oil change between POE and mineral\n- Hose size for large transfers: half inch minimum, three quarter inch preferred\n- Why I leave the AllVac on the truck for a small centrifugal like a WMC or an air cooled job and grab the Navac NRDC4M instead\n- Why the pressurizer is a service and leak search tool, not part of your recovery setup\n- Liquid pump versus push pull or pull pull, and why I skip the liquid pump whether I am charging or recovering\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Pressurizer and Recovery Kits for Vacuum Chillers\n0:24 Why RefTec for Low Pressure Chillers\n1:04 Pressurizer on the Evaporator vs the Condenser\n1:58 Water Treatment Risk on the Chilled Water Side\n3:30 Why Low Pressure Chillers Sit in a Vacuum\n4:38 Isolating Both Barrels on Inlet and Outlet\n5:33 Pressure Set Points f",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
     },
     {
       "yt": "uiyQcyjlFPc",
@@ -464,8 +279,8 @@
       },
       "found": "2026-11-06T02:25:44.539Z",
       "title": "HOW TO CONNECT SYRUP, WATER & CO₂ LINES to an FBD Machine",
-      "aiError": "The caller does not have permission",
-      "aiTries": 1,
+      "aiError": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usa",
+      "aiTries": 2,
       "channel": "Learn A Trade (commercial equipment)",
       "duration": "",
       "published": "2026-11-05T04:25:43.679Z",
@@ -1893,6 +1708,66 @@
       "suggestedCategory": "BMS & Controls"
     },
     {
+      "yt": "sUKjNv2Lu2o",
+      "found": "2026-11-06T07:06:46.644Z",
+      "title": "PLC Program (Siemens TIA) with Simulation Software",
+      "channel": "Instrumentation Tools",
+      "duration": "",
+      "published": "2026-09-07T07:06:45.543Z",
+      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "Mf1C7Y0D0ec",
+      "found": "2026-11-06T07:06:43.409Z",
+      "title": "Introduction to Ignition SCADA",
+      "channel": "RealPars",
+      "duration": "",
+      "published": "2026-09-07T07:06:42.270Z",
+      "channelUrl": "https://www.youtube.com/@RealPars",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "Ey_J7_wxHSk",
+      "found": "2026-11-06T07:06:41.200Z",
+      "title": "SBA 559: How to Coordinate Electrical, Mechanical, and Controls Contractors",
+      "channel": "Smart Buildings Academy",
+      "duration": "",
+      "published": "2026-09-07T07:06:39.924Z",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
+      "description": "",
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "MbM0Za6OnGU",
+      "found": "2026-11-06T07:06:38.818Z",
+      "title": "Cornelius ED-150 Fountain Machine Install Steps",
+      "channel": "Learn A Trade (commercial equipment)",
+      "duration": "",
+      "published": "2026-09-07T07:06:37.403Z",
+      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
+      "description": "",
+      "channelCategory": "Kitchen & Laundry Appliances",
+      "suggestedCategory": "Kitchen & Laundry Appliances"
+    },
+    {
+      "yt": "HMh8C1fkJSg",
+      "found": "2026-11-06T07:06:26.358Z",
+      "title": "How to Paint Exterior Trim Like a Pro (Brushes, Rollers & Pro Tips)",
+      "channel": "Paint Life TV",
+      "duration": "",
+      "published": "2026-09-07T07:06:25.145Z",
+      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "description": "",
+      "channelCategory": "Painting & Waterproofing",
+      "suggestedCategory": "Painting & Waterproofing"
+    },
+    {
       "yt": "YYSneb2uZho",
       "found": "2026-11-06T02:25:46.749Z",
       "title": "SBA 560: Damper Sizing for Better HVAC Control and Building Automation",
@@ -1929,7 +1804,7 @@
       "suggestedCategory": "Plumbing & Drainage"
     }
   ],
-  "lastRun": "2026-11-06T02:26:19.901Z",
+  "lastRun": "2026-11-06T07:06:55.959Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -1976,211 +1851,212 @@
     "YW-9gtsDbtc",
     "DdLbtq4Ybt8",
     "TpTVUJPIkTU",
-    "NTPLqxrDI7s"
+    "NTPLqxrDI7s",
+    "g-uBaFwGuio"
   ],
   "channelStatus": {
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
       "via": "page",
-      "checked": "2026-11-06T02:25:18.867Z",
+      "checked": "2026-11-06T07:06:18.628Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
       "via": "page",
-      "checked": "2026-11-06T02:25:47.761Z",
-      "lastFound": 0
+      "checked": "2026-11-06T07:06:43.409Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
       "via": "page",
-      "checked": "2026-11-06T02:25:56.832Z",
-      "lastFound": 5
+      "checked": "2026-11-06T07:06:48.841Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
       "via": "page",
-      "checked": "2026-11-06T02:25:32.452Z",
+      "checked": "2026-11-06T07:06:31.708Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
       "via": "page",
-      "checked": "2026-11-06T02:25:21.997Z",
+      "checked": "2026-11-06T07:06:21.910Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
       "via": "page",
-      "checked": "2026-11-06T02:26:19.184Z",
+      "checked": "2026-11-06T07:06:55.244Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
       "via": "page",
-      "checked": "2026-11-06T02:25:14.750Z",
+      "checked": "2026-11-06T07:06:14.203Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
       "via": "page",
-      "checked": "2026-11-06T02:25:59.885Z",
+      "checked": "2026-11-06T07:06:52.025Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
       "via": "page",
-      "checked": "2026-11-06T02:25:30.382Z",
+      "checked": "2026-11-06T07:06:29.572Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
       "via": "page",
-      "checked": "2026-11-06T02:25:15.704Z",
+      "checked": "2026-11-06T07:06:15.177Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
       "via": "page",
-      "checked": "2026-11-06T02:25:17.822Z",
+      "checked": "2026-11-06T07:06:17.515Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
       "via": "page",
-      "checked": "2026-11-06T02:25:42.637Z",
+      "checked": "2026-11-06T07:06:36.221Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
       "via": "page",
-      "checked": "2026-11-06T02:25:51.339Z",
+      "checked": "2026-11-06T07:06:47.715Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
       "via": "page",
-      "checked": "2026-11-06T02:25:20.012Z",
+      "checked": "2026-11-06T07:06:19.733Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
       "via": "page",
-      "checked": "2026-11-06T02:25:57.944Z",
+      "checked": "2026-11-06T07:06:49.915Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
       "via": "page",
-      "checked": "2026-11-06T02:26:18.108Z",
-      "lastFound": 5
+      "checked": "2026-11-06T07:06:54.153Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
       "via": "page",
-      "checked": "2026-11-06T02:25:16.756Z",
+      "checked": "2026-11-06T07:06:16.371Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
       "via": "page",
-      "checked": "2026-11-06T02:25:13.396Z",
+      "checked": "2026-11-06T07:06:13.071Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
       "via": "page",
-      "checked": "2026-11-06T02:25:31.419Z",
+      "checked": "2026-11-06T07:06:30.674Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@appliancepartspros": {
       "id": "UCnMCOX6qSbTUQPyJJzRwPcg",
       "via": "page",
-      "checked": "2026-11-06T02:26:12.560Z",
-      "lastFound": 13
+      "checked": "2026-11-06T07:06:53.118Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
       "via": "page",
-      "checked": "2026-11-06T02:25:49.134Z",
+      "checked": "2026-11-06T07:06:44.478Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
       "via": "page",
-      "checked": "2026-11-06T02:25:50.216Z",
-      "lastFound": 0
+      "checked": "2026-11-06T07:06:46.644Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
       "via": "page",
-      "checked": "2026-11-06T02:25:46.749Z",
+      "checked": "2026-11-06T07:06:41.200Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
       "via": "page",
-      "checked": "2026-11-06T02:25:58.929Z",
+      "checked": "2026-11-06T07:06:51.006Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
       "via": "page",
-      "checked": "2026-11-06T02:25:33.528Z",
+      "checked": "2026-11-06T07:06:32.931Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
       "via": "page",
-      "checked": "2026-11-06T02:25:41.496Z",
+      "checked": "2026-11-06T07:06:35.137Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
       "via": "page",
-      "checked": "2026-11-06T02:25:44.539Z",
+      "checked": "2026-11-06T07:06:38.818Z",
       "lastFound": 1
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
       "via": "page",
-      "checked": "2026-11-06T02:25:21.036Z",
+      "checked": "2026-11-06T07:06:20.798Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
       "via": "page",
-      "checked": "2026-11-06T02:25:28.096Z",
+      "checked": "2026-11-06T07:06:27.428Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
       "via": "page",
-      "checked": "2026-11-06T02:25:40.379Z",
-      "lastFound": 6
+      "checked": "2026-11-06T07:06:34.046Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
       "via": "page",
-      "checked": "2026-11-06T02:25:25.068Z",
-      "lastFound": 1
+      "checked": "2026-11-06T07:06:24.059Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
       "via": "page",
-      "checked": "2026-11-06T02:25:29.159Z",
+      "checked": "2026-11-06T07:06:28.506Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
       "via": "page",
-      "checked": "2026-11-06T02:25:23.008Z",
+      "checked": "2026-11-06T07:06:22.929Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
       "via": "page",
-      "checked": "2026-11-06T02:25:27.091Z",
+      "checked": "2026-11-06T07:06:26.358Z",
       "lastFound": 1
     }
   }

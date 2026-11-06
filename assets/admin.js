@@ -140,6 +140,7 @@
     const q = fastQ[key] || (fastQ[key] = { fns: [], running: false });
     fn(data[key].json); q.fns.push(fn); rev++;
     if (!q.running) flushFast(key, q);
+    return Promise.resolve();
   }
   async function flushFast(key, q) {
     q.running = true; busy(true);
@@ -506,8 +507,8 @@
     }
     const n = Object.keys(found).length;
     if (!n) { msg.textContent = "Couldn't read any lengths. Check your internet and try again."; btn.disabled = false; return; }
-    await update("videos", d => { d.videos.forEach(v => { if (!v.duration && found[v.id]) v.duration = found[v.id]; }); return d; }, `Fill in ${n} video lengths`);
-    toast(`${n} lengths filled in. Live in about a minute.`); render();
+    updateFast("videos", d => { d.videos.forEach(v => { if (!v.duration && found[v.id]) v.duration = found[v.id]; }); return d; }, `Fill in ${n} video lengths`);
+    toast(`${n} lengths filled in.`); render();
   }
   let fillReport = "";   // result of the last "Write quizzes" run, kept on screen after the page redraws
   const quizCount = v => { const st = data.settings.json; return v && v.essential ? (+st.quizSizeEss || 5) : (+st.quizSize || 3); };
@@ -519,7 +520,7 @@
     const save = async () => {
       const ids = Object.keys(made); if (!ids.length) return;
       const batch = made; made = {};
-      await update("videos", d => { d.videos.forEach(v => { if (batch[v.id] && !(v.quiz && v.quiz.length)) v.quiz = batch[v.id]; }); d.updated = today(); return d; }, `Add quizzes to ${ids.length} videos`);
+      updateFast("videos", d => { d.videos.forEach(v => { if (batch[v.id] && !(v.quiz && v.quiz.length)) v.quiz = batch[v.id]; }); d.updated = today(); return d; }, `Add quizzes to ${ids.length} videos`);
     };
     for (let i = 0; i < todo.length; i++) {
       const v = todo[i];
@@ -545,7 +546,7 @@
     await save();
     fillReport = stopped
       ? `<span style="color:var(--danger)">${ABIcon("alert")} Stopped after ${inRow} failures in a row. ${total ? `${total} quizzes were saved. ` : "Nothing was saved. "}The AI said: <b>${esc(stopped)}</b></span>`
-      : `${ABIcon(fails ? "alert" : "checkCircle", fails ? "" : "ok")} ${total} quiz${total === 1 ? "" : "zes"} saved${fails ? `, ${fails} failed (last problem: ${esc(lastErr)}) — run it again to retry those` : ""}. Live in about a minute.`;
+      : `${ABIcon(fails ? "alert" : "checkCircle", fails ? "" : "ok")} ${total} quiz${total === 1 ? "" : "zes"} saved${fails ? `, ${fails} failed (last problem: ${esc(lastErr)}) — run it again to retry those` : ""}.`;
     toast(stopped ? "Quiz writing stopped — see the message" : `${total} quizzes saved`); render();
   }
 
@@ -600,11 +601,11 @@
       });
       if (!kill.size || !confirm(`Delete ${kill.size} duplicate video${kill.size > 1 ? "s" : ""}? The best of each group is kept.`)) return;
       const b = $("#dd-go"); b.disabled = true; b.textContent = "Deleting…";
-      await update("videos", d => { d.videos = d.videos.filter(y => !kill.has(y.id)); d.updated = today(); return d; }, `Remove ${kill.size} duplicate videos`);
+      updateFast("videos", d => { d.videos = d.videos.filter(y => !kill.has(y.id)); d.updated = today(); return d; }, `Remove ${kill.size} duplicate videos`);
       if ((data.paths.json.paths || []).some(p => (p.videos || []).some(x => kill.has(x))))
-        await update("paths", d => { (d.paths || []).forEach(p => p.videos = [...new Set((p.videos || []).map(x => kill.get(x) || x))]); return d; }, "Learning paths: use the kept video");
+        updateFast("paths", d => { (d.paths || []).forEach(p => p.videos = [...new Set((p.videos || []).map(x => kill.get(x) || x))]); return d; }, "Learning paths: use the kept video");
       if ((data.toolbox.json.talks || []).some(k => kill.has(k.video)))
-        await update("toolbox", d => { (d.talks || []).forEach(k => { if (kill.has(k.video)) k.video = kill.get(k.video); }); return d; }, "Toolbox talks: use the kept video");
+        updateFast("toolbox", d => { (d.talks || []).forEach(k => { if (kill.has(k.video)) k.video = kill.get(k.video); }); return d; }, "Toolbox talks: use the kept video");
       closeDrawer(); toast(`Deleted ${kill.size} duplicate${kill.size > 1 ? "s" : ""}`); render();
     };
     $("#drawer").hidden = false;
@@ -1032,12 +1033,12 @@
     $$("[data-p-edit]").forEach(b => b.onclick = () => { const i = +b.dataset.pEdit; pe = { index: i, p: JSON.parse(JSON.stringify(P()[i])) }; renderPaths(); });
     $$("[data-p-del]").forEach(b => b.onclick = async () => {
       const p = P()[+b.dataset.pDel]; if (!confirm(`Delete the path “${p.title}”? The videos stay in the library.`)) return;
-      await update("paths", d => { d.paths = (d.paths || []).filter(x => x.id !== p.id); return d; }, `Delete learning path: ${p.title}`);
+      updateFast("paths", d => { d.paths = (d.paths || []).filter(x => x.id !== p.id); return d; }, `Delete learning path: ${p.title}`);
       toast("Deleted."); render();
     });
     $$("[data-p-up]").forEach(b => b.onclick = async () => {
       const id = P()[+b.dataset.pUp].id;
-      await update("paths", d => { const i = d.paths.findIndex(x => x.id === id); if (i > 0) d.paths.splice(i - 1, 0, d.paths.splice(i, 1)[0]); return d; }, "Reorder learning paths");
+      updateFast("paths", d => { const i = d.paths.findIndex(x => x.id === id); if (i > 0) d.paths.splice(i - 1, 0, d.paths.splice(i, 1)[0]); return d; }, "Reorder learning paths");
       render();
     });
   }
@@ -1068,12 +1069,12 @@
       if (!a.path) return alert("Choose a learning path.");
       if (!a.due) delete a.due;
       if (!a.note) delete a.note;
-      await update("paths", d => { d.assignments = d.assignments || []; d.assignments.push(a); return d; }, "Assign learning path");
-      toast("Assigned. Live in about a minute."); render();
+      updateFast("paths", d => { d.assignments = d.assignments || []; d.assignments.push(a); return d; }, "Assign learning path");
+      toast("Assigned."); render();
     };
     $$("[data-as-del]").forEach(b => b.onclick = async () => {
       const a = AS()[+b.dataset.asDel]; if (!confirm("Remove this assignment? Staff progress is kept.")) return;
-      await update("paths", d => { d.assignments = (d.assignments || []).filter(x => x.id !== a.id); return d; }, "Remove assigned training");
+      updateFast("paths", d => { d.assignments = (d.assignments || []).filter(x => x.id !== a.id); return d; }, "Remove assigned training");
       render();
     });
   }
@@ -1127,13 +1128,13 @@
       // Changed wording → let the translator redo automatic translations.
       if (p.tr) for (const k in p.tr) if (p.tr[k].auto) p.tr[k].src = "";
       const isNew = pe.index < 0;
-      await update("paths", d => {
+      updateFast("paths", d => {
         d.paths = d.paths || [];
         const i = d.paths.findIndex(x => x.id === p.id);
         if (i >= 0) d.paths[i] = p; else d.paths.push(p);
         return d;
       }, `${isNew ? "Add" : "Edit"} learning path: ${p.title}`);
-      pe = null; toast(isNew ? "Published. Live in about a minute." : "Saved. Live in about a minute."); render();
+      pe = null; toast(isNew ? "Published." : "Saved."); render();
     };
   }
 
@@ -1231,7 +1232,7 @@
       $$("[data-fv-q]").forEach(b => b.onclick = async () => {
         const [rid, yt] = b.dataset.fvQ.split("|");
         const r = reqs.find(x => String(x.id) === rid), v = (found[rid] || []).find(x => x.yt === yt);
-        await update("pending", d => { d.queue = d.queue || []; if (!d.queue.some(i => i.yt === yt)) d.queue.unshift({ yt, title: v.title, channel: v.channel, suggestedCategory: r.category || "", description: "Found by Gemini for a staff request: " + r.topic, found: new Date().toISOString(), published: "", duration: "" }); return d; }, `Queue video for request: ${r.topic}`);
+        updateFast("pending", d => { d.queue = d.queue || []; if (!d.queue.some(i => i.yt === yt)) d.queue.unshift({ yt, title: v.title, channel: v.channel, suggestedCategory: r.category || "", description: "Found by Gemini for a staff request: " + r.topic, found: new Date().toISOString(), published: "", duration: "" }); return d; }, `Queue video for request: ${r.topic}`);
         b.innerHTML = ABIcon("check") + " In queue"; b.disabled = true; render();
       });
     };
@@ -1418,17 +1419,17 @@
     };
     $$("[data-st-toggle]").forEach(b => b.onclick = async () => {
       const x = (ppl.staff || []).find(y => y.hr === b.dataset.stToggle);
+      const was = x.active; x.active = !was; renderPeople();   // instant; undone if the save fails
       busy(true);
-      try { await sPost({ action: "staff-save", staff: [{ ...x, active: !x.active }] }); x.active = !x.active; } catch (err) { alert(err.message); }
+      try { await sPost({ action: "staff-save", staff: [{ ...x, active: !was }] }); } catch (err) { x.active = was; alert(err.message); renderPeople(); }
       finally { busy(false); }
-      renderPeople();
     });
     $$("[data-st-del]").forEach(b => b.onclick = async () => {
       if (!confirm(`Remove ${b.dataset.stDel} from the staff list? Their training records are kept. (Tip: Deactivate keeps them on the list.)`)) return;
+      const before = ppl.staff; ppl.staff = before.filter(y => y.hr !== b.dataset.stDel); renderPeople();   // instant; restored if it fails
       busy(true);
-      try { await sPost({ action: "staff-remove", hr: b.dataset.stDel }); ppl.staff = ppl.staff.filter(y => y.hr !== b.dataset.stDel); } catch (err) { alert(err.message); }
+      try { await sPost({ action: "staff-remove", hr: b.dataset.stDel }); } catch (err) { ppl.staff = before; alert(err.message); renderPeople(); }
       finally { busy(false); }
-      renderPeople();
     });
     const su = $("#sup-add");
     if (su) su.onsubmit = async e => {
@@ -1526,12 +1527,12 @@
     $$("[data-tk-edit]").forEach(b => b.onclick = () => { const i = +b.dataset.tkEdit; te = { index: i, k: JSON.parse(JSON.stringify(TK()[i])) }; renderToolbox(); });
     $$("[data-tk-del]").forEach(b => b.onclick = async () => {
       const k = TK()[+b.dataset.tkDel]; if (!confirm(`Delete the talk “${k.title}”?`)) return;
-      await update("toolbox", d => { d.talks = (d.talks || []).filter(x => x.id !== k.id); return d; }, `Delete toolbox talk: ${k.title}`);
+      updateFast("toolbox", d => { d.talks = (d.talks || []).filter(x => x.id !== k.id); return d; }, `Delete toolbox talk: ${k.title}`);
       toast("Deleted."); render();
     });
     $$("[data-tk-up]").forEach(b => b.onclick = async () => {
       const id = TK()[+b.dataset.tkUp].id;
-      await update("toolbox", d => { const i = d.talks.findIndex(x => x.id === id); if (i > 0) d.talks.splice(i - 1, 0, d.talks.splice(i, 1)[0]); return d; }, "Reorder toolbox talks");
+      updateFast("toolbox", d => { const i = d.talks.findIndex(x => x.id === id); if (i > 0) d.talks.splice(i - 1, 0, d.talks.splice(i, 1)[0]); return d; }, "Reorder toolbox talks");
       render();
     });
   }
@@ -1585,13 +1586,13 @@
         k.id = id;
       }
       const isNew = te.index < 0;
-      await update("toolbox", d => {
+      updateFast("toolbox", d => {
         d.talks = d.talks || [];
         const i = d.talks.findIndex(x => x.id === k.id);
         if (i >= 0) d.talks[i] = k; else d.talks.push(k);
         return d;
       }, `${isNew ? "Add" : "Edit"} toolbox talk: ${k.title}`);
-      te = null; toast(isNew ? "Published. Live in about a minute." : "Saved. Live in about a minute."); render();
+      te = null; toast(isNew ? "Published." : "Saved."); render();
     };
   }
 
@@ -1662,13 +1663,13 @@
       const url = $("#ch-url").value.trim().replace(/\/(videos|featured|shorts|streams)\/?$/, "");
       if (!/youtube\.com\/(@|channel\/|c\/|user\/)/.test(url)) return alert("Use a channel link like https://www.youtube.com/@ChannelName");
       const ch = { name: $("#ch-name").value.trim(), url, category: $("#ch-cat").value, active: true };
-      await update("channels", d => { d.channels = d.channels || []; if (!d.channels.some(x => x.url === url)) d.channels.push(ch); return d; }, `Add channel: ${ch.name}`);
+      updateFast("channels", d => { d.channels = d.channels || []; if (!d.channels.some(x => x.url === url)) d.channels.push(ch); return d; }, `Add channel: ${ch.name}`);
       toast("Channel added. It will be checked on the next run."); render();
     };
     $("#ch-opts").onsubmit = async e => {
       e.preventDefault();
       const look = +$("#o-look").value || 21, max = +$("#o-max").value || 150, shorts = $("#o-shorts").checked;
-      await update("channels", d => { d.lookbackDays = look; d.maxQueue = max; d.skipShorts = shorts; return d; }, "Update finder options");
+      updateFast("channels", d => { d.lookbackDays = look; d.maxQueue = max; d.skipShorts = shorts; return d; }, "Update finder options");
       toast("Saved");
     };
 
@@ -1684,7 +1685,7 @@
         if (url !== oldUrl && (c.channels || []).some(x => x.url === url)) return alert("That channel is already in the list.");
         const name = $("#ce-name").value.trim(), category = $("#ce-cat").value, active = $("#ce-active").checked;
         if (!name) return alert("Add a name.");
-        await update("channels", d => {
+        updateFast("channels", d => {
           const ch = (d.channels || []).find(x => x.url === oldUrl);
           if (ch) Object.assign(ch, { name, url, category, active });
           return d;
@@ -1725,7 +1726,7 @@
     });
     $$("[data-sugg-add]").forEach(b => b.onclick = async () => {
       const [cat, url] = b.dataset.suggAdd.split("|"), x = (sugg[cat] || []).find(y => y.url === url);
-      await update("channels", d => { d.channels = d.channels || []; if (!d.channels.some(y => y.url === url)) d.channels.push({ name: (x && x.name) || url, url, category: cat, active: true }); return d; }, `Add channel: ${(x && x.name) || url}`);
+      updateFast("channels", d => { d.channels = d.channels || []; if (!d.channels.some(y => y.url === url)) d.channels.push({ name: (x && x.name) || url, url, category: cat, active: true }); return d; }, `Add channel: ${(x && x.name) || url}`);
       toast("Channel added. It will be checked on the next run."); renderChannels();
     });
   }
@@ -2013,7 +2014,7 @@
         await loadKeys();
         try { const m = $("#s-gmodel"); if (m) localStorage.setItem("ab_gemini_model", m.value); } catch {}
       }
-      await update("settings", d => { Object.assign(d, vals); delete d.requestUrl; delete d.recordsEnabled; return d; }, "Update site settings");
+      updateFast("settings", d => { Object.assign(d, vals); delete d.requestUrl; delete d.recordsEnabled; return d; }, "Update site settings");
       reqs = null; loadRequests().then(badgeRequests);
       toast("Settings saved. Staff see it the next time they open the app."); render();
     };
@@ -2121,8 +2122,8 @@
     else if (d.review) approve(d.review);
     else if (d.reject) removeFromQueue(d.reject, true).then(() => { toast("Rejected. It won't be suggested again."); render(); });
     else if (d.preview) t.outerHTML = `<div class="preview" style="margin:0;border-radius:0"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(d.preview)}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div>`;
-    else if (d.chToggle) { const i = +d.chToggle; update("channels", x => { x.channels[i].active = x.channels[i].active === false; return x; }, "Pause/resume channel").then(render); }
-    else if (d.chDel) { const i = +d.chDel; const ch = data.channels.json.channels[i]; if (confirm(`Remove ${ch.name}?`)) update("channels", x => { x.channels = x.channels.filter(c => c.url !== ch.url); return x; }, `Remove channel: ${ch.name}`).then(render); }
+    else if (d.chToggle) { const i = +d.chToggle; updateFast("channels", x => { x.channels[i].active = x.channels[i].active === false; return x; }, "Pause/resume channel").then(render); }
+    else if (d.chDel) { const i = +d.chDel; const ch = data.channels.json.channels[i]; if (confirm(`Remove ${ch.name}?`)) updateFast("channels", x => { x.channels = x.channels.filter(c => c.url !== ch.url); return x; }, `Remove channel: ${ch.name}`).then(render); }
   });
   document.addEventListener("keydown", e => { if (e.key === "Escape") { closeMore(); if (!$("#drawer").hidden) closeDrawer(); } });
   $("#disconnect").onclick = async () => { if (!confirm("Sign out of the admin on this device?")) return; await sb.auth.signOut(); me = null; renderConnect(); };

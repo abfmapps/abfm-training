@@ -266,15 +266,39 @@
 
   /* ---------- data ---------- */
   // Text only (titles, steps, quizzes, translations). Videos themselves always play from YouTube.
+  // Shows the last saved copy at once (no waiting for the network), then swaps in the fresh copy when it arrives.
+  function showContent(c) {
+    const vd = c.videos || {}, health = c.health || { problems: [] }, pd = c.paths || {}, tb = c.toolbox || {};
+    state.settings = Object.assign({ categories: [], newDays: 7 }, c.settings || {});
+    const dead = new Set((health.problems || []).filter(p => p.status === "notfound").map(p => p.yt));
+    state.videos = (vd.videos || []).filter(v => v && v.yt && !v.hidden && !dead.has(v.yt))
+      .map(v => Object.assign({ level: "Intermediate", ppe: [], steps: [], summary: "", safety: "" }, v));
+    state.updated = vd.updated || "";
+    state.talks = (tb.talks || []).filter(k => k && k.id && k.title && !k.hidden);
+    state.paths = (pd.paths || []).filter(p => p && p.id && !p.hidden && (p.videos || []).some(id => byId(id)));
+    state.assignments = (pd.assignments || []).filter(a => a && a.path && state.paths.some(p => p.id === a.path));
+    state.ready = true;
+    applySettings();
+    route();
+  }
   async function load() {
-    renderSkeleton();
     const cacheKey = "ab_content_" + state.lang;
+    const saved = store.get(cacheKey, null);
+    let painted = false;
+    if (saved && saved.ok) { try { showContent(saved); painted = true; } catch {} }
+    if (!painted) renderSkeleton();
     let c = null, offlineCopy = false;
     try {
       c = await rpc("app_content", { p_token: state.profile.token || null, p_lang: state.lang });
       if (c && c.ok) store.set(cacheKey, c);
     } catch (e) {
-      c = store.get(cacheKey, null); offlineCopy = !!c;
+      c = saved; offlineCopy = !!c;
+    }
+    if (painted && c && c.ok && !offlineCopy) {
+      // Same content as the saved copy: nothing to redraw. Don't interrupt someone who is watching a video.
+      if (JSON.stringify(c) !== JSON.stringify(saved) && !/^#\/v\//.test(location.hash)) showContent(c);
+      checkPaths(); flush(); refreshMe();
+      return;
     }
     if (c && !c.ok && (c.error === "login" || c.error === "inactive")) {
       if (state.profile.token) signOut(true, true);
@@ -293,18 +317,7 @@
       $("#retry").onclick = load;
       return;
     }
-    const vd = c.videos || {}, health = c.health || { problems: [] }, pd = c.paths || {}, tb = c.toolbox || {};
-    state.settings = Object.assign({ categories: [], newDays: 7 }, c.settings || {});
-    const dead = new Set((health.problems || []).filter(p => p.status === "notfound").map(p => p.yt));
-    state.videos = (vd.videos || []).filter(v => v && v.yt && !v.hidden && !dead.has(v.yt))
-      .map(v => Object.assign({ level: "Intermediate", ppe: [], steps: [], summary: "", safety: "" }, v));
-    state.updated = vd.updated || "";
-    state.talks = (tb.talks || []).filter(k => k && k.id && k.title && !k.hidden);
-    state.paths = (pd.paths || []).filter(p => p && p.id && !p.hidden && (p.videos || []).some(id => byId(id)));
-    state.assignments = (pd.assignments || []).filter(a => a && a.path && state.paths.some(p => p.id === a.path));
-    state.ready = true;
-    applySettings();
-    route();
+    showContent(c);
     if (offlineCopy) toast(t("offline"));
     checkPaths(); flush(); refreshMe();
   }

@@ -241,12 +241,6 @@
       "category": "UAE Rules & Compliance"
     },
     {
-      "url": "https://www.youtube.com/@GreenheckFans",
-      "name": "Greenheck Fans",
-      "active": true,
-      "category": "Duct & Kitchen Exhaust"
-    },
-    {
       "url": "https://www.youtube.com/@HVACGuide",
       "name": "HVAC Guide",
       "active": true,
@@ -259,44 +253,20 @@
       "category": "Duct & Kitchen Exhaust"
     },
     {
-      "url": "https://www.youtube.com/@NADCAHQ",
+      "url": "https://www.youtube.com/@NADCAHVAC",
       "name": "NADCA - National Air Duct Cleaners Association",
       "active": true,
       "category": "Duct & Kitchen Exhaust"
     },
     {
-      "url": "https://www.youtube.com/@HVACInTraining",
-      "name": "HVAC In Training",
-      "active": true,
-      "category": "Duct & Kitchen Exhaust"
-    },
-    {
-      "url": "https://www.youtube.com/@ISSAworldwide",
+      "url": "https://www.youtube.com/c/ISSAMediaTV/playlists",
       "name": "ISSA - International Sanitary Supply Association",
-      "active": true,
-      "category": "Cleaning & Housekeeping"
-    },
-    {
-      "url": "https://www.youtube.com/@WindowCleaningResource",
-      "name": "Window Cleaning Resource",
       "active": true,
       "category": "Cleaning & Housekeeping"
     },
     {
       "url": "https://www.youtube.com/@CleanMySpace",
       "name": "Clean My Space",
-      "active": true,
-      "category": "Cleaning & Housekeeping"
-    },
-    {
-      "url": "https://www.youtube.com/@KaivacInc",
-      "name": "Kaivac Inc",
-      "active": true,
-      "category": "Cleaning & Housekeeping"
-    },
-    {
-      "url": "https://www.youtube.com/@Karcher",
-      "name": "Kärcher",
       "active": true,
       "category": "Cleaning & Housekeeping"
     }

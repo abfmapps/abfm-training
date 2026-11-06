@@ -1,6 +1,149 @@
 {
   "queue": [
     {
+      "yt": "opqaGusPlS0",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the paint caddy used for?",
+            "answer": 0,
+            "options": [
+              "Storing wet paint rollers",
+              "Mixing drywall compound",
+              "Cleaning brushes with water"
+            ]
+          },
+          {
+            "q": "What type of seal does the caddy create?",
+            "answer": 1,
+            "options": [
+              "Open air seal",
+              "Hermetic seal",
+              "Loose plastic seal"
+            ]
+          },
+          {
+            "q": "Can the container also be used as a stand?",
+            "answer": 2,
+            "options": [
+              "No",
+              "Only for small tools",
+              "Yes"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Open the lid of the paint caddy container.",
+          "Place the paint roller inside the tray.",
+          "Close the lid and secure the hermetic seal.",
+          "Store tools or handle the container as needed."
+        ],
+        "title": "Using the Paint Caddy Roller Storage Container",
+        "review": {
+          "reason": "Clear demonstration of a useful painting accessory tool.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "approve",
+          "relevance": 7
+        },
+        "safety": "Ensure hands and equipment are dry before handling tools.",
+        "source": "ai",
+        "subject": "Painting & Waterproofing",
+        "summary": "Demonstration of the Paint Caddy airtight container designed to keep paint rollers wet between uses.",
+        "category": "Painting & Waterproofing",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T13:20:42.969Z",
+      "title": "Universal paint tray or useless tool? #innovation",
+      "channel": "Paint Life TV",
+      "duration": "",
+      "published": "2026-11-06T13:18:56+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "description": "",
+      "channelCategory": "Painting & Waterproofing",
+      "suggestedCategory": "Painting & Waterproofing"
+    },
+    {
+      "yt": "8q3cQ01S54o",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What is the contact time for the new Clorox Purell ProCare wipe?",
+            "answer": 0,
+            "options": [
+              "One minute",
+              "Ten minutes",
+              "Thirty minutes"
+            ]
+          },
+          {
+            "q": "Which companies merged to form the new entity?",
+            "answer": 0,
+            "options": [
+              "Clorox Professional and Gojo",
+              "Clorox and Purell",
+              "Gojo and ProCare"
+            ]
+          },
+          {
+            "q": "Where can attendees visit the sponsor booths?",
+            "answer": 0,
+            "options": [
+              "ISSA Healthcare Hub",
+              "Registration desk",
+              "Main lobby"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Introduce Clorox Purell ProCare healthcare cleaning solutions.",
+          "Discuss the merger of Clorox Professional and Gojo.",
+          "Highlight the new one-minute alcohol wipe.",
+          "Review touch-free dispenser innovations.",
+          "Explain the ISSA Healthcare Hub exhibit activities."
+        ],
+        "title": "Clorox Purell ProCare Healthcare Disinfectant Wipes",
+        "review": {
+          "reason": "This is a promotional product interview rather than a practical maintenance training video.",
+          "unsafe": [],
+          "quality": 6,
+          "talking": true,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Follow proper contact times for disinfectants to ensure effective infection prevention.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "An interview with Joel Rich discussing Clorox Purell ProCare products and their new one-minute quaternary alcohol wipe.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T13:21:12.816Z",
+      "title": "Clorox Purell ProCare Brings a One-Minute Wipe to the ISSA Healthcare Hub",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-05T22:47:27+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What can healthcare cleaning teams learn from the companies supporting ISSA Healthcare at ISSA Show North America?\n\nIn this conversation, ISSA’s Jeff Cross and Linda Lybert speak with one of the valued sponsors about a challenge facing healthcare cleaning teams, the solutions the company offers and what attendees can learn by connecting at the show.\n\nThe discussion includes practical advice for healthcare facility managers and building service contractors serving the healthcare market.\n\nLearn more about ISSA Healthcare at ISSA Show North America:https://www.issa.com/healthcare-newsletter/healthcare-takes-center-stage-at-issa-show-north-america-2026/\n\nSubscribe to Cleanfax:\nhttps://cleanfax.com/subscriptions/\n\nSubscribe to CMM:\nhttps://cmmonline.com/subscribe\n\nAbout ISSA:\nhttps://go.issa.com/issa-membership-form\n\n#ISSAHealthcare #ISSAShow #HealthcareCleaning #EnvironmentalServices #CommercialCleaning",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "nyTgss2aMC8",
       "draft": {
         "ppe": [
@@ -36,147 +179,77 @@
       "suggestedCategory": "Fire & Life Safety"
     },
     {
-      "yt": "If80kp1wb44",
+      "yt": "DdwDt1HL57U",
       "draft": {
         "ppe": [
           "Gloves",
+          "Face Mask",
           "Safety Glasses"
         ],
         "quiz": [
           {
-            "q": "What is the first step in wildfire preparedness?",
+            "q": "What is a major source of contamination in hospitals?",
             "answer": 1,
             "options": [
-              "Clear debris",
-              "Organize your community",
-              "Submit renewal application"
+              "Ceiling tiles",
+              "Floors",
+              "Windows"
             ]
           },
           {
-            "q": "What should you do to homes and plants?",
-            "answer": 0,
+            "q": "What type of mop pads are primarily offered?",
+            "answer": 1,
             "options": [
-              "Trim plants and update homes",
-              "Remove all surrounding soil",
-              "Paint the roof red"
+              "Cotton rags",
+              "Disposable microfiber",
+              "Sponge mops"
             ]
           },
           {
-            "q": "Who do you report your progress to each year?",
+            "q": "Why is side-by-side support important?",
             "answer": 1,
             "options": [
-              "Local police",
-              "NFPA",
-              "Fire department chief"
+              "To sell more chemicals",
+              "To help train staff on product usage",
+              "To inspect building structure"
             ]
           }
         ],
         "level": "Beginner",
         "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Organize your community members.",
-          "Assess wildfire risks and set clear goals.",
-          "Clear debris, trim plants, and update homes.",
-          "Report your progress to NFPA each year."
+          "Identify specific cleaning challenges in healthcare facilities",
+          "Provide side-by-side support and staff training",
+          "Select appropriate microfiber mop pads for different areas",
+          "Dispose of used mop pads to prevent cross-contamination",
+          "Network with facility cleaning teams at industry events"
         ],
-        "title": "Wildfire Preparedness and Community Renewal",
+        "title": "Healthcare Facility Cleaning and Mop Solutions",
         "review": {
-          "reason": "Useful general safety planning content, though not focused on standard technical maintenance.",
+          "reason": "It is an interview about cleaning products rather than a direct technical cleaning demonstration.",
           "unsafe": [],
-          "quality": 8,
+          "quality": 7,
           "talking": true,
           "language": "English",
           "recommend": "maybe",
-          "relevance": 4
+          "relevance": 6
         },
-        "safety": "Ensure proper protective gear when clearing flammable debris and vegetation around buildings.",
+        "safety": "Ensure proper hygiene and contamination prevention protocols are followed when cleaning healthcare facilities.",
         "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video outlines the steps to organize, plan, execute maintenance, and report progress for community wildfire safety renewal.",
-        "category": "Health & Safety",
+        "subject": "Floor Cleaning Machine",
+        "summary": "An interview with Contec Professional discussing cleaning solutions, microfiber mops, and side-by-side support for healthcare facilities.",
+        "category": "Cleaning & Housekeeping",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-06T12:49:22.157Z",
-      "title": "Strengthening Wildfire Preparedness Through Firewise USA®",
-      "channel": "NFPA",
+      "found": "2026-11-06T13:21:13.879Z",
+      "title": "Contec Professional Brings Side-by-Side Support to the ISSA Healthcare Hub",
+      "channel": "ISSA - International Sanitary Supply Association",
       "duration": "",
-      "published": "2026-11-05T16:12:36+00:00",
-      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
-      "description": "Firewise USA® communities, it's time to renew submissions are due November 20!\n \nYour hard work makes a difference in building wildfire resilience. From reducing vegetation to tackling projects around your community, every action counts.\n \nReport your annual progress and complete your Firewise USA® renewal to maintain your recognition. \n \nWatch the video to learn more about the renewal process.\n \n#FirewiseUSA #WildfirePreparedness #WildfireResilience",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "jnNQFpnoreQ",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "High-Visibility Vest",
-          "Steel-Toed Boots"
-        ],
-        "quiz": [
-          {
-            "q": "What technology is used for scene scanning?",
-            "answer": 0,
-            "options": [
-              "3D Laser Scanning",
-              "Standard Cameras",
-              "Audio Recorders"
-            ]
-          },
-          {
-            "q": "Which organization defines forensic engineering?",
-            "answer": 0,
-            "options": [
-              "NFE",
-              "NICE",
-              "NIFI"
-            ]
-          },
-          {
-            "q": "What is analyzed to determine fracture causes?",
-            "answer": 0,
-            "options": [
-              "Material Evidence",
-              "Audio Logs",
-              "Weather Reports"
-            ]
-          }
-        ],
-        "level": "Advanced",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Analyze accident scenes using 3D scanning technology.",
-          "Examine material evidence with advanced laboratory instruments.",
-          "Reconstruct face and skull structures using DNA and imaging.",
-          "Compare fractures to determine the cause of failure."
-        ],
-        "title": "Forensic Engineering in Criminal Investigations",
-        "review": {
-          "reason": "Useful for understanding forensic engineering practices, though more theoretical than practical for technicians.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "Arabic",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Ensure proper verification of all forensic evidence before concluding any investigation.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video discusses forensic engineering and its role in Dubai Police investigations by analyzing technical evidence and accident scenes.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T12:38:50.297Z",
-      "title": "بودكاست شرطة دبي | الهندسة الجنائية...حين تتحول التفاصيل إلى أدلة",
-      "channel": "Dubai Police",
-      "duration": "",
-      "published": "2026-11-05T12:03:27+00:00",
-      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
-      "description": "كيف يمكن لتفصيل صغير في مسرح الجريمة أن يكشف الحقيقة؟ وكيف تسهم العلوم الهندسية والتقنيات الحديثة في حل قضايا جنائية معقدة؟\n\nفي هذه الحلقة من بودكاست شرطة دبي، نستضيف المقدم الخبير الدكتور المهندس محمد علي القاسم، رئيس قسم الهندسة الجنائية في الإدارة العامة للأدلة الجنائية وعلم الجريمة بشرطة دبي، للحديث عن الدور المحوري للهندسة الجنائية في كشف ملابسات الجرائم والحوادث وتحويل التفاصيل الفنية إلى أدلة علمية دقيقة.\n\nنستعرض خلال الحلقة قضايا واقعية ساهمت الهندسة الجنائية في كشف أسرارها، من إعادة بناء ملامح وجه جثة متحللة وصولاً إلى تحديد هوية القاتل، إلى كشف جريمة قتل حاول مرتكبها إخفاءها على أنها انتحار، فضلاً عن قضية استخدم فيها الجناة الحريق لإخفاء معالم الجريمة.\n\nكما نتعرف على دور المسح ثلاثي الأبعاد والتوأمة الرقمية في إعادة بناء مسارح الحوادث، وأهمية بروتوكولات الفحص المعتمدة في تعزيز دقة التحقيقات، إلى جانب جهود شرطة دبي في تطوير هذا التخصص وتوظيفه لحماية الأرواح والممتلكات.\n\nحلقة تكشف كيف تتحول التفاصيل التي قد تبدو بسيطة إلى أدلة حاسمة تقود إلى \nالحقيقة وتحقيق العدالة.\n\n#بودكاست_شرطة_دبي #شرطة_دبي #الهندسة_الجنائية",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-11-05T16:33:35+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What can healthcare cleaning teams learn from the companies supporting ISSA Healthcare at ISSA Show North America?\n\nIn this conversation, ISSA’s Jeff Cross and Linda Lybert speak with one of the valued sponsors about a challenge facing healthcare cleaning teams, the solutions the company offers and what attendees can learn by connecting at the show.\n\nThe discussion includes practical advice for healthcare facility managers and building service contractors serving the healthcare market.\n\nLearn more about ISSA Healthcare at ISSA Show North America:https://www.issa.com/healthcare-newsletter/healthcare-takes-center-stage-at-issa-show-north-america-2026/\n\nSubscribe to Cleanfax:\nhttps://cleanfax.com/subscriptions/\n\nSubscribe to CMM:\nhttps://cmmonline.com/subscribe\n\nAbout ISSA:\nhttps://go.issa.com/issa-membership-form\n\n#ISSAHealthcare #ISSAShow #HealthcareCleaning #EnvironmentalServices #CommercialCleaning",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
       "yt": "OInuGc6qZVg",
@@ -215,125 +288,54 @@
       "suggestedCategory": "Kitchen & Laundry Appliances"
     },
     {
-      "yt": "0zA7FcoFUKU",
-      "draft": {
-        "ppe": [
-          "Safety Vest",
-          "Safety Shoes",
-          "Hard Hat"
-        ],
-        "quiz": [
-          {
-            "q": "What is the main goal of the Fire and Emergency Services section?",
-            "answer": 1,
-            "options": [
-              "To sell fire equipment",
-              "To improve training and education",
-              "To replace local fire departments"
-            ]
-          },
-          {
-            "q": "Who can join the NFPA Fire and Emergency Services section?",
-            "answer": 2,
-            "options": [
-              "Only fire chiefs",
-              "Only government officials",
-              "Fire and safety professionals"
-            ]
-          },
-          {
-            "q": "What is emphasized as important for modern fire services?",
-            "answer": 0,
-            "options": [
-              "Multi-agency response",
-              "Working alone",
-              "Ignoring new technology"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.1-flash-lite",
-        "steps": [
-          "Join the NFPA Fire and Emergency Services Member Section.",
-          "Participate in multi-agency response and interoperability training.",
-          "Access resources for fire and emergency management.",
-          "Collaborate with other fire safety professionals."
-        ],
-        "title": "Introduction to NFPA Fire and Emergency Services",
-        "review": {
-          "reason": "The video is a promotional introduction rather than a technical training procedure.",
-          "unsafe": [],
-          "quality": 5,
-          "talking": true,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 4
-        },
-        "safety": "Always ensure you are familiar with current NFPA standards and local fire safety regulations.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video introduces the NFPA Fire and Emergency Services Member Section and its mission to improve fire safety training and education.",
-        "category": "Fire & Life Safety",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T12:49:22.969Z",
-      "title": "36 Years in the Fire Service: Meet NFPA Member Section Chair Michael Young",
-      "channel": "NFPA",
-      "duration": "",
-      "published": "2026-11-04T15:49:47+00:00",
-      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
-      "description": "36 years in public safety and still helping shape the future of the fire service!\n \nMeet Chief Michael Young, chair of the NFPA Fire and Emergency Services Member Section. From firefighter and paramedic to deputy fire chief and educator, his career has been dedicated to protecting communities and sharing knowledge.\n \nWatch as Chief Young shares more about NFPA Member Sections and the value of connecting with fellow fire service professionals.\n \n#NFPA #FireService #FireSafety #Firefighters",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
       "yt": "uT91J47LpZ0",
       "draft": {
         "ppe": [
-          "Knee Pads",
-          "Safety Gloves"
+          "Safety Glasses",
+          "Work Gloves",
+          "Knee Pads"
         ],
         "quiz": [
           {
-            "q": "What tool is used to ensure the tiles are level?",
+            "q": "What tool is used to spread mortar on the membrane?",
             "answer": 1,
             "options": [
-              "A rubber mallet",
-              "Leveling clips and wedges",
-              "A notched trowel"
+              "Paint roller",
+              "Notched trowel",
+              "Putty knife"
             ]
           },
           {
-            "q": "What is applied to the mat before placing the tiles?",
+            "q": "What is placed between tiles to ensure even alignment?",
             "answer": 0,
             "options": [
-              "Thin-set mortar",
-              "Waterproof sealant",
-              "Construction adhesive"
+              "Leveling spacers and wedges",
+              "Wooden shims",
+              "Masking tape"
             ]
           },
           {
-            "q": "Why is a rubber mallet used during installation?",
-            "answer": 2,
+            "q": "How is excess mortar cleaned off the tile surface?",
+            "answer": 1,
             "options": [
-              "To break the tiles",
-              "To clean the mortar",
-              "To set the tiles firmly"
+              "With a wire brush",
+              "With a damp sponge",
+              "With compressed air"
             ]
           }
         ],
         "level": "Intermediate",
-        "model": "gemini-3.1-flash-lite",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Apply thin-set mortar to the uncoupling mat using a notched trowel.",
-          "Place the wood-look tile planks onto the mortar bed.",
-          "Insert leveling clips and wedges between the tile edges.",
-          "Tighten the wedges with a leveling tool to ensure a flat surface.",
-          "Tap the tiles with a rubber mallet to set them firmly."
+          "Spread thinset mortar evenly over the uncoupling membrane using a notched trowel.",
+          "Place tile leveling spacers along the edges of the mortar bed.",
+          "Lay wood-look plank tiles onto the mortar bed and press firmly.",
+          "Insert wedges into the spacers and tighten them with a leveling tool.",
+          "Remove excess mortar and clean the tile surface with a sponge."
         ],
         "title": "Installing Wood-Look Plank Tiles",
         "review": {
-          "reason": "The video clearly demonstrates a standard professional method for installing large format plank tiles.",
+          "reason": "Clear demonstration of laying wood-look plank tiles with uncoupling mats and leveling systems.",
           "unsafe": [],
           "quality": 8,
           "talking": false,
@@ -341,14 +343,14 @@
           "recommend": "approve",
           "relevance": 9
         },
-        "safety": "Ensure the subfloor is clean and the uncoupling mat is properly bonded before applying mortar to prevent tile failure.",
+        "safety": "Ensure proper knee protection and wear gloves when handling mortar and sharp spacers.",
         "source": "ai",
         "subject": "Tile Installation",
-        "summary": "This video demonstrates the process of applying thin-set mortar over an uncoupling mat and installing wood-look ceramic planks using a leveling spacer system.",
+        "summary": "This video demonstrates the procedure for applying thinset mortar over an uncoupling mat and installing wood-look plank tiles with leveling clips.",
         "category": "Civil & Carpentry",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-06T12:48:54.120Z",
+      "found": "2026-11-06T13:20:40.932Z",
       "title": "Dark Wood look Plank tile install #diy #tiles #construction #planktile",
       "channel": "Sal DiBlasi (tiling & waterproofing)",
       "duration": "",
@@ -359,76 +361,349 @@
       "suggestedCategory": "Civil & Carpentry"
     },
     {
-      "yt": "kBtFIi1GAWM",
+      "yt": "7uENPsKLBwI",
       "draft": {
-        "ppe": [
-          "Uniform",
-          "White Gloves"
-        ],
+        "ppe": [],
         "quiz": [
           {
-            "q": "Where should the flag be positioned before the ceremony starts?",
-            "answer": 1,
-            "options": [
-              "At the very top",
-              "At the bottom third",
-              "On the ground"
-            ]
-          },
-          {
-            "q": "What is the role of the guard on the left side of the pole?",
-            "answer": 1,
-            "options": [
-              "To hold the flag rope",
-              "To hold the flag fabric",
-              "To play the music"
-            ]
-          },
-          {
-            "q": "What must be avoided during the flag-raising process?",
+            "q": "What is the guest's background?",
             "answer": 0,
             "options": [
-              "Touching the ground",
-              "Using white gloves",
-              "Standing in uniform"
+              "Detroit, Michigan",
+              "New York City",
+              "Los Angeles, California"
+            ]
+          },
+          {
+            "q": "What company does Jeff Stone work for?",
+            "answer": 0,
+            "options": [
+              "ProTeam",
+              "ISS",
+              "Karcher"
+            ]
+          },
+          {
+            "q": "What advice does he give to newcomers?",
+            "answer": 1,
+            "options": [
+              "Stay uninvolved",
+              "Be engaged",
+              "Work alone"
             ]
           }
         ],
         "level": "Beginner",
-        "model": "gemini-3.1-flash-lite",
+        "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Lower the flag to the bottom third of the pole.",
-          "Assign two guards to stand on either side of the pole.",
-          "Wait for the signal to begin the raising process.",
-          "Raise the flag to the top of the pole in unison.",
-          "Perform a military salute during the national anthem."
+          "Reflect on your career path and experiences.",
+          "Engage with professional industry associations.",
+          "Mentor younger professionals entering the industry."
         ],
-        "title": "UAE Flag Raising Ceremony Protocol",
+        "title": "ISSA Industry Award Winner Interview",
         "review": {
-          "reason": "The video is relevant for cultural compliance training but does not cover technical facility maintenance.",
+          "reason": "This is an interview video rather than a practical maintenance or cleaning training procedure.",
           "unsafe": [],
           "quality": 8,
           "talking": true,
-          "language": "Arabic",
-          "recommend": "maybe",
+          "language": "English",
+          "recommend": "reject",
           "relevance": 2
         },
-        "safety": "Ensure the flag does not touch the ground at any point during the lowering or raising process.",
+        "safety": "Ensure proper posture and ergonomic comfort during long work sessions.",
         "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video demonstrates the formal protocol for the UAE flag-raising ceremony, including the lowering and raising of the flag by a military honor guard.",
-        "category": "UAE Rules & Compliance",
+        "subject": "Autonomous Vacuum Setup",
+        "summary": "An industry veteran shares his career journey and advice for cleaning professionals.",
+        "category": "Cleaning & Housekeeping",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-06T12:38:51.398Z",
-      "title": "مراسم رفع العلم في القيادة العامة لشرطة دبي | UAE Flag–Raising Ceremony",
-      "channel": "Dubai Police",
+      "found": "2026-11-06T13:21:15.002Z",
+      "title": "A Journey From the Family Soap Business to an ISSA Service Award",
+      "channel": "ISSA - International Sanitary Supply Association",
       "duration": "",
-      "published": "2026-11-03T21:37:37+00:00",
-      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
-      "description": "تجمعنا رايةٌ واحدة، ويوحِّدنا حب وطنٍ نفخر بالإنتماء إليه، وفي مشهدٍ وطني يجسد روح الاتحاد، يرتفع علم الإمارات في مختلف أنحاء الدولة، بمشاركة المواطنين والمقيمين والمؤسسات والأفراد احتفاءً براية عزنا ورمز وحدتنا.\n\n ومن مقر القيادة العامة لشرطة دبي، نشارك في هذه المناسبة الوطنية، ونرفع علم دولتنا عالياً، اعتزازاً بمجدها وفخراً بمنجزاتها. 🇦🇪\n\n#يوم_العلم\n\n\nAcross the UAE, government institutions, businesses, and communities come together to raise the national flag in a celebration of unity and pride.\n\nAt Dubai Police General Headquarters, we proudly join the nation in marking this special occasion, honouring the flag that symbolises our shared history, values, and aspirations. 🇦🇪\n\n#FlagDay",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-11-04T11:08:03+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What does it take to earn recognition in the cleaning and facility solutions industry?\n\nIn this ISSA award winner interview, Jeff Cross, media director with ISSA, explores the person and the work behind the honor. Hear how our guest got started, the contributions that led to this recognition and the lessons others can apply to their own careers.\n\nWe also discuss future goals, the people who helped along the way and a side of our guest you might not expect.\n\nJoin us as we celebrate this year’s ISSA award winners and share their stories.\n\nSubscribe to Cleanfax:https://cleanfax.com/subscriptions/\n\nSubscribe to CMM:https://cmmonline.com/subscribe\n\nAbout ISSA:https://go.issa.com/issa-membership-form\n\n#ISSA #ISSAAwards #CleaningIndustry #FacilitySolutions #IndustryLeaders #ProfessionalExcellence #StraightTalk",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "k3NacZ1fvbE",
+      "draft": {
+        "ppe": [],
+        "quiz": [
+          {
+            "q": "What award did Jameka Carter receive?",
+            "answer": 0,
+            "options": [
+              "ISSA Rising Star",
+              "Best Salesperson",
+              "Safety Technician of the Year"
+            ]
+          },
+          {
+            "q": "Which department did Jameka start in?",
+            "answer": 1,
+            "options": [
+              "Marketing",
+              "Credit Department",
+              "Customer Service"
+            ]
+          },
+          {
+            "q": "Who was Jameka's mentor and former boss?",
+            "answer": 1,
+            "options": [
+              "Jeff Cross",
+              "Laura Craven",
+              "Jimmy Core"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Introduce the emerging leader and award recipient.",
+          "Discuss early career beginnings and departmental transitions.",
+          "Highlight the impact of mentorship on professional growth.",
+          "Share advice for young professionals entering the industry."
+        ],
+        "title": "Jameka Carter Rising Star Success Story",
+        "review": {
+          "reason": "This is an interview podcast rather than a technical training video for maintenance technicians.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Ensure proper posture and comfortable seating during professional video interviews.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "An interview with Jameka Carter discussing her career journey, mentorship, and winning the ISSA Rising Star award.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T13:21:16.158Z",
+      "title": "Finding Her Strengths, Earning Her Spotlight: The Jameka Carter Story",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-04T11:05:14+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "In this episode, meet an ISSA Emerging Leaders Award winner building a career and contributing to the cleaning and facility solutions industry.\n\nLearn how this industry pro got started, the accomplishments to be proud of, and a powerful vision for the future.\n\nSubscribe to Cleanfax: https://cleanfax.com/subscriptions/\nSubscribe to CMM: https://cmmonline.com/subscribe\n\nAbout ISSA: https://go.issa.com/issa-membership-form\n\n#ISSA #ISSAEmergingLeaders #EmergingLeaders #CleaningIndustry #Leadership #YoungProfessionals #CareerDevelopment #Cleanfax #CMM",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "B258Gkwxw04",
+      "draft": {
+        "ppe": [
+          "None"
+        ],
+        "quiz": [
+          {
+            "q": "How many years has the guest been in the industry?",
+            "answer": 2,
+            "options": [
+              "20 years",
+              "30 years",
+              "42 years"
+            ]
+          },
+          {
+            "q": "What is considered the most important asset in the business?",
+            "answer": 0,
+            "options": [
+              "People",
+              "Equipment",
+              "Office space"
+            ]
+          },
+          {
+            "q": "What is one of the guest's favorite hobbies?",
+            "answer": 0,
+            "options": [
+              "Global travel",
+              "Car racing",
+              "Deep-sea fishing"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Introduce the guest and their industry background.",
+          "Discuss career beginnings and entrepreneurial growth.",
+          "Share hobbies and global travel experiences.",
+          "Reflect on receiving industry awards.",
+          "Provide advice on employee appreciation and continuous learning."
+        ],
+        "title": "Cleaning Industry Leadership and Career Insights",
+        "review": {
+          "reason": "This is an executive interview rather than a technical facility maintenance training video.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Ensure a safe and ergonomic workspace when conducting video interviews.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "An industry veteran discusses his career journey in facility services, leadership lessons, and the importance of employee care.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T13:21:17.186Z",
+      "title": "A Career Built on People, a Legacy Recognized by ISSA",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-04T11:03:51+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What does it take to earn recognition in the cleaning and facility solutions industry?\n\nIn this ISSA award winner interview, Jeff Cross, media director with ISSA, explores the person and the work behind the honor. Hear how our guest got started, the contributions that led to this recognition and the lessons others can apply to their own careers.\n\nWe also discuss future goals, the people who helped along the way and a side of our guest you might not expect.\n\nJoin us as we celebrate this year’s ISSA award winners and share their stories.\n\nSubscribe to Cleanfax: https://cleanfax.com/subscriptions/\n\nSubscribe to CMM: https://cmmonline.com/subscribe\n\nAbout ISSA: https://go.issa.com/issa-membership-form\n\n#ISSA #ISSAAwards #CleaningIndustry #FacilitySolutions #IndustryLeaders #ProfessionalExcellence #StraightTalk",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "E_9aP0O0ePw",
+      "draft": {
+        "ppe": [
+          "None"
+        ],
+        "quiz": [
+          {
+            "q": "Who founded Spartan Chemical Company?",
+            "answer": 0,
+            "options": [
+              "Steve Swigart's father",
+              "Jeff Cross",
+              "Ronald Reagan"
+            ]
+          },
+          {
+            "q": "When did Steve Swigart join the company?",
+            "answer": 1,
+            "options": [
+              "1960",
+              "1970",
+              "1984"
+            ]
+          },
+          {
+            "q": "What is described as the key to success in this industry?",
+            "answer": 1,
+            "options": [
+              "Advanced technology",
+              "Good people",
+              "Low chemical prices"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Introduce the guest and their company background.",
+          "Discuss industry milestones and historical moments.",
+          "Share advice for newcomers entering the cleaning industry.",
+          "Emphasize the importance of people in business."
+        ],
+        "title": "Industry Career Interview with Steve Swigart",
+        "review": {
+          "reason": "This is an interview video rather than a practical maintenance training module.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Ensure proper posture and comfort during extended seated interviews.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "An interview discussing the history and values of Spartan Chemical Company and the cleaning industry.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T13:21:18.352Z",
+      "title": "Steve Swigart and a Lifetime Built on People",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-04T11:03:32+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What does it take to earn recognition in the cleaning and facility solutions industry?\n\nIn this ISSA award winner interview, Jeff Cross, media director with ISSA, explores the person and the work behind the honor. Hear how our guest got started, the contributions that led to this recognition and the lessons others can apply to their own careers.\n\nWe also discuss future goals, the people who helped along the way and a side of our guest you might not expect.\n\nJoin us as we celebrate this year’s ISSA award winners and share their stories.\n\nSubscribe to Cleanfax:https://cleanfax.com/subscriptions/\n\nSubscribe to CMM:https://cmmonline.com/subscribe\n\nAbout ISSA: https://go.issa.com/issa-membership-form\n\n#ISSA #ISSAAwards #CleaningIndustry #FacilitySolutions #IndustryLeaders #ProfessionalExcellence #StraightTalk",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "7GPqCHEjqG0",
+      "draft": {
+        "ppe": [
+          "Business Attire"
+        ],
+        "quiz": [
+          {
+            "q": "What is the goal of the ISSA Hygieia Network?",
+            "answer": 0,
+            "options": [
+              "Advancing women in the cleaning industry",
+              "Selling cleaning chemicals",
+              "Repairing facility machines"
+            ]
+          },
+          {
+            "q": "What program supports women in their careers?",
+            "answer": 0,
+            "options": [
+              "Mentorship program",
+              "Apprenticeship scheme",
+              "Safety certification"
+            ]
+          },
+          {
+            "q": "How many members have grown through the network?",
+            "answer": 0,
+            "options": [
+              "Around 6,000",
+              "Less than 50",
+              "Exactly 1,000"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Share professional experiences and industry challenges",
+          "Encourage networking and career development for women",
+          "Highlight the growth and success of the mentorship program"
+        ],
+        "title": "ISSA Hygieia Network Founders History",
+        "review": {
+          "reason": "It offers inspirational insights on women in facility solutions, but lacks technical training content.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": true,
+          "language": "English",
+          "recommend": "maybe",
+          "relevance": 3
+        },
+        "safety": "Ensure all professional interactions remain respectful and supportive.",
+        "source": "ai",
+        "subject": "Floor Cleaning Machine",
+        "summary": "Founders of the ISSA Hygieia Network discuss their experiences supporting and advancing women in the cleaning and facility solutions industry.",
+        "category": "Cleaning & Housekeeping",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T13:21:19.497Z",
+      "title": "Meet the Founders of ISSA Hygieia Network",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-03T19:31:32+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "Every great movement begins with a vision. Meet the Founders of the ISSA Hygieia Network and discover the inspiration behind creating a community dedicated to advancing and retaining women in the cleaning and facility solutions industries. \n \nISSA Hygieia Network Founders: Ilham Kadri, Holly Borrego, Nathalie Doobin, Jill Kellermeyer Kegler, Marie Paule Nowlis, Meredith Reuben, Linda Silverman, and Lydia Work.\n \nLearn more about ISSA Hygieia Network: https://hygieianetwork.org",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
       "yt": "5XicGcEL9UY",
@@ -457,7 +732,7 @@
       "found": "2026-11-06T12:49:55.640Z",
       "title": "The BEST cleaning products and tools in 2026!",
       "aiError": "The caller does not have permission",
-      "aiTries": 1,
+      "aiTries": 2,
       "channel": "Clean My Space",
       "duration": "",
       "published": "2026-11-03T18:30:54+00:00",
@@ -525,6 +800,18 @@
       "suggestedCategory": "Water Tanks & Pumps"
     },
     {
+      "yt": "oVM_tmVgg-g",
+      "found": "2026-11-06T13:21:20.733Z",
+      "title": "Products, Practice and Proof: A Formula for Healthcare Cleaning",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-03T11:22:11+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What can healthcare cleaning teams learn from the companies supporting ISSA Healthcare at ISSA Show North America?\n\nIn this conversation, ISSA’s Jeff Cross and Linda Lybert speak with one of the valued sponsors about a challenge facing healthcare cleaning teams, the solutions the company offers and what attendees can learn by connecting at the show.\n\nThe discussion includes practical advice for healthcare facility managers and building service contractors serving the healthcare market.\n\nSubscribe to Cleanfax:\nhttps://cleanfax.com/subscriptions/\n\nSubscribe to CMM:\nhttps://cmmonline.com/subscribe\n\nAbout ISSA:\nhttps://go.issa.com/issa-membership-form\n\n#ISSAHealthcare #ISSAShow #HealthcareCleaning #EnvironmentalServices #CommercialCleaning",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "DkLPe4G_6wE",
       "found": "2026-11-06T12:49:36.998Z",
       "title": "موسيقي شرطة أبوظبي تعزف السلام الوطني تزامنًا مع احتفالية \"يوم العلم\" في متحف المقطع .",
@@ -535,6 +822,90 @@
       "description": "",
       "channelCategory": "UAE Rules & Compliance",
       "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "cNxcEhv8I6Y",
+      "found": "2026-11-06T13:21:22.202Z",
+      "title": "From Classroom Kid to IICRC-Approved Instructor",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T21:50:02+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What does it take to become one of the youngest IICRC-approved instructors in history—and what does that milestone mean beyond the title?\n\nIn this episode of Unscripted, Jeff Cross, media director with ISSA, explores one young professional’s journey into cleaning and restoration, the experiences that prepared him to teach and the challenges of earning credibility early in his career.\n\nThe conversation digs into why he chose this industry, what motivates him as an instructor and the responsibility of preparing technicians for real-world work.\n\nLearn more about the IICRC at https://iicrc.org\n\nSubscribe to Cleanfax:\nhttps://cleanfax.com/subscriptions/\n\nAbout ISSA:\nhttps://go.issa.com/issa-membership-form\n\n#IICRC #RestorationIndustry #CleaningIndustry #TechnicalTraining #CareerDevelopment #Cleanfax #ISSA #StraightTalk",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "8649eoxbvyQ",
+      "found": "2026-11-06T13:21:23.237Z",
+      "title": "From Classroom Kid to IICRC-Approved Instructor",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T20:53:41+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "What does it take to become one of the youngest IICRC-approved instructors in history—and what does that milestone mean beyond the title?",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "J6yzqkTqJb4",
+      "found": "2026-11-06T13:21:24.400Z",
+      "title": "Profit Leaks in Businesses: The Costs Hiding in Plain Sight",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T19:53:23+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "vjAApJUWVk8",
+      "found": "2026-11-06T13:21:25.476Z",
+      "title": "Callback Costs: Track Redos and Protect Your Profit",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T18:39:01+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "YrNvY-eSK_s",
+      "found": "2026-11-06T13:21:26.540Z",
+      "title": "The Hidden Profit Leak in Every Extra French Fry",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T18:38:37+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "a8Xzoq0NdHU",
+      "found": "2026-11-06T13:21:27.642Z",
+      "title": "Unpaid Invoices? Reclaim Your Cash Flow with This Follow-Up System",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T18:38:09+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "MrOEkfeZDlo",
+      "found": "2026-11-06T13:21:28.713Z",
+      "title": "Hidden Business Leaks: Keep More of What You Earn",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-02T18:37:44+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
       "yt": "4aloNbqPOwA",
@@ -862,6 +1233,18 @@
       "description": "A success of the NFPA Fire & Life Safety Ecosystem! FM, a Rhode Island-based commercial property insurer, earned a Guinness World Record for the world’s largest display of fire sprinklers, highlighting the importance of automatic suppression in reducing risk.\n \nAn FM vice president noted that fire remains the costliest and most dangerous threat to commercial property, and that sprinklers are highly effective in mitigating that risk. Watch the video to learn more. \n\nRead about other successes in the NFPA Journal Summer issue:\nhttps://www.nxtbook.com/nxtbooks/nfpa/journal_2026summer/index.php#/p/16",
       "channelCategory": "UAE Rules & Compliance",
       "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "xstfhUneW1I",
+      "found": "2026-11-06T13:21:10.491Z",
+      "title": "Your next connection. Your next big idea. Your next opportunity to grow.",
+      "channel": "NADCA - National Air Duct Cleaners Association",
+      "duration": "",
+      "published": "2026-10-22T15:22:47+00:00",
+      "channelUrl": "https://www.youtube.com/@NADCAHVAC",
+      "description": "Join the HVAC system hygiene community in Orlando, Florida, April 4–7, 2027, for NADCA’s 38th Annual Meeting & Exposition! Connect with industry peers, explore equipment and technology, and gain knowledge to help strengthen your business.\n\nWatch for a preview of what’s ahead—and make plans to join us!\n\n📅 April 4–7, 2027\n📍 Renaissance Orlando at SeaWorld | Orlando, FL\n\n#NADCA #NADCA2027 #HVAC #AirDuctCleaning",
+      "channelCategory": "Duct & Kitchen Exhaust",
+      "suggestedCategory": "Duct & Kitchen Exhaust"
     },
     {
       "yt": "kD_grCpbP3k",
@@ -2700,7 +3083,7 @@
       "suggestedCategory": "BMS & Controls"
     }
   ],
-  "lastRun": "2026-11-06T12:50:10.330Z",
+  "lastRun": "2026-11-06T13:21:30.270Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -2819,250 +3202,236 @@
     "Qy8K01YwNo4",
     "IlogIf64qGY",
     "ua4MKGNbv9I",
-    "hFkLVXMO0kM"
+    "hFkLVXMO0kM",
+    "jnNQFpnoreQ",
+    "If80kp1wb44",
+    "0zA7FcoFUKU",
+    "kBtFIi1GAWM"
   ],
   "channelStatus": {
-    "https://www.youtube.com/@Karcher": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:50:09.617Z"
-    },
-    "https://www.youtube.com/@NADCAHQ": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:49:50.879Z"
-    },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-06T12:48:45.968Z",
+      "checked": "2026-11-06T13:20:35.531Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MOHREUAE": {
       "id": "UCvR9cTL5kGeU_NqSr0hkFYQ",
-      "checked": "2026-11-06T12:49:18.222Z",
+      "checked": "2026-11-06T13:21:02.535Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
-      "checked": "2026-11-06T12:49:05.791Z",
+      "checked": "2026-11-06T13:20:53.265Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
-      "checked": "2026-11-06T12:49:09.035Z",
+      "checked": "2026-11-06T13:20:56.685Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
-      "checked": "2026-11-06T12:49:00.150Z",
+      "checked": "2026-11-06T13:20:47.384Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@HVACGuide": {
       "id": "UC4gjdUt6T7Swqtlet3cxkbA",
-      "checked": "2026-11-06T12:49:49.207Z",
+      "checked": "2026-11-06T13:21:07.451Z",
       "lastFound": 0
     },
-    "https://www.youtube.com/@KaivacInc": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:50:08.853Z"
+    "https://www.youtube.com/@NADCAHVAC": {
+      "id": "UCWo3GG5-vB6WuhZpki7rUng",
+      "checked": "2026-11-06T13:21:10.491Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-06T12:48:48.245Z",
+      "checked": "2026-11-06T13:20:38.267Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
-      "checked": "2026-11-06T12:49:16.677Z",
+      "checked": "2026-11-06T13:21:00.910Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/ADPoliceHQ": {
       "id": "UCLqu78o49yHSQTOUEWh_8Vg",
-      "checked": "2026-11-06T12:49:46.717Z",
-      "lastFound": 12
+      "checked": "2026-11-06T13:21:05.951Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-06T12:48:42.645Z",
+      "checked": "2026-11-06T13:20:31.867Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CleanMySpace": {
       "id": "UCGozdt7Wbd15k7dWhvlmLUw",
-      "checked": "2026-11-06T12:50:08.092Z",
-      "lastFound": 15
+      "checked": "2026-11-06T13:21:29.552Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@DEWAOfficial": {
       "id": "UCwqM2Kj0TAvbNHpeivY5I-g",
-      "checked": "2026-11-06T12:49:17.466Z",
+      "checked": "2026-11-06T13:21:01.744Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
-      "checked": "2026-11-06T12:49:15.046Z",
+      "checked": "2026-11-06T13:20:59.212Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
-      "checked": "2026-11-06T12:48:58.538Z",
+      "checked": "2026-11-06T13:20:45.492Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-06T12:48:43.542Z",
+      "checked": "2026-11-06T13:20:32.801Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DubaiPoliceHQ": {
       "id": "UCMebk44F_zVLj-7aD_mSUhQ",
-      "checked": "2026-11-06T12:49:47.539Z",
+      "checked": "2026-11-06T13:21:06.655Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-06T12:48:45.158Z",
+      "checked": "2026-11-06T13:20:34.642Z",
       "lastFound": 0
-    },
-    "https://www.youtube.com/@GreenheckFans": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:49:48.316Z"
-    },
-    "https://www.youtube.com/@ISSAworldwide": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:49:52.418Z"
     },
     "https://www.youtube.com/@TheHVACDoctor": {
       "id": "UCGpL47XAGpNr_TAa-30UTbg",
-      "checked": "2026-11-06T12:49:50.117Z",
+      "checked": "2026-11-06T13:21:08.247Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
-      "checked": "2026-11-06T12:49:03.390Z",
+      "checked": "2026-11-06T13:20:50.644Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
-      "checked": "2026-11-06T12:49:08.216Z",
+      "checked": "2026-11-06T13:20:55.829Z",
       "lastFound": 0
-    },
-    "https://www.youtube.com/@HVACInTraining": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:49:51.642Z"
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-06T12:48:46.687Z",
+      "checked": "2026-11-06T13:20:36.478Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "checked": "2026-11-06T12:49:13.445Z",
-      "lastFound": 4
+      "checked": "2026-11-06T13:20:57.388Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/user/nfpadotorg": {
       "id": "UCt_HiUcYRhNqTFM9b_EVHaA",
-      "checked": "2026-11-06T12:49:33.939Z",
-      "lastFound": 13
+      "checked": "2026-11-06T13:21:05.063Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
-      "checked": "2026-11-06T12:49:15.859Z",
+      "checked": "2026-11-06T13:21:00.085Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-06T12:48:44.368Z",
+      "checked": "2026-11-06T13:20:33.734Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DubaiMunicipality": {
       "id": "UCgoUXrrSn2pdbOd3S1Hr2hA",
-      "checked": "2026-11-06T12:49:19.100Z",
+      "checked": "2026-11-06T13:21:03.373Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-06T12:48:41.930Z",
+      "checked": "2026-11-06T13:20:30.875Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
-      "checked": "2026-11-06T12:48:59.331Z",
+      "checked": "2026-11-06T13:20:46.322Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
-      "checked": "2026-11-06T12:49:06.568Z",
+      "checked": "2026-11-06T13:20:54.168Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
-      "checked": "2026-11-06T12:49:07.385Z",
+      "checked": "2026-11-06T13:20:55.002Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
-      "checked": "2026-11-06T12:49:05.079Z",
+      "checked": "2026-11-06T13:20:52.392Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
-      "checked": "2026-11-06T12:49:14.267Z",
+      "checked": "2026-11-06T13:20:58.396Z",
       "lastFound": 0
     },
     "https://www.youtube.com/user/theabudhabipolice": {
       "id": "UCwp0VxIWELDtUXkyYA9ksrQ",
-      "checked": "2026-11-06T12:49:20.069Z",
+      "checked": "2026-11-06T13:21:04.186Z",
       "lastFound": 0
     },
-    "https://www.youtube.com/@WindowCleaningResource": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-06T12:49:53.183Z"
+    "https://www.youtube.com/c/ISSAMediaTV/playlists": {
+      "id": "UCR7VVdoKrOVyX5UjtsTlhew",
+      "checked": "2026-11-06T13:21:28.713Z",
+      "lastFound": 15
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
-      "checked": "2026-11-06T12:49:00.949Z",
+      "checked": "2026-11-06T13:20:48.221Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
-      "checked": "2026-11-06T12:49:02.556Z",
+      "checked": "2026-11-06T13:20:49.824Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
-      "checked": "2026-11-06T12:49:04.195Z",
+      "checked": "2026-11-06T13:20:51.555Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-06T12:48:47.462Z",
+      "checked": "2026-11-06T13:20:37.431Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-06T12:48:56.977Z",
+      "checked": "2026-11-06T13:20:43.802Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
-      "checked": "2026-11-06T12:49:01.760Z",
+      "checked": "2026-11-06T13:20:48.928Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-06T12:48:54.120Z",
+      "checked": "2026-11-06T13:20:40.932Z",
       "lastFound": 1
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-06T12:48:57.757Z",
+      "checked": "2026-11-06T13:20:44.677Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-06T12:48:49.034Z",
+      "checked": "2026-11-06T13:20:38.971Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-06T12:48:56.122Z",
+      "checked": "2026-11-06T13:20:42.969Z",
       "lastFound": 1
     }
   }

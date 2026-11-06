@@ -133,6 +133,35 @@
     } finally { busy(false); }
   }
 
+  /* Instant save: the change shows on screen straight away and is saved in the background, one save at a time per file.
+     If someone else saved meanwhile, it reads their copy, applies the pending changes again and retries. */
+  const fastQ = {}; let rev = 0;
+  function updateFast(key, fn, message) {
+    const q = fastQ[key] || (fastQ[key] = { fns: [], running: false });
+    fn(data[key].json); q.fns.push(fn); rev++;
+    if (!q.running) flushFast(key, q);
+  }
+  async function flushFast(key, q) {
+    q.running = true; busy(true);
+    try {
+      while (q.fns.length) {
+        let applied = q.fns.length, done = false;
+        for (let i = 0; i < 3 && !done; i++) {
+          let json = data[key].json, sha = data[key].sha;
+          if (i > 0) { const f = await readFile(key); json = f.json; sha = f.sha; q.fns.forEach(fn => fn(json)); applied = q.fns.length; }
+          try { const v = await writeFile(key, json, sha); data[key] = { json, sha: v }; done = true; }
+          catch (e) { if (!e.conflict || i === 2) throw e; }
+        }
+        q.fns.splice(0, applied);
+      }
+    } catch (e) {
+      q.fns.length = 0;
+      alert("Couldn't save that: " + (e.message === "conflict" ? "someone else saved at the same moment" : e.message) + ". The page will show the saved version.");
+      try { data[key] = await readFile(key); } catch {}
+      rev++; render();
+    } finally { q.running = false; busy(false); }
+  }
+
   /* ---------- YouTube helpers ---------- */
   function parseYT(s) {
     s = (s || "").trim();
@@ -523,13 +552,13 @@
   async function hideToggle(id) {
     const v = V().find(x => x.id === id); if (!v) return;
     const to = !v.hidden;
-    await update("videos", d => { const x = d.videos.find(y => y.id === id); if (x) { if (to) x.hidden = true; else delete x.hidden; } d.updated = today(); return d; }, `${to ? "Hide" : "Show"} video: ${v.title}`);
+    updateFast("videos", d => { const x = d.videos.find(y => y.id === id); if (x) { if (to) x.hidden = true; else delete x.hidden; } d.updated = today(); return d; }, `${to ? "Hide" : "Show"} video: ${v.title}`);
     toast(to ? "Hidden from staff" : "Visible to staff again"); render();
   }
   /* ---------- Remove duplicates: group similar videos, keep the best of each, delete the rest (after you review) ---------- */
   let dupKey = "", dupCache = null;   // the duplicate check compares every pair of videos: do it once per save, not on every keystroke
   function dupMap() {
-    const key = (data.videos.sha || 0) + ":" + V().length;
+    const key = (data.videos.sha || 0) + ":" + V().length + ":" + rev;
     if (dupKey !== key || !dupCache) { dupKey = key; dupCache = new Map(V().map(v => [v.id, ABDraft.findDuplicates(v, V())])); }
     return dupCache;
   }
@@ -923,19 +952,19 @@
     if (qr) qr.onclick = async () => {
       const yts = q.filter(i => rvOf(i) && rvOf(i).recommend === "reject").map(i => i.yt);
       if (!confirm(`Reject the ${yts.length} videos Gemini marked as not suitable? They won't be suggested again.`)) return;
-      await update("pending", d => { d.rejected = [...new Set([...(d.rejected || []), ...yts])].slice(-3000); d.queue = (d.queue || []).filter(i => !yts.includes(i.yt)); return d; }, "Reject videos Gemini marked unsuitable");
+      updateFast("pending", d => { d.rejected = [...new Set([...(d.rejected || []), ...yts])].slice(-3000); d.queue = (d.queue || []).filter(i => !yts.includes(i.yt)); return d; }, "Reject videos Gemini marked unsuitable");
       render();
     };
     const qc = $("#q-clear");
     if (qc) qc.onclick = async () => {
       if (!confirm(`Reject all ${q.length} videos in the queue?`)) return;
       const yts = q.map(i => i.yt);
-      await update("pending", d => { d.rejected = [...new Set([...(d.rejected || []), ...yts])].slice(-3000); d.queue = (d.queue || []).filter(i => !yts.includes(i.yt)); return d; }, "Reject all queued videos");
+      updateFast("pending", d => { d.rejected = [...new Set([...(d.rejected || []), ...yts])].slice(-3000); d.queue = (d.queue || []).filter(i => !yts.includes(i.yt)); return d; }, "Reject all queued videos");
       render();
     };
   }
   async function removeFromQueue(yt, reject) {
-    await update("pending", d => {
+    updateFast("pending", d => {
       d.queue = (d.queue || []).filter(i => i.yt !== yt);
       if (reject) d.rejected = [...new Set([...(d.rejected || []), yt])].slice(-3000);
       return d;
@@ -957,12 +986,9 @@
     if (d.review) v.gemini = { date: today(), ...d.review };
     if (item.title && item.title !== v.title) v.ytTitle = item.title;
     if (category === "Health & Safety") v.essential = true;
-    if (btn) { btn.disabled = true; btn.textContent = "Publishing…"; }
-    try {
-      await update("videos", x => { const i = x.videos.findIndex(y => y.id === v.id); if (i >= 0) x.videos[i] = v; else x.videos.unshift(v); x.updated = today(); return x; }, `Approve video: ${v.title}`);
-      await removeFromQueue(yt, false);
-      toast(`Published “${v.title}”. Live in about a minute.`);
-    } catch (e) { alert(e.message); }
+    updateFast("videos", x => { const i = x.videos.findIndex(y => y.id === v.id); if (i >= 0) x.videos[i] = v; else x.videos.unshift(v); x.updated = today(); return x; }, `Approve video: ${v.title}`);
+    removeFromQueue(yt, false);
+    toast(`Published “${v.title}”.`);
     render();
   }
   function approve(yt) {

@@ -258,7 +258,6 @@
         "hvac-kkLvyE_YJE8",
         "hvac-kKVHfHLgVW0",
         "hvac-112",
-        "hvac-ztzTNf3smr4",
         "hvac-113",
         "hvac-gFUrDX_ze-M",
         "hvac-tQE1nGz3Ydg",
@@ -386,14 +385,13 @@
       "icon": "⚙️",
       "title": "Motors, Contactors and VFDs",
       "videos": [
-        "elec-104",
         "elect-EElZjxhQxHs",
         "elec-107",
         "elec-106",
         "elec-108",
         "elec-110",
         "elec-112",
-        "elec-114",
+        "hvac-112",
         "elec-111"
       ],
       "description": "Three-phase power, contactors and overloads, start/stop circuits, VFDs and generator changeover (ATS)."
@@ -652,7 +650,6 @@
       "videos": [
         "healt-_loONTyxmks",
         "healt-aCvcvjyL01E",
-        "water-3ZwVOsB_vGs",
         "water-jmdOfrL4zz0",
         "water-M7qGBZX_GZo"
       ],
@@ -718,7 +715,6 @@
         "civil-Fdy9uRvpI-E",
         "civil-EVN_tUlynHU",
         "paint-rwfmx5cCWdE",
-        "civil-PpRb6lWX44o",
         "civil-3M8oj9zh3Uo"
       ],
       "description": "Clean painting without lap marks, caulking, drywall repairs, waterproofing wet areas and tiling."

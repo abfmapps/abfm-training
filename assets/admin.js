@@ -926,6 +926,7 @@
       ${errs.length ? `<div class="err err-row"><span>${ABIcon("alert")} ${errs.length} channel${errs.length > 1 ? "s" : ""} couldn't be checked. <a href="#" data-go="channels">See which</a></span><button type="button" class="btn btn-sm" data-find>${ABIcon("refresh")} Retry</button></div><div class="find-msg help" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>` : ""}
       ${q.length ? `<div class="bar"><p class="count grow" style="margin:0">${q.length} waiting · <b>${nAi} of ${q.length}</b> checked by Gemini</p>
         <select id="q-sort"><option value="new" ${qSort === "new" ? "selected" : ""}>Newest first</option><option value="ai" ${qSort === "ai" ? "selected" : ""}>Gemini's best first</option></select>
+        <button class="btn btn-sm" id="q-review">${ABIcon("sparkles")} Review queue with Gemini</button><span class="help" id="q-msg"></span>
         ${nRej ? `<button class="btn btn-sm" id="q-rej-ai">Reject ${nRej} Gemini says no</button>` : ""}
         <button class="btn btn-sm" id="q-clear">Reject all</button></div>` : ""}
       ${!videoAI() && !nAi ? `<div class="hint-box">${ABIcon("sparkles")} Turn on Gemini in <b>Settings</b> and it will watch every new video, draft the steps, score how useful it is, and warn you about unsafe practice.</div>` : ""}
@@ -948,6 +949,11 @@
           </div>
         </article>`).join("")}</div>
       ${q.length ? "" : `<div class="empty"><div class="big">${ABIcon("checkCircle")}</div><h3>Nothing waiting</h3><p>New videos from your channels will appear here.</p></div>`}`;
+    const qv = $("#q-review"); if (qv) qv.onclick = async () => {
+      qv.disabled = true;
+      await runJob("review-queue.yml", (msg) => { const m = $("#q-msg"); if (m) m.innerHTML = msg; });   // only drafts what is already queued; searches nothing
+      qv.disabled = false;
+    };
     const qs = $("#q-sort"); if (qs) qs.onchange = e => { qSort = e.target.value; renderQueue(); };
     const qr = $("#q-rej-ai");
     if (qr) qr.onclick = async () => {

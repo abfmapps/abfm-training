@@ -612,9 +612,9 @@
   async function del(id) {
     const v = V().find(x => x.id === id); if (!v) return;
     if (!confirm(`Delete “${v.title}”?\n\nTip: use Hide instead if you might want it back.`)) return;
-    await update("videos", d => { d.videos = d.videos.filter(y => y.id !== id); d.updated = today(); return d; }, `Delete video: ${v.title}`);
+    updateFast("videos", d => { d.videos = d.videos.filter(y => y.id !== id); d.updated = today(); return d; }, `Delete video: ${v.title}`);
     if ((data.paths.json.paths || []).some(p => (p.videos || []).includes(id)))
-      await update("paths", d => { (d.paths || []).forEach(p => p.videos = (p.videos || []).filter(x => x !== id)); return d; }, `Remove deleted video from learning paths`);
+      updateFast("paths", d => { (d.paths || []).forEach(p => p.videos = (p.videos || []).filter(x => x !== id)); return d; }, `Remove deleted video from learning paths`);
     toast("Deleted"); render();
   }
 
@@ -880,18 +880,18 @@
     if (ed.gemini) v.gemini = ed.gemini;
     if (ed.ytTitle && ed.ytTitle !== v.title) v.ytTitle = ed.ytTitle;
     const isEdit = !!ed.original, onSaved = ed.onSaved, newCat = ed.newCategory;
-    await update("videos", d => {
+    updateFast("videos", d => {
       const i = d.videos.findIndex(x => x.id === v.id);
       if (i >= 0) d.videos[i] = v; else d.videos.unshift(v);
       d.updated = today();
       return d;
     }, `${isEdit ? "Edit" : "Add"} video: ${title}`);
     if (newCat && !(data.settings.json.categories || []).some(c => c.name === newCat)) {
-      await update("settings", s => { s.categories = s.categories || []; s.categories.push({ name: newCat, icon: "", keywords: [] }); return s; }, `Add category: ${newCat}`);
+      updateFast("settings", s => { s.categories = s.categories || []; s.categories.push({ name: newCat, icon: "", keywords: [] }); return s; }, `Add category: ${newCat}`);
     }
     closeDrawer();
     if (onSaved) await onSaved(v);
-    toast(isEdit ? "Saved. Live in about a minute." : "Published. Live in about a minute.");
+    toast(isEdit ? "Saved." : "Published.");
     render();
   }
 

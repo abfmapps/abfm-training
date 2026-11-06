@@ -36,6 +36,149 @@
       "suggestedCategory": "Fire & Life Safety"
     },
     {
+      "yt": "If80kp1wb44",
+      "draft": {
+        "ppe": [
+          "Gloves",
+          "Safety Glasses"
+        ],
+        "quiz": [
+          {
+            "q": "What is the first step in wildfire preparedness?",
+            "answer": 1,
+            "options": [
+              "Clear debris",
+              "Organize your community",
+              "Submit renewal application"
+            ]
+          },
+          {
+            "q": "What should you do to homes and plants?",
+            "answer": 0,
+            "options": [
+              "Trim plants and update homes",
+              "Remove all surrounding soil",
+              "Paint the roof red"
+            ]
+          },
+          {
+            "q": "Who do you report your progress to each year?",
+            "answer": 1,
+            "options": [
+              "Local police",
+              "NFPA",
+              "Fire department chief"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Organize your community members.",
+          "Assess wildfire risks and set clear goals.",
+          "Clear debris, trim plants, and update homes.",
+          "Report your progress to NFPA each year."
+        ],
+        "title": "Wildfire Preparedness and Community Renewal",
+        "review": {
+          "reason": "Useful general safety planning content, though not focused on standard technical maintenance.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "English",
+          "recommend": "maybe",
+          "relevance": 4
+        },
+        "safety": "Ensure proper protective gear when clearing flammable debris and vegetation around buildings.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "This video outlines the steps to organize, plan, execute maintenance, and report progress for community wildfire safety renewal.",
+        "category": "Health & Safety",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T12:49:22.157Z",
+      "title": "Strengthening Wildfire Preparedness Through Firewise USA®",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-11-05T16:12:36+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Firewise USA® communities, it's time to renew submissions are due November 20!\n \nYour hard work makes a difference in building wildfire resilience. From reducing vegetation to tackling projects around your community, every action counts.\n \nReport your annual progress and complete your Firewise USA® renewal to maintain your recognition. \n \nWatch the video to learn more about the renewal process.\n \n#FirewiseUSA #WildfirePreparedness #WildfireResilience",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "jnNQFpnoreQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "High-Visibility Vest",
+          "Steel-Toed Boots"
+        ],
+        "quiz": [
+          {
+            "q": "What technology is used for scene scanning?",
+            "answer": 0,
+            "options": [
+              "3D Laser Scanning",
+              "Standard Cameras",
+              "Audio Recorders"
+            ]
+          },
+          {
+            "q": "Which organization defines forensic engineering?",
+            "answer": 0,
+            "options": [
+              "NFE",
+              "NICE",
+              "NIFI"
+            ]
+          },
+          {
+            "q": "What is analyzed to determine fracture causes?",
+            "answer": 0,
+            "options": [
+              "Material Evidence",
+              "Audio Logs",
+              "Weather Reports"
+            ]
+          }
+        ],
+        "level": "Advanced",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Analyze accident scenes using 3D scanning technology.",
+          "Examine material evidence with advanced laboratory instruments.",
+          "Reconstruct face and skull structures using DNA and imaging.",
+          "Compare fractures to determine the cause of failure."
+        ],
+        "title": "Forensic Engineering in Criminal Investigations",
+        "review": {
+          "reason": "Useful for understanding forensic engineering practices, though more theoretical than practical for technicians.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "Arabic",
+          "recommend": "maybe",
+          "relevance": 5
+        },
+        "safety": "Ensure proper verification of all forensic evidence before concluding any investigation.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "This video discusses forensic engineering and its role in Dubai Police investigations by analyzing technical evidence and accident scenes.",
+        "category": "UAE Rules & Compliance",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T12:38:50.297Z",
+      "title": "بودكاست شرطة دبي | الهندسة الجنائية...حين تتحول التفاصيل إلى أدلة",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-11-05T12:03:27+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "كيف يمكن لتفصيل صغير في مسرح الجريمة أن يكشف الحقيقة؟ وكيف تسهم العلوم الهندسية والتقنيات الحديثة في حل قضايا جنائية معقدة؟\n\nفي هذه الحلقة من بودكاست شرطة دبي، نستضيف المقدم الخبير الدكتور المهندس محمد علي القاسم، رئيس قسم الهندسة الجنائية في الإدارة العامة للأدلة الجنائية وعلم الجريمة بشرطة دبي، للحديث عن الدور المحوري للهندسة الجنائية في كشف ملابسات الجرائم والحوادث وتحويل التفاصيل الفنية إلى أدلة علمية دقيقة.\n\nنستعرض خلال الحلقة قضايا واقعية ساهمت الهندسة الجنائية في كشف أسرارها، من إعادة بناء ملامح وجه جثة متحللة وصولاً إلى تحديد هوية القاتل، إلى كشف جريمة قتل حاول مرتكبها إخفاءها على أنها انتحار، فضلاً عن قضية استخدم فيها الجناة الحريق لإخفاء معالم الجريمة.\n\nكما نتعرف على دور المسح ثلاثي الأبعاد والتوأمة الرقمية في إعادة بناء مسارح الحوادث، وأهمية بروتوكولات الفحص المعتمدة في تعزيز دقة التحقيقات، إلى جانب جهود شرطة دبي في تطوير هذا التخصص وتوظيفه لحماية الأرواح والممتلكات.\n\nحلقة تكشف كيف تتحول التفاصيل التي قد تبدو بسيطة إلى أدلة حاسمة تقود إلى \nالحقيقة وتحقيق العدالة.\n\n#بودكاست_شرطة_دبي #شرطة_دبي #الهندسة_الجنائية",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "OInuGc6qZVg",
       "draft": {
         "ppe": [
@@ -72,54 +215,125 @@
       "suggestedCategory": "Kitchen & Laundry Appliances"
     },
     {
-      "yt": "uT91J47LpZ0",
+      "yt": "0zA7FcoFUKU",
       "draft": {
         "ppe": [
-          "Kneepads",
-          "Safety Glasses",
-          "Work Gloves"
+          "Safety Vest",
+          "Safety Shoes",
+          "Hard Hat"
         ],
         "quiz": [
           {
-            "q": "What should be used to spread mortar over the membrane?",
+            "q": "What is the main goal of the Fire and Emergency Services section?",
+            "answer": 1,
+            "options": [
+              "To sell fire equipment",
+              "To improve training and education",
+              "To replace local fire departments"
+            ]
+          },
+          {
+            "q": "Who can join the NFPA Fire and Emergency Services section?",
+            "answer": 2,
+            "options": [
+              "Only fire chiefs",
+              "Only government officials",
+              "Fire and safety professionals"
+            ]
+          },
+          {
+            "q": "What is emphasized as important for modern fire services?",
             "answer": 0,
             "options": [
-              "A notched trowel",
-              "A paint roller",
-              "A flat sponge"
+              "Multi-agency response",
+              "Working alone",
+              "Ignoring new technology"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Join the NFPA Fire and Emergency Services Member Section.",
+          "Participate in multi-agency response and interoperability training.",
+          "Access resources for fire and emergency management.",
+          "Collaborate with other fire safety professionals."
+        ],
+        "title": "Introduction to NFPA Fire and Emergency Services",
+        "review": {
+          "reason": "The video is a promotional introduction rather than a technical training procedure.",
+          "unsafe": [],
+          "quality": 5,
+          "talking": true,
+          "language": "English",
+          "recommend": "maybe",
+          "relevance": 4
+        },
+        "safety": "Always ensure you are familiar with current NFPA standards and local fire safety regulations.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "This video introduces the NFPA Fire and Emergency Services Member Section and its mission to improve fire safety training and education.",
+        "category": "Fire & Life Safety",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T12:49:22.969Z",
+      "title": "36 Years in the Fire Service: Meet NFPA Member Section Chair Michael Young",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-11-04T15:49:47+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "36 years in public safety and still helping shape the future of the fire service!\n \nMeet Chief Michael Young, chair of the NFPA Fire and Emergency Services Member Section. From firefighter and paramedic to deputy fire chief and educator, his career has been dedicated to protecting communities and sharing knowledge.\n \nWatch as Chief Young shares more about NFPA Member Sections and the value of connecting with fellow fire service professionals.\n \n#NFPA #FireService #FireSafety #Firefighters",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "uT91J47LpZ0",
+      "draft": {
+        "ppe": [
+          "Knee Pads",
+          "Safety Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "What tool is used to ensure the tiles are level?",
+            "answer": 1,
+            "options": [
+              "A rubber mallet",
+              "Leveling clips and wedges",
+              "A notched trowel"
             ]
           },
           {
-            "q": "What tool helps maintain an even surface between tiles?",
-            "answer": 1,
+            "q": "What is applied to the mat before placing the tiles?",
+            "answer": 0,
             "options": [
-              "A hammer and nails",
-              "Tile leveling clips and wedges",
-              "A wooden straight edge"
+              "Thin-set mortar",
+              "Waterproof sealant",
+              "Construction adhesive"
             ]
           },
           {
-            "q": "What protective gear is recommended for knee protection on this task?",
-            "answer": 1,
+            "q": "Why is a rubber mallet used during installation?",
+            "answer": 2,
             "options": [
-              "Hard hat",
-              "Kneepads",
-              "High-visibility vest"
+              "To break the tiles",
+              "To clean the mortar",
+              "To set the tiles firmly"
             ]
           }
         ],
         "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
+        "model": "gemini-3.1-flash-lite",
         "steps": [
-          "Spread thin-set mortar evenly over the uncoupling membrane using a notched trowel.",
-          "Place tile leveling clips into the mortar bed along the layout line.",
-          "Press wood-look plank tiles firmly into the mortar bed.",
-          "Insert wedges into tile leveling clips to ensure an even surface.",
-          "Remove excess mortar and spacers once the adhesive cures."
+          "Apply thin-set mortar to the uncoupling mat using a notched trowel.",
+          "Place the wood-look tile planks onto the mortar bed.",
+          "Insert leveling clips and wedges between the tile edges.",
+          "Tighten the wedges with a leveling tool to ensure a flat surface.",
+          "Tap the tiles with a rubber mallet to set them firmly."
         ],
-        "title": "Dark Wood Plank Tile Installation",
+        "title": "Installing Wood-Look Plank Tiles",
         "review": {
-          "reason": "Clear demonstration of plank tile installation procedures suitable for civil technicians.",
+          "reason": "The video clearly demonstrates a standard professional method for installing large format plank tiles.",
           "unsafe": [],
           "quality": 8,
           "talking": false,
@@ -127,14 +341,14 @@
           "recommend": "approve",
           "relevance": 9
         },
-        "safety": "Wear appropriate personal protective equipment including kneepads and safety glasses to prevent injuries during flooring installation.",
+        "safety": "Ensure the subfloor is clean and the uncoupling mat is properly bonded before applying mortar to prevent tile failure.",
         "source": "ai",
         "subject": "Tile Installation",
-        "summary": "Demonstrates the installation of dark wood-look plank tiles over an uncoupling membrane using thin-set mortar and leveling spacers.",
+        "summary": "This video demonstrates the process of applying thin-set mortar over an uncoupling mat and installing wood-look ceramic planks using a leveling spacer system.",
         "category": "Civil & Carpentry",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-06T11:47:26.910Z",
+      "found": "2026-11-06T12:48:54.120Z",
       "title": "Dark Wood look Plank tile install #diy #tiles #construction #planktile",
       "channel": "Sal DiBlasi (tiling & waterproofing)",
       "duration": "",
@@ -143,6 +357,138 @@
       "description": "SUBSCRIBE Learn how to tile the right way.\nDark Wood look Plank tile install #diy #tiles #construction #planktile Quick little video to show the installation process of a large wood lock porcelain plank tile. All tile installed by Sal DiBlasi, Elite-tile Company, in the Boston North Shore area. This video contains affiliate links, which means I will receive a small commission if you click on the product link. #tile #transformthetrade  #howtotile #installingtile #howtoinstalltile #liticrete #mapei #Schlutersystems #diy #construction #ardex\n\n🙂 This is my Amazon Store 🙂 https://www.amazon.com/shop/saldiblasi\n\nPayPal\nhttps://www.paypal.com/donate/?hosted_button_id=UMJSX3UHEHQGQ\n\nPatreon  https://www.patreon.com/c/saldiblasi\n\n🌲 Link Tree 🌲\nhttps://linktr.ee/saldiblasi\n\n☕ Buy me a coffee ☕\nhttps://www.buymeacoffee.com/saldibs2",
       "channelCategory": "",
       "suggestedCategory": "Civil & Carpentry"
+    },
+    {
+      "yt": "kBtFIi1GAWM",
+      "draft": {
+        "ppe": [
+          "Uniform",
+          "White Gloves"
+        ],
+        "quiz": [
+          {
+            "q": "Where should the flag be positioned before the ceremony starts?",
+            "answer": 1,
+            "options": [
+              "At the very top",
+              "At the bottom third",
+              "On the ground"
+            ]
+          },
+          {
+            "q": "What is the role of the guard on the left side of the pole?",
+            "answer": 1,
+            "options": [
+              "To hold the flag rope",
+              "To hold the flag fabric",
+              "To play the music"
+            ]
+          },
+          {
+            "q": "What must be avoided during the flag-raising process?",
+            "answer": 0,
+            "options": [
+              "Touching the ground",
+              "Using white gloves",
+              "Standing in uniform"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.1-flash-lite",
+        "steps": [
+          "Lower the flag to the bottom third of the pole.",
+          "Assign two guards to stand on either side of the pole.",
+          "Wait for the signal to begin the raising process.",
+          "Raise the flag to the top of the pole in unison.",
+          "Perform a military salute during the national anthem."
+        ],
+        "title": "UAE Flag Raising Ceremony Protocol",
+        "review": {
+          "reason": "The video is relevant for cultural compliance training but does not cover technical facility maintenance.",
+          "unsafe": [],
+          "quality": 8,
+          "talking": true,
+          "language": "Arabic",
+          "recommend": "maybe",
+          "relevance": 2
+        },
+        "safety": "Ensure the flag does not touch the ground at any point during the lowering or raising process.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "This video demonstrates the formal protocol for the UAE flag-raising ceremony, including the lowering and raising of the flag by a military honor guard.",
+        "category": "UAE Rules & Compliance",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-06T12:38:51.398Z",
+      "title": "مراسم رفع العلم في القيادة العامة لشرطة دبي | UAE Flag–Raising Ceremony",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-11-03T21:37:37+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "تجمعنا رايةٌ واحدة، ويوحِّدنا حب وطنٍ نفخر بالإنتماء إليه، وفي مشهدٍ وطني يجسد روح الاتحاد، يرتفع علم الإمارات في مختلف أنحاء الدولة، بمشاركة المواطنين والمقيمين والمؤسسات والأفراد احتفاءً براية عزنا ورمز وحدتنا.\n\n ومن مقر القيادة العامة لشرطة دبي، نشارك في هذه المناسبة الوطنية، ونرفع علم دولتنا عالياً، اعتزازاً بمجدها وفخراً بمنجزاتها. 🇦🇪\n\n#يوم_العلم\n\n\nAcross the UAE, government institutions, businesses, and communities come together to raise the national flag in a celebration of unity and pride.\n\nAt Dubai Police General Headquarters, we proudly join the nation in marking this special occasion, honouring the flag that symbolises our shared history, values, and aspirations. 🇦🇪\n\n#FlagDay",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "5XicGcEL9UY",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "The BEST Cleaning Products and Tools in 2026",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "",
+        "summary": "📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-06T12:49:55.640Z",
+      "title": "The BEST cleaning products and tools in 2026!",
+      "aiError": "The caller does not have permission",
+      "aiTries": 1,
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-11-03T18:30:54+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\n\nTHANKS FOR WATCHING!\n\nSome product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "KXp5Nd4qb4s",
+      "found": "2026-11-06T12:49:23.895Z",
+      "title": "Title: Early Warning Fire Detection at Fire Alarm Control Units | NFPA 72",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-11-03T15:45:10+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Why is early warning fire detection (smoke detectors) required around certain fire alarm equipment?\n\nIn this final video of our series on fire alarm control unit mounting and installation requirements, we discuss the early warning fire detection requirements found in NFPA 72, National Fire Alarm and Signaling Code.\n\nEarly warning fire detection is required at fire alarm control units, notification appliance circuit power extenders, and supervising station transmitting equipment. The purpose is to provide early notification to occupants and first responders of a fire prior to the control equipment being consumed.\n\nThis concludes our series on fire alarm control unit mounting and installation requirements. Throughout the series, we covered control unit location, mounting height, required working space, and early warning fire detection around fire alarm control equipment.\n\nImportant Notice: Any opinion expressed in this video is the opinion of the author and does not necessarily represent the official position of NFPA or its Technical Committees. In addition, this piece is neither intended nor should it be relied upon to provide professional consultation or services.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "-JtikBRQr4I",
+      "found": "2026-11-06T12:49:36.102Z",
+      "title": "شرطة أبوظبي تحتفل بيوم العلم",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-11-03T14:48:00+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "oX2wjCIqMH0",
@@ -177,6 +523,30 @@
       "description": "See how one California family went from waiting 2 minutes for hot water to getting it in under 10 seconds, while also gaining consistent water pressure throughout their home.\n\nThe Booth family’s busy routines were frequently interrupted by long waits for hot water and water-pressure drops when shower, laundry, dishes, or sprinklers were running at the same time.\n\nA professional installation of the Grundfos ALPHA Comfort System hot water recirculation pump and Grundfos SCALA2 Model 2 whole-home water pressure booster helped change that. The Booths can now run multiple showers and household appliances with consistent water pressure, while getting hot water much faster at every tap.\n\nFor this busy family, the upgrade means more than better-performing plumbing. It means smoother mornings, easier evenings, and more family time together.\n\nIn this video, discover:\n\n• How a hot water recirculation system can reduce the wait for hot water\n• How a whole-home booster pump can address low or inconsistent water pressure\n• How professional installation improved comfort in a busy family home\n• Why the combination of faster hot water and consistent pressure made everyday routines easier\n\nRead the full homeowner case story:\n\n• See how the Booth family improved its hot water and water pressure: http://gfos.ly/6055BHan9X\n\nResults reflect the experience and plumbing conditions of this particular home. Consult a qualified plumbing professional to determine the appropriate solution for your home.",
       "channelCategory": "Water Tanks & Pumps",
       "suggestedCategory": "Water Tanks & Pumps"
+    },
+    {
+      "yt": "DkLPe4G_6wE",
+      "found": "2026-11-06T12:49:36.998Z",
+      "title": "موسيقي شرطة أبوظبي تعزف السلام الوطني تزامنًا مع احتفالية \"يوم العلم\" في متحف المقطع .",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-11-03T07:10:59+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "4aloNbqPOwA",
+      "found": "2026-11-06T12:49:24.908Z",
+      "title": "Put Your Research in the Spotlight | NFPA 2027 Student Posters",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-11-02T16:50:28+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Your research deserves the spotlight. 🎓\n\nHave a project, idea, or research to share? Apply to present your work at the NFPA Conference & Expo 2027 Student Posters program in San Antonio, Texas.\n\nTake the next step and submit your proposal today! https://registration.events.nfpa.org/flow/nfpa/conf2027/nfpastudentcallforproposal\n\n#NFPAConf27 #StudentPosters #FireSafety #STEM",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "P5AQrfQGokA",
@@ -290,6 +660,18 @@
       "suggestedCategory": "Kitchen & Laundry Appliances"
     },
     {
+      "yt": "zR43sNBPCNA",
+      "found": "2026-11-06T12:49:26.084Z",
+      "title": "Risk Reduction in Detroit",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-30T16:07:46+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "A strong example of the NFPA Fire & Life Safety Ecosystem in action! \n\nFirefighters and city leaders in Detroit have launched a new community risk reduction initiative aimed at preventing fatal residential fires. The effort uses local data to identify vulnerable neighborhoods and deploy first responders for targeted fire prevention outreach and education. \n\nWatch the video to learn more. \n\nRead about other Ecosystem successes in the NFPA Journal’s summer issue.\nhttps://www.nxtbook.com/nxtbooks/nfpa/journal_2026summer/index.php#/p/16",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "z4AWoFUiOIQ",
       "draft": {
         "ppe": [
@@ -326,68 +708,32 @@
       "suggestedCategory": "Water Tanks & Pumps"
     },
     {
+      "yt": "7aExOuI4-6Y",
+      "found": "2026-11-06T12:38:52.493Z",
+      "title": "مجتمعُ متعافٍ رقمياً | A Digitally Recovered Society",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-10-30T15:00:24+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "نناقش في هذه الحلقة مخاطر الجرائم الإلكترونية، وأساليب الاحتيال الحديثة في ظل التطور المتسارع للذكاء الاصطناعي وتأثيرها على الأمن الرقمي، كما نسلط الضوء على أهمية حماية البيانات الشخصية وتعزيز ثقافة الإبلاغ عن الجرائم الإلكترونية ودعم المتضررين، وصولاً إلى بناء مجتمع واعٍ وقادر على مواجهة التهديدات الرقمية، مع ضيف الحلقة المقدم د. خبير سعيد المري، مدير مركز أمن المعلومات في شرطة دبي.\n\n#بودكاست_متعافي\n\nIn this episode, we explore the growing threat of cybercrime, from AI-powered scams and deepfakes to phishing and identity theft. Joined by Lieutenant Colonel Dr. Expert Saeed Al Marri, Director of the Information Security Center at Dubai Police, we discuss data privacy, cybercrime reporting, and the role of cybersecurity awareness in building a safer, more resilient digital society.\n\n#RecoveredPodcast",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "LpBzPlVIS-A",
+      "found": "2026-11-06T12:49:56.582Z",
+      "title": "Cleaning with Chronic Pain",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-10-29T19:33:52+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "My goal is to help make every day a productive day while keeping your wellbeing as the priority. We are stripping back the complexity of house cleaning to focus on what actually needs to get done, using the right tools to make every movement count. It is not about doing everything at once, but finding a consistent cleaning routine that works for your unique situation.",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "f3qbgP7pnJc",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Nitrile Gloves",
-          "Respirator Mask"
-        ],
-        "quiz": [
-          {
-            "q": "What is the main benefit of using a hose whip?",
-            "answer": 1,
-            "options": [
-              "It increases paint pressure",
-              "It improves gun maneuverability",
-              "It prevents paint from drying"
-            ]
-          },
-          {
-            "q": "What must you do before changing a hose connection?",
-            "answer": 0,
-            "options": [
-              "Depressurize the system",
-              "Turn off the lights",
-              "Clean the spray nozzle"
-            ]
-          },
-          {
-            "q": "What is the maximum pressure for this specific hose whip?",
-            "answer": 2,
-            "options": [
-              "1,000 PSI",
-              "2,500 PSI",
-              "3,500 PSI"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.1-flash-lite",
-        "steps": [
-          "Select a compatible hose whip for your airless sprayer.",
-          "Attach the male end of the whip to the spray gun.",
-          "Connect the female end of the whip to the main paint hose.",
-          "Verify all fittings are tight and secure before pressurizing."
-        ],
-        "title": "Using Airless Paint Sprayer Hose Whips",
-        "review": {
-          "reason": "The video clearly explains a useful tool for improving ergonomics and control when using airless sprayers.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Always ensure the airless sprayer is fully depressurized before connecting or disconnecting any hoses or whips.",
-        "source": "ai",
-        "subject": "Painting & Waterproofing",
-        "summary": "This video demonstrates the use of a flexible hose whip attachment for airless paint sprayers to improve maneuverability. It highlights the specifications and benefits of using these whips during painting tasks.",
-        "category": "Painting & Waterproofing",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T11:47:28.991Z",
+      "found": "2026-11-06T12:48:56.122Z",
       "title": "Custom airless hose whips from Paint Life Supply Co.",
       "channel": "Paint Life TV",
       "duration": "",
@@ -398,67 +744,32 @@
       "suggestedCategory": "Painting & Waterproofing"
     },
     {
+      "yt": "yHmYyQS0NPs",
+      "found": "2026-11-06T12:49:57.575Z",
+      "title": "I Deep Clean My Bathroom in 5 Minutes — Here's My Secret",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-10-29T17:15:25+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Stop struggling with bathroom and toilet cleaning and learn the professional methods to remove soap scum, clean tiles, and polish glass.\n\nAfter two decades of training professional cleaners, I have learned that the secret to a pristine bathroom is not more elbow grease, but the right approach. Whether you are dealing with stubborn soap scum on your shower doors or grime between your tiles, this video breaks down efficient techniques to get your space sparkling without the burnout.\n\nI am sharing my go-to process for maintaining a clean bathroom, including how to tackle the sink, toilet, and floors effectively. By using my professional cleaning methods, you can stop spending your entire weekend scrubbing and start getting the results you actually want. We are stripping back the complexity of house cleaning to focus on what needs to be done, using the right tools to make every movement count.\n\nTimestamps:\n0:00   Intro\n1:01   Declutter\n1:50   Toilet\n5:03   Tiles and Glass\n7:04   Tub\n9:09   Sinks and Countertops\n11:24 Floors\n12:27 Outro\n\nSubscribe for weekly cleaning breakdowns and let me know in the comments, what is the one bathroom task you dread the most?\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!https://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:https://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/joinTHANKS FOR WATCHING!Some product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "PpAMjYHKz-c",
+      "found": "2026-11-06T12:49:26.996Z",
+      "title": "AI in Fire Protection: What’s Next?",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-28T15:46:30+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Artificial intelligence is poised to revolutionize the world of fire protection. This was the subject of an education session at the 2026 NFPA Conference & Expo®. 🤖\n\nWatch the full session recording, plus four more, and learn how to register for next year's Conference & Expo in San Antonio so you don't miss future live presentations like this: https://nfpa.social/471QNzi",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "hva73EFJVRs",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What type of machine is shown in the video?",
-            "answer": 0,
-            "options": [
-              "Autonomous floor scrubber robot",
-              "Manual vacuum cleaner",
-              "Pressure washer"
-            ]
-          },
-          {
-            "q": "What should be checked before starting the robot?",
-            "answer": 1,
-            "options": [
-              "Air filter replacement",
-              "Clearance of obstacles in the area",
-              "Water heater temperature"
-            ]
-          },
-          {
-            "q": "Which PPE is recommended for operating cleaning equipment?",
-            "answer": 1,
-            "options": [
-              "Welding helmet",
-              "Safety Shoes",
-              "Insulated rubber gloves"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Inspect the cleaning area for obstructions.",
-          "Power on the autonomous scrubber robot.",
-          "Select the cleaning route or program.",
-          "Monitor the robot during its cleaning cycle."
-        ],
-        "title": "Autonomous Floor Scrubber Robot Operation",
-        "review": {
-          "reason": "Clear visual demonstration of an autonomous floor scrubber robot suitable for cleaning staff orientation.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": false,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure the cleaning area is free of obstacles and people before starting the autonomous scrubber.",
-        "source": "ai",
-        "subject": "Floor Scrubbing Equipment",
-        "summary": "The video demonstrates an autonomous robotic floor scrubber moving down a brightly lit hallway.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T11:47:43.665Z",
+      "found": "2026-11-06T12:49:10.842Z",
       "title": "Set it up. Let it clean. 🤖 #floorcleaningrobot",
       "channel": "Tennant Company",
       "duration": "",
@@ -469,68 +780,92 @@
       "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
+      "yt": "bwbswJtuflE",
+      "found": "2026-11-06T12:49:58.417Z",
+      "title": "Cleaning With Chronic Pain Doesn't Have to Leave You Wiped Out",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-10-27T17:00:15+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Chronic pain cleaning tasks is possible when you adjust your approach to maintain a tidy home without burnout.\n\nFinding a sustainable rhythm for home maintenance can feel impossible when physical limitations get in the way. Today, I am sharing the specific methods I use to keep my space fresh and functional, even on days when my body needs a gentler pace. By focusing on essential chores like vacuuming and targeted sanitizing, I show you how to break down your list into manageable steps that won't leave you exhausted.\n\nMy goal is to help make every day a productive day while keeping your wellbeing as the priority. We are stripping back the complexity of house cleaning to focus on what actually needs to get done, using the right tools to make every movement count. It is not about doing everything at once, but finding a consistent cleaning routine that works for your unique situation.\n\n📫 FREE DOWNLOADS:\nChronic Pain Cleaning Guide: https://cleanmyspace.com/product/chronic-pain-cleaning-guide/\nCleaning Checklist: https://cleanmyspace.com/product/a-cleaning-checklist-for-chronic-pain-low-energy-limited-mobility/\nShopping List: https://cleanmyspace.com/product/shopping-list-for-cleaning-with-chronic-pain-low-energy-limited-mobility/\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\nTHANKS FOR WATCHING",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "pvIr4AghBnI",
+      "found": "2026-11-06T12:49:27.972Z",
+      "title": "How Much Working Space Is Required Around a Fire Alarm Control Unit?",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-27T14:30:06+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "How much working space is required around a fire alarm control unit?\nIn this third video of our series on fire alarm control unit mounting and installation, we discuss the working space requirements found in NFPA 70, National Electrical Code (NEC).\n\nWorking space must be provided around electrical equipment so the equipment can be safely accessed, operated, inspected, and serviced.\n\nThe required working space includes:\n• Depth: 3 feet (900 mm)\n• Width: At least 30 inches (762 mm) or the width of the equipment, whichever is greater\n• Height: At least 6.5 feet (2 m)\n\nThis working space must be dedicated to the use and servicing of the control unit. It should not be used for storage or other purposes that could obstruct access to the fire alarm control unit.\n\nStay tuned for the last video in this series, where we’ll cover early warning detection requirements around control equipment.\n\nAlways verify the requirements in the edition of NFPA 70 referenced in your jurisdiction, along with local requirements and direction from the authority having jurisdiction.\n\nImportant Notice:\nAny opinion expressed in this video is the opinion of the author and does not necessarily represent the official position of NFPA or its Technical Committees. In addition, this piece is neither intended nor should it be relied upon to provide professional consultation or services.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "jJRF_GdSquI",
+      "found": "2026-11-06T12:49:37.808Z",
+      "title": "شرطة أبوظبي: إفساح الطريق لمركبات الطوارئ يسهم في سرعة الاستجابة وإنقاذ الأرواح.",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-10-27T11:21:12+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "Odi3Qi1NElI",
+      "found": "2026-11-06T12:49:29.015Z",
+      "title": "Showcase Your Research at NFPA Conference & Expo 2027 | Student Posters",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-26T16:11:43+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Ready to take your work beyond the classroom?\n\nThe NFPA Conference & Expo 2027 Student Posters program lets you share your ideas with professionals and others advancing fire and life safety.\n\nStudents: submit your proposal and join the conversation in San Antonio, Texas!\n\nLearn more and submit your proposal today: https://registration.events.nfpa.org/flow/nfpa/conf2027/nfpastudentcallforproposal\n\n#NFPAConf27 #StudentPosters #STEMCareers",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "OTAuIGYdZPk",
+      "found": "2026-11-06T12:49:29.979Z",
+      "title": "Lithium-Ion Battery Manufacturing: Fire & Explosion Hazards",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-24T15:53:28+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Several fire and explosion hazards exist in the lithium-ion battery manufacturing process, and a session at the 2026 NFPA Conference & Expo® explored these hazards and ways to mitigate them. 🔋\n\nWatch the full session recording, plus four more, and learn how to register for next year's Conference & Expo in San Antonio so you don't miss future live presentations like this:https://nfpa.social/471QNzi",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "s8rhBK5S630",
+      "found": "2026-11-06T12:49:38.746Z",
+      "title": "أخبار شرطة أبوظبي",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-10-23T17:04:21+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "mKlYWtZ1T1M",
+      "found": "2026-11-06T12:49:31.010Z",
+      "title": "Social Post for Sprinklers? Yeah, We Got 'Em:",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-23T16:13:42+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "A success of the NFPA Fire & Life Safety Ecosystem! FM, a Rhode Island-based commercial property insurer, earned a Guinness World Record for the world’s largest display of fire sprinklers, highlighting the importance of automatic suppression in reducing risk.\n \nAn FM vice president noted that fire remains the costliest and most dangerous threat to commercial property, and that sprinklers are highly effective in mitigating that risk. Watch the video to learn more. \n\nRead about other successes in the NFPA Journal Summer issue:\nhttps://www.nxtbook.com/nxtbooks/nfpa/journal_2026summer/index.php#/p/16",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "kD_grCpbP3k",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High-Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What is the first step before starting the robot?",
-            "answer": 0,
-            "options": [
-              "Clear the area of obstacles",
-              "Wash the floor with water",
-              "Turn off all lights"
-            ]
-          },
-          {
-            "q": "What should you do while the robot is cleaning?",
-            "answer": 1,
-            "options": [
-              "Leave the room unattended",
-              "Monitor the robot's progress",
-              "Turn off the machine immediately"
-            ]
-          },
-          {
-            "q": "Where do you select the cleaning program?",
-            "answer": 1,
-            "options": [
-              "On the floor surface",
-              "On the control panel screen",
-              "On the power cable"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.1-flash-lite",
-        "steps": [
-          "Position the robot in the starting area.",
-          "Power on the machine using the control panel.",
-          "Select the appropriate cleaning program on the screen.",
-          "Activate the autonomous navigation mode.",
-          "Monitor the robot as it cleans the floor."
-        ],
-        "title": "Operating Autonomous Floor Scrubbing Robots",
-        "review": {
-          "reason": "The video clearly shows the equipment in operation, which is useful for familiarizing staff with autonomous cleaning technology.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "None",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure the area is clear of obstacles and bystanders before activating the autonomous cleaning mode.",
-        "source": "ai",
-        "subject": "Floor Scrubbing Equipment",
-        "summary": "This video demonstrates the operation of two autonomous floor scrubbing robots in a large hall. The machines navigate the floor space independently to perform cleaning tasks.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T11:47:45.317Z",
+      "found": "2026-11-06T12:49:11.753Z",
       "title": "Twice the ROVR. Double the shine. 💎 #floorcleaningrobot #floorcleaningmachine",
       "channel": "Tennant Company",
       "duration": "",
@@ -541,67 +876,80 @@
       "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
+      "yt": "4Jf4ip1oiK0",
+      "found": "2026-11-06T12:49:59.362Z",
+      "title": "I FINALLY Found A Cleaning Method for CHRONIC PAIN!",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-10-20T19:07:35+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Chronic pain cleaning tasks is possible when you adjust your approach to maintain a tidy home without burnout.\n\nFinding a sustainable rhythm for home maintenance can feel impossible when physical limitations get in the way. Today, I am sharing the specific methods I use to keep my space fresh and functional, even on days when my body needs a gentler pace. By focusing on essential chores like vacuuming and targeted sanitizing, I show you how to break down your list into manageable steps that won't leave you exhausted.\n\nMy goal is to help make every day a productive day while keeping your wellbeing as the priority. We are stripping back the complexity of house cleaning to focus on what actually needs to get done, using the right tools to make every movement count. It is not about doing everything at once, but finding a consistent cleaning routine that works for your unique situation.\n\n📫 FREE DOWNLOADS:\nChronic Pain Cleaning Guide: https://cleanmyspace.com/product/chronic-pain-cleaning-guide/\nCleaning Checklist: https://cleanmyspace.com/product/a-cleaning-checklist-for-chronic-pain-low-energy-limited-mobility/\nShopping List: https://cleanmyspace.com/product/shopping-list-for-cleaning-with-chronic-pain-low-energy-limited-mobility/\n\n0:00 The Reality of Cleaning With Chronic Pain\n2:00 Managing Your Energy Like a Phone Battery\n4:01 Smart Pacing and Task Splitting Techniques\n7:03 Letting Cleaning Products Do the Heavy Lifting\n9:45 Ergonomic Movements for Pain-Free Cleaning\n13:56 Outro \n\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\nTHANKS FOR WATCHING",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "_6DBgWtJDQY",
+      "found": "2026-11-06T12:49:31.957Z",
+      "title": "Sprinkler Testing: How Often & How Many?",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-20T14:30:06+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Regular inspection, testing, and maintenance are essential to ensuring fire sprinkler systems perform as intended during a fire. \n\nIn this video, Brian O’Connor, P.E., Senior Technical Services Engineer at NFPA, explains the sprinkler testing requirements in the 2026 edition of NFPA 25, Standard for the Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems. \n\nHow many sprinklers need to be tested, and when do they need to be tested? This video breaks down the requirements to help you understand sprinkler testing frequencies, how many sprinklers must be tested, and what building owners, facility managers, fire protection professionals, and inspectors need to know to help ensure sprinkler systems remain reliable. \n\nLearn more about NFPA 25 and fire protection standards at https://www.nfpa.org/25.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "V7U45AQ5Etg",
+      "found": "2026-11-06T12:49:32.926Z",
+      "title": "Protecting Employees from Electrical Hazards with NFPA 70E",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-19T16:14:28+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "Whether starting from zero or looking to finalize your electrical safety program, a 40-minute education session from the 2026 NFPA Conference & Expo® provided attendees with guidance on how to protect employees from electrical hazards by using NFPA 70E®, Standard for Electrical Safety in the Workplace®. ⚡️\n\nWatch the full session recording, plus four more, and learn how to register for next year's Conference & Expo in San Antonio so you don't miss future live presentations like this: https://nfpa.social/471QNzi",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "MU28excJEu0",
+      "found": "2026-11-06T12:38:53.574Z",
+      "title": "WPS Dialogues | حوار القمة الشرطية العالمية",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-10-16T18:25:18+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "تمهيداً لانعقاد القمة الشرطية العالمية 2026، تُعقد جلسة حوارية تجمع نخبة من القيادات الشرطية وكبار المسؤولين التنفيذيين والخبراء في مجالات العمل الشرطي والاستخبارات المالية والذكاء الاصطناعي والتكنولوجيا.\n\nوتسلط الجلسة الضوء على الذكاء الاصطناعي والابتكار ومكافحة غسل الأموال، وتتيح المجال لتفاعل الحضور وتبادل الرؤى والخبرات حول التحديات والتطورات التي ترسم ملامح مستقبل العمل الشرطي.\n\n#القمة_الشرطية_العالمية #القمة_الشرطية_العالمية_2026\n\nAhead of the World Police Summit 2026, a dialogue session will bring together senior police leaders, executives, and experts in policing, financial intelligence, AI, and technology.\n\nThe session will focus on AI, innovation, and anti-money laundering, encouraging audience engagement and the exchange of insights on emerging challenges and developments shaping the future of policing.\n\n#WorldPoliceSummit #WorldPoliceSummit2026",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "JZNTrsaH5xk",
+      "found": "2026-11-06T12:49:39.773Z",
+      "title": "أخبار شرطة أبوظبي",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-10-16T17:25:24+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "iGWGuE5oKU0",
+      "found": "2026-11-06T12:49:33.939Z",
+      "title": "Hot Mics",
+      "channel": "NFPA",
+      "duration": "",
+      "published": "2026-10-16T15:47:41+00:00",
+      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "description": "In each issue of NFPA Journal, we analyze recent events through the lens of the NFPA Fire & Life Safety Ecosystem to show how today’s investments in safety can reduce risk and save lives in the future. \n\nThis video highlights success within the system: a Pennsylvania fire station launched a video podcast to strengthen community engagement and better connect residents with their fire department. \n\nWatch the video to learn more and explore other Ecosystem successes in the NFPA Journal Summer issue: https://www.nxtbook.com/nxtbooks/nfpa/journal_2026summer/index.php#/p/16",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "ernyFWiVNew",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What should you do before starting the floor scrubber?",
-            "answer": 0,
-            "options": [
-              "Clear the floor of obstacles",
-              "Add more water to the tank",
-              "Change the scrubbing pads"
-            ]
-          },
-          {
-            "q": "What is the primary function of the T300 machine?",
-            "answer": 1,
-            "options": [
-              "Polishing walls",
-              "Scrubbing floors",
-              "Vacuuming carpets"
-            ]
-          },
-          {
-            "q": "What is essential to wear while operating the machine?",
-            "answer": 0,
-            "options": [
-              "Safety shoes",
-              "Ear protection",
-              "Rubber gloves"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.1-flash-lite",
-        "steps": [
-          "Check the machine for any visible damage.",
-          "Position the machine at the start of the area.",
-          "Engage the scrubbing mechanism.",
-          "Push the machine forward to clean the floor."
-        ],
-        "title": "Operating the T300 Floor Scrubber",
-        "review": {
-          "reason": "The video provides a clear and simple demonstration of standard floor cleaning equipment.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "None",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure the floor area is clear of obstacles and debris before starting the machine.",
-        "source": "ai",
-        "subject": "Floor Cleaning Machine",
-        "summary": "This video demonstrates the basic operation of a T300 floor scrubbing machine in a workshop environment.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T11:47:47.013Z",
+      "found": "2026-11-06T12:49:12.600Z",
       "title": "👉 Watch the T300 in action #floorcleaningmachine",
       "channel": "Tennant Company",
       "duration": "",
@@ -613,67 +961,7 @@
     },
     {
       "yt": "htpbDeamZF4",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High-Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What is the first step before starting the robot?",
-            "answer": 0,
-            "options": [
-              "Clear the area of obstacles",
-              "Wash the floor manually",
-              "Turn off all corridor lights"
-            ]
-          },
-          {
-            "q": "Where should you monitor the robot?",
-            "answer": 1,
-            "options": [
-              "From a different floor",
-              "While it navigates the hallway",
-              "Only when it finishes"
-            ]
-          },
-          {
-            "q": "What is required before operating the machine?",
-            "answer": 1,
-            "options": [
-              "A specialized degree",
-              "Safety shoes and high-visibility vest",
-              "A full bucket of water"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.1-flash-lite",
-        "steps": [
-          "Position the robot at the start of the corridor.",
-          "Power on the machine using the control panel.",
-          "Select the appropriate cleaning program for the floor surface.",
-          "Initiate the autonomous cleaning cycle.",
-          "Monitor the robot as it navigates the hallway."
-        ],
-        "title": "Operating Autonomous Floor Scrubbing Robots",
-        "review": {
-          "reason": "The video provides a clear visual demonstration of autonomous floor cleaning equipment in a hospital setting.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "None",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure the floor area is clear of obstacles and pedestrians before starting the autonomous cleaning cycle.",
-        "source": "ai",
-        "subject": "Floor Scrubbing Equipment",
-        "summary": "This video demonstrates an autonomous floor scrubbing robot navigating and cleaning a hospital corridor.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T11:47:48.131Z",
+      "found": "2026-11-06T12:49:13.445Z",
       "title": "Autonomous floor cleaning for hospitals 🏥 #hospitalcleaning #facilitymanagement #floorcleaningrobot",
       "channel": "Tennant Company",
       "duration": "",
@@ -684,1295 +972,112 @@
       "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "kS8h2xC9Ygs",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Dust Mask"
-        ],
-        "quiz": [
-          {
-            "q": "What is applied before laying tiles to prevent water leakage?",
-            "answer": 1,
-            "options": [
-              "Paint layer",
-              "Waterproofing membrane",
-              "Drywall mud"
-            ]
-          },
-          {
-            "q": "How should tiles be spaced during installation?",
-            "answer": 0,
-            "options": [
-              "Using tile spacers",
-              "By eye",
-              "Touching each other directly"
-            ]
-          },
-          {
-            "q": "What material is used to level the shower floor?",
-            "answer": 1,
-            "options": [
-              "Wood planks",
-              "Mortar bed",
-              "Plaster"
-            ]
-          }
-        ],
-        "level": "Advanced",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Prepare and insulate the wall framing.",
-          "Install waterproof backing boards.",
-          "Apply mortar bed and level the shower floor.",
-          "Apply waterproofing membrane over joints and drains.",
-          "Install wall and floor tiles using spacers and adhesive.",
-          "Grout and seal the tiled shower surfaces."
-        ],
-        "title": "Curbless Tile Shower Installation",
-        "review": {
-          "reason": "Clear demonstration of tile shower installation and waterproofing methods.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": false,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure proper ventilation when using tile saws, mortars, and sealants.",
-        "source": "ai",
-        "subject": "Fundamentals",
-        "summary": "This video demonstrates the step-by-step installation of a curbless tile shower, including waterproofing, mortar bed preparation, and tile setting.",
-        "category": "Civil & Carpentry",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:00.837Z",
-      "title": "CURBLESS Tile shower installation #howtotile #diy #tiles #construction",
-      "channel": "Sal DiBlasi (tiling & waterproofing)",
+      "yt": "IvFeZAzqKSI",
+      "found": "2026-11-06T12:50:00.099Z",
+      "title": "I Tested My Old Grout Cleaning Hack: Here’s The Truth",
+      "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-10T12:47:20+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "description": "SUBSCRIBE Learn how to tile the right way.\nCurbless Tile shower installation #howtotile #diy #tiles #construction SUBSCRIBE Learn how to tile the right way. All tile installed by Sal DiBlasi, Elite-tile Company, in the Boston North Shore area. This video contains affiliate links, which means I will receive a small commission if you click on the product link. #tile #transformthetrade  #howtotile #installingtile #howtoinstalltile #liticrete #mapei #Schlutersystems #diy #construction #ardex\n\n🙂 This is my Amazon Store 🙂 https://a.co/d/015wZyAM\n\nPayPal\nhttps://www.paypal.com/donate/?hosted_button_id=UMJSX3UHEHQGQ\n\n🌲 Link Tree 🌲\nhttps://linktr.ee/saldiblasi\n\n☕ Buy me a coffee ☕\nhttps://www.buymeacoffee.com/saldibs2",
-      "channelCategory": "",
-      "suggestedCategory": "Civil & Carpentry"
-    },
-    {
-      "yt": "LOSdIEgSUuo",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Safety Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What screwdriver type is used for Pozi screws?",
-            "answer": 0,
-            "options": [
-              "Pozi No. 2",
-              "Flathead",
-              "Phillips No. 1"
-            ]
-          },
-          {
-            "q": "Why use a quality screwdriver?",
-            "answer": 0,
-            "options": [
-              "To prevent slipping and wearing down",
-              "To make it heavier",
-              "To change the color"
-            ]
-          },
-          {
-            "q": "Is the shaft fully insulated on this screwdriver?",
-            "answer": 1,
-            "options": [
-              "Yes",
-              "No",
-              "Not applicable"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Select a Pozi No. 2 screwdriver for electrical screws.",
-          "Align the screwdriver tip firmly with the screw head.",
-          "Drive screws into back boxes or wooden boards securely."
-        ],
-        "title": "Choosing and Using a Pozi Screwdriver",
-        "review": {
-          "reason": "Good practical advice on selecting the right hand tools for electrical installation work.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure the circuit is dead before installing or tightening electrical accessories.",
-        "source": "ai",
-        "subject": "Wiring Accessories",
-        "summary": "This video explains the difference between cheap and quality Pozi No. 2 screwdrivers and why a good tool prevents screw head damage when installing electrical accessories.",
-        "category": "Electrical",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:49:40.575Z",
-      "title": "Must-Have Tool 👀",
-      "channel": "GSH Electrical",
-      "duration": "",
-      "published": "2026-10-10T09:30:17+00:00",
-      "channelUrl": "https://www.youtube.com/@GSHElectrical",
-      "description": "This is the one tool everyone training at college to be an electrician needs to have. \n\nVideos are training aids for City and Guilds (C and G) and EAL courses Level 1, 2, 3 plus AM2, AM2S and AM2E. \n\nYou can follow me day by day on Facebook, Instagram, Twitter and TikTok lookout for \"GSH Electrical”.\n\n#GSHElectrical #electricaltrainingvideos",
-      "channelCategory": "Electrical",
-      "suggestedCategory": "Electrical"
-    },
-    {
-      "yt": "ua4MKGNbv9I",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What type of machine is shown in the video?",
-            "answer": 0,
-            "options": [
-              "Autonomous floor scrubber",
-              "Handheld vacuum cleaner",
-              "Pressure washer"
-            ]
-          },
-          {
-            "q": "Where is the machine operating?",
-            "answer": 1,
-            "options": [
-              "Office lobby",
-              "Supermarket aisle",
-              "Warehouse loading bay"
-            ]
-          },
-          {
-            "q": "What should technicians be aware of while it operates?",
-            "answer": 0,
-            "options": [
-              "Keep clear of its path",
-              "Push it manually",
-              "Unplug the battery"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Position the floor scrubber in the aisle",
-          "Power on the autonomous machine",
-          "Monitor the scrubber as it cleans",
-          "Ensure safe passage around shoppers"
-        ],
-        "title": "Operating Autonomous Floor Scrubbers",
-        "review": {
-          "reason": "Useful clip showing an autonomous floor scrubber in a retail setting, but lacks detailed operational instruction.",
-          "unsafe": [],
-          "quality": 4,
-          "talking": true,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Keep clear of the autonomous machine's path while it is moving.",
-        "source": "ai",
-        "subject": "Floor Scrubbing Equipment",
-        "summary": "Demonstrates an autonomous floor scrubber cleaning tile flooring in a supermarket aisle.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:51:22.584Z",
-      "title": "🛒 When the team is busy, the X6 ROVR helps keep floors clean.",
-      "channel": "Tennant Company",
-      "duration": "",
-      "published": "2026-10-09T15:00:05+00:00",
-      "channelUrl": "https://www.youtube.com/@TennantCompany",
-      "description": "While store teams focus on customers and daily operations, the X6 ROVR helps maintain clean floors with autonomous cleaning. \n\n📹 Kris Dihrkop\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "published": "2026-10-14T00:15:24+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "I'm critiquing my 15-year-old How to Clean Grout video to see what still works — and what I'd never do again.\n\nIf you want to know how to clean grout faster, safer, and without spending all weekend on your knees, start here.15 years ago I showed you a simple baking soda paste, a toothbrush, and a 15-minute wait.\n\n It worked — over 3 million of you watched it — but a lot has changed in how I clean grout now. In this video I'm breaking down what I got right (fast payoff, visual proof, sealing after you clean), what I'd update today, and how I'd tackle large floors, textured tile, and natural stone without damage.I'll also show you my updated method with hydrogen peroxide + baking soda, dwell time that actually works, when to bring in a drill brush or steam, and the sealer step most people skip.\n\nMy name is Melissa Maker. I'm an accidental cleaning expert, which means I hate cleaning, but I love finding the most efficient and effective ways to get the job done right the first time.And that brings me to this week's comment question, which is… have you tried the old baking soda method, and how big is the grout job you're dealing with now? Let me know in the comments down below.\n\nProducts used in this video\n\nConcrobium - https://link.amazon/B08ySAwlF (USA/Intl)\nConcrobium - https://link.amazon/B0iV9aLEE (Canada)\n\nActive Mold Control - https://link.amazon/B0cwznsYG (USA/Intl)\nActive Mold Control - https://link.amazon/B01hmonbS (Canada)\n\nSteam Cleaner - https://link.amazon/B0aSkBOb5 (USA/Intl)\nSteam Cleaner-  https://link.amazon/B07DkxhmP (Canada\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\n\nTHANKS FOR WATCHING!\n\nSome product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
       "channelCategory": "Cleaning & Housekeeping",
       "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "DGKKKc89_AE",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Gloves",
-          "Voltage Detector"
-        ],
-        "quiz": [
-          {
-            "q": "What color sleeve is used to identify a switching line?",
-            "answer": 0,
-            "options": [
-              "Brown sleeve on blue wire",
-              "Yellow sleeve on green wire",
-              "Blue sleeve on brown wire"
-            ]
-          },
-          {
-            "q": "Where does the permanent live connect at the switch?",
-            "answer": 1,
-            "options": [
-              "To the neutral terminal",
-              "To the common terminal",
-              "To the earth terminal"
-            ]
-          },
-          {
-            "q": "What trade is this video primarily intended for?",
-            "answer": 1,
-            "options": [
-              "Plumbing",
-              "Electrical",
-              "HVAC"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Identify incoming and outgoing neutral and live cables at the ceiling rose.",
-          "Route permanent live and switching lines to the wall switch.",
-          "Connect permanent live to the switch common terminal.",
-          "Connect switching line back to the ceiling rose loop terminal.",
-          "Verify circuit protective conductors are securely connected to earth terminals."
-        ],
-        "title": "Lighting Circuit 3 Plate Method Explained",
-        "review": {
-          "reason": "Clear and detailed explanation of the 3-plate lighting circuit method.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Always ensure the electrical supply is completely isolated and locked off before working on any circuits.",
-        "source": "ai",
-        "subject": "Wiring Accessories",
-        "summary": "This video explains the three-plate wiring method for lighting circuits, showing how permanent live, neutral, and switch lines are connected at ceiling roses and switches.",
-        "category": "Electrical",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:49:41.637Z",
-      "title": "Lighting Circuit - 3 Plate Method Explained in 60 Seconds",
-      "channel": "GSH Electrical",
+      "yt": "Ip-Y4yWCCT8",
+      "found": "2026-11-06T12:50:00.919Z",
+      "title": "Fall Preparation for Winter!! LIVE!!!!",
+      "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-08T16:50:17+00:00",
-      "channelUrl": "https://www.youtube.com/@GSHElectrical",
-      "description": "The 3 plate method  is the most common way of wiring a lighting circuit in the UK. \n\nVideos are training aids for City and Guilds (C and G) and EAL courses Level 1, 2, 3 plus AM2, AM2S and AM2E. \n\nYou can follow me day by day on Facebook, Instagram, Twitter and TikTok lookout for \"GSH Electrical”.\n\n#GSHElectrical #electricaltrainingvideos",
-      "channelCategory": "Electrical",
-      "suggestedCategory": "Electrical"
-    },
-    {
-      "yt": "ZBRf9CN2Ohc",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Gloves",
-          "Work Boots"
-        ],
-        "quiz": [
-          {
-            "q": "Which sprinkler type is commonly used for watering lawns?",
-            "answer": 1,
-            "options": [
-              "Spray head",
-              "Rotor",
-              "Impact sprinkler"
-            ]
-          },
-          {
-            "q": "What do spray heads provide?",
-            "answer": 0,
-            "options": [
-              "A steady fan of water",
-              "Rotating fingers",
-              "Impact sounds"
-            ]
-          },
-          {
-            "q": "Where are impact sprinklers great to use?",
-            "answer": 1,
-            "options": [
-              "Small indoor pots",
-              "Large areas with uncleaned water",
-              "Narrow grass strips"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Identify rotor sprinkler heads with thick pop-up stems used for lawns.",
-          "Identify spray heads that spray a steady fan of water for flower beds.",
-          "Identify rotary nozzles that use rotating streams on pop-up bodies.",
-          "Identify impact sprinklers used for large areas and low-quality water sources."
-        ],
-        "title": "Sprinkler Head Types and Applications Explained",
-        "review": {
-          "reason": "Clear visual and audio explanation of different sprinkler types and their practical applications for landscaping maintenance.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure system pressure is isolated or turned off before performing any maintenance on sprinkler heads.",
-        "source": "ai",
-        "subject": "Irrigation Valve Troubleshooting",
-        "summary": "The presenter explains the differences between rotor, spray head, rotary nozzle, and impact sprinkler types and their uses.",
-        "category": "Landscaping & Irrigation",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:09.792Z",
-      "title": "Sprinkler Head Types Explained | Rotors, Sprays & Rotary Nozzles | Sprinkler Warehouse",
-      "channel": "Sprinkler Warehouse (irrigation)",
-      "duration": "",
-      "published": "2026-10-07T21:31:21+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA",
-      "description": "Learn how to identify sprinkler head types, including rotors, spray heads, rotary nozzles, and impact sprinklers—and where each works best.\n\nShop sprinkler heads:\nhttps://www.sprinklerwarehouse.com/product/lawn-irrigation/sprinkler-heads\n\nNot sure what kind of sprinkler is in your yard? Dwayne Smith, your Sprinkler Warehouse Product Specialist, shows the differences in their appearance and watering patterns so you can recognize what you have and understand your options.\n\nFrom large lawns to flower beds and narrow strips of grass, knowing your sprinkler type is a helpful first step when replacing a broken head, planning an upgrade, or troubleshooting your irrigation system.\n\nFind sprinkler heads, nozzles, and irrigation supplies at:\nhttps://www.sprinklerwarehouse.com\n\nYouTube comments are not monitored. Please direct your questions to the customer service representatives on www.sprinklerwarehouse.com.",
-      "channelCategory": "Landscaping & Irrigation",
-      "suggestedCategory": "Landscaping & Irrigation"
-    },
-    {
-      "yt": "Qy8K01YwNo4",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What issue does cheap tile often have?",
-            "answer": 0,
-            "options": [
-              "Size inconsistency",
-              "Wrong color",
-              "Extra thickness"
-            ]
-          },
-          {
-            "q": "Where were the compared tiles from?",
-            "answer": 1,
-            "options": [
-              "Different stores",
-              "The same box",
-              "Different batches"
-            ]
-          },
-          {
-            "q": "What is important when buying tile?",
-            "answer": 2,
-            "options": [
-              "Only buying the cheapest option",
-              "Expecting cheap tile to match expensive results",
-              "Considering that price reflects quality"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Lay out tiles to check for size consistency.",
-          "Compare tiles from the same box.",
-          "Measure any variations or gaps between tiles."
-        ],
-        "title": "Inspecting Size Variation in Cheap Tiles",
-        "review": {
-          "reason": "Useful quick tip on tile quality checks, though very short.",
-          "unsafe": [],
-          "quality": 6,
-          "talking": true,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Ensure proper handling of ceramic tiles to avoid cuts from sharp edges.",
-        "source": "ai",
-        "subject": "Tile Installation",
-        "summary": "The video demonstrates sizing inconsistencies found in inexpensive ceramic tiles from the same box.",
-        "category": "Civil & Carpentry",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:02.139Z",
-      "title": "The Hidden Trap with Cheap Tile #diy #construction #tiles",
-      "channel": "Sal DiBlasi (tiling & waterproofing)",
-      "duration": "",
-      "published": "2026-10-07T13:00:25+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "description": "SUBSCRIBE Learn how to tile the right way.\nThe Hidden Trap with Cheap Tile Cheap tile, get what you pay for. There are many types of tile and all different price ranges for tile. Generally the more you pay for a tile the better the quality that is not to say that some expensive tiles are not junk. I am not referring to closeouts, or overstocks, or tiles that would normally have cost more, I am referring to tiles that are manufactured with low quality control and few standards. I am not saying not to buy these tiles; I am only saying that you get what you pay for. Do not expect to have the same results as you would get with a quality tile. Expect to have uneven grout lines, miss aligned corners and an inferior install over all. This is not a discounted tile, or a closeout, this is a tile manufactured to be sold cheap. If that is what you want and expect for the purpose that you are using the cheap tile, then that is fine. All tile installed by Sal DiBlasi, Elite-tile Company, in the Boston North Shore area. This video contains affiliate links, which means I will receive a small commission if you click on the product link. #tile #transformthetrade  #howtotile #installingtile #howtoinstalltile #liticrete #mapei #Schlutersystems #diy #construction #ardex\n\n🙂 This is my Amazon Store 🙂 https://a.co/d/015wZyAM\n\nPayPal\nhttps://www.paypal.com/donate/?hosted_button_id=UMJSX3UHEHQGQ\n\nPatreon  https://www.patreon.com/c/saldiblasi\n\n🌲 Link Tree 🌲\nhttps://linktr.ee/saldiblasi\n\n☕ Buy me a coffee ☕\nhttps://www.buymeacoffee.com/saldibs2",
-      "channelCategory": "",
-      "suggestedCategory": "Civil & Carpentry"
-    },
-    {
-      "yt": "IlogIf64qGY",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High-Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What is the machine used in the video?",
-            "answer": 0,
-            "options": [
-              "Tennant T360 floor scrubber",
-              "Vacuum cleaner",
-              "Carpet extractor"
-            ]
-          },
-          {
-            "q": "Where should warning signs be placed?",
-            "answer": 1,
-            "options": [
-              "In the storage room",
-              "Around the cleaning area",
-              "On the machine handle"
-            ]
-          },
-          {
-            "q": "How should you move the scrubber across the floor?",
-            "answer": 1,
-            "options": [
-              "Run fast",
-              "Guide it steadily",
-              "Let it go unattended"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Inspect the floor scrubber and check water tanks",
-          "Power on the machine and select cleaning settings",
-          "Guide the scrubber steadily across the tiled floor",
-          "Maneuver around office furniture and pillars safely"
-        ],
-        "title": "Using a Tennant T360 Floor Scrubber",
-        "review": {
-          "reason": "This is a promotional video rather than a detailed instructional tutorial, but it shows basic floor scrubber use.",
-          "unsafe": [
-            "No PPE worn by operator"
-          ],
-          "quality": 5,
-          "talking": true,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Ensure the floor area is clear of obstacles and wet floor warning signs are placed before operating the scrubber.",
-        "source": "ai",
-        "subject": "Floor Scrubbing Equipment",
-        "summary": "Demonstrates operating a Tennant T360 walk-behind floor scrubber for commercial indoor floor cleaning.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:51:23.732Z",
-      "title": "You 🤝 T360: a partnership that just makes sense. 🧼✨",
-      "channel": "Tennant Company",
-      "duration": "",
-      "published": "2026-10-06T15:00:39+00:00",
-      "channelUrl": "https://www.youtube.com/@TennantCompany",
-      "description": "▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "published": "2026-10-11T14:46:59+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Join Melissa as she explains how she prepares around her house for the winter. Grab a coffee and join us for this morning LIVE!!! Bring all your cleaning and declutter questions!",
       "channelCategory": "Cleaning & Housekeeping",
       "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "HZoaVC8hmew",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What component is tested when checking inverter faults?",
-            "answer": 0,
-            "options": [
-              "IGBTs and inverter",
-              "Thermostat wiring",
-              "Water flow switch"
-            ]
-          },
-          {
-            "q": "What should you verify before condemning a compressor?",
-            "answer": 1,
-            "options": [
-              "Only the refrigerant charge",
-              "Whether it is an inverter or demag shaft issue",
-              "The ambient temperature"
-            ]
-          },
-          {
-            "q": "Can a replaced inverter be saved for future use?",
-            "answer": 0,
-            "options": [
-              "Yes, if stored properly",
-              "No, it must be discarded immediately",
-              "Only if repainted"
-            ]
-          }
-        ],
-        "level": "Advanced",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Check for inverter or IGBT failures.",
-          "Inspect demag shaft and compressor conditions.",
-          "Test inverter electrical continuity and performance.",
-          "Evaluate compressor replacement versus inverter salvage options."
-        ],
-        "title": "Diagnosing Turbocor Bearing Faults",
-        "review": {
-          "reason": "Provides valuable diagnostic insight for senior HVAC technicians troubleshooting centrifugal compressors.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure proper electrical isolation before inspecting or testing inverter and compressor components.",
-        "source": "ai",
-        "subject": "Refrigerant & Diagnostics",
-        "summary": "The instructor explains how to troubleshoot inverter, demag, and bearing faults in Danfoss Turbocor compressors.",
-        "category": "HVAC & Chillers",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:20.980Z",
-      "title": "Turbocor Bearing Faults: Why Good Compressors Get Condemned",
-      "channel": "HVACTIME (chillers)",
+      "yt": "ktbFy66nOuE",
+      "found": "2026-11-06T12:50:01.758Z",
+      "title": "More updates and details about the new Clean My Space project 📁",
+      "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-06T15:00:35+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "The Turbocor keeps throwing bearing faults and the inverter tests good electrically, so the shaft gets the blame. Call it a demag and you are replacing the whole compressor. I have made that call more than once, and in hindsight those were probably inverter problems.\n\nA disruption from the IGBTs in the inverter can leave the magnetic bearings struggling to keep the shaft centered. This one walks through the order I wish I had followed: change the inverter first, see if the bearing faults improve, and only then condemn the compressor for a demagnetized shaft. It also covers how to lay that choice out for the customer up front, and why the inverter is not a wasted expense even if it turns out to be the shaft.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why the inverter is an early suspect for bearing faults: IGBT trouble makes it hard for the bearings to keep the shaft centered\n- Why condemning a Turbocor for a demag means replacing the whole compressor\n- How the inverter inside the compressor can test good electrically and still be behind the faults\n- The Turbocors I condemned for a demag that, in hindsight, probably had an inverter problem\n- Changing the inverter first and watching whether the bearing faults improve\n- When the faults do not improve, why the demag shaft becomes the likely call and the compressor comes next\n- Laying out the choice for the customer up front: a brand new compressor, or an inverter first to try to save this one\n- If the inverter does not fix it, why the old compressor still has value for salvage parts\n- Why the inverter you put in is not a wasted expense: stored properly, the customer can keep it and use it later\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Turbocor Bearing Faults: Inverter or Demag Shaft\n0:34 Change the Inverter Before Condemning the Compressor\n1:09 New Compressor or Inverter First: The Customer Conversation",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
+      "published": "2026-10-09T23:20:42+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Hi! So after my first video went up about this, I wanted to  answer some of your questions, share more details, and promise you that I’m not going anywhere. Most importantly, I hear you and I am listening! 💕 I can’t WAIT to share more soon! #cleanmyspace #cleaningexpert Also, what a winning moment when I realized the pile of recycling sitting by my stairs was in shot. Perfect 👌",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "ZRNhndAwKg8",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "ESD Wrist Strap"
-        ],
-        "quiz": [
-          {
-            "q": "What is the primary function of the WLSR8000 receiver?",
-            "answer": 0,
-            "options": [
-              "Provide a wireless path for NSW8000 sensors",
-              "Act as a standalone HVAC controller",
-              "Replace the main building fire alarm panel"
-            ]
-          },
-          {
-            "q": "How many NSW8000 room sensors can a single WLSR8000 receiver support?",
-            "answer": 1,
-            "options": [
-              "Up to 5 sensors",
-              "Up to 9 sensors",
-              "Up to 20 sensors"
-            ]
-          },
-          {
-            "q": "What wireless security standard does the WLSR8000 use?",
-            "answer": 1,
-            "options": [
-              "WPA2 Enterprise",
-              "AES-128 Zigbee security",
-              "Unencrypted RF signal"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Assess whether the application requires a zone-level wireless receiver or a full mesh network.",
-          "Select the WLSR8000 wireless SA bus receiver for zone-level point-to-point applications.",
-          "Mount the WLSR8000 receiver in a suitable location within range of NSW8000 room sensors.",
-          "Connect the receiver to the HVAC controller via the wired SA bus control path.",
-          "Verify wireless communication and sensor data transmission without updating controller firmware."
-        ],
-        "title": "Installing WLSR8000 Wireless SA Bus Receiver",
-        "review": {
-          "reason": "Clear and informative video explaining the application and benefits of the wireless SA bus receiver for HVAC systems.",
-          "unsafe": [],
-          "quality": 9,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure proper power isolation and follow standard electrical safety guidelines when installing controller bus hardware.",
-        "source": "ai",
-        "subject": "Fire Alarm Control Panel Basics",
-        "summary": "This video introduces the WLSR8000 Wireless SA Bus Receiver, explaining its features, compatibility with NSW8000 room sensors, and how it provides a simple one-to-one wireless receiver path to HVAC controllers.",
-        "category": "BMS & Controls",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:51:29.690Z",
-      "title": "WLSR8000 Wireless SA Bus Receiver. Engineer less. Install Faster.",
-      "channel": "Johnson Controls",
+      "yt": "xLwHn4xtSQs",
+      "found": "2026-11-06T12:50:02.760Z",
+      "title": "Cleaning GROUT: What I got wrong 15 years ago",
+      "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-05T19:21:46+00:00",
-      "channelUrl": "https://www.youtube.com/@JohnsonControls",
-      "description": "Simplify room sensing with the Johnson Controls WLSR800 Wireless SA Bus Receiver. Connect wireless sensors to HVAC controllers quickly and easily while reducing installation complexity and supporting flexible building deployments.\n\nIdeal for offices, schools, museums, retail spaces, banks, and historic buildings, the Wireless SA Bus Receiver provides the flexibility of wireless communication where running wires may be difficult, costly, or disruptive. By delivering reliable building data and streamlined integration, it helps maintain efficient HVAC operation while making building automation projects faster and easier to deploy.",
-      "channelCategory": "Fire & Life Safety",
-      "suggestedCategory": "Fire & Life Safety"
+      "published": "2026-10-09T19:00:17+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "I'm critiquing my 15-year-old How to Clean Grout video to see what still works — and what I'd never do again.\n\nIf you want to know how to clean grout faster, safer, and without spending all weekend on your knees, start here.15 years ago I showed you a simple baking soda paste, a toothbrush, and a 15-minute wait.\n\n It worked — over 3 million of you watched it — but a lot has changed in how I clean grout now. In this video I'm breaking down what I got right (fast payoff, visual proof, sealing after you clean), what I'd update today, and how I'd tackle large floors, textured tile, and natural stone without damage.I'll also show you my updated method with hydrogen peroxide + baking soda, dwell time that actually works, when to bring in a drill brush or steam, and the sealer step most people skip.\n\nMy name is Melissa Maker. I'm an accidental cleaning expert, which means I hate cleaning, but I love finding the most efficient and effective ways to get the job done right the first time.And that brings me to this week's comment question, which is… have you tried the old baking soda method, and how big is the grout job you're dealing with now? Let me know in the comments down below.\n\nProducts used in this video\n\nConcrobium - https://link.amazon/B08ySAwlF (USA/Intl)\nConcrobium - https://link.amazon/B0iV9aLEE (Canada)\n\nActive Mold Control - https://link.amazon/B0cwznsYG (USA/Intl)\nActive Mold Control - https://link.amazon/B01hmonbS (Canada)\n\nSteam Cleaner - https://link.amazon/B0aSkBOb5 (USA/Intl)\nSteam Cleaner-  https://link.amazon/B07DkxhmP (Canada)\n\nSubscribe for weekly solutions to your cleaning challenges, and let me know in the comments what you want to tackle next!\n\n0:00 - Watching my 2011 grout video 15 years later\n1:12 - What I got right\n3:05 - What I'd never do the same today\n5:40 - My updated grout method (demo)\n9:15 - Large floors, stone + textured tile warnings\n11:30 - To seal or not to sealWATCH NEXT\nOriginal 2011 grout video - link in pinned comment\nBathroom tiles + grout deep clean - link in cardsSHOP + FOLLOW\nShop Maker's Clean + my favorite tools - links below\nIf you haven't done so already, make sure that you subscribe so you can see more of our videos coming right into your feed. Thanks so much for watching and we'll see you next time.\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\n\nTHANKS FOR WATCHING!\n\nSome product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "1S0Cyl_3yG8",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "ESD Wrist Strap"
-        ],
-        "quiz": [
-          {
-            "q": "What tool is used to test HMI applications without hardware?",
-            "answer": 0,
-            "options": [
-              "Built-in emulator",
-              "Multimeter",
-              "Oscilloscope"
-            ]
-          },
-          {
-            "q": "What type of elements can be added to an HMI screen?",
-            "answer": 1,
-            "options": [
-              "Hydraulic pipes",
-              "Static elements like shapes",
-              "Mechanical gears"
-            ]
-          },
-          {
-            "q": "Is FactoryTalk Optix Studio free to download and use?",
-            "answer": 1,
-            "options": [
-              "No, it requires expensive licenses",
-              "Yes, it is free to download",
-              "Only for one day"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Create a new project in FactoryTalk Optix.",
-          "Add static elements like shapes and images.",
-          "Visualize and control process elements with basic controls.",
-          "Test the HMI application using the built-in emulator."
-        ],
-        "title": "Introduction to FactoryTalk Optix HMI Development",
-        "review": {
-          "reason": "Clear introduction to basic HMI development using modern software tools suitable for control technicians.",
-          "unsafe": [],
-          "quality": 9,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure all software tools and computer hardware meet the necessary system requirements before starting.",
-        "source": "ai",
-        "subject": "BMS & Controls",
-        "summary": "This video introduces the FactoryTalk Optix course for beginners, explaining how to create simple HMI applications and what software or hardware is needed.",
-        "category": "BMS & Controls",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:56.337Z",
-      "title": "FactoryTalk Optix 1: Basic HMI Development",
-      "channel": "RealPars",
+      "yt": "4nyKh6e9A8U",
+      "found": "2026-11-06T12:50:03.882Z",
+      "title": "Laundry Room CLEANOUT!",
+      "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-05T13:00:30+00:00",
-      "channelUrl": "https://www.youtube.com/@RealPars",
-      "description": "FactoryTalk Optix is Rockwell's new HMI software. More and more plants are starting to use it. This course helps you learn it from the start.\n\nYou will build one small HMI project from zero. It controls a simple conveyor. You will make a new project, design the screen, connect it to PLC tags, and add buttons and a status light. Then you test it on your own computer with an emulated PLC.\n\nThis course is a good fit if you already know some Studio 5000 and want to add HMI skills to your work. You also get a RealPars certificate when you finish.\n\nStart today: https://www.realpars.com/courses/factorytalk-optix-basic-hmi-development",
-      "channelCategory": "BMS & Controls",
-      "suggestedCategory": "BMS & Controls"
+      "published": "2026-10-06T16:51:30+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Join Melissa as she declutters her Laundry Room. Bring all your cleaning questions and join HER!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "6p58Z7hAQSA",
-      "draft": {
-        "ppe": [
-          "Safety Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What should you do before loading the washing machine?",
-            "answer": 0,
-            "options": [
-              "Open the washing machine door",
-              "Unplug the appliance",
-              "Turn on the water supply"
-            ]
-          },
-          {
-            "q": "Where are the clothes placed?",
-            "answer": 0,
-            "options": [
-              "Inside the drum",
-              "On top of the machine",
-              "In the detergent drawer"
-            ]
-          },
-          {
-            "q": "What is the final step shown?",
-            "answer": 0,
-            "options": [
-              "Close the washing machine door securely",
-              "Press the start button",
-              "Add detergent"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Open the washing machine door",
-          "Place the clothing items inside the drum",
-          "Close the washing machine door securely"
-        ],
-        "title": "Loading a Washing Machine",
-        "review": {
-          "reason": "It clearly demonstrates basic front-load washing machine loading procedures.",
-          "unsafe": [],
-          "quality": 5,
-          "talking": true,
-          "language": "Chinese",
-          "recommend": "approve",
-          "relevance": 7
-        },
-        "safety": "Ensure the appliance is switched off and unplugged before loading or servicing.",
-        "source": "ai",
-        "subject": "Appliance Maintenance",
-        "summary": "This video shows a technician loading laundry into a front-load washing machine outdoors.",
-        "category": "Kitchen & Laundry Appliances",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:36.494Z",
-      "title": "Machine Machine troubleshooting AI",
-      "channel": "KITCHEN TECH",
+      "yt": "WMhB38RF4Qs",
+      "found": "2026-11-06T12:38:54.567Z",
+      "title": "Legacy of Honor: Military Graduation Ceremonies 2000 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
       "duration": "",
-      "published": "2026-10-05T10:00:01+00:00",
-      "channelUrl": "https://www.youtube.com/@WPKITCHENTECH",
+      "published": "2026-10-06T13:00:37+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
       "description": "",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
-      "yt": "hFkLVXMO0kM",
-      "draft": {
-        "ppe": [
-          "Safety Helmet",
-          "Safety Glasses",
-          "Yellow Rubber Gloves",
-          "Work Uniform"
-        ],
-        "quiz": [
-          {
-            "q": "What PPE was worn on the hands?",
-            "answer": 1,
-            "options": [
-              "Cloth gloves",
-              "Yellow rubber gloves",
-              "Leather gloves"
-            ]
-          },
-          {
-            "q": "What did the technician do first?",
-            "answer": 0,
-            "options": [
-              "Opened the dishwasher door",
-              "Unplugged the machine",
-              "Replaced the heater"
-            ]
-          },
-          {
-            "q": "What head protection was worn?",
-            "answer": 1,
-            "options": [
-              "Baseball cap",
-              "Hard hat / safety helmet",
-              "None"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Open the dishwasher door carefully",
-          "Wipe down the interior surfaces",
-          "Inspect the internal components and plumbing"
-        ],
-        "title": "Industrial Dishwasher Maintenance and Inspection",
-        "review": {
-          "reason": "Useful visual for commercial dishwasher basic inspection, but lacks detailed instructional audio or narration.",
-          "unsafe": [],
-          "quality": 6,
-          "talking": false,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 7
-        },
-        "safety": "Always ensure the machine is powered off and cooled down before opening or servicing.",
-        "source": "ai",
-        "subject": "Appliance Fire Safety",
-        "summary": "A technician opens an industrial dishwasher and inspects the interior components wearing protective gear.",
-        "category": "Kitchen & Laundry Appliances",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:37.650Z",
-      "title": "Dishwasher machine heater replaced",
-      "channel": "KITCHEN TECH",
+      "yt": "h6PqyhiGPJs",
+      "found": "2026-11-06T12:49:40.798Z",
+      "title": "لقاء مع العميد الدكتور المهندس مسلم محمد الجنيبي، مدير إدارة تحصيل المخالفات",
+      "channel": "Abu Dhabi Police",
       "duration": "",
-      "published": "2026-10-04T10:00:36+00:00",
-      "channelUrl": "https://www.youtube.com/@WPKITCHENTECH",
-      "description": "",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
+      "published": "2026-10-06T09:21:21+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "لقاء مع العميد الدكتور المهندس مسلم محمد الجنيبي، مدير إدارة تحصيل المخالفات المرورية بمديرية المرور والدوريات الأمنية في شرطة أبوظبي، عبر برنامج «السطر الأخير» على قناة الإمارات، تحدث خلاله عن أثر التكنولوجيا المتقدمة والذكاء الاصطناعي في المركبات ذاتية القيادة، ودورهما في تعزيز السلامة المرورية .",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
-      "yt": "AYjFxw7Gp9s",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "Safety Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What caused the condenser damage?",
-            "answer": 0,
-            "options": [
-              "A fall from a lifting platform",
-              "Electrical short circuit",
-              "Improper storage"
-            ]
-          },
-          {
-            "q": "What part of the condenser was damaged?",
-            "answer": 1,
-            "options": [
-              "Only the electrical wires",
-              "The frame, coils, and fan shroud",
-              "Only the power switch"
-            ]
-          },
-          {
-            "q": "What must be done with the damaged unit?",
-            "answer": 0,
-            "options": [
-              "Replace it with a new unit",
-              "Weld the broken frame",
-              "Use it without repairs"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Inspect the damaged condenser unit",
-          "Identify frame and coil damage",
-          "Review the lifting platform failure",
-          "Replace the damaged condenser unit"
-        ],
-        "title": "Preventing Lift Accidents With Commercial Condensers",
-        "review": {
-          "reason": "Provides a practical lesson on equipment safety during lifting operations.",
-          "unsafe": [
-            "No PPE worn while handling damaged heavy equipment"
-          ],
-          "quality": 5,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 7
-        },
-        "safety": "Ensure proper lifting equipment securement to prevent equipment falls and damage.",
-        "source": "ai",
-        "subject": "Refrigerator Cooling",
-        "summary": "A technician explains how a condenser unit was damaged due to a fall from a lifting platform, rendering it unusable.",
-        "category": "Kitchen & Laundry Appliances",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:45.451Z",
-      "title": "Damaged Condenser Due to Fall #beverageequipment",
-      "channel": "Learn A Trade (commercial equipment)",
+      "yt": "6-QfNLN97kM",
+      "found": "2026-11-06T12:50:04.744Z",
+      "title": "Are Cleaning Robots the REAL DEAL?",
+      "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-04T00:05:15+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
-      "description": "🔧 Try the FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n🚀 Upgrade to Pro:\nhttps://www.learnatrade.online/unlock-lat-technician-pro-access\n👇\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA/join\n👇\nThis channel is intended to educate those interested in working in the Commercial Beverage Equipment, HVAC and Refrigeration trade. We will offer educational training resources, actual onsite repair videos to help those watching see some of the work and tools involved. We will share the theory involved in the trade along with interviews of industry professional. We feel that this channel will help those in the industry already and those looking to get into the industry!\n👇\n🔧 Try the FREE LAT Technician App:\nhttps://learnatrade1-ai.github.io/lat-tech-app/\n\n🚀 Upgrade to Pro:\nhttps://www.learnatrade.online/unlock-lat-technician-pro-access\n\n📩 Contact: info@learnatrade.online",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
+      "published": "2026-10-02T19:15:02+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "A ROBOT to CLEAN for you??? \nCould humanoid cleaning robots finally take over your chores? I am putting the latest Tau Robotics tech to the test to see if these machines can actually handle a deep clean.\n\nWe are looking at how Chelsea and Elon manage everything from wiping counters to tackling bathrooms, all for a flat hourly rate. It is an interesting glimpse into the future of home maintenance.\n\nWould you let a robot clean your home? Let me know in the comments below!\n\nTau Robotics is offering an invite-only humanoid cleaning service in San Francisco at $30 an hour per robot, with a human operator supervising remotely. The robots are meant to handle vacuuming, wiping counters, clearing clutter, and taking out the trash. But does it hold up when you look at it through a professional cleaner's eyes?\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\n\nTHANKS FOR WATCHING!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "iC4URaB4z7A",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Gloves",
-          "Safety Shoes"
-        ],
-        "quiz": [
-          {
-            "q": "What meter setting should be used to test SCR components?",
-            "answer": 1,
-            "options": [
-              "Resistance mode",
-              "Diode test mode",
-              "Voltage mode"
-            ]
-          },
-          {
-            "q": "What should you verify before performing electrical component tests?",
-            "answer": 0,
-            "options": [
-              "Power is off and circuit is safe",
-              "The ambient temperature",
-              "The fuse brand"
-            ]
-          },
-          {
-            "q": "What is a typical expected VDC range when testing SCRs?",
-            "answer": 1,
-            "options": [
-              "12 to 24 VDC",
-              "0.32 to 0.4 VDC",
-              "120 to 240 VDC"
-            ]
-          }
-        ],
-        "level": "Advanced",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Set the multimeter to diode test mode.",
-          "Place meter leads across SCR terminals according to test procedure.",
-          "Record voltage drop readings in both directions.",
-          "Compare readings against expected manufacturer parameters."
-        ],
-        "title": "Testing SCRs Using a Multimeter Diode Test",
-        "review": {
-          "reason": "Clear and detailed explanation of testing SCRs using a multimeter for chiller maintenance technicians.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Always verify power is off and circuits are isolated before testing electrical components to prevent shock.",
-        "source": "ai",
-        "subject": "Electrical Diagnostics",
-        "summary": "The instructor demonstrates how to use a multimeter diode test function to check SCR components in HVAC chiller drives.",
-        "category": "HVAC & Chillers",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:22.183Z",
-      "title": "Good SCR vs Weak SCR: What the Diode Test Actually Shows",
-      "channel": "HVACTIME (chillers)",
+      "yt": "TOEuQ9ObZ8Y",
+      "found": "2026-11-06T12:49:41.823Z",
+      "title": "أخبار شرطة أبوظبي",
+      "channel": "Abu Dhabi Police",
       "duration": "",
-      "published": "2026-10-03T15:00:16+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "The chiller keeps throwing intermittent start failures, you diode test the SCRs, and the readings land inside the factory range. Technically in spec is not the same as good. A reading sitting near either edge of that range, with intermittent faults on top of it, likely means the set is getting weak.\n\nThis one runs a diode test on an SCR in both lead directions, shows what a passing part reads, and covers what a pass does not prove. A shorted SCR can blow apart the moment power goes back on, which is why this test comes first after blown fuses or a tripped breaker.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why SCR testing calls for a meter with a diode test function, which not every meter has, and why diode mode beats checking on ohms\n- The test itself: black lead on terminal 1, red lead on 2 and then 3, then swap the leads and run both pairs again\n- What a passing SCR read here: OL both ways from 1 to 2, and 0.38 VDC one way with OL the other from 1 to 3\n- Where most factory recommendations land: 0.3 to 0.4 VDC\n- The tighter 0.36 to 0.38 window that comes from an electronics background, why readings closer to 0.3 or 0.4 get more concerning, and why that is a warning sign, not a number to condemn on\n- When a 0.32 reading with intermittent start failures, DC bus alarms, or current faults at startup is reason to change the SCRs out, even though they are still in spec\n- Why some SCRs show a reading in one direction on both terminal pairs, and why the other SCRs in the drive become your reference when you have no manufacturer data like Turbocor's\n- Why two SCRs failing together is common, all three at once is not, and why the whole set gets replaced even when some still test good\n- What a passing diode test actually proves, and why an SCR that reads good can still give you problems under load\n- Testing before you restore power after blown fuses or a tripped breaker, because a shorted SCR does not just fail, it can blow apart\n- Why SCRs are starting to get phased out for IGBTs, which now handle AC to DC on the rectifier side, not just DC to AC on the inverter side\n- Why IGBTs give cleaner power than SCRs, and how harmonic filters clean up both the incoming feed and the harmonics an SCR drive sends back into the grid\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Why Your Meter Needs a Diode Test for SCRs\n1:31 Testing Terminals 1 to 2 and 1 to 3\n2:04 Swap the Leads: What a Passing SCR Reads\n2:36 Factory Spec vs a Tighter 0.36 to 0.38 Window\n3:48 In Spec but Weak: When to Replace SCRs Anyway\n4:33 SCR Readings Vary: Compare Across the Drive\n5:37 Replace the Whole SCR Set, Even the Good Ones\n6:07 Shorted SCRs: Why You Test Before Restoring Power\n7:43 Why SCRs Are Being Phased Out for IGBTs\n8:44 Why SCR Drives Need Harmonic Filters",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "QRsMpak-tcc",
-      "draft": {
-        "ppe": [
-          "Safety Helmet",
-          "Safety Shoes",
-          "Insulated Gloves",
-          "Safety Glasses"
-        ],
-        "quiz": [
-          {
-            "q": "What is the first action before starting DB preventive maintenance?",
-            "answer": 1,
-            "options": [
-              "Start tightening terminals",
-              "Switch off the incoming breaker",
-              "Start cleaning with air blower"
-            ]
-          },
-          {
-            "q": "What voltage is typically measured between phase and neutral?",
-            "answer": 0,
-            "options": [
-              "220V",
-              "440V",
-              "12V"
-            ]
-          },
-          {
-            "q": "What does a high-temperature hotspot on a terminal usually indicate?",
-            "answer": 1,
-            "options": [
-              "Normal operating temperature",
-              "Loose connection or poor contact",
-              "No load condition"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Select required PPE and tools",
-          "Switch off the main incoming circuit breaker",
-          "Apply Lockout-Tagout procedure",
-          "Open the DB and verify zero voltage",
-          "Check for signs of overheating and tighten terminal connections"
-        ],
-        "title": "Electrical Distribution Board Preventive Maintenance",
-        "review": {
-          "reason": "Provides a clear, step-by-step interactive simulation for safe electrical distribution board maintenance.",
-          "unsafe": [],
-          "quality": 9,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Always isolate the main incoming breaker and verify zero energy before opening or working on a distribution board.",
-        "source": "ai",
-        "subject": "Power Distribution",
-        "summary": "An interactive simulation showing PPE selection, tool preparation, and the safe sequence for inspecting and tightening an electrical distribution board.",
-        "category": "Electrical",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:17.204Z",
-      "title": "Electrical Distribution Board Preventive Maintenance- PPE, Tools and Safe work sequence",
-      "channel": "MEP Techniques (facility O&M)",
-      "duration": "",
-      "published": "2026-10-03T14:07:57+00:00",
-      "channelUrl": "https://www.youtube.com/@MEPTechniqueprabhu",
-      "description": "This 2-minute simulation demonstrates the essential steps for carrying out preventive maintenance on an electrical distribution board.\n\nThe simulation focuses on:\n✅ Selecting the correct PPE\n✅ Identifying and selecting the required tools\n✅ Following the correct preventive maintenance sequence\n✅ Applying safe electrical work practices\n✅ Completing the task in a systematic and controlled manner\n\nThis video is intended for electrical technicians, maintenance personnel, supervisors, HSE professionals, and technical training purposes.\n\n⚠️ Safety Reminder: Always follow your company’s approved electrical safety procedures, isolation/LOTO requirements, risk assessment, and applicable local regulations before performing actual electrical maintenance.\n\n#ElectricalMaintenance #PreventiveMaintenance #ElectricalSafety #DistributionBoard #DBMaintenance #ElectricalEngineering #PPE #LOTO #ElectricalTechnician #SafetyTraining #MaintenanceTraining #HSE #ElectricalSafetyTraining #TechnicalTraining #SafetySimulation",
-      "channelCategory": "",
-      "suggestedCategory": "Electrical"
-    },
-    {
-      "yt": "JLRLNDCg3_s",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Tools"
-        ],
-        "quiz": [
-          {
-            "q": "How many wires are used in a 4-20mA loop transmitter?",
-            "answer": 1,
-            "options": [
-              "One wire",
-              "Two wires",
-              "Four wires"
-            ]
-          },
-          {
-            "q": "What voltage DC power supply does the PLC provide?",
-            "answer": 1,
-            "options": [
-              "12 VDC",
-              "24 VDC",
-              "48 VDC"
-            ]
-          },
-          {
-            "q": "What is the standard current signal range for the transmitter?",
-            "answer": 0,
-            "options": [
-              "4-20 mA",
-              "0-10 mA",
-              "1-5 mA"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Power the transmitter using a 2-wire cable and 24 VDC supply.",
-          "Regulate the loop current from 4 to 20 mA based on the measurement.",
-          "Receive the current signal at the PLC or receiver.",
-          "Convert the current signal into a voltage and digital format for display."
-        ],
-        "title": "2-Wire 4-20mA Transmitter Loop Overview",
-        "review": {
-          "reason": "Clear and concise explanation of 2-wire 4-20mA instrument loops suitable for BMS training.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure proper electrical isolation and confirm power supply ratings before servicing instrumentation loops.",
-        "source": "ai",
-        "subject": "BMS & Controls",
-        "summary": "This video provides a quick recap of how a 2-wire 4-20mA transmitter works with a PLC power supply.",
-        "category": "BMS & Controls",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:51:01.519Z",
-      "title": "From Field Instrument to Control Room Operator - Instrumentation Tools",
-      "channel": "Instrumentation Tools",
-      "duration": "",
-      "published": "2026-10-03T13:30:26+00:00",
-      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
-      "description": "Learn how process data travels from field instruments to the control room, covering sensors, transmitters, 4–20 mA signals, PLC/DCS systems, and operator displays.\n\nTags:\nfrom field instrument to control room, field instrument, control room operator, field instrumentation, process instrumentation, instrumentation basics, instrument signal, 4-20 mA signal, transmitter, sensor, pressure transmitter, temperature transmitter, flow transmitter, level transmitter, PLC, DCS, SCADA, control room, process control, industrial automation, instrumentation engineering, field devices, process signals, instrumentation tools, industrial instruments, control system, automation engineer, Instrumentation Tools",
-      "channelCategory": "BMS & Controls",
-      "suggestedCategory": "BMS & Controls"
-    },
-    {
-      "yt": "Zei0lO5Scno",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What is a 2-wire transmitter commonly known as?",
-            "answer": 0,
-            "options": [
-              "Loop-powered",
-              "Separately powered",
-              "AC-powered"
-            ]
-          },
-          {
-            "q": "How many wires does a separately powered 4-wire transmitter use?",
-            "answer": 2,
-            "options": [
-              "Two wires",
-              "Three wires",
-              "Four wires"
-            ]
-          },
-          {
-            "q": "What signal range is commonly transmitted over the loops discussed?",
-            "answer": 1,
-            "options": [
-              "0-10V",
-              "4-20mA",
-              "1-5V"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Identify 2-wire loop-powered transmitters using the same pair for power and 4-20mA signal.",
-          "Examine 3-wire transmitters with a shared negative reference for power and signal.",
-          "Review 4-wire transmitters using separate pairs for external power supply and signal output."
-        ],
-        "title": "2-Wire vs 3-Wire vs 4-Wire Instruments",
-        "review": {
-          "reason": "Clear explanation of instrument wiring differences useful for control technicians.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Always ensure power is off before working on instrument wiring and connections.",
-        "source": "ai",
-        "subject": "BMS & Controls",
-        "summary": "This video explains the differences between 2-wire, 3-wire, and 4-wire industrial field transmitters and how they handle power and signal wiring.",
-        "category": "BMS & Controls",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:51:02.621Z",
-      "title": "2-Wire vs 3-Wire vs 4-Wire Instruments | Instrumentation",
-      "channel": "Instrumentation Tools",
-      "duration": "",
-      "published": "2026-10-02T15:00:35+00:00",
-      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
-      "description": "Understand the key differences between 2-wire, 3-wire, and 4-wire instruments, including wiring, applications, signal transmission, and industrial instrumentation.\n\nFULL VIDEO - https://youtu.be/Qynme-tYqcM\n\n#shortvideos #short #shortsyoutube \n\nTags:\n2 wire vs 3 wire vs 4 wire instruments, 2 wire instrument, 3 wire instrument, 4 wire instrument, 2 wire transmitter, 3 wire transmitter, 4 wire transmitter, instrument wiring, transmitter wiring, 4-20mA wiring, loop powered transmitter, smart transmitter, RTD wiring, temperature transmitter, pressure transmitter, industrial instrumentation, process instrumentation, instrumentation basics, PLC, DCS, SCADA, instrumentation engineering, process control, industrial automation, field instruments, transmitter basics, Instrumentation Tools",
-      "channelCategory": "BMS & Controls",
-      "suggestedCategory": "BMS & Controls"
-    },
-    {
-      "yt": "SLtdTO0Kkwg",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "quiz": [
-          {
-            "q": "What component is cleaned in the video?",
-            "answer": 1,
-            "options": [
-              "Interior shelving",
-              "Chiller coils and fan",
-              "Door seal"
-            ]
-          },
-          {
-            "q": "What PPE should be worn during maintenance?",
-            "answer": 0,
-            "options": [
-              "Safety Glasses and Work Gloves",
-              "Hard Hat only",
-              "Welding Mask"
-            ]
-          },
-          {
-            "q": "Why is cleaning chiller coils important?",
-            "answer": 0,
-            "options": [
-              "To improve cooling efficiency",
-              "To change the exterior color",
-              "To fix internal lighting"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Access the chiller coil and fan unit below the refrigerator door.",
-          "Inspect the dirty and clogged coil fins.",
-          "Clean and clear debris from the coil surface.",
-          "Ensure the fan and surrounding ventilation area are unobstructed."
-        ],
-        "title": "Commercial Refrigerator Chiller Coil Maintenance",
-        "review": {
-          "reason": "Useful visual guide for cleaning commercial refrigerator chiller coils.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Ensure the refrigerator is disconnected from the power supply before performing any cleaning or maintenance work.",
-        "source": "ai",
-        "subject": "Refrigerator Cooling",
-        "summary": "This video shows the cleaning process of commercial refrigerator chiller coils and the replacement with a clean unit.",
-        "category": "Kitchen & Laundry Appliances",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-06T08:50:38.605Z",
-      "title": "Chiller coils cleaned 👌 🙌",
-      "channel": "KITCHEN TECH",
-      "duration": "",
-      "published": "2026-10-02T14:57:36+00:00",
-      "channelUrl": "https://www.youtube.com/@WPKITCHENTECH",
-      "description": "",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
+      "published": "2026-10-02T17:18:47+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "أخبار شرطة أبوظبي \nAbudhabipolicenews‎",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "996I7CbXgjQ",
@@ -2077,6 +1182,30 @@
       "description": "Learn the 4 - 20 mA fault signals and out of range signals in smart transmitter for process control applications.\n\nFULL VIDEO - https://youtu.be/Qynme-tYqcM\n\n#shortstory #shorts #shortvideo \n\nTags:\n4-20 mA fault signals, smart transmitter fault signals, 4-20mA fault detection, smart transmitter, transmitter fault current, process control, 4-20mA signal, analog signal, NAMUR NE43, transmitter diagnostics, sensor failure, open circuit, sensor fault, transmitter failure, current loop, loop powered transmitter, 3.6mA fault, 21.0mA fault, 22mA fault, PLC analog input, DCS analog input, process instrumentation, industrial instrumentation, smart instrumentation, transmitter troubleshooting, instrumentation tools, process control systems, field instruments, 4-20mA troubleshooting, analog input diagnostics, transmitter alarm signals, industrial automation, instrumentation engineering",
       "channelCategory": "BMS & Controls",
       "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "SVRNVZXxGa4",
+      "found": "2026-11-06T12:38:55.648Z",
+      "title": "Legacy of Honor: Military Graduation Ceremonies 2000 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-10-01T13:09:51+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "محطة جديدة في مسيرة إعداد وتأهيل الكفاءات الشرطية، تحمل معها مسؤولية خدمة الوطن والمجتمع.\n\nشاهدوا مراسم تخريج الدفعة الثامنة من الطلبة المرشحين بكلية شرطة دبي لعام 2000، والتي ضمّت 77 خريجاً، من خلال الرابط في البايو.\n\n\n#ميدان_الشرف \n#إرث_دبي\n\nA milestone in a journey of developing qualified police professionals, ready to serve their nation and community.\n\nWatch the 2000 graduation ceremony of the 8th officer cadet class at Dubai Police College, comprising 77 graduates, link in the bio.\n\n#LegacyOfHonor \n#DubaiPoliceLegacy",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "m5GolgzNlMU",
+      "found": "2026-11-06T12:38:56.799Z",
+      "title": "Legacy of Honor: Military Graduation Ceremonies 2000 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-10-01T13:00:36+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "في هذا الفيديو نعود إلى عام 2000، حيث شهدت كلية شرطة دبي حفل تخريج الدفعة الثامنة من الطلبة المرشحين، والتي ضمّت 77 خريجاً حصلوا على درجة الليسانس في الحقوق ودبلوم العلوم الشرطية، إلى جانب 34 طالباً من المنتسبين غير المتفرغين في برنامج الليسانس في الحقوق. كما شهد الحفل تكريم الطلبة المتفوقين، وتوزيع الشهادات على الخريجين.\n\nوجسّد الحفل محطة جديدة في مسيرة كلية شرطة دبي لإعداد وتأهيل الكفاءات الشرطية، وترسيخ نهج يقوم على الاستثمار في العنصر البشري، والجمع بين المعرفة القانونية والتأهيل الشرطي، بما يسهم في مواصلة مسيرة الأمن والاستقرار وخدمة المجتمع.\n\n#ميدان_الشرف\n#إرث_دبي\n\nIn 2000, Dubai Police College celebrated the graduation of its 8th officer cadet class, comprising 77 graduates who earned a Bachelor of Law and a Diploma in Police Sciences. The ceremony also marked the graduation of 34 part-time students from the Bachelor of Law Program and included the recognition of outstanding students and the presentation of certificates to the graduates.\n\nThe occasion marked another milestone in Dubai Police College’s journey of developing qualified police professionals reflecting a longstanding commitment to investing in human capital and combining legal education with police training in support of security, stability, and community service.\n\n#DubaiPoliceLegacy\n#LegacyOfHonor",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "Mo_pGfqiEo4",
@@ -2217,6 +1346,18 @@
       "suggestedCategory": "Kitchen & Laundry Appliances"
     },
     {
+      "yt": "o49QbsjLzq0",
+      "found": "2026-11-06T12:50:05.579Z",
+      "title": "Kitchen Organizing with Melissa!",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-09-29T17:20:16+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "Join me for some clothing organization and decluttering tips to help you manage your personal belongings efficiently.\n\nIn today's live stream, I am walking you through my process for handling clothes and keeping my space tidy. Whether you are looking to simplify your wardrobe or just need some motivation to get started on your own projects, this session covers practical steps for better home organization.\n\nWe focus on the basics of folding clothes correctly and the mindset needed for effective decluttering. Getting your items in order does not have to be overwhelming, and I am here to answer your questions as we work through these tasks together.\n\nSubscribe to stay updated on our new direction for making home life easier, and let me know in the comments what you want to tackle next!\n\nLink to our amazon products on this live here: https://www.amazon.com/shop/cleanmyspace/list/1D19TI706RK03?ref_=aipsflist&tag=melissamaker-20&ccs_id=0daccb8e-d8c7-40ce-8416-694ca9f6f0a3",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "HHhSo_Kv1TA",
       "draft": {
         "ppe": [
@@ -2280,6 +1421,18 @@
       "description": "Lets learn about the LRV 4mA and URV 20mA of Smart Transmitter in industrial instrumentation.\n\nFULL VIDEO - https://youtu.be/Qynme-tYqcM\n\n#instrumentationtools #shorts #ytshorts \n\nTags:\nLRV 4mA and URV 20mA of Transmitter, LRV and URV in Instrumentation, Lower Range Value, Upper Range Value, 4-20mA transmitter, 4-20mA signal, transmitter calibration, transmitter range, transmitter span, zero and span, pressure transmitter, level transmitter, flow transmitter, temperature transmitter, differential pressure transmitter, DP transmitter, smart transmitter, process instrumentation, industrial instrumentation, instrumentation tools, transmitter configuration, transmitter setup, PLC analog input, DCS analog input, analog signal, current loop, instrumentation engineering, process control, industrial automation, field instruments, 4mA, 20mA, live zero, transmitter basics, control systems",
       "channelCategory": "BMS & Controls",
       "suggestedCategory": "BMS & Controls"
+    },
+    {
+      "yt": "izEKUOvE53M",
+      "found": "2026-11-06T12:50:06.367Z",
+      "title": "An update / some news for the CMS channel (please watch until the end 💕)",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-09-29T03:21:54+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "A personal channel update for the Clean My Space community.\n\nThe online world is shifting rapidly, and I am rethinking how to best support your home organizing goals. I am looking back at our journey together and sharing what comes next for this channel.\n\nThanks for your amazing support and friendship and of course, your trust over the years. This is very cool and I can’t wait to share more wih you…soon!\n\nSubscribe to stay updated on our new direction for making home life easier.",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
       "yt": "4rdut45Z-hI",
@@ -2452,6 +1605,18 @@
       "suggestedCategory": "Kitchen & Laundry Appliances"
     },
     {
+      "yt": "HUZadfNVMKM",
+      "found": "2026-11-06T12:49:42.954Z",
+      "title": "شرطة أبوظبي تحتفي باليوم العالمي للسياحة",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-09-27T16:33:39+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "MBypE8ze4xs",
       "draft": {
         "ppe": [
@@ -2484,6 +1649,30 @@
       "description": "Ever wondered how strong these are?",
       "channelCategory": "Civil & Carpentry",
       "suggestedCategory": "Civil & Carpentry"
+    },
+    {
+      "yt": "jjVzCL9WqOY",
+      "found": "2026-11-06T12:50:07.202Z",
+      "title": "LIVE (Replay): Declutter with me Fall Closet",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-09-26T16:15:17+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "LET'S DECLUTTER MY CLOSET! Today I decided it was time to declutter my spring/summer closet and get out my bags of fall/winter clothing to replace them with. Living in Canada, it gets cold quickly and there's no space in my closet for the warm-weather gear. So I'll show you my method to ruthless decluttering , repacking and reorganizing my closet, as well as the tools I use to get the job done efficiently.  Oh, and since we're live, you'll get to ask me your cleaning Q&A's! \n\nLINK TO PRODUCTS: https://a.co/d/0e9KmPob\n\n⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\nTHANKS FOR WATCHING!\n\nSome product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "Yl331GNUXus",
+      "found": "2026-11-06T12:49:43.732Z",
+      "title": "⁨ شرطة أبوظبي تناشد أولياء الأمور حماية أبنائهم من مخاطر الاستخدام الخاطئ للسكوتر",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-09-26T12:58:46+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "Qynme-tYqcM",
@@ -2830,6 +2019,18 @@
       "suggestedCategory": "Duct & Kitchen Exhaust"
     },
     {
+      "yt": "7nPjiPKeBXM",
+      "found": "2026-11-06T12:50:08.092Z",
+      "title": "ROBOT CLEANERS put to the test!",
+      "channel": "Clean My Space",
+      "duration": "",
+      "published": "2026-09-21T16:45:32+00:00",
+      "channelUrl": "https://www.youtube.com/@CleanMySpace",
+      "description": "I put the new Tau humanoid cleaning robots to the test. Can a robot really clean like a professional? In this video I break down how they clean, which techniques they get right, where they fall short, and my honest overall opinion of what they can do right now.\n\nTau Robotics is offering an invite-only humanoid cleaning service in San Francisco at $30 an hour per robot, with a human operator supervising remotely. The robots are meant to handle vacuuming, wiping counters, clearing clutter, and taking out the trash. But does it hold up when you look at it through a professional cleaner's eyes?\n\n⏱️ TIMESTAMPS\n0:00 - Intro: why I'm reviewing cleaning robots\n[0:26] - What Tau's robots are and how the service works\n[1:14] - Meet the robots!\n[2:18] - What they really do.\n[5:08] - Meet Tony.\n[11:37] - What do I think\n[12:33 - My overall verdict (as of right now)\n\n🧽 MY TAKEAWAYS\n- What impressed me: At the moment, they show up on time.\n- What needs work: No more lego hands,\n- Would I use one in my own home? Not now, but my guess is they will be awesome.\n\nThis is my opinion based on what the robots can do today. This tech is changing fast, so I'll revisit it as it improves.\n\n💬 Would you let a robot clean your home? Tell me in the comments.\n\n🔔 SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📌 MORE FROM CLEAN MY SPACE\nSpotless Walls and Baseboards: https://www.youtube.com/watch?v=WooHa1QoLNA\nClean your bathroom faster than ever: https://www.youtube.com/watch?v=lpuP0wgw5nw\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\n#CleaningRobots #HumanoidRobots #TauRobotics #CleanMySpace #HomeCleaning #CleaningTips\n\nTHANKS FOR WATCHING!\n\nSome product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
       "yt": "T9Aa_VNhczQ",
       "draft": {
         "ppe": [
@@ -2894,6 +2095,18 @@
       "description": "What’s in the air you breathe? In this video, we explore air filtration technologies through the use of laser visualizations, electron microscopes, particle counters, and more. \n\n00:00 Introduction\n00:47 Part 1 - Up in the Air (Air Quality)\n06:03 Part 2 - Asbestos and Flour (How Filters Work)\n18:57 Part 3 - A Miniature World (Under the Microscope)\n29:57 Part 4 - Houston, We’ve Had a Problem (CO2)\n38:02 Conclusion\n\nVideos mentioned:\nhttps://youtu.be/WE2LPedFbgA\nhttps://youtu.be/vF72pOHc1zY\nhttps://youtu.be/XzOBKYoAj-0\nhttps://youtu.be/UKRVxEOD9t0",
       "channelCategory": "Duct & Kitchen Exhaust",
       "suggestedCategory": "Duct & Kitchen Exhaust"
+    },
+    {
+      "yt": "bkdqtpYjyFY",
+      "found": "2026-11-06T12:38:57.765Z",
+      "title": "Legacy of Honor: Military Graduation Ceremonies 1999 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-09-17T17:00:15+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "YMJqNSkIxUQ",
@@ -3035,6 +2248,30 @@
       "suggestedCategory": "Fire & Life Safety"
     },
     {
+      "yt": "VaJwRcE4ouw",
+      "found": "2026-11-06T12:49:44.780Z",
+      "title": "أكد العميد مسلم محمد الجنيبي، مدير إدارة تحصيل المخالفات المرورية بمديرية المرور والدوريات الأمنية",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-09-16T14:24:45+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "أكد العميد مسلم محمد الجنيبي، مدير إدارة تحصيل المخالفات المرورية بمديرية المرور والدوريات الأمنية في شرطة أبوظبي، خلال لقاء على قناة «سكاي نيوز عربية»، بشأن الحادث المروري الذي تم بثه على منصات التواصل الاجتماعي ، بأنه وقع نتيجة الانشغال بغير الطريق والتوقف في وسط الطريق، ما أدى إلى وقوع حوادث متتالية بسبب عدم انتباه بعض السائقين.\n\nمؤكداً على أهمية التركيز التام أثناء القيادة، وعدم الانشغال بأي سلوك يشتت الانتباه، مع ضرورة تجنب التوقف في وسط الطريق حفاظاً على سلامة الجميع ، منوهاً على أن أطراف الحادث جميعهم بخير ولم تسجل أي وفيات.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "6yUvpSTjjk8",
+      "found": "2026-11-06T12:49:45.846Z",
+      "title": "بالفيديو | دعت شرطة أبوظبي السائقين والمشاة على أهمية الالتزام بقواعد السلامة المرورية",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-09-16T14:21:10+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "بالفيديو | دعت شرطة أبوظبي السائقين والمشاة على أهمية الالتزام بقواعد السلامة المرورية، محذرة من مخاطر عبور الطرق من الأماكن غير المخصصة لما قد يسببه من حوادث دهس، وناشدت السائقين إلى توخي الحيطة والانتباه للمشاة وخفض السرعة بالقرب من مناطق العبور، فيما حثّت المشاة على استخدام المعابر والجسور والأنفاق المخصصة، والتقيد بإشارات المشاة الضوئية، بما يعزز سلامتهم وسلامة مستخدمي الطريق.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "t-S2vDCccYo",
       "draft": {
         "ppe": [
@@ -3133,6 +2370,18 @@
       "published": "2026-09-15T13:47:26+00:00",
       "channelUrl": "https://www.youtube.com/@DubaiMunicipality",
       "description": "في #قمة_الإعلام_العربي 2026، تجسّد #بلدية_دبي رؤيتها لمستقبل المدن بصفتها \"شريك مدن المستقبل\"، انطلاقاً من توجّهها نحو توظيف الابتكار والحلول المستقبلية لبناء مدن أكثر ذكاءً واستدامة.\n\nAt the #ArabMediaSummit 2026, #DubaiMunicipality brings its vision for the future of cities to life as the Future Cities Partner, reflecting its commitment to leveraging innovation and future-focused solutions to build smarter, more sustainable cities.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "Otjyv7KHqgU",
+      "found": "2026-11-06T12:38:58.909Z",
+      "title": "Legacy of Honor: Military Graduation Ceremonies 1999 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-09-15T05:00:35+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "",
       "channelCategory": "UAE Rules & Compliance",
       "suggestedCategory": "UAE Rules & Compliance"
     },
@@ -3275,6 +2524,30 @@
       "suggestedCategory": "Civil & Carpentry"
     },
     {
+      "yt": "vrqU8pfRR0A",
+      "found": "2026-11-06T12:39:00.227Z",
+      "title": "Legacy of Honor: Military Graduation Ceremonies 1999 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-09-13T13:00:05+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "6Wmwt-Tw0bg",
+      "found": "2026-11-06T12:49:46.717Z",
+      "title": "أخبار شرطة أبوظبي",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-09-11T17:33:52+00:00",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
       "yt": "qvpR08ZBaWY",
       "draft": {
         "ppe": [
@@ -3307,6 +2580,18 @@
       "description": "Protect sprinkler heads from mower, trimmer, and foot-traffic damage with Concrete Donuts sprinkler head protectors for lawn irrigation systems.\n\nShop Concrete Donuts at Sprinkler Warehouse:\nhttps://www.sprinklerwarehouse.com/brands/concrete-donuts\n\nConcrete Donuts provide a simple layer of protection around vulnerable pop-up spray heads, rotors, and other lawn sprinklers. They can help reduce broken sprinkler heads caused by mowing, edging, yard equipment, and everyday traffic around your irrigation system.\n\nAvailable in multiple sizes and configurations, including half-donut designs for sprinkler heads located near sidewalks, driveways, curbs, fences, landscaping, and other hardscape.\n\nSprinkler Warehouse carries sprinkler repair parts, irrigation supplies, tools, and accessories for homeowners and irrigation professionals.\n\n\nYouTube comments are not monitored. Please direct your questions to the customer service representatives on www.sprinklerwarehouse.com.",
       "channelCategory": "Landscaping & Irrigation",
       "suggestedCategory": "Landscaping & Irrigation"
+    },
+    {
+      "yt": "W-eidKBHp4c",
+      "found": "2026-11-06T12:39:01.476Z",
+      "title": "Legacy of Honor: Military Graduation Ceremony 1999 ميدان الشرف: مراسم التخريج العسكري",
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-09-10T13:00:11+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "نعود بكم إلى مراسم تخريج الدفعة السابعة من المرشحين والمنتسبين في كلية شرطة دبي، والتي أُقيمت برعاية المغفور له بإذن الله الشيخ مكتوم بن راشد آل مكتوم، وشهدها سمو الشيخ أحمد بن راشد آل مكتوم، بحضور عدد من أصحاب السمو وكبار المسؤولين.\nويجسد هذا الحفل محطةً مهمة في تاريخ شرطة دبي لإعداد الكفاءات الوطنية، وترسيخ قيم الانضباط والولاء والمسؤولية، في نهجٍ مستمر يستند إلى رؤية القيادة الرشيدة في بناء الإنسان، وتعزيز الأمن، ومواكبة التطور، بما يسهم في بناء مجتمع ينعم بالأمن والاستقرار وجودة الحياة.\nميدان الشرف سلسلة وثائقية تستعيد مراسم تخريج كلية وأكاديمية شرطة دبي عبر العقود، لتوثّق إرثًا من التميز والعطاء كما حفظته عدسة التاريخ.\n\n\nWe take you back to the graduation ceremony of the 7th Class of Cadet officers at Dubai Police College, held under the patronage of the late H.H. Sheikh Maktoum bin Rashid Al Maktoum and attended by H.H. Sheikh Ahmed bin Rashid Al Maktoum, alongside Their Highnesses, senior government officials, and distinguished guests.\nMore than a graduation ceremony, this historic occasion reflects Dubai Police's enduring commitment to preparing generations of national talent. Rooted in the values of discipline, loyalty, and responsibility, it embodies a vision of investing in people, strengthening security, and advancing a safer, more resilient society.\nLegacy of Honor is a documentary series that revisits the graduation ceremonies of Dubai Police College and Dubai Police Academy across the decades, preserving a legacy of excellence and service through the lens of history.",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
     },
     {
       "yt": "RYbT--KoK2w",
@@ -3415,7 +2700,7 @@
       "suggestedCategory": "BMS & Controls"
     }
   ],
-  "lastRun": "2026-11-06T11:47:54.355Z",
+  "lastRun": "2026-11-06T12:50:10.330Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -3529,187 +2814,255 @@
     "WVB-DY58fxA",
     "o7ONtLL8SyM",
     "GO-gRjSLrng",
-    "eRWHhFutXbU"
+    "eRWHhFutXbU",
+    "AYjFxw7Gp9s",
+    "Qy8K01YwNo4",
+    "IlogIf64qGY",
+    "ua4MKGNbv9I",
+    "hFkLVXMO0kM"
   ],
   "channelStatus": {
+    "https://www.youtube.com/@Karcher": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:50:09.617Z"
+    },
+    "https://www.youtube.com/@NADCAHQ": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:49:50.879Z"
+    },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "checked": "2026-11-06T11:47:21.965Z",
+      "checked": "2026-11-06T12:48:45.968Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MOHREUAE": {
       "id": "UCvR9cTL5kGeU_NqSr0hkFYQ",
-      "checked": "2026-11-06T11:47:52.830Z",
+      "checked": "2026-11-06T12:49:18.222Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
-      "checked": "2026-11-06T11:47:38.439Z",
+      "checked": "2026-11-06T12:49:05.791Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
-      "checked": "2026-11-06T11:47:41.622Z",
+      "checked": "2026-11-06T12:49:09.035Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
-      "checked": "2026-11-06T11:47:32.924Z",
+      "checked": "2026-11-06T12:49:00.150Z",
       "lastFound": 0
+    },
+    "https://www.youtube.com/@HVACGuide": {
+      "id": "UC4gjdUt6T7Swqtlet3cxkbA",
+      "checked": "2026-11-06T12:49:49.207Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@KaivacInc": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:50:08.853Z"
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
-      "checked": "2026-11-06T11:47:24.356Z",
+      "checked": "2026-11-06T12:48:48.245Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
-      "checked": "2026-11-06T11:47:51.273Z",
+      "checked": "2026-11-06T12:49:16.677Z",
       "lastFound": 0
+    },
+    "https://www.youtube.com/c/ADPoliceHQ": {
+      "id": "UCLqu78o49yHSQTOUEWh_8Vg",
+      "checked": "2026-11-06T12:49:46.717Z",
+      "lastFound": 12
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "checked": "2026-11-06T11:47:18.815Z",
+      "checked": "2026-11-06T12:48:42.645Z",
       "lastFound": 0
+    },
+    "https://www.youtube.com/@CleanMySpace": {
+      "id": "UCGozdt7Wbd15k7dWhvlmLUw",
+      "checked": "2026-11-06T12:50:08.092Z",
+      "lastFound": 15
     },
     "https://www.youtube.com/@DEWAOfficial": {
       "id": "UCwqM2Kj0TAvbNHpeivY5I-g",
-      "checked": "2026-11-06T11:47:52.078Z",
+      "checked": "2026-11-06T12:49:17.466Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
-      "checked": "2026-11-06T11:47:49.712Z",
+      "checked": "2026-11-06T12:49:15.046Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
-      "checked": "2026-11-06T11:47:31.379Z",
+      "checked": "2026-11-06T12:48:58.538Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
-      "checked": "2026-11-06T11:47:19.584Z",
+      "checked": "2026-11-06T12:48:43.542Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@DubaiPoliceHQ": {
+      "id": "UCMebk44F_zVLj-7aD_mSUhQ",
+      "checked": "2026-11-06T12:49:47.539Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "checked": "2026-11-06T11:47:21.184Z",
+      "checked": "2026-11-06T12:48:45.158Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@GreenheckFans": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:49:48.316Z"
+    },
+    "https://www.youtube.com/@ISSAworldwide": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:49:52.418Z"
+    },
+    "https://www.youtube.com/@TheHVACDoctor": {
+      "id": "UCGpL47XAGpNr_TAa-30UTbg",
+      "checked": "2026-11-06T12:49:50.117Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
-      "checked": "2026-11-06T11:47:36.070Z",
+      "checked": "2026-11-06T12:49:03.390Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
-      "checked": "2026-11-06T11:47:40.797Z",
+      "checked": "2026-11-06T12:49:08.216Z",
       "lastFound": 0
+    },
+    "https://www.youtube.com/@HVACInTraining": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:49:51.642Z"
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "checked": "2026-11-06T11:47:22.791Z",
+      "checked": "2026-11-06T12:48:46.687Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "checked": "2026-11-06T11:47:48.131Z",
+      "checked": "2026-11-06T12:49:13.445Z",
       "lastFound": 4
+    },
+    "https://www.youtube.com/user/nfpadotorg": {
+      "id": "UCt_HiUcYRhNqTFM9b_EVHaA",
+      "checked": "2026-11-06T12:49:33.939Z",
+      "lastFound": 13
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
-      "checked": "2026-11-06T11:47:50.496Z",
+      "checked": "2026-11-06T12:49:15.859Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "checked": "2026-11-06T11:47:20.389Z",
+      "checked": "2026-11-06T12:48:44.368Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DubaiMunicipality": {
       "id": "UCgoUXrrSn2pdbOd3S1Hr2hA",
-      "checked": "2026-11-06T11:47:53.645Z",
+      "checked": "2026-11-06T12:49:19.100Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "checked": "2026-11-06T11:47:18.105Z",
+      "checked": "2026-11-06T12:48:41.930Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
-      "checked": "2026-11-06T11:47:32.155Z",
+      "checked": "2026-11-06T12:48:59.331Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
-      "checked": "2026-11-06T11:47:39.231Z",
+      "checked": "2026-11-06T12:49:06.568Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@InstrumentationTools": {
       "id": "UCTAiA-Th943Q23CZu8dm11A",
-      "checked": "2026-11-06T11:47:40.023Z",
+      "checked": "2026-11-06T12:49:07.385Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
-      "checked": "2026-11-06T11:47:37.735Z",
+      "checked": "2026-11-06T12:49:05.079Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
-      "checked": "2026-11-06T11:47:48.920Z",
+      "checked": "2026-11-06T12:49:14.267Z",
       "lastFound": 0
+    },
+    "https://www.youtube.com/user/theabudhabipolice": {
+      "id": "UCwp0VxIWELDtUXkyYA9ksrQ",
+      "checked": "2026-11-06T12:49:20.069Z",
+      "lastFound": 0
+    },
+    "https://www.youtube.com/@WindowCleaningResource": {
+      "error": "Channel page not found (404). Check the link.",
+      "checked": "2026-11-06T12:49:53.183Z"
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
-      "checked": "2026-11-06T11:47:33.710Z",
+      "checked": "2026-11-06T12:49:00.949Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
-      "checked": "2026-11-06T11:47:35.306Z",
+      "checked": "2026-11-06T12:49:02.556Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
-      "checked": "2026-11-06T11:47:36.932Z",
+      "checked": "2026-11-06T12:49:04.195Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "checked": "2026-11-06T11:47:23.578Z",
+      "checked": "2026-11-06T12:48:47.462Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "checked": "2026-11-06T11:47:29.813Z",
+      "checked": "2026-11-06T12:48:56.977Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
-      "checked": "2026-11-06T11:47:34.503Z",
+      "checked": "2026-11-06T12:49:01.760Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "checked": "2026-11-06T11:47:26.910Z",
+      "checked": "2026-11-06T12:48:54.120Z",
       "lastFound": 1
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
-      "checked": "2026-11-06T11:47:30.608Z",
+      "checked": "2026-11-06T12:48:57.757Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
-      "checked": "2026-11-06T11:47:25.126Z",
+      "checked": "2026-11-06T12:48:49.034Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "checked": "2026-11-06T11:47:28.991Z",
+      "checked": "2026-11-06T12:48:56.122Z",
       "lastFound": 1
     }
   }

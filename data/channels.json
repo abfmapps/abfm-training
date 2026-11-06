@@ -215,6 +215,90 @@
       "name": "Dubai Municipality",
       "active": true,
       "category": "UAE Rules & Compliance"
+    },
+    {
+      "url": "https://www.youtube.com/user/theabudhabipolice",
+      "name": "Ministry of Interior UAE",
+      "active": true,
+      "category": "UAE Rules & Compliance"
+    },
+    {
+      "url": "https://www.youtube.com/user/nfpadotorg",
+      "name": "NFPA",
+      "active": true,
+      "category": "UAE Rules & Compliance"
+    },
+    {
+      "url": "https://www.youtube.com/c/ADPoliceHQ",
+      "name": "Abu Dhabi Police",
+      "active": true,
+      "category": "UAE Rules & Compliance"
+    },
+    {
+      "url": "https://www.youtube.com/@DubaiPoliceHQ",
+      "name": "Dubai Police",
+      "active": true,
+      "category": "UAE Rules & Compliance"
+    },
+    {
+      "url": "https://www.youtube.com/@GreenheckFans",
+      "name": "Greenheck Fans",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@HVACGuide",
+      "name": "HVAC Guide",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@TheHVACDoctor",
+      "name": "The HVAC Doctor",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@NADCAHQ",
+      "name": "NADCA - National Air Duct Cleaners Association",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@HVACInTraining",
+      "name": "HVAC In Training",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@ISSAworldwide",
+      "name": "ISSA - International Sanitary Supply Association",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@WindowCleaningResource",
+      "name": "Window Cleaning Resource",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@CleanMySpace",
+      "name": "Clean My Space",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@KaivacInc",
+      "name": "Kaivac Inc",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@Karcher",
+      "name": "Kärcher",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
     }
   ],
   "maxQueue": 150,

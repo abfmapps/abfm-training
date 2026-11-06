@@ -1,0 +1,35 @@
+name: Review queue with Gemini
+
+# Only drafts and reviews the videos already waiting in the review queue. It does NOT search any channel
+# for new videos. Runs only when you press "Review queue" in the admin (or Run workflow on GitHub).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: data-writer
+  cancel-in-progress: false
+
+env:
+  SUPABASE_URL: https://xzyzovlmlppvctbpxnrw.supabase.co
+  SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Draft and review the queued videos
+        run: node scripts/draft.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          MAX_AI_DRAFTS: "120"

@@ -247,10 +247,10 @@
   const TITLES = {
     dashboard: ["", ""],
     videos: ["Videos", "Everything in the staff library. Videos play from YouTube; only the text is stored here."],
-    queue: ["Review queue", "New videos the daily finder found. Nothing goes live until you approve it."],
+    queue: ["Review queue", "New videos the finder found. Nothing goes live until you approve it."],
     paths: ["Learning paths", "Short courses shown on the staff home screen."],
     toolbox: ["Toolbox talks", "One talk shows on the home screen each day, in rotation."],
-    channels: ["Channels", "The trusted YouTube channels the daily finder watches."],
+    channels: ["Channels", "The trusted YouTube channels the finder searches when you press Search for new videos."],
     people: ["Staff & records", "Progress is recorded by HR number."],
     assign: ["Assigned training", "Learning paths that a trade (or everyone) must finish, with a due date."],
     sups: ["Supervisors", "Supervisors sign off certificates on the technician's phone with their PIN."],
@@ -353,7 +353,7 @@
         <section class="card-plain" style="flex:1 1 360px">
           <div class="dash-h"><h2>System health</h2>${superAdmin ? `<a href="#" data-go="settings" data-sec="status">Details</a>` : ""}</div>
           <div class="health">
-            <div><i style="background:${lastRun && Date.now() - Date.parse(lastRun) < 36 * 36e5 ? "var(--ok)" : "var(--danger)"}"></i>${lastRun ? "Daily video check ran " + esc(new Date(lastRun).toLocaleString(undefined, { weekday: "short", hour: "2-digit", minute: "2-digit" })) : "Daily video check hasn't run yet"}</div>
+            <div><i style="background:${lastRun ? "var(--ok)" : "#C98A00"}"></i>${lastRun ? "Last video search " + esc(new Date(lastRun).toLocaleString(undefined, { weekday: "short", hour: "2-digit", minute: "2-digit" })) : "Video search hasn't been run yet"}</div>
             <div><i style="background:${full === V().length ? "var(--ok)" : "#C98A00"}"></i>${full} of ${V().length} videos translated into 8 languages</div>
             <div><i style="background:${probs ? "var(--danger)" : "var(--ok)"}"></i>${probs ? `${probs} video${probs === 1 ? "" : "s"} no longer play <button data-go="videos" data-show="problems">Show</button>` : "All videos still play on YouTube"}</div>
             <div><i style="background:${noLen ? "#C98A00" : "var(--ok)"}"></i>${noLen ? `${noLen} videos missing a length <button data-go="videos" data-show="no-len">Fill in</button>` : "Every video has a length"}</div>
@@ -829,7 +829,7 @@
         <div class="q-head">
           <div>
             <h2>Review queue</h2>
-            <p>Every morning the finder checks your trusted channels and puts new uploads here${videoAI() ? ", reviewed by Gemini" : ""}. Nothing goes live until you approve it.</p>
+            <p>When you press <b>Search for new videos</b>, the finder checks your trusted channels and puts new uploads here${videoAI() ? ", reviewed by Gemini" : ""}. Nothing goes live until you approve it.</p>
             <p class="count" style="margin:0">${p.lastRun ? "Last check: " + esc(new Date(p.lastRun).toLocaleString()) : "The finder hasn't run yet."}</p>
           </div>
         </div>
@@ -1517,7 +1517,7 @@
     $("#app").innerHTML = `
       <div class="card-plain">
         <h2>Trusted channels</h2>
-        <p>The daily finder only looks at these YouTube channels. Add channels whose videos you'd be happy for staff to watch.</p>
+        <p>The finder only looks at these YouTube channels, and only when you press Search for new videos. Add channels whose videos you'd be happy for staff to watch.</p>
         <button class="btn" data-find ${finder.running ? "disabled" : ""}>${finder.running ? "" + ABIcon("hourglass") + " Searching…" : "" + ABIcon("search") + " Search for new videos now"}</button>
         <div class="find-msg" ${finder.msg ? "" : "hidden"}>${finder.msg}</div>
       </div>
@@ -1530,7 +1530,7 @@
             <div class="field"><label for="ce-name">Name</label><input class="input" id="ce-name" required value="${esc(ch.name || "")}"></div>
             <div class="field"><label for="ce-url">Channel link</label><input class="input" id="ce-url" required autocapitalize="off" spellcheck="false" value="${esc(ch.url)}"></div>
             <div class="field"><label for="ce-cat">Send videos to</label><select class="input" id="ce-cat"><option value="">Pick from title</option>${cats().map(x => `<option ${x === ch.category ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>
-            <label class="check"><input type="checkbox" id="ce-active" ${ch.active === false ? "" : "checked"}> Active (checked every day)</label>
+            <label class="check"><input type="checkbox" id="ce-active" ${ch.active === false ? "" : "checked"}> Active (checked when you search)</label>
           </div>
           <div class="row-actions">
             <button type="button" class="btn btn-sm" id="ce-cancel">Cancel</button>
@@ -1792,7 +1792,7 @@
           <div class="ai-grid">
             <div class="ai-card ${ai.gemini !== false ? "on" : ""}">
               <div class="ai-top"><b>Gemini</b><span class="badge-s ${keys.gemini ? "b-ok" : "b-wait"}">${keys.gemini ? "Key ready" : "No key"}</span><input type="checkbox" class="switch" id="s-ai-gem" aria-label="Use Gemini" ${ai.gemini !== false ? "checked" : ""}></div>
-              <p class="help">Google. The only one that can <b>watch videos</b> (drafts, reviews, the daily finder) and <b>search the web</b> (finding videos and channels).</p>
+              <p class="help">Google. The only one that can <b>watch videos</b> (drafts, reviews, the video finder) and <b>search the web</b> (finding videos and channels).</p>
               ${secretField("s-gem", "gemini", "API key", keys.geminiSetAt, "AIza…", `Get one at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>.`)}
               <div class="field"><label for="s-gmodel">Model</label><select class="input" id="s-gmodel"><option value="">Automatic (newest available)</option>${ABDraft.MODELS.map(m => `<option ${m === geminiModel() ? "selected" : ""}>${m}</option>`).join("")}</select></div>
               <div class="bar" style="margin:0"><button type="button" class="btn btn-sm" data-ai-test="gemini">Test Gemini</button><span class="help" id="t-gemini"></span></div>
@@ -1813,7 +1813,7 @@
           </div>
           <div class="ai-split">
             <h3>Who does what</h3>
-            <div class="ai-split-row"><span><b>Watching videos &amp; searching the web</b><small>Video drafts, video reviews, the daily video finder, finding videos and channels</small></span><span class="badge-s b-gem">Gemini</span></div>
+            <div class="ai-split-row"><span><b>Watching videos &amp; searching the web</b><small>Video drafts, video reviews, the video finder, finding videos and channels</small></span><span class="badge-s b-gem">Gemini</span></div>
             <div class="ai-split-row"><span><b>Everything else</b><small>Quizzes, toolbox talks, translations, Ask AI, checks</small></span>
               <div class="seg-pick" role="radiogroup" aria-label="AI for everything else">
                 <label><input type="radio" name="s-ai-first" value="groq" ${ai.first !== "gemini" && ai.first !== "openrouter" ? "checked" : ""}><span>Groq</span></label>
@@ -1825,7 +1825,7 @@
           <div class="note">The daily jobs on GitHub read their own copies: repo <b>Settings → Secrets and variables → Actions</b>, secrets <code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code> and <code>OPENROUTER_API_KEY</code>. The on/off switches above apply there too.</div>`; })()}
         </div>` : ""}
         <div class="card-plain set-sec" data-sec="finder" ${setSec === "finder" ? "" : "hidden"}>
-          ${head("finder", "Video finder", "The daily search of your trusted channels. Manage the channels under Channels.")}
+          ${head("finder", "Video finder", "Searches your trusted channels when you press the button. It never runs by itself. Manage the channels under Channels.")}
           <div class="field"><label for="s-excl">Never queue videos whose title contains</label>
             <textarea class="textarea" id="s-excl" placeholder="unboxing, review, vlog">${esc((s.excludeKeywords || []).join(", "))}</textarea>
             <div class="help">Comma separated, not case-sensitive.</div></div>
@@ -1961,7 +1961,7 @@
     const ok = (good, text) => `<li class="${good ? "st-ok" : "st-warn"}">${ABIcon(good ? "checkCircle" : "alert")} ${text}</li>`;
     let html = `<ul class="st-list">
       ${ok(full === vids.length, `<span>Translations: <b>${full} of ${vids.length}</b> videos in all 8 languages${full === vids.length ? "" : " — new or edited videos are translated within a few minutes after saving"}</span>${full === vids.length ? "" : `<button type="button" class="btn btn-sm st-retry" data-retry="translate.yml">${ABIcon("refresh")} Retry</button>`}<span class="st-job" id="job-translate.yml"></span>`)}
-      ${ok(vids.every(v => v.gemini), `<span>Library: <b>${vids.filter(v => v.gemini).length} of ${vids.length}</b> videos checked by Gemini${vids.every(v => v.gemini) ? "" : " — up to 15 more are checked each morning"}</span>`)}
+      ${ok(vids.every(v => v.gemini), `<span>Library: <b>${vids.filter(v => v.gemini).length} of ${vids.length}</b> videos checked by Gemini${vids.every(v => v.gemini) ? "" : " — press Search for new videos to check more"}</span>`)}
       ${ok(!q.length || gem === q.length, `<span>Gemini review: <b>${gem} of ${q.length}</b> queued videos checked${gemErr ? ` — last problem: <i>${esc(gemErr.aiError)}</i>` : ""}</span>${q.length && gem < q.length ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml">${ABIcon("refresh")} Retry</button>` : ""}<span class="st-job" id="job-find-videos.yml"></span>`)}
       ${(() => { const bad = Object.values(data.pending.json.channelStatus || {}).filter(c => c && c.error).length;
         return ok(!bad, `<span>Channels: ${bad ? `<b>${bad}</b> couldn't be checked last time — <a href="#" data-go="channels">see which</a>` : "all checked OK"}</span>${bad ? `<button type="button" class="btn btn-sm st-retry" data-retry="find-videos.yml" data-out="job-ch">${ABIcon("refresh")} Retry</button>` : ""}<span class="st-job" id="job-ch"></span>`); })()}

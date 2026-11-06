@@ -1,8 +1,8 @@
 name: Find new videos
 
+# No schedule: it only runs when you press "Search for new videos" in the admin
+# (or Run workflow on GitHub), so it never uses AI limits on its own.
 on:
-  schedule:
-    - cron: "23 1 * * *"   # every day at 05:23 Dubai time
   workflow_dispatch:
     inputs:
       health:

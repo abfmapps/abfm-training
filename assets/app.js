@@ -31,13 +31,6 @@
   (() => { let ch = false; state.done.forEach(id => { if (!state.doneAt[id]) { state.doneAt[id] = new Date().toISOString().slice(0, 10); ch = true; } }); if (ch) store.set("ab_done_at", state.doneAt); })();
 
   /* ---------- helpers ---------- */
-  /* "Watch on YouTube" opens in the Brave browser when the phone has it (Brave blocks YouTube ads); otherwise the normal browser. */
-  const watchUrl = id => {
-    const yt = "https://www.youtube.com/watch?v=" + encodeURIComponent(id), ua = navigator.userAgent || "";
-    if (/Android/i.test(ua)) return "intent://www.youtube.com/watch?v=" + encodeURIComponent(id) + "#Intent;scheme=https;package=com.brave.browser;S.browser_fallback_url=" + encodeURIComponent(yt) + ";end";
-    if (/iPhone|iPad|iPod/i.test(ua)) return "brave://open-url?url=" + encodeURIComponent(yt);
-    return yt;
-  };
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   function t(key, vars) {
     let s = (TEXT[state.lang] && TEXT[state.lang][key]) || TEXT.en[key] || key;
@@ -1058,7 +1051,7 @@
         <button class="btn${state.done.has(v.id) && !refresherDue(v) ? " is-done" : ""}" id="v-done" aria-pressed="${state.done.has(v.id)}"></button>
         ${nextHref ? `<a class="btn btn-dark" href="${nextHref}" id="path-next"><span>${esc(path ? t("nextVideo") : t("related"))}</span>${ICON.next}</a>` : `<a class="btn" href="#/">${esc(t("home"))}</a>`}
       </div>
-      <div class="vlinks"><a href="${watchUrl(v.yt)}" target="_blank" rel="noopener">${ICON.yt}<span>${esc(t("watchOnYouTube"))}</span></a></div>
+      <div class="vlinks"><a href="https://www.youtube.com/watch?v=${encodeURIComponent(v.yt)}" target="_blank" rel="noopener">${ICON.yt}<span>${esc(t("watchOnYouTube"))}</span></a></div>
       ${related.length ? `<div class="sec"><div class="section-h"><h2>${esc(t("related"))}</h2></div><div class="mini-list">${related.map(v2 => mini(v2)).join("")}</div></div>` : ""}
     `;
     const updateProg = () => {

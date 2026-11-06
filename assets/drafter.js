@@ -437,6 +437,18 @@ Reply with JSON only: [{"url": "https://www.youtube.com/@handle", "name": string
     d.model = r.model;
     return d;
   }
+  /* Draft the card from the title and description only, with a text AI (Groq / OpenRouter). Gemini is never used here:
+     it is kept for what only it can do (watching the video, searching the web). Pass key "" so it never falls back to Gemini. */
+  async function aiDraftText({ title, description, channel, category, subjects, categories, key = "", model }) {
+    const p = aiPrompt({ title, category, subjects, categories })
+      .replace("Watch this YouTube video (", "You cannot watch the video, so judge it from its title and description below. This YouTube video (")
+      .replace(") and reply with JSON only", ") — reply with JSON only");
+    const text = p + `\n\nChannel: ${channel || "unknown"}\nDescription:\n${String(description || "").slice(0, 2500) || "(none)"}\n\nOnly use steps the description supports; if it gives none, give 3 general safe key points for this topic. Be cautious: if the description is thin, recommend "maybe".`;
+    const r = await gemini({ key, model, parts: [{ text }] });
+    const d = parseAI(r.text);
+    d.model = r.model; d.from = "text";
+    return d;
+  }
   /* Find YouTube videos for a topic using Google Search. */
   async function aiFindVideos({ topic, details, category, key, model }) {
     const r = await gemini({ key, model, json: false, tools: [{ google_search: {} }], parts: [{ text:
@@ -564,5 +576,5 @@ ${JSON.stringify(lines)}` }] });
       return { status, json: { error: { message: "Groq: " + last } } };
     } };
   }
-  root.ABDraft = { groqDirect, aiDirect, trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
+  root.ABDraft = { groqDirect, aiDirect, trainingTitle, stepsFor, ruleDraft, aiTranslate, aiDraft, aiDraftText, aiFindVideos, aiFindChannels, aiQuiz, normQuiz, quizToText, parseQuizText, aiTalk, aiTest, MODELS, chapters, summary, level, safetyFor, similarity, findDuplicates };
 })(typeof globalThis !== "undefined" ? globalThis : this);

@@ -269,6 +269,36 @@
       "name": "Clean My Space",
       "active": true,
       "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@KarcherProfessional",
+      "name": "Kärcher Professional",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@UngerProfessional",
+      "name": "Unger Professional",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@DiverseyInc",
+      "name": "Diversey Inc",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@Nilfisk",
+      "name": "Nilfisk",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@KaivacInc",
+      "name": "Kaivac Inc",
+      "active": true,
+      "category": "Cleaning & Housekeeping"
     }
   ],
   "maxQueue": 150,

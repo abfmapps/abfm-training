@@ -269,6 +269,36 @@
       "name": "Kärcher Professional",
       "active": true,
       "category": "Cleaning & Housekeeping"
+    },
+    {
+      "url": "https://www.youtube.com/@HowToHVAC",
+      "name": "How To HVAC",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@ASHRAE",
+      "name": "ASHRAE",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@GreenheckFanCompany",
+      "name": "Greenheck Fan Company",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@HealthyBuilding",
+      "name": "Healthy Building",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
+    },
+    {
+      "url": "https://www.youtube.com/@RotobrushInternational",
+      "name": "Rotobrush International",
+      "active": true,
+      "category": "Duct & Kitchen Exhaust"
     }
   ],
   "maxQueue": 150,

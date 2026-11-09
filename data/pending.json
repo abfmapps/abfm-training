@@ -1,295 +1,218 @@
 {
   "queue": [
     {
-      "yt": "XtwOr6q7_Qg",
+      "yt": "JiilG6Ehe3o",
       "draft": {
         "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Dust Mask"
+          "Uniform"
         ],
         "quiz": [
           {
-            "q": "What tool is used to check if the corner is plumb?",
-            "answer": 1,
-            "options": [
-              "Hammer",
-              "Level",
-              "Tape Measure"
-            ]
-          },
-          {
-            "q": "What material is used to shim out the low studs in this video?",
+            "q": "What year is displayed on the police patrol car?",
             "answer": 0,
             "options": [
-              "Ram board",
-              "Drywall",
-              "Sheetmetal"
+              "1979",
+              "1985",
+              "1990"
             ]
           },
           {
-            "q": "Why must the wall corners be plumb before tiling?",
+            "q": "Which organization's heritage is highlighted in the video?",
             "answer": 1,
             "options": [
-              "To make painting easier",
-              "To avoid trimming tile and ensure clean lines",
-              "To strengthen the water pipes"
+              "Dubai Police",
+              "Abu Dhabi Police",
+              "Sharjah Police"
+            ]
+          },
+          {
+            "q": "What model of car was restored as a patrol vehicle?",
+            "answer": 1,
+            "options": [
+              "Ferrari",
+              "Porsche",
+              "Lamborghini"
+            ]
+          }
+        ],
+        "level": "Beginner",
+        "model": "gemini-3.5-flash-lite",
+        "steps": [
+          "Inspect the vintage police patrol car.",
+          "Drive the restored vehicle along historical routes.",
+          "Hand over the vehicle keys to the next generation."
+        ],
+        "title": "Historical Abu Dhabi Police Patrol Vehicle Restoration",
+        "review": {
+          "reason": "The video is a promotional heritage piece rather than a technical maintenance training video.",
+          "unsafe": [],
+          "quality": 7,
+          "talking": true,
+          "language": "Arabic",
+          "recommend": "reject",
+          "relevance": 2
+        },
+        "safety": "Ensure proper coordination and safety precautions when handling vintage vehicles and equipment.",
+        "source": "ai",
+        "subject": "UAE Rules & Compliance",
+        "summary": "The video presents the restoration of a 1979 Porsche patrol car used by the Abu Dhabi Police, highlighting historical heritage and modern development.",
+        "category": "UAE Rules & Compliance",
+        "stepsFrom": "ai"
+      },
+      "found": "2026-11-09T06:27:08.638Z",
+      "title": "سيارة بورش التاريخية لشرطة أبوظبي من عام 1979 تعود للموروث الشرطي بعد ترميمها ",
+      "channel": "Abu Dhabi Police",
+      "duration": "",
+      "published": "2026-11-09T06:27:07.532Z",
+      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
+      "description": "",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "vQaIZ7Ci35U",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Safety Shoes"
+        ],
+        "quiz": [
+          {
+            "q": "Where is the upside-down AC unit installed?",
+            "answer": 0,
+            "options": [
+              "In a parking garage",
+              "On a rooftop",
+              "Inside a kitchen ceiling"
+            ]
+          },
+          {
+            "q": "What potential issue is common with outdoor units in Southwest Florida?",
+            "answer": 0,
+            "options": [
+              "Corrosion",
+              "Freezing",
+              "Overheating from snow"
+            ]
+          },
+          {
+            "q": "What direction does the air blow from this side-discharge unit?",
+            "answer": 1,
+            "options": [
+              "Upward",
+              "Downward",
+              "Sideways only"
             ]
           }
         ],
         "level": "Intermediate",
         "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Check wall studs for plumb and flatness using a level.",
-          "Identify any bows, twists, or gaps in the framing.",
-          "Cut shims from ram board or thin plywood.",
-          "Staple or screw shims to studs to make the wall plumb.",
-          "Plane down high spots on studs if needed."
+          "Locate the overhead side-discharge condenser unit in the parking garage",
+          "Verify airflow direction to ensure heat does not recirculate",
+          "Check compressor orientation and oil retention",
+          "Inspect condenser coils for corrosion and dirt buildup"
         ],
-        "title": "Preparing Wall Studs for Tile",
+        "title": "Inspecting Overhead Side-Discharge Condenser",
         "review": {
-          "reason": "Clear demonstration of wall preparation and shimming techniques for tile installation.",
-          "unsafe": [
-            "No eye protection worn while using power planer or staple gun"
-          ],
-          "quality": 7,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Wear safety glasses when using power planers and staple guns.",
-        "source": "ai",
-        "subject": "Tile Installation",
-        "summary": "This video demonstrates how to inspect and adjust uneven wall studs using shims and ram board before installing backer boards for tile.",
-        "category": "Civil & Carpentry",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:13:43.612Z",
-      "title": "Prepping Wall Studs for Flat Tile Walls #howtotile #bathroom #tiles #wallpreparation",
-      "channel": "Sal DiBlasi (tiling & waterproofing)",
-      "duration": "",
-      "published": "2026-11-08T21:13:42.359Z",
-      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "description": "",
-      "channelCategory": "",
-      "suggestedCategory": "Civil & Carpentry"
-    },
-    {
-      "yt": "0028Z9Lr5r4",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Gloves",
-          "Dust Mask"
-        ],
-        "quiz": [
-          {
-            "q": "What product is used for the plaster finish?",
-            "answer": 0,
-            "options": [
-              "Carrara Coarse Venetian Plaster",
-              "Standard drywall compound",
-              "Cement mortar"
-            ]
-          },
-          {
-            "q": "What tool is primarily used to apply the plaster?",
-            "answer": 1,
-            "options": [
-              "Paint roller",
-              "Plaster trowel",
-              "Putty knife only"
-            ]
-          },
-          {
-            "q": "What is done after the first coat of plaster dries?",
-            "answer": 1,
-            "options": [
-              "Paint over it immediately",
-              "Sand slightly and apply next steps",
-              "Wash it with water"
-            ]
-          }
-        ],
-        "level": "Advanced",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Prepare the surface and clean thoroughly.",
-          "Mix the Venetian plaster in the bucket.",
-          "Apply the first coat of plaster using trowels.",
-          "Smooth and texture the plaster along curves.",
-          "Allow plaster to dry and sand as needed."
-        ],
-        "title": "Applying Venetian Plaster Finish",
-        "review": {
-          "reason": "Specialty finish work is rarely needed for standard facility maintenance.",
+          "reason": "Interesting field case study on unconventional AC placement, though mostly conversational rather than procedural.",
           "unsafe": [],
-          "quality": 7,
+          "quality": 6,
           "talking": true,
           "language": "English",
           "recommend": "maybe",
           "relevance": 5
         },
-        "safety": "Always wear gloves and protective gear when handling and applying lime-based plaster products.",
+        "safety": "Ensure proper securement and support of any overhead equipment before performing inspections.",
         "source": "ai",
-        "subject": "Drywall Repair",
-        "summary": "This video demonstrates applying Cadoro Carrara coarse Venetian plaster over curved surfaces and a kitchen hood.",
-        "category": "Civil & Carpentry",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:13:41.356Z",
-      "title": "The Best Interior Design I've Seen in a While!",
-      "channel": "Vancouver Carpenter",
-      "duration": "",
-      "published": "2026-11-08T21:13:40.101Z",
-      "channelUrl": "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ",
-      "description": "",
-      "channelCategory": "Civil & Carpentry",
-      "suggestedCategory": "Civil & Carpentry"
-    },
-    {
-      "yt": "my9BCWC2h44",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Gloves",
-          "Safety Shoes"
-        ],
-        "quiz": [
-          {
-            "q": "What component can cause bearing faults other than lift?",
-            "answer": 0,
-            "options": [
-              "The inverter",
-              "The water pump",
-              "The expansion valve"
-            ]
-          },
-          {
-            "q": "What should you check if bearings test good?",
-            "answer": 0,
-            "options": [
-              "The inverter",
-              "The compressor oil",
-              "The refrigerant charge"
-            ]
-          },
-          {
-            "q": "What causes the shaft to demagnetize in a Turbocor?",
-            "answer": 0,
-            "options": [
-              "Overheating",
-              "Low voltage",
-              "High pressure"
-            ]
-          }
-        ],
-        "level": "Advanced",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Identify bearing fault symptoms on the chiller.",
-          "Check for lift and surge conditions.",
-          "Inspect the inverter for stability and output.",
-          "Verify bearing calibration and sensor readings."
-        ],
-        "title": "Diagnosing Chiller Bearing Faults and Inverters",
-        "review": {
-          "reason": "Very informative for senior HVAC technicians troubleshooting chiller bearing and inverter issues.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure proper electrical isolation before handling inverter components.",
-        "source": "ai",
-        "subject": "Refrigerant & Diagnostics",
-        "summary": "This video explains troubleshooting bearing faults and inverter issues on centrifugal chillers.",
+        "subject": "Installation",
+        "summary": "A technician inspects a unique side-discharge AC condenser unit installed upside-down under a ceiling in a parking garage.",
         "category": "HVAC & Chillers",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-09T05:13:55.354Z",
-      "title": "Turbocor Bearing Fault: How a Weak Inverter Fakes a Bad Bearing",
-      "channel": "HVACTIME (chillers)",
+      "found": "2026-11-09T06:26:26.527Z",
+      "title": "upside down air conditioner",
+      "channel": "Love2HVAC with Ty Branaman",
       "duration": "",
-      "published": "2026-11-08T16:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
+      "published": "2026-11-09T00:51:15+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ",
+      "description": "upside down Condensing unit with the compressor turned the right way up.\nthis was installed back in 2018 when 5 ton side discharge air conditioning units were not readily available..\nthis shit has been running year round cooling a hot kitchen since 2018. the area floods and the customer did not want to give up any parking space. the technician and company thought outside the box and came up with this solution.\n\nHVAC thinking outside the box",
       "channelCategory": "HVAC & Chillers",
       "suggestedCategory": "HVAC & Chillers"
     },
     {
-      "yt": "Zp50zIufnus",
+      "yt": "ZjRD5BRiX5s",
       "draft": {
-        "ppe": [],
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves"
+        ],
         "quiz": [
           {
-            "q": "What is the main topic of the video?",
+            "q": "What is the average cost of a water damage claim mentioned?",
             "answer": 0,
             "options": [
-              "Training vs. Trusting",
-              "How to clean carpets",
-              "Running a restaurant kitchen"
+              "$13,954",
+              "$5,000",
+              "$25,000"
             ]
           },
           {
-            "q": "What should you set along with clear expectations?",
-            "answer": 1,
+            "q": "Which method is not mentioned for leak detection?",
+            "answer": 2,
             "options": [
-              "A strict fine",
-              "Checkpoints",
-              "More work hours"
+              "Acoustic testing",
+              "Thermal testing",
+              "Laser scanning"
             ]
           },
           {
-            "q": "What is the goal of proper delegation?",
+            "q": "How many holes should you ideally open when finding a leak?",
             "answer": 0,
             "options": [
-              "Freedom with accountability",
-              "Doing the job yourself",
-              "Total control"
+              "One hole",
+              "Three holes",
+              "As many as needed"
             ]
           }
         ],
         "level": "Intermediate",
         "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Train and check employee work",
-          "Set clear expectations and checkpoints",
-          "Delegate tasks with proper instruction",
-          "Avoid micromanagement and dumping tasks"
+          "Locate the source of the water leak.",
+          "Select a detection method such as acoustic, thermal, or pressure testing.",
+          "Mark the precise leak location before opening walls.",
+          "Open only the necessary access hole to minimize damage."
         ],
-        "title": "Delegation and Training Best Practices",
+        "title": "Accurate Plumbing Leak Detection and Methods",
         "review": {
-          "reason": "Useful management advice for supervisors, though not a technical maintenance tutorial.",
+          "reason": "It offers good conceptual advice on leak detection but contains no practical demonstration.",
           "unsafe": [],
-          "quality": 8,
+          "quality": 7,
           "talking": true,
           "language": "English",
           "recommend": "maybe",
           "relevance": 6
         },
-        "safety": "Ensure clear standards and expectations are communicated before delegating any task.",
+        "safety": "Always shut off the main water supply before inspecting or repairing suspected plumbing leaks.",
         "source": "ai",
-        "subject": "Floor Cleaning Machine",
-        "summary": "This video discusses the gap between training and trusting employees, and how to delegate effectively without micromanaging.",
-        "category": "Cleaning & Housekeeping",
+        "subject": "Leak Detection",
+        "summary": "This video explains the importance of precise leak detection methods in plumbing to avoid high water damage repair costs.",
+        "category": "Plumbing & Drainage",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-09T05:15:04.077Z",
-      "title": "Training vs. Trusting: Where Owners Get Stuck",
-      "channel": "ISSA - International Sanitary Supply Association",
+      "found": "2026-11-09T06:26:15.563Z",
+      "title": "The $13,954 leak: finding it is the skill",
+      "channel": "Roger Wakefield Plumbing Education",
       "duration": "",
-      "published": "2026-11-08T14:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
+      "published": "2026-11-08T23:04:37+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "$13,954.\n\nThat's the average water damage and freezing insurance claim reported by the Insurance Information Institute for 2018–2022.\n\nMost of that isn't the cost of repairing the pipe.\n\nIt's the drywall, the flooring, the cabinets, and everything that has to be opened up to find where the water is coming from.\n\nFinding the leak is a different skill than fixing it.\n\nMy son Henry teaches plumbers how to locate leaks with the right equipment and training.\n\nLearn more: https://leak.pro",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
     },
     {
-      "yt": "-6yrOGfB2KI",
+      "yt": "fFUBxMAAhXE",
       "draft": {
         "ppe": [
           "Safety Glasses",
@@ -297,63 +220,183 @@
         ],
         "quiz": [
           {
-            "q": "What should you set to ensure accountability?",
+            "q": "What records should you review to find your specialty?",
             "answer": 0,
             "options": [
-              "Clear expectations and checkpoints",
-              "Random spot checks without rules",
-              "Impossible sales targets"
+              "Your last ninety days of invoices",
+              "Your weekly grocery receipts",
+              "Your tool purchase logs"
             ]
           },
           {
-            "q": "What do owners often do when tasks go sideways?",
+            "q": "What type of job indicates your true specialty?",
             "answer": 1,
             "options": [
-              "Train the employee further",
-              "Grab the pan and take over",
-              "Ignore the problem completely"
+              "The easiest and fastest job",
+              "The hardest job that others could not find",
+              "The job with the lowest pay rate"
             ]
           },
           {
-            "q": "What is the goal of proper training?",
-            "answer": 0,
+            "q": "What should you do after picking your specialty?",
+            "answer": 1,
             "options": [
-              "Freedom with accountability",
-              "Micromanaging every step",
-              "Doing the work yourself"
+              "Stop answering customer calls",
+              "Get trained and become a specialist",
+              "Hide your skills from your employer"
             ]
           }
         ],
         "level": "Beginner",
         "model": "gemini-3.5-flash-lite",
         "steps": [
-          "Train the employee on the required task.",
-          "Check and correct their completed work.",
-          "Set clear expectations and checkpoints for quality.",
-          "Allow employees to work independently with accountability."
+          "Review your last ninety days of invoices",
+          "Identify the toughest jobs that required special skill",
+          "Select a specific plumbing specialty to focus on",
+          "Build expertise and market your chosen specialty"
         ],
-        "title": "Training Versus Trusting Employees",
+        "title": "Choosing a Plumbing Specialty",
         "review": {
-          "reason": "It offers good management advice but lacks technical procedures for our technicians.",
+          "reason": "This is a marketing and business advice video for business owners, not a technical training procedure for maintenance technicians.",
           "unsafe": [],
           "quality": 7,
           "talking": true,
           "language": "English",
-          "recommend": "maybe",
-          "relevance": 4
+          "recommend": "reject",
+          "relevance": 2
         },
-        "safety": "Ensure proper supervision and clear expectations are set before delegating any task.",
+        "safety": "Ensure proper situational awareness and safety protocols are maintained on all specialized diagnostic service calls.",
         "source": "ai",
-        "subject": "Kitchen & Laundry Appliances",
-        "summary": "This video explains the gap between training and trusting employees, and why managers often get stuck doing tasks themselves.",
-        "category": "Cleaning & Housekeeping",
+        "subject": "Leak Detection",
+        "summary": "The presenter advises plumbing technicians to select a specialized service like leak detection or water filtration to stand out and become known experts.",
+        "category": "Plumbing & Drainage",
         "stepsFrom": "ai"
       },
-      "found": "2026-11-09T05:15:05.149Z",
-      "title": "Training vs. Trusting: Where Owners Get Stuck",
+      "found": "2026-11-09T06:26:16.737Z",
+      "title": "Which call do you want to be known for? Pick one.",
+      "channel": "Roger Wakefield Plumbing Education",
+      "duration": "",
+      "published": "2026-11-08T18:07:20+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "Pull your last ninety days of invoices.\n\nDon't just look at the job you did most often. Look at the one that really challenged you.\n\nThe call where the customer said two other companies couldn't figure it out.\n\nThat's the kind of work people will remember you for.\n\nPick a specialty. Get trained in it. Put it on your truck and your website. Become the company people think of when that problem comes up.\n\nWhich call do you want to be known for?\n\nComment ONE.",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
+    },
+    {
+      "yt": "dvairGJiAbQ",
+      "draft": {
+        "ppe": [
+          "Safety Glasses",
+          "Work Gloves",
+          "Safety Shoes"
+        ],
+        "level": "Intermediate",
+        "steps": [
+          "Read the job card and get the right tools and PPE",
+          "Make the area safe and put up barriers or signs",
+          "Carry out the work as shown in the video",
+          "Check your work",
+          "Clean up the area",
+          "Report the job complete"
+        ],
+        "title": "بطولة الشرطة للفرق التخصصية اليوم The Police Specialized Teams…",
+        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
+        "source": "rules",
+        "subject": "UAE Rules & Compliance",
+        "summary": "تنطلق منافسات النسخة الـ (10) من بطولة الشرطة للفرق التخصصية، التي ينظمها اتحاد الشرطة الرياضي في ميدان الرماية بالروية في دبي، بمشاركة 18 فريقاً من مختلف القيادات الشرطية والتخصصية، تتنافس في مجموعة من التحديات الميدانية التي تختبر الجاهزية البدنية والمهار…",
+        "stepsFrom": "general"
+      },
+      "found": "2026-11-09T06:27:10.483Z",
+      "title": "بطولة الشرطة للفرق التخصصية اليوم  The Police Specialized Teams Championship Day 1",
+      "aiError": "The caller does not have permission",
+      "aiTries": 1,
+      "channel": "Dubai Police",
+      "duration": "",
+      "published": "2026-11-08T17:49:59+00:00",
+      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
+      "description": "تنطلق منافسات النسخة الـ (10) من بطولة الشرطة للفرق التخصصية، التي ينظمها اتحاد الشرطة الرياضي في ميدان الرماية بالروية في دبي، بمشاركة 18 فريقاً من مختلف القيادات الشرطية والتخصصية، تتنافس في مجموعة من التحديات الميدانية التي تختبر الجاهزية البدنية والمهارات التكتيكية وسرعة الاستجابة والدقة والعمل الجماعي.\n\nوتشهد منافسات اليوم الأول، الاثنين 9 نوفمبر 2026، مسابقتين، هما الهجوم وإنقاذ الرهينة، ضمن البطولة التي تستمر حتى 12 نوفمبر الجاري.\n\n#بطولة_الشرطة_للفرق_التخصصية #اتحاد_الشرطة_الرياضي",
+      "channelCategory": "UAE Rules & Compliance",
+      "suggestedCategory": "UAE Rules & Compliance"
+    },
+    {
+      "yt": "tmBfntlGYzU",
+      "found": "2026-11-09T06:26:17.853Z",
+      "title": "After a Wildfire, Clean-Looking Water May Not Be Safe",
+      "channel": "Roger Wakefield Plumbing Education",
+      "duration": "",
+      "published": "2026-11-08T16:06:40+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "After a wildfire, drinking water can look clean and smell normal even when it's contaminated.\n\nHeat-damaged plastic pipes and pressure changes can introduce chemicals such as benzene. You cannot reliably judge water safety by sight or smell.\n\nIf there's a Do Not Drink advisory, boiling does not make it safe. Follow local utility guidance and use appropriate laboratory testing.\n\nTest before you trust.\n\nWater-quality training: https://halowatertour.com",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
+    },
+    {
+      "yt": "my9BCWC2h44",
+      "found": "2026-11-09T06:26:40.724Z",
+      "title": "Turbocor Bearing Fault: What Most Techs Blame On the Bearings",
+      "channel": "HVACTIME (chillers)",
+      "duration": "",
+      "published": "2026-11-08T16:00:31+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
+      "description": "The Turbocor keeps tripping on bearing faults. The bearings test good, the sensors test good, and it still trips. A bearing fault reads like a bad bearing, and a bad bearing means a new compressor, so that is the call most techs make. The fault does not always mean the bearing failed.\n\nHigh lift, wet suction, a weak inverter, a bad bearing calibration, and a demagnetized shaft can all trip the bearings, and only some of them mean a new compressor. This one comes out of a live stream question about a Turbocor faulting with no lift problem. It walks through each cause, why an inverter can pass every meter test and still be the problem, and what to pull from the logs before you condemn the compressor.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why high lift pushes a Turbocor toward surge, and how a stall that only grumbles on an oiled machine can trip a mag bearing that is perfectly fine\n- The real bearing failures: a bad bearing coil or sensor\n- How a weak inverter loses a stable field in the stator, lets the rotor move, and trips the bearings\n- Why an inverter that passes every meter test can still be causing the faults\n- Why a failed radial bearing means a new compressor, and why bearings that test good usually are good\n- Shaft demag: how a demagnetized permanent magnet shaft throws off the bearings' control of the shaft orbit\n- Why the inverter is the one cause that does not mean a new compressor, and when swapping in a known good one makes sense\n- The five main causes to verify, and how to lay out inverter first versus new compressor for the customer\n- Wet suction and carryover, through the evaporator or the economizer, as another cause of bearing faults\n- How a bearing calibration check should be run, with everything else unplugged from the I/O module, and why you don't save over the factory calibration unless you have to\n- Why a calibration check that shows a problem rules the inverter out\n- What usually drives a shaft to demagnetize: a rotor running hot because the cooling circuit can't hold stator temp or the inverter is getting weak\n- Why faults that hit after you walk away point to lift or wet suction, and how suction and discharge superheat in the logs tell the evaporator side from the economizer side\n- Why a wet suction problem can show on one compressor and not the other\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Turbocor Bearing Faults From High Lift and Stall\n1:31 How a Weak Inverter Trips the Bearings\n2:32 An Inverter Can Pass Meter Tests and Still Fail\n3:07 When a Bearing Fault Means a New Compressor\n3:52 Shaft Demag: A Rare Cause of Bearing Faults\n4:24 Swapping In a Known Good Inverter First\n5:29 Five Causes and What to Tell the Customer\n6:34 Wet Suction and Carryover Cause Bearing Faults\n7:23 How to Run a Bearing Calibration Check\n8:37 Why a Bad Calibration Rules Out the Inverter\n9:13 What Makes a Turbocor Shaft Demagnetize\n10:07 ",
+      "channelCategory": "HVAC & Chillers",
+      "suggestedCategory": "HVAC & Chillers"
+    },
+    {
+      "yt": "mmmirQZx5Eg",
+      "found": "2026-11-09T06:27:14.792Z",
+      "title": "This is What Great Leaders Do",
       "channel": "ISSA - International Sanitary Supply Association",
       "duration": "",
-      "published": "2026-11-08T14:15:03.021Z",
+      "published": "2026-11-08T14:00:33+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "CxGW7Awqr8Y",
+      "found": "2026-11-09T06:27:15.913Z",
+      "title": "Stop Dumping Tasks Without Clear Instructions",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-08T14:00:05+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "8RrcNoF6Crw",
+      "found": "2026-11-09T06:27:17.083Z",
+      "title": "Stop Hovering Over Staff and Avoid the Helicopter Managing Style",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-08T13:59:44+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "Mxmu5IgMV1Q",
+      "found": "2026-11-09T06:27:18.058Z",
+      "title": "The Real Pain of Micromanaging",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-08T13:55:36+00:00",
+      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
+      "description": "",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
+    },
+    {
+      "yt": "ESZal6An0Yw",
+      "found": "2026-11-09T06:27:19.161Z",
+      "title": "Stop Being Your Business’s Bottleneck",
+      "channel": "ISSA - International Sanitary Supply Association",
+      "duration": "",
+      "published": "2026-11-08T13:54:28+00:00",
       "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
       "description": "",
       "channelCategory": "Cleaning & Housekeeping",
@@ -361,2693 +404,258 @@
     },
     {
       "yt": "EzjDLMsB8U0",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What is the most common cause of heat pump heating problems?",
-            "answer": 0,
-            "options": [
-              "Thermostat configuration",
-              "Low refrigerant",
-              "Blocked condenser coil"
-            ]
-          },
-          {
-            "q": "When does auxiliary heat matter the most?",
-            "answer": 1,
-            "options": [
-              "Summer cooling",
-              "Defrost mode",
-              "Normal operation"
-            ]
-          },
-          {
-            "q": "How do you connect suction gauges in heat pump heating mode?",
-            "answer": 2,
-            "options": [
-              "Liquid to suction",
-              "Discharge to suction",
-              "Suction to common"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Verify thermostat configuration for heat pump operation.",
-          "Check that the reversing valve shifts correctly.",
-          "Confirm auxiliary heat activates during high demand or defrost.",
-          "Connect gauges to suction and true suction ports correctly."
-        ],
-        "title": "Heat Pump Heating Checks",
-        "review": {
-          "reason": "Clear and informative guide on heat pump heating checks suitable for HVAC technicians.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure proper electrical isolation before working on heat pump components.",
-        "source": "ai",
-        "subject": "Refrigerant & Diagnostics",
-        "summary": "A presenter explains how to check heat pump heating mode, including thermostat configuration, reversing valves, auxiliary heat, and pressures.",
-        "category": "HVAC & Chillers",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:13:30.844Z",
+      "found": "2026-11-09T06:26:09.165Z",
       "title": "Heat Pump Heating Checks: Thermostat, Aux Heat, Pressures",
       "channel": "HVAC School",
       "duration": "",
-      "published": "2026-11-08T12:13:29.762Z",
+      "published": "2026-11-08T12:00:33+00:00",
       "channelUrl": "https://www.youtube.com/c/HVACSchool",
-      "description": "",
+      "description": "When a heat pump is running in heating mode, the readings and checks look different from cooling, and that’s where a lot of techs go wrong. In this video, Bryan Orr goes through the key heat pump checks to make before and during heating season, from the thermostat to the gauges.\n\nThermostat configuration is the first thing to check and the most common cause of a heat pump that won’t heat. The AC runs fine all summer, then the first cold night shows a setting that was configured wrong. Bryan explains why the thermostat should be part of every maintenance visit.\n\nNext is the reversing valve. On most systems, the reversing valve must be energized or de-energized correctly for the system to switch into heat. Hearing the valve click isn’t enough. A valve can’t actually shift without a pressure differential, so the compressor has to be running. Bryan’s practical approach: use thermostat service mode if you have it, run the system in heat for a couple of minutes, and confirm the valve really shifts.\n\nAux heat comes next. Auxiliary heat should run as little as possible, or customers will see high heating bills. The time it matters most is defrost, when the system switches into cooling mode and blows cold air through the house. That’s when the nuisance calls come in. Bryan explains why making sure the heat strips come on and go off matters more to him than testing defrost on every visit. He also shows his preferred test: power the W call from the outdoor unit with a simple jumper, which also confirms the white wire has continuity between the indoor and outdoor units.\n\nFinally, heat pump pressures in heating mode. Bryan covers where to connect your gauges (the common suction port between the reversing valve and the compressor) and the number one mistake techs make. Low suction pressure in heat mode doesn’t automatically mean the system is low on charge. The colder it is outside, the lower the suction will be. 40°F outdoors in heating is like 40°F return air in cooling. High head pressure in heat mode is usually an airflow problem, not a refrigerant problem, so confirm the airflow before you blame the charge. measureQuick has a heat pump heating mode that flags these readings for you.\n\n---\n\nNEXT VIDEO\n\nHeat Pump Defrost Cycle & Heat Strip Wiring Safety | HVAC Heating Season Preparation\nhttps://www.youtube.com/watch?v=0wAhrieYofY&t=126s\n\nKEEP LEARNING\n\nStart here:\nhttps://www.hvacrschool.com/start/\n\nFree HVAC/R training, tech tips, quizzes, calculators, courses, and more:\nhttps://www.hvacrschool.com/\n\nListen to the HVAC School podcast:\nhttps://www.hvacrschool.com/podcast/\n\nGet the HVAC School app:\nhttps://www.hvacrschool.com/apps-page/\n\nHVAC School provides free HVAC/R training—primarily for techs, by techs. The goal is not just to collect facts. It is to understand the system well enough to apply what you know in the field.\n\nQuestions or corrections? Leave a comment and include the equipment model, measurements, and source when you can. None of us gets ever",
       "channelCategory": "HVAC & Chillers",
       "suggestedCategory": "HVAC & Chillers"
     },
     {
-      "yt": "wlHpbW0caUo",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Insulated Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "Which color terminals should the leads be connected to?",
-            "answer": 0,
-            "options": [
-              "L1 and L2 terminals",
-              "Neutral and Earth terminals",
-              "Phase and Neutral terminals"
-            ]
-          },
-          {
-            "q": "What dial setting is used for the low ohms test?",
-            "answer": 1,
-            "options": [
-              "The green setting",
-              "The orange setting",
-              "The red setting"
-            ]
-          },
-          {
-            "q": "Why do you clip the test probes together before testing?",
-            "answer": 1,
-            "options": [
-              "To check the battery level",
-              "To zero the leads",
-              "To test the fuse"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Connect red and green leads into the L1 and L2 terminals.",
-          "Turn the selector dial to the low ohms setting.",
-          "Clip the two probe jaws together firmly.",
-          "Press the test button to zero the leads."
-        ],
-        "title": "Setting Up Continuity Test On Megger MFT",
-        "review": {
-          "reason": "Clear and practical demonstration of setting up a Megger MFT for continuity testing.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure circuits are safely isolated and dead before performing any electrical continuity testing.",
-        "source": "ai",
-        "subject": "Test Instruments",
-        "summary": "This video demonstrates how to set up leads, select the low ohms setting, and zero the Megger MFT for a continuity test.",
-        "category": "Electrical",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:13:35.149Z",
-      "title": "How to Set Up for a Circuit Resistance Test",
+      "yt": "hcY2Hxlutcs",
+      "found": "2026-11-09T06:26:32.271Z",
+      "title": "Skil Flip Drill 🛠️",
+      "channel": "Paint Life TV",
+      "duration": "",
+      "published": "2026-11-08T11:17:01+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "description": "More details here on the Flip Drill. https://link.amazon/B00EX7FK2",
+      "channelCategory": "Painting & Waterproofing",
+      "suggestedCategory": "Painting & Waterproofing"
+    },
+    {
+      "yt": "OEwXLmHChcw",
+      "found": "2026-11-09T06:26:19.026Z",
+      "title": "Why your sink gurgles when the toilet flushes",
+      "channel": "Roger Wakefield Plumbing Education",
+      "duration": "",
+      "published": "2026-11-07T23:05:04+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "Flush the toilet. Hear the sink gurgle?\n\nYour plumbing is trying to tell you something.\n\nDrain systems need air to work properly. When venting is blocked or the drainage system has another restriction, pressure changes can pull air through nearby traps.\n\nThat gurgling sound is a warning.\n\nAnd if a trap loses its water seal, sewer gas can enter the house.\n\nDoes your sink gurgle when you flush the toilet? Tell me which fixture does it.",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
+    },
+    {
+      "yt": "cERQhd8c9jc",
+      "found": "2026-11-09T06:26:20.088Z",
+      "title": "The new fitting failed in a year. The old pipe is fine. Here's why.",
+      "channel": "Roger Wakefield Plumbing Education",
+      "duration": "",
+      "published": "2026-11-07T18:05:36+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "The new fitting failed. The old pipe is fine. Here's why.\n\nPut dissimilar metals together in a plumbing system, add water, and you can create conditions for galvanic corrosion.\n\nOne metal starts deteriorating faster because of its connection to the other.\n\nIt's not always a bad fitting. Sometimes it's the combination of materials.\n\nThe right transition fittings and compatible materials matter.\n\nPlumbers, what's the worst galvanic corrosion you've ever opened up?",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
+    },
+    {
+      "yt": "av0R0ScEgEQ",
+      "found": "2026-11-09T06:26:21.213Z",
+      "title": "One I-9 Mistake Could Cost Up to $2,861 Per Form",
+      "channel": "Roger Wakefield Plumbing Education",
+      "duration": "",
+      "published": "2026-11-07T16:05:16+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "One hiring-form mistake can become an expensive problem.\n\nOur October 28 show covered Form I-9 paperwork penalties listed at up to $2,861 per form in the source cited in the show notes.\n\nIf you hire employees, review your I-9 process with your attorney before an inspection. Don't erase, backdate or guess at corrections.\n\nDo you have a regular paperwork review process?\n\nNot legal advice.",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
+    },
+    {
+      "yt": "UbwWEqkfsb8",
+      "found": "2026-11-09T06:26:33.310Z",
+      "title": "Throw that caulking gun away 🤯",
+      "channel": "Paint Life TV",
+      "duration": "",
+      "published": "2026-11-07T14:57:41+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
+      "description": "",
+      "channelCategory": "Painting & Waterproofing",
+      "suggestedCategory": "Painting & Waterproofing"
+    },
+    {
+      "yt": "6xLf_iUhUC8",
+      "found": "2026-11-09T06:26:12.761Z",
+      "title": "Are Type 2 SPD Now Standard Practice?",
       "channel": "GSH Electrical",
       "duration": "",
-      "published": "2026-11-08T10:13:33.878Z",
+      "published": "2026-11-07T11:55:13+00:00",
       "channelUrl": "https://www.youtube.com/@GSHElectrical",
-      "description": "",
+      "description": "We don’t even think about it now as SPDs are common place in the electrical industry. \n\nVideos are training aids for City and Guilds (C and G) and EAL courses Level 1, 2 and 3.\n\nYou can follow me day by day on Facebook, Instagram, Twitter and TikTok lookout for \"GSH Electrical”.  \n\n#GSHElectrical #Electricaltrainingvideos #electricalwiring #electricalwork",
       "channelCategory": "Electrical",
       "suggestedCategory": "Electrical"
     },
     {
-      "yt": "s4KnbrMz4dU",
-      "draft": {
-        "ppe": [
-          "High-Visibility Vest",
-          "Safety Shoes",
-          "Hard Hat"
-        ],
-        "quiz": [
-          {
-            "q": "What event is featured at the start of the video?",
-            "answer": 0,
-            "options": [
-              "Flag raising ceremony",
-              "HVAC maintenance",
-              "Plumbing repair"
-            ]
-          },
-          {
-            "q": "Which group did HE Saeed Mohammed Al Ayer engage with?",
-            "answer": 1,
-            "options": [
-              "Contractors",
-              "People of Determination",
-              "External auditors"
-            ]
-          },
-          {
-            "q": "What awards were presented to employees in the video?",
-            "answer": 1,
-            "options": [
-              "Safety Star Awards",
-              "Nujoom DEWA Excellence Awards",
-              "Green Building Awards"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Attend corporate flag raising ceremonies.",
-          "Participate in employee engagement sessions.",
-          "Observe award ceremonies for staff excellence.",
-          "Review institutional partnership meetings."
-        ],
-        "title": "DEWA Weekly Digest UAE Flag and Events",
-        "review": {
-          "reason": "This video is a corporate news digest and does not provide practical facility maintenance training.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "Arabic",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Follow all corporate event and venue safety guidelines when attending company gatherings.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This weekly digest video highlights DEWA employee activities, including raising the UAE flag, engagement with People of Determination, and corporate excellence awards.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:30.712Z",
-      "title": "نشرة الهيئة الأسبوعية - نوفمبر 7  l DEWA Weekly Digest - November 7",
-      "channel": "DEWA",
+      "yt": "dK9-PbrvJyk",
+      "found": "2026-11-09T06:26:22.365Z",
+      "title": "Bacon grease down the drain with hot water? Here's where it ends up.",
+      "channel": "Roger Wakefield Plumbing Education",
       "duration": "",
-      "published": "2026-11-08T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-11-06T23:02:35+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "Hot water and dish soap. That's how you get bacon grease down the drain. Right?\n\nThat's how you get it INTO the drain.\n\nYour pipes cool down. The grease cools, sticks to the inside, and every pan adds another layer.\n\nEventually, you've built a restriction you can't see.\n\nPour cooled grease into a container for disposal and wipe the pan before washing it.\n\nJar people, comment JAR.",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
     },
     {
-      "yt": "eZH7YkKYR6U",
-      "draft": {
-        "ppe": [
-          "Respirator",
-          "Safety Goggles",
-          "Chemical Gloves"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "How to Sand Between Epoxy Coats: Tools & Tips for Smooth Results",
-        "safety": "Ventilate the area, keep ignition sources away and protect your eyes and lungs from fumes and spray.",
-        "source": "rules",
-        "subject": "Torginol Flakes Mixing",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:13:45.906Z",
-      "title": "How to Sand Between Epoxy Coats — Tools & Tips for Smooth Results",
-      "aiError": "Gemini's answer was incomplete",
-      "aiTries": 1,
-      "channel": "Paint Life TV",
+      "yt": "UGtTeoPiwtc",
+      "found": "2026-11-09T06:26:23.538Z",
+      "title": "Tight 90 vs long sweep: one of these is a clog magnet",
+      "channel": "Roger Wakefield Plumbing Education",
       "duration": "",
-      "published": "2026-11-08T05:13:44.649Z",
-      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "description": "",
-      "channelCategory": "Painting & Waterproofing",
-      "suggestedCategory": "Painting & Waterproofing"
+      "published": "2026-11-06T18:06:42+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "One of these fittings might be why your drain clogs in the same spot every year.\n\nA tight 90 and a long-sweep 90 make the same turn, but they don't move waste through the pipe the same way.\n\nDrain water carries solids. Sharp turns can create places where material collects and clogs develop.\n\nThat's why proper drainage fittings matter.\n\nPlumbers, what's the worst fitting you've pulled out of a wall and thought, \"Who installed this?\"",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
     },
     {
-      "yt": "q-u14cbI_3E",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Gloves",
-          "High-Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What does Clairity+ combine to clean surfaces?",
-            "answer": 1,
-            "options": [
-              "Water and bleach",
-              "Dust binder and microbial cleaning",
-              "Soap and vinegar"
-            ]
-          },
-          {
-            "q": "How long do microbes remain active after cleaning?",
-            "answer": 0,
-            "options": [
-              "Up to 7 days",
-              "24 hours",
-              "30 minutes"
-            ]
-          },
-          {
-            "q": "What equipment was used in the warehouse case study trial?",
-            "answer": 1,
-            "options": [
-              "Standard mop",
-              "Floor washer",
-              "Pressure washer"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Define the problem with dust and traditional indoor air quality approaches.",
-          "Explain the microbial cleaning model and how it differs from traditional methods.",
-          "Review case study results from Univar Solutions warehouse trials showing dust reduction.",
-          "Discuss the benefits of influencing the microbiome for safer, cleaner environments."
-        ],
-        "title": "Improving Indoor Air Quality with Clairity+",
-        "review": {
-          "reason": "The video provides useful technical information on improving indoor air quality using surface modification and microbial cleaning.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 8
-        },
-        "safety": "Always use appropriate PPE when handling cleaning solutions and operating floor cleaning equipment.",
-        "source": "ai",
-        "subject": "Floor Cleaning Machine",
-        "summary": "This video introduces Clairity+, a surface modification technology combining dust binders and microbial cleaning to improve indoor air quality and reduce airborne dust.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:06.276Z",
-      "title": "Improving Indoor Air Quality with Novonesis' Clairity+ Surface Modification Technology",
-      "channel": "ISSA - International Sanitary Supply Association",
+      "yt": "5x0CSChQFRM",
+      "found": "2026-11-09T06:26:24.656Z",
+      "title": "Google Local Services Ads Are Changing: What Contractors Need to Know",
+      "channel": "Roger Wakefield Plumbing Education",
       "duration": "",
-      "published": "2026-11-07T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
+      "published": "2026-11-06T16:06:26+00:00",
+      "channelUrl": "https://www.youtube.com/@RogerWakefield",
+      "description": "Google's changes to Local Services Ads mean contractors need to pay attention to more than their ad budget.\n\nIn Trade Talks Live, we discussed the move into Google Ads, changes to reporting and budgets, and the importance of keeping your Google Business Profile accurate.\n\nBefore your account migrates, review your business information and download the reports you need.\n\nCheck whether your website is machine-readable: https://www.areyougoogleable.com",
+      "channelCategory": "Plumbing & Drainage",
+      "suggestedCategory": "Plumbing & Drainage"
     },
     {
-      "yt": "nyTgss2aMC8",
-      "draft": {
-        "ppe": [
-          "Safety Goggles",
-          "Cold-Resistant Gloves"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Connected Systems and the Future of Refrigeration",
-        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
-        "source": "rules",
-        "subject": "Addressable Fire Alarms",
-        "summary": "The future of refrigeration starts with A2L refrigerants and smarter control systems. But the real game-changer is data.",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-05T19:22:41.790Z",
-      "title": "Connected systems and the future of refrigeration",
-      "aiError": "Gemini took too long",
-      "aiTries": 3,
-      "channel": "Johnson Controls",
+      "yt": "uT91J47LpZ0",
+      "found": "2026-11-09T06:26:30.440Z",
+      "title": "Dark Wood look Plank tile install #diy #tiles #construction #planktile",
+      "channel": "Sal DiBlasi (tiling & waterproofing)",
       "duration": "",
-      "published": "2026-11-05T16:33:39+00:00",
-      "channelUrl": "https://www.youtube.com/@JohnsonControls",
-      "description": "The future of refrigeration starts with A2L refrigerants and smarter control systems. But the real game-changer is data.​\n\nWith cloud connectivity, refrigeration systems can now provide real-time insights that help operators monitor performance, diagnose issues and implement predictive maintenance strategies. ​\n\nWatch the full video to discover what the PENN System 550 can do for you.",
-      "channelCategory": "Fire & Life Safety",
-      "suggestedCategory": "Fire & Life Safety"
-    },
-    {
-      "yt": "OInuGc6qZVg",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "How to Connect Syrup, Water & Co₂ Lines to an Fbd Machine",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-06T02:25:44.539Z",
-      "title": "HOW TO CONNECT SYRUP, WATER & CO₂ LINES to an FBD Machine",
-      "aiError": "The caller does not have permission",
-      "aiTries": 3,
-      "channel": "Learn A Trade (commercial equipment)",
-      "duration": "",
-      "published": "2026-11-05T04:25:43.679Z",
-      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
-      "description": "",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
-    },
-    {
-      "yt": "5XicGcEL9UY",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "The BEST Cleaning Products and Tools in 2026",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-06T12:49:55.640Z",
-      "title": "The BEST cleaning products and tools in 2026!",
-      "aiError": "The caller does not have permission",
-      "aiTries": 3,
-      "channel": "Clean My Space",
-      "duration": "",
-      "published": "2026-11-03T18:30:54+00:00",
-      "channelUrl": "https://www.youtube.com/@CleanMySpace",
-      "description": "⭐ SUBSCRIBE to CLEAN MY SPACE: http://bit.ly/CMSYT17\n\n📫 Get WEEKLY SOLUTIONS to your CLEANING CHALLENGES in our newsletter, the DIRTY DISH!\nhttps://cleanmyspace.com/join-the-clean-my-space-community/\n\n🛒 SHOP Maker's Clean:  https://www.makersclean.com/collections/all\n\n💘 BECOME A MEMBER and access to Membership perks:\nhttps://www.youtube.com/channel/UCGozdt7Wbd15k7dWhvlmLUw/join\n\n\nTHANKS FOR WATCHING!\n\nSome product links are affiliate links. We receive a small commission if you use our links and we thank you for your support!",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "oX2wjCIqMH0",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "How a hot water recirculation system can reduce the wait for hot water",
-          "How a whole-home booster pump can address low or inconsistent water pressure",
-          "How professional installation improved comfort in a busy family home",
-          "Why the combination of faster hot water and consistent pressure made everyday routines easier"
-        ],
-        "title": "Hot Water in Under 10 Seconds + Consistent Water Pressure",
-        "safety": "Inform the building and the alarm monitoring company before testing, and never leave a system disabled.",
-        "source": "rules",
-        "subject": "Water Tank Disinfection & Testing",
-        "summary": "See how one California family went from waiting 2 minutes for hot water to getting it in under 10 seconds, while also gaining consistent water pressure throughout their home.",
-        "stepsFrom": "description"
-      },
-      "found": "2026-11-05T10:59:01.631Z",
-      "title": "Hot Water in Under 10 Seconds + Consistent Water Pressure | Grundfos",
-      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "aiTries": 3,
-      "channel": "Grundfos",
-      "duration": "",
-      "published": "2026-11-03T12:01:06+00:00",
-      "channelUrl": "https://www.youtube.com/@grundfos",
-      "description": "See how one California family went from waiting 2 minutes for hot water to getting it in under 10 seconds, while also gaining consistent water pressure throughout their home.\n\nThe Booth family’s busy routines were frequently interrupted by long waits for hot water and water-pressure drops when shower, laundry, dishes, or sprinklers were running at the same time.\n\nA professional installation of the Grundfos ALPHA Comfort System hot water recirculation pump and Grundfos SCALA2 Model 2 whole-home water pressure booster helped change that. The Booths can now run multiple showers and household appliances with consistent water pressure, while getting hot water much faster at every tap.\n\nFor this busy family, the upgrade means more than better-performing plumbing. It means smoother mornings, easier evenings, and more family time together.\n\nIn this video, discover:\n\n• How a hot water recirculation system can reduce the wait for hot water\n• How a whole-home booster pump can address low or inconsistent water pressure\n• How professional installation improved comfort in a busy family home\n• Why the combination of faster hot water and consistent pressure made everyday routines easier\n\nRead the full homeowner case story:\n\n• See how the Booth family improved its hot water and water pressure: http://gfos.ly/6055BHan9X\n\nResults reflect the experience and plumbing conditions of this particular home. Consult a qualified plumbing professional to determine the appropriate solution for your home.",
-      "channelCategory": "Water Tanks & Pumps",
-      "suggestedCategory": "Water Tanks & Pumps"
-    },
-    {
-      "yt": "RjOYue96Q5k",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What is a major cause of profit leaks?",
-            "answer": 0,
-            "options": [
-              "Extra unbilled work and supplies",
-              "High rent costs",
-              "New menu items"
-            ]
-          },
-          {
-            "q": "What should you track to reduce callbacks?",
-            "answer": 0,
-            "options": [
-              "Technician return visits",
-              "Customer clothing",
-              "Vehicle color"
-            ]
-          },
-          {
-            "q": "How long do unpaid invoices typically sit before action?",
-            "answer": 0,
-            "options": [
-              "60 to 90 days",
-              "1 to 2 days",
-              "1 year"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Track extra work done by technicians on cleaning jobs.",
-          "Review callbacks and track the cost of return visits.",
-          "Document all extra cleaning tasks and equipment used.",
-          "Follow up on unpaid invoices and set a clear schedule."
-        ],
-        "title": "Identifying and Preventing Profit Leaks in Cleaning",
-        "review": {
-          "reason": "Useful management advice for cleaning operations, though not technical maintenance.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Ensure proper supervision and safe working practices during all cleaning tasks.",
-        "source": "ai",
-        "subject": "Floor Cleaning Machine",
-        "summary": "This video explains how small, unbilled tasks and extra supplies can drain profit in cleaning businesses.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:07.306Z",
-      "title": "Profit Leaks Hiding in Plain Sight",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-11-03T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "4vwpQ9Pz3qY",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Boots"
-        ],
-        "quiz": [
-          {
-            "q": "What is the main topic of the video?",
-            "answer": 1,
-            "options": [
-              "Buying new cleaning equipment",
-              "Identifying profit leaks in cleaning",
-              "Hiring new technicians"
-            ]
-          },
-          {
-            "q": "Why do callbacks cost twice as much?",
-            "answer": 0,
-            "options": [
-              "You pay for fuel, chemicals, and time twice",
-              "Customers always tip double",
-              "Equipment rental fees increase"
-            ]
-          },
-          {
-            "q": "What should you do before the next episode?",
-            "answer": 1,
-            "options": [
-              "Buy a new vacuum cleaner",
-              "Pull 10 completed jobs and check for gaps",
-              "Fire the lowest performing technician"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Review completed jobs for unbilled extra work.",
-          "Track callbacks by technician to identify training needs.",
-          "Document all extra work with notes and photos.",
-          "Establish follow-up schedules to collect overdue invoices."
-        ],
-        "title": "Identifying and Fixing Profit Leaks in Cleaning",
-        "review": {
-          "reason": "Provides good business management advice for cleaning supervisors, though not a technical hands-on procedure.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "maybe",
-          "relevance": 5
-        },
-        "safety": "Ensure all technicians follow established company policies and pricing guidelines while on site.",
-        "source": "ai",
-        "subject": "Floor Cleaning Machine",
-        "summary": "This video discusses hidden profit leaks in cleaning businesses, such as unauthorized free work, callbacks, un-documented tasks, and uncollected invoices.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:08.466Z",
-      "title": "Profit Leaks Hiding in Plain Sight",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-11-03T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "P5AQrfQGokA",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Advanced",
-        "steps": [
-          "Engineering college students",
-          "Diploma students",
-          "Electrical and Electronics Engineers",
-          "Instrumentation Engineers",
-          "Automation beginners",
-          "Students preparing for PLC practical examinations and interviews"
-        ],
-        "title": "Codesys PLC Tutorials and Sample Problems for Engineering Students",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "Want to learn PLC programming through practical examples? This CODESYS PLC tutorial series focuses on programming exercises, sample problems, and logical control applications for engineering students.",
-        "stepsFrom": "description"
-      },
-      "found": "2026-11-05T10:58:43.517Z",
-      "title": "CODESYS PLC Tutorials and Sample Problems for Engineering Students",
-      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "aiTries": 3,
-      "channel": "Instrumentation Tools",
-      "duration": "",
-      "published": "2026-11-02T15:42:17+00:00",
-      "channelUrl": "https://www.youtube.com/@InstrumentationTools",
-      "description": "Want to learn PLC programming through practical examples? This CODESYS PLC tutorial series focuses on programming exercises, sample problems, and logical control applications for engineering students.\n\nInstead of learning only theoretical concepts, explore how PLC programs are developed using CODESYS and understand how different programming instructions and logic functions are applied to solve automation problems.\n\n**Learning Objectives:**\n\nBy working through the sample problems, students can improve their understanding of PLC logic development, programming techniques, troubleshooting, and industrial automation applications.\n\n**Suitable For:**\n- Engineering college students\n- Diploma students\n- Electrical and Electronics Engineers\n- Instrumentation Engineers\n- Automation beginners\n- Students preparing for PLC practical examinations and interviews\n\nLearn PLC programming step by step using CODESYS.\n\nSubscribe to Instrumentation Tools for more practical tutorials covering PLC, DCS, SCADA, process control, and instrumentation.\n\n#CODESYSProgramming #PLCExamples #PLCSampleProblems #LadderLogic #AutomationTraining\n\nTags:\nCODESYS programming examples, CODESYS PLC examples, PLC sample problems and solutions, practical PLC programming, PLC logic examples, PLC exercises, PLC programming practice, CODESYS training, CODESYS software tutorial, Ladder Logic examples, PLC timers, PLC counters, PLC interlocking, PLC sequence control, PLC simulation, PLC programming exercises, engineering PLC projects, electrical engineering projects, automation problems, PLC logic development, industrial control systems, PLC practical training",
-      "channelCategory": "BMS & Controls",
-      "suggestedCategory": "BMS & Controls"
-    },
-    {
-      "yt": "_WdovOCoNaY",
-      "draft": {
-        "ppe": [
-          "Gas Detector",
-          "Full-Body Harness",
-          "Respirator",
-          "Hard Hat"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Low Oil Alarm a Week After Adding Oil",
-          "Oil Heater Check and Off Cycle Migration",
-          "RTHD Off Cycle Migration and Evaporator Isolation",
-          "Overfed Eductor Loading the Sump With Refrigerant",
-          "Oil Recovery Circuits on Flooded and Falling Film Evaporators",
-          "Trane Gas Pump Oi"
-        ],
-        "title": "Chiller Low Oil Alarm: The Eductor Setting Most Techs Overlook",
-        "safety": "Never enter without a permit, gas test, standby person and rescue plan.",
-        "source": "rules",
-        "subject": "",
-        "summary": "You topped off the oil sump, there is no leak anywhere on the machine, and a week later the low oil level alarm is back. With no oil on the ground, that oil never left the system.",
-        "stepsFrom": "chapters"
-      },
-      "found": "2026-11-05T10:31:33.193Z",
-      "title": "Chiller Low Oil Alarm: The Eductor Setting Most Techs Overlook",
-      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "aiTries": 3,
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-11-01T16:00:07+00:00",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "You topped off the oil sump, there is no leak anywhere on the machine, and a week later the low oil level alarm is back. With no oil on the ground, that oil never left the system. It migrated, and it heads for the coldest point in the circuit, which on most machines is the evaporator.\n\nThis one works through every way that happens when you do not know the model yet: off cycle migration, an oil heater that is not doing its job, an oil recovery circuit that cannot pull the oil back, and differential pressure too low to drive the return. Then the much simpler fix on DX and brazed plate machines, and why a check valve will not stop any of it.\n\nWould love for you to join me for more chiller training here: https://chilleracademy.com/p/intro-to-chillers\n\nWhat's covered:\n\n- Why a low oil alarm with no leak points to migration, and why the oil heater is the first thing to confirm\n- Off cycle migration with working oil heaters, and why the RTHD is especially sensitive to a small trickle of water through an evaporator that is not fully isolated\n- How an overfed eductor loads the sump with refrigerant, so the oil rides that refrigerant to the evaporator at shutdown\n- Oil recovery circuits on flooded and falling film evaporators: eductors, jet pumps, and the gas pump style setup Trane uses on the RTHD and RTAF\n- A plugged filter drier leaving the eductor, starving the return to the sump\n- Evaporator refrigerant level running too low or too high, and why either one keeps the eductor from reaching oil that floats on top of the refrigerant\n- Setting the eductor valve, and why one closed too far lets oil stack up in the evaporator\n- Why you need enough differential pressure between evaporator and condenser to drive oil return, and how condenser water that runs too cold takes it away\n- DX shell and tube and brazed plate machines: it comes down to refrigerant velocity, so raise the condenser pressure setpoint or shut off a couple of condenser fans to push head pressure up\n- Multi circuit evaporators where the idle circuit loses its oil while the running circuit keeps the evaporator cold, and external oil separators on air cooled machines that often have no heater\n- Why a migrated circuit may need to trip on oil a couple of times before enough oil comes back to stay online\n- Why a check valve will not stop migration, and the cost and complexity that come with an isolation solenoid valve\n- The YVAA suction isolation valve and the refrigerant migration freeze it was added to prevent, a different problem from oil migration\n- VI control on Daikin screw compressors and why condenser fans do more for oil return than the volume ratio does\n\nMore chiller training: https://chilleracademy.com\n\n0:00 Low Oil Alarm a Week After Adding Oil\n1:10 Oil Heater Check and Off Cycle Migration\n1:55 RTHD Off Cycle Migration and Evaporator Isolation\n2:51 Overfed Eductor Loading the Sump With Refrigerant\n4:24 Oil Recovery Circuits on Flooded and Falling Film Evaporators\n5:27 Trane Gas Pump Oi",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "CHhyFCNPjpY",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "High Visibility Vest",
-          "Steel Toe Boots"
-        ],
-        "quiz": [
-          {
-            "q": "What should cleaning businesses update on their websites?",
-            "answer": 1,
-            "options": [
-              "Only company logos",
-              "Detailed service pricing and answers",
-              "Employee personal profiles"
-            ]
-          },
-          {
-            "q": "How do AI agents typically find local cleaning companies?",
-            "answer": 0,
-            "options": [
-              "By searching company websites and listings",
-              "By calling businesses directly by phone",
-              "By reading printed brochures"
-            ]
-          },
-          {
-            "q": "What must business owners prepare their teams for?",
-            "answer": 1,
-            "options": [
-              "Manual phone call booking only",
-              "AI-driven customer inquiries and bookings",
-              "Stopping online operations entirely"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Understand the growing role of AI search tools.",
-          "Update website content with detailed service pricing.",
-          "Train your team to handle AI agent inquiries.",
-          "Monitor online reputation and business listings."
-        ],
-        "title": "Preparing Your Cleaning Business For AI Agents",
-        "review": {
-          "reason": "This video discusses business marketing strategy rather than technical maintenance procedures.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": true,
-          "language": "English",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Ensure clear customer communication to avoid service disputes.",
-        "source": "ai",
-        "subject": "Autonomous Vacuum Setup",
-        "summary": "This video discusses how AI is transforming customer acquisition and booking processes in the cleaning industry.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:09.602Z",
-      "title": "AI Is Calling. Will You Answer?",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-10-31T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "srSCepmXJmM",
-      "draft": {
-        "ppe": [],
-        "quiz": [
-          {
-            "q": "What can AI tools recommend for your business?",
-            "answer": 1,
-            "options": [
-              "Restaurants",
-              "Cleaning companies",
-              "Automotive parts"
-            ]
-          },
-          {
-            "q": "Why is it important to optimize your website for AI search?",
-            "answer": 1,
-            "options": [
-              "To avoid AI tools",
-              "To ensure your business is found by AI",
-              "To lower internet speeds"
-            ]
-          },
-          {
-            "q": "Who remains the human element in customer acquisition according to the video?",
-            "answer": 0,
-            "options": [
-              "The customer",
-              "The software engineer",
-              "The server"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Identify customer needs and search criteria.",
-          "Utilize AI tools to research and recommend cleaning companies.",
-          "Evaluate AI-generated recommendations and contact providers.",
-          "Prepare your business content to be discoverable by AI search bots."
-        ],
-        "title": "AI in Customer Acquisition for Cleaning Companies",
-        "review": {
-          "reason": "Not a technical training video for facility maintenance technicians.",
-          "unsafe": [],
-          "quality": 5,
-          "talking": true,
-          "language": "English",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Ensure you verify data privacy and security when using third-party AI tools for business communications.",
-        "source": "ai",
-        "subject": "Customer Acquisition",
-        "summary": "This podcast episode discusses how AI tools are changing customer acquisition and lead generation for cleaning businesses.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:10.721Z",
-      "title": "AI Is Calling. Will You Answer?",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-10-31T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "LMdqTOLaA6w",
-      "draft": {
-        "ppe": [
-          "Welding Gloves",
-          "Shaded Goggles",
-          "Fire-Resistant Clothing"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "KitchenAid ice dispenser symptoms & intro",
-          "Tools you’ll need & safety steps",
-          "Check ice bucket drive & couplers",
-          "Test auger motor voltage with a multimeter",
-          "Check motor winding resistance & remove motor",
-          "Install the new auger motor",
-          "Reinstall ice bucket & test ice dispenser",
-          "Parts info, shipping, and wrap-up"
-        ],
-        "title": "How to Test and Replace a KitchenAid Refrigerator Auger Motor",
-        "safety": "Hot work: get the permit, clear flammables, keep an extinguisher close and purge with nitrogen when brazing.",
-        "source": "rules",
-        "subject": "",
-        "summary": "Ice dispenser dead, grinding, or just humming? Use a multimeter to test your KitchenAid fridge’s auger motor and see step-by-step how to replace it yourself.",
-        "stepsFrom": "chapters"
-      },
-      "found": "2026-11-05T10:59:35.513Z",
-      "title": "How to Test and Replace a KitchenAid Refrigerator Auger Motor",
-      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "aiTries": 3,
-      "channel": "AppliancePartsPros",
-      "duration": "",
-      "published": "2026-10-30T21:30:27+00:00",
-      "channelUrl": "https://www.youtube.com/@appliancepartspros",
-      "description": "Ice dispenser dead, grinding, or just humming? Use a multimeter to test your KitchenAid fridge’s auger motor and see step-by-step how to replace it yourself.\n\n🛒 Find parts: https://www.appliancepartspros.com/kitchenaid-refrigerator-parts.html\n📞 For help locating the part for your model, call us at 1-877-477-7278 or chat with us on our website http://www.appliancepartspros.com/\n💬 Need help? Ask in our forum: https://forum.appliancepartspros.com\n\n⏱️ CHAPTERS:\n0:00 KitchenAid ice dispenser symptoms & intro\n0:22 Tools you’ll need & safety steps\n0:44 Check ice bucket drive & couplers\n1:05 Test auger motor voltage with a multimeter\n1:39 Check motor winding resistance & remove motor\n2:15 Install the new auger motor\n2:49 Reinstall ice bucket & test ice dispenser\n3:20 Parts info, shipping, and wrap-up\n\n🔧 Tools mentioned: quarter-inch nut driver, phillips head screwdriver, small flat blade screwdriver, multimeter\n📚 New to multimeters? Watch our Multimeter Masterclass: https://www.youtube.com/watch?v=8p0uj2tnDlg\n\nFollow us: Facebook: https://www.facebook.com/appliancepartspros | Reddit: https://www.reddit.com/r/AppliancePros/\n\n##KitchenAidRefrigerator ##IceDispenserFix ##AugerMotorReplacement ##KitchenAidFridgeRepair ##IceMakerRepair ##RefrigeratorRepair ##DIYApplianceRepair ##MultimeterTesting ##HomeApplianceFix ##AppliancePartsPros ##FixItYourself ##NoIceInFridge ##FridgeGrindingNoise ##KitchenAidAugerMotor ##ApplianceRepairTutorial ##RefrigeratorTroubleshooting ##HowToRepairFridge ##DIYKitchenAidRepair",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
-    },
-    {
-      "yt": "z4AWoFUiOIQ",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Immersion Cooling Teamwork Improves Efficiency and Reliability",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "The company, founded in 2014 in Amsterdam, the Netherlands, wanted to optimise its next-generation liquid cooling platform.",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-05T10:59:02.840Z",
-      "title": "Immersion cooling teamwork improves efficiency and reliability",
-      "aiError": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
-      "aiTries": 3,
-      "channel": "Grundfos",
-      "duration": "",
-      "published": "2026-10-30T15:00:45+00:00",
-      "channelUrl": "https://www.youtube.com/@grundfos",
-      "description": "Asperitas was one of the first companies in the world to introduce immersion cooling to data centers – an application in which IT servers are completely immersed and operating in a liquid. #Immersioncooling uses dielectric fluid – a non-conducting oil – in its server-cooling tanks. The liquid absorbs the heat from the IT equipment before transferring it to the facility water system.\n\nThe company, founded in 2014 in Amsterdam, the Netherlands, wanted to optimise its next-generation liquid cooling platform. \n\nAsperitas partnered with Grundfos to co-develop its next-generation immersion cooling system for data centers. What started as a desire for more robust pump seals grew into a bigger development with Grundfos E-pumps, bringing better efficiency, reliability and uptime. \n\n“We take an approach where every drop counts of the cooling liquid,” says Andy Young, Chief Technology Officer in Asperitas. “The liquid is really the blood in the veins of the cooling solution, and the pump is the beating heart.”\n\nSee the film and read the story on the link below to learn more.\n\nFull story at Immersion cooling innovation: http://gfos.ly/6058BHof3I",
-      "channelCategory": "Water Tanks & Pumps",
-      "suggestedCategory": "Water Tanks & Pumps"
-    },
-    {
-      "yt": "MFeBNIMBlEM",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Closed-Toe Shoes"
-        ],
-        "quiz": [
-          {
-            "q": "What is a key metric discussed for tracking business growth?",
-            "answer": 0,
-            "options": [
-              "Booking percentage",
-              "Truck weight",
-              "Office rent"
-            ]
-          },
-          {
-            "q": "How do top operators handle customer calls differently?",
-            "answer": 1,
-            "options": [
-              "They hang up quickly",
-              "They use scripts and build value",
-              "They only discuss price"
-            ]
-          },
-          {
-            "q": "Why is repeat and referral business important?",
-            "answer": 0,
-            "options": [
-              "It increases long-term client value",
-              "It eliminates advertising needs entirely",
-              "It lowers equipment costs"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Review industry benchmark survey data",
-          "Compare your booking rate to top operators",
-          "Analyze average job value differences",
-          "Track repeat and referral business metrics",
-          "Refine customer communication scripts"
-        ],
-        "title": "Carpet Cleaning Marketing Benchmarks And Strategy",
-        "review": {
-          "reason": "The content focuses on marketing strategies and survey statistics rather than technical maintenance procedures.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "reject",
-          "relevance": 3
-        },
-        "safety": "Ensure all work areas are safe and clear of hazards before beginning customer consultations.",
-        "source": "ai",
-        "subject": "Floor Cleaning Machine",
-        "summary": "Industry experts discuss key benchmark survey data to help cleaning business owners improve booking rates and job values.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:11.749Z",
-      "title": "Same Calls, Bigger Business: What Top Owners Do Differently",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-10-30T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "h5qztK8FUsE",
-      "draft": {
-        "ppe": [],
-        "quiz": [
-          {
-            "q": "What is the primary focus of relationship marketing on LinkedIn?",
-            "answer": 0,
-            "options": [
-              "Building trust and warm relationships",
-              "Sending cold sales pitches",
-              "Posting automated company advertisements"
-            ]
-          },
-          {
-            "q": "Why is your LinkedIn headline important?",
-            "answer": 1,
-            "options": [
-              "It hides your identity from competitors",
-              "It acts as a mini landing page for your brand",
-              "It replaces your resume entirely"
-            ]
-          },
-          {
-            "q": "What is the first step in the 4-touch warm-up sequence?",
-            "answer": 1,
-            "options": [
-              "Send a direct message",
-              "View their profile",
-              "Ask for a meeting"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Optimize your LinkedIn profile to reflect your personal brand.",
-          "Focus on building warm relationships before trying to sell.",
-          "Share authentic stories and educational content instead of generic posts.",
-          "Engage strategically with posts from key decision-makers.",
-          "Follow a four-touch warm-up sequence before reaching out directly."
-        ],
-        "title": "Building Influence in the Cleaning Industry",
-        "review": {
-          "reason": "This video covers business networking and sales strategy on LinkedIn, which is not suitable for technical maintenance training.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": true,
-          "language": "English",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Maintain professional boundaries and online safety when connecting with new contacts.",
-        "source": "ai",
-        "subject": "LinkedIn Strategy",
-        "summary": "This masterclass explains how to use LinkedIn to build professional relationships and generate new business opportunities.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:12.993Z",
-      "title": "Masterclass in Building Influence in a Relationship-Driven Industry",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-10-30T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "OG1YVR4qTSo",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Safety Boots",
-          "Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What is key to improving booking rates?",
-            "answer": 0,
-            "options": [
-              "Answering inquiries quickly",
-              "Waiting a week",
-              "Ignoring leads"
-            ]
-          },
-          {
-            "q": "Why is retention important?",
-            "answer": 0,
-            "options": [
-              "It increases customer lifetime value",
-              "It reduces callbacks",
-              "It has no effect"
-            ]
-          },
-          {
-            "q": "How do top operators handle inquiries?",
-            "answer": 0,
-            "options": [
-              "By following up promptly",
-              "By ignoring calls",
-              "By delaying quotes"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Answer inquiries quickly to improve conversion.",
-          "Build strong follow-up campaigns for leads.",
-          "Use targeted marketing for better customer retention."
-        ],
-        "title": "Optimizing Carpet Cleaning Business Operations",
-        "review": {
-          "reason": "The video focuses on business marketing strategies rather than practical cleaning techniques.",
-          "unsafe": [],
-          "quality": 5,
-          "talking": true,
-          "language": "en",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Always follow safe working practices when interacting with clients on site.",
-        "source": "ai",
-        "subject": "Cleaning & Housekeeping",
-        "summary": "This video discusses how top carpet cleaning operators differ from typical ones through better marketing and conversion strategies.",
-        "category": "Cleaning & Housekeeping",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:15:14.049Z",
-      "title": "Same Calls, Bigger Business: What Top Owners Do Differently",
-      "channel": "ISSA - International Sanitary Supply Association",
-      "duration": "",
-      "published": "2026-10-30T05:15:03.021Z",
-      "channelUrl": "https://www.youtube.com/c/ISSAMediaTV/playlists",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
+      "published": "2026-11-04T14:00:01+00:00",
+      "channelUrl": "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ",
+      "description": "SUBSCRIBE Learn how to tile the right way.\nDark Wood look Plank tile install #diy #tiles #construction #planktile Quick little video to show the installation process of a large wood lock porcelain plank tile. All tile installed by Sal DiBlasi, Elite-tile Company, in the Boston North Shore area. This video contains affiliate links, which means I will receive a small commission if you click on the product link. #tile #transformthetrade  #howtotile #installingtile #howtoinstalltile #liticrete #mapei #Schlutersystems #diy #construction #ardex\n\n🙂 This is my Amazon Store 🙂 https://www.amazon.com/shop/saldiblasi\n\nPayPal\nhttps://www.paypal.com/donate/?hosted_button_id=UMJSX3UHEHQGQ\n\nPatreon  https://www.patreon.com/c/saldiblasi\n\n🌲 Link Tree 🌲\nhttps://linktr.ee/saldiblasi\n\n☕ Buy me a coffee ☕\nhttps://www.buymeacoffee.com/saldibs2",
+      "channelCategory": "",
+      "suggestedCategory": "Civil & Carpentry"
     },
     {
       "yt": "Jfuoi_zryXA",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Safety Gloves",
-          "Safety Footwear"
-        ],
-        "quiz": [
-          {
-            "q": "What tool is used to scan and identify the current pump?",
-            "answer": 0,
-            "options": [
-              "Grundfos GO app",
-              "Multimeter",
-              "Pipe wrench"
-            ]
-          },
-          {
-            "q": "How many pumps are typically needed in the van to replace most models?",
-            "answer": 2,
-            "options": [
-              "Ten pumps",
-              "Five pumps",
-              "Two pumps"
-            ]
-          },
-          {
-            "q": "What should you verify before removing the old circulator pump?",
-            "answer": 1,
-            "options": [
-              "Water temperature",
-              "Power isolation",
-              "Paint color"
-            ]
-          }
-        ],
-        "level": "Intermediate",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Scan the existing pump nameplate using the Grundfos GO app.",
-          "Review the recommended replacement pump on the app.",
-          "Select one of the two standard pumps from your van stock.",
-          "Disconnect the old pump and fit the new Grundfos circulator pump.",
-          "Set up the new pump using the app or display controls."
-        ],
-        "title": "Circulator Pump Replacement with Grundfos GO App",
-        "review": {
-          "reason": "Useful manufacturer video for training technicians on modern circulator pump selection and replacement.",
-          "unsafe": [],
-          "quality": 9,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure the power supply is isolated before working on electrical connections of the circulator pump.",
-        "source": "ai",
-        "subject": "Water Tanks & Pumps",
-        "summary": "This video demonstrates how to use the Grundfos GO app and two pump models to quickly select and replace nearly 70% of integrated and standalone circulator pumps.",
-        "category": "Water Tanks & Pumps",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:18.175Z",
+      "found": "2026-11-09T06:26:51.617Z",
       "title": "ALPHA GO | Faster replacements with just two pumps",
       "channel": "Grundfos",
       "duration": "",
-      "published": "2026-10-30T05:14:16.999Z",
+      "published": "2026-10-30T06:26:50.594Z",
       "channelUrl": "https://www.youtube.com/@grundfos",
       "description": "",
       "channelCategory": "Water Tanks & Pumps",
       "suggestedCategory": "Water Tanks & Pumps"
     },
     {
-      "yt": "piF6gEcl1BE",
-      "draft": {
-        "ppe": [
-          "Formal Attire"
-        ],
-        "quiz": [
-          {
-            "q": "Which organizations are collaborating in the video?",
-            "answer": 0,
-            "options": [
-              "DEWA and Emirates NBD",
-              "DEWA and Dubai Police",
-              "Emirates NBD and RTA"
-            ]
-          },
-          {
-            "q": "What devices were used for signing?",
-            "answer": 1,
-            "options": [
-              "Paper notebooks",
-              "Tablets",
-              "Desktop computers"
-            ]
-          },
-          {
-            "q": "What is the primary topic of the meeting?",
-            "answer": 0,
-            "options": [
-              "Financial operations efficiency",
-              "Building maintenance",
-              "HVAC installation"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Sit at the signing table",
-          "Review documents on the digital tablet",
-          "Sign the agreement digitally",
-          "Stand up for official photographs"
-        ],
-        "title": "Emirates NBD and DEWA Collaboration",
-        "review": {
-          "reason": "This is a corporate signing ceremony video, not technical maintenance training.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": false,
-          "language": "Arabic",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Ensure proper posture and ergonomic positioning while working at office desks.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "Officials from Dubai Electricity and Water Authority and Emirates NBD sign an agreement on tablets.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:31.821Z",
-      "title": "هيئة كهرباء ومياه دبي تتعاون مع بنك الإمارات دبي الوطني لتعزيز كفاءة العمليات المالية",
-      "channel": "DEWA",
+      "yt": "hva73EFJVRs",
+      "found": "2026-11-09T06:26:53.510Z",
+      "title": "Set it up. Let it clean. 🤖 #floorcleaningrobot",
+      "channel": "Tennant Company",
       "duration": "",
-      "published": "2026-10-26T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-10-27T20:30:22+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "Sit back and watch the X6 ROVR show you how it's done. \n\n☑️ Cleans autonomously \n☑️ Navigates and adapts to changing environments\n☑️ Covers the spots that are easy to miss \n\n📹 @Eric St. Gelais\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "tTZUgBjSzqI",
-      "draft": {
-        "ppe": [
-          "Safety Shoes",
-          "High Visibility Vest"
-        ],
-        "quiz": [
-          {
-            "q": "What event is showcased in the exhibition?",
-            "answer": 0,
-            "options": [
-              "WETEX 2026",
-              "Dubai Airshow",
-              "GITEX Technology"
-            ]
-          },
-          {
-            "q": "What type of innovations are primarily highlighted?",
-            "answer": 1,
-            "options": [
-              "Consumer electronics",
-              "Sustainable energy solutions",
-              "Aviation technology"
-            ]
-          },
-          {
-            "q": "Which organization's booth features prominently at the start?",
-            "answer": 0,
-            "options": [
-              "Dubai Electricity and Water Authority",
-              "Roads and Transport Authority",
-              "Dubai Municipality"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Enter the exhibition hall entrance",
-          "Explore sustainable energy booths and exhibits",
-          "Observe holographic displays and robotic assistants",
-          "Review electric vehicles and smart infrastructure models",
-          "Exit the facility upon completing the tour"
-        ],
-        "title": "WETEX 2026 Innovations and Sustainability Solutions",
-        "review": {
-          "reason": "Promotional trade show overview lacks practical maintenance training procedures for technicians.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "English",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Be aware of moving exhibition equipment and vehicles in congested exhibition halls.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This overview showcases sustainable energy technologies and innovations displayed at WETEX 2026 exhibition.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:32.914Z",
-      "title": "Pioneering innovations and inspiring projects at WETEX 2026",
-      "channel": "DEWA",
+      "yt": "kD_grCpbP3k",
+      "found": "2026-11-09T06:26:54.618Z",
+      "title": "Twice the ROVR. Double the shine. 💎 #floorcleaningrobot #floorcleaningmachine",
+      "channel": "Tennant Company",
       "duration": "",
-      "published": "2026-10-26T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "KBtxOiAoGQE",
-      "draft": {
-        "ppe": [
-          "Business Attire"
-        ],
-        "quiz": [
-          {
-            "q": "What event is featured in the video?",
-            "answer": 0,
-            "options": [
-              "WETEX",
-              "A sports match",
-              "A medical conference"
-            ]
-          },
-          {
-            "q": "What action is performed by representatives at the tables?",
-            "answer": 1,
-            "options": [
-              "Repairing equipment",
-              "Signing agreements",
-              "Cooking food"
-            ]
-          },
-          {
-            "q": "Who stands behind the seated representatives during signing?",
-            "answer": 1,
-            "options": [
-              "Security guards",
-              "Official delegates",
-              "Wait staff"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Review document terms thoroughly.",
-          "Sign the agreement digitally or physically.",
-          "Exchange signed documents.",
-          "Pose for official photographs."
-        ],
-        "title": "Signing Memorandums of Understanding",
-        "review": {
-          "reason": "Corporate signing ceremonies are irrelevant for facility maintenance training.",
-          "unsafe": [],
-          "quality": 7,
-          "talking": false,
-          "language": "Arabic",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Ensure proper authorization and documentation before signing official agreements.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video shows official signing ceremonies for memorandums of understanding between organizations.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:34.104Z",
-      "title": "\"ديوا العالمية\" توقع 4 مذكرات تفاهم مع شركاء عالميين خلال فعاليات \"ويتيكس 2026\"",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-26T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "Bkum5ECZfTg",
-      "draft": {
-        "ppe": [
-          "Formal Attire"
-        ],
-        "quiz": [
-          {
-            "q": "Which entities are partnering in this video?",
-            "answer": 0,
-            "options": [
-              "DEWA and Dubai Municipality",
-              "Dubai Police and RTA",
-              "Civil Defense and DEWA"
-            ]
-          },
-          {
-            "q": "What devices were used by the officials during the signing?",
-            "answer": 1,
-            "options": [
-              "Laptops",
-              "Tablets",
-              "Smartphones"
-            ]
-          },
-          {
-            "q": "What gesture concluded the meeting between the officials?",
-            "answer": 0,
-            "options": [
-              "A handshake",
-              "A salute",
-              "Bowing"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Sit at the conference table with tablets.",
-          "Review documents on the tablet devices.",
-          "Sign the agreement and shake hands."
-        ],
-        "title": "Strategic Partnership Signing Ceremony",
-        "review": {
-          "reason": "This is a corporate partnership promotional video with no technical maintenance training value.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": false,
-          "language": "Arabic",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Ensure proper verification of official documents and attendees before conducting official meetings.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "Dubai Electricity and Water Authority and Dubai Municipality officials sign a strategic partnership agreement.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:35.282Z",
-      "title": "هيئة كهرباء ومياه دبي وبلدية دبي تعززان شراكتهما الاستراتيجية لإدارة وتشغيل \"شلالات حتا المستدامة\"",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-26T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "2TRxH3VHizA",
-      "draft": {
-        "ppe": [
-          "Safety Shoes"
-        ],
-        "quiz": [
-          {
-            "q": "What exhibition is featured in the video?",
-            "answer": 0,
-            "options": [
-              "WETEX",
-              "GITEX",
-              "Cityscape"
-            ]
-          },
-          {
-            "q": "Who inaugurated the event?",
-            "answer": 0,
-            "options": [
-              "Sheikh Ahmed bin Saeed Al Maktoum",
-              "Engineering Managers",
-              "Maintenance Technicians"
-            ]
-          },
-          {
-            "q": "What was a key focus of the exhibition stands shown?",
-            "answer": 0,
-            "options": [
-              "Renewable energy and water technology",
-              "Automotive manufacturing",
-              "Catering equipment"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Arrive at the exhibition venue entrance",
-          "Tour the exhibition stands with dignitaries",
-          "Examine models of renewable energy projects",
-          "Participate in group photo sessions"
-        ],
-        "title": "Opening the WETEX Exhibition in Dubai",
-        "review": {
-          "reason": "This promotional video is not suitable for technical maintenance training.",
-          "unsafe": [],
-          "quality": 6,
-          "talking": false,
-          "language": "Arabic",
-          "recommend": "reject",
-          "relevance": 2
-        },
-        "safety": "Follow standard event safety guidelines while navigating crowded exhibition areas.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video shows dignitaries touring the WETEX exhibition stands and viewing various renewable energy and infrastructure models.",
-        "category": "UAE Rules & Compliance",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:36.345Z",
-      "title": "سمو الشيخ أحمد بن سعيد آل مكتوم يفتتح الدورة الـ28 من معرض ويتيكس",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-26T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-10-21T15:00:15+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "See the X6 ROVR and X4 ROVR work together to help keep large event and conference spaces clean, polished, and ready for guests.\n\n📹 Hauns Anderson\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
       "yt": "kXLnI3q14i4",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves"
-        ],
-        "quiz": [
-          {
-            "q": "What is the minimum mounting height for fire alarm control displays?",
-            "answer": 0,
-            "options": [
-              "15 inches above the floor",
-              "30 inches above the floor",
-              "3 feet above the floor"
-            ]
-          },
-          {
-            "q": "What is the maximum mounting height for fire alarm control displays?",
-            "answer": 1,
-            "options": [
-              "5 feet",
-              "6 feet",
-              "6.5 feet"
-            ]
-          },
-          {
-            "q": "Which code standard covers these mounting height requirements?",
-            "answer": 0,
-            "options": [
-              "NFPA 72",
-              "NFPA 13",
-              "NFPA 70"
-            ]
-          }
-        ],
-        "level": "Beginner",
-        "model": "gemini-3.5-flash-lite",
-        "steps": [
-          "Locate the finished floor level before installation.",
-          "Measure between 15 inches and 6 feet above the floor.",
-          "Position control displays and indicators within the required height window."
-        ],
-        "title": "Fire Alarm Control Unit Mounting Height",
-        "review": {
-          "reason": "Clear explanation of NFPA 72 fire alarm mounting height requirements suitable for technicians.",
-          "unsafe": [],
-          "quality": 8,
-          "talking": true,
-          "language": "English",
-          "recommend": "approve",
-          "relevance": 9
-        },
-        "safety": "Ensure the working space in front of the control unit is clear and unobstructed.",
-        "source": "ai",
-        "subject": "UAE Rules & Compliance",
-        "summary": "This video explains the mounting height requirements for fire alarm control units and system displays according to NFPA 72.",
-        "category": "Fire & Life Safety",
-        "stepsFrom": "ai"
-      },
-      "found": "2026-11-09T05:14:50.541Z",
+      "found": "2026-11-09T06:27:06.571Z",
       "title": "Fire Alarm Control Unit Mounting Height Requirements | NFPA 72",
       "channel": "NFPA",
       "duration": "",
-      "published": "2026-10-19T05:14:49.285Z",
+      "published": "2026-10-19T06:27:05.442Z",
       "channelUrl": "https://www.youtube.com/user/nfpadotorg",
       "description": "",
       "channelCategory": "UAE Rules & Compliance",
       "suggestedCategory": "UAE Rules & Compliance"
     },
     {
-      "yt": "Gu3zPA7Evz4",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "سعيد الطاير يبحث مع بول غريفيث تعزيز الشراكة الاستراتيجية",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:37.507Z",
-      "title": "سعيد الطاير يبحث مع بول غريفيث تعزيز الشراكة الاستراتيجية",
-      "channel": "DEWA",
+      "yt": "ernyFWiVNew",
+      "found": "2026-11-09T06:26:55.689Z",
+      "title": "👉 Watch the T300 in action #floorcleaningmachine",
+      "channel": "Tennant Company",
       "duration": "",
-      "published": "2026-10-19T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-10-16T15:00:27+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "See the Tennant T300 floor scrubber at work. With powerful scrubbing and vacuum-assisted water recovery, the T300 helps remove dirt and recover dirty solution in a single pass, leaving floors cleaner and ready for use faster.\n\n📹 @gtcleaningmachines7526  \n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "o6bJ1BUK89I",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "سعيد محمد الطاير يستقبل رئيس المنتدى الاقتصادي العالمي ويبحث تعزيز…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:38.610Z",
-      "title": "سعيد محمد الطاير يستقبل رئيس المنتدى الاقتصادي العالمي ويبحث تعزيز الشراكة",
-      "channel": "DEWA",
+      "yt": "htpbDeamZF4",
+      "found": "2026-11-09T06:26:56.672Z",
+      "title": "Autonomous floor cleaning for hospitals 🏥 #hospitalcleaning #facilitymanagement #floorcleaningrobot",
+      "channel": "Tennant Company",
       "duration": "",
-      "published": "2026-10-19T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "published": "2026-10-14T15:00:30+00:00",
+      "channelUrl": "https://www.youtube.com/@TennantCompany",
+      "description": "The X4 ROVR helps automate routine floor cleaning, so healthcare teams can focus on what matters most.\n 📹 Melissa Banos\n\n▬▬ About Tennant Company ▬▬▬▬▬\nTennant Company is a leading provider of innovative solutions in the field of industrial and commercial cleaning. Founded in 1870, Tennant offers a wide range of high-quality cleaning machines, including floor scrubbers, sweepers, and robotic cleaning equipment. \n\nHeadquartered in Minneapolis, Minnesota, and supported by a global network of partners and sales teams, Tennant is dedicated to continuously improving cleaning practices and maximizing efficiency for businesses worldwide.\n\nTennant Company is a pioneer in providing sustainable cleaning solutions and enhancing operational performance through innovative technology. Our commitment to quality and customer satisfaction drives us to develop products that meet the evolving needs of various industries.\n\n#TennantCompany #CleaningSolutions #FloorCleaning #Industrial #CommercialCleaning #B2B\n\n▬▬  Social Media ▬▬▬▬▬\n► Official Website: https://www.tennantco.com\n► Facebook: https://www.facebook.com/tennant/\n► LinkedIn: https://www.linkedin.com/company/tennant-company/",
+      "channelCategory": "Cleaning & Housekeeping",
+      "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "2asKeJ6TjT0",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "The Data Center Boom: Implications for Fire and Electrical Safety…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "UAE Rules & Compliance",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:51.722Z",
-      "title": "The Data Center Boom: Implications for Fire and Electrical Safety (NFPA Webinar Excerpt)",
-      "channel": "NFPA",
+      "yt": "cnWn5SxaPl8",
+      "found": "2026-11-09T06:27:01.178Z",
+      "title": "We've got them visuals",
+      "channel": "CaptiveAire",
       "duration": "",
-      "published": "2026-10-12T05:14:49.286Z",
-      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
+      "published": "2026-09-21T19:39:32+00:00",
+      "channelUrl": "https://www.youtube.com/@CaptiveAire",
       "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
+      "channelCategory": "Duct & Kitchen Exhaust",
+      "suggestedCategory": "Duct & Kitchen Exhaust"
     },
     {
-      "yt": "qfAlxo44Erw",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "معالي سعيد محمد الطاير يستقبل وفد برنامج القيادات التنفيذية لحكومة…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:39.799Z",
-      "title": "معالي سعيد محمد الطاير يستقبل وفد برنامج القيادات التنفيذية لحكومة أثيوبيا",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-12T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "b9E4ksrrsPg",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "نشرة الهيئة الأسبوعية: أكتوبر 10 L DEWA Weekly Digest",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Electrical Outage Safety",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:40.894Z",
-      "title": "نشرة الهيئة الأسبوعية - أكتوبر 10 l DEWA Weekly Digest - October 10",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-12T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "yJE7l2HuNh0",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "The Best Cleaning Products From The Past Decade: Do They Still…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Floor Cleaning Machine",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:15:16.396Z",
-      "title": "The Best Cleaning Products From The Past Decade: Do They Still Hold Up?",
+      "yt": "8_R1_8hyuD0",
+      "found": "2026-11-09T06:27:21.393Z",
+      "title": "The WORST HACKS I've Ever Seen!!",
       "channel": "Clean My Space",
       "duration": "",
-      "published": "2026-10-10T05:15:15.130Z",
+      "published": "2026-09-10T06:27:20.215Z",
       "channelUrl": "https://www.youtube.com/@CleanMySpace",
       "description": "",
       "channelCategory": "Cleaning & Housekeeping",
       "suggestedCategory": "Cleaning & Housekeeping"
     },
     {
-      "yt": "VKRr3VIgu-s",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Beginner",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Where Should a Fire Alarm Control Unit Be Located?: NFPA 72 Explained",
-        "safety": "Inform the building and the alarm monitoring company before testing, and never leave a system disabled.",
-        "source": "rules",
-        "subject": "UAE Rules & Compliance",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:52.961Z",
-      "title": "Where Should a Fire Alarm Control Unit Be Located? | NFPA 72 Explained",
-      "channel": "NFPA",
-      "duration": "",
-      "published": "2026-10-10T05:14:49.286Z",
-      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "wFUi1GdCvlo",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Positive Alarm Sequence",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "UAE Rules & Compliance",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:54.127Z",
-      "title": "Positive Alarm Sequence",
-      "channel": "NFPA",
-      "duration": "",
-      "published": "2026-10-10T05:14:49.286Z",
-      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "RRH-TStt3Io",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Beginner",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Fire Alarm Presignal Feature Explained",
-        "safety": "Inform the building and the alarm monitoring company before testing, and never leave a system disabled.",
-        "source": "rules",
-        "subject": "UAE Rules & Compliance",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:55.210Z",
-      "title": "Fire Alarm Presignal Feature Explained",
-      "channel": "NFPA",
-      "duration": "",
-      "published": "2026-10-10T05:14:49.286Z",
-      "channelUrl": "https://www.youtube.com/user/nfpadotorg",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "8jo-GMg3Td8",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "HE Saeed Al Tayer Receives a Delegation From Georgetown University…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:41.976Z",
-      "title": "HE Saeed Al Tayer receives a delegation from Georgetown University as part of the \"Youth and Acad...",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-10T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "LAFUfQtwBIA",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "رفع راية برنامج حمدان بن محمد للخدمات الحكومية لعام 2025 في \"الشراع\"",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:43.103Z",
-      "title": "رفع راية برنامج حمدان بن محمد للخدمات الحكومية لعام 2025 في \"الشراع\"",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-10T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "lXaXzWC8hsQ",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "نشرة الهيئة الأسبوعية: أكتوبر 3 L DEWA Weekly Digest",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Electrical Outage Safety",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:44.304Z",
-      "title": "نشرة الهيئة الأسبوعية - أكتوبر 3 l DEWA Weekly Digest - October 3",
-      "channel": "DEWA",
-      "duration": "",
-      "published": "2026-10-10T05:14:29.645Z",
-      "channelUrl": "https://www.youtube.com/@DEWAOfficial",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "BXQLR4hW-fA",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Revolutionizing Heat",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:24.398Z",
-      "title": "Revolutionizing Heat with Sabroe HitemHP Heat Pump",
-      "channel": "Johnson Controls",
-      "duration": "",
-      "published": "2026-10-10T05:14:23.360Z",
-      "channelUrl": "https://www.youtube.com/@JohnsonControls",
-      "description": "",
-      "channelCategory": "Fire & Life Safety",
-      "suggestedCategory": "Fire & Life Safety"
-    },
-    {
-      "yt": "RgXoYixjnPs",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "EnBW Stuttgart: Une Nouvelle Référence Dans La Valorisation De La…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:25.533Z",
-      "title": "EnBW Stuttgart - Une nouvelle référence dans la valorisation de la chaleur des eaux usées",
-      "channel": "Johnson Controls",
-      "duration": "",
-      "published": "2026-10-10T05:14:23.360Z",
-      "channelUrl": "https://www.youtube.com/@JohnsonControls",
-      "description": "",
-      "channelCategory": "Fire & Life Safety",
-      "suggestedCategory": "Fire & Life Safety"
-    },
-    {
-      "yt": "cquNVjvEu4o",
-      "draft": {
-        "ppe": [
-          "Safety Goggles",
-          "Cold-Resistant Gloves"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "EnBW Stuttgart: A New Standard for Waste Heat Recovery",
-        "safety": "Refrigerant can freeze skin and eyes in seconds. Wear gloves and goggles and never vent it to air.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:26.628Z",
-      "title": "EnBW Stuttgart - A new standard for waste heat recovery",
-      "channel": "Johnson Controls",
-      "duration": "",
-      "published": "2026-10-10T05:14:23.360Z",
-      "channelUrl": "https://www.youtube.com/@JohnsonControls",
-      "description": "",
-      "channelCategory": "Fire & Life Safety",
-      "suggestedCategory": "Fire & Life Safety"
-    },
-    {
-      "yt": "VIdzDQ4ORbs",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "EnBW Stuttgart: A New Standard in Utilizing Waste Heat",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:27.639Z",
-      "title": "EnBW Stuttgart - A new standard in utilizing waste heat",
-      "channel": "Johnson Controls",
-      "duration": "",
-      "published": "2026-10-10T05:14:23.360Z",
-      "channelUrl": "https://www.youtube.com/@JohnsonControls",
-      "description": "",
-      "channelCategory": "Fire & Life Safety",
-      "suggestedCategory": "Fire & Life Safety"
-    },
-    {
-      "yt": "St4ZL1Cex3c",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "SCR Testing: The Floating Nut Mistake Most Techs Make",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Electrical Diagnostics",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:13:56.574Z",
-      "title": "SCR Testing: The Floating Nut Mistake Most Techs Make",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "42DMUFUf0PM",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "How Chiller Drive SCRs Work and What Destroys Them",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Electrical Diagnostics",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:13:57.693Z",
-      "title": "How Chiller Drive SCRs Work and What Destroys Them",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "lZzTcJSf6IY",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Beginner",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Fluke vs Fieldpiece vs UEI: Ohms Output Voltage Explained",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Refrigerant & Diagnostics",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:13:58.930Z",
-      "title": "Fluke vs Fieldpiece vs UEI: Ohms Output Voltage Explained",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "Nx2OH6-0ud0",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Continuity vs Ohms: What Trade School Got Wrong",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:13:59.992Z",
-      "title": "Continuity vs Ohms: What Trade School Got Wrong",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "vxPT-JFmnmw",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "How to Test a Bleed Resistor Without a False Reading",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Electrical Diagnostics",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:01.086Z",
-      "title": "How to Test a Bleed Resistor Without a False Reading",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "ExDSqkpYbPs",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "The Centrifugal Trainer I Had Built for HVAC Techs",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Refrigerant & Diagnostics",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:02.221Z",
-      "title": "The Centrifugal Trainer I Had Built for HVAC Techs",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "CZ36tosgPw0",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Low Water Flow on a York YCIV: Why Discharge Superheat Drops",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Refrigerant & Diagnostics",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:03.374Z",
-      "title": "Low Water Flow on a York YCIV: Why Discharge Superheat Drops",
-      "channel": "HVACTIME (chillers)",
-      "duration": "",
-      "published": "2026-10-10T05:13:54.315Z",
-      "channelUrl": "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg",
-      "description": "",
-      "channelCategory": "HVAC & Chillers",
-      "suggestedCategory": "HVAC & Chillers"
-    },
-    {
-      "yt": "Lt4puzTb1vg",
-      "draft": {
-        "ppe": [
-          "Respirator",
-          "Safety Goggles",
-          "Chemical Gloves"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "How to Throw Torginol Flakes: Perfect Garage Floor",
-        "safety": "Ventilate the area, keep ignition sources away and protect your eyes and lungs.",
-        "source": "rules",
-        "subject": "Torginol Flakes Mixing",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:13:47.144Z",
-      "title": "How to Throw Torginol Flakes Like a Pro | Perfect Garage Floor",
-      "channel": "Paint Life TV",
-      "duration": "",
-      "published": "2026-10-10T05:13:44.649Z",
-      "channelUrl": "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "description": "",
-      "channelCategory": "Painting & Waterproofing",
-      "suggestedCategory": "Painting & Waterproofing"
-    },
-    {
-      "yt": "W-eidKBHp4c",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Legacy of Honor: Military Graduation Ceremony 1999 ميدان الشرف:…",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "نعود بكم إلى مراسم تخريج الدفعة السابعة من المرشحين والمنتسبين في كلية شرطة دبي، والتي أُقيمت برعاية المغفور له بإذن الله الشيخ مكتوم بن راشد آل مكتوم، وشهدها سمو الشيخ أحمد بن راشد آل مكتوم، بحضور عدد من أصحاب السمو وكبار المسؤولين.",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-06T12:39:01.476Z",
-      "title": "Legacy of Honor: Military Graduation Ceremony 1999 ميدان الشرف: مراسم التخريج العسكري",
-      "aiError": "Gemini's answer was incomplete",
-      "aiTries": 3,
-      "channel": "Dubai Police",
-      "duration": "",
-      "published": "2026-09-10T13:00:11+00:00",
-      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
-      "description": "نعود بكم إلى مراسم تخريج الدفعة السابعة من المرشحين والمنتسبين في كلية شرطة دبي، والتي أُقيمت برعاية المغفور له بإذن الله الشيخ مكتوم بن راشد آل مكتوم، وشهدها سمو الشيخ أحمد بن راشد آل مكتوم، بحضور عدد من أصحاب السمو وكبار المسؤولين.\nويجسد هذا الحفل محطةً مهمة في تاريخ شرطة دبي لإعداد الكفاءات الوطنية، وترسيخ قيم الانضباط والولاء والمسؤولية، في نهجٍ مستمر يستند إلى رؤية القيادة الرشيدة في بناء الإنسان، وتعزيز الأمن، ومواكبة التطور، بما يسهم في بناء مجتمع ينعم بالأمن والاستقرار وجودة الحياة.\nميدان الشرف سلسلة وثائقية تستعيد مراسم تخريج كلية وأكاديمية شرطة دبي عبر العقود، لتوثّق إرثًا من التميز والعطاء كما حفظته عدسة التاريخ.\n\n\nWe take you back to the graduation ceremony of the 7th Class of Cadet officers at Dubai Police College, held under the patronage of the late H.H. Sheikh Maktoum bin Rashid Al Maktoum and attended by H.H. Sheikh Ahmed bin Rashid Al Maktoum, alongside Their Highnesses, senior government officials, and distinguished guests.\nMore than a graduation ceremony, this historic occasion reflects Dubai Police's enduring commitment to preparing generations of national talent. Rooted in the values of discipline, loyalty, and responsibility, it embodies a vision of investing in people, strengthening security, and advancing a safer, more resilient society.\nLegacy of Honor is a documentary series that revisits the graduation ceremonies of Dubai Police College and Dubai Police Academy across the decades, preserving a legacy of excellence and service through the lens of history.",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "DqfbVcjJCKc",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "مبادرة نسيج: Naseej Initiative",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:59.272Z",
-      "title": "مبادرة نسيج | Naseej Initiative",
-      "channel": "Dubai Police",
-      "duration": "",
-      "published": "2026-09-10T05:14:58.172Z",
-      "channelUrl": "https://www.youtube.com/@DubaiPoliceHQ",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "shoH6k3r-KE",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "شرطة أبوظبي: سفراء «كلنا شرطة» في مدارسنا",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:57.207Z",
-      "title": "شرطة أبوظبي : سفراء «كلنا شرطة» في مدارسنا",
-      "channel": "Abu Dhabi Police",
-      "duration": "",
-      "published": "2026-09-10T05:14:56.196Z",
-      "channelUrl": "https://www.youtube.com/c/ADPoliceHQ",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "HRzdCrOnPcY",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "المرأة الإماراتية",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:47.283Z",
-      "title": "المرأة الإماراتية ",
-      "channel": "Dubai Municipality",
-      "duration": "",
-      "published": "2026-09-10T05:14:46.258Z",
-      "channelUrl": "https://www.youtube.com/@DubaiMunicipality",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "jRFexD9gyxM",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "X2 ROVR SCRUB Robotic Scrubber: Operator Training",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Floor Scrubbing Equipment",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:20.282Z",
-      "title": "X2 ROVR SCRUB  Robotic Scrubber | Operator Training",
-      "channel": "Tennant Company",
-      "duration": "",
-      "published": "2026-09-10T05:14:19.173Z",
-      "channelUrl": "https://www.youtube.com/@TennantCompany",
-      "description": "",
-      "channelCategory": "Cleaning & Housekeeping",
-      "suggestedCategory": "Cleaning & Housekeeping"
-    },
-    {
-      "yt": "rwQK6LzZ4qw",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Wastek Smart Scale: Smart Waste Management",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "UAE Rules & Compliance",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:15.992Z",
-      "title": "WASTEK Smart Scale | Smart Waste Management | Farnek Sustainability",
-      "channel": "Farnek",
-      "duration": "",
-      "published": "2026-09-10T05:14:14.808Z",
-      "channelUrl": "https://www.youtube.com/@FarnekServices",
-      "description": "",
-      "channelCategory": "UAE Rules & Compliance",
-      "suggestedCategory": "UAE Rules & Compliance"
-    },
-    {
-      "yt": "Mf1C7Y0D0ec",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Beginner",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Introduction to Ignition SCADA",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "BMS & Controls",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:11.688Z",
-      "title": "Introduction to Ignition SCADA",
+      "yt": "m7e1DLvJBvQ",
+      "found": "2026-11-09T06:26:47.824Z",
+      "title": "Distributed Control Systems (DCS) Basics",
       "channel": "RealPars",
       "duration": "",
-      "published": "2026-09-10T05:14:10.414Z",
+      "published": "2026-09-10T06:26:46.701Z",
       "channelUrl": "https://www.youtube.com/@RealPars",
       "description": "",
       "channelCategory": "BMS & Controls",
       "suggestedCategory": "BMS & Controls"
     },
     {
-      "yt": "MbM0Za6OnGU",
-      "draft": {
-        "ppe": [
-          "Safety Glasses",
-          "Work Gloves",
-          "Safety Shoes"
-        ],
-        "level": "Intermediate",
-        "steps": [
-          "Read the job card and get the right tools and PPE",
-          "Make the area safe and put up barriers or signs",
-          "Carry out the work as shown in the video",
-          "Check your work",
-          "Clean up the area",
-          "Report the job complete"
-        ],
-        "title": "Cornelius ED-150 Fountain Machine Install Steps",
-        "safety": "Check the area is safe, use the right tools and stop work if anything feels unsafe.",
-        "source": "rules",
-        "subject": "Appliance Maintenance",
-        "summary": "",
-        "stepsFrom": "general"
-      },
-      "found": "2026-11-09T05:14:08.096Z",
-      "title": "Cornelius ED-150 Fountain Machine Install Steps",
-      "channel": "Learn A Trade (commercial equipment)",
+      "yt": "YYSneb2uZho",
+      "found": "2026-11-09T06:26:45.691Z",
+      "title": "SBA 560: Damper Sizing for Better HVAC Control and Building Automation",
+      "channel": "Smart Buildings Academy",
       "duration": "",
-      "published": "2026-09-10T05:14:06.577Z",
-      "channelUrl": "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA",
+      "published": "2026-09-10T06:26:44.673Z",
+      "channelUrl": "https://www.youtube.com/@SmartBuildingsAcademy",
       "description": "",
-      "channelCategory": "Kitchen & Laundry Appliances",
-      "suggestedCategory": "Kitchen & Laundry Appliances"
+      "channelCategory": "BMS & Controls",
+      "suggestedCategory": "BMS & Controls"
     }
   ],
-  "lastRun": "2026-11-09T05:15:21.358Z",
+  "lastRun": "2026-11-09T06:27:23.942Z",
   "rejected": [
     "je0BsLY5nZw",
     "NcgO12kdTVs",
@@ -3234,299 +842,290 @@
     "GybRZErX75w",
     "ZG8neX7uHDA",
     "vrqU8pfRR0A",
-    "6Wmwt-Tw0bg"
+    "6Wmwt-Tw0bg",
+    "s4KnbrMz4dU",
+    "CHhyFCNPjpY",
+    "srSCepmXJmM",
+    "MFeBNIMBlEM",
+    "h5qztK8FUsE",
+    "OG1YVR4qTSo",
+    "piF6gEcl1BE",
+    "tTZUgBjSzqI",
+    "KBtxOiAoGQE",
+    "Bkum5ECZfTg",
+    "2TRxH3VHizA",
+    "XtwOr6q7_Qg",
+    "Zp50zIufnus",
+    "RjOYue96Q5k",
+    "4vwpQ9Pz3qY",
+    "0028Z9Lr5r4",
+    "-6yrOGfB2KI",
+    "Gu3zPA7Evz4",
+    "o6bJ1BUK89I",
+    "2asKeJ6TjT0",
+    "qfAlxo44Erw",
+    "b9E4ksrrsPg",
+    "lXaXzWC8hsQ",
+    "8jo-GMg3Td8",
+    "VIdzDQ4ORbs",
+    "HRzdCrOnPcY",
+    "nyTgss2aMC8",
+    "OInuGc6qZVg",
+    "5XicGcEL9UY",
+    "oX2wjCIqMH0",
+    "P5AQrfQGokA",
+    "_WdovOCoNaY",
+    "LMdqTOLaA6w",
+    "z4AWoFUiOIQ",
+    "W-eidKBHp4c"
   ],
   "channelStatus": {
-    "https://www.youtube.com/@Nilfisk": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-09T05:15:19.878Z"
-    },
     "https://www.youtube.com/@jwflame": {
       "id": "UC2uFFhnMKyF82UY2TbXRaNg",
-      "via": "page",
-      "checked": "2026-11-09T05:13:36.115Z",
+      "checked": "2026-11-09T06:26:13.618Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MOHREUAE": {
       "id": "UCvR9cTL5kGeU_NqSr0hkFYQ",
-      "via": "page",
-      "checked": "2026-11-09T05:14:45.208Z",
+      "checked": "2026-11-09T06:27:02.928Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@RealPars": {
       "id": "UCUKKQwBQZczpYzETkZNxi-w",
       "via": "page",
-      "checked": "2026-11-09T05:14:11.688Z",
+      "checked": "2026-11-09T06:26:47.824Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@grundfos": {
       "id": "UCwnxHgcO6G2NQ42KCfwSDuw",
       "via": "page",
-      "checked": "2026-11-09T05:14:18.175Z",
+      "checked": "2026-11-09T06:26:51.617Z",
       "lastFound": 1
     },
     "https://www.youtube.com/c/MEPWork": {
       "id": "UCfF4RfukNFrF-6toUG3vz2A",
-      "via": "page",
-      "checked": "2026-11-09T05:13:52.281Z",
+      "checked": "2026-11-09T06:26:37.707Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@HVACGuide": {
       "id": "UC4gjdUt6T7Swqtlet3cxkbA",
-      "via": "page",
-      "checked": "2026-11-09T05:15:00.125Z",
+      "checked": "2026-11-09T06:27:11.251Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@KaivacInc": {
       "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-09T05:15:20.641Z"
+      "checked": "2026-11-09T06:27:23.127Z"
     },
     "https://www.youtube.com/@NADCAHVAC": {
       "id": "UCWo3GG5-vB6WuhZpki7rUng",
-      "via": "page",
-      "checked": "2026-11-09T05:15:02.020Z",
+      "checked": "2026-11-09T06:27:12.920Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/Ductdudes": {
       "id": "UCGGX5M9ISk9Zwi6pfa6gk3w",
       "via": "page",
-      "checked": "2026-11-09T05:13:39.155Z",
+      "checked": "2026-11-09T06:26:27.483Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@CaptiveAire": {
       "id": "UCt0ArHe_-CKAr1So3IEwmsA",
-      "via": "page",
-      "checked": "2026-11-09T05:14:28.677Z",
-      "lastFound": 0
-    },
-    "https://www.youtube.com/@DiverseyInc": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-09T05:15:19.125Z"
+      "checked": "2026-11-09T06:27:01.178Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/c/ADPoliceHQ": {
       "id": "UCLqu78o49yHSQTOUEWh_8Vg",
       "via": "page",
-      "checked": "2026-11-09T05:14:57.208Z",
+      "checked": "2026-11-09T06:27:08.638Z",
       "lastFound": 1
     },
     "https://www.youtube.com/c/HVACSchool": {
       "id": "UCdLlUhD9LUGm0-NTYDASPFA",
-      "via": "page",
-      "checked": "2026-11-09T05:13:30.844Z",
+      "checked": "2026-11-09T06:26:09.166Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@CleanMySpace": {
       "id": "UCGozdt7Wbd15k7dWhvlmLUw",
       "via": "page",
-      "checked": "2026-11-09T05:15:16.396Z",
+      "checked": "2026-11-09T06:27:21.393Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@DEWAOfficial": {
       "id": "UCwqM2Kj0TAvbNHpeivY5I-g",
       "via": "page",
-      "checked": "2026-11-09T05:14:44.304Z",
-      "lastFound": 13
+      "checked": "2026-11-09T06:27:02.156Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@repairclinic": {
       "id": "UCGIWoFCiw_H5SW4sHWFzQSw",
       "via": "page",
-      "checked": "2026-11-09T05:14:22.175Z",
+      "checked": "2026-11-09T06:26:58.530Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/MEPTECHTIPS": {
       "id": "UCok_Mb_GOms4JgmrhePQFZQ",
-      "via": "page",
-      "checked": "2026-11-09T05:13:50.342Z",
+      "checked": "2026-11-09T06:26:35.919Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ACServiceTech": {
       "id": "UCYohLjTaUZLF3-JjttxG_CA",
       "via": "page",
-      "checked": "2026-11-09T05:13:31.767Z",
+      "checked": "2026-11-09T06:26:10.106Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DubaiPoliceHQ": {
       "id": "UCMebk44F_zVLj-7aD_mSUhQ",
-      "via": "page",
-      "checked": "2026-11-09T05:14:59.272Z",
+      "checked": "2026-11-09T06:27:10.483Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@GSHElectrical": {
       "id": "UCgtbE9w_d-u2AvPp3WBlPfQ",
-      "via": "page",
-      "checked": "2026-11-09T05:13:35.149Z",
+      "checked": "2026-11-09T06:26:12.761Z",
       "lastFound": 1
     },
     "https://www.youtube.com/@TheHVACDoctor": {
       "id": "UCGpL47XAGpNr_TAa-30UTbg",
       "via": "page",
-      "checked": "2026-11-09T05:15:00.983Z",
+      "checked": "2026-11-09T06:27:12.112Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@WPKITCHENTECH": {
       "id": "UCMWXBdzjivSKJybL-Fwc6ug",
-      "via": "page",
-      "checked": "2026-11-09T05:14:05.498Z",
+      "checked": "2026-11-09T06:26:42.557Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@FarnekServices": {
       "id": "UCqp0HaeyY54DFLsS4J9y-pA",
       "via": "page",
-      "checked": "2026-11-09T05:14:15.992Z",
-      "lastFound": 1
+      "checked": "2026-11-09T06:26:49.602Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@RogerWakefield": {
       "id": "UCGIMKh92vaL0_Yc0u4GYhHA",
-      "via": "page",
-      "checked": "2026-11-09T05:13:37.192Z",
-      "lastFound": 0
+      "checked": "2026-11-09T06:26:24.656Z",
+      "lastFound": 9
     },
     "https://www.youtube.com/@TennantCompany": {
       "id": "UCv3mfTv2qQJD2Qe59NEPp8Q",
-      "via": "page",
-      "checked": "2026-11-09T05:14:20.282Z",
-      "lastFound": 1
+      "checked": "2026-11-09T06:26:56.672Z",
+      "lastFound": 4
     },
     "https://www.youtube.com/user/nfpadotorg": {
       "id": "UCt_HiUcYRhNqTFM9b_EVHaA",
       "via": "page",
-      "checked": "2026-11-09T05:14:55.210Z",
-      "lastFound": 5
+      "checked": "2026-11-09T06:27:06.571Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/@JohnsonControls": {
       "id": "UCVdxOo2SYGefzEFMVVkPgkQ",
-      "via": "page",
-      "checked": "2026-11-09T05:14:27.639Z",
-      "lastFound": 4
+      "checked": "2026-11-09T06:26:59.306Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@TheElectricalGuy": {
       "id": "UCdKPm5KM99O75NtArFkMDDA",
-      "via": "page",
-      "checked": "2026-11-09T05:13:32.801Z",
+      "checked": "2026-11-09T06:26:10.892Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@DubaiMunicipality": {
       "id": "UCgoUXrrSn2pdbOd3S1Hr2hA",
-      "via": "page",
-      "checked": "2026-11-09T05:14:47.283Z",
-      "lastFound": 1
-    },
-    "https://www.youtube.com/@UngerProfessional": {
-      "error": "Channel page not found (404). Check the link.",
-      "checked": "2026-11-09T05:15:18.372Z"
+      "checked": "2026-11-09T06:27:03.703Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/@EngineeringMindset": {
       "id": "UCk0fGHsCEzGig-rSzkfCjMw",
-      "via": "page",
-      "checked": "2026-11-09T05:13:28.822Z",
+      "checked": "2026-11-09T06:26:07.116Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@MEPTechniqueprabhu": {
       "id": "UC6CBoT2fJCoL5Ua-yDKgE4A",
       "via": "page",
-      "checked": "2026-11-09T05:13:51.286Z",
+      "checked": "2026-11-09T06:26:36.905Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@KarcherProfessional": {
       "id": "UC_H30cQ_k69vqmyDIhauTHg",
       "via": "page",
-      "checked": "2026-11-09T05:15:17.616Z",
+      "checked": "2026-11-09T06:27:22.366Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@ContemporaryControls": {
       "id": "UCaEBP03sPPq_ky-R2MersZg",
-      "via": "page",
-      "checked": "2026-11-09T05:14:12.715Z",
-      "lastFound": 0
-    },
-    "https://www.youtube.com/@InstrumentationTools": {
-      "id": "UCTAiA-Th943Q23CZu8dm11A",
-      "error": "Feed not available (404). Backup also failed: Couldn't read the channel page.",
-      "checked": "2026-11-09T05:14:13.748Z",
+      "checked": "2026-11-09T06:26:48.620Z",
       "lastFound": 0
     },
     "https://www.youtube.com/@SmartBuildingsAcademy": {
       "id": "UC1jHv6K8yM329bjDh9F78fA",
       "via": "page",
-      "checked": "2026-11-09T05:14:09.482Z",
-      "lastFound": 0
+      "checked": "2026-11-09T06:26:45.691Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/@gouldswatertechnology": {
       "id": "UCZNoAFeciz-_Z86fkoyEDXg",
-      "via": "page",
-      "checked": "2026-11-09T05:14:21.235Z",
+      "checked": "2026-11-09T06:26:57.465Z",
       "lastFound": 0
     },
     "https://www.youtube.com/user/theabudhabipolice": {
       "id": "UCwp0VxIWELDtUXkyYA9ksrQ",
-      "via": "page",
-      "checked": "2026-11-09T05:14:48.285Z",
+      "checked": "2026-11-09T06:27:04.465Z",
       "lastFound": 0
     },
     "https://www.youtube.com/c/ISSAMediaTV/playlists": {
       "id": "UCR7VVdoKrOVyX5UjtsTlhew",
-      "via": "page",
-      "checked": "2026-11-09T05:15:14.049Z",
-      "lastFound": 10
+      "checked": "2026-11-09T06:27:19.161Z",
+      "lastFound": 5
     },
     "https://www.youtube.com/c/DaikinMiddleEastandAfrica": {
       "id": "UC46JAqOlymW5jBo6B2ImQGg",
       "via": "page",
-      "checked": "2026-11-09T05:13:53.254Z",
+      "checked": "2026-11-09T06:26:38.811Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCAucPo2IFoRX1YY3v60seLg": {
       "id": "UCAucPo2IFoRX1YY3v60seLg",
       "via": "page",
-      "checked": "2026-11-09T05:14:04.466Z",
+      "checked": "2026-11-09T06:26:41.746Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCFIWnoCs9snc7V0_eHmfzeA": {
       "id": "UCFIWnoCs9snc7V0_eHmfzeA",
       "via": "page",
-      "checked": "2026-11-09T05:14:08.097Z",
-      "lastFound": 1
+      "checked": "2026-11-09T06:26:43.664Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCIoD-SEdUWMA74tWXRMyCZQ": {
       "id": "UCIoD-SEdUWMA74tWXRMyCZQ",
-      "via": "page",
-      "checked": "2026-11-09T05:13:38.196Z",
-      "lastFound": 0
+      "checked": "2026-11-09T06:26:26.527Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/channel/UCR1ksygazAOr59yLZ4Mp5tA": {
       "id": "UCR1ksygazAOr59yLZ4Mp5tA",
-      "via": "page",
-      "checked": "2026-11-09T05:13:48.162Z",
+      "checked": "2026-11-09T06:26:34.095Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCRdNcv3g_4rpbNEyFopZwDg": {
       "id": "UCRdNcv3g_4rpbNEyFopZwDg",
-      "via": "page",
-      "checked": "2026-11-09T05:14:03.374Z",
-      "lastFound": 8
+      "checked": "2026-11-09T06:26:40.724Z",
+      "lastFound": 1
     },
     "https://www.youtube.com/channel/UCWpu9UZ6aiRTaMuuV8-C0pQ": {
       "id": "UCWpu9UZ6aiRTaMuuV8-C0pQ",
-      "via": "page",
-      "checked": "2026-11-09T05:13:43.612Z",
+      "checked": "2026-11-09T06:26:30.440Z",
       "lastFound": 1
     },
     "https://www.youtube.com/channel/UCXOzd-KAiI6fGx5wfrnsHTA": {
       "id": "UCXOzd-KAiI6fGx5wfrnsHTA",
       "via": "page",
-      "checked": "2026-11-09T05:13:49.228Z",
+      "checked": "2026-11-09T06:26:35.113Z",
       "lastFound": 0
     },
     "https://www.youtube.com/channel/UCbZdXox6mKHdcT2QdVT-goQ": {
       "id": "UCbZdXox6mKHdcT2QdVT-goQ",
       "via": "page",
-      "checked": "2026-11-09T05:13:41.356Z",
-      "lastFound": 1
+      "checked": "2026-11-09T06:26:28.480Z",
+      "lastFound": 0
     },
     "https://www.youtube.com/channel/UCnrhmEmvA_bIRYkBVPqJ4zg": {
       "id": "UCnrhmEmvA_bIRYkBVPqJ4zg",
-      "via": "page",
-      "checked": "2026-11-09T05:13:47.144Z",
+      "checked": "2026-11-09T06:26:33.310Z",
       "lastFound": 2
     }
   }
